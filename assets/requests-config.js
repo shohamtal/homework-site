@@ -1,9 +1,10 @@
 /* Topic requests run on a Google Form + a Google Sheet. There's no server of our own.
    FORM_ACTION: the form's ".../formResponse" URL.  ENTRY: the form's field ids (entry.NNN).
-   BOARD_CSV: the "לוח" tab published to the web as CSV (File › Share › Publish to web).
+   BOARD_CSV: the separate board spreadsheet (shared view-only) read as CSV. Its vote counts come from the private
+   responses sheet through IMPORTRANGE, so raw requests never become public.
    Leave these empty and the requests feature shows a "coming soon" state. */
 window.REQ_CONFIG={
-  FORM_ACTION:'',
-  ENTRY:{ topic:'', subject:'', grade:'' },
-  BOARD_CSV:''
+  FORM_ACTION:'https://docs.google.com/forms/d/e/1FAIpQLScFhRajUXFd_gkj-E_1K-aeedZvuQkKmnnukMW61VHwws0xFA/formResponse',
+  ENTRY:{ topic:'entry.653037141', subject:'entry.2069201374', grade:'entry.1688782250' },
+  BOARD_CSV:'https://docs.google.com/spreadsheets/d/1d2iDI_56uj1elKYX5MNX5vf_coeK00jbXv8iz488JBo/gviz/tq?tqx=out:csv&gid=0'
 };
