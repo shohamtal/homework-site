@@ -2,7 +2,7 @@
 window.TOC={
   render(el, subjects, root, input, none, opt={}){
     const norm=s=>s.toLowerCase().replace(/[֑-ׇ]/g,'');
-    el.innerHTML=subjects.map(s=>`
+    el.innerHTML=subjects.filter(s=>s.chapters.length).map(s=>`
       <div class="toc-subject">${opt.hideSubject?'':`<h3 class="toc-sname"><a href="${root}${s.id}/">${s.name}</a></h3>`}
       ${s.chapters.map(c=>`
         <div class="toc-chapter">

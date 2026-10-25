@@ -27,6 +27,11 @@
 </section>
 
 <section class="card">
+  <div class="row-between"><h2>הנושאים הכי מבוקשים</h2><a class="btn-link" href="requests/">חסר לכם נושא? בקשו אותו</a></div>
+  <ol class="mini-board" id="topReq"><li class="muted">טוען…</li></ol>
+</section>
+
+<section class="card">
   <h2>תוכן עניינים</h2>
   <div id="toc"></div>
   <p class="empty-msg" id="none" hidden>לא מצאנו נושא כזה. נסו מילה אחרת.</p>
@@ -36,12 +41,16 @@
 </div>
 <script src="assets/topics.js"></script>
 <script src="assets/toc.js"></script>
+<script src="assets/requests-config.js"></script>
+<script src="assets/requests.js"></script>
 <script>
 document.getElementById('subjects').innerHTML=SITE.subjects.map(s=>{
+  if(s.soon) return `<div class="subject soon" aria-disabled="true"><span class="subject-name">${s.name}</span><span class="soon-chip">בקרוב</span></div>`;
   const n=s.chapters.reduce((a,c)=>a+c.topics.length,0);
   return `<a class="subject" href="${s.id}/"><span class="subject-name">${s.name}</span><span>${s.desc}</span><small>${n} נושאים</small></a>`;
 }).join('');
 TOC.render(document.getElementById('toc'), SITE.subjects, './', document.getElementById('q'), document.getElementById('none'));
+REQ.mini(document.getElementById('topReq'),'requests/');
 </script>
 </body>
 </html>

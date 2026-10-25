@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>בקשות נושאים · אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/index.css">
+</head>
+<body data-root="../">
+<div class="wrap">
+<div id="sitebar"></div>
+<header class="page">
+  <div class="eyebrow">בקשות והצבעות</div>
+  <h1>חסר לכם נושא?</h1>
+  <p class="lead">בקשו נושא שאתם לומדים עכשיו בבית הספר, או הצביעו לנושא שמישהו אחר כבר ביקש. הנושאים עם הכי הרבה קולות יעלו לאתר ראשונים.</p>
+</header>
+
+<section class="card" id="ask">
+  <h2>בקשו נושא חדש</h2>
+  <form class="req-form" id="reqForm" novalidate>
+    <label for="rSubject">מקצוע
+      <select id="rSubject"></select>
+    </label>
+    <label for="rGrade">כיתה
+      <select id="rGrade">
+        <option value="">לא חשוב</option>
+        <option>כיתה ד</option><option>כיתה ה</option><option>כיתה ו</option><option>כיתה ז</option>
+        <option selected>כיתה ח</option><option>כיתה ט</option><option>כיתה י</option><option>כיתה יא</option><option>כיתה יב</option>
+      </select>
+    </label>
+    <label for="rTopic" class="wide">איזה נושא?
+      <input id="rTopic" maxlength="80" placeholder="למשל: מערכת של שתי משוואות" autocomplete="off">
+    </label>
+    <div class="row wide"><button class="primary" id="rSend" type="submit">שליחת הבקשה</button></div>
+  </form>
+  <div id="reqFb" aria-live="polite"></div>
+  <p class="muted">כל בקשה נבדקת לפני שהיא מופיעה בטבלה. אל תכתבו שם או פרטים אישיים.</p>
+</section>
+
+<section class="card" id="board">
+  <h2>טבלת ההצבעות</h2>
+  <div id="boardBody"><p class="muted">טוען…</p></div>
+  <p class="muted">הטבלה מתעדכנת כל כמה דקות, אז קול חדש לא תמיד מופיע מיד. אפשר להצביע פעם אחת לכל נושא.</p>
+</section>
+
+<footer class="site">אתר שיעורי הבית</footer>
+</div>
+<script src="../assets/topics.js"></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/requests-config.js"></script>
+<script src="../assets/requests.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id), esc=REQ.esc;
+$('rSubject').innerHTML=SITE.subjects.map(s=>`<option>${s.name}</option>`).join('')+'<option>אחר</option>';
+
+const form=$('reqForm'), fb=$('reqFb');
+if(!REQ.configured){
+  [...form.elements].forEach(el=>el.disabled=true);
+  fb.innerHTML='<div class="fb hint"><strong>בקרוב.</strong> עוד מעט יהיה אפשר לשלוח מכאן בקשות.</div>';
+}
+let last=0;
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const topic=$('rTopic').value.trim();
+  if(topic.length<3){ fb.innerHTML='<div class="fb err">כתבו את שם הנושא (לפחות 3 אותיות).</div>'; $('rTopic').focus(); return; }
+  if(Date.now()-last<30000){ fb.innerHTML='<div class="fb err">רגע, שלחתם בקשה ממש עכשיו. אפשר לשלוח עוד אחת בעוד חצי דקה.</div>'; return; }
+  $('rSend').disabled=true;
+  try{
+    await REQ.send({topic,subject:$('rSubject').value,grade:$('rGrade').value});
+    last=Date.now(); $('rTopic').value='';
+    fb.innerHTML='<div class="fb ok">תודה! הבקשה נשלחה. אחרי שנבדוק אותה, היא תופיע בטבלה ואחרים יוכלו להצביע לה.</div>';
+  }catch(err){ fb.innerHTML='<div class="fb err">הבקשה לא נשלחה. בדקו שיש חיבור לאינטרנט ונסו שוב.</div>'; }
+  $('rSend').disabled=false;
+});
+
+async function board(){
+  const body=$('boardBody');
+  if(!REQ.configured){ body.innerHTML='<p>כאן תופיע רשימת הנושאים שביקשו, עם מספר הקולות של כל אחד. כל אחד יוכל ללחוץ "גם אני רוצה" ולהוסיף קול.</p>'; return; }
+  let rows;
+  try{ rows=await REQ.load(); }catch(e){ body.innerHTML='<div class="fb err">לא הצלחנו לטעון את הטבלה. נסו לרענן את העמוד בעוד רגע.</div>'; return; }
+  if(!rows.length){ body.innerHTML='<p>עוד אין נושאים בטבלה. בקשו את הנושא הראשון למעלה.</p>'; return; }
+  const max=Math.max(1,...rows.map(r=>r.votes));
+  body.innerHTML=`<div class="scroll-x"><table class="board"><thead><tr><th>#</th><th>נושא</th><th>קולות</th><th></th></tr></thead><tbody>${
+    rows.map((r,i)=>{
+      const chip=REQ.statusChip(r,'../');
+      const action=chip || `<button class="vote" data-i="${i}" ${REQ.hasVoted(r)?'disabled':''}>${REQ.hasVoted(r)?'הצבעתם ✓':'גם אני רוצה'}</button>`;
+      return `<tr><td class="muted">${i+1}</td>
+        <td><strong>${esc(r.topic)}</strong><div class="muted">${esc(r.subject)}${r.grade?' · '+esc(r.grade):''}</div><div class="meter"><div style="width:${r.votes/max*100}%"></div></div></td>
+        <td class="num">${r.votes}</td><td>${action}</td></tr>`;
+    }).join('')}</tbody></table></div><div id="voteFb" aria-live="polite"></div>`;
+  body.querySelectorAll('button.vote').forEach(btn=>btn.addEventListener('click',async()=>{
+    const r=rows[+btn.dataset.i]; btn.disabled=true;
+    try{
+      if(await REQ.vote(r)){
+        btn.textContent='הצבעתם ✓';
+        const td=btn.closest('tr').querySelector('.num'); td.textContent=r.votes+1;
+        $('voteFb').innerHTML=`<div class="fb ok">תודה! הקול שלכם ל"${esc(r.topic)}" נשלח.</div>`;
+      }
+    }catch(e){ btn.disabled=false; $('voteFb').innerHTML='<div class="fb err">הקול לא נשלח. נסו שוב.</div>'; }
+  }));
+}
+board();
+})();
+</script>
+</body>
+</html>

@@ -21,6 +21,8 @@ window.SITE={
               desc:'איפה הקו פוגש את ציר y ואת ציר x, ואיך מוצאים את זה מהמשוואה.',
               tags:['חיתוך','ציר x','ציר y','משוואה'] }
           ] }
-      ] }
+      ] },
+    { id:'english', name:'אנגלית', desc:'בקרוב.', soon:true, chapters:[] },
+    { id:'hebrew', name:'עברית', desc:'בקרוב.', soon:true, chapters:[] }
   ]
 };
