@@ -6,6 +6,7 @@
 const C=window.REQ_CONFIG||{};
 const KEY='req:voted';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const votesTxt=n=>n===1?'קול אחד':n+' קולות';
 const norm=s=>String(s).trim().replace(/\s+/g,' ');
 function getVoted(){ try{ return JSON.parse(localStorage.getItem(KEY))||[]; }catch(e){ return []; } }
 function addVoted(k){ try{ const v=getVoted(); v.push(k); localStorage.setItem(KEY,JSON.stringify(v)); }catch(e){} }
@@ -65,7 +66,7 @@ const REQ={
     if(!REQ.configured){ el.outerHTML=`<p class="muted">בקרוב תוכלו לבקש כאן נושאים ולהצביע לנושאים שאחרים ביקשו. <a href="${link}">איך זה יעבוד</a></p>`; return; }
     try{
       const rows=(await REQ.load()).filter(r=>!/עלה|done/i.test(r.status)).slice(0,5);
-      el.innerHTML=rows.length? rows.map(r=>`<li>${esc(r.topic)} <span class="muted">· ${esc(r.subject)}${r.grade?' · '+esc(r.grade):''}</span> <span class="votes">(${r.votes} קולות)</span></li>`).join('')
+      el.innerHTML=rows.length? rows.map(r=>`<li>${esc(r.topic)} <span class="muted">· ${esc(r.subject)}${r.grade?' · '+esc(r.grade):''}</span> <span class="votes">(${votesTxt(r.votes)})</span></li>`).join('')
         : `<li class="muted">עוד אין בקשות. <a href="${link}">היו הראשונים לבקש נושא</a></li>`;
     }catch(e){ el.innerHTML='<li class="muted">לא הצלחנו לטעון את הטבלה כרגע. נסו לרענן בעוד רגע.</li>'; }
   },

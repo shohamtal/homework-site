@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>שטח משולש בין ישרים לצירים · אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body data-root="../../" data-subject="math" data-topic="triangle-area">
+<div class="wrap">
+<div id="sitebar"></div>
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · פונקציה קווית</div>
+  <h1>המשולש שמתחבא בין הקווים</h1>
+  <p class="lead">קו ישר והצירים יוצרים משולש. גם שני קווים וציר x יוצרים משולש. כדי לחשב את השטח שלו צריך רק שלושה דברים: למצוא את הקודקודים, למדוד בסיס וגובה, ולחלק ב-2.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab1">מעבדה: קו אחד</a><a href="#lab2">מעבדה: שני קווים</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>בסיס כפול גובה, חלקי 2</h2></div>
+  <p class="text">השטח של משולש הוא <span class="eq"><span class="gr">בסיס</span> × <span class="bl">גובה</span> ÷ 2</span>. כשהמשולש יושב על הצירים, הבסיס והגובה הם פשוט מרחקים שסופרים על הצירים.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>קו אחד והצירים</h3>
+      <p>הקו חותך את ציר x בנקודה A ואת ציר y בנקודה C. יחד עם הראשית B נוצר משולש ישר זווית. הבסיס הוא המרחק מ-B עד A, והגובה הוא המרחק מ-B עד C.</p>
+      <svg class="g" id="ideaOne" viewBox="0 0 240 240" role="img" aria-label="הקו y = 2x + 4 והצירים יוצרים משולש"></svg>
+      <p>כאן <span class="eq"><i>y</i> = 2<i>x</i> + 4</span>: בסיס 2, גובה 4, שטח <span class="eq">2 × 4 ÷ 2 = 4</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שני קווים וציר x</h3>
+      <p>שני קווים שחותכים את ציר y באותה נקודה C, ואת ציר x בשתי נקודות A ו-E. הבסיס הוא המרחק מ-A עד E, והגובה הוא הגובה של C.</p>
+      <svg class="g" id="ideaTwo" viewBox="0 0 240 240" role="img" aria-label="שני קווים וציר x יוצרים משולש"></svg>
+      <p>כאן בסיס 4 (מ-3− עד 1), גובה 3, שטח <span class="eq">4 × 3 ÷ 2 = 6</span>.</p>
+    </div>
+  </div>
+  <div class="callout">את הנקודות שבהן הקו חותך את הצירים כבר למדנו למצוא בנושא <a href="../axis-intercepts/">נקודות חיתוך עם הצירים</a>. בקצרה: על ציר y מציבים <span class="eq"><i>x</i> = 0</span>, ועל ציר x מציבים <span class="eq"><i>y</i> = 0</span>.</div>
+  <p class="text"><strong>מרחק הוא תמיד חיובי.</strong> הנקודה <span class="eq">(−3, 0)</span> רחוקה 3 משבצות מהראשית, לא 3− משבצות. אורך אף פעם לא שלילי.</p>
+</section>
+
+<section class="card" id="lab1">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: קו אחד והצירים</h2></div>
+  <p class="text">הזיזו את המחוונים ותראו איך המשולש הצהוב משתנה. הקו <span class="gr">הירוק</span> הוא הבסיס, והקו <span class="bl">הכחול</span> הוא הגובה.</p>
+  <div class="lab">
+    <svg class="g" id="l1G" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: קו אחד"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="l1Eq"></div>
+      <label class="slider" for="l1m"><span>שיפוע <span class="m">m</span></span><span class="eq" id="l1mV"></span></label>
+      <input type="range" id="l1m" min="-4" max="4" step="0.5" value="2">
+      <label class="slider" for="l1b"><span>חיתוך <span class="b">b</span></span><span class="eq" id="l1bV"></span></label>
+      <input type="range" id="l1b" class="hl" min="-5" max="5" step="1" value="4">
+      <div class="explain fb hint" id="l1Ex" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="l1Tries">
+          <button data-m="2" data-b="4">y = 2x + 4</button>
+          <button data-m="-1" data-b="3">y = −x + 3</button>
+          <button data-m="1" data-b="-4">משולש למטה</button>
+          <button data-m="0" data-b="3">m = 0</button>
+          <button data-m="2" data-b="0">b = 0</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab2">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מעבדה: שני קווים וציר x</h2></div>
+  <p class="text">לשני הקווים יש אותו <span class="b">b</span>, ולכן שניהם עוברים באותה נקודה על ציר y. זו הנקודה C, שבה הקווים נפגשים. קו אחד עולה (שיפוע חיובי) והשני יורד (שיפוע שלילי), ולכן הם חותכים את ציר x משני הצדדים.</p>
+  <div class="lab">
+    <svg class="g" id="l2G" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: שני קווים"></svg>
+    <div class="ctrl">
+      <div id="l2Eq" style="text-align:center; font-size:1.3rem; display:flex; flex-direction:column; gap:4px"></div>
+      <label class="slider" for="l2m1"><span>שיפוע הקו העולה</span><span class="eq" id="l2m1V"></span></label>
+      <input type="range" id="l2m1" min="0.5" max="4" step="0.5" value="1">
+      <label class="slider" for="l2m2"><span>שיפוע הקו היורד</span><span class="eq" id="l2m2V"></span></label>
+      <input type="range" id="l2m2" class="blue" min="-4" max="-0.5" step="0.5" value="-3">
+      <label class="slider" for="l2b"><span>הגובה של C (<span class="b">b</span>)</span><span class="eq" id="l2bV"></span></label>
+      <input type="range" id="l2b" class="hl" min="1" max="5" step="1" value="3">
+      <div class="explain fb hint" id="l2Ex" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="l2Tries">
+          <button data-m1="1" data-m2="-3" data-b="3">בסיס 4</button>
+          <button data-m1="2" data-m2="-2" data-b="4">משולש סימטרי</button>
+          <button data-m1="4" data-m2="-0.5" data-b="2">אחד תלול, אחד שטוח</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">4</span><h2>שלוש מלכודות</h2></div>
+  <ol class="steps">
+    <li><div><strong>שכחו לחלק ב-2.</strong> בסיס כפול גובה זה השטח של מלבן שלם. המשולש הוא רק חצי ממנו.</div></li>
+    <li><div><strong>אורך שלילי.</strong> אם A היא <span class="eq">(−4, 0)</span>, הבסיס הוא 4, לא 4−. סופרים משבצות, ומשבצות אף פעם לא שליליות.</div></li>
+    <li><div><strong>בסיס מהראשית.</strong> כשיש שני קווים, הבסיס הוא מ-A עד E, לא מ-0 עד E. מחסרים את המספר הקטן מהגדול: מ-2− עד 3 זה <span class="eq">3 − (−2) = 5</span> משבצות.</div></li>
+  </ol>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">5</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">קו אחד והצירים</button>
+    <button id="exB" role="tab" aria-selected="false">שני קווים וציר x</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">6</span><h2>תרגול: מה השטח?</h2></div>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="fb hint" id="prQ"></div>
+      <div class="inputs">
+        <label for="prA">שטח =<input id="prA" inputmode="decimal" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <p class="counter">חצי כותבים כך: <span class="eq">4.5</span> או <span class="eq">9/2</span>.</p>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<nav id="topicNav"></nav>
+<footer class="site">אתר שיעורי הבית · חשבון</footer>
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,eqHTML,numTxt,fracHTML,signedFracHTML,toFrac,parseNum,eqv,sx,sy,pick}=G;
+const $=id=>document.getElementById(id);
+
+/* numbers: whole or .5 as decimals, anything else as a fraction */
+function val(v){ const d=toFrac(Math.abs(v))[1]; return (d===1||d===2)?numTxt(v):signedFracHTML(v); }
+const len=v=>val(Math.abs(v));
+const pt=(x,y)=>`<span class="eq">(${val(x)}, ${val(y)})</span>`;
+
+/* svg pieces drawn on top of the grid */
+function poly(P){ return `<polygon points="${P.map(p=>sx(p[0])+','+sy(p[1])).join(' ')}" style="fill:var(--hl);fill-opacity:.35;stroke:#C99A00;stroke-width:1"/>`; }
+function seg(x1,y1,x2,y2,color){ return `<line x1="${sx(x1)}" y1="${sy(y1)}" x2="${sx(x2)}" y2="${sy(y2)}" style="stroke:var(${color});stroke-width:4;stroke-linecap:round;stroke-opacity:.9"/>`; }
+function vtx(x,y,name,dx,dy){
+  const cx=Math.max(-5.8,Math.min(5.8,x)), cy=Math.max(-5.8,Math.min(5.8,y));
+  return `<circle cx="${sx(cx)}" cy="${sy(cy)}" r="4" style="fill:var(--ink)"/><text class="ptlbl" x="${sx(cx)+(dx||6)}" y="${sy(cy)+(dy||-6)}" style="font-size:10px">${name}</text>`;
+}
+/* one line + axes: shaded triangle A(xA,0) B(0,0) C(0,b) */
+function oneExtra(m,b,o={}){
+  if(!m||!b) return '';
+  const xA=-b/m; let h=poly([[xA,0],[0,0],[0,b]]);
+  if(o.base!==false) h+=seg(0,0,xA,0,'--green');
+  if(o.height!==false) h+=seg(0,0,0,b,'--blue');
+  h+=vtx(xA,0,'A',-4,b>0?12:-6)+vtx(0,0,'B',4,b>0?12:-6)+vtx(0,b,'C',6,b>0?4:10);
+  return h;
+}
+/* two lines with the same b + x-axis: A(xA,0) left, E(xE,0) right, C(0,b) */
+function twoExtra(m1,m2,b,o={}){
+  const xA=-b/m1, xE=-b/m2; let h=poly([[xA,0],[xE,0],[0,b]]);
+  if(o.base!==false) h+=seg(xA,0,xE,0,'--green');
+  if(o.height!==false) h+=`<line x1="${sx(0)}" y1="${sy(0)}" x2="${sx(0)}" y2="${sy(b)}" style="stroke:var(--blue);stroke-width:4;stroke-dasharray:5 3"/>`;
+  h+=vtx(xA,0,'A',-4,12)+vtx(xE,0,'E',-4,12)+vtx(0,b,'C',6,-4);
+  return h;
+}
+
+/* idea pictures */
+draw($('ideaOne'),2,4,{extra:oneExtra(2,4)});
+draw($('ideaTwo'),1,3,{lines:[{m:-3,b:3}],extra:twoExtra(1,-3,3)});
+
+/* lab 1 */
+const l1m=$('l1m'), l1b=$('l1b');
+function lab1(){
+  const m=+l1m.value, b=+l1b.value;
+  draw($('l1G'),m,b,{extra:oneExtra(m,b)});
+  $('l1Eq').innerHTML=eqHTML(m,b);
+  $('l1mV').innerHTML=signedFracHTML(m); $('l1bV').textContent=numTxt(b);
+  let t='';
+  if(m===0 && b===0) t='<div>הקו הוא ציר x עצמו. אין משולש.</div>';
+  else if(m===0) t='<div>הקו <strong>שטוח</strong>, ולכן הוא אף פעם לא פוגש את ציר x. אין נקודה A, ואין משולש.</div>';
+  else if(b===0) t='<div>b = 0, אז הקו עובר בראשית. A, B ו-C הן אותה נקודה, ואין משולש.</div>';
+  else{
+    const xA=-b/m, area=Math.abs(xA)*Math.abs(b)/2;
+    t+=`<div><strong>C</strong> על ציר y: ${pt(0,b)}.</div>`;
+    t+=`<div><strong>A</strong> על ציר x: מציבים y = 0, <span class="eq">0 = ${eqHTML(m,b).replace(/^<span class="eq"><i>y<\/i> = /,'').replace(/<\/span>$/,'')}</span>, ולכן <span class="eq"><i>x</i> = ${val(xA)}</span>. הנקודה ${pt(xA,0)}.</div>`;
+    if(Math.abs(xA)>5.5) t+='<div>הנקודה A יוצאת מחוץ לציור, אבל החישוב עובד אותו דבר.</div>';
+    t+=`<div><span class="gr">בסיס</span> (מ-B עד A): ${len(xA)}. <span class="bl">גובה</span> (מ-B עד C): ${len(b)}.</div>`;
+    t+=`<div><strong>שטח:</strong> <span class="eq">${len(xA)} × ${len(b)} ÷ 2 = ${val(area)}</span></div>`;
+  }
+  $('l1Ex').innerHTML=t;
+}
+l1m.addEventListener('input',lab1); l1b.addEventListener('input',lab1);
+$('l1Tries').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{l1m.value=btn.dataset.m; l1b.value=btn.dataset.b; lab1();}));
+lab1();
+
+/* lab 2 */
+const l2m1=$('l2m1'), l2m2=$('l2m2'), l2b=$('l2b');
+function lab2(){
+  const m1=+l2m1.value, m2=+l2m2.value, b=+l2b.value;
+  const xA=-b/m1, xE=-b/m2, base=xE-xA, area=base*b/2;
+  draw($('l2G'),m1,b,{lines:[{m:m2,b}],extra:twoExtra(m1,m2,b)});
+  $('l2Eq').innerHTML=`<div>${eqHTML(m1,b)}</div><div>${eqHTML(m2,b)}</div>`;
+  $('l2m1V').innerHTML=signedFracHTML(m1); $('l2m2V').innerHTML=signedFracHTML(m2); $('l2bV').textContent=numTxt(b);
+  let t=`<div><strong>C</strong>: לשני הקווים b = ${b}, אז שניהם עוברים ב-${pt(0,b)}. שם הם נפגשים.</div>`;
+  t+=`<div><strong>A</strong> (הקו העולה פוגש את ציר x): ${pt(xA,0)}. <strong>E</strong> (הקו היורד): ${pt(xE,0)}.</div>`;
+  if(Math.max(Math.abs(xA),Math.abs(xE))>5.5) t+='<div>אחת הנקודות יוצאת מחוץ לציור, אבל החישוב עובד אותו דבר.</div>';
+  t+=`<div><span class="gr">בסיס</span> מ-A עד E: <span class="eq">${val(xE)} − (${val(xA)}) = ${val(base)}</span>. <span class="bl">גובה</span>: הגובה של C, כלומר ${b}.</div>`;
+  t+=`<div><strong>שטח:</strong> <span class="eq">${val(base)} × ${b} ÷ 2 = ${val(area)}</span></div>`;
+  $('l2Ex').innerHTML=t;
+}
+[l2m1,l2m2,l2b].forEach(el=>el.addEventListener('input',lab2));
+$('l2Tries').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{l2m1.value=btn.dataset.m1; l2m2.value=btn.dataset.m2; l2b.value=btn.dataset.b; lab2();}));
+lab2();
+
+/* worked examples */
+const EX={
+  A:[
+    ()=>{draw($('exG'),2,4); return `הקו ${eqHTML(2,4)} והצירים יוצרים משולש. נחשב את השטח שלו.`;},
+    ()=>{draw($('exG'),2,4,{extra:vtx(0,4,'C',6,4)}); return '<strong>צעד 1, הנקודה C:</strong> על ציר y מציבים x = 0 ומקבלים y = 4. הנקודה C היא <span class="eq">(0, 4)</span>.';},
+    ()=>{draw($('exG'),2,4,{extra:vtx(0,4,'C',6,4)+vtx(-2,0,'A',-4,12)}); return '<strong>צעד 2, הנקודה A:</strong> על ציר x מציבים y = 0: <span class="eq">0 = 2<i>x</i> + 4</span>, אז <span class="eq">2<i>x</i> = −4</span> ו-<span class="eq"><i>x</i> = −2</span>. הנקודה A היא <span class="eq">(−2, 0)</span>.';},
+    ()=>{draw($('exG'),2,4,{extra:oneExtra(2,4)}); return '<strong>צעד 3, בסיס וגובה:</strong> מהראשית B עד A יש 2 משבצות (מרחק תמיד חיובי). מ-B עד C יש 4 משבצות.';},
+    ()=>{draw($('exG'),2,4,{extra:oneExtra(2,4)}); return '<strong>צעד 4, שטח:</strong> <span class="eq">2 × 4 ÷ 2 = 4</span>. השטח הוא 4 יחידות ריבועיות.';}
+  ],
+  B:[
+    ()=>{draw($('exG'),1,3,{lines:[{m:-3,b:3}]}); return `הקווים ${eqHTML(1,3)} ו-${eqHTML(-3,3)} יחד עם ציר x יוצרים משולש. נחשב את השטח.`;},
+    ()=>{draw($('exG'),1,3,{lines:[{m:-3,b:3}],extra:vtx(0,3,'C',6,-4)}); return '<strong>צעד 1, הנקודה C:</strong> לשני הקווים b = 3, אז שניהם עוברים ב-<span class="eq">(0, 3)</span>. זו נקודת המפגש C.';},
+    ()=>{draw($('exG'),1,3,{lines:[{m:-3,b:3}],extra:vtx(0,3,'C',6,-4)+vtx(-3,0,'A',-4,12)+vtx(1,0,'E',-4,12)}); return '<strong>צעד 2, A ו-E:</strong> בקו הראשון <span class="eq">0 = <i>x</i> + 3</span>, אז <span class="eq"><i>x</i> = −3</span>. בקו השני <span class="eq">0 = −3<i>x</i> + 3</span>, אז <span class="eq">3<i>x</i> = 3</span> ו-<span class="eq"><i>x</i> = 1</span>. A היא <span class="eq">(−3, 0)</span> ו-E היא <span class="eq">(1, 0)</span>.';},
+    ()=>{draw($('exG'),1,3,{lines:[{m:-3,b:3}],extra:twoExtra(1,-3,3)}); return '<strong>צעד 3, בסיס וגובה:</strong> הבסיס מ-A עד E: <span class="eq">1 − (−3) = 4</span>. הגובה הוא הגובה של C: 3.';},
+    ()=>{draw($('exG'),1,3,{lines:[{m:-3,b:3}],extra:twoExtra(1,-3,3)}); return '<strong>צעד 4, שטח:</strong> <span class="eq">4 × 3 ÷ 2 = 6</span>. השטח הוא 6 יחידות ריבועיות.';}
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const s=EX[exKey];
+  $('exText').innerHTML=s[exI]();
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${s.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===s.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();};
+$('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice */
+const nice=m=>toFrac(Math.abs(m))[1]<=3;
+const avoid=new Set(['2,4','1,3|-3,3']);
+let pr=null, streak=0, solved=0;
+function newPr(){
+  let p, guard=0;
+  do{
+    guard++;
+    if(Math.random()<0.5){
+      const xA=pick([-5,-4,-3,-2,-1,1,2,3,4,5]), b=pick([-5,-4,-3,-2,-1,1,2,3,4,5]), m=-b/xA;
+      p={kind:1,m,b,xA,area:Math.abs(xA*b)/2,key:m+','+b};
+    }else{
+      const b=pick([1,2,3,4,5]), xA=pick([-5,-4,-3,-2,-1]), xE=pick([1,2,3,4,5]);
+      p={kind:2,b,xA,xE,m1:-b/xA,m2:-b/xE,area:(xE-xA)*b/2,key:(-b/xA)+','+b+'|'+(-b/xE)+','+b};
+    }
+  }while(guard<80 && ((p.kind===1&&!nice(p.m)) || (p.kind===2&&(!nice(p.m1)||!nice(p.m2))) || avoid.has(p.key) || (pr&&pr.key===p.key)));
+  pr={...p,tries:0};
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prQ').innerHTML = pr.kind===1
+    ? `הקו ${eqHTML(pr.m,pr.b)} והצירים יוצרים משולש. מה השטח שלו?`
+    : `הקווים ${eqHTML(pr.m1,pr.b)} ו-${eqHTML(pr.m2,pr.b)} יחד עם ציר x יוצרים משולש. מה השטח שלו?`;
+  drawPr(false);
+}
+function drawPr(shade){
+  if(pr.kind===1) draw($('prG'),pr.m,pr.b,{extra:shade?oneExtra(pr.m,pr.b):''});
+  else draw($('prG'),pr.m1,pr.b,{lines:[{m:pr.m2,b:pr.b}],extra:shade?twoExtra(pr.m1,pr.m2,pr.b):''});
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solutionHTML(){
+  if(pr.kind===1) return `C היא ${pt(0,pr.b)} ו-A היא ${pt(pr.xA,0)}. בסיס ${len(pr.xA)}, גובה ${len(pr.b)}. שטח: <span class="eq">${len(pr.xA)} × ${len(pr.b)} ÷ 2 = ${val(pr.area)}</span>.`;
+  return `C היא ${pt(0,pr.b)}, A היא ${pt(pr.xA,0)} ו-E היא ${pt(pr.xE,0)}. בסיס <span class="eq">${val(pr.xE)} − (${val(pr.xA)}) = ${val(pr.xE-pr.xA)}</span>, גובה ${pr.b}. שטח: <span class="eq">${val(pr.xE-pr.xA)} × ${pr.b} ÷ 2 = ${val(pr.area)}</span>.`;
+}
+$('prCheck').onclick=()=>{
+  const a=parseNum($('prA').value), fb=$('prFb');
+  if(isNaN(a)){ fb.innerHTML='<div class="fb err">כתבו מספר. חצי כותבים כמו 4.5 או 9/2.</div>'; return; }
+  if(eqv(a,pr.area)){ streak++; solved++; score(); fb.innerHTML=`<div class="fb ok">נכון! השטח הוא ${val(pr.area)}.</div>`; return; }
+  streak=0; pr.tries++;
+  let msg;
+  if(eqv(a,pr.area*2)) msg='כמעט! כפלתם בסיס בגובה, אבל שכחתם לחלק ב-2.';
+  else if(eqv(a,-pr.area)||eqv(a,-pr.area*2)) msg='שטח לא יכול להיות שלילי. בסיס וגובה הם מרחקים, ולכן תמיד חיוביים.';
+  else if(pr.kind===2 && (eqv(a,Math.abs(pr.xA)*pr.b/2)||eqv(a,pr.xE*pr.b/2))) msg='הבסיס הוא מ-A עד E, לא מהראשית. מצאו את שתי הנקודות על ציר x וחסרו את הקטן מהגדול.';
+  else if(pr.kind===2 && eqv(a,Math.abs(pr.xE+pr.xA)*pr.b/2)) msg='בדקו את הבסיס: כשנקודה אחת שלילית, מחסרים מספר שלילי, וזה כמו לחבר. למשל <span class="eq">3 − (−2) = 5</span>.';
+  else msg='עוד לא. מצאו קודם את הקודקודים: איפה הקו (או הקווים) פוגשים את הצירים?';
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  drawPr(true);
+  $('prFb').innerHTML=`<div class="fb hint">צבענו את המשולש וסימנו את הקודקודים. הקו <span class="gr">הירוק</span> הוא הבסיס והקו <span class="bl">הכחול</span> הוא הגובה. כמה משבצות כל אחד?</div>`;
+};
+$('prShow').onclick=()=>{ drawPr(true); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solutionHTML()} נסו עכשיו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); score();
+})();
+</script>
+</body>
+</html>
