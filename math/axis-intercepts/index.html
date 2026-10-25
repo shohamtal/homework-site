@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>נקודות חיתוך עם הצירים · אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.opts{display:flex; flex-direction:column; gap:8px}
+.opts button{text-align:start; font-weight:600}
+.opts button.right{border-color:var(--ok); background:var(--ok-bg); color:var(--ok)}
+.opts button.wrong{border-color:var(--err); background:var(--err-bg); color:var(--err)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="axis-intercepts">
+<div class="wrap">
+<div id="sitebar"></div>
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · פונקציה קווית</div>
+  <h1>איפה הקו פוגש את הצירים?</h1>
+  <p class="lead">כל קו ישר (שלא שטוח) חוצה את שני הצירים. בנקודות האלה קל מאוד לחשב, כי אחד המספרים בהן הוא תמיד 0. כאן תלמדו למצוא את שתי הנקודות רק מתוך המשוואה.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#reverse">אתגר הפוך</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הסוד: אחד המספרים הוא 0</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חיתוך עם ציר y</h3>
+      <p>כל נקודה על ציר y (הציר האנכי) נמצאת בדיוק באמצע, ולכן ה-x שלה הוא 0. מציבים <span class="eq"><i>x</i> = 0</span> ומקבלים <span class="eq"><i>y</i> = <span class="b"><i>b</i></span></span>. הנקודה היא <span class="eq">(0, <i>b</i>)</span>.</p>
+      <svg class="g" id="ideaY" viewBox="0 0 240 240" role="img" aria-label="הקו y = 2x − 4 חותך את ציר y בנקודה (0, −4)"></svg>
+      <p>בקו <span class="eq"><i>y</i> = 2<i>x</i> − 4</span> הנקודה היא <span class="eq">(0, −4)</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>חיתוך עם ציר x</h3>
+      <p>כל נקודה על ציר x (הציר השוכב) נמצאת בגובה 0, ולכן ה-y שלה הוא 0. מציבים <span class="eq"><i>y</i> = 0</span> ופותרים את המשוואה כדי למצוא את x.</p>
+      <svg class="g" id="ideaX" viewBox="0 0 240 240" role="img" aria-label="הקו y = 2x − 4 חותך את ציר x בנקודה (2, 0)"></svg>
+      <p>בקו <span class="eq"><i>y</i> = 2<i>x</i> − 4</span>: <span class="eq">0 = 2<i>x</i> − 4</span>, לכן <span class="eq"><i>x</i> = 2</span>. הנקודה היא <span class="eq">(2, 0)</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>זהירות, מלכודת!</strong> בנקודה כותבים קודם את x ואחר כך את y: <span class="eq">(<i>x</i>, <i>y</i>)</span>. החיתוך עם ציר y הוא <span class="eq">(0, <i>b</i>)</span> ולא <span class="eq">(<i>b</i>, 0)</span>. טיפ לזכור: על ציר y, ה-x הוא 0. על ציר x, ה-y הוא 0.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: תזיזו ותראו</h2></div>
+  <p class="text">הזיזו את המחוונים. הנקודה <span class="b">הצהובה</span> היא החיתוך עם ציר y, והנקודה <span class="gr">הירוקה</span> היא החיתוך עם ציר x. בצד תראו איך מחשבים את הנקודה הירוקה.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq"></div>
+      <label class="slider" for="mRange"><span>שיפוע <span class="m">m</span></span><span class="eq" id="mVal"></span></label>
+      <input type="range" id="mRange" min="-4" max="4" step="0.5" value="2">
+      <label class="slider" for="bRange"><span>חיתוך <span class="b">b</span></span><span class="eq" id="bVal"></span></label>
+      <input type="range" class="hl" id="bRange" min="-5" max="5" step="1" value="-4">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-m="0" data-b="3">קו שטוח</button>
+          <button data-m="2" data-b="0">b = 0</button>
+          <button data-m="-0.5" data-b="2">שיפוע חצי</button>
+          <button data-m="3" data-b="2">תשובה עם שבר</button>
+          <button data-m="0.5" data-b="4">נקודה מחוץ לציור</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כש-b = 0 הקו עובר בראשית, ושתי הנקודות הן אותה נקודה <span class="eq">(0, 0)</span>. וקו שטוח כמו <span class="eq"><i>y</i> = 3</span> אף פעם לא פוגש את ציר x, כי הוא תמיד בגובה 3.</p>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">3</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (שבר)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">4</span><h2>תרגול: מצאו את שתי הנקודות</h2></div>
+  <p class="text">לכל משוואה מצאו את שתי נקודות החיתוך. אפשר לכתוב שבר עם קו נטוי, למשל <span class="eq">5/2</span> או <span class="eq">-4/3</span>.</p>
+  <div class="big-eq" id="prEq"></div>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="inputs">
+        <label for="prY">חיתוך עם ציר y: <span class="eq">(0, ?)</span><input id="prY" autocomplete="off"></label>
+        <label for="prX">חיתוך עם ציר x: <span class="eq">(?, 0)</span><input id="prX" autocomplete="off"></label>
+      </div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">משוואה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="reverse">
+  <div class="sec-head"><span class="sec-num">5</span><h2>אתגר הפוך: מהנקודות למשוואה</h2></div>
+  <p class="text">הפעם רואים את הקו ואת שתי נקודות החיתוך. איזו משוואה מתאימה? רמז: <span class="b">b</span> הוא הגובה של הנקודה הצהובה. את השיפוע מוצאים כשהולכים מנקודה לנקודה, משמאל לימין.</p>
+  <div class="lab">
+    <svg class="g" id="rvG" viewBox="0 0 240 240" role="img" aria-label="גרף לאתגר"></svg>
+    <div class="ctrl">
+      <div class="opts" id="rvOpts"></div>
+      <div id="rvFb" aria-live="polite"></div>
+      <div class="row"><button id="rvNew">קו חדש</button><span class="counter" id="rvCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<nav id="topicNav"></nav>
+<footer class="site">אתר שיעורי הבית · חשבון</footer>
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {MINUS,numTxt,fracHTML,signedFracHTML,fracTxt,eqHTML,eqText,parseNum,eqv,pick,draw}=G;
+const $=id=>document.getElementById(id);
+const inDraw=v=>Math.abs(v)<=5.0001;
+
+/* "2x", "−x", "½x" as HTML */
+function termHTML(m){ const c=m===1?'':m===-1?MINUS:signedFracHTML(m); return `<span class="m">${c}</span><i>x</i>`; }
+function rhsHTML(m,b){ let s=termHTML(m); if(b>0) s+=` + ${fracHTML(b)}`; if(b<0) s+=` ${MINUS} ${fracHTML(b)}`; return s; }
+const par=v=>v<0?`(${signedFracHTML(v)})`:signedFracHTML(v);
+/* the three solving lines for the x-intercept */
+function solveSteps(m,b){
+  const x=-b/m;
+  return [
+    `מציבים <span class="eq"><i>y</i> = 0</span>: <span class="eq">0 = ${rhsHTML(m,b)}</span>`,
+    `מעבירים את ${signedFracHTML(b)} לצד השני (והסימן מתהפך): <span class="eq">${termHTML(m)} = ${signedFracHTML(-b)}</span>`,
+    `מחלקים ב-${par(m)}: <span class="eq"><i>x</i> = ${signedFracHTML(-b)} ÷ ${par(m)} = ${signedFracHTML(x)}</span>`
+  ];
+}
+function pts(m,b,{labels=true,showX=true}={}){
+  const p=[{x:0,y:b,cls:'dot',label:labels?`(0, ${numTxt(b)})`:''}];
+  if(m!==0 && showX){ const x=-b/m; if(inDraw(x)) p.push({x,y:0,cls:'pt-ok',label:labels?`(${fracTxt(x)}, 0)`:''}); }
+  return p;
+}
+
+/* 1. idea */
+draw($('ideaY'),2,-4,{points:[{x:0,y:-4,cls:'dot',label:'(0, −4)'}]});
+draw($('ideaX'),2,-4,{points:[{x:2,y:0,cls:'pt-ok',label:'(2, 0)'}]});
+
+/* 2. lab */
+const mR=$('mRange'), bR=$('bRange');
+function lab(){
+  const m=+mR.value, b=+bR.value;
+  const p=pts(m,b); if(b===0) p.length=1, p[0].label='(0, 0)';
+  draw($('labG'),m,b,{points:p});
+  $('labEq').innerHTML=eqHTML(m,b);
+  $('mVal').innerHTML=signedFracHTML(m);
+  $('bVal').textContent=numTxt(b);
+  let t=`<div><span class="b">חיתוך עם ציר y:</span> מציבים <span class="eq"><i>x</i> = 0</span> ומקבלים <span class="eq"><i>y</i> = ${numTxt(b)}</span>. הנקודה <span class="eq">(0, ${numTxt(b)})</span>.</div>`;
+  if(m===0){
+    t+= b===0
+      ? `<div><span class="gr">חיתוך עם ציר x:</span> הקו <span class="eq"><i>y</i> = 0</span> הוא ציר x עצמו. הוא נוגע בציר בכל מקום.</div>`
+      : `<div><span class="gr">חיתוך עם ציר x:</span> אין. הקו שטוח ותמיד בגובה ${numTxt(b)}, אז הוא אף פעם לא מגיע לגובה 0.</div>`;
+  } else if(b===0){
+    t+=`<div><span class="gr">חיתוך עם ציר x:</span> b = 0, אז הקו עובר בראשית. שתי הנקודות הן אותה נקודה <span class="eq">(0, 0)</span>.</div>`;
+  } else {
+    const x=-b/m;
+    t+=`<div><span class="gr">חיתוך עם ציר x:</span></div>`+solveSteps(m,b).map(s=>`<div>${s}</div>`).join('');
+    t+=`<div>הנקודה <span class="eq">(${signedFracHTML(x)}, 0)</span>.${inDraw(x)?'':' היא רחוקה ולא נכנסת לציור, אבל היא קיימת.'}</div>`;
+  }
+  $('labExplain').innerHTML=t;
+}
+mR.addEventListener('input',lab); bR.addEventListener('input',lab);
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{mR.value=btn.dataset.m; bR.value=btn.dataset.b; lab();}));
+lab();
+
+/* 3. worked examples */
+function exSteps(m,b,intro){
+  const x=-b/m, s=solveSteps(m,b);
+  return [
+    [{},intro],
+    [{points:[{x:0,y:b,cls:'dot',label:`(0, ${numTxt(b)})`}]},`<strong>ציר y:</strong> מציבים <span class="eq"><i>x</i> = 0</span>. מה שנשאר הוא b, כלומר <span class="eq"><i>y</i> = ${numTxt(b)}</span>. הנקודה <span class="eq">(0, ${numTxt(b)})</span>.`],
+    [{points:[{x:0,y:b,cls:'dot'}]},'<strong>ציר x, שלב 1:</strong> '+s[0]],
+    [{points:[{x:0,y:b,cls:'dot'}]},'<strong>ציר x, שלב 2:</strong> '+s[1]],
+    [{points:pts(m,b)},'<strong>ציר x, שלב 3:</strong> '+s[2]+`. הנקודה <span class="eq">(${signedFracHTML(x)}, 0)</span>.`],
+    [{points:pts(m,b)},`<strong>בדיקה:</strong> מציבים <span class="eq"><i>x</i> = ${signedFracHTML(x)}</span> במשוואה. יוצא <span class="eq"><i>y</i> = 0</span>, בדיוק כמו שצריך על ציר x.`]
+  ];
+}
+const EX={A:{m:2,b:-4,steps:exSteps(2,-4,'נמצא את נקודות החיתוך של '+eqHTML(2,-4)+'.')},
+          B:{m:-0.5,b:2,steps:exSteps(-0.5,2,'הפעם השיפוע הוא שבר: '+eqHTML(-0.5,2)+'. השיטה אותה שיטה.')}};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [opt,txt]=e.steps[exI];
+  draw($('exG'),e.m,e.b,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* 4. practice */
+const MS=[1,2,3,4,-1,-2,-3,-4,0.5,-0.5];
+let pr={m:2,b:-4,tries:0,hint:0}, streak=0, solved=0;
+function newPr(){
+  let m,b,g=0;
+  do{ m=pick(MS); b=pick([-5,-4,-3,-2,-1,1,2,3,4,5]); g++; }
+  while((!inDraw(-b/m) || (m===pr.m&&b===pr.b) || (m===2&&b===-4)) && g<80);
+  pr={m,b,tries:0,hint:0};
+  $('prY').value=''; $('prX').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prEq').innerHTML=eqHTML(m,b);
+  draw($('prG'),null,0);
+}
+function diagX(a,m,b){
+  if(eqv(a,b/m)) return 'בחיתוך עם ציר x כמעט הצלחתם. כשמעבירים את b לצד השני של השוויון, הסימן שלו מתהפך. בדקו את הסימן.';
+  if(eqv(a,-b)||eqv(a,b)) return 'בחיתוך עם ציר x שכחתם לחלק ב-m. אחרי שמעבירים את b, צריך עוד לחלק במספר שליד ה-x.';
+  if(eqv(a,-m/b)||eqv(a,m/b)) return 'בחיתוך עם ציר x חילקתם הפוך. מחלקים את המספר שבצד השני במספר שליד ה-x.';
+  return 'החיתוך עם ציר x לא נכון. הציבו <span class="eq"><i>y</i> = 0</span> ופתרו את המשוואה שלב אחרי שלב.';
+}
+$('prCheck').onclick=()=>{
+  const y=parseNum($('prY').value), x=parseNum($('prX').value), {m,b}=pr, ax=-b/m;
+  const fb=$('prFb');
+  if(isNaN(y)||isNaN(x)){ fb.innerHTML='<div class="fb err">צריך למלא את שתי התיבות במספרים (שבר כותבים כמו 5/2).</div>'; return; }
+  if(eqv(y,b)&&eqv(x,ax)){
+    streak++; solved++;
+    fb.innerHTML=`<div class="fb ok">נכון! הנקודות הן <span class="eq">(0, ${numTxt(b)})</span> ו-<span class="eq">(${signedFracHTML(ax)}, 0)</span>.</div>`;
+    draw($('prG'),m,b,{points:pts(m,b)});
+  } else {
+    streak=0; pr.tries++;
+    const msgs=[];
+    if(eqv(y,ax)&&eqv(x,b)&&!eqv(b,ax)) msgs.push('החלפתם בין הצירים. ציר y הוא הציר האנכי, שם x = 0 ולכן y = b. ציר x הוא הציר השוכב, שם y = 0.');
+    else{
+      if(eqv(y,b)) msgs.push('החיתוך עם ציר y נכון.');
+      else if(eqv(y,m)) msgs.push('בחיתוך עם ציר y כתבתם את השיפוע. כשמציבים x = 0, האיבר עם ה-x נעלם. מה נשאר?');
+      else msgs.push('החיתוך עם ציר y לא נכון. הציבו <span class="eq"><i>x</i> = 0</span>. מה נשאר במשוואה?');
+      if(eqv(x,ax)) msgs.push('החיתוך עם ציר x נכון.'); else msgs.push(diagX(x,m,b));
+    }
+    fb.innerHTML=`<div class="fb err"><ul>${msgs.map(s=>'<li>'+s+'</li>').join('')}</ul></div>`;
+    if(pr.tries>=2) $('prShow').disabled=false;
+  }
+  $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {m,b}=pr;
+  if(pr.hint===1){ draw($('prG'),m,b); $('prFb').innerHTML='<div class="fb hint">ציירתי את הקו. איפה הוא חוצה את הציר האנכי? ואיפה את הציר השוכב? עכשיו בדקו את זה בחשבון.</div>'; }
+  else{ draw($('prG'),m,b,{points:pts(m,b,{labels:false})}); $('prFb').innerHTML='<div class="fb hint">סימנתי את שתי הנקודות. לציר y: הציבו <span class="eq"><i>x</i> = 0</span>. לציר x: הציבו <span class="eq"><i>y</i> = 0</span>, העבירו את b לצד השני וחלקו ב-m.</div>'; }
+};
+$('prShow').onclick=()=>{
+  const {m,b}=pr;
+  draw($('prG'),m,b,{points:pts(m,b)});
+  $('prFb').innerHTML=`<div class="fb hint"><div>ציר y: <span class="eq">(0, ${numTxt(b)})</span></div>${solveSteps(m,b).map(s=>'<div>'+s+'</div>').join('')}<div>אחר כך נסו משוואה חדשה.</div></div>`;
+};
+$('prNew').onclick=newPr;
+['prY','prX'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr();
+
+/* 5. reverse challenge */
+let rv=null, rvRight=0, rvDone=0;
+function newRv(){
+  let a,b,g=0;
+  do{ a=pick([-4,-3,-2,-1,1,2,3,4]); b=pick([-4,-3,-2,-1,1,2,3,4]); g++; } while(rv&&rv.a===a&&rv.b===b&&g<20);
+  const m=-b/a;
+  const opts=[{m,b,ok:true},{m:-m,b,why:'sign'}];
+  const third = a!==b ? {m,b:a,why:'swap'} : {m:2*m,b,why:'steep'};
+  opts.push(third);
+  for(let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [opts[i],opts[j]]=[opts[j],opts[i]];}
+  rv={a,b,m,opts,answered:false};
+  draw($('rvG'),m,b,{points:[{x:0,y:b,cls:'dot',label:`(0, ${numTxt(b)})`},{x:a,y:0,cls:'pt-ok',label:`(${numTxt(a)}, 0)`}]});
+  $('rvOpts').innerHTML=opts.map((o,i)=>`<button data-i="${i}"><span class="eq">${eqText(o.m,o.b)}</span></button>`).join('');
+  $('rvOpts').querySelectorAll('button').forEach(btn=>btn.onclick=()=>answerRv(+btn.dataset.i,btn));
+  $('rvFb').innerHTML='';
+}
+function explainRv(){
+  const {a,b,m}=rv;
+  const L=a<0?{x:a,y:0}:{x:0,y:b}, R=a<0?{x:0,y:b}:{x:a,y:0};
+  const dx=R.x-L.x, dy=R.y-L.y;
+  draw($('rvG'),m,b,{seg:{x1:L.x,y1:L.y,x2:R.x,y2:R.y},points:[{x:0,y:b,cls:'dot',label:`(0, ${numTxt(b)})`},{x:a,y:0,cls:'pt-ok',label:`(${numTxt(a)}, 0)`}]});
+  return `הנקודה הצהובה בגובה ${numTxt(b)}, לכן <span class="b">b = ${numTxt(b)}</span>. מהנקודה השמאלית לימנית זזים ${dx} ימינה ו-${Math.abs(dy)} ${dy>0?'למעלה':'למטה'}. לכן <span class="eq"><i>m</i> = ${signedFracHTML(dy)} ÷ ${dx} = ${signedFracHTML(m)}</span>.`;
+}
+function answerRv(i,btn){
+  if(rv.answered) return;
+  const o=rv.opts[i];
+  if(o.ok){
+    rv.answered=true; btn.classList.add('right'); rvRight++; rvDone++;
+    $('rvFb').innerHTML=`<div class="fb ok">נכון! <span style="font-weight:400;color:var(--ink)">${explainRv()}</span></div>`;
+  } else {
+    btn.classList.add('wrong'); btn.disabled=true;
+    const why=o.why==='sign'?'ה-b נכון, אבל בדקו את הכיוון. הקו עולה או יורד משמאל לימין?'
+      : o.why==='swap'?'במשוואה הזו b הוא החיתוך עם ציר x. אבל b הוא תמיד הגובה שבו הקו חוצה את ציר y, הנקודה הצהובה.'
+      : 'הכיוון וה-b נכונים, אבל השיפוע תלול מדי. ספרו כמה זזים ימינה וכמה למעלה או למטה בין שתי הנקודות.';
+    $('rvFb').innerHTML=`<div class="fb err">${why}</div>`;
+  }
+  $('rvCount').textContent=`צדקתם ב-${rvRight} קווים`;
+}
+$('rvNew').onclick=newRv;
+newRv();
+})();
+</script>
+</body>
+</html>

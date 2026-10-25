@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>משוואת ישר מתוך גרף · אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body data-root="../../" data-subject="math" data-topic="equation-from-graph">
+<div class="wrap">
+<div id="sitebar"></div>
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · פונקציה קווית</div>
+  <h1>שני מספרים, קו אחד</h1>
+  <p class="lead">כל קו ישר אפשר לכתוב בצורה <span class="eq"><i>y</i> = <span class="m"><i>m</i></span><i>x</i> + <span class="b"><i>b</i></span></span>.
+  מי שיודע לקרוא מהגרף את <span class="m">m</span> ואת <span class="b">b</span>, יודע למצוא את המשוואה של כל קו. בואו נלמד את זה, ואז תתאימו לבד 9 גרפים ל-9 משוואות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">מה זה m ו-b</a><a href="#lab">מעבדה</a><a href="#method">השיטה</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#match">משחק התאמה</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מה מספרים לנו m ו-b?</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3><span class="b">b</span> · נקודת החיתוך עם ציר y</h3>
+      <p>הגובה שבו הקו פוגש את הציר האנכי (ציר y). שם <span class="eq"><i>x</i> = 0</span>, ולכן נשאר רק <span class="eq"><i>y</i> = <i>b</i></span>.</p>
+      <svg class="g" id="introB" viewBox="0 0 240 240" role="img" aria-label="קו שחותך את ציר y בנקודה 2"></svg>
+      <p>כאן הקו חותך את ציר y ב-2, ולכן <span class="eq"><i>b</i> = 2</span>.</p>
+    </div>
+    <div class="mini">
+      <h3><span class="m">m</span> · השיפוע</h3>
+      <p>כמה הקו עולה (או יורד) על כל משבצת אחת שזזים <strong>ימינה</strong>.
+      חיובי: הקו עולה. שלילי: הקו יורד. אפס: הקו שטוח.</p>
+      <svg class="g" id="introM" viewBox="0 0 240 240" role="img" aria-label="קו עם שיפוע 2: משבצת ימינה, שתיים למעלה"></svg>
+      <p>כאן על כל משבצת ימינה, הקו עולה 2. לכן <span class="eq"><i>m</i> = 2</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>זהירות, מלכודת!</strong> בעברית קוראים מימין לשמאל, אבל גרף קוראים <strong>משמאל לימין</strong>, בכיוון שבו x גדל. קו "עולה" הוא קו שמטפס כשהולכים ימינה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו ותראו</h2></div>
+  <p class="text">הזיזו את המחוונים ותסתכלו מה קורה לקו. ה-<span class="b">b</span> מזיז את הקו למעלה ולמטה. ה-<span class="m">m</span> מסובב אותו.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq"></div>
+      <label class="slider" for="mRange"><span>שיפוע <span class="m">m</span></span><span class="eq" id="mVal"></span></label>
+      <input type="range" id="mRange" min="-4" max="4" step="0.25" value="1">
+      <label class="slider" for="bRange"><span>חיתוך <span class="b">b</span></span><span class="eq" id="bVal"></span></label>
+      <input type="range" id="bRange" class="hl" min="-5" max="5" step="1" value="1">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-m="0" data-b="3">מה קורה כש-m = 0?</button>
+          <button data-m="4" data-b="1">שיפוע 4</button>
+          <button data-m="0.25" data-b="1">שיפוע ¼</button>
+          <button data-m="-3" data-b="1">שיפוע שלילי</button>
+          <button data-m="2" data-b="0">b = 0</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: ככל שהמספר m <strong>רחוק יותר מאפס</strong> (כמו 4 או 3−), הקו תלול יותר. שבר קטן כמו ¼ נותן קו כמעט שטוח.</p>
+</section>
+
+<section class="card" id="method">
+  <div class="sec-head"><span class="sec-num">3</span><h2>השיטה: ארבע שאלות לכל גרף</h2></div>
+  <ol class="steps">
+    <li><div><strong>איפה הקו חותך את ציר y?</strong> המספר הזה הוא <span class="b">b</span>. אם הקו עובר בראשית (0,0), אז <span class="eq"><i>b</i> = 0</span> ואין מספר בסוף המשוואה.</div></li>
+    <li><div><strong>הקו עולה, יורד או שטוח?</strong> (משמאל לימין!) עולה: <span class="m">m</span> חיובי. יורד: <span class="m">m</span> שלילי, כלומר יש מינוס לפני ה-x. שטוח: אין x בכלל, המשוואה היא רק <span class="eq"><i>y</i> = מספר</span>.</div></li>
+    <li><div><strong>כמה הוא תלול?</strong> מהנקודה שעל ציר y זוזו משבצת אחת ימינה וספרו כמה משבצות הקו עלה או ירד. זה <span class="m">m</span>. אם אחרי משבצת אחת הקו לא נוחת על פינה של משבצת, המשיכו ימינה עד שהוא כן נוחת, ואז <span class="eq"><i>m</i> = עלייה ÷ צעדים</span>. למשל, 4 ימינה ו-1 למעלה זה <span class="eq"><i>m</i> = <span class="frac"><span>1</span><span>4</span></span></span>.</div></li>
+    <li><div><strong>בדיקה.</strong> בחרו עוד נקודה שהקו עובר בה, והציבו את ה-x שלה במשוואה. אם יוצא ה-y הנכון, צדקתם.</div></li>
+  </ol>
+  <div class="callout"><strong>טריק לתרגילי התאמה:</strong> קודם מצאו את b, ואז בדקו ברשימה כמה משוואות יש עם ה-b הזה. אם יש רק אחת, סיימתם. אם יש כמה, תכריעו ביניהן לפי הכיוון והתלילות.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">לחצו "הצעד הבא" ותראו איך משתמשים בשיטה.</p>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (שבר)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מה המשוואה?</h2></div>
+  <p class="text">כל פעם יופיע קו חדש. כתבו את m ואת b. שבר כותבים עם קו נטוי, למשל <span class="eq">1/2</span> או <span class="eq">-1/3</span>.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="inputs">
+        <label for="prM">m =<input id="prM" inputmode="text" autocomplete="off"></label>
+        <label for="prB">b =<input id="prB" inputmode="text" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">קו חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="match">
+  <div class="sec-head"><span class="sec-num">6</span><h2>משחק התאמה: 9 גרפים, 9 משוואות</h2></div>
+  <p class="text">לכל גרף בחרו משוואה ולחצו "בדיקה". אם טעיתם, תקבלו הסבר מה לא מסתדר, אבל לא את התשובה. צריכים עזרה? יש כפתור "רמז". כל משוואה מתאימה לגרף אחד בלבד.</p>
+  <div class="bank" id="bank"></div>
+  <div><div class="progress" id="hwProg"></div><div class="bar"><div id="hwBar"></div></div></div>
+  <div class="hw" id="hwGrid"></div>
+  <div id="done" class="fb ok" hidden></div>
+  <div class="row"><button id="hwReset">התחלה מחדש</button></div>
+</section>
+
+<nav id="topicNav"></nav>
+<footer class="site">אתר שיעורי הבית · חשבון</footer>
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,eqHTML,eqText,numTxt,signedFracHTML,fracTxt,runFor,parseNum,eqv,sx,sy,store}=G;
+const $=id=>document.getElementById(id);
+const steps=(n,word)=>n===1?`${word} אחת`:`${n} ${word}ות`;
+
+/* intro */
+draw($('introB'),0.5,2,{dot:true});
+draw($('introM'),2,-1,{tri:true,triLabels:true,dot:true});
+
+/* lab */
+const mR=$('mRange'), bR=$('bRange');
+function lab(){
+  const m=+mR.value, b=+bR.value;
+  draw($('labG'),m,b,{dot:true,tri:true,triLabels:true});
+  $('labEq').innerHTML=eqHTML(m,b);
+  $('mVal').innerHTML=signedFracHTML(m);
+  $('bVal').textContent=numTxt(b);
+  let t=`<div>הקו חותך את ציר y בגובה <span class="b">${numTxt(b)}</span>, בנקודה <span class="eq">(0, ${numTxt(b)})</span>.</div>`;
+  if(m===0) t+=`<div>השיפוע 0, ולכן הקו <strong>שטוח</strong>. אין x במשוואה, ה-y תמיד ${numTxt(b)}.</div>`;
+  else{
+    const n=runFor(m), k=Math.abs(m*n);
+    t+=`<div>הקו <strong>${m>0?'עולה':'יורד'}</strong>: על כל ${steps(n,'משבצ')} ימינה הוא ${m>0?'עולה':'יורד'} ${steps(k,'משבצ')}${n>1?` (כלומר <span class="eq"><i>m</i> = ${signedFracHTML(m)}</span>)`:''}.</div>`;
+  }
+  $('labExplain').innerHTML=t;
+}
+mR.addEventListener('input',lab); bR.addEventListener('input',lab);
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{mR.value=btn.dataset.m; bR.value=btn.dataset.b; lab();}));
+lab();
+
+/* worked examples */
+const EX={
+  A:{m:-2,b:4,steps:[
+    ()=>[{},'הנה קו. נמצא את המשוואה שלו בעזרת ארבע השאלות.'],
+    ()=>[{dot:true},'<strong>שאלה 1:</strong> איפה הקו חותך את ציר y? בנקודה הצהובה, בגובה 4. לכן <span class="b">b = 4</span>.'],
+    ()=>[{dot:true},'<strong>שאלה 2:</strong> כשהולכים משמאל לימין, הקו <strong>יורד</strong>. לכן השיפוע שלילי, ויהיה מינוס לפני ה-x.'],
+    ()=>[{dot:true,tri:true,triLabels:true},'<strong>שאלה 3:</strong> מהנקודה הצהובה זזים משבצת אחת ימינה, והקו ירד 2 משבצות. לכן <span class="m">m = −2</span>.'],
+    ()=>[{dot:true},'המשוואה: '+eqHTML(-2,4)],
+    ()=>[{dot:true,points:[{x:2,y:0,cls:'pt-ok'}]},'<strong>שאלה 4, בדיקה:</strong> הקו עובר גם בנקודה (2, 0). נציב x = 2: <span class="eq">−2·2 + 4 = 0</span>. יצא y = 0, בדיוק כמו בגרף.']
+  ]},
+  B:{m:0.5,b:-2,steps:[
+    ()=>[{},'עוד קו. הפעם השיפוע יוצא שבר.'],
+    ()=>[{dot:true},'<strong>שאלה 1:</strong> הקו חותך את ציר y בגובה 2−. לכן <span class="b">b = −2</span>.'],
+    ()=>[{dot:true},'<strong>שאלה 2:</strong> משמאל לימין הקו <strong>עולה</strong>, אבל לאט. השיפוע חיובי וקטן מ-1.'],
+    ()=>[{dot:true,tri:true,triLabels:true,run:1},'<strong>שאלה 3:</strong> משבצת אחת ימינה, והקו עלה רק חצי משבצת. קשה לספור חצאים, אז נמשיך ימינה...'],
+    ()=>[{dot:true,tri:true,triLabels:true,run:2},'...אחרי 2 משבצות ימינה הקו עלה בדיוק משבצת אחת ונחת על פינה. <span class="eq"><i>m</i> = 1 ÷ 2 = <span class="frac"><span>1</span><span>2</span></span></span>.'],
+    ()=>[{dot:true},'המשוואה: '+eqHTML(0.5,-2)],
+    ()=>[{dot:true,points:[{x:4,y:0,cls:'pt-ok'}]},'<strong>בדיקה:</strong> הקו עובר ב-(4, 0). נציב x = 4: <span class="eq">½·4 − 2 = 0</span>. מתאים.']
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [opt,txt]=e.steps[exI]();
+  draw($('exG'),e.m,e.b,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0;
+  $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();};
+$('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* matching game data: equations 1..9, and each graph's line [m, b, equation number] */
+const EQS=[null,[2,2],[0.5,2],[-2,3],[1,-3],[3,0],[-1,-1],[0,-4],[3,-2],[-1/3,1]];
+const H='אבגדהוזחט';
+const GR=[[-2,3,3],[0.5,2,2],[3,-2,8],[0,-4,7],[2,2,1],[-1,-1,6],[3,0,5],[-1/3,1,9],[1,-3,4]];
+
+/* practice */
+const USED=new Set(GR.map(g=>g[0].toFixed(3)+','+g[1]).concat(['-2.000,4','0.500,-2']));
+const MS=[-3,-2,-1,-0.5,-1/3,0,1/3,0.5,1,2,3,1.5,-1.5,0.25,-0.25];
+let pr={m:9,b:9,tries:0,hint:0}, streak=0, solved=0;
+function newPr(){
+  let m,b,guard=0;
+  do{ m=G.pick(MS); b=Math.floor(Math.random()*9)-4; guard++; }
+  while((USED.has(m.toFixed(3)+','+b) || (m===pr.m&&b===pr.b)) && guard<50);
+  pr={m,b,tries:0,hint:0};
+  $('prM').value=''; $('prB').value='';
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+  draw($('prG'),m,b);
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const m=parseNum($('prM').value), b=parseNum($('prB').value), fb=$('prFb');
+  if(isNaN(m)||isNaN(b)){ fb.innerHTML='<div class="fb err">צריך למלא גם את m וגם את b במספרים (שבר כותבים כמו 1/2).</div>'; return; }
+  if(eqv(m,pr.m)&&eqv(b,pr.b)){
+    streak++; solved++; score();
+    fb.innerHTML=`<div class="fb ok">נכון! ${eqHTML(pr.m,pr.b)}</div>`;
+    return;
+  }
+  streak=0; pr.tries++;
+  const msgs=[];
+  msgs.push(eqv(b,pr.b)?'ה-b נכון.':'ה-b לא נכון. חפשו איפה בדיוק הקו פוגש את ציר y, הציר האנכי.');
+  if(!eqv(m,pr.m)){
+    if(pr.m===0) msgs.push('הקו שטוח. מה השיפוע של קו שלא עולה ולא יורד?');
+    else if(Math.sign(m)!==Math.sign(pr.m)) msgs.push(`בדקו את הכיוון: משמאל לימין הקו ${pr.m>0?'עולה, אז m חיובי':'יורד, אז m שלילי'}.`);
+    else msgs.push('הכיוון נכון, אבל התלילות לא. ספרו שוב: כמה משבצות עולים או יורדים על כל צעד ימינה?');
+  } else msgs.push('ה-m נכון.');
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(x=>'<li>'+x+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  if(pr.hint===1){ draw($('prG'),pr.m,pr.b,{dot:true}); $('prFb').innerHTML='<div class="fb hint">סימנו בצהוב את הנקודה שבה הקו חותך את ציר y. מה הגובה שלה?</div>'; }
+  else{ draw($('prG'),pr.m,pr.b,{dot:true,tri:true}); $('prFb').innerHTML=`<div class="fb hint">${pr.m===0?'הקו שטוח לגמרי, הוא לא עולה ולא יורד.':'הקו הכחול המקווקו מראה כמה צעדים זזים ימינה ואז כמה עולים או יורדים. ספרו את המשבצות וחלקו: עלייה ÷ צעדים.'}</div>`; }
+};
+$('prShow').onclick=()=>{
+  draw($('prG'),pr.m,pr.b,{dot:true,tri:true,triLabels:true});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${eqHTML(pr.m,pr.b)}. תסתכלו על הנקודה הצהובה (זה b) ועל המשולש הכחול (זה m). אחר כך נסו קו חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+['prM','prB'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr(); score();
+
+/* matching game */
+const KEY='hw:equation-from-graph';
+const fresh=()=>({pick:Array(9).fill(''),ok:Array(9).fill(false),hint:Array(9).fill(0)});
+let state=store.get(KEY,null); if(!state||!state.pick||state.pick.length!==9) state=fresh();
+const save=()=>store.set(KEY,state);
+
+GR.forEach((g,i)=>{
+  const c=document.createElement('div'); c.className='hwc'; c.id='hw'+i;
+  c.innerHTML=`<div class="top"><span class="letter">גרף ${H[i]}</span><span class="st" style="color:var(--ok)" aria-hidden="true"></span></div>
+  <svg class="g" viewBox="0 0 240 240" role="img" aria-label="גרף ${H[i]}"></svg>
+  <label for="sel${i}" style="font-weight:700">המשוואה:</label>
+  <select id="sel${i}"></select>
+  <div class="row"><button class="primary chk">בדיקה</button><button class="hnt">רמז</button></div>
+  <div class="out" aria-live="polite"></div>`;
+  $('hwGrid').appendChild(c);
+  c.querySelector('select').addEventListener('change',e=>{state.pick[i]=e.target.value; state.ok[i]=false; c.querySelector('.out').innerHTML=''; save(); renderHW();});
+  c.querySelector('.chk').addEventListener('click',()=>check(i));
+  c.querySelector('.hnt').addEventListener('click',()=>hint(i));
+});
+
+function renderHW(){
+  const used={}; state.pick.forEach((p,i)=>{ if(p) used[p]=(used[p]||[]).concat(H[i]); });
+  GR.forEach((g,i)=>{
+    const c=$('hw'+i), sel=c.querySelector('select');
+    let o='<option value="">בחרו משוואה…</option>';
+    for(let k=1;k<=9;k++){
+      const others=(used[k]||[]).filter(l=>l!==H[i]);
+      o+=`<option value="${k}">${k}.  ${eqText(EQS[k][0],EQS[k][1])}${others.length?'  (נבחרה לגרף '+others.join(',')+')':''}</option>`;
+    }
+    sel.innerHTML=o; sel.value=state.pick[i];
+    c.classList.toggle('solved',state.ok[i]);
+    c.querySelector('.st').textContent=state.ok[i]?'✓':'';
+    const lv=state.ok[i]?0:state.hint[i];
+    draw(c.querySelector('svg'),g[0],g[1],{dot:lv>=1, tri:lv>=3});
+  });
+  $('bank').innerHTML=EQS.slice(1).map((e,k)=>{const n=k+1; const done=state.ok.some((ok,i)=>ok&&state.pick[i]==n);
+    return `<span class="chip ${done?'done':''}">${n}. ${eqHTML(e[0],e[1])}</span>`;}).join('');
+  const n=state.ok.filter(Boolean).length;
+  $('hwProg').textContent=`פתרתם ${n} מתוך 9`;
+  $('hwBar').style.width=(n/9*100)+'%';
+  const done=$('done');
+  done.hidden=n!==9;
+  if(n===9) done.innerHTML=`<h3 style="margin-bottom:6px">כל הכבוד! פתרתם את כל ההתאמות 🎉</h3>
+      <p>בדיקה אחרונה: בחרו גרף אחד ותסבירו למישהו בבית איך מצאתם לו את b ואת m. מי שמצליח להסביר, באמת יודע.</p>`;
+}
+
+function check(i){
+  const out=$('hw'+i).querySelector('.out'), p=+state.pick[i];
+  if(!p){ out.innerHTML='<div class="fb err">קודם בחרו משוואה מהרשימה.</div>'; return; }
+  const [am,ab,acc]=GR[i];
+  if(p===acc){ state.ok[i]=true; save(); renderHW(); $('hw'+i).querySelector('.out').innerHTML='<div class="fb ok">נכון!</div>'; return; }
+  const [m,b]=EQS[p], msgs=[];
+  if(b!==ab) msgs.push(`במשוואה שבחרתם b = ${numTxt(b)}, כלומר הקו צריך לחתוך את ציר y בגובה ${numTxt(b)}. האם הקו בגרף באמת עובר שם?`);
+  if(!eqv(m,am)){
+    if(m===0) msgs.push('המשוואה שבחרתם היא קו שטוח (אין בה x). הקו בגרף שטוח?');
+    else if(am===0) msgs.push('במשוואה שבחרתם יש x, אז הקו שלה עולה או יורד. איך נראה הקו בגרף?');
+    else if(Math.sign(m)!==Math.sign(am)) msgs.push(`השיפוע במשוואה שבחרתם ${m>0?'חיובי, אז הקו צריך לעלות':'שלילי, אז הקו צריך לרדת'} משמאל לימין. מה הקו בגרף עושה?`);
+    else { const n=runFor(m), k=Math.round(Math.abs(m*n));
+      msgs.push(`הכיוון נכון, אבל בדקו את התלילות: בשיפוע ${fracTxt(m)} הקו ${m>0?'עולה':'יורד'} ${steps(k,'משבצ')} על כל ${steps(n,'משבצ')} ימינה. ספרו משבצות בגרף.`); }
+  }
+  if(!msgs.length) msgs.push('לא בדיוק. נסו שוב בעזרת השיטה.');
+  state.ok[i]=false; save(); renderHW();
+  $('hw'+i).querySelector('.out').innerHTML=`<div class="fb err">עוד לא. <ul>${msgs.map(x=>'<li>'+x+'</li>').join('')}</ul></div>`;
+}
+
+function hint(i){
+  if(state.ok[i]) return;
+  const am=GR[i][0];
+  state.hint[i]=Math.min(state.hint[i]+1,3); save(); renderHW();
+  const lv=state.hint[i];
+  const parts=['<strong>רמז 1:</strong> סימנו בצהוב איפה הקו חותך את ציר y. מה הגובה? זה ה-b. כמה משוואות ברשימה יש עם ה-b הזה?'];
+  if(lv>=2) parts.push('<strong>רמז 2:</strong> '+(am===0?'הקו שטוח לגמרי. איזו משוואה אין בה x בכלל?':`משמאל לימין הקו <strong>${am>0?'עולה':'יורד'}</strong>, אז השיפוע ${am>0?'חיובי':'שלילי (יש מינוס לפני ה-x)'}.`));
+  if(lv>=3) parts.push('<strong>רמז 3:</strong> '+(am===0?'b הוא התשובה כולה.':'הקו הכחול מתחיל בנקודה הצהובה, זז ימינה ואז עולה או יורד עד הקו. ספרו משבצות: עלייה ÷ צעדים ימינה = m.'));
+  $('hw'+i).querySelector('.out').innerHTML=`<div class="fb hint">${parts.join('<br>')}</div>`;
+}
+
+$('hwReset').onclick=()=>{state=fresh(); save(); document.querySelectorAll('.hwc .out').forEach(o=>o.innerHTML=''); renderHW();};
+renderHW();
+})();
+</script>
+</body>
+</html>

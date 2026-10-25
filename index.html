@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/index.css">
+</head>
+<body>
+<div class="wrap">
+<header class="page">
+  <div class="eyebrow">הסברים · מעבדות · תרגול</div>
+  <h1>אתר שיעורי הבית</h1>
+  <p class="lead">כל נושא מקבל עמוד משלו: הסבר פשוט, מעבדה עם מחוונים שאפשר להזיז, דוגמה פתורה צעד אחרי צעד, ותרגול שבודק אתכם ונותן רמזים במקום תשובות.</p>
+  <label class="search" for="q"><span class="sr">חיפוש נושא</span>
+    <input id="q" type="search" placeholder="חפשו נושא, למשל: שיפוע" autocomplete="off">
+  </label>
+</header>
+
+<section class="card">
+  <h2>מקצועות</h2>
+  <div class="subjects" id="subjects"></div>
+</section>
+
+<section class="card">
+  <h2>תוכן עניינים</h2>
+  <div id="toc"></div>
+  <p class="empty-msg" id="none" hidden>לא מצאנו נושא כזה. נסו מילה אחרת.</p>
+</section>
+
+<footer class="site">נושאים חדשים יתווספו לפי שיעורי הבית שמגיעים הביתה.</footer>
+</div>
+<script src="assets/topics.js"></script>
+<script src="assets/toc.js"></script>
+<script>
+document.getElementById('subjects').innerHTML=SITE.subjects.map(s=>{
+  const n=s.chapters.reduce((a,c)=>a+c.topics.length,0);
+  return `<a class="subject" href="${s.id}/"><span class="subject-name">${s.name}</span><span>${s.desc}</span><small>${n} נושאים</small></a>`;
+}).join('');
+TOC.render(document.getElementById('toc'), SITE.subjects, './', document.getElementById('q'), document.getElementById('none'));
+</script>
+</body>
+</html>

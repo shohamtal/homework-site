@@ -1,0 +1,27 @@
+/* Home page and subject pages: subject tiles + table of contents */
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+.search input{width:100%; max-width:420px; font:1.05rem var(--f-body); padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--card); color:var(--ink)}
+
+.subjects{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px}
+.subject{display:flex; flex-direction:column; gap:4px; text-decoration:none; color:var(--ink); border:1px solid var(--border); border-radius:12px; padding:16px; background:var(--paper)}
+.subject:hover{border-color:var(--line)}
+.subject-name{font-family:var(--f-display); font-size:1.6rem; color:var(--line)}
+.subject small{color:var(--muted); font-weight:700}
+
+.toc-subject{display:flex; flex-direction:column; gap:16px}
+.toc-subject + .toc-subject{margin-top:24px}
+.toc-sname a{color:var(--line); text-decoration:none; font-size:1.5rem}
+.toc-chapter{display:flex; flex-direction:column; gap:10px}
+.toc-chead{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; border-bottom:2px solid var(--ink); padding-bottom:4px}
+.toc-cname{font-family:var(--f-display); font-size:1.3rem}
+.toc-grade{color:var(--muted); font-weight:700; font-size:.9rem}
+.toc-list{list-style:none; margin:0; padding:0; counter-reset:t; display:flex; flex-direction:column; gap:8px}
+.toc-list li{counter-increment:t}
+.toc-list a{display:grid; grid-template-columns:2.2em minmax(0,1fr); column-gap:10px; text-decoration:none; color:var(--ink); padding:10px 12px; border-radius:10px; border:1px solid transparent}
+.toc-list a::before{content:counter(t); grid-row:1 / span 3; font-family:var(--f-display); font-size:1.3rem; color:var(--line); width:1.9em; height:1.9em; border-radius:50%; border:2px solid var(--line); display:grid; place-items:center}
+.toc-list a:hover{background:var(--paper); border-color:var(--border)}
+.toc-title{font-weight:800; font-size:1.1rem}
+.toc-desc{color:var(--muted)}
+.toc-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px}
+.toc-tags span{font-size:.8rem; border:1px solid var(--border); border-radius:999px; padding:0 8px; color:var(--muted)}
+.empty-msg{color:var(--muted)}

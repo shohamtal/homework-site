@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>שיפוע בין שתי נקודות · אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc{display:flex; flex-direction:column; gap:4px}
+.calc .ln-row{display:flex; flex-wrap:wrap; gap:6px; align-items:baseline}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="slope-two-points">
+<div class="wrap">
+<div id="sitebar"></div>
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · פונקציה קווית</div>
+  <h1>שיפוע בין שתי נקודות</h1>
+  <p class="lead">לפעמים אין לנו גרף, יש רק שתי נקודות. גם מהן אפשר לחשב את השיפוע <span class="m">m</span>. צריך רק לבדוק כמה עלינו וכמה זזנו ימינה.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bonus">אתגר</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">בנושא הקודם ספרנו משבצות: מתחילים בנקודה, זזים ימינה, ובודקים כמה הקו עלה. השיפוע הוא:</p>
+  <div class="big-eq"><span class="eq"><span class="m"><i>m</i></span> = <span class="frac"><span>כמה עלינו</span><span>כמה זזנו ימינה</span></span></span></div>
+  <p class="text">עם שתי נקודות <span class="bl">A</span> ו-<span class="bl">B</span> עושים בדיוק את אותו דבר, רק עם חיסור במקום ספירה:</p>
+  <div class="big-eq"><span class="eq"><span class="m"><i>m</i></span> = <span class="frac"><span><i>y</i><sub>2</sub> − <i>y</i><sub>1</sub></span><span><i>x</i><sub>2</sub> − <i>x</i><sub>1</sub></span></span></span></div>
+  <div class="two">
+    <div class="mini">
+      <svg class="g" id="ideaG" viewBox="0 0 240 240" role="img" aria-label="שתי נקודות ומשולש בין הנקודות"></svg>
+    </div>
+    <div class="mini">
+      <p><span class="bl">A</span> = <span class="eq">(1, 1)</span> ו-<span class="bl">B</span> = <span class="eq">(3, 5)</span>.</p>
+      <p>למעלה בשבר: כמה עלינו. <span class="eq">5 − 1 = 4</span>.</p>
+      <p>למטה בשבר: כמה זזנו ימינה. <span class="eq">3 − 1 = 2</span>.</p>
+      <p>השיפוע: <span class="eq"><i>m</i> = <span class="frac"><span>4</span><span>2</span></span> = 2</span>. בכל משבצת ימינה הקו עולה 2.</p>
+    </div>
+  </div>
+  <div class="callout">המשולש המקווקו הוא אותו משולש מהנושא הקודם. הצלע השוכבת היא החיסור של ה-x. הצלע העומדת היא החיסור של ה-y.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו את הנקודות</h2></div>
+  <p class="text">הזיזו את המחוונים. תראו איך החישוב משתנה יחד עם המשולש.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <label class="slider" for="x1"><span>A: ה-x שלה</span><span class="eq" id="x1v"></span></label>
+      <input type="range" class="blue" id="x1" min="-5" max="5" step="1" value="1">
+      <label class="slider" for="y1"><span>A: ה-y שלה</span><span class="eq" id="y1v"></span></label>
+      <input type="range" class="blue" id="y1" min="-5" max="5" step="1" value="1">
+      <label class="slider" for="x2"><span>B: ה-x שלה</span><span class="eq" id="x2v"></span></label>
+      <input type="range" class="hl" id="x2" min="-5" max="5" step="1" value="3">
+      <label class="slider" for="y2"><span>B: ה-y שלה</span><span class="eq" id="y2v"></span></label>
+      <input type="range" class="hl" id="y2" min="-5" max="5" step="1" value="5">
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="4,3,0,1">B משמאל ל-A</button>
+          <button data-p="-3,2,3,2">קו שטוח</button>
+          <button data-p="2,-3,2,4">קו עומד</button>
+          <button data-p="-2,4,2,-4">שיפוע שלילי</button>
+          <button data-p="-4,-1,4,1">שיפוע שבר</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: אם מחליפים בין A ל-B, השיפוע לא משתנה. זה אותו קו.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שתי מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אותו סדר בשני החיסורים</h3>
+      <p>אם למעלה עשיתם "B פחות A", גם למטה עושים "B פחות A".</p>
+      <p>מחליפים את הסדר בשניהם? יוצאת אותה תשובה: <span class="eq"><span class="frac"><span>−4</span><span>−2</span></span> = 2</span>.</p>
+      <p>מחליפים רק באחד? הסימן יוצא הפוך: <span class="eq"><span class="frac"><span>4</span><span>−2</span></span> = −2</span>. זו טעות.</p>
+    </div>
+    <div class="mini">
+      <h3>ה-y למעלה, ה-x למטה</h3>
+      <p>בשבר, העלייה (ה-y) תמיד למעלה. הצעדים ימינה (ה-x) תמיד למטה.</p>
+      <p>אם הפכתם, יצא <span class="eq"><span class="frac"><span>2</span><span>4</span></span></span> במקום <span class="eq"><span class="frac"><span>4</span><span>2</span></span></span>. זה קו אחר לגמרי.</p>
+      <p>טיפ לזכירה: <strong>y גבוה, x נמוך</strong>. ציר y עומד, אז הוא למעלה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ומה אם ל-A ול-B יש אותו x?</strong> אז למטה בשבר יוצא 0, ואסור לחלק באפס. הקו עומד, ואין לו שיפוע.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (שיפוע שלילי)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מה השיפוע?</h2></div>
+  <p class="text">כל פעם יופיעו שתי נקודות חדשות. חשבו את השיפוע וכתבו אותו. שבר כותבים עם קו נטוי, למשל <span class="eq">1/2</span> או <span class="eq">-3/4</span>. לא חייבים לצמצם.</p>
+  <div class="big-eq" id="prPts" style="font-size:1.5rem"></div>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="inputs">
+        <label for="prM">m =<input id="prM" inputmode="text" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">נקודות חדשות</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="bonus">
+  <div class="sec-head"><span class="sec-num">6</span><h2>אתגר: מי על הקו?</h2></div>
+  <p class="text" id="bnQ"></p>
+  <div class="choices" id="bnChoices"></div>
+  <div class="row"><button id="bnCheck" class="primary">בדיקה</button><button id="bnNew">אתגר חדש</button></div>
+  <div id="bnFb" aria-live="polite"></div>
+</section>
+
+<nav id="topicNav"></nav>
+<footer class="site">אתר שיעורי הבית · חשבון</footer>
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,signedFracHTML,fracHTML,eqv,parseNum,pick,toFrac,MINUS}=G;
+const $=id=>document.getElementById(id);
+const P=(x,y)=>`<span class="eq">(${numTxt(x)}, ${numTxt(y)})</span>`;
+const paren=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const sub=(a,b)=>`<span class="eq">${numTxt(a)} − ${paren(b)} = ${numTxt(a-b)}</span>`;
+
+/* draws two points, the step triangle from A to B and the line through them */
+function drawTwo(svg,x1,y1,x2,y2,opt={}){
+  const pts=[{x:x1,y:y1,label:'A'},{x:x2,y:y2,label:'B',cls:'pt'}];
+  const o={points:pts};
+  if(opt.seg!==false && (x1!==x2||y1!==y2)) { o.seg={x1,y1,x2,y2}; o.segLabels=opt.labels!==false; }
+  if(opt.line===false){ draw(svg,null,0,o); return; }
+  if(x1===x2){ if(y1!==y2) o.vx=x1; draw(svg,null,0,o); return; }
+  const m=(y2-y1)/(x2-x1); draw(svg,m,y1-m*x1,o);
+}
+
+/* idea */
+drawTwo($('ideaG'),1,1,3,5);
+
+/* lab */
+const R=['x1','y1','x2','y2'].map($);
+function lab(){
+  const [x1,y1,x2,y2]=R.map(r=>+r.value);
+  R.forEach((r,i)=>$(r.id+'v').textContent=numTxt(+r.value));
+  drawTwo($('labG'),x1,y1,x2,y2);
+  const dy=y2-y1, dx=x2-x1;
+  let t=`<div><span class="bl">A</span> = ${P(x1,y1)} · <span class="bl">B</span> = ${P(x2,y2)}</div>`;
+  if(dx===0&&dy===0){ $('labCalc').innerHTML=t+'<div>A ו-B באותו מקום. צריך שתי נקודות שונות כדי לקבל קו.</div>'; return; }
+  t+=`<div class="ln-row"><strong>שינוי ב-y:</strong> ${sub(y2,y1)}</div>`;
+  t+=`<div class="ln-row"><strong>שינוי ב-x:</strong> ${sub(x2,x1)}</div>`;
+  if(dx===0) t+=`<div><strong>שיפוע:</strong> למטה בשבר יצא 0. לא מחלקים באפס, ולכן <strong>אין שיפוע</strong>. הקו עומד.</div>`;
+  else{
+    const m=dy/dx;
+    const [n,d]=toFrac(Math.abs(m));
+    const simple = d!==Math.abs(dx) || n!==Math.abs(dy);
+    t+=`<div class="ln-row"><strong>שיפוע:</strong> <span class="eq"><i>m</i> = <span class="frac"><span>${numTxt(dy)}</span><span>${numTxt(dx)}</span></span>${simple||dx<0?' = <span class="m">'+signedFracHTML(m)+'</span>':''}</span></div>`;
+    if(dy===0) t+='<div>למעלה בשבר יצא 0, אז השיפוע 0. הקו שטוח.</div>';
+    else t+=`<div>הקו <strong>${m>0?'עולה':'יורד'}</strong>${dx<0?'. B משמאל ל-A, אז זזנו שמאלה, אבל גם העלייה התהפכה. התשובה יוצאת נכונה.':'.'}</div>`;
+  }
+  $('labCalc').innerHTML=t;
+}
+R.forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('.tries button').forEach(b=>b.addEventListener('click',()=>{b.dataset.p.split(',').forEach((v,i)=>R[i].value=v); lab();}));
+lab();
+
+/* worked examples */
+const EX={
+  A:{p:[1,2,4,8],steps:[
+    o=>[{seg:false,line:false},`נתונות שתי נקודות: <span class="bl">A</span> = ${P(1,2)} ו-<span class="bl">B</span> = ${P(4,8)}. מה השיפוע של הקו שעובר דרכן?`],
+    o=>[{line:false,labels:false},'מציירים משולש מ-A ל-B: קודם ימינה, אחר כך למעלה.'],
+    o=>[{line:false},`<strong>כמה עלינו?</strong> מחסרים את ה-y: ${sub(8,2)}.`],
+    o=>[{line:false},`<strong>כמה זזנו ימינה?</strong> מחסרים את ה-x באותו סדר: ${sub(4,1)}.`],
+    o=>[{},`<strong>מחלקים:</strong> <span class="eq"><i>m</i> = <span class="frac"><span>6</span><span>3</span></span> = <span class="m">2</span></span>. הקו עולה 2 בכל משבצת ימינה.`]
+  ]},
+  B:{p:[-2,3,2,1],steps:[
+    o=>[{seg:false,line:false},`נתונות שתי נקודות: <span class="bl">A</span> = ${P(-2,3)} ו-<span class="bl">B</span> = ${P(2,1)}.`],
+    o=>[{line:false,labels:false},'מ-A ל-B זזים ימינה, ואז <strong>יורדים</strong>. כבר עכשיו ברור שהשיפוע יהיה שלילי.'],
+    o=>[{line:false},`<strong>שינוי ב-y:</strong> ${sub(1,3)}. ירדנו 2.`],
+    o=>[{line:false},`<strong>שינוי ב-x:</strong> ${sub(2,-2)}. זהירות: מינוס של מינוס זה פלוס.`],
+    o=>[{},`<strong>מחלקים:</strong> <span class="eq"><i>m</i> = <span class="frac"><span>−2</span><span>4</span></span> = <span class="m">−${fracHTML(0.5)}</span></span>. בכל 2 משבצות ימינה הקו יורד משבצת אחת.`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [opt,txt]=e.steps[exI]();
+  drawTwo($('exG'),...e.p,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice */
+let pr={}, streak=0, solved=0;
+const rnd=()=>Math.floor(Math.random()*9)-4;
+function newPr(){
+  let x1,y1,x2,y2;
+  do{ x1=rnd(); y1=rnd(); x2=rnd(); y2=rnd(); } while(x1===x2 || (x1===pr.x1&&y1===pr.y1&&x2===pr.x2&&y2===pr.y2));
+  pr={x1,y1,x2,y2,m:(y2-y1)/(x2-x1),tries:0};
+  $('prPts').innerHTML=`<span class="bl">A</span> = ${P(x1,y1)} &nbsp; <span class="bl">B</span> = ${P(x2,y2)}`;
+  $('prM').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  drawTwo($('prG'),x1,y1,x2,y2,{seg:false,line:false});
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const v=parseNum($('prM').value), fb=$('prFb');
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר או שבר, למשל 2 או -1/2.</div>'; return; }
+  const dy=pr.y2-pr.y1, dx=pr.x2-pr.x1;
+  if(eqv(v,pr.m)){ streak++; solved++; streakTxt();
+    fb.innerHTML=`<div class="fb ok">נכון! <span class="eq"><i>m</i> = ${signedFracHTML(pr.m)}</span></div>`;
+    drawTwo($('prG'),pr.x1,pr.y1,pr.x2,pr.y2); return; }
+  streak=0; pr.tries++; streakTxt();
+  let msg;
+  if(dy!==0 && eqv(v,dx/dy) && !eqv(dx/dy,-pr.m)) msg='נראה שהפכתם את השבר. ה-y (כמה עלינו) למעלה, וה-x (כמה זזנו) למטה.';
+  else if(dy!==0 && eqv(v,-pr.m)) msg='הסימן הפוך. כנראה שבחיסור אחד עשיתם B פחות A, ובשני A פחות B. בדקו שהסדר זהה בשניהם.';
+  else if(dy!==0 && eqv(v,-dx/dy)) msg='גם השבר הפוך וגם הסימן. ה-y למעלה, ה-x למטה, ואותו סדר בשני החיסורים.';
+  else if(dy===0) msg='שימו לב ל-y של שתי הנקודות. כמה עלינו?';
+  else msg='עוד לא. חשבו שוב כל חיסור לבד: קודם ה-y, אחר כך ה-x. זהירות עם מינוסים.';
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  drawTwo($('prG'),pr.x1,pr.y1,pr.x2,pr.y2,{line:false,labels:false});
+  $('prFb').innerHTML='<div class="fb hint">המשולש המקווקו הולך מ-A ל-B. ספרו כמה משבצות הוא זז ימינה או שמאלה (ה-x), וכמה למעלה או למטה (ה-y).</div>';
+};
+$('prShow').onclick=()=>{
+  const {x1,y1,x2,y2,m}=pr;
+  drawTwo($('prG'),x1,y1,x2,y2);
+  $('prFb').innerHTML=`<div class="fb hint calc"><div><strong>שינוי ב-y:</strong> ${sub(y2,y1)}</div><div><strong>שינוי ב-x:</strong> ${sub(x2,x1)}</div><div><strong>שיפוע:</strong> <span class="eq"><i>m</i> = <span class="frac"><span>${numTxt(y2-y1)}</span><span>${numTxt(x2-x1)}</span></span> = ${signedFracHTML(m)}</span></div><div>עכשיו נסו נקודות חדשות.</div></div>`;
+};
+$('prNew').onclick=newPr;
+$('prM').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+
+/* bonus: which point is on the line? */
+let bn={}, bnPick=null;
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function newBn(){
+  const m=pick([2,-1,0.5,-2,3,1,-0.5,1.5,-3]);
+  const [n0,d]=toFrac(Math.abs(m)), n=n0*Math.sign(m);
+  const px=Math.floor(Math.random()*5)-3, py=Math.floor(Math.random()*5)-2;
+  const good={x:px+d,y:py+n};
+  const cands=[{x:px+n0,y:py+(m>0?d:-d)},{x:px+d,y:py-n},{x:px+d,y:py+n+1},{x:px-d,y:py+n},{x:px+d+1,y:py+n}];
+  const seen=new Set([good.x+','+good.y]), wrong=[];
+  cands.forEach(c=>{ const k=c.x+','+c.y; if(!seen.has(k) && !eqv(c.y-py,m*(c.x-px)) && wrong.length<2){ seen.add(k); wrong.push(c); } });
+  bn={m,px,py,n,d,good,opts:shuffle([{...good,ok:true},...wrong])}; bnPick=null;
+  $('bnQ').innerHTML=`קו עובר בנקודה ${P(px,py)}, והשיפוע שלו <span class="eq"><i>m</i> = <span class="m">${signedFracHTML(m)}</span></span>. איזו מהנקודות האלה נמצאת גם היא על הקו?`;
+  $('bnChoices').innerHTML=bn.opts.map((o,i)=>`<button data-i="${i}" aria-pressed="false">${P(o.x,o.y)}</button>`).join('');
+  $('bnChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{bnPick=+b.dataset.i;
+    $('bnChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));});
+  $('bnFb').innerHTML='';
+}
+$('bnCheck').onclick=()=>{
+  if(bnPick===null){ $('bnFb').innerHTML='<div class="fb err">קודם בחרו נקודה.</div>'; return; }
+  const o=bn.opts[bnPick], dy=o.y-bn.py, dx=o.x-bn.px;
+  const how=`מ-${P(bn.px,bn.py)} ל-${P(o.x,o.y)}: עלינו ${numTxt(dy)} וזזנו ${numTxt(dx)}, אז השיפוע ${dx===0?'לא קיים':signedFracHTML(dy/dx)}.`;
+  $('bnFb').innerHTML=o.ok
+    ? `<div class="fb ok">נכון! ${how} בדיוק כמו השיפוע של הקו.</div>`
+    : `<div class="fb err">לא הפעם. ${how} זה לא השיפוע של הקו. חשבו את השיפוע לכל נקודה ובדקו איזו מתאימה.</div>`;
+};
+$('bnNew').onclick=newBn;
+newBn();
+})();
+</script>
+</body>
+</html>

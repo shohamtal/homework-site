@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>חשבון · אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/index.css">
+</head>
+<body data-root="../" data-subject="math">
+<div class="wrap">
+<div id="sitebar"></div>
+<header class="page">
+  <div class="eyebrow">מקצוע</div>
+  <h1>חשבון</h1>
+  <p class="lead">הנושאים מסודרים לפי פרקים. כדאי ללמוד לפי הסדר, כי כל נושא נשען על הקודם.</p>
+  <label class="search" for="q"><span class="sr">חיפוש נושא</span>
+    <input id="q" type="search" placeholder="חפשו נושא בחשבון" autocomplete="off">
+  </label>
+</header>
+<section class="card">
+  <div id="toc"></div>
+  <p class="empty-msg" id="none" hidden>לא מצאנו נושא כזה. נסו מילה אחרת.</p>
+</section>
+<footer class="site">אתר שיעורי הבית · חשבון</footer>
+</div>
+<script src="../assets/topics.js"></script>
+<script src="../assets/nav.js"></script>
+<script src="../assets/toc.js"></script>
+<script>
+TOC.render(document.getElementById('toc'), SITE.subjects.filter(s=>s.id==='math'), '../', document.getElementById('q'), document.getElementById('none'), {hideSubject:true});
+</script>
+</body>
+</html>

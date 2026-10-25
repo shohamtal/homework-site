@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ציור ישר לפי משוואה · אתר שיעורי הבית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.vt td.lit{background:var(--hint-bg)}
+.vt td.ok{background:var(--ok-bg)}
+.vt td.bad{background:var(--err-bg)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="draw-line">
+<div class="wrap">
+<div id="sitebar"></div>
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · פונקציה קווית</div>
+  <h1>מציירים קו מתוך משוואה</h1>
+  <p class="lead">קיבלתם משוואה כמו <span class="eq"><i>y</i> = 2<i>x</i> − 3</span> וצריך לצייר את הקו? מספיק למצוא <strong>שתי נקודות</strong> שהקו עובר בהן, ולחבר אותן בסרגל. כאן תלמדו שתי דרכים למצוא את הנקודות האלה.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#ways">שתי דרכים</a><a href="#lab">מעבדה</a><a href="#example">דוגמה פתורה</a><a href="#table">השלימו טבלה</a><a href="#click">ציירו בעצמכם</a>
+  </nav>
+</header>
+
+<section class="card" id="ways">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שתי דרכים לצייר קו</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>דרך א · טבלת ערכים</h3>
+      <p>בוחרים כמה ערכים של x (למשל 0, 1, 2). מציבים כל אחד במשוואה ומחשבים את y. כל זוג (x, y) הוא נקודה. מסמנים את הנקודות ומחברים.</p>
+      <div class="scroll-x"><table class="vt" aria-label="טבלת ערכים ל y = 2x − 3">
+        <tr><th>x</th><td>0</td><td>1</td><td>2</td></tr>
+        <tr><th>y</th><td>−3</td><td>−1</td><td>1</td></tr>
+      </table></div>
+      <svg class="g" id="waysA" viewBox="0 0 240 240" role="img" aria-label="שלוש נקודות מהטבלה והקו שעובר דרכן"></svg>
+      <p>לדוגמה, <span class="eq"><i>y</i> = 2<i>x</i> − 3</span>. כש-x = 2: <span class="eq">2·2 − 3 = 1</span>, אז הנקודה היא <span class="eq">(2, 1)</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>דרך ב · <span class="b">b</span> ואז <span class="m">שיפוע</span></h3>
+      <p>מתחילים בנקודה שעל ציר y, בגובה <span class="b">b</span>. משם זזים משבצת ימינה, ועולים (או יורדים) לפי <span class="m">m</span>. זו הנקודה השנייה. מחברים.</p>
+      <svg class="g" id="waysB" viewBox="0 0 240 240" role="img" aria-label="מתחילים בגובה b וזזים לפי השיפוע"></svg>
+      <p>ב-<span class="eq"><i>y</i> = 2<i>x</i> − 3</span>: מתחילים ב-<span class="b">−3</span> על ציר y. משבצת ימינה, 2 למעלה. הגענו ל-<span class="eq">(1, −1)</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>טעויות שכדאי להיזהר מהן:</strong>
+    <ul style="margin:4px 0 0; padding-inline-start:20px">
+      <li>להציב מספר שלילי בלי סוגריים. ב-<span class="eq"><i>y</i> = 2<i>x</i> − 3</span> עם x = −1 מקבלים <span class="eq">2·(−1) − 3 = −5</span>, לא 1−.</li>
+      <li>לשכוח את המינוס שלפני ה-x. ב-<span class="eq"><i>y</i> = −<i>x</i> + 2</span> השיפוע הוא 1−, אז הולכים משבצת ימינה ו<strong>יורדים</strong>.</li>
+      <li>"ימינה" בגרף זה תמיד לכיוון ש-x גדל. גרף קוראים משמאל לימין, גם בעברית.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הטבלה והקו ביחד</h2></div>
+  <p class="text">הזיזו את המחוונים. הטבלה מתעדכנת לבד, וכל עמודה בטבלה נדלקת כנקודה כחולה על הגרף. שימו לב שכל הנקודות תמיד נמצאות על הקו.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq"></div>
+      <label class="slider" for="mRange"><span>שיפוע <span class="m">m</span></span><span class="eq" id="mVal"></span></label>
+      <input type="range" id="mRange" min="-3" max="3" step="0.5" value="2">
+      <label class="slider" for="bRange"><span>חיתוך <span class="b">b</span></span><span class="eq" id="bVal"></span></label>
+      <input type="range" id="bRange" class="hl" min="-4" max="4" step="1" value="-3">
+      <div class="scroll-x"><table class="vt" id="labTable" aria-label="טבלת ערכים חיה"></table></div>
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-m="1" data-b="0">y = x</button>
+          <button data-m="-1" data-b="2">שיפוע שלילי</button>
+          <button data-m="0.5" data-b="1">שיפוע ½</button>
+          <button data-m="0" data-b="2">m = 0</button>
+          <button data-m="3" data-b="-4">קו תלול</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כשהשיפוע הוא שבר כמו ½, חלק מה-y בטבלה יוצאים חצאים. לכן נוח לבחור x זוגיים (2−, 0, 2), ואז יוצאים מספרים שלמים.</p>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">3</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">לחצו "הצעד הבא" ותראו איך מציירים קו בכל אחת מהדרכים.</p>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (טבלה)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (b ושיפוע)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="table">
+  <div class="sec-head"><span class="sec-num">4</span><h2>תרגול: השלימו את הטבלה</h2></div>
+  <p class="text">הציבו כל x במשוואה וכתבו את ה-y. אפשר לכתוב מספר שלילי עם מינוס, למשל <span class="eq">-3</span>.</p>
+  <div class="big-eq" id="tbEq"></div>
+  <div class="lab">
+    <svg class="g" id="tbG" viewBox="0 0 240 240" role="img" aria-label="גרף התרגול"></svg>
+    <div class="ctrl">
+      <div class="scroll-x"><table class="vt" id="tbTable" aria-label="טבלה להשלמה"></table></div>
+      <div class="row"><button id="tbCheck" class="primary">בדיקה</button><button id="tbNew">משוואה חדשה</button></div>
+      <div id="tbFb" aria-live="polite"></div>
+      <p class="counter" id="tbScore"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="click">
+  <div class="sec-head"><span class="sec-num">5</span><h2>ציירו בעצמכם</h2></div>
+  <p class="text">לחצו על הגרף כדי לסמן נקודות שהקו עובר בהן. כל נקודה נבדקת. אחרי שתי נקודות נכונות, הקו יצויר.</p>
+  <div class="big-eq" id="ckEq"></div>
+  <div class="lab">
+    <svg class="g clickable" id="ckG" viewBox="0 0 240 240" role="img" aria-label="גרף ללחיצה. לחצו על נקודה כדי לסמן אותה"></svg>
+    <div class="ctrl">
+      <div class="row"><button id="ckHint">רמז</button><button id="ckClear">ניקוי</button><button id="ckNew" class="primary">משוואה חדשה</button></div>
+      <div id="ckFb" aria-live="polite"><div class="fb hint">התחילו בנקודה שהכי קל למצוא. איפה הקו חותך את ציר y?</div></div>
+      <p class="counter" id="ckScore"></p>
+    </div>
+  </div>
+</section>
+
+<nav id="topicNav"></nav>
+<footer class="site">אתר שיעורי הבית · חשבון</footer>
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,eqHTML,numTxt,fracHTML,signedFracHTML,runFor,parseNum,eqv,pick,gridPoint,toFrac,MINUS}=G;
+const $=id=>document.getElementById(id);
+const valHTML=v=>signedFracHTML(v);
+/* "2·(−1) − 3" style substitution text */
+function substTxt(m,b,x){
+  const xs = x<0 ? `(${numTxt(x)})` : numTxt(x);
+  let s;
+  if(m===0) return numTxt(b);
+  if(m===1) s=xs; else if(m===-1) s=`${MINUS}${xs}`; else s=`${signedFracHTML(m)}·${xs}`;
+  if(b>0) s+=` + ${b}`; if(b<0) s+=` ${MINUS} ${-b}`;
+  return s;
+}
+
+/* 1. two ways */
+draw($('waysA'),2,-3,{points:[{x:0,y:-3,label:'(0, −3)'},{x:1,y:-1,label:'(1, −1)'},{x:2,y:1,label:'(2, 1)'}]});
+draw($('waysB'),2,-3,{dot:true,tri:true,triLabels:true});
+
+/* 2. lab */
+const mR=$('mRange'), bR=$('bRange');
+function lab(){
+  const m=+mR.value, b=+bR.value, xs=[-2,-1,0,1,2];
+  const pts=[]; let row1='<tr><th>x</th>', row2='<tr><th>y</th>';
+  xs.forEach(x=>{
+    const y=m*x+b, whole=Math.abs(y-Math.round(y))<1e-9;
+    row1+=`<td>${numTxt(x)}</td>`; row2+=`<td class="${whole?'lit':''}">${valHTML(y)}</td>`;
+    if(Math.abs(y)<=5.4) pts.push({x,y,r:4});
+  });
+  $('labTable').innerHTML=row1+'</tr>'+row2+'</tr>';
+  draw($('labG'),m,b,{points:pts});
+  $('labEq').innerHTML=eqHTML(m,b);
+  $('mVal').innerHTML=valHTML(m);
+  $('bVal').textContent=numTxt(b);
+  let t=`<div>כש-x = 0 יוצא y = <span class="b">${numTxt(b)}</span>. זו הנקודה על ציר y.</div>`;
+  t+=`<div>כש-x = 2: <span class="eq">${substTxt(m,b,2)} = ${valHTML(m*2+b)}</span>. זו עוד נקודה, <span class="eq">(2, ${valHTML(m*2+b)})</span>.</div>`;
+  if(m===0) t+='<div>השיפוע 0, אז כל ה-y בטבלה שווים. הקו שטוח.</div>';
+  else t+=`<div>בכל צעד אחד ימינה בטבלה, ה-y ${m>0?'גדל':'קטן'} ב-${fracHTML(m)}. זה בדיוק השיפוע.</div>`;
+  $('labExplain').innerHTML=t;
+}
+mR.addEventListener('input',lab); bR.addEventListener('input',lab);
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{mR.value=btn.dataset.m; bR.value=btn.dataset.b; lab();}));
+lab();
+
+/* 3. worked examples */
+const P=(x,y,l)=>({x,y,label:l});
+const EX={
+  A:{m:2,b:-3,steps:[
+    [{line:false},`נצייר את ${eqHTML(2,-3)} בעזרת טבלת ערכים. בוחרים x = 0, 1, 2.`],
+    [{line:false,points:[P(0,-3,'(0, −3)')]},'<strong>x = 0:</strong> <span class="eq">2·0 − 3 = −3</span>. מסמנים את הנקודה <span class="eq">(0, −3)</span>.'],
+    [{line:false,points:[P(0,-3,'(0, −3)'),P(1,-1,'(1, −1)')]},'<strong>x = 1:</strong> <span class="eq">2·1 − 3 = −1</span>. מסמנים את <span class="eq">(1, −1)</span>.'],
+    [{line:false,points:[P(0,-3,'(0, −3)'),P(1,-1,'(1, −1)'),P(2,1,'(2, 1)')]},'<strong>x = 2:</strong> <span class="eq">2·2 − 3 = 1</span>. מסמנים את <span class="eq">(2, 1)</span>.'],
+    [{points:[P(0,-3),P(1,-1),P(2,1)]},'מחברים את הנקודות בסרגל וממשיכים לשני הצדדים. זה הקו. הנקודה השלישית היא בדיקה: אם שלוש הנקודות על קו ישר אחד, לא טעינו.']
+  ]},
+  B:{m:-0.5,b:2,steps:[
+    [{line:false},`נצייר את ${eqHTML(-0.5,2)} בעזרת b והשיפוע.`],
+    [{line:false,dot:true},'<strong>b = 2.</strong> מתחילים בנקודה <span class="eq">(0, 2)</span> על ציר y.'],
+    [{line:false,dot:true},'<strong>השיפוע −½.</strong> מינוס אומר שהקו יורד. ½ אומר: על כל 2 צעדים ימינה, יורדים 1.'],
+    [{line:false,dot:true,tri:true,triLabels:true,points:[P(2,1,'(2, 1)')]},'מ-<span class="eq">(0, 2)</span> זזים 2 ימינה ו-1 למטה. הגענו ל-<span class="eq">(2, 1)</span>.'],
+    [{line:false,dot:true,points:[P(2,1,'(2, 1)'),P(4,0,'(4, 0)')]},'אפשר לחזור על אותו צעד: עוד 2 ימינה ו-1 למטה, ומגיעים ל-<span class="eq">(4, 0)</span>.'],
+    [{dot:true,points:[P(2,1),P(4,0)]},'מחברים את הנקודות. בדיקה עם x = 4: <span class="eq">−½·4 + 2 = 0</span>. יצא y = 0, בדיוק כמו בגרף.']
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [opt,txt]=e.steps[exI];
+  draw($('exG'),e.m,e.b,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0;
+  $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();};
+$('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* random equation whose points stay on the -5..5 grid */
+const MS=[-3,-2,-1,-0.5,0.5,1,2,3,0];
+function randEq(xsFor,prev){
+  for(let g=0; g<200; g++){
+    const m=pick(MS), b=Math.floor(Math.random()*9)-4;
+    if(prev && prev.m===m && prev.b===b) continue;
+    const xs=xsFor(m);
+    if(xs.every(x=>Math.abs(m*x+b)<=5)) return {m,b,xs};
+  }
+  return {m:1,b:1,xs:xsFor(1)};
+}
+
+/* 4. fill the table */
+let tb=null, tbSolved=0;
+const tbXs=m=>toFrac(Math.abs(m))[1]===2?[-2,0,2,4]:[-1,0,1,2];
+function newTb(){
+  tb=randEq(tbXs,tb);
+  $('tbEq').innerHTML=eqHTML(tb.m,tb.b);
+  let r1='<tr><th>x</th>', r2='<tr><th>y</th>';
+  tb.xs.forEach((x,i)=>{ r1+=`<td>${numTxt(x)}</td>`; r2+=`<td id="tbc${i}"><input id="tbi${i}" inputmode="text" autocomplete="off" aria-label="y כאשר x = ${numTxt(x)}"></td>`; });
+  $('tbTable').innerHTML=r1+'</tr>'+r2+'</tr>';
+  tb.xs.forEach((x,i)=>$('tbi'+i).addEventListener('keydown',e=>{if(e.key==='Enter')$('tbCheck').click();}));
+  $('tbFb').innerHTML='';
+  draw($('tbG'),null,0);
+}
+$('tbCheck').onclick=()=>{
+  const {m,b,xs}=tb, msgs=[], pts=[]; let good=0, empty=0;
+  xs.forEach((x,i)=>{
+    const cell=$('tbc'+i), raw=$('tbi'+i).value, v=parseNum(raw), y=m*x+b;
+    cell.className='';
+    if(raw.trim()===''){ empty++; return; }
+    if(eqv(v,y)){ good++; cell.className='ok'; pts.push({x,y,cls:'pt-ok'}); }
+    else{
+      cell.className='bad';
+      let tip=`<li>ב-x = ${numTxt(x)} כתבתם ${isNaN(v)?'משהו שאינו מספר':numTxt(v)}. הציבו x = ${numTxt(x)}: <span class="eq">${substTxt(m,b,x)}</span> = ?`;
+      if(!isNaN(v) && eqv(v,-y)) tip+=' שימו לב לסימן, מינוס או פלוס.';
+      else if(!isNaN(v) && x<0) tip+=' כשמציבים מספר שלילי, שימו אותו בסוגריים.';
+      msgs.push(tip+'</li>');
+    }
+  });
+  if(good===xs.length){
+    tbSolved++;
+    draw($('tbG'),m,b,{points:xs.map(x=>({x,y:m*x+b,cls:'pt-ok'}))});
+    $('tbFb').innerHTML=`<div class="fb ok">כל הטבלה נכונה! הנה הנקודות, והקו ${eqHTML(m,b)} עובר דרך כולן.</div>`;
+    $('tbScore').textContent=`טבלאות שפתרתם: ${tbSolved}`;
+    return;
+  }
+  draw($('tbG'),null,0,{points:pts});
+  let h='';
+  if(msgs.length) h+=`<div class="fb err">עוד לא. <ul>${msgs.join('')}</ul></div>`;
+  if(empty) h+=`<div class="fb hint" style="margin-top:8px">נשארו ${empty===1?'משבצת ריקה אחת':empty+' משבצות ריקות'}.${good?` ${good} כבר נכונות, והן מסומנות בירוק על הגרף.`:''}</div>`;
+  $('tbFb').innerHTML=h;
+};
+$('tbNew').onclick=newTb;
+newTb();
+
+/* 5. click to draw */
+let ck=null, ckPts=[], ckHint=false, ckSolved=0;
+const ckXs=m=>{ const d=toFrac(Math.abs(m))[1]; return d===2?[-2,0,2]:[0,1]; };
+function ckDraw(){
+  const good=ckPts.filter(p=>p.ok);
+  const done=good.length>=2;
+  draw($('ckG'),done?ck.m:null,ck.b,{
+    dot:ckHint && !done,
+    extra: ckHint && !done ? `<circle class="dot" cx="${G.sx(0)}" cy="${G.sy(ck.b)}" r="4.5"/>` : '',
+    points:ckPts.map(p=>({x:p.x,y:p.y,cls:p.ok?'pt-ok':'pt-err',label:`(${numTxt(p.x)}, ${numTxt(p.y)})`}))
+  });
+}
+function newCk(){
+  ck=randEq(ckXs,ck); ckPts=[]; ckHint=false;
+  $('ckEq').innerHTML=eqHTML(ck.m,ck.b);
+  $('ckFb').innerHTML='<div class="fb hint">התחילו בנקודה שהכי קל למצוא. איפה הקו חותך את ציר y?</div>';
+  ckDraw();
+}
+$('ckG').addEventListener('click',e=>{
+  if(ckPts.filter(p=>p.ok).length>=2) return;
+  const p=gridPoint($('ckG'),e); if(!p) return;
+  if(ckPts.some(q=>q.x===p.x&&q.y===p.y)) return;
+  const y=ck.m*p.x+ck.b, ok=eqv(y,p.y);
+  ckPts=ckPts.filter(q=>q.ok);
+  ckPts.push({...p,ok});
+  const good=ckPts.filter(q=>q.ok).length;
+  let h;
+  if(ok && good>=2){
+    ckSolved++;
+    h=`<div class="fb ok">מצוין! שתי נקודות נכונות, והנה הקו ${eqHTML(ck.m,ck.b)}.</div>`;
+    $('ckScore').textContent=`קווים שציירתם: ${ckSolved}`;
+  } else if(ok){
+    h=`<div class="fb ok">נכון! הנקודה <span class="eq">(${numTxt(p.x)}, ${numTxt(p.y)})</span> על הקו, כי <span class="eq">${substTxt(ck.m,ck.b,p.x)} = ${numTxt(p.y)}</span>. עכשיו סמנו עוד נקודה אחת.</div>`;
+  } else {
+    const whole=Math.abs(y-Math.round(y))<1e-9;
+    h=`<div class="fb err">הנקודה <span class="eq">(${numTxt(p.x)}, ${numTxt(p.y)})</span> לא על הקו. אם מציבים x = ${numTxt(p.x)} מקבלים <span class="eq">${substTxt(ck.m,ck.b,p.x)} = ${signedFracHTML(y)}</span>, לא ${numTxt(p.y)}.${whole?'':' יוצא שבר, אז בחרו x אחר שנותן מספר שלם.'}</div>`;
+  }
+  $('ckFb').innerHTML=h;
+  ckDraw();
+});
+$('ckHint').onclick=()=>{
+  ckHint=true; ckDraw();
+  const n=runFor(ck.m), k=ck.m*n;
+  $('ckFb').innerHTML=`<div class="fb hint">סימנתי בצהוב את הנקודה <span class="eq">(0, ${numTxt(ck.b)})</span>, שם x = 0. ${ck.m===0?'השיפוע 0, אז הקו שטוח. כל נקודה באותו גובה מתאימה.':`משם זוזו ${n===1?'משבצת אחת':n+' משבצות'} ימינה ו-${Math.abs(k)} ${k>0?'למעלה':'למטה'}.`}</div>`;
+};
+$('ckClear').onclick=()=>{ ckPts=[]; ckHint=false; $('ckFb').innerHTML=''; ckDraw(); };
+$('ckNew').onclick=newCk;
+newCk();
+})();
+</script>
+</body>
+</html>
