@@ -7,4 +7,4 @@
 - Don't copy worksheet content verbatim (worksheets are usually copyrighted, e.g. karnafim.co.il): teach the topic with original examples and exercises.
 - Site is public on GitHub Pages (main branch, root).
 - Coming-soon subjects: `soon:true` in topics.js (shown as a disabled tile with a בקרוב chip, hidden from the TOC).
-- Topic requests: Google Form + Sheet, no server. Config in `assets/requests-config.js`; logic in `assets/requests.js`; page `requests/`. The public board is only the owner-curated "לוח" tab (נושא, מקצוע, כיתה, קולות, סטטוס, קישור), published as CSV; raw form responses stay private.
+- Topic requests: Google Form (personal account shoamtal@gmail.com) + board sheet, no server. Closed topic list per subject+grade in `assets/curriculum.js` (site topics merged in from topics.js and marked "כבר באתר"); "אחר" opens free text that goes to a separate form field and never reaches the public board. Board sheet = QUERY over IMPORTRANGE of the responses sheet, read as gviz CSV. Config `assets/requests-config.js`, logic `assets/requests.js`, page `requests/`.

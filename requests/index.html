@@ -26,19 +26,18 @@
       <select id="rSubject"></select>
     </label>
     <label for="rGrade">כיתה
-      <select id="rGrade">
-        <option value="">לא חשוב</option>
-        <option>כיתה ד</option><option>כיתה ה</option><option>כיתה ו</option><option>כיתה ז</option>
-        <option selected>כיתה ח</option><option>כיתה ט</option><option>כיתה י</option><option>כיתה יא</option><option>כיתה יב</option>
-      </select>
+      <select id="rGrade"></select>
     </label>
     <label for="rTopic" class="wide">איזה נושא?
-      <input id="rTopic" maxlength="80" placeholder="למשל: מערכת של שתי משוואות" autocomplete="off">
+      <select id="rTopic"></select>
+    </label>
+    <label for="rOther" class="wide" id="rOtherWrap" hidden>כתבו את הנושא
+      <input id="rOther" maxlength="80" placeholder="למשל: בעיות תנועה" autocomplete="off">
     </label>
     <div class="row wide"><button class="primary" id="rSend" type="submit">שליחת הבקשה</button></div>
   </form>
   <div id="reqFb" aria-live="polite"></div>
-  <p class="muted">כל בקשה נבדקת לפני שהיא מופיעה בטבלה. אל תכתבו שם או פרטים אישיים.</p>
+  <p class="muted">נושא מהרשימה נכנס ישר לטבלה. נושא שכתבתם בעצמכם ("אחר") מגיע רק אלינו, ואנחנו בודקים אותו. אל תכתבו שם או פרטים אישיים.</p>
 </section>
 
 <section class="card" id="board">
@@ -51,14 +50,34 @@
 </div>
 <script src="../assets/topics.js"></script>
 <script src="../assets/nav.js"></script>
+<script src="../assets/curriculum.js"></script>
 <script src="../assets/requests-config.js"></script>
 <script src="../assets/requests.js"></script>
 <script>
 (function(){
 const $=id=>document.getElementById(id), esc=REQ.esc;
-$('rSubject').innerHTML=SITE.subjects.map(s=>`<option>${s.name}</option>`).join('')+'<option>אחר</option>';
-
+const OTHER='__other';
+$('rSubject').innerHTML=SITE.subjects.map(s=>`<option>${s.name}</option>`).join('');
+$('rGrade').innerHTML=CURRICULUM.grades.map(g=>`<option ${g==='כיתה ח'?'selected':''}>${g}</option>`).join('');
+function fillTopics(){
+  const subj=$('rSubject').value, list=CURRICULUM.list(subj,$('rGrade').value);
+  $('rTopic').innerHTML='<option value="">בחרו נושא…</option>'
+    +list.map(t=>`<option value="${esc(t)}">${esc(t)}${CURRICULUM.siteLink(subj,t)?'  ✓ כבר באתר':''}</option>`).join('')
+    +`<option value="${OTHER}">אחר (כתבו בעצמכם)</option>`;
+  onTopic();
+}
+function onTopic(){
+  const v=$('rTopic').value, link=v&&v!==OTHER?CURRICULUM.siteLink($('rSubject').value,v):'';
+  $('rOtherWrap').hidden=v!==OTHER;
+  $('rSend').disabled=!REQ.configured||!!link;
+  fb.innerHTML=link?`<div class="fb ok">הנושא הזה כבר באתר! <a href="../${esc(link)}">לעמוד של "${esc(v)}" ←</a></div>`:'';
+  if(v===OTHER) $('rOther').focus();
+}
 const form=$('reqForm'), fb=$('reqFb');
+$('rSubject').addEventListener('change',fillTopics);
+$('rGrade').addEventListener('change',fillTopics);
+$('rTopic').addEventListener('change',onTopic);
+fillTopics();
 if(!REQ.configured){
   [...form.elements].forEach(el=>el.disabled=true);
   fb.innerHTML='<div class="fb hint"><strong>בקרוב.</strong> עוד מעט יהיה אפשר לשלוח מכאן בקשות.</div>';
@@ -66,14 +85,19 @@ if(!REQ.configured){
 let last=0;
 form.addEventListener('submit',async e=>{
   e.preventDefault();
-  const topic=$('rTopic').value.trim();
-  if(topic.length<3){ fb.innerHTML='<div class="fb err">כתבו את שם הנושא (לפחות 3 אותיות).</div>'; $('rTopic').focus(); return; }
+  const v=$('rTopic').value, other=$('rOther').value.trim();
+  if(!v){ fb.innerHTML='<div class="fb err">בחרו נושא מהרשימה, או "אחר" כדי לכתוב בעצמכם.</div>'; $('rTopic').focus(); return; }
+  if(v===OTHER && other.length<3){ fb.innerHTML='<div class="fb err">כתבו את שם הנושא (לפחות 3 אותיות).</div>'; $('rOther').focus(); return; }
   if(Date.now()-last<30000){ fb.innerHTML='<div class="fb err">רגע, שלחתם בקשה ממש עכשיו. אפשר לשלוח עוד אחת בעוד חצי דקה.</div>'; return; }
+  const req={topic:v===OTHER?'אחר':v, subject:$('rSubject').value, grade:$('rGrade').value, other:v===OTHER?other:''};
+  if(v!==OTHER && REQ.hasVoted(req)){ fb.innerHTML='<div class="fb hint">כבר ביקשתם את הנושא הזה. הקול שלכם נספר בטבלה.</div>'; return; }
   $('rSend').disabled=true;
   try{
-    await REQ.send({topic,subject:$('rSubject').value,grade:$('rGrade').value});
-    last=Date.now(); $('rTopic').value='';
-    fb.innerHTML='<div class="fb ok">תודה! הבקשה נשלחה. אחרי שנבדוק אותה, היא תופיע בטבלה ואחרים יוכלו להצביע לה.</div>';
+    if(v===OTHER) await REQ.send(req); else await REQ.vote(req);
+    last=Date.now(); $('rOther').value='';
+    fb.innerHTML=v===OTHER
+      ?'<div class="fb ok">תודה! הבקשה נשלחה אלינו. נבדוק אותה, ואם היא מתאימה נוסיף אותה לרשימה.</div>'
+      :'<div class="fb ok">תודה! הבקשה נספרה בטבלה (יכול לקחת כמה דקות עד שתראו אותה).</div>';
   }catch(err){ fb.innerHTML='<div class="fb err">הבקשה לא נשלחה. בדקו שיש חיבור לאינטרנט ונסו שוב.</div>'; }
   $('rSend').disabled=false;
 });

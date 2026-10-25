@@ -1,7 +1,7 @@
 /* Topic requests and votes, all client side.
    Sending: POST to the Google Form (no-cors, the reply is opaque).
-   Reading: the published "לוח" tab as CSV: נושא, מקצוע, כיתה, קולות, סטטוס, קישור.
-   Only rows the site owner puts on that tab are shown, so new free-text requests stay private until approved. */
+   Reading: the board sheet as CSV: נושא, מקצוע, כיתה, קולות (built automatically from the closed topic list).
+   Free-text requests go in a separate field ("אחר") and never reach the board. */
 (function(){
 const C=window.REQ_CONFIG||{};
 const KEY='req:voted';
@@ -41,12 +41,13 @@ const REQ={
       .sort((a,b)=>b.votes-a.votes);
   },
 
-  async send({topic,subject,grade}){
+  async send({topic,subject,grade,other}){
     if(!REQ.configured) throw new Error('not configured');
     const fd=new FormData();
     fd.append(C.ENTRY.topic,norm(topic));
     if(C.ENTRY.subject) fd.append(C.ENTRY.subject,norm(subject||''));
     if(C.ENTRY.grade) fd.append(C.ENTRY.grade,norm(grade||''));
+    if(C.ENTRY.other && other) fd.append(C.ENTRY.other,norm(other));
     await fetch(C.FORM_ACTION,{method:'POST',mode:'no-cors',body:fd});
   },
 
@@ -55,17 +56,17 @@ const REQ={
     await REQ.send(r); addVoted(REQ.key(r.topic,r.subject)); return true;
   },
 
+  siteLink(r){ return (window.CURRICULUM&&CURRICULUM.siteLink(r.subject,r.topic))||''; },
   statusChip(r,root){
-    if(/עלה|done/i.test(r.status)) return r.link?`<a class="status done" href="${esc(r.link.startsWith('http')?r.link:root+r.link)}">עלה לאתר ←</a>`:'<span class="status done">עלה לאתר</span>';
-    if(/עבודה|wip/i.test(r.status)) return '<span class="status wip">בעבודה</span>';
-    return '';
+    const l=REQ.siteLink(r);
+    return l?`<a class="status done" href="${esc(root+l)}">עלה לאתר ←</a>`:'';
   },
 
   /* top 5 list for the home page */
   async mini(el,link){
     if(!REQ.configured){ el.outerHTML=`<p class="muted">בקרוב תוכלו לבקש כאן נושאים ולהצביע לנושאים שאחרים ביקשו. <a href="${link}">איך זה יעבוד</a></p>`; return; }
     try{
-      const rows=(await REQ.load()).filter(r=>!/עלה|done/i.test(r.status)).slice(0,5);
+      const rows=(await REQ.load()).filter(r=>!REQ.siteLink(r)).slice(0,5);
       el.innerHTML=rows.length? rows.map(r=>`<li>${esc(r.topic)} <span class="muted">· ${esc(r.subject)}${r.grade?' · '+esc(r.grade):''}</span> <span class="votes">(${votesTxt(r.votes)})</span></li>`).join('')
         : `<li class="muted">עוד אין בקשות. <a href="${link}">היו הראשונים לבקש נושא</a></li>`;
     }catch(e){ el.innerHTML='<li class="muted">לא הצלחנו לטעון את הטבלה כרגע. נסו לרענן בעוד רגע.</li>'; }
