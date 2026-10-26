@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>ממוצע, חציון ושכיח · סטטיסטיקה כיתה ח · מירי</title>
+<meta name="description" content="מה ההבדל בין ממוצע, חציון ושכיח ואיך מחשבים כל אחד. מעבדה שאפשר להזיז את הנתונים בה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/statistics/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="ממוצע, חציון ושכיח · סטטיסטיקה כיתה ח · מירי">
+<meta property="og:description" content="מה ההבדל בין ממוצע, חציון ושכיח ואיך מחשבים כל אחד. מעבדה שאפשר להזיז את הנתונים בה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/statistics/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"סטטיסטיקה והסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-8/#stats"},{"@type":"ListItem","position":5,"name":"ממוצע, חציון ושכיח","item":"https://shohamtal.github.io/homework-site/math/statistics/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין ממוצע לחציון?","acceptedAnswer":{"@type":"Answer","text":"הממוצע משתמש בכל המספרים: מחברים ומחלקים בכמות, ולכן ערך חריג מושך אותו. החציון הוא רק המספר שבאמצע אחרי שמסדרים, ולכן ערך חריג כמעט לא מזיז אותו. סמנו \"יום חריג\" במעבדה ותראו."}},{"@type":"Question","name":"איך מוצאים חציון כשיש מספר זוגי של נתונים?","acceptedAnswer":{"@type":"Answer","text":"מסדרים מהקטן לגדול, ובאמצע עומדים שני מספרים. החציון הוא הממוצע שלהם: ב-2, 4, 6, 10 זה (4 + 6) ÷ 2 = 5. תרגלו למטה."}},{"@type":"Question","name":"מה עושים אם אין שכיח, או שיש שניים?","acceptedAnswer":{"@type":"Answer","text":"אם כל מספר מופיע רק פעם אחת, אומרים שאין שכיח. אם שני מספרים מופיעים הכי הרבה פעמים באותה מידה, שניהם שכיחים. לחצו \"שני שכיחים\" במעבדה ותראו."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"ממוצע, חציון ושכיח","description":"מה ההבדל בין ממוצע, חציון ושכיח ואיך מחשבים כל אחד. מעבדה שאפשר להזיז את הנתונים בה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/statistics/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"סטטיסטיקה והסתברות","teaches":"ממוצע, חציון ושכיח","keywords":"ממוצע, חציון, שכיח, ערך חריג","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.chips{display:flex; flex-wrap:wrap; gap:6px; direction:ltr; justify-content:center}
+.chips .chip{font-family:var(--f-math); font-size:1.15rem; min-width:2.4em; text-align:center}
+.chips .chip.mid{background:var(--hl); border-color:var(--border); font-weight:600}
+.chips .chip.mode{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.toggles{display:flex; flex-direction:column; gap:6px; font-weight:600}
+.toggles label{display:flex; gap:8px; align-items:center}
+.toggles input{width:20px; height:20px; accent-color:var(--line)}
+.calc{display:flex; flex-direction:column; gap:6px}
+.calc .eq{white-space:normal}
+.sliders{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px 14px}
+@media (max-width:420px){.sliders{grid-template-columns:minmax(0,1fr)}}
+.sliders .off{opacity:.4}
+svg.plot{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.plot .axis{stroke:var(--ink); stroke-width:1.3}
+.plot .tick{fill:var(--muted); font:9px var(--f-body); text-anchor:middle}
+.plot .tickln{stroke:var(--ink); stroke-width:1}
+.plot .pt{fill:var(--blue); stroke:var(--card); stroke-width:1.2}
+.plot .pt.mode{fill:var(--hl); stroke:var(--ink); stroke-width:1.2}
+.plot .pt.out{fill:var(--err)}
+.plot .mean{stroke:var(--line); stroke-width:2.6}
+.plot .meanlbl{fill:var(--line); font:700 10px var(--f-body); text-anchor:middle}
+.plot .med{fill:var(--green); stroke:var(--ink); stroke-width:1}
+.plot .medlbl{fill:var(--green); font:700 10px var(--f-body); text-anchor:middle}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.legend{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; font-size:.9rem; font-weight:600}
+.legend span::before{content:""; display:inline-block; width:12px; height:12px; border-radius:50%; margin-inline-end:6px; vertical-align:-1px; border:1px solid var(--ink)}
+.legend .lg-mean::before{background:var(--line); border-radius:2px; width:4px}
+.legend .lg-med::before{background:var(--green)}
+.legend .lg-mode::before{background:var(--hl)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="statistics">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#stats">סטטיסטיקה והסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">ממוצע, חציון ושכיח</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · סטטיסטיקה והסתברות</div>
+  <h1>ממוצע, חציון ושכיח</h1>
+  <p class="lead">יש לכם רשימה של מספרים, למשל ציונים או דקות של שיעורי בית. איך מתארים את כל הרשימה במספר אחד? יש שלוש דרכים, ולכל אחת יש תפקיד משלה. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#fit">איזה מדד?</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שלוש דרכים לתאר רשימה</h2></div>
+  <p class="text">ניקח רשימה קטנה: כמה שעות ישנו חמישה חברים בלילה.</p>
+  <div class="chips"><span class="chip">7</span><span class="chip">5</span><span class="chip">10</span><span class="chip">5</span><span class="chip">3</span></div>
+  <div class="two">
+    <div class="mini">
+      <h3>ממוצע</h3>
+      <p>מחברים את כל המספרים, ומחלקים בכמה מספרים יש.</p>
+      <p><span class="eq">7 + 5 + 10 + 5 + 3 = 30</span></p>
+      <p><span class="eq">30 ÷ 5 = 6</span>. הממוצע הוא 6.</p>
+    </div>
+    <div class="mini">
+      <h3>חציון</h3>
+      <p>מסדרים מהקטן לגדול, ולוקחים את המספר שבאמצע.</p>
+      <p><span class="eq">3, 5, <span class="b">5</span>, 7, 10</span></p>
+      <p>באמצע עומד 5. החציון הוא 5.</p>
+    </div>
+    <div class="mini">
+      <h3>שכיח</h3>
+      <p>המספר שמופיע הכי הרבה פעמים.</p>
+      <p>5 מופיע פעמיים, וכל השאר פעם אחת.</p>
+      <p>השכיח הוא 5.</p>
+    </div>
+  </div>
+  <div class="callout">שלושת המספרים מתארים את אותה רשימה, אבל לא תמיד יוצאים שווים. כאן הממוצע 6, והחציון והשכיח 5.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: דקות של שיעורי בית</h2></div>
+  <p class="text">כל מחוון הוא יום אחד: כמה דקות עשיתם שיעורי בית. הזיזו אותם ותראו איך הממוצע, החציון והשכיח זזים.</p>
+  <div class="lab">
+    <div>
+      <svg class="plot" id="labG" viewBox="0 0 320 170" role="img" aria-label="תרשים נקודות של הדקות"></svg>
+      <div class="legend"><span class="lg-mean">ממוצע</span><span class="lg-med">חציון</span><span class="lg-mode">שכיח</span></div>
+    </div>
+    <div class="ctrl">
+      <div class="sliders" id="sliders"></div>
+      <div class="toggles">
+        <label><input type="checkbox" id="use6"> יש גם יום שישי (6 ימים)</label>
+        <label><input type="checkbox" id="outl"> הוסיפו יום חריג: 120 דקות</label>
+      </div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="30,30,30,30,30,30" data-6="0" data-o="0">כולם אותו דבר</button>
+          <button data-p="20,35,20,45,30,25" data-6="0" data-o="1">יום חריג</button>
+          <button data-p="10,10,40,40,25,25" data-6="0" data-o="0">שני שכיחים</button>
+          <button data-p="15,40,25,50,30,20" data-6="1" data-o="0">מספר זוגי של ימים</button>
+          <button data-p="10,20,40,50,60,30" data-6="0" data-o="0">ממוצע שלא ברשימה</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב ליום החריג: הממוצע קופץ למעלה, אבל החציון כמעט לא זז.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חציון בלי לסדר</h3>
+      <p>ברשימה <span class="eq">9, 2, 6</span> המספר באמצע הוא 2. אבל זה לא החציון!</p>
+      <p>קודם מסדרים: <span class="eq">2, <span class="b">6</span>, 9</span>. החציון הוא 6.</p>
+    </div>
+    <div class="mini">
+      <h3>חילוק במספר הלא נכון</h3>
+      <p>מחלקים בכמה <strong>מספרים</strong> יש ברשימה, גם אם אחד מהם הוא 0.</p>
+      <p>ברשימה <span class="eq">4, 0, 8</span> יש שלושה מספרים: <span class="eq">12 ÷ 3 = 4</span>, ולא <span class="eq">12 ÷ 2</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>ערך חריג</h3>
+      <p>מספר אחד גדול מאוד מושך את הממוצע אליו.</p>
+      <p>ב-<span class="eq">2, 3, 4, 31</span> הממוצע הוא 10, אבל כמעט כל המספרים קטנים. כאן החציון (3.5) מתאר טוב יותר.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ומה אם יש מספר זוגי של ערכים?</strong> אז באמצע עומדים שני מספרים. החציון הוא הממוצע של שניהם: מחברים ומחלקים ב-2.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">הציונים של תלמיד במבחנים השנה:</p>
+  <div class="chips" id="exChips"></div>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">כל פעם תקבלו רשימה חדשה ושאלה אחת. אפשר לכתוב מספר עשרוני (למשל <span class="eq">7.5</span>) או שבר (למשל <span class="eq">15/2</span>).</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="mean" aria-pressed="false">ממוצע</button>
+    <button data-t="median" aria-pressed="false">חציון</button>
+    <button data-t="mode" aria-pressed="false">שכיח</button>
+  </div>
+  <div class="chips" id="prChips"></div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prLbl">התשובה</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">רשימה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="fit">
+  <div class="sec-head"><span class="sec-num">6</span><h2>אתגר: איזה מדד מתאים?</h2></div>
+  <p class="text">לא תמיד צריך את שלושתם. קראו את המקרה ובחרו את המדד שהכי מתאים לו.</p>
+  <p class="text" id="fitQ" style="font-weight:600"></p>
+  <div class="choices" id="fitChoices"></div>
+  <div id="fitFb" aria-live="polite"></div>
+  <div class="row"><button id="fitNew">מקרה הבא</button><span class="counter" id="fitCount"></span></div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין ממוצע לחציון?</h3>
+    <p>הממוצע משתמש בכל המספרים: מחברים ומחלקים בכמות, ולכן ערך חריג מושך אותו. החציון הוא רק המספר שבאמצע אחרי שמסדרים, ולכן ערך חריג כמעט לא מזיז אותו. <a href="#lab">סמנו "יום חריג" במעבדה</a> ותראו.</p>
+    <h3>איך מוצאים חציון כשיש מספר זוגי של נתונים?</h3>
+    <p>מסדרים מהקטן לגדול, ובאמצע עומדים שני מספרים. החציון הוא הממוצע שלהם: ב-<span class="eq">2, 4, 6, 10</span> זה <span class="eq">(4 + 6) ÷ 2 = 5</span>. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>מה עושים אם אין שכיח, או שיש שניים?</h3>
+    <p>אם כל מספר מופיע רק פעם אחת, אומרים שאין שכיח. אם שני מספרים מופיעים הכי הרבה פעמים באותה מידה, שניהם שכיחים. <a href="#lab">לחצו "שני שכיחים" במעבדה</a> ותראו.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/solids/"><small>→ הנושא הקודם</small>נפח ושטח פנים של גופים</a><a class="next" href="../../math/probability/"><small>הנושא הבא ←</small>הסתברות: מה הסיכוי?</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const shuffle=a=>{a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+/* one or two decimals at most; "בערך" when the value was rounded */
+const nice=v=>numTxt(Math.round(v*100)/100);
+const isRound=v=>Math.abs(v*100-Math.round(v*100))<1e-9;
+const numIn=s=>parseNum(String(s).trim().replace(/^(\d+),(\d+)$/,'$1.$2'));
+
+function stats(a){
+  const n=a.length, sum=a.reduce((x,y)=>x+y,0), mean=sum/n, sorted=[...a].sort((x,y)=>x-y);
+  const median=n%2?sorted[(n-1)/2]:(sorted[n/2-1]+sorted[n/2])/2;
+  const cnt={}; a.forEach(v=>cnt[v]=(cnt[v]||0)+1);
+  const max=Math.max(...Object.values(cnt));
+  const modes=max>1?Object.keys(cnt).filter(k=>cnt[k]===max).map(Number).sort((x,y)=>x-y):[];
+  return {n,sum,mean,sorted,median,modes,max,cnt};
+}
+const sumTxt=a=>E(a.map(numTxt).join(' + ')+' = '+numTxt(a.reduce((x,y)=>x+y,0)));
+const meanTxt=st=>E(`${numTxt(st.sum)} ÷ ${st.n} = ${nice(st.mean)}`)+(isRound(st.mean)?'':' (בערך)');
+/* sorted list with the middle value(s) highlighted */
+function sortedTxt(st){
+  const n=st.n, mids=n%2?[(n-1)/2]:[n/2-1,n/2];
+  return E(st.sorted.map((v,i)=>mids.includes(i)?`<span class="b">${numTxt(v)}</span>`:numTxt(v)).join(', '));
+}
+function medianTxt(st){
+  const n=st.n;
+  if(n%2) return `באמצע עומד ${E(numTxt(st.median))}. החציון הוא ${E(numTxt(st.median))}.`;
+  const a=st.sorted[n/2-1], b=st.sorted[n/2];
+  return `באמצע עומדים שני מספרים, ${E(numTxt(a))} ו-${E(numTxt(b))}. החציון: ${E(`(${numTxt(a)} + ${numTxt(b)}) ÷ 2 = ${nice(st.median)}`)}.`;
+}
+function modeTxt(st){
+  if(!st.modes.length) return 'כל מספר מופיע רק פעם אחת, ולכן <strong>אין שכיח</strong>.';
+  if(st.modes.length===1) return `${E(numTxt(st.modes[0]))} מופיע הכי הרבה פעמים (${st.max} פעמים). השכיח הוא ${E(numTxt(st.modes[0]))}.`;
+  return `יש ${st.modes.length} מספרים שמופיעים ${st.max} פעמים: ${E(st.modes.map(numTxt).join(', '))}. לרשימה הזאת יש כמה שכיחים.`;
+}
+
+/* ---------- lab ---------- */
+const DAYS=['יום א','יום ב','יום ג','יום ד','יום ה','יום ו'];
+const OUT=120;
+$('sliders').innerHTML=DAYS.map((d,i)=>`<div id="sw${i}"><label class="slider" for="v${i}"><span>${d}</span><span class="eq" id="v${i}v"></span></label>
+  <input type="range" id="v${i}" min="0" max="60" step="5" value="${[20,35,20,45,30,25][i]}"></div>`).join('');
+function plot(svg,data,st,outIdx){
+  const maxV=data.some(v=>v>60)?130:60, X=v=>24+v/maxV*272, AY=118;
+  let h=`<line class="axis" x1="18" y1="${AY}" x2="302" y2="${AY}"/>`;
+  const step=maxV>60?20:10;
+  for(let v=0;v<=maxV;v+=step) h+=`<line class="tickln" x1="${X(v)}" y1="${AY}" x2="${X(v)}" y2="${AY+4}"/><text class="tick" x="${X(v)}" y="${AY+15}">${v}</text>`;
+  const stack={};
+  data.forEach((v,i)=>{
+    const k=stack[v]=(stack[v]||0)+1;
+    const cls=i===outIdx?'pt out':(st.modes.includes(v)?'pt mode':'pt');
+    h+=`<circle class="${cls}" cx="${X(v)}" cy="${AY-8-(k-1)*13}" r="6"/>`;
+  });
+  h+=`<line class="mean" x1="${X(st.mean)}" y1="22" x2="${X(st.mean)}" y2="${AY}"/><text class="meanlbl" x="${Math.min(290,Math.max(30,X(st.mean)))}" y="15">ממוצע ${nice(st.mean)}</text>`;
+  const mx=X(st.median);
+  h+=`<path class="med" d="M${mx} ${AY+20} l-6 10 h12 z"/><text class="medlbl" x="${Math.min(290,Math.max(30,mx))}" y="${AY+44}">חציון ${nice(st.median)}</text>`;
+  svg.innerHTML=h;
+}
+function lab(){
+  const use6=$('use6').checked, outl=$('outl').checked;
+  const vals=DAYS.map((d,i)=>+$('v'+i).value);
+  vals.forEach((v,i)=>$('v'+i+'v').textContent=v+' דק\'');
+  $('sw5').classList.toggle('off',!use6); $('v5').disabled=!use6;
+  const data=vals.slice(0,use6?6:5); if(outl) data.push(OUT);
+  const st=stats(data);
+  plot($('labG'),data,st,outl?data.length-1:-1);
+  let t=`<div><strong>ממוצע:</strong> ${sumTxt(data)}, ואז ${meanTxt(st)}</div>
+    <div><strong>חציון:</strong> מסדרים: ${sortedTxt(st)}. ${medianTxt(st)}</div>
+    <div><strong>שכיח:</strong> ${modeTxt(st)}</div>`;
+  if(outl){
+    const base=stats(data.slice(0,-1));
+    t+=`<div>בלי היום החריג: ממוצע ${E(nice(base.mean))}, חציון ${E(nice(base.median))}. היום החריג משך את הממוצע ב-${E(nice(st.mean-base.mean))}, ואת החציון רק ב-${E(nice(st.median-base.median))}.</div>`;
+  }
+  $('labCalc').innerHTML=t;
+}
+DAYS.forEach((d,i)=>$('v'+i).addEventListener('input',lab));
+$('use6').addEventListener('change',lab); $('outl').addEventListener('change',lab);
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  b.dataset.p.split(',').forEach((v,i)=>$('v'+i).value=v);
+  $('use6').checked=b.dataset['6']==='1'; $('outl').checked=b.dataset.o==='1'; lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EX=[85,70,95,70,60,100], exSt=stats(EX);
+$('exChips').innerHTML=EX.map(v=>`<span class="chip">${v}</span>`).join('');
+const EXS=[
+  'קודם סופרים: כמה ציונים יש ברשימה? <strong>6 ציונים.</strong>',
+  `<strong>ממוצע, שלב 1:</strong> מחברים את כולם. ${sumTxt(EX)}.`,
+  `<strong>ממוצע, שלב 2:</strong> מחלקים בכמה ציונים יש, כלומר ב-6. ${E('480 ÷ 6 = 80')}. הממוצע הוא 80.`,
+  `<strong>חציון, שלב 1:</strong> מסדרים מהקטן לגדול: ${E(exSt.sorted.join(', '))}.`,
+  `<strong>חציון, שלב 2:</strong> יש 6 ציונים, מספר זוגי. באמצע עומדים שניים: ${sortedTxt(exSt)}. ${E('(70 + 85) ÷ 2 = 77.5')}. החציון הוא 77.5.`,
+  `<strong>שכיח:</strong> ברשימה המסודרת קל לראות ש-70 מופיע פעמיים, וכל השאר פעם אחת. השכיח הוא 70.`,
+  'סיכום: ממוצע 80, חציון 77.5, שכיח 70. שלושה מספרים שונים לאותה רשימה, וכל אחד מספר משהו אחר.'
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, solved=0, streak=0;
+const isSorted=a=>a.every((v,i)=>!i||a[i-1]<=v);
+function gen(type){
+  const n=pick([5,5,6,7]);
+  let data;
+  if(type==='mode'){
+    const r=n>=6?pick([2,3]):2, pool=shuffle(Array.from({length:20},(x,i)=>i+1));
+    data=shuffle([...Array(r).fill(pool[0]),...pool.slice(1,1+n-r)]);
+  }else{
+    data=Array.from({length:n},()=>rnd(2,20));
+    if(type==='mean'){
+      const rem=data.reduce((x,y)=>x+y,0)%n;
+      if(rem){ const i=data.findIndex(v=>v-rem>=1); if(i>=0) data[i]-=rem; else data[0]+=n-rem; }
+    }
+  }
+  if(isSorted(data)) data=shuffle(data);
+  if(isSorted(data)) [data[0],data[1]]=[data[1],data[0]];
+  return data;
+}
+function newPr(){
+  const type=mode==='mix'?pick(['mean','median','mode']):mode;
+  const data=gen(type), st=stats(data);
+  const ans=type==='mean'?st.mean:type==='median'?st.median:st.modes[0];
+  pr={type,data,st,ans,tries:0,hint:0};
+  $('prChips').innerHTML=data.map(v=>`<span class="chip">${v}</span>`).join('');
+  $('prQ').textContent={mean:'מה הממוצע של הרשימה?',median:'מה החציון של הרשימה?',mode:'מה השכיח של הרשימה?'}[type];
+  $('prLbl').textContent={mean:'ממוצע =',median:'חציון =',mode:'שכיח ='}[type];
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function diagnose(v){
+  const {type,data,st}=pr, n=st.n;
+  if(type==='mean'){
+    if(eqv(v,st.sum)) return 'זה הסכום. עכשיו חלקו אותו בכמה מספרים יש ברשימה.';
+    if(eqv(v,st.sum/(n-1))||eqv(v,st.sum/(n+1))) return `חילקתם במספר הלא נכון. ספרו שוב: ברשימה יש ${n} מספרים.`;
+    if(eqv(v,st.median)) return 'זה החציון (המספר שבאמצע). הממוצע הוא סכום חלקי כמות.';
+    return 'לא בדיוק. בדקו את הסכום, ואז את החילוק.';
+  }
+  if(type==='median'){
+    const raw=n%2?data[(n-1)/2]:(data[n/2-1]+data[n/2])/2;
+    if(eqv(v,raw)&&!eqv(raw,st.median)) return 'לקחתם את האמצע של הרשימה כמו שהיא. קודם צריך לסדר אותה מהקטן לגדול.';
+    if(n%2===0&&(eqv(v,st.sorted[n/2-1])||eqv(v,st.sorted[n/2]))) return 'יש כאן מספר זוגי של ערכים, ולכן באמצע עומדים שני מספרים. החציון הוא הממוצע של שניהם.';
+    if(eqv(v,st.mean)) return 'זה הממוצע. החציון הוא המספר שבאמצע אחרי שמסדרים.';
+    return 'לא בדיוק. סדרו את הרשימה ומצאו את האמצע.';
+  }
+  if(eqv(v,st.max)&&!data.includes(v)) return `${st.max} זה כמה פעמים השכיח מופיע. השאלה היא איזה מספר מופיע הכי הרבה.`;
+  if(data.includes(v)) return `${numTxt(v)} מופיע רק ${st.cnt[v]} ${st.cnt[v]===1?'פעם אחת':'פעמים'}. חפשו מספר שמופיע יותר.`;
+  if(eqv(v,st.max)) return `${st.max} זה כמה פעמים השכיח מופיע. השאלה היא איזה מספר מופיע הכי הרבה.`;
+  return 'המספר הזה לא נמצא ברשימה בכלל. השכיח הוא תמיד אחד המספרים שברשימה.';
+}
+function solution(){
+  const {type,data,st}=pr;
+  if(type==='mean') return `${sumTxt(data)}. יש ${st.n} מספרים, אז ${meanTxt(st)}.`;
+  if(type==='median') return `מסדרים: ${sortedTxt(st)}. ${medianTxt(st)}`;
+  return `מסדרים: ${E(st.sorted.join(', '))}. ${modeTxt(st)}`;
+}
+$('prCheck').onclick=()=>{
+  const v=numIn($('prA').value);
+  if(isNaN(v)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 12 או 7.5.</div>'; return; }
+  if(eqv(v,pr.ans)||(!isRound(pr.ans)&&Math.abs(v-pr.ans)<0.051)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(v)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,st}=pr; let h;
+  if(type==='mean') h=pr.hint===1?'קודם חברו את כל המספרים ברשימה.':`הסכום הוא ${E(numTxt(st.sum))}. עכשיו חלקו בכמה מספרים יש ברשימה. ספרו אותם.`;
+  else if(type==='median') h=pr.hint===1?'קודם סדרו את המספרים מהקטן לגדול.':`ברשימה המסודרת: ${E(st.sorted.join(', '))}. ${st.n%2?'יש מספר אי-זוגי של ערכים, אז יש מספר אחד בדיוק באמצע.':'יש מספר זוגי של ערכים, אז באמצע עומדים שניים. קחו את הממוצע שלהם.'}`;
+  else h=pr.hint===1?'חפשו מספר שמופיע יותר מפעם אחת.':`סדרו את הרשימה, ואז מספרים זהים עומדים אחד ליד השני: ${E(st.sorted.join(', '))}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו רשימה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+
+/* ---------- which measure fits ---------- */
+const FIT=[
+  {q:'חנות נעליים רוצה לדעת איזו מידה להזמין הכי הרבה, כי אותה הכי הרבה ילדים קונים.',a:'שכיח',why:'המידה שקונים הכי הרבה היא המידה שמופיעה הכי הרבה פעמים. זה בדיוק השכיח. ממוצע של מידות יכול לצאת מידה שאף אחד לא נועל.'},
+  {q:'דמי הכיס של שבעה חברים בשקלים: 20, 25, 25, 30, 30, 35, 300 (אחד קיבל מתנה גדולה). איזה מספר מתאר הכי טוב דמי כיס רגילים?',a:'חציון',why:'ה-300 הוא ערך חריג, והוא מושך את הממוצע למעל 60. החציון הוא 30, וזה באמת סכום רגיל בקבוצה.'},
+  {q:'צבע אהוב בכיתה: אדום, כחול, כחול, ירוק, כחול, צהוב. מה אפשר לחשב כאן?',a:'שכיח',why:'אי אפשר לחבר צבעים או לסדר אותם מהקטן לגדול. אבל אפשר לבדוק איזה צבע מופיע הכי הרבה: כחול.'},
+  {q:'הטמפרטורות בחמישה ימים: 20, 22, 21, 23, 24 מעלות. רוצים מספר אחד שמשתמש בכל הימים, כדי להשוות לשבוע אחר.',a:'ממוצע',why:'אין כאן ערך חריג, והממוצע משתמש בכל המספרים. הוא יוצא 22, ואפשר להשוות אותו לממוצע של שבוע אחר.'},
+  {q:'מחירי דירות ברחוב: רוב הדירות עולות בערך מיליון וחצי, ושתי וילות עולות 12 מיליון. מה מתאר מחיר של דירה רגילה ברחוב?',a:'חציון',why:'שתי הווילות הן ערכים חריגים, והן מושכות את הממוצע הרבה למעלה. החציון לא מושפע מהן כמעט.'},
+  {q:'בכיתה עשו מבחן, ואף ציון לא יוצא דופן. המורה רוצה להשוות את הכיתה לכיתה המקבילה במספר אחד.',a:'ממוצע',why:'כשאין ערכים חריגים, הממוצע הוא הדרך הרגילה להשוות קבוצות, כי הוא לוקח בחשבון כל ציון.'}
+];
+let fitOrder=shuffle(FIT.map((x,i)=>i)), fitI=0, fitOk=0;
+function fit(){
+  const f=FIT[fitOrder[fitI%FIT.length]];
+  $('fitQ').textContent=f.q; $('fitFb').innerHTML='';
+  $('fitChoices').innerHTML=['ממוצע','חציון','שכיח'].map(c=>`<button data-c="${c}">${c}</button>`).join('');
+  $('fitChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    const ok=b.dataset.c===f.a;
+    if(ok){ fitOk++; $('fitChoices').querySelectorAll('button').forEach(x=>x.disabled=true); }
+    $('fitFb').innerHTML=ok?`<div class="fb ok">נכון! ${f.why}</div>`:`<div class="fb err">לא בדיוק. חשבו: יש כאן ערך חריג? אפשר בכלל לחבר את מה שיש ברשימה?</div>`;
+    $('fitCount').textContent=`צדקתם ב-${fitOk} מקרים`;
+    if(!ok) b.disabled=true;
+  });
+}
+$('fitNew').onclick=()=>{fitI++; fit();};
+fit();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>משפט פיתגורס · גאומטריה כיתה ח · מירי</title>
+<meta name="description" content="מה אומר משפט פיתגורס ואיך מוצאים צלע חסרה במשולש ישר זווית. מעבדה שאפשר להזיז, דוגמאות פתורות ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/pythagoras/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משפט פיתגורס · גאומטריה כיתה ח · מירי">
+<meta property="og:description" content="מה אומר משפט פיתגורס ואיך מוצאים צלע חסרה במשולש ישר זווית. מעבדה שאפשר להזיז, דוגמאות פתורות ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/pythagoras/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"גאומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-8/#geometry"},{"@type":"ListItem","position":5,"name":"משפט פיתגורס","item":"https://shohamtal.github.io/homework-site/math/pythagoras/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך יודעים איזו צלע היא היתר?","acceptedAnswer":{"@type":"Answer","text":"היתר הוא הצלע שמול הזווית הישרה. היא לא נוגעת בזווית הישרה, והיא תמיד הצלע הכי ארוכה במשולש. ראו במעבדה למעלה שהריבוע הוורוד על היתר הוא תמיד הגדול."}},{"@type":"Question","name":"האם משפט פיתגורס עובד בכל משולש?","acceptedAnswer":{"@type":"Answer","text":"לא. הוא עובד רק במשולש ישר זווית. אבל אפשר להשתמש בו כדי לבדוק אם משולש הוא ישר זווית: אם הריבוע של הצלע הארוכה שווה לסכום הריבועים של שתי האחרות, הוא ישר זווית. נסו את הלשונית \"האם זה משולש ישר זווית?\" בתרגול."}},{"@type":"Question","name":"איך מוצאים ניצב כשיודעים את היתר?","acceptedAnswer":{"@type":"Answer","text":"מחסרים: ריבוע היתר פחות ריבוע הניצב שידוע, ואז מוציאים שורש. למשל יתר 13 וניצב 5: 169 − 25 = 144, והניצב הוא √144 = 12. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"משפט פיתגורס","description":"מה אומר משפט פיתגורס ואיך מוצאים צלע חסרה במשולש ישר זווית. מעבדה שאפשר להזיז, דוגמאות פתורות ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/pythagoras/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"גאומטריה","teaches":"משפט פיתגורס","keywords":"משולש ישר זווית, יתר, ניצבים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.pg{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.pg .tri{fill:var(--hl); fill-opacity:.55; stroke:var(--ink); stroke-width:2; stroke-linejoin:round}
+.pg .sqa{fill:var(--blue); fill-opacity:.14; stroke:var(--blue); stroke-width:1.6}
+.pg .sqb{fill:var(--green); fill-opacity:.14; stroke:var(--green); stroke-width:1.6}
+.pg .sqc{fill:var(--line); fill-opacity:.12; stroke:var(--line); stroke-width:1.6}
+.pg .gla{stroke:var(--blue); stroke-opacity:.35; stroke-width:.8}
+.pg .glb{stroke:var(--green); stroke-opacity:.35; stroke-width:.8}
+.pg .glc{stroke:var(--line); stroke-opacity:.35; stroke-width:.8}
+.pg .ra{fill:none; stroke:var(--ink); stroke-width:1.4}
+.pg .area{font:700 13px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.pg .lbl{font:700 14px var(--f-math); font-style:italic; text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.pg .lbl.miss{fill:var(--line)}
+.pg .lbl.hot{fill:var(--blue)}
+.pg .side-hot{stroke:var(--line); stroke-width:4; stroke-linecap:round}
+.pg .word{font:700 12px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--muted)}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.calc{display:flex; flex-direction:column; gap:4px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="pythagoras">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#geometry">גאומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">משפט פיתגורס</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · גאומטריה</div>
+  <h1>משפט פיתגורס</h1>
+  <p class="lead">במשולש ישר זווית יש קשר מיוחד בין שלוש הצלעות. אם יודעים שתי צלעות, אפשר לחשב את השלישית. כאן תראו למה המשפט נכון, ותלמדו למצוא כל צלע חסרה. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>ניצבים, יתר, ומשפט אחד</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מי זה מי במשולש</h3>
+      <svg class="pg" id="ideaG" viewBox="0 0 240 170" role="img" aria-label="משולש ישר זווית עם שני ניצבים ויתר"></svg>
+      <p>שתי הצלעות שיוצרות את הזווית הישרה הן ה<strong>ניצבים</strong>. נקרא להן <span class="eq"><i>a</i></span> ו-<span class="eq"><i>b</i></span>.</p>
+      <p>הצלע שמול הזווית הישרה היא ה<strong>יתר</strong>, <span class="eq"><i>c</i></span>. היא תמיד הצלע הכי ארוכה.</p>
+    </div>
+    <div class="mini">
+      <h3>המשפט</h3>
+      <div class="big-eq"><span class="eq"><i>a</i>² + <i>b</i>² = <i>c</i>²</span></div>
+      <p>במילים: ריבוע של ניצב, ועוד ריבוע של הניצב השני, שווה לריבוע של היתר.</p>
+      <p>דוגמה: ניצבים 3 ו-4. <span class="eq">3² + 4² = 9 + 16 = 25</span>. ו-<span class="eq">25 = 5²</span>, אז היתר הוא 5.</p>
+      <p>המשפט עובד <strong>רק</strong> במשולש ישר זווית.</p>
+    </div>
+  </div>
+  <div class="callout">למה קוראים לזה "ריבוע"? כי <span class="eq"><i>a</i>²</span> הוא באמת השטח של ריבוע שהצלע שלו <span class="eq"><i>a</i></span>. במעבדה תראו את שלושת הריבועים האלה ממש.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: שלושה ריבועים</h2></div>
+  <p class="text">על כל צלע של המשולש בנינו ריבוע. הזיזו את הניצבים ובדקו: השטח של הריבוע הוורוד שווה תמיד לשני הריבועים האחרים ביחד.</p>
+  <div class="lab">
+    <svg class="pg" id="labG" viewBox="0 0 300 300" role="img" aria-label="משולש ישר זווית עם ריבוע על כל צלע"></svg>
+    <div class="ctrl">
+      <label class="slider" for="la"><span>ניצב <i>a</i> (כחול)</span><span class="eq" id="lav"></span></label>
+      <input type="range" class="blue" id="la" min="1" max="12" step="1" value="3">
+      <label class="slider" for="lb"><span>ניצב <i>b</i> (ירוק)</span><span class="eq" id="lbv"></span></label>
+      <input type="range" class="hl" id="lb" min="1" max="12" step="1" value="4">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="3,4">3 ו-4</button>
+          <button data-p="6,8">6 ו-8</button>
+          <button data-p="5,12">5 ו-12</button>
+          <button data-p="4,4">ניצבים שווים</button>
+          <button data-p="1,1">1 ו-1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב ל-6 ו-8: הם פי 2 מ-3 ו-4, וגם היתר יוצא פי 2: 10 במקום 5.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מחפשים ניצב? מחסרים</h3>
+      <p>היתר תמיד לבד בצד אחד: <span class="eq"><i>a</i>² + <i>b</i>² = <i>c</i>²</span>.</p>
+      <p>אם חסר ניצב, מעבירים: <span class="eq"><i>b</i>² = <i>c</i>² − <i>a</i>²</span>. מי שמחבר כאן יקבל ניצב ארוך מהיתר, וזה בלתי אפשרי.</p>
+    </div>
+    <div class="mini">
+      <h3>לא לשכוח את השורש</h3>
+      <p><span class="eq">9 + 16 = 25</span> זה <span class="eq"><i>c</i>²</span>, לא <span class="eq"><i>c</i></span>.</p>
+      <p>בסוף מוציאים שורש: <span class="eq"><i>c</i> = √25 = 5</span>. שאלו את עצמכם: האם התשובה הגיונית? יתר של 25 למשולש עם ניצבים 3 ו-4? ממש לא.</p>
+    </div>
+    <div class="mini">
+      <h3>לא מחברים את הצלעות</h3>
+      <p><span class="eq">3 + 4 = 7</span>, אבל היתר הוא 5.</p>
+      <p>מחברים את ה<strong>ריבועים</strong> של הצלעות, לא את הצלעות עצמן.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ואם המשולש לא ישר זווית?</strong> אז המשפט לא עובד. אבל אפשר להשתמש בו כדי לבדוק: אם <span class="eq"><i>a</i>² + <i>b</i>² = <i>c</i>²</span> כשה-<span class="eq"><i>c</i></span> הוא הצלע הארוכה, המשולש ישר זווית. אם לא, הוא לא.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: מוצאים יתר</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: מוצאים ניצב</button>
+  </div>
+  <div class="lab">
+    <svg class="pg" id="exG" viewBox="0 0 240 200" role="img" aria-label="משולש הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <div class="row" role="tablist">
+    <button id="tabSide" class="primary" role="tab" aria-selected="true">מצאו את הצלע החסרה</button>
+    <button id="tabRight" role="tab" aria-selected="false">האם זה משולש ישר זווית?</button>
+  </div>
+
+  <div id="paneSide">
+    <p class="text">בכל משולש חסרה צלע אחת, והיא מסומנת בסימן שאלה. חשבו אותה וכתבו מספר.</p>
+    <div class="lab">
+      <svg class="pg" id="prG" viewBox="0 0 240 200" role="img" aria-label="משולש לתרגול"></svg>
+      <div class="ctrl">
+        <p id="prQ"></p>
+        <div class="inputs">
+          <label for="prA"><span id="prLbl">הצלע החסרה =</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+          <button id="prCheck" class="primary">בדיקה</button>
+        </div>
+        <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">משולש חדש</button></div>
+        <div id="prFb" aria-live="polite"></div>
+        <p class="counter" id="prStreak"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="paneRight" hidden>
+    <p class="text">נתונות שלוש צלעות של משולש. האם הוא ישר זווית? בדקו עם משפט פיתגורס.</p>
+    <div class="big-eq" id="rtQ" style="font-size:1.5rem"></div>
+    <div class="choices">
+      <button id="rtYes">כן, ישר זווית</button>
+      <button id="rtNo">לא, לא ישר זווית</button>
+    </div>
+    <div class="row"><button id="rtHint">רמז</button><button id="rtNew">שלוש צלעות חדשות</button></div>
+    <div id="rtFb" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך יודעים איזו צלע היא היתר?</h3>
+    <p>היתר הוא הצלע שמול הזווית הישרה. היא לא נוגעת בזווית הישרה, והיא תמיד הצלע הכי ארוכה במשולש. <a href="#lab">ראו במעבדה למעלה</a> שהריבוע הוורוד על היתר הוא תמיד הגדול.</p>
+    <h3>האם משפט פיתגורס עובד בכל משולש?</h3>
+    <p>לא. הוא עובד רק במשולש ישר זווית. אבל אפשר להשתמש בו כדי לבדוק אם משולש הוא ישר זווית: אם הריבוע של הצלע הארוכה שווה לסכום הריבועים של שתי האחרות, הוא ישר זווית. <a href="#practice">נסו את הלשונית "האם זה משולש ישר זווית?" בתרגול</a>.</p>
+    <h3>איך מוצאים ניצב כשיודעים את היתר?</h3>
+    <p>מחסרים: ריבוע היתר פחות ריבוע הניצב שידוע, ואז מוציאים שורש. למשל יתר 13 וניצב 5: <span class="eq">169 − 25 = 144</span>, והניצב הוא <span class="eq">√144 = 12</span>. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/powers-roots/">חוקי חזקות ושורשים</a> · <a href="../../math/quadrilaterals/">מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/powers-roots/"><small>→ הנושא הקודם</small>חוקי חזקות ושורשים</a><a class="next" href="../../math/congruence/"><small>הנושא הבא ←</small>חפיפת משולשים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const isSq=n=>Number.isInteger(Math.round(Math.sqrt(n)*1e6)/1e6);
+const root=n=>isSq(n)?`√${n} = ${Math.round(Math.sqrt(n))}`:`√${n} ≈ ${(Math.round(Math.sqrt(n)*10)/10)}`;
+const fmt=v=>String(Math.round(v*100)/100);
+
+/* fit points (math coords, y up) into a viewBox of size W×H; returns a mapper */
+function fitter(pts,W,H,pad){
+  const xs=pts.map(p=>p[0]), ys=pts.map(p=>p[1]);
+  const minX=Math.min(...xs), maxX=Math.max(...xs), minY=Math.min(...ys), maxY=Math.max(...ys);
+  const k=Math.min((W-2*pad)/(maxX-minX||1),(H-2*pad)/(maxY-minY||1));
+  const ox=(W-(maxX-minX)*k)/2, oy=(H-(maxY-minY)*k)/2;
+  const f=p=>[ox+(p[0]-minX)*k, oy+(maxY-p[1])*k];
+  f.k=k; return f;
+}
+const poly=(f,pts,cls)=>`<polygon class="${cls}" points="${pts.map(p=>f(p).map(v=>v.toFixed(1)).join(',')).join(' ')}"/>`;
+const line=(f,p,q,cls)=>{const [x1,y1]=f(p),[x2,y2]=f(q); return `<line class="${cls}" x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}"/>`;};
+const text=(f,p,s,cls,dx=0,dy=0)=>{const [x,y]=f(p); return `<text class="${cls}" x="${(x+dx).toFixed(1)}" y="${(y+dy).toFixed(1)}">${s}</text>`;};
+const add=(p,q,t=1)=>[p[0]+q[0]*t,p[1]+q[1]*t];
+
+/* right-angle marker at corner O with legs along unit vectors u and v */
+function raMark(f,O,u,v,s){ const a=add(O,u,s), b=add(add(O,u,s),v,s), c=add(O,v,s);
+  return `<polyline class="ra" points="${[a,b,c].map(p=>f(p).map(n=>n.toFixed(1)).join(',')).join(' ')}"/>`; }
+
+/* ---------- lab: triangle with a square on every side ---------- */
+function labDraw(a,b){
+  const c=Math.hypot(a,b);
+  const O=[0,0], A=[a,0], B=[0,b];
+  const sqA=[O,A,[a,-a],[0,-a]], sqB=[O,B,[-b,b],[-b,0]];
+  const n=[b,a];                           /* outward normal of the hypotenuse, length c */
+  const sqC=[A,B,add(B,n),add(A,n)];
+  const f=fitter([[-b,-a],[a+b,a+b],[a+b,-a],[-b,a+b]],300,300,14);
+  let s=poly(f,sqA,'sqa')+poly(f,sqB,'sqb')+poly(f,sqC,'sqc');
+  for(let i=1;i<a;i++){ s+=line(f,[i,0],[i,-a],'gla')+line(f,[0,-i],[a,-i],'gla'); }
+  for(let i=1;i<b;i++){ s+=line(f,[0,i],[-b,i],'glb')+line(f,[-i,0],[-i,b],'glb'); }
+  const u=[-a/c,b/c], v=[b/c,a/c];
+  for(let t=1;t<c-1e-6;t++){ s+=line(f,add(A,u,t),add(add(A,u,t),v,c),'glc')+line(f,add(A,v,t),add(B,v,t),'glc'); }
+  s+=poly(f,[O,A,B],'tri')+raMark(f,O,[1,0],[0,1],Math.min(.9,a/3,b/3));
+  const big=side=>side*f.k>34;
+  if(big(a)) s+=text(f,[a/2,-a/2],`${a*a}`,'area');
+  if(big(b)) s+=text(f,[-b/2,b/2],`${b*b}`,'area');
+  s+=text(f,add([a/2+b/2,b/2+a/2],[0,0]),`${a*a+b*b}`,'area');
+  s+=text(f,[a/2,0],'a','lbl',0,-12)+text(f,[0,b/2],'b','lbl',12,0)+text(f,[a/2,b/2],'c','lbl',-8,-8);
+  $('labG').innerHTML=s;
+}
+const LA=$('la'), LB=$('lb');
+function lab(){
+  const a=+LA.value, b=+LB.value, c2=a*a+b*b;
+  $('lav').textContent=a; $('lbv').textContent=b;
+  labDraw(a,b);
+  let t=`<div>${E(`<i>a</i>² + <i>b</i>² = ${a}² + ${b}² = ${a*a} + ${b*b} = ${c2}`)}</div>`;
+  t+=`<div>הריבוע הכחול (${a*a}) ועוד הירוק (${b*b}) שווים בדיוק לוורוד (${c2}).</div>`;
+  t+=`<div><strong>היתר:</strong> ${E(`<i>c</i> = ${root(c2)}`)}${isSq(c2)?'. יצא מספר שלם!':'. לא יצא מספר שלם, אז כותבים שורש או מעגלים.'}</div>`;
+  if(a===b) t+='<div>הניצבים שווים, אז זה משולש ישר זווית ושווה שוקיים.</div>';
+  $('labTxt').innerHTML=t;
+}
+[LA,LB].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{const [a,b]=btn.dataset.p.split(','); LA.value=a; LB.value=b; lab();}));
+lab();
+
+/* ---------- a plain right triangle with side labels ---------- */
+/* lab: {a,b,c} strings to show; miss: which side is '?'; hot: side to highlight; flip mirrors it */
+function triDraw(svg,a,b,o={}){
+  const W=240,H=200;
+  const O=[0,0], A=[o.flip?-a:a,0], B=[0,b];
+  const f=fitter([O,A,B],W,H,30);
+  const sx=o.flip?-1:1;
+  let s='';
+  if(o.hot) s+=line(f,...({a:[O,A],b:[O,B],c:[A,B]}[o.hot]),'side-hot');
+  s+=poly(f,[O,A,B],'tri')+raMark(f,O,[sx,0],[0,1],Math.min(a,b)/6);
+  const L=o.lab||{};
+  const cls=k=>'lbl'+(o.miss===k?' miss':'');
+  if(L.a!=null) s+=text(f,[A[0]/2,0],L.a,cls('a'),0,14);
+  if(L.b!=null) s+=text(f,[0,b/2],L.b,cls('b'),-16*sx,0);
+  if(L.c!=null) s+=text(f,[A[0]/2,b/2],L.c,cls('c'),12*sx,-10);
+  if(o.words){ s+=text(f,[A[0]/2,0],'ניצב','word',0,30)+text(f,[0,b/2],'ניצב','word',-34*sx,0)+text(f,[A[0]/2,b/2],'יתר','word',30*sx,-24); }
+  svg.innerHTML=s;
+}
+triDraw($('ideaG'),4,3,{lab:{a:'a',b:'b',c:'c'},words:true});
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{a:6,b:8,steps:[
+    [{lab:{a:'6',b:'8',c:'?'},miss:'c'},'ניצבים 6 ו-8. כמה אורך היתר?'],
+    [{lab:{a:'6',b:'8',c:'?'},miss:'c',hot:'c'},`הצלע החסרה מול הזווית הישרה, אז היא היתר ${E('<i>c</i>')}. כותבים: ${E('6² + 8² = <i>c</i>²')}.`],
+    [{lab:{a:'6',b:'8',c:'?'},miss:'c',hot:'c'},`מחשבים ריבועים: ${E('36 + 64 = <i>c</i>²')}, כלומר ${E('<i>c</i>² = 100')}.`],
+    [{lab:{a:'6',b:'8',c:'10'},hot:'c'},`מוציאים שורש: ${E('<i>c</i> = √100 = 10')}. בדיקה: 10 הוא הצלע הכי ארוכה. מתאים!`]
+  ]},
+  B:{a:5,b:12,steps:[
+    [{lab:{a:'5',b:'?',c:'13'},miss:'b'},'יתר 13 וניצב 5. כמה אורך הניצב השני?'],
+    [{lab:{a:'5',b:'?',c:'13'},miss:'b',hot:'b'},`הצלע החסרה היא ניצב. כותבים את המשפט: ${E('5² + <i>b</i>² = 13²')}.`],
+    [{lab:{a:'5',b:'?',c:'13'},miss:'b',hot:'b'},`מעבירים את 5² לצד השני, ולכן <strong>מחסרים</strong>: ${E('<i>b</i>² = 169 − 25 = 144')}.`],
+    [{lab:{a:'5',b:'12',c:'13'},hot:'b'},`מוציאים שורש: ${E('<i>b</i> = √144 = 12')}. בדיקה: 12 קצר מ-13, כמו שניצב צריך להיות.`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [o,txt]=e.steps[exI];
+  triDraw($('exG'),e.a,e.b,o);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice tabs ---------- */
+function tab(k){
+  $('paneSide').hidden=k!=='side'; $('paneRight').hidden=k!=='right';
+  [['tabSide','side'],['tabRight','right']].forEach(([id,kk])=>{$(id).classList.toggle('primary',kk===k); $(id).setAttribute('aria-selected',kk===k);});
+}
+$('tabSide').onclick=()=>tab('side'); $('tabRight').onclick=()=>tab('right');
+
+/* ---------- practice: missing side ---------- */
+const TRIPLES=[[3,4,5],[6,8,10],[5,12,13],[9,12,15],[8,15,17],[12,16,20],[7,24,25],[15,20,25],[10,24,26],[12,9,15],[4,3,5],[8,6,10]];
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let t; do{ t=pick(TRIPLES); } while(pr.t===t);
+  const [a,b,c]=t, miss=pick(['c','c','a','b']);
+  pr={t,a,b,c,miss,tries:0,hint:0,flip:Math.random()<.5,ans:{a,b,c}[miss]};
+  const lab={a:String(a),b:String(b),c:String(c)}; lab[miss]='?';
+  pr.lab=lab;
+  triDraw($('prG'),a,b,{lab,miss,flip:pr.flip});
+  const known=miss==='c'?`הניצבים הם ${a} ו-${b}`:`היתר ${c} וניצב אחד ${miss==='a'?b:a}`;
+  $('prQ').innerHTML=`${known}. ${miss==='c'?'כמה אורך היתר?':'כמה אורך הניצב השני?'}`;
+  $('prLbl').textContent=miss==='c'?'היתר =':'הניצב החסר =';
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {a,b,c,miss}=pr;
+  if(miss==='c') return `${E(`${a}² + ${b}² = <i>c</i>²`)}, כלומר ${E(`${a*a} + ${b*b} = ${c*c}`)}. ולכן ${E(`<i>c</i> = √${c*c} = ${c}`)}.`;
+  const k=miss==='a'?b:a, x=miss==='a'?a:b;
+  return `${E(`<i>${miss}</i>² = ${c}² − ${k}² = ${c*c} − ${k*k} = ${x*x}`)}. ולכן ${E(`<i>${miss}</i> = √${x*x} = ${x}`)}.`;
+}
+$('prCheck').onclick=()=>{
+  const v=parseNum($('prA').value), fb=$('prFb');
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 10.</div>'; return; }
+  const {a,b,c,miss,ans}=pr;
+  if(eqv(v,ans)){ streak++; solved++; streakTxt();
+    const lab={a:String(a),b:String(b),c:String(c)};
+    triDraw($('prG'),a,b,{lab,hot:miss,flip:pr.flip});
+    fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  let msg;
+  if(miss==='c'){
+    if(eqv(v,a+b)) msg='חיברתם את הצלעות עצמן. במשפט פיתגורס מחברים את <strong>הריבועים</strong> שלהן.';
+    else if(eqv(v,a*a+b*b)) msg=`כמעט! ${numTxt(v)} זה ${E('<i>c</i>²')}. עוד צריך להוציא שורש.`;
+    else if(eqv(v,2*a+2*b)||eqv(v,a*2+b*2)) msg='כפלתם ב-2 במקום להעלות בריבוע. ריבוע של מספר זה המספר כפול עצמו.';
+    else if(v<=Math.max(a,b)) msg='היתר תמיד ארוך מכל אחד מהניצבים. התשובה שלכם קצרה מדי.';
+    else msg='עוד לא. חשבו כל ריבוע לבד, חברו, ובסוף הוציאו שורש.';
+  } else {
+    const k=miss==='a'?b:a;
+    if(eqv(v,Math.sqrt(c*c+k*k))||v>c) msg='חיברתם במקום לחסר. היתר הוא הצלע הכי ארוכה, אז ניצב חייב לצאת קצר ממנו.';
+    else if(eqv(v,c*c-k*k)) msg=`כמעט! ${numTxt(v)} זה הריבוע של הניצב. עוד צריך להוציא שורש.`;
+    else if(eqv(v,c-k)) msg='חיסרתם את הצלעות עצמן. צריך לחסר את <strong>הריבועים</strong> שלהן, ואז להוציא שורש.';
+    else if(eqv(v,c*c+k*k)) msg='חיברתם במקום לחסר, וגם שכחתם שורש. מחפשים ניצב? מחסרים.';
+    else msg='עוד לא. ריבוע היתר פחות ריבוע הניצב שידוע, ואז שורש.';
+  }
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const {a,b,c,miss}=pr;
+  triDraw($('prG'),a,b,{lab:pr.lab,miss,hot:miss,flip:pr.flip});
+  let h;
+  if(pr.hint===1) h=miss==='c'?'הצלע החסרה נמצאת מול הזווית הישרה, אז היא היתר. היתר לבד בצד אחד של המשפט.':'הצלע החסרה היא ניצב, כי היא נוגעת בזווית הישרה. היתר כבר ידוע.';
+  else h=miss==='c'?`כתבו: ${E(`${a}² + ${b}² = <i>c</i>²`)}. כמה זה ${a}² ועוד ${b}²?`:`כתבו: ${E(`<i>${miss}</i>² = ${c}² − ${miss==='a'?b:a}²`)}. כמה זה? ואחר כך שורש.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {a,b,c,miss}=pr;
+  triDraw($('prG'),a,b,{lab:{a:String(a),b:String(b),c:String(c)},hot:miss,flip:pr.flip});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} עכשיו נסו משולש חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+
+/* ---------- practice: is it a right triangle? ---------- */
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+let rt={};
+function newRt(){
+  let s;
+  if(Math.random()<.5){ const t=pick(TRIPLES); s=[t[0],t[1],t[2]]; }
+  else{ const t=pick(TRIPLES); const i=Math.floor(Math.random()*3); s=[...t]; s[i]+=pick([1,-1,2]);
+    const q=[...s].sort((x,y)=>x-y); if(q[0]+q[1]<=q[2]||q[0]*q[0]+q[1]*q[1]===q[2]*q[2]) s=[4,5,6]; }
+  const q=[...s].sort((x,y)=>x-y);
+  rt={sides:shuffle(s),a:q[0],b:q[1],c:q[2],right:q[0]*q[0]+q[1]*q[1]===q[2]*q[2],done:false};
+  $('rtQ').innerHTML=E(rt.sides.join(' , '));
+  $('rtFb').innerHTML='';
+}
+function rtWhy(){
+  const {a,b,c}=rt, l=a*a+b*b, r=c*c;
+  return `הצלע הכי ארוכה היא ${c}, אז בודקים: ${E(`${a}² + ${b}² = ${a*a} + ${b*b} = ${l}`)}, ו-${E(`${c}² = ${r}`)}. ${l===r?'שווה, ולכן המשולש ישר זווית.':`${l} לא שווה ל-${r}, ולכן הוא לא ישר זווית.`}`;
+}
+function rtAnswer(yes){
+  if(yes===rt.right){ $('rtFb').innerHTML=`<div class="fb ok">נכון! ${rtWhy()}</div>`; return; }
+  $('rtFb').innerHTML=`<div class="fb err">${yes?'לא בדיוק.':'דווקא כן!'} ${rtWhy()} זכרו: בתור ${E('<i>c</i>')} לוקחים תמיד את הצלע הכי ארוכה.</div>`;
+}
+$('rtYes').onclick=()=>rtAnswer(true); $('rtNo').onclick=()=>rtAnswer(false);
+$('rtHint').onclick=()=>{
+  $('rtFb').innerHTML=`<div class="fb hint">מי הצלע הכי ארוכה? היא תהיה ${E('<i>c</i>')}. עכשיו חשבו את הריבועים של שתי האחרות, חברו, והשוו ל-${E(`${rt.c}²`)}.</div>`;
+};
+$('rtNew').onclick=newRt;
+newRt();
+})();
+</script>
+</body>
+</html>

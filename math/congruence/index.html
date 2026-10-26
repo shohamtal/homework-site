@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חפיפת משולשים · גאומטריה כיתה ח · מירי</title>
+<meta name="description" content="ארבעת משפטי החפיפה (צ.ז.צ, ז.צ.ז, צ.צ.צ, צ.צ.ז) ואיך כותבים הוכחת חפיפה. דוגמאות ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/congruence/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חפיפת משולשים · גאומטריה כיתה ח · מירי">
+<meta property="og:description" content="ארבעת משפטי החפיפה (צ.ז.צ, ז.צ.ז, צ.צ.צ, צ.צ.ז) ואיך כותבים הוכחת חפיפה. דוגמאות ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/congruence/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"גאומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-8/#geometry"},{"@type":"ListItem","position":5,"name":"חפיפת משולשים","item":"https://shohamtal.github.io/homework-site/math/congruence/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין צ.ז.צ לז.צ.ז?","acceptedAnswer":{"@type":"Answer","text":"בצ.ז.צ יש שתי צלעות שוות, והזווית שביניהן. בז.צ.ז יש שתי זוויות שוות, והצלע שביניהן. האות האמצעית היא תמיד מה שנמצא באמצע. נסו את שניהם במעבדה למעלה."}},{"@type":"Question","name":"למה ז.ז.ז הוא לא משפט חפיפה?","acceptedAnswer":{"@type":"Answer","text":"כי אפשר לצייר משולש גדול ומשולש קטן עם אותן שלוש זוויות בדיוק. הצורה זהה, אבל הגודל לא, אז הם לא חופפים. בתרגול למטה יש מקרים כאלה, והתשובה בהם היא \"אי אפשר לדעת\"."}},{"@type":"Question","name":"איך כותבים הוכחת חפיפה בצורה מסודרת?","acceptedAnswer":{"@type":"Answer","text":"בונים טבלה עם שתי עמודות: טענה ונימוק. כותבים את שלושת הדברים השווים, כל אחד עם הסיבה (נתון, צלע משותפת, זוויות קודקודיות). אחר כך כותבים שהמשולשים חופפים ואת שם המשפט, ובסוף את מה שרצו להוכיח: \"צלעות מתאימות במשולשים חופפים\". תרגלו בלשונית \"סדרו הוכחה\"."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חפיפת משולשים","description":"ארבעת משפטי החפיפה (צ.ז.צ, ז.צ.ז, צ.צ.צ, צ.צ.ז) ואיך כותבים הוכחת חפיפה. דוגמאות ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/congruence/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"גאומטריה","teaches":"חפיפת משולשים","keywords":"צ.ז.צ, ז.צ.ז, צ.צ.צ, הוכחה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.cg{width:100%; height:auto; display:block; margin-inline:auto; direction:ltr}
+svg.cg.wide{max-width:520px}
+svg.cg.icon{max-width:150px}
+.cg .tri{fill:var(--hl); fill-opacity:.35; stroke:var(--ink); stroke-width:1.8; stroke-linejoin:round}
+.cg .tri.ghost{fill:var(--blue); fill-opacity:.12; stroke-dasharray:5 3}
+.cg .tri.other{fill:var(--line); fill-opacity:.14}
+.cg .gs{stroke:var(--line); stroke-width:3.5; stroke-linecap:round}
+.cg .tick{stroke:var(--line); stroke-width:2}
+.cg .arc{fill:none; stroke:var(--blue); stroke-width:2}
+.cg .sector{fill:var(--blue); fill-opacity:.15; stroke:none}
+.cg .vx{font:700 13px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--ink)}
+.cg .val{font:700 11px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--line); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.cg .val.ang{fill:var(--blue)}
+.cg .ttl{font:700 12px var(--f-body); text-anchor:middle; fill:var(--muted)}
+.cg .ttl.bad{fill:var(--err)}
+.cg .ttl.good{fill:var(--ok)}
+.cg .seg{stroke:var(--ink); stroke-width:1.8}
+.cg .seg.hot{stroke:var(--line); stroke-width:3.5}
+.cg .pt{fill:var(--ink)}
+.icons{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px}
+.icons figure{margin:0; display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center}
+.icons figcaption{font-size:.92rem}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.proof{width:100%; border-collapse:collapse}
+.proof th,.proof td{border:1px solid var(--soft); padding:6px 10px; text-align:start; vertical-align:top}
+.proof th{background:var(--paper); font-size:.9rem}
+.proof td.n{width:2em; color:var(--muted); text-align:center}
+.steps-bank{display:flex; flex-direction:column; gap:6px}
+.steps-bank button{text-align:start; font-weight:600}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="congruence">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#geometry">גאומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חפיפת משולשים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · גאומטריה</div>
+  <h1>חפיפת משולשים</h1>
+  <p class="lead">שני משולשים חופפים אם הם בדיוק אותו משולש: אותן צלעות ואותן זוויות. אבל לא צריך לבדוק את כל השש. מספיקים שלושה נתונים נכונים, וכאן תלמדו אילו. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>ארבעה משפטי חפיפה</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מה זה חופפים?</h3>
+      <p>שני משולשים חופפים אם אפשר להניח אחד על השני כך שהם יתאימו בדיוק. מותר להזיז, לסובב ולהפוך.</p>
+      <p>כותבים <span class="eq">△<i>ABC</i> ≅ △<i>DEF</i></span>. הסדר חשוב: <i>A</i> מתאים ל-<i>D</i>, <i>B</i> ל-<i>E</i>, ו-<i>C</i> ל-<i>F</i>.</p>
+      <p>אם המשולשים חופפים, <strong>כל</strong> הצלעות והזוויות המתאימות שוות. כך מוכיחים ששתי צלעות או שתי זוויות שוות.</p>
+    </div>
+    <div class="mini">
+      <h3>מה מספיק כדי לדעת?</h3>
+      <p>מספיק שלושה נתונים שווים, אבל לא כל שלושה. צ = צלע, ז = זווית. האות האמצעית היא מה שנמצא <strong>בין</strong> השניים האחרים.</p>
+      <div class="icons" id="icons"></div>
+    </div>
+  </div>
+  <div class="callout">צ.צ.ז הוא המשפט הרביעי, והוא הכי עדין: שתי צלעות, והזווית שמול <strong>הגדולה</strong> מביניהן. אם הזווית מול הצלע הקטנה, זה לא מספיק. במעבדה תראו למה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים משולש מנתונים</h2></div>
+  <p class="text">בחרו משפט והזיזו את הנתונים. בצד ימין המשולש שבניתם. בצד שמאל ניסיון שני לבנות משולש <strong>מאותם נתונים בדיוק</strong>. האם יוצא אותו משולש?</p>
+  <div class="row" role="tablist" id="modes">
+    <button data-m="sas" class="primary" aria-selected="true">צ.ז.צ</button>
+    <button data-m="asa" aria-selected="false">ז.צ.ז</button>
+    <button data-m="sss" aria-selected="false">צ.צ.צ</button>
+    <button data-m="ssa" aria-selected="false">צ.צ.ז</button>
+  </div>
+  <svg class="cg wide" id="labG" viewBox="0 0 440 230" role="img" aria-label="המשולש שנבנה, וניסיון שני מאותם נתונים"></svg>
+  <div class="ctrl">
+    <div id="labCtrls" class="ctrl"></div>
+    <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    <div>
+      <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+      <div class="tries">
+        <button data-p="ssa,7,40,5">צ.צ.ז מול הצלע הקטנה</button>
+        <button data-p="ssa,6,40,8">צ.צ.ז מול הצלע הגדולה</button>
+        <button data-p="sss,9,3,4">שלוש צלעות שלא נסגרות</button>
+        <button data-p="asa,6,100,90">זוויות גדולות מדי</button>
+        <button data-p="sas,6,6,90">ישר זווית ושווה שוקיים</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>ארבע מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הזווית חייבת להיות באמצע</h3>
+      <p>בצ.ז.צ הזווית היא <strong>בין</strong> שתי הצלעות, בקודקוד שבו הן נפגשות. זווית אחרת זה כבר לא צ.ז.צ.</p>
+    </div>
+    <div class="mini">
+      <h3>ז.ז.ז הוא לא משפט חפיפה</h3>
+      <svg class="cg icon" id="aaaG" viewBox="0 0 220 120" role="img" aria-label="שני משולשים עם אותן זוויות ובגדלים שונים"></svg>
+      <p>אותן זוויות, אבל אחד גדול ואחד קטן. הם דומים, לא חופפים. בלי אף צלע אי אפשר לדעת את הגודל.</p>
+    </div>
+    <div class="mini">
+      <h3>צ.צ.ז רק מול הצלע הגדולה</h3>
+      <p>אם הזווית מול הצלע הקטנה מבין השתיים, לפעמים יוצאים שני משולשים שונים. בדקו במעבדה עם "צ.צ.ז מול הצלע הקטנה".</p>
+    </div>
+    <div class="mini">
+      <h3>הסדר של האותיות</h3>
+      <p>ב-<span class="eq">△<i>ABC</i> ≅ △<i>DEF</i></span> כל אות מתאימה לאות באותו מקום. לכן <span class="eq"><i>AC</i> = <i>DF</i></span>, ולא <span class="eq"><i>AC</i> = <i>DE</i></span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: הוכחה צעד אחרי צעד</h2></div>
+  <p class="text">הקטעים <span class="eq"><i>AB</i></span> ו-<span class="eq"><i>CD</i></span> נחתכים בנקודה <span class="eq"><i>O</i></span>, והיא האמצע של שניהם. הוכיחו ש-<span class="eq"><i>AC</i> = <i>BD</i></span>.</p>
+  <div class="lab">
+    <svg class="cg" id="exG" viewBox="0 0 260 200" role="img" aria-label="שני קטעים שנחתכים באמצע"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+  <table class="proof" id="exTable" aria-label="ההוכחה עד עכשיו"><thead><tr><th>#</th><th>טענה</th><th>נימוק</th></tr></thead><tbody></tbody></table>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <div class="row" role="tablist">
+    <button id="tabWhich" class="primary" role="tab" aria-selected="true">איזה משפט?</button>
+    <button id="tabProof" role="tab" aria-selected="false">סדרו הוכחה</button>
+  </div>
+
+  <div id="paneWhich">
+    <p class="text">הסימנים אומרים מה שווה: צלעות עם אותו מספר קווקווים שוות, וזוויות עם אותו מספר קשתות שוות. לפי איזה משפט המשולשים חופפים? ואולי אי אפשר לדעת?</p>
+    <svg class="cg wide" id="prG" viewBox="0 0 440 230" role="img" aria-label="שני משולשים עם סימונים"></svg>
+    <p id="prGiven"></p>
+    <div class="choices" id="prChoices"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">משולשים חדשים</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+
+  <div id="paneProof" hidden>
+    <p class="text">בדלתון <span class="eq"><i>ABCD</i></span> נתון: <span class="eq"><i>AB</i> = <i>AD</i></span>, והאלכסון <span class="eq"><i>AC</i></span> חוצה את הזווית <span class="eq"><i>A</i></span>. הוכיחו ש-<span class="eq"><i>BC</i> = <i>DC</i></span>. לחצו על השורות לפי הסדר הנכון. שימו לב: שורה אחת מיותרת.</p>
+    <div class="lab">
+      <svg class="cg" id="pfG" viewBox="0 0 240 220" role="img" aria-label="דלתון עם אלכסון"></svg>
+      <div class="steps-bank" id="pfBank"></div>
+    </div>
+    <table class="proof" aria-label="ההוכחה שלכם"><thead><tr><th>#</th><th>טענה</th><th>נימוק</th></tr></thead><tbody id="pfBody"></tbody></table>
+    <div class="row"><button id="pfCheck" class="primary">בדיקה</button><button id="pfHint">רמז</button><button id="pfClear">מתחילים מחדש</button></div>
+    <div id="pfFb" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין צ.ז.צ לז.צ.ז?</h3>
+    <p>בצ.ז.צ יש שתי צלעות שוות, והזווית <strong>שביניהן</strong>. בז.צ.ז יש שתי זוויות שוות, והצלע <strong>שביניהן</strong>. האות האמצעית היא תמיד מה שנמצא באמצע. <a href="#lab">נסו את שניהם במעבדה למעלה</a>.</p>
+    <h3>למה ז.ז.ז הוא לא משפט חפיפה?</h3>
+    <p>כי אפשר לצייר משולש גדול ומשולש קטן עם אותן שלוש זוויות בדיוק. הצורה זהה, אבל הגודל לא, אז הם לא חופפים. <a href="#practice">בתרגול למטה</a> יש מקרים כאלה, והתשובה בהם היא "אי אפשר לדעת".</p>
+    <h3>איך כותבים הוכחת חפיפה בצורה מסודרת?</h3>
+    <p>בונים טבלה עם שתי עמודות: טענה ונימוק. כותבים את שלושת הדברים השווים, כל אחד עם הסיבה (נתון, צלע משותפת, זוויות קודקודיות). אחר כך כותבים שהמשולשים חופפים ואת שם המשפט, ובסוף את מה שרצו להוכיח: "צלעות מתאימות במשולשים חופפים". <a href="#practice">תרגלו בלשונית "סדרו הוכחה"</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/pythagoras/"><small>→ הנושא הקודם</small>משפט פיתגורס</a><a class="next" href="../../math/quadrilaterals/"><small>הנושא הבא ←</small>מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const D2R=Math.PI/180, R2D=180/Math.PI;
+const r1=v=>String(Math.round(v*10)/10);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+/* ---------- geometry ---------- */
+const dist=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1]);
+const angAt=(P,i)=>{ const v=P[i], a=P[(i+1)%3], b=P[(i+2)%3];
+  const u=[a[0]-v[0],a[1]-v[1]], w=[b[0]-v[0],b[1]-v[1]];
+  return Math.acos(Math.max(-1,Math.min(1,(u[0]*w[0]+u[1]*w[1])/(Math.hypot(...u)*Math.hypot(...w)))))*R2D; };
+/* triangle A=(0,0), B=(c,0), C from AC length b and angle A (degrees) */
+const fromSAS=(c,b,A)=>[[0,0],[c,0],[b*Math.cos(A*D2R),b*Math.sin(A*D2R)]];
+function fromSSS(a,b,c){ const x=(b*b+c*c-a*a)/(2*c), y2=b*b-x*x; return y2<=1e-9?null:[[0,0],[c,0],[x,Math.sqrt(y2)]]; }
+function fromASA(c,A,B){ const C=180-A-B; if(C<=0) return null; const b=c*Math.sin(B*D2R)/Math.sin(C*D2R); return fromSAS(c,b,A); }
+/* two sides and a non-included angle: AB=c, angle A, BC=a (opposite A). Returns 0, 1 or 2 triangles */
+function fromSSA(c,A,a){
+  const disc=a*a-c*c*Math.sin(A*D2R)**2; if(disc<-1e-9) return [];
+  const m=c*Math.cos(A*D2R), s=Math.sqrt(Math.max(0,disc));
+  const ts=[m+s,m-s].filter((t,i,arr)=>t>1e-6 && (i===0||Math.abs(t-arr[0])>1e-6));
+  return ts.map(t=>fromSAS(c,t,A));
+}
+const xform=(P,rot,mirror)=>P.map(([x,y])=>{ const X=mirror?-x:x; const c=Math.cos(rot*D2R), s=Math.sin(rot*D2R); return [X*c-y*s,X*s+y*c]; });
+
+/* ---------- drawing ---------- */
+/* tris: [{P, names, sides:{'01':{n,val}}, angles:{0:{n,val}}, cls, title, titleCls}], laid out in equal panels with one scale */
+function drawPanels(svg,tris,W,H){
+  const n=tris.length, pw=W/n, top=26, pad=26;
+  const box=P=>{ const xs=P.map(p=>p[0]), ys=P.map(p=>p[1]); return {minX:Math.min(...xs),maxX:Math.max(...xs),minY:Math.min(...ys),maxY:Math.max(...ys)}; };
+  let k=Infinity;
+  tris.filter(t=>t.P).forEach(t=>{ const b=box(t.P); k=Math.min(k,(pw-2*pad)/((b.maxX-b.minX)||1),(H-top-pad-8)/((b.maxY-b.minY)||1)); });
+  let s='';
+  tris.forEach((t,ti)=>{
+    if(t.title) s+=`<text class="ttl ${t.titleCls||''}" x="${pw*ti+pw/2}" y="16">${t.title}</text>`;
+    if(!t.P) return;
+    const b=box(t.P), ox=pw*ti+(pw-(b.maxX-b.minX)*k)/2, oy=top+(H-top-8-(b.maxY-b.minY)*k)/2;
+    const f=p=>[ox+(p[0]-b.minX)*k, oy+(b.maxY-p[1])*k];
+    const Q=t.P.map(f), cen=[(Q[0][0]+Q[1][0]+Q[2][0])/3,(Q[0][1]+Q[1][1]+Q[2][1])/3];
+    s+=`<polygon class="tri ${t.cls||''}" points="${Q.map(q=>q.map(v=>v.toFixed(1)).join(',')).join(' ')}"/>`;
+    Object.entries(t.angles||{}).forEach(([i,m])=>{ s+=angleMark(Q,+i,m); });
+    Object.entries(t.sides||{}).forEach(([key,m])=>{ s+=sideMark(Q,+key[0],+key[1],m,cen); });
+    (t.names||[]).forEach((nm,i)=>{ const v=Q[i], d=[v[0]-cen[0],v[1]-cen[1]], L=Math.hypot(...d)||1;
+      s+=`<text class="vx" x="${(v[0]+d[0]/L*13).toFixed(1)}" y="${(v[1]+d[1]/L*13).toFixed(1)}">${nm}</text>`; });
+  });
+  svg.innerHTML=s;
+}
+function sideMark(Q,i,j,m,cen){
+  const p=Q[i], q=Q[j], mid=[(p[0]+q[0])/2,(p[1]+q[1])/2], u=[q[0]-p[0],q[1]-p[1]], L=Math.hypot(...u), e=[u[0]/L,u[1]/L], nrm=[-e[1],e[0]];
+  let s=`<line class="gs" x1="${p[0].toFixed(1)}" y1="${p[1].toFixed(1)}" x2="${q[0].toFixed(1)}" y2="${q[1].toFixed(1)}"/>`;
+  for(let k=0;k<(m.n||0);k++){ const off=(k-(m.n-1)/2)*5, c=[mid[0]+e[0]*off,mid[1]+e[1]*off];
+    s+=`<line class="tick" x1="${(c[0]+nrm[0]*6).toFixed(1)}" y1="${(c[1]+nrm[1]*6).toFixed(1)}" x2="${(c[0]-nrm[0]*6).toFixed(1)}" y2="${(c[1]-nrm[1]*6).toFixed(1)}"/>`; }
+  if(m.val!=null){ const out=[mid[0]-cen[0],mid[1]-cen[1]], dot=out[0]*nrm[0]+out[1]*nrm[1], sg=dot>=0?1:-1;
+    s+=`<text class="val" x="${(mid[0]+nrm[0]*15*sg).toFixed(1)}" y="${(mid[1]+nrm[1]*15*sg).toFixed(1)}">${m.val}</text>`; }
+  return s;
+}
+function angleMark(Q,i,m){
+  const v=Q[i], a=Q[(i+1)%3], b=Q[(i+2)%3];
+  const ua=[a[0]-v[0],a[1]-v[1]], ub=[b[0]-v[0],b[1]-v[1]], La=Math.hypot(...ua), Lb=Math.hypot(...ub);
+  const e1=[ua[0]/La,ua[1]/La], e2=[ub[0]/Lb,ub[1]/Lb], sweep=(e1[0]*e2[1]-e1[1]*e2[0])>0?1:0;
+  const base=Math.min(18,La*.35,Lb*.35);
+  let s='';
+  const arc=r=>`M ${(v[0]+e1[0]*r).toFixed(1)} ${(v[1]+e1[1]*r).toFixed(1)} A ${r} ${r} 0 0 ${sweep} ${(v[0]+e2[0]*r).toFixed(1)} ${(v[1]+e2[1]*r).toFixed(1)}`;
+  s+=`<path class="sector" d="M ${v[0].toFixed(1)} ${v[1].toFixed(1)} L ${(v[0]+e1[0]*base).toFixed(1)} ${(v[1]+e1[1]*base).toFixed(1)} A ${base} ${base} 0 0 ${sweep} ${(v[0]+e2[0]*base).toFixed(1)} ${(v[1]+e2[1]*base).toFixed(1)} Z"/>`;
+  for(let k=0;k<(m.n||1);k++) s+=`<path class="arc" d="${arc(base+k*4)}"/>`;
+  if(m.val!=null){ const bis=[e1[0]+e2[0],e1[1]+e2[1]], L=Math.hypot(...bis)||1, r=base+12+(m.n||1)*3;
+    s+=`<text class="val ang" x="${(v[0]+bis[0]/L*r).toFixed(1)}" y="${(v[1]+bis[1]/L*r).toFixed(1)}">${m.val}</text>`; }
+  return s;
+}
+
+/* ---------- idea icons and the ז.ז.ז picture ---------- */
+const ICON=fromSAS(6,4.5,55);
+const ICONS=[
+  ['צ.ז.צ','שתי צלעות והזווית שביניהן',{'01':{n:1},'02':{n:2}},{0:{n:1}}],
+  ['ז.צ.ז','שתי זוויות והצלע שביניהן',{'01':{n:1}},{0:{n:1},1:{n:2}}],
+  ['צ.צ.צ','שלוש צלעות',{'01':{n:1},'12':{n:2},'02':{n:3}},{}],
+  ['צ.צ.ז','שתי צלעות והזווית שמול הגדולה',{'01':{n:1},'12':{n:2}},{0:{n:1}}]
+];
+$('icons').innerHTML=ICONS.map((c,i)=>`<figure><svg class="cg icon" id="ic${i}" viewBox="0 0 150 110" role="img" aria-label="${c[1]}"></svg><figcaption><strong>${c[0]}</strong>: ${c[1]}</figcaption></figure>`).join('');
+ICONS.forEach((c,i)=>drawPanels($('ic'+i),[{P:i===3?fromSAS(5,6.5,55):ICON,sides:c[2],angles:c[3]}],150,110));
+{ const small=fromSAS(4,3,60), big=small.map(([x,y])=>[x*1.7,y*1.7]);
+  drawPanels($('aaaG'),[{P:small,angles:{0:{n:1},1:{n:2},2:{n:3}}},{P:big,angles:{0:{n:1},1:{n:2},2:{n:3}},cls:'other'}],220,120); }
+
+/* ---------- lab ---------- */
+const MODES={
+  sas:{name:'צ.ז.צ',s:[['AB','צלע AB',2,9,1,7],['AC','צלע AC',2,9,1,5],['A','הזווית A (ביניהן)',20,150,5,50]]},
+  asa:{name:'ז.צ.ז',s:[['AB','צלע AB (ביניהן)',2,9,1,7],['A','זווית A',20,150,5,50],['B','זווית B',20,150,5,60]]},
+  sss:{name:'צ.צ.צ',s:[['AB','צלע AB',2,9,1,7],['BC','צלע BC',2,9,1,6],['CA','צלע CA',2,9,1,5]]},
+  ssa:{name:'צ.צ.ז',s:[['AB','צלע AB',2,9,1,7],['A','זווית A',20,150,5,40],['BC','צלע BC (מול A)',2,9,1,5]]}
+};
+let mode='sas';
+function setMode(m,vals){
+  mode=m;
+  $('modes').querySelectorAll('button').forEach(b=>{ b.classList.toggle('primary',b.dataset.m===m); b.setAttribute('aria-selected',b.dataset.m===m); });
+  $('labCtrls').innerHTML=MODES[m].s.map((s,i)=>`<label class="slider" for="ls${i}"><span>${s[1]}</span><span class="eq" id="ls${i}v"></span></label>
+    <input type="range" class="${s[1].includes('זווית')?'blue':'hl'}" id="ls${i}" min="${s[2]}" max="${s[3]}" step="${s[4]}" value="${vals?vals[i]:s[5]}">`).join('');
+  MODES[m].s.forEach((s,i)=>$('ls'+i).addEventListener('input',lab));
+  lab();
+}
+const val=i=>+$('ls'+i).value;
+function lab(){
+  MODES[mode].s.forEach((s,i)=>$('ls'+i+'v').textContent=val(i)+(s[1].includes('זווית')?'°':''));
+  const N=['A','B','C'], N2=['D','E','F'];
+  let P=null, P2=null, other=false, txt='', title2='ניסיון שני: יצא אותו משולש, רק מסובב', cls2='good';
+  let sides={}, angles={};
+  if(mode==='sas'){ const [c,b,A]=[val(0),val(1),val(2)]; P=fromSAS(c,b,A); sides={'01':{val:c},'02':{val:b}}; angles={0:{val:A+'°'}};
+    txt=`נתון: ${E(`<i>AB</i> = ${c}`)}, ${E(`<i>AC</i> = ${b}`)} והזווית ביניהן ${E(`∠<i>A</i> = ${A}°`)}. הצלע השלישית נסגרת רק בדרך אחת: ${E(`<i>BC</i> ≈ ${r1(dist(P[1],P[2]))}`)}. כל ניסיון עם אותם נתונים יוצא אותו משולש, ולכן צ.ז.צ הוא משפט חפיפה.`; }
+  if(mode==='asa'){ const [c,A,B]=[val(0),val(1),val(2)]; P=fromASA(c,A,B); sides={'01':{val:c}}; angles={0:{val:A+'°'},1:{val:B+'°'}};
+    txt=P?`נתון: ${E(`<i>AB</i> = ${c}`)} והזוויות שבקצוות שלה, ${E(`${A}°`)} ו-${E(`${B}°`)}. שתי הקרניים יוצאות מ-<i>A</i> ומ-<i>B</i> ונפגשות בנקודה אחת בלבד. הזווית השלישית: ${E(`180° − ${A}° − ${B}° = ${180-A-B}°`)}. לכן ז.צ.ז הוא משפט חפיפה.`
+      :`${E(`${A}° + ${B}° = ${A+B}°`)}. בכל משולש סכום הזוויות הוא ${E('180°')}, אז נשאר ${E(`${180-A-B}°`)}. הקרניים לא נפגשות, ואין משולש. הקטינו אחת הזוויות.`; }
+  if(mode==='sss'){ const [c,a,b]=[val(0),val(1),val(2)]; P=fromSSS(a,b,c); sides={'01':{val:c},'12':{val:a},'02':{val:b}};
+    if(P){ angles={0:{val:Math.round(angAt(P,0))+'°'},1:{val:Math.round(angAt(P,1))+'°'},2:{val:Math.round(angAt(P,2))+'°'}};
+      txt=`שלוש הצלעות ${c}, ${a} ו-${b} קובעות את המשולש לגמרי. הזוויות יוצאות לבד, ואין דרך לבנות משולש אחר מאותן צלעות. לכן צ.צ.צ הוא משפט חפיפה.`; }
+    else { const q=[a,b,c].sort((x,y)=>x-y); txt=`אין משולש: שתי הצלעות הקצרות ביחד (${E(`${q[0]} + ${q[1]} = ${q[0]+q[1]}`)}) לא ארוכות מהשלישית (${q[2]}). הן לא נפגשות.`; } }
+  if(mode==='ssa'){ const [c,A,a]=[val(0),val(1),val(2)], sol=fromSSA(c,A,a);
+    sides={'01':{val:c},'12':{val:a}}; angles={0:{val:A+'°'}};
+    if(!sol.length){ txt=`${E(`<i>BC</i> = ${a}`)} קצרה מדי: היא לא מגיעה לקרן שיוצאת מ-<i>A</i>, ואין משולש.`; }
+    else if(sol.length===1){ P=sol[0];
+      txt=a>=c?`${E(`<i>BC</i> = ${a}`)}, הצלע שמול הזווית, ארוכה מ-${E(`<i>AB</i> = ${c}`)} או שווה לה. אז יש רק משולש אחד. זה משפט צ.צ.ז: שתי צלעות והזווית שמול הגדולה מביניהן.`
+        :`יצא בדיוק משולש אחד, כי ${E('<i>BC</i>')} נוגעת בקרן בנקודה אחת. אבל זה מקרה נדיר. הזיזו קצת את ${E('<i>BC</i>')} ותראו.`; }
+    else { P=sol[0]; P2=sol[1]; other=true; title2='ניסיון שני: יצא משולש אחר!'; cls2='bad';
+      txt=`${E(`<i>BC</i> = ${a}`)} קצרה מ-${E(`<i>AB</i> = ${c}`)}, והזווית מולה. ${E('<i>BC</i>')} יכולה "ליפול" בשני מקומות על הקרן, אז ${E('<i>AC</i>')} יוצאת ${E(r1(dist(sol[0][0],sol[0][2])))} או ${E(r1(dist(sol[1][0],sol[1][2])))}. שני משולשים שונים עם אותם נתונים! לכן כשהזווית מול הצלע הקטנה, זה לא מספיק לחפיפה.`; } }
+  const t1={P,names:N,sides,angles,title:'המשולש שבניתם'};
+  if(!P){ drawPanels($('labG'),[{...t1,P:null,title:'אין משולש'},{P:null}],440,230); $('labTxt').innerHTML=txt; return; }
+  const copy=other?P2:xform(P,200,true);
+  /* the copy keeps the vertex order (A→D, B→E, C→F), so the same marks apply */
+  drawPanels($('labG'),[t1,{P:copy,names:N2,sides,angles,cls:other?'other':'ghost',title:title2,titleCls:cls2}],440,230);
+  $('labTxt').innerHTML=txt;
+}
+$('modes').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{ const [m,...v]=b.dataset.p.split(','); setMode(m,v); }));
+setMode('sas');
+
+/* ---------- worked example: segments that bisect each other ---------- */
+const XP={A:[-4,2],B:[4,-2],C:[-3,-2.6],D:[3,2.6],O:[0,0]};
+function exDraw(hot){
+  const W=260,H=200, k=26, f=p=>[W/2+p[0]*k, H/2-p[1]*k];
+  const seg=(a,b,h)=>{ const [x1,y1]=f(XP[a]),[x2,y2]=f(XP[b]); return `<line class="seg${h?' hot':''}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`; };
+  let s=`<polygon class="tri" points="${['A','O','C'].map(n=>f(XP[n]).join(',')).join(' ')}"/><polygon class="tri ghost" points="${['B','O','D'].map(n=>f(XP[n]).join(',')).join(' ')}"/>`;
+  s+=seg('A','O',hot.includes('AO'))+seg('O','B',hot.includes('AO'))+seg('C','O',hot.includes('CO'))+seg('O','D',hot.includes('CO'))+seg('A','C',hot.includes('AC'))+seg('B','D',hot.includes('AC'));
+  const Q=['A','O','C'].map(n=>f(XP[n])), Q2=['B','O','D'].map(n=>f(XP[n]));
+  if(hot.includes('ang')) s+=angleMark(Q,1,{n:1})+angleMark(Q2,1,{n:1});
+  const off={A:[-12,-6],B:[12,6],C:[-10,10],D:[10,-8],O:[0,16]};
+  Object.keys(XP).forEach(n=>{ const [x,y]=f(XP[n]); s+=`<circle class="pt" cx="${x}" cy="${y}" r="2.5"/><text class="vx" x="${x+off[n][0]}" y="${y+off[n][1]}">${n}</text>`; });
+  $('exG').innerHTML=s;
+}
+const EXS=[
+  [[],'רואים שני משולשים: △AOC משמאל ו-△BOD מימין. אם נוכיח שהם חופפים, נקבל ש-AC = BD.',null],
+  [['AO'],`O אמצע של AB, ולכן ${E('<i>AO</i> = <i>OB</i>')}.`,['AO = OB','נתון (O אמצע AB)']],
+  [['AO','CO'],`O גם אמצע של CD, ולכן ${E('<i>CO</i> = <i>OD</i>')}.`,['CO = OD','נתון (O אמצע CD)']],
+  [['AO','CO','ang'],`הזוויות ${E('∠<i>AOC</i>')} ו-${E('∠<i>BOD</i>')} הן זוויות קודקודיות, ולכן הן שוות.`,['∠AOC = ∠BOD','זוויות קודקודיות']],
+  [['AO','CO','ang'],'יש שתי צלעות שוות, והזווית שביניהן. זה צ.ז.צ!',['△AOC ≅ △BOD','צ.ז.צ (לפי 1, 2, 3)']],
+  [['AC'],`במשולשים חופפים כל הצלעות המתאימות שוות. AC מתאימה ל-BD, ולכן ${E('<i>AC</i> = <i>BD</i>')}. הוכחנו!`,['AC = BD','צלעות מתאימות במשולשים חופפים']]
+];
+let exI=0;
+function ex(){
+  const [hot,txt]=EXS[exI]; exDraw(hot);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+  const rows=EXS.slice(0,exI+1).filter(e=>e[2]);
+  $('exTable').querySelector('tbody').innerHTML=rows.map((e,i)=>`<tr><td class="n">${i+1}</td><td>${E(e[2][0])}</td><td>${e[2][1]}</td></tr>`).join('');
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice tabs ---------- */
+function tab(k){
+  $('paneWhich').hidden=k!=='which'; $('paneProof').hidden=k!=='proof';
+  [['tabWhich','which'],['tabProof','proof']].forEach(([id,kk])=>{ $(id).classList.toggle('primary',kk===k); $(id).setAttribute('aria-selected',kk===k); });
+}
+$('tabWhich').onclick=()=>tab('which'); $('tabProof').onclick=()=>tab('proof');
+
+/* ---------- practice: which theorem? ---------- */
+const CHOICES=[['sas','צ.ז.צ'],['asa','ז.צ.ז'],['sss','צ.צ.צ'],['ssa','צ.צ.ז'],['none','אי אפשר לדעת']];
+const SCEN=['sas','asa','sss','ssa','aaa','ssaSmall','sa','sas','asa','sss'];
+let pr={}, prPick=null, streak=0, solved=0;
+const rint=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function makeBase(){
+  /* a scalene triangle with angles away from 90° and not too thin */
+  for(;;){ const P=fromSAS(rint(6,9),rint(4,7),rint(45,80)); const ang=[0,1,2].map(i=>angAt(P,i)), sd=[dist(P[0],P[1]),dist(P[1],P[2]),dist(P[0],P[2])];
+    if(ang.every(a=>a>32 && Math.abs(a-90)>8) && Math.abs(sd[0]-sd[1])>.6 && Math.abs(sd[1]-sd[2])>.6 && Math.abs(sd[0]-sd[2])>.6) return P; }
+}
+const L=(P,i,j)=>r1(dist(P[i],P[j]));
+function newPr(){
+  let sc; do{ sc=pick(SCEN); } while(sc===pr.sc && Math.random()<.7);
+  let P=makeBase(), P2, sides={}, angles={}, given='', ans, why;
+  const rot=rint(150,210), mir=Math.random()<.5;
+  if(sc==='sas'){ sides={'01':{n:1},'02':{n:2}}; angles={0:{n:1}}; ans='sas';
+    given=`${E('<i>AB</i> = <i>DE</i>')}, ${E('<i>AC</i> = <i>DF</i>')}, ${E('∠<i>A</i> = ∠<i>D</i>')}`;
+    why='שתי צלעות שוות, והזווית שביניהן (בקודקוד A, שם הן נפגשות). זה צ.ז.צ.'; }
+  if(sc==='asa'){ sides={'01':{n:1}}; angles={0:{n:1},1:{n:2}}; ans='asa';
+    given=`${E('∠<i>A</i> = ∠<i>D</i>')}, ${E('∠<i>B</i> = ∠<i>E</i>')}, ${E('<i>AB</i> = <i>DE</i>')}`;
+    why='שתי זוויות שוות, והצלע AB שביניהן. זה ז.צ.ז.'; }
+  if(sc==='sss'){ sides={'01':{n:1},'12':{n:2},'02':{n:3}}; ans='sss';
+    given=`${E('<i>AB</i> = <i>DE</i>')}, ${E('<i>BC</i> = <i>EF</i>')}, ${E('<i>AC</i> = <i>DF</i>')}`;
+    why='כל שלוש הצלעות שוות. זה צ.צ.צ.'; }
+  if(sc==='ssa'){ /* angle A opposite BC, with BC larger than AB */
+    let c,A,a; do{ c=rint(4,6); a=rint(c+1,9); A=rint(35,75); P=fromSSA(c,A,a)[0]; } while(!P || angAt(P,1)<25 || angAt(P,2)<25);
+    sides={'01':{n:1,val:c},'12':{n:2,val:a}}; angles={0:{n:1}}; ans='ssa';
+    given=`${E(`<i>AB</i> = <i>DE</i> = ${c}`)}, ${E(`<i>BC</i> = <i>EF</i> = ${a}`)}, ${E('∠<i>A</i> = ∠<i>D</i>')}`;
+    why=`שתי צלעות שוות, והזווית A נמצאת מול BC, הצלע הגדולה מביניהן (${a} גדול מ-${c}). זה צ.צ.ז.`; }
+  if(sc==='aaa'){ angles={0:{n:1},1:{n:2},2:{n:3}}; ans='none';
+    P2=xform(P,rot,mir); const f=pick([1.45,.65]); P2=P2.map(([x,y])=>[x*f,y*f]);
+    given=`${E('∠<i>A</i> = ∠<i>D</i>')}, ${E('∠<i>B</i> = ∠<i>E</i>')}, ${E('∠<i>C</i> = ∠<i>F</i>')}`;
+    why='רק זוויות שוות, אף צלע. אחד המשולשים גדול מהשני, אז הם לא חופפים. ז.ז.ז הוא לא משפט חפיפה.'; }
+  if(sc==='ssaSmall'){ const c=7, [A,a]=pick([[40,5],[35,5]]); const two=fromSSA(c,A,a);
+    P=two[0]; P2=xform(two[1],rot,mir); sides={'01':{n:1,val:c},'12':{n:2,val:a}}; angles={0:{n:1}}; ans='none';
+    given=`${E(`<i>AB</i> = <i>DE</i> = ${c}`)}, ${E(`<i>BC</i> = <i>EF</i> = ${a}`)}, ${E('∠<i>A</i> = ∠<i>D</i>')}`;
+    why=`הזווית A מול BC, אבל BC היא הצלע הקטנה (${a} קטן מ-${c}). במקרה כזה יכולים לצאת שני משולשים שונים, כמו בציור. אז אי אפשר לדעת.`; }
+  if(sc==='sa'){ sides={'01':{n:1}}; angles={0:{n:1}}; ans='none';
+    const c=dist(P[0],P[1]), A=angAt(P,0), b=dist(P[0],P[2]); P2=xform(fromSAS(c,b*pick([1.5,.6]),A),rot,mir);
+    given=`${E('<i>AB</i> = <i>DE</i>')}, ${E('∠<i>A</i> = ∠<i>D</i>')}`;
+    why='מסומנים רק שני דברים: צלע אחת וזווית אחת. צריך לפחות שלושה. ובאמת, המשולשים בציור שונים.'; }
+  if(!P2) P2=xform(P,rot,mir);
+  pr={sc,P,P2,sides,angles,given,ans,why,tries:0,hint:0}; prPick=null;
+  drawPanels($('prG'),[{P,names:['A','B','C'],sides,angles},{P:P2,names:['D','E','F'],sides,angles,cls:'ghost'}],440,230);
+  $('prGiven').innerHTML=`<strong>מה שווה:</strong> ${given}`;
+  $('prChoices').innerHTML=CHOICES.map(([k,t])=>`<button data-k="${k}" aria-pressed="false">${t}</button>`).join('');
+  $('prChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{ prPick=b.dataset.k; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const NAMES={sas:'צ.ז.צ',asa:'ז.צ.ז',sss:'צ.צ.צ',ssa:'צ.צ.ז',none:'אי אפשר לדעת'};
+function diag(sc,k){
+  const cnt={sas:[2,1],asa:[1,2],sss:[3,0],ssa:[2,1],aaa:[0,3],ssaSmall:[2,1],sa:[1,1]}[sc];
+  const need={sas:[2,1],asa:[1,2],sss:[3,0],ssa:[2,1]}[k];
+  if(k==='none') return 'דווקא אפשר! יש כאן מספיק נתונים. ספרו כמה צלעות וכמה זוויות מסומנות, ובדקו איפה הזווית.';
+  if(sc==='aaa') return 'אין אף צלע מסומנת, רק זוויות. משולש גדול ומשולש קטן יכולים להיות עם אותן זוויות.';
+  if(sc==='sa') return 'ספרו שוב: מסומנים רק שני דברים. כל משפט חפיפה צריך שלושה.';
+  if(need[0]!==cnt[0]||need[1]!==cnt[1]) return `ב${NAMES[k]} צריך ${need[0]} צלעות ו-${need[1]===0?'אף זווית':need[1]===1?'זווית אחת':'שתי זוויות'}. כאן מסומנות ${cnt[0]===1?'צלע אחת':cnt[0]+' צלעות'} ו-${cnt[1]===1?'זווית אחת':cnt[1]+' זוויות'}.`;
+  if(k==='sas') return 'הזווית המסומנת לא נמצאת בין שתי הצלעות. היא בקודקוד A, ומולה נמצאת BC. בצ.ז.צ הזווית חייבת להיות בקודקוד שבו שתי הצלעות נפגשות.';
+  if(k==='ssa' && sc==='ssaSmall') return 'בצ.צ.ז הזווית צריכה להיות מול הצלע הגדולה מבין השתיים. כאן היא מול הקטנה. השוו את המספרים.';
+  if(k==='ssa' && sc==='sas') return 'הזווית נמצאת בדיוק בין שתי הצלעות, בקודקוד שבו הן נפגשות. יש לזה שם אחר.';
+  return 'עוד לא. בדקו איפה נמצאת הזווית ביחס לצלעות המסומנות.';
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(!prPick){ fb.innerHTML='<div class="fb err">קודם בחרו תשובה.</div>'; return; }
+  if(prPick===pr.ans){ streak++; solved++; streakTxt();
+    fb.innerHTML=`<div class="fb ok">נכון! ${pr.why}${pr.ans!=='none'?` לכן ${E('△<i>ABC</i> ≅ △<i>DEF</i>')}.`:''}</div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${diag(pr.sc,prPick)}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const cnt={sas:[2,1],asa:[1,2],sss:[3,0],ssa:[2,1],aaa:[0,3],ssaSmall:[2,1],sa:[1,1]}[pr.sc];
+  let h;
+  if(pr.hint===1) h=`ספרו מה מסומן כשווה: ${cnt[0]===1?'צלע אחת':cnt[0]===0?'אף צלע':cnt[0]+' צלעות'}, ו-${cnt[1]===0?'אף זווית':cnt[1]===1?'זווית אחת':cnt[1]+' זוויות'}. אילו משפטים בכלל מתאימים לכמות כזאת?`;
+  else h={sas:'הזווית בקודקוד A. האם שתי הצלעות המסומנות יוצאות מ-A?',asa:'הצלע המסומנת היא AB. האם היא מחברת את שתי הזוויות המסומנות?',sss:'אין צורך בזוויות כשכל הצלעות ידועות.',
+    ssa:'הזווית A לא בין הצלעות, היא מול BC. מי גדולה יותר, BC או AB?',ssaSmall:'הזווית A לא בין הצלעות, היא מול BC. מי גדולה יותר, BC או AB? ומה זה אומר?',aaa:'יש צלע מסומנת? בלי צלע, אין דרך לדעת את הגודל.',sa:'כמה דברים מסומנים בסך הכול? משפט חפיפה צריך שלושה.'}[pr.sc];
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">התשובה: <strong>${NAMES[pr.ans]}</strong>. ${pr.why} עכשיו נסו משולשים חדשים.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+
+/* ---------- practice: order a proof (kite) ---------- */
+const KP={A:[0,4],B:[-2.6,0.6],C:[0,-3.6],D:[2.6,0.6]};
+function pfDraw(){
+  const W=240,H=220,k=24, f=p=>[W/2+p[0]*k, H/2-p[1]*k+4];
+  const Q=['A','B','C'].map(n=>f(KP[n])), Q2=['A','D','C'].map(n=>f(KP[n]));
+  let s=`<polygon class="tri" points="${Q.map(q=>q.join(',')).join(' ')}"/><polygon class="tri ghost" points="${Q2.map(q=>q.join(',')).join(' ')}"/>`;
+  s+=sideMark(Q,0,1,{n:1},[W/2,H/2])+sideMark(Q2,0,1,{n:1},[W/2,H/2]);
+  s+=angleMark(Q,0,{n:1})+angleMark(Q2,0,{n:1});
+  const off={A:[0,-12],B:[-12,0],C:[0,14],D:[12,0]};
+  Object.keys(KP).forEach(n=>{ const [x,y]=f(KP[n]); s+=`<text class="vx" x="${x+off[n][0]}" y="${y+off[n][1]}">${n}</text>`; });
+  $('pfG').innerHTML=s;
+}
+pfDraw();
+const PF=[
+  {id:'s1',claim:'AB = AD',why:'נתון'},
+  {id:'s2',claim:'∠BAC = ∠DAC',why:'נתון (AC חוצה את הזווית A)'},
+  {id:'s3',claim:'AC = AC',why:'צלע משותפת'},
+  {id:'s4',claim:'△ABC ≅ △ADC',why:'צ.ז.צ (לפי 1, 2, 3)'},
+  {id:'s5',claim:'BC = DC',why:'צלעות מתאימות במשולשים חופפים'},
+  {id:'x',claim:'AB = BC',why:'נתון'}
+];
+let pf=[];
+function pfRender(){
+  $('pfBank').innerHTML=shuffleOnce.map(s=>pf.includes(s.id)?'':`<button data-id="${s.id}">${E(s.claim)} · ${s.why}</button>`).join('');
+  $('pfBank').querySelectorAll('button').forEach(b=>b.onclick=()=>{ pf.push(b.dataset.id); pfRender(); $('pfFb').innerHTML=''; });
+  $('pfBody').innerHTML=pf.map((id,i)=>{ const s=PF.find(x=>x.id===id); return `<tr><td class="n">${i+1}</td><td>${E(s.claim)}</td><td>${s.why}</td></tr>`; }).join('')
+    || '<tr><td class="n">·</td><td colspan="2" style="color:var(--muted)">לחצו על השורה הראשונה של ההוכחה.</td></tr>';
+}
+const shuffleOnce=shuffle([...PF]);
+$('pfClear').onclick=()=>{ pf=[]; pfRender(); $('pfFb').innerHTML=''; };
+$('pfCheck').onclick=()=>{
+  const fb=$('pfFb');
+  if(pf.includes('x')){ fb.innerHTML='<div class="fb err">השורה "AB = BC, נתון" לא נכונה: זה בכלל לא נתון. התחילו מחדש בלעדיה.</div>'; return; }
+  if(pf.length<5){ fb.innerHTML=`<div class="fb err">חסרות שורות. בהוכחה הזאת יש 5 שורות, ויש לכם ${pf.length}.</div>`; return; }
+  const i4=pf.indexOf('s4'), i5=pf.indexOf('s5');
+  if(i5!==4){ fb.innerHTML='<div class="fb err">את BC = DC אפשר לכתוב רק אחרי שהוכחנו שהמשולשים חופפים. היא השורה האחרונה.</div>'; return; }
+  if(i4!==3){ fb.innerHTML='<div class="fb err">את החפיפה כותבים רק אחרי שלושת הנתונים שמוכיחים אותה. "לפי 1, 2, 3" אומר שהם חייבים לבוא קודם.</div>'; return; }
+  fb.innerHTML='<div class="fb ok">מעולה, הוכחה מסודרת! שלושה דברים שווים עם נימוק, אחר כך החפיפה לפי צ.ז.צ, ובסוף מה שרצינו להוכיח. (את שלוש השורות הראשונות מותר לכתוב בכל סדר.)</div>';
+};
+$('pfHint').onclick=()=>{
+  $('pfFb').innerHTML=`<div class="fb hint">בהוכחת חפיפה כותבים קודם שלושה דברים שווים, כל אחד עם סיבה. רמז: AC שייכת לשני המשולשים. אחר כך החפיפה, ובסוף ${E('<i>BC</i> = <i>DC</i>')}.</div>`;
+};
+pfRender();
+})();
+</script>
+</body>
+</html>

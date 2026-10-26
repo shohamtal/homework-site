@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מערכת משוואות: שיטת ההצבה וההשוואה · כיתה ח · מירי</title>
+<meta name="description" content="פתרון מערכת משוואות בשיטת ההצבה ובשיטת ההשוואה, צעד אחרי צעד. דוגמאות פתורות, טעויות נפוצות ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/systems-algebra/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מערכת משוואות: שיטת ההצבה וההשוואה · כיתה ח · מירי">
+<meta property="og:description" content="פתרון מערכת משוואות בשיטת ההצבה ובשיטת ההשוואה, צעד אחרי צעד. דוגמאות פתורות, טעויות נפוצות ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/systems-algebra/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"מערכת של שתי משוואות","item":"https://shohamtal.github.io/homework-site/math/grade-8/#systems"},{"@type":"ListItem","position":5,"name":"מערכת משוואות: שיטת ההצבה וההשוואה","item":"https://shohamtal.github.io/homework-site/math/systems-algebra/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מתי עדיף שיטת ההצבה ומתי שיטת ההשוואה?","acceptedAnswer":{"@type":"Answer","text":"אם באחת המשוואות y (או x) כבר לבד, הצבה הכי קלה. אם לאחד הנעלמים יש אותו מקדם בשתי המשוואות, או מקדמים הפוכים, השוואת מקדמים מהירה יותר. תרגלו את שתיהן למטה."}},{"@type":"Question","name":"איך בודקים שהפתרון נכון?","acceptedAnswer":{"@type":"Answer","text":"מציבים את x ואת y בשתי המשוואות המקוריות. אם שתיהן יוצאות נכונות, הפתרון נכון. התרגול למטה בודק בדיוק את זה."}},{"@type":"Question","name":"מה קורה כשהמשתנה נעלם באמצע הפתרון?","acceptedAnswer":{"@type":"Answer","text":"אם נעלמו גם x וגם y ויצא משהו שתמיד נכון, כמו 0 = 0, יש אינסוף פתרונות. אם יצא משהו שאף פעם לא נכון, כמו 0 = 2, אין פתרון בכלל. נסו במעבדה למעלה עם הכפתורים \"אין פתרון\" ו\"אינסוף פתרונות\"."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מערכת משוואות: שיטת ההצבה וההשוואה","description":"פתרון מערכת משוואות בשיטת ההצבה ובשיטת ההשוואה, צעד אחרי צעד. דוגמאות פתורות, טעויות נפוצות ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/systems-algebra/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"מערכת של שתי משוואות","teaches":"מערכת משוואות: שיטת ההצבה וההשוואה","keywords":"שיטת ההצבה, השוואת מקדמים, שני נעלמים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.k1{color:var(--line); font-weight:700}
+.k2{color:var(--blue); font-weight:700}
+.eqs{display:flex; flex-direction:column; gap:4px; font-size:1.05rem}
+.calc{display:flex; flex-direction:column; gap:4px}
+.calc .ln-row{display:flex; flex-wrap:wrap; gap:6px; align-items:baseline}
+.modes{display:flex; flex-wrap:wrap; gap:8px}
+.modes button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.g .ln2.dash{stroke-dasharray:7 5}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="systems-algebra">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#systems">מערכת של שתי משוואות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מערכת משוואות: שיטת ההצבה וההשוואה</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · מערכת של שתי משוואות</div>
+  <h1>מערכת משוואות: שיטת ההצבה וההשוואה</h1>
+  <p class="lead">בגרף לא תמיד רואים את נקודת המפגש בדיוק. בחשבון כן. יש שתי דרכים: שיטת ההצבה ושיטת השוואת המקדמים. בשתיהן הופכים שתי משוואות עם x ו-y למשוואה אחת עם x בלבד. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">שתי השיטות</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שתי השיטות</h2></div>
+  <p class="text">המטרה בשתי השיטות זהה: להיפטר מאחד הנעלמים, לפתור משוואה רגילה, ואז למצוא גם את השני.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>שיטת ההצבה</h3>
+      <p>מתאימה כשאחת המשוואות כבר אומרת כמה זה y.</p>
+      <p><span class="eq"><i>y</i> = 2<i>x</i> − 1</span> &nbsp; ו- &nbsp; <span class="eq"><i>x</i> + <i>y</i> = 5</span></p>
+      <p>שמים את <span class="eq">2<i>x</i> − 1</span> במקום y: <span class="eq"><i>x</i> + 2<i>x</i> − 1 = 5</span></p>
+      <p>ולכן <span class="eq">3<i>x</i> = 6</span>, כלומר <span class="eq"><i>x</i> = 2</span>. ואז <span class="eq"><i>y</i> = 2 · 2 − 1 = 3</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שיטת השוואת המקדמים</h3>
+      <p>מתאימה כשלנעלם אחד יש אותו מספר לפניו בשתי המשוואות (או מספרים הפוכים).</p>
+      <p><span class="eq"><i>x</i> + <i>y</i> = 7</span> &nbsp; ו- &nbsp; <span class="eq"><i>x</i> − <i>y</i> = 1</span></p>
+      <p>מחברים את המשוואות, וה-y נעלם: <span class="eq">2<i>x</i> = 8</span>, כלומר <span class="eq"><i>x</i> = 4</span>.</p>
+      <p>מציבים: <span class="eq">4 + <i>y</i> = 7</span>, ולכן <span class="eq"><i>y</i> = 3</span>.</p>
+    </div>
+  </div>
+  <div class="callout">התשובה של מערכת היא <strong>זוג</strong> מספרים: x וגם y. מצאתם רק את x? עוד לא סיימתם.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: שיטת ההצבה בשידור חי</h2></div>
+  <p class="text">המערכת: <span class="eq"><span class="k1"><i>y</i> = <i>m</i><i>x</i> + <i>b</i></span></span> ו-<span class="eq"><span class="k2"><i>a</i><i>x</i> + <i>y</i> = <i>c</i></span></span>. הזיזו את המחוונים ותראו את כל שלבי ההצבה. בגרף רואים את שני הקווים ואת הפתרון.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה עם שני ישרים"></svg>
+    <div class="ctrl">
+      <label class="slider" for="lm"><span><span class="k1">m</span> במשוואה הראשונה</span><span class="eq" id="lmv"></span></label>
+      <input type="range" id="lm" min="-3" max="3" step="1" value="2">
+      <label class="slider" for="lb"><span><span class="k1">b</span> במשוואה הראשונה</span><span class="eq" id="lbv"></span></label>
+      <input type="range" id="lb" min="-5" max="5" step="1" value="-1">
+      <label class="slider" for="la"><span><span class="k2">a</span> במשוואה השנייה</span><span class="eq" id="lav"></span></label>
+      <input type="range" class="blue" id="la" min="-3" max="3" step="1" value="1">
+      <label class="slider" for="lc"><span><span class="k2">c</span> במשוואה השנייה</span><span class="eq" id="lcv"></span></label>
+      <input type="range" class="blue" id="lc" min="-5" max="5" step="1" value="5">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="2,-1,1,5">פתרון (2, 3)</button>
+          <button data-p="-1,2,2,-1">x שלילי</button>
+          <button data-p="1,0,1,1">תשובה עם שבר</button>
+          <button data-p="2,1,-2,3">אין פתרון</button>
+          <button data-p="2,1,-2,1">אינסוף פתרונות</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>סוגריים בהצבה</h3>
+      <p>כשמציבים ביטוי במקום y, שמים אותו בסוגריים. במיוחד אם יש מספר לפני ה-y.</p>
+      <p><span class="eq">3<i>x</i> + 2<i>y</i> = 12</span> עם <span class="eq"><i>y</i> = <i>x</i> + 1</span> נהיה <span class="eq">3<i>x</i> + 2(<i>x</i> + 1) = 12</span>.</p>
+      <p>פותחים: <span class="eq">2(<i>x</i> + 1) = 2<i>x</i> + 2</span>. לא <span class="eq">2<i>x</i> + 1</span>!</p>
+    </div>
+    <div class="mini">
+      <h3>חיסור של משוואה שלמה</h3>
+      <p>כשמחסירים משוואות, מחסירים <strong>כל</strong> איבר, גם את המספר בצד ימין.</p>
+      <p><span class="eq">(2<i>x</i> + <i>y</i>) − (<i>x</i> + <i>y</i>) = 9 − 5</span>, ולכן <span class="eq"><i>x</i> = 4</span>.</p>
+      <p>זהירות במינוסים: <span class="eq">3 − (−2) = 5</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בסוף, תמיד בודקים.</strong> מציבים את x ואת y שמצאתם <strong>בשתי</strong> המשוואות המקוריות. אם אחת לא יוצאת נכונה, יש טעות בדרך.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">שיטת ההצבה</button>
+    <button id="exB" role="tab" aria-selected="false">השוואת מקדמים</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="eqs" id="exEqs"></div>
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: פתרו את המערכת</h2></div>
+  <p class="text">בחרו שיטה, פתרו במחברת וכתבו את x ואת y. התשובות הן מספרים שלמים.</p>
+  <div class="modes" id="prModes">
+    <button data-m="sub" aria-pressed="false">הצבה</button>
+    <button data-m="elim" aria-pressed="false">השוואת מקדמים</button>
+    <button data-m="mix" aria-pressed="true">גם וגם</button>
+  </div>
+  <div class="ctrl">
+    <div class="eqs" id="prEqs"></div>
+    <div class="inputs">
+      <label for="prX">x =<input id="prX" inputmode="text" autocomplete="off"></label>
+      <label for="prY">y =<input id="prY" inputmode="text" autocomplete="off"></label>
+      <button id="prCheck" class="primary">בדיקה</button>
+    </div>
+    <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">מערכת חדשה</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מתי עדיף שיטת ההצבה ומתי שיטת ההשוואה?</h3>
+    <p>אם באחת המשוואות y (או x) כבר לבד, הצבה הכי קלה. אם לאחד הנעלמים יש אותו מקדם בשתי המשוואות, או מקדמים הפוכים, השוואת מקדמים מהירה יותר. <a href="#practice">תרגלו את שתיהן למטה</a>.</p>
+    <h3>איך בודקים שהפתרון נכון?</h3>
+    <p>מציבים את x ואת y בשתי המשוואות המקוריות. אם שתיהן יוצאות נכונות, הפתרון נכון. <a href="#practice">התרגול למטה</a> בודק בדיוק את זה.</p>
+    <h3>מה קורה כשהמשתנה נעלם באמצע הפתרון?</h3>
+    <p>אם נעלמו גם x וגם y ויצא משהו שתמיד נכון, כמו <span class="eq">0 = 0</span>, יש אינסוף פתרונות. אם יצא משהו שאף פעם לא נכון, כמו <span class="eq">0 = 2</span>, אין פתרון בכלל. <a href="#lab">נסו במעבדה למעלה</a> עם הכפתורים "אין פתרון" ו"אינסוף פתרונות".</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/systems-graph/">פתרון גרפי של מערכת משוואות</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/systems-graph/"><small>→ הנושא הקודם</small>פתרון גרפי של מערכת משוואות</a><a class="next" href="../../math/inequalities/"><small>הנושא הבא ←</small>אי-שוויונות ממעלה ראשונה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,signedFracHTML,parseNum,eqv,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', Y='<i>y</i>';
+const P=(x,y)=>`<span class="eq">(${numTxt(x)}, ${numTxt(y)})</span>`;
+const paren=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const isInt=v=>Math.abs(v-Math.round(v))<1e-9;
+const E=s=>`<span class="eq">${s}</span>`;
+/* terms [[coef, symbol]] → "2x − y + 3" (symbol '' for a number) */
+function T(terms){
+  let s='';
+  terms.forEach(([c,v])=>{
+    if(eqv(c,0)) return;
+    const a=Math.abs(c), body=(v && eqv(a,1) ? '' : fracHTML(a))+(v||'');
+    s += s==='' ? (c<0?MINUS:'')+body : (c<0?' − ':' + ')+body;
+  });
+  return s||'0';
+}
+const eqLine=(a,b,c)=>E(`${T([[a,X],[b,Y]])} = ${numTxt(c)}`);
+const yForm=(m,b)=>E(`${Y} = ${T([[m,X],[b,'']])}`);
+/* draw two lines given as y = m1x + b1 and y = m2x + b2, with the meeting point */
+function drawTwo(svg,m1,b1,m2,b2,showPt){
+  const same=eqv(m1,m2)&&eqv(b1,b2), pts=[];
+  if(showPt && !eqv(m1,m2)){ const x=(b2-b1)/(m1-m2), y=m1*x+b1; if(Math.abs(x)<=5.4&&Math.abs(y)<=5.4) pts.push({x,y,cls:'dot',label:`(${numTxt(x)}, ${numTxt(y)})`}); }
+  draw(svg,m1,b1,{lines:[{m:m2,b:b2,cls:same?'ln2 dash':'ln2'}],points:pts});
+}
+
+/* lab: y = mx + b and ax + y = c, solved by substitution live */
+const R=['lm','lb','la','lc'].map($);
+function lab(){
+  const [m,b,a,c]=R.map(r=>+r.value);
+  R.forEach(r=>$(r.id+'v').textContent=numTxt(+r.value));
+  drawTwo($('labG'),m,b,-a,c,true);
+  const k=a+m, rhs=c-b;
+  let t=`<div><span class="k1">משוואה 1:</span> ${yForm(m,b)} &nbsp; <span class="k2">משוואה 2:</span> ${E(`${T([[a,X],[1,Y]])} = ${numTxt(c)}`)}</div>`;
+  t+=`<div class="ln-row"><strong>1. מציבים:</strong> שמים את ${E(T([[m,X],[b,'']]))} במקום y: ${E(`${T([[a,X]])==='0'?'':T([[a,X]])+' + '}(${T([[m,X],[b,'']])}) = ${numTxt(c)}`)}</div>`;
+  t+=`<div class="ln-row"><strong>2. מכנסים:</strong> ${E(`${T([[k,X],[b,'']])} = ${numTxt(c)}`)}</div>`;
+  t+=`<div class="ln-row"><strong>3. מעבירים אגף:</strong> ${E(`${T([[k,X]])} = ${numTxt(c)} ${b<0?'+':'−'} ${numTxt(Math.abs(b))} = ${numTxt(rhs)}`)}</div>`;
+  if(k===0){
+    t+= rhs===0
+      ? `<div><strong>יצא ${E('0 = 0')}.</strong> זה נכון לכל x! שתי המשוואות הן אותו קו, ויש <strong>אינסוף פתרונות</strong>.</div>`
+      : `<div><strong>יצא ${E(`0 = ${numTxt(rhs)}`)}.</strong> זה אף פעם לא נכון. הקווים מקבילים, ו<strong>אין פתרון</strong>.</div>`;
+  }else{
+    const x=rhs/k, y=m*x+b;
+    t+=`<div class="ln-row"><strong>4. מחלקים ב-${numTxt(k)}:</strong> ${E(`${X} = ${signedFracHTML(x)}`)}</div>`;
+    t+=`<div class="ln-row"><strong>5. מציבים חזרה:</strong> ${E(`${Y} = ${m===0?'':(m===1?'':m===-1?MINUS:numTxt(m)+' · ')+(isInt(x)?paren(x):'('+signedFracHTML(x)+')')}${m===0?numTxt(b):(b>0?' + '+numTxt(b):b<0?' − '+numTxt(-b):'')} = ${signedFracHTML(y)}`)}</div>`;
+    t+=`<div><strong>הפתרון:</strong> ${E(`(${signedFracHTML(x)}, ${signedFracHTML(y)})`)}. זאת בדיוק הנקודה שבה הקווים נפגשים בגרף.</div>`;
+  }
+  $('labTxt').innerHTML=t;
+}
+R.forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.onclick=()=>{ btn.dataset.p.split(',').forEach((v,i)=>R[i].value=v); lab(); });
+lab();
+
+/* worked examples */
+const EX={
+  A:{eqs:[yForm(1,1),eqLine(3,2,12)], lines:[1,1,-1.5,6], steps:[
+    `נפתור את המערכת. במשוואה הראשונה y כבר לבד: ${E(`${Y} = ${X} + 1`)}. מצוין, אפשר להציב.`,
+    `שמים את ${E(`${X} + 1`)} במקום y במשוואה השנייה, בסוגריים: ${E(`3${X} + 2(${X} + 1) = 12`)}`,
+    `פותחים סוגריים: ${E(`3${X} + 2${X} + 2 = 12`)}. מכנסים: ${E(`5${X} + 2 = 12`)}`,
+    `מעבירים אגף: ${E(`5${X} = 10`)}. מחלקים ב-5: ${E(`${X} = 2`)}`,
+    `מציבים חזרה במשוואה הראשונה: ${E(`${Y} = 2 + 1 = 3`)}. הפתרון: ${P(2,3)}.`,
+    `בודקים במשוואה השנייה: ${E('3 · 2 + 2 · 3 = 6 + 6 = 12')}. נכון! ובגרף, זאת נקודת המפגש.`
+  ]},
+  B:{eqs:[eqLine(2,1,11),eqLine(1,-1,1)], lines:[-2,11,1,-1], steps:[
+    `נפתור את המערכת. ל-y יש מקדמים הפוכים: ${E(`+${Y}`)} למעלה ו-${E(`−${Y}`)} למטה.`,
+    `מחברים את המשוואות, איבר עם איבר: ${E(`(2${X} + ${X}) + (${Y} − ${Y}) = 11 + 1`)}`,
+    `ה-y נעלם! נשאר ${E(`3${X} = 12`)}, ולכן ${E(`${X} = 4`)}`,
+    `מציבים ${E(`${X} = 4`)} במשוואה השנייה: ${E(`4 − ${Y} = 1`)}, ולכן ${E(`${Y} = 3`)}. הפתרון: ${P(4,3)}.`,
+    `בודקים במשוואה הראשונה: ${E('2 · 4 + 3 = 11')}. נכון!`
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [m1,b1,m2,b2]=e.lines;
+  $('exEqs').innerHTML=`<div><span class="k1">משוואה 1:</span> ${e.eqs[0]}</div><div><span class="k2">משוואה 2:</span> ${e.eqs[1]}</div>`;
+  drawTwo($('exG'),m1,b1,m2,b2,exI>=e.steps.length-2);
+  $('exText').innerHTML=e.steps[exI];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice: random systems with whole-number solutions */
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const nz=(a,b)=>{ let v; do{ v=ri(a,b); }while(v===0); return v; };
+let mode='mix', pr={}, streak=0, solved=0;
+function genSub(x0,y0){
+  for(;;){
+    const m=nz(-3,3), k=y0-m*x0, a=nz(-3,4), b=nz(-3,3);
+    if(Math.abs(k)>9 || a+b*m===0) continue;
+    return {kind:'sub',m,k,a,b,c:a*x0+b*y0};
+  }
+}
+function genElim(x0,y0){
+  for(;;){
+    const a1=nz(-3,4), a2=nz(-3,4), b1=ri(1,3), b2=pick([b1,-b1]);
+    if(a1*b2-a2*b1===0) continue;
+    return {kind:'elim',a1,b1,c1:a1*x0+b1*y0,a2,b2,c2:a2*x0+b2*y0};
+  }
+}
+function newPr(){
+  let x0,y0;
+  do{ x0=ri(-4,5); y0=ri(-4,5); }while((x0===pr.x0&&y0===pr.y0) || (x0===0&&y0===0));
+  const kind = mode==='mix' ? pick(['sub','elim']) : mode;
+  pr = Object.assign(kind==='sub'?genSub(x0,y0):genElim(x0,y0), {x0,y0,tries:0,hint:0,done:false});
+  $('prEqs').innerHTML = pr.kind==='sub'
+    ? `<div><span class="k1">משוואה 1:</span> ${yForm(pr.m,pr.k)}</div><div><span class="k2">משוואה 2:</span> ${eqLine(pr.a,pr.b,pr.c)}</div>`
+    : `<div><span class="k1">משוואה 1:</span> ${eqLine(pr.a1,pr.b1,pr.c1)}</div><div><span class="k2">משוואה 2:</span> ${eqLine(pr.a2,pr.b2,pr.c2)}</div>`;
+  $('prX').value=''; $('prY').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const ok1=(x,y)=>pr.kind==='sub'?eqv(y,pr.m*x+pr.k):eqv(pr.a1*x+pr.b1*y,pr.c1);
+const ok2=(x,y)=>pr.kind==='sub'?eqv(pr.a*x+pr.b*y,pr.c):eqv(pr.a2*x+pr.b2*y,pr.c2);
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prX').value), y=parseNum($('prY').value), fb=$('prFb');
+  if(isNaN(x)||isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר גם ל-x וגם ל-y.</div>'; return; }
+  const {x0,y0}=pr, o1=ok1(x,y), o2=ok2(x,y);
+  if(o1&&o2){
+    if(!pr.done){ streak++; solved++; pr.done=true; } streakTxt();
+    fb.innerHTML=`<div class="fb ok">נכון! הפתרון הוא ${P(x0,y0)}, והוא מתאים לשתי המשוואות.</div>`; return;
+  }
+  streak=0; pr.tries++; streakTxt();
+  let msg;
+  if(eqv(x,y0)&&eqv(y,x0)) msg='החלפתם בין x ל-y. בדקו איזה מספר שייך לאיזה נעלם.';
+  else if(eqv(x,x0)) msg='ה-x נכון! עכשיו הציבו אותו באחת המשוואות כדי למצוא את y. זהירות עם מינוסים.';
+  else if(eqv(y,y0)) msg='ה-y נכון! עכשיו הציבו אותו באחת המשוואות כדי למצוא את x.';
+  else if(o1) msg='הזוג שלכם מתאים ל<span class="k1">משוואה 1</span>, אבל לא ל<span class="k2">משוואה 2</span>. פתרון של מערכת צריך להתאים לשתיהן.';
+  else if(o2) msg='הזוג שלכם מתאים ל<span class="k2">משוואה 2</span>, אבל לא ל<span class="k1">משוואה 1</span>. פתרון של מערכת צריך להתאים לשתיהן.';
+  else msg='עוד לא. נסו לבקש רמז, או לעבור שוב על השלבים במחברת.';
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+/* the one-variable equation you get after removing y */
+function oneVar(){
+  if(pr.kind==='sub'){ const {a,b,m,k,c}=pr; return E(`${T([[a+b*m,X],[b*k,'']])} = ${numTxt(c)}`); }
+  const {a1,a2,b1,b2,c1,c2}=pr, add=b2===-b1;
+  return E(`${T([[add?a1+a2:a1-a2,X]])} = ${numTxt(add?c1+c2:c1-c2)}`);
+}
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  let h;
+  if(pr.hint===1){
+    h = pr.kind==='sub'
+      ? `במשוואה 1 y כבר לבד. כתבו את ${E(T([[pr.m,X],[pr.k,'']]))} במקום y במשוואה 2, בתוך סוגריים.`
+      : (pr.b2===-pr.b1
+        ? `המקדמים של y הפוכים (${E(T([[pr.b1,Y]]))} ו-${E(T([[pr.b2,Y]]))}). מה קורה אם מחברים את שתי המשוואות?`
+        : `המקדמים של y שווים (${E(T([[pr.b1,Y]]))} בשתיהן). מה קורה אם מחסירים את משוואה 2 ממשוואה 1?`);
+  }else{
+    h=`אחרי שה-y נעלם, צריכה לצאת לכם המשוואה ${oneVar()}. פתרו אותה ומצאו את x, ואז הציבו כדי למצוא את y.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {x0,y0}=pr; let s=[];
+  if(pr.kind==='sub'){
+    const {m,k,a,b,c}=pr, inner=T([[m,X],[k,'']]);
+    s.push(`<strong>מציבים:</strong> ${E(`${T([[a,X]])} ${b<0?'−':'+'} ${Math.abs(b)===1?'':Math.abs(b)}(${inner}) = ${numTxt(c)}`)}`);
+    s.push(`<strong>פותחים סוגריים:</strong> ${E(`${T([[a,X],[b*m,X],[b*k,'']])} = ${numTxt(c)}`)}`);
+    s.push(`<strong>מכנסים:</strong> ${oneVar()}`);
+    s.push(`<strong>מעבירים ומחלקים:</strong> ${E(`${T([[a+b*m,X]])} = ${numTxt(c-b*k)}`)}, ולכן ${E(`${X} = ${numTxt(x0)}`)}`);
+    s.push(`<strong>מציבים חזרה:</strong> ${E(`${Y} = ${m===1?'':m===-1?MINUS:numTxt(m)+' · '}${paren(x0)}${k>0?' + '+k:k<0?' − '+(-k):''} = ${numTxt(y0)}`)}`);
+  }else{
+    const {a1,b1,c1,a2,b2,c2}=pr, add=b2===-b1;
+    s.push(`<strong>${add?'מחברים':'מחסירים'} את המשוואות</strong> (ה-y נעלם): ${oneVar()}`);
+    s.push(`<strong>מחלקים:</strong> ${E(`${X} = ${numTxt(x0)}`)}`);
+    s.push(`<strong>מציבים במשוואה 1:</strong> ${E(`${numTxt(a1)} · ${paren(x0)} ${b1<0?'−':'+'} ${Math.abs(b1)===1?'':Math.abs(b1)}${Y} = ${numTxt(c1)}`)}, ולכן ${E(`${T([[b1,Y]])} = ${numTxt(c1-a1*x0)}`)} ו-${E(`${Y} = ${numTxt(y0)}`)}`);
+  }
+  s.push(`<strong>הפתרון:</strong> ${P(x0,y0)}. עכשיו נסו מערכת חדשה.`);
+  $('prFb').innerHTML=`<div class="fb hint calc">${s.map(x=>`<div class="ln-row">${x}</div>`).join('')}</div>`;
+};
+$('prNew').onclick=newPr;
+$('prModes').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  mode=b.dataset.m; $('prModes').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); newPr();
+});
+['prX','prY'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

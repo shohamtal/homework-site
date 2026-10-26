@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הסתברות: מה הסיכוי? · כיתה ח · מירי</title>
+<meta name="description" content="איך מחשבים הסתברות של מאורע, כמו בקובייה, במטבע או בשליפה מתוך שק. דוגמאות פתורות ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/probability/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הסתברות: מה הסיכוי? · כיתה ח · מירי">
+<meta property="og:description" content="איך מחשבים הסתברות של מאורע, כמו בקובייה, במטבע או בשליפה מתוך שק. דוגמאות פתורות ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/probability/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"סטטיסטיקה והסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-8/#stats"},{"@type":"ListItem","position":5,"name":"הסתברות: מה הסיכוי?","item":"https://shohamtal.github.io/homework-site/math/probability/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים הסתברות?","acceptedAnswer":{"@type":"Answer","text":"סופרים כמה מקרים מתאימים, ומחלקים בכמה מקרים יש בסך הכול. למשל בקובייה יש 6 פאות, ורק אחת מהן היא 6, אז הסיכוי ל-6 הוא 16. נסו במעבדה למעלה."}},{"@type":"Question","name":"האם הסתברות יכולה להיות גדולה מ-1?","acceptedAnswer":{"@type":"Answer","text":"לא. המקרים המתאימים הם חלק מכל המקרים, ולכן השבר תמיד בין 0 ל-1. אם יצא לכם יותר מ-1, כנראה הפכתם את השבר. תרגלו למטה."}},{"@type":"Question","name":"מה ההבדל בין \"וגם\" ל\"או\" בהסתברות?","acceptedAnswer":{"@type":"Answer","text":"\"או\" אומר שמספיק שאחד מהדברים יקרה, ולכן יש יותר מקרים מתאימים. \"וגם\" אומר ששניהם צריכים לקרות ביחד, ולכן יש פחות. בקובייה: \"זוגי או 5\" זה 46, ו\"זוגי וגם גדול מ-3\" זה 26. בדקו במעבדת הקובייה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הסתברות: מה הסיכוי?","description":"איך מחשבים הסתברות של מאורע, כמו בקובייה, במטבע או בשליפה מתוך שק. דוגמאות פתורות ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/probability/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"סטטיסטיקה והסתברות","teaches":"הסתברות: מה הסיכוי?","keywords":"סיכוי, מאורע, ניסוי","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc{display:flex; flex-direction:column; gap:6px}
+.calc .eq{white-space:normal}
+svg.pic{width:100%; max-width:320px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.pic .bag{fill:var(--card); stroke:var(--ink); stroke-width:2.5}
+.pic .knot{fill:none; stroke:var(--ink); stroke-width:2.5; stroke-linecap:round}
+.pic .ball{stroke:var(--ink); stroke-width:1.4}
+.c-pink{fill:var(--line)} .c-blue{fill:var(--blue)} .c-yel{fill:var(--hl)}
+.pic .axis{stroke:var(--ink); stroke-width:1.3}
+.pic .gridln{stroke:var(--grid); stroke-width:1}
+.pic .tick{fill:var(--muted); font:9px var(--f-body); text-anchor:end}
+.pic .lbl{fill:var(--ink); font:700 10px var(--f-body); text-anchor:middle}
+.pic .val{fill:var(--ink); font:9px var(--f-body); text-anchor:middle}
+.pic .theory{fill:none; stroke:var(--ink); stroke-width:1.5; stroke-dasharray:4 3}
+.pic .face{fill:var(--card); stroke:var(--ink); stroke-width:2}
+.pic .face.on{fill:var(--hl)}
+.pic .facetxt{fill:var(--ink); font:700 20px var(--f-math); text-anchor:middle}
+.pic .coin{fill:var(--card); stroke:var(--ink); stroke-width:2}
+.pic .coin.on{fill:var(--hl)}
+.pic .cointxt{fill:var(--ink); font:700 16px var(--f-body); text-anchor:middle}
+.pic .res{fill:var(--blue)}
+.pic .exp{stroke:var(--line); stroke-width:2; stroke-dasharray:5 3}
+.ptable{border-collapse:collapse; width:100%; font-size:.95rem}
+.ptable th,.ptable td{border-bottom:1px solid var(--soft); padding:4px 6px; text-align:center}
+.ptable th{color:var(--muted); font-size:.8rem}
+.ptable .sw{display:inline-block; width:12px; height:12px; border-radius:50%; border:1px solid var(--ink); vertical-align:-1px; margin-inline-end:4px}
+.sw.c-pink{background:var(--line)} .sw.c-blue{background:var(--blue)} .sw.c-yel{background:var(--hl)}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.scale{display:flex; justify-content:space-between; font-size:.85rem; font-weight:700; direction:rtl}
+.scalebar{height:12px; border-radius:99px; border:2px solid var(--border); background:linear-gradient(to left, var(--card), var(--line)); direction:ltr}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="probability">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#stats">סטטיסטיקה והסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הסתברות: מה הסיכוי?</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · סטטיסטיקה והסתברות</div>
+  <h1>הסתברות: מה הסיכוי?</h1>
+  <p class="lead">מטילים מטבע, זורקים קובייה או שולפים כדור משקית בלי להסתכל. אי אפשר לדעת מה ייצא, אבל אפשר לחשב כמה זה סביר. ההסתברות היא שבר: המקרים שמתאימים, חלקי כל המקרים. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה: שקית</a><a href="#lab2">מעבדה: קובייה ומטבע</a><a href="#andor">וגם / או</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bags">אתגר</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: מקרים מתאימים חלקי כל המקרים</h2></div>
+  <div class="big-eq"><span class="eq">הסתברות = <span class="frac"><span>מקרים מתאימים</span><span>כל המקרים</span></span></span></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מטבע</h3>
+      <p>יש שני צדדים: עץ ופלי. רק אחד מהם הוא עץ.</p>
+      <p>הסיכוי לעץ: <span class="eq"><span class="frac"><span>1</span><span>2</span></span></span>, כלומר חצי.</p>
+    </div>
+    <div class="mini">
+      <h3>קובייה</h3>
+      <p>יש 6 פאות: 1 עד 6. רק פאה אחת היא 6.</p>
+      <p>הסיכוי ל-6: <span class="eq"><span class="frac"><span>1</span><span>6</span></span></span>. הסיכוי למספר זוגי (2, 4, 6): <span class="eq"><span class="frac"><span>3</span><span>6</span></span> = <span class="frac"><span>1</span><span>2</span></span></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שקית עם כדורים</h3>
+      <p>3 כדורים ורודים ו-2 כחולים. בסך הכול 5.</p>
+      <p>הסיכוי לוורוד: <span class="eq"><span class="frac"><span>3</span><span>5</span></span></span>. הסיכוי ל"לא ורוד": <span class="eq"><span class="frac"><span>2</span><span>5</span></span></span>.</p>
+    </div>
+  </div>
+  <p class="text">הסתברות היא תמיד מספר בין 0 ל-1:</p>
+  <div class="scalebar" aria-hidden="true"></div>
+  <div class="scale"><span>0: בלתי אפשרי</span><span>½: חצי חצי</span><span>1: בטוח</span></div>
+  <div class="callout"><strong>"לא" זה כל השאר.</strong> אם הסיכוי לוורוד הוא <span class="eq"><span class="frac"><span>3</span><span>5</span></span></span>, הסיכוי לא לשלוף ורוד הוא <span class="eq">1 − <span class="frac"><span>3</span><span>5</span></span> = <span class="frac"><span>2</span><span>5</span></span></span>. זה נקרא המאורע המשלים.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: שקית עם כדורים</h2></div>
+  <p class="text">קובעים כמה כדורים יש מכל צבע. אחר כך שולפים כדור, מחזירים אותו לשקית, וחוזר חלילה. האם הניסוי יוצא קרוב לחישוב?</p>
+  <div class="lab">
+    <div>
+      <svg class="pic" id="bagG" viewBox="0 0 240 210" role="img" aria-label="שקית עם כדורים צבעוניים"></svg>
+      <svg class="pic" id="simG" viewBox="0 0 300 170" role="img" aria-label="תרשים: חישוב מול ניסוי"></svg>
+    </div>
+    <div class="ctrl">
+      <label class="slider" for="nP"><span>כדורים ורודים</span><span class="eq" id="nPv"></span></label>
+      <input type="range" id="nP" min="0" max="10" step="1" value="3">
+      <label class="slider" for="nB"><span>כדורים כחולים</span><span class="eq" id="nBv"></span></label>
+      <input type="range" class="blue" id="nB" min="0" max="10" step="1" value="2">
+      <label class="slider" for="nY"><span>כדורים צהובים</span><span class="eq" id="nYv"></span></label>
+      <input type="range" class="hl" id="nY" min="0" max="10" step="1" value="0">
+      <table class="ptable" id="bagTable" aria-label="ההסתברות של כל צבע"></table>
+      <div class="explain fb hint calc" id="bagCalc" aria-live="polite"></div>
+      <div class="row"><button id="draw100" class="primary">שלפו 100 פעמים</button><button id="drawReset">איפוס הניסוי</button></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="5,0,0">רק ורודים</button>
+          <button data-p="4,4,0">חצי חצי</button>
+          <button data-p="1,9,0">ורוד נדיר</button>
+          <button data-p="2,3,5">שלושה צבעים</button>
+          <button data-p="3,3,3">כולם שווים</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: אחרי 100 שליפות התוצאה קרובה לחישוב, אבל לא בדיוק. כמה שמנסים יותר פעמים, היא מתקרבת יותר.</p>
+</section>
+
+<section class="card" id="lab2">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מעבדה: קובייה ומטבע</h2></div>
+  <p class="text">בחרו מה רוצים שייצא. הפאות שמתאימות נצבעות בצהוב, והחישוב מופיע מיד.</p>
+  <div class="row" role="group" aria-label="מה זורקים">
+    <button id="tDie" class="primary" aria-pressed="true">קובייה</button>
+    <button id="tCoin" aria-pressed="false">מטבע</button>
+  </div>
+  <div class="choices" id="evChoices"></div>
+  <div class="lab">
+    <div>
+      <svg class="pic" id="dieG" viewBox="0 0 300 70" role="img" aria-label="הפאות האפשריות"></svg>
+      <svg class="pic" id="rollG" viewBox="0 0 300 150" role="img" aria-label="תוצאות הניסוי"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint calc" id="dieCalc" aria-live="polite"></div>
+      <div class="row"><button id="roll60" class="primary">זרקו 60 פעמים</button><button id="rollReset">איפוס</button></div>
+      <p class="counter" id="rollInfo"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="andor">
+  <div class="sec-head"><span class="sec-num">4</span><h2>"או" ו"וגם"</h2></div>
+  <p class="text">זורקים קובייה אחת. שתי מילים קטנות משנות הרבה:</p>
+  <div class="two">
+    <div class="mini">
+      <h3>"או": מספיק אחד מהם</h3>
+      <p>מה הסיכוי שייצא מספר זוגי <strong>או</strong> 5?</p>
+      <p>מתאימים: 2, 4, 6 (זוגיים), וגם 5. ארבע פאות.</p>
+      <p><span class="eq"><span class="frac"><span>4</span><span>6</span></span> = <span class="frac"><span>2</span><span>3</span></span></span>. עם "או" יש יותר מקרים שמתאימים.</p>
+    </div>
+    <div class="mini">
+      <h3>"וגם": צריך את שניהם ביחד</h3>
+      <p>מה הסיכוי שייצא מספר זוגי <strong>וגם</strong> גדול מ-3?</p>
+      <p>זוגיים: 2, 4, 6. מתוכם גדולים מ-3: רק 4 ו-6. שתי פאות.</p>
+      <p><span class="eq"><span class="frac"><span>2</span><span>6</span></span> = <span class="frac"><span>1</span><span>3</span></span></span>. עם "וגם" יש פחות מקרים שמתאימים.</p>
+    </div>
+  </div>
+  <div class="callout">אפשר לבדוק את שניהם <a href="#lab2">במעבדת הקובייה</a>: בחרו "זוגי או 5" ו"זוגי וגם גדול מ-3".</div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">5</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מחלקים בכל המקרים</h3>
+      <p>3 ורודים ו-2 כחולים. הסיכוי לוורוד הוא <span class="eq"><span class="frac"><span>3</span><span>5</span></span></span>, ולא <span class="eq"><span class="frac"><span>3</span><span>2</span></span></span>.</p>
+      <p>למטה בשבר באים <strong>כל</strong> הכדורים, גם הוורודים עצמם.</p>
+    </div>
+    <div class="mini">
+      <h3>אף פעם לא יותר מ-1</h3>
+      <p>יצא לכם <span class="eq"><span class="frac"><span>5</span><span>3</span></span></span>? משהו התהפך.</p>
+      <p>מספר המקרים המתאימים לא יכול להיות גדול ממספר כל המקרים. לכן הסתברות היא תמיד בין 0 ל-1.</p>
+    </div>
+    <div class="mini">
+      <h3>ניסוי קצר מטעה</h3>
+      <p>זרקתם מטבע 4 פעמים ויצא עץ 3 פעמים? זה לא אומר שהסיכוי לעץ הוא <span class="eq"><span class="frac"><span>3</span><span>4</span></span></span>.</p>
+      <p>רק בהרבה ניסיונות התוצאה מתקרבת לחישוב.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">6</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">בקופסה יש 12 עפרונות: 5 אדומים, 4 כחולים ו-3 ירוקים. מוציאים עיפרון אחד בלי להסתכל.</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">7</span><h2>תרגול: מה הסיכוי?</h2></div>
+  <p class="text">כתבו את התשובה כשבר (למשל <span class="eq">3/8</span>), כמספר עשרוני (<span class="eq">0.375</span>) או באחוזים (<span class="eq">37.5%</span>). לא חייבים לצמצם.</p>
+  <p class="text" id="prQ" style="font-weight:600"></p>
+  <div class="inputs">
+    <label for="prA">הסיכוי =<input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="bags">
+  <div class="sec-head"><span class="sec-num">8</span><h2>אתגר: באיזו שקית כדאי לשלוף?</h2></div>
+  <p class="text">רוצים לשלוף כדור ורוד. באיזו שקית הסיכוי גבוה יותר?</p>
+  <p class="text" id="bgQ" style="font-weight:600"></p>
+  <div class="choices" id="bgChoices"></div>
+  <div id="bgFb" aria-live="polite"></div>
+  <div class="row"><button id="bgNew">אתגר חדש</button></div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">9</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים הסתברות?</h3>
+    <p>סופרים כמה מקרים מתאימים, ומחלקים בכמה מקרים יש בסך הכול. למשל בקובייה יש 6 פאות, ורק אחת מהן היא 6, אז הסיכוי ל-6 הוא <span class="eq"><span class="frac"><span>1</span><span>6</span></span></span>. <a href="#lab">נסו במעבדה למעלה</a>.</p>
+    <h3>האם הסתברות יכולה להיות גדולה מ-1?</h3>
+    <p>לא. המקרים המתאימים הם חלק מכל המקרים, ולכן השבר תמיד בין 0 ל-1. אם יצא לכם יותר מ-1, כנראה הפכתם את השבר. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>מה ההבדל בין "וגם" ל"או" בהסתברות?</h3>
+    <p>"או" אומר שמספיק שאחד מהדברים יקרה, ולכן יש יותר מקרים מתאימים. "וגם" אומר ששניהם צריכים לקרות ביחד, ולכן יש פחות. בקובייה: "זוגי או 5" זה <span class="eq"><span class="frac"><span>4</span><span>6</span></span></span>, ו"זוגי וגם גדול מ-3" זה <span class="eq"><span class="frac"><span>2</span><span>6</span></span></span>. <a href="#lab2">בדקו במעבדת הקובייה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/statistics/">ממוצע, חציון ושכיח</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/statistics/"><small>→ הנושא הקודם</small>ממוצע, חציון ושכיח</a><a class="next" href="../../math/"><small>סיימתם את הפרק ←</small>לכל הנושאים במתמטיקה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const shuffle=a=>{a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+const F=(n,d)=>`<span class="frac"><span>${n}</span><span>${d}</span></span>`;
+/* n/d, plus the reduced fraction when it can be reduced */
+function fracFull(n,d){
+  if(d===0) return '';
+  if(n===0) return E(F(0,d)+' = 0');
+  if(n===d) return E(F(n,d)+' = 1');
+  const g=gcd(n,d); return E(F(n,d)+(g>1?' = '+F(n/g,d/g):''));
+}
+const dec=v=>numTxt(Math.round(v*1000)/1000);
+const pct=v=>numTxt(Math.round(v*1000)/10)+'%';
+/* fraction, decimal or percent; NaN if it isn't a number */
+function readAns(s){
+  s=String(s).trim().replace(/\s+/g,'').replace(/^(\d+),(\d+)$/,'$1.$2');
+  if(s.endsWith('%')){ const v=parseNum(s.slice(0,-1)); return isNaN(v)?NaN:v/100; }
+  return parseNum(s);
+}
+const close=(v,ans,raw)=>eqv(v,ans)||(!/\//.test(raw)&&Math.abs(v-ans)<0.006);
+
+/* ---------- lab 1: the bag ---------- */
+const COLORS=[{k:'P',name:'ורוד',cls:'c-pink'},{k:'B',name:'כחול',cls:'c-blue'},{k:'Y',name:'צהוב',cls:'c-yel'}];
+let sim=[0,0,0], simN=0;
+function counts(){ return COLORS.map(c=>+$('n'+c.k).value); }
+function drawBag(n){
+  let h='<path class="bag" d="M60 40 Q40 60 30 120 Q22 200 120 202 Q218 200 210 120 Q200 60 180 40 Z"/><path class="knot" d="M75 40 Q120 18 165 40 M100 30 l-10 -14 M140 30 l10 -14"/>';
+  const balls=[]; n.forEach((c,i)=>{ for(let j=0;j<c;j++) balls.push(i); });
+  const total=balls.length, per=6, R=total>24?9:11, gap=R*2+3;
+  shuffle(balls).forEach((ci,i)=>{
+    const row=Math.floor(i/per), col=i%per, inRow=Math.min(per,total-row*per);
+    const x=120-(inRow-1)*gap/2+col*gap, y=188-row*gap;
+    h+=`<circle class="ball ${COLORS[ci].cls}" cx="${x}" cy="${y}" r="${R}"/>`;
+  });
+  if(!total) h+='<text class="lbl" x="120" y="140">השקית ריקה</text>';
+  $('bagG').innerHTML=h;
+}
+function drawSim(n){
+  const total=n.reduce((a,b)=>a+b,0), X0=34, W=258, H=110, Y0=130;
+  let h='';
+  for(let p=0;p<=100;p+=25){ const y=Y0-p/100*H; h+=`<line class="gridln" x1="${X0}" y1="${y}" x2="${X0+W}" y2="${y}"/><text class="tick" x="${X0-4}" y="${y+3}">${p}%</text>`; }
+  h+=`<line class="axis" x1="${X0}" y1="${Y0}" x2="${X0+W}" y2="${Y0}"/>`;
+  const slot=W/3;
+  COLORS.forEach((c,i)=>{
+    const cx=X0+slot*i+slot/2, th=total?n[i]/total:0, rs=simN?sim[i]/simN:0, bw=26;
+    h+=`<rect class="${c.cls}" x="${cx-bw/2}" y="${Y0-rs*H}" width="${bw}" height="${rs*H}" stroke="var(--ink)" stroke-width="1"/>`;
+    h+=`<rect class="theory" x="${cx-bw/2-5}" y="${Y0-th*H}" width="${bw+10}" height="${th*H}"/>`;
+    h+=`<text class="lbl" x="${cx}" y="${Y0+14}">${c.name}</text>`;
+    if(simN) h+=`<text class="val" x="${cx}" y="${Y0+26}">${sim[i]} מתוך ${simN}</text>`;
+  });
+  h+=`<text class="val" x="${X0+W/2}" y="10">מסגרת מקווקוות = החישוב · עמודה צבועה = הניסוי</text>`;
+  $('simG').innerHTML=h;
+}
+function bag(){
+  const n=counts(), total=n.reduce((a,b)=>a+b,0);
+  COLORS.forEach((c,i)=>$('n'+c.k+'v').textContent=n[i]);
+  drawBag(n); drawSim(n);
+  if(!total){
+    $('bagTable').innerHTML=''; $('bagCalc').innerHTML='אין כדורים בשקית, אז אי אפשר לשלוף. הוסיפו לפחות כדור אחד.';
+    $('draw100').disabled=true; return;
+  }
+  $('draw100').disabled=false;
+  $('bagTable').innerHTML='<tr><th>צבע</th><th>שבר</th><th>עשרוני</th><th>אחוזים</th>'+(simN?'<th>בניסוי</th>':'')+'</tr>'+
+    COLORS.map((c,i)=>`<tr><td><span class="sw ${c.cls}"></span>${c.name}</td><td>${E(F(n[i],total))}</td><td>${E(dec(n[i]/total))}</td><td>${E(pct(n[i]/total))}</td>${simN?`<td>${E(pct(sim[i]/simN))}</td>`:''}</tr>`).join('');
+  const p=n[0];
+  let t=`<div>בשקית ${total} כדורים, ומתוכם ${p} ורודים. הסיכוי לשלוף ורוד: ${fracFull(p,total)}.</div>`;
+  if(p===0) t+='<div>אין בכלל ורודים, ולכן הסיכוי הוא 0. זה <strong>בלתי אפשרי</strong>.</div>';
+  else if(p===total) t+='<div>כל הכדורים ורודים, ולכן הסיכוי הוא 1. זה <strong>בטוח</strong>.</div>';
+  else t+=`<div>הסיכוי לא לשלוף ורוד: ${E('1 − '+F(p,total)+' = '+F(total-p,total))}.</div>`;
+  if(simN) t+=`<div>בניסוי: יצא ורוד ${sim[0]} פעמים מתוך ${simN}, כלומר ${E(pct(sim[0]/simN))}. בחישוב: ${E(pct(p/total))}.</div>`;
+  $('bagCalc').innerHTML=t;
+}
+function resetSim(){ sim=[0,0,0]; simN=0; }
+COLORS.forEach(c=>$('n'+c.k).addEventListener('input',()=>{resetSim(); bag();}));
+$('draw100').onclick=()=>{
+  const n=counts(), total=n.reduce((a,b)=>a+b,0); if(!total) return;
+  for(let k=0;k<100;k++){ let r=Math.random()*total, i=0; while(r>=n[i]){ r-=n[i]; i++; } sim[i]++; }
+  simN+=100; $('draw100').textContent='שלפו עוד 100'; bag();
+};
+$('drawReset').onclick=()=>{ resetSim(); $('draw100').textContent='שלפו 100 פעמים'; bag(); };
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  b.dataset.p.split(',').forEach((v,i)=>$('n'+COLORS[i].k).value=v);
+  resetSim(); $('draw100').textContent='שלפו 100 פעמים'; bag();
+});
+bag();
+
+/* ---------- lab 2: die and coin ---------- */
+const DIE_EV=[
+  {t:'יוצא 6',f:x=>x===6},
+  {t:'יוצא מספר זוגי',f:x=>x%2===0},
+  {t:'יוצא מספר גדול מ-4',f:x=>x>4},
+  {t:'זוגי או 5',f:x=>x%2===0||x===5},
+  {t:'זוגי וגם גדול מ-3',f:x=>x%2===0&&x>3},
+  {t:'יוצא מספר קטן מ-7',f:x=>x<7},
+  {t:'יוצא 7',f:x=>x===7}
+];
+const COIN_EV=[{t:'יוצא עץ',f:x=>x===0},{t:'יוצא פלי',f:x=>x===1},{t:'עץ או פלי',f:x=>true}];
+const COIN_NAMES=['עץ','פלי'];
+let tool='die', ev=1, rolls=[], rollN=0;
+const faces=()=>tool==='die'?[1,2,3,4,5,6]:[0,1];
+const evs=()=>tool==='die'?DIE_EV:COIN_EV;
+function choices(){
+  $('evChoices').innerHTML=evs().map((e,i)=>`<button data-i="${i}" aria-pressed="${i===ev}">${e.t}</button>`).join('');
+  $('evChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{ ev=+b.dataset.i; choices(); die(); });
+}
+function die(){
+  const fs=faces(), e=evs()[ev]||evs()[0], good=fs.filter(e.f);
+  let h='';
+  if(tool==='die') fs.forEach((x,i)=>{ const cx=25+i*50; h+=`<rect class="face${e.f(x)?' on':''}" x="${cx-20}" y="12" width="40" height="40" rx="7"/><text class="facetxt" x="${cx}" y="40">${x}</text>`; });
+  else fs.forEach((x,i)=>{ const cx=100+i*100; h+=`<circle class="coin${e.f(x)?' on':''}" cx="${cx}" cy="34" r="27"/><text class="cointxt" x="${cx}" y="40">${COIN_NAMES[x]}</text>`; });
+  $('dieG').innerHTML=h;
+  const name=x=>tool==='die'?x:COIN_NAMES[x];
+  let t=`<div>יש ${fs.length} תוצאות אפשריות. מתאימות: ${good.length?E(good.map(name).join(', ')):'אף אחת'}.</div><div>הסיכוי: ${fracFull(good.length,fs.length)}${good.length&&good.length<fs.length?` (בערך ${E(pct(good.length/fs.length))})`:''}.</div>`;
+  if(!good.length) t+='<div>אין אף פאה כזאת, ולכן זה <strong>בלתי אפשרי</strong>: הסיכוי 0.</div>';
+  if(good.length===fs.length) t+='<div>כל התוצאות מתאימות, ולכן זה <strong>בטוח</strong>: הסיכוי 1.</div>';
+  $('dieCalc').innerHTML=t;
+  drawRolls();
+}
+function drawRolls(){
+  const fs=faces(), X0=30, W=262, H=95, Y0=118, slot=W/fs.length, e=evs()[ev]||evs()[0];
+  const maxC=Math.max(1,...fs.map(x=>rolls[x]||0), rollN?rollN/fs.length*1.6:1);
+  let h=`<line class="axis" x1="${X0}" y1="${Y0}" x2="${X0+W}" y2="${Y0}"/>`;
+  fs.forEach((x,i)=>{
+    const cx=X0+slot*i+slot/2, c=rolls[x]||0, bh=c/maxC*H, bw=Math.min(30,slot*.6);
+    h+=`<rect class="${e.f(x)?'c-yel':'res'}" x="${cx-bw/2}" y="${Y0-bh}" width="${bw}" height="${bh}" stroke="var(--ink)" stroke-width="1"/>`;
+    h+=`<text class="lbl" x="${cx}" y="${Y0+14}">${tool==='die'?x:COIN_NAMES[x]}</text>`;
+    if(rollN) h+=`<text class="val" x="${cx}" y="${Y0-bh-4}">${c}</text>`;
+  });
+  if(rollN){ const y=Y0-(rollN/fs.length)/maxC*H; h+=`<line class="exp" x1="${X0}" y1="${y}" x2="${X0+W}" y2="${y}"/><text class="val" x="${X0+W/2}" y="10">הקו המקווקו: כמה היינו מצפים לכל תוצאה (${numTxt(rollN/fs.length)})</text>`; }
+  else h+=`<text class="val" x="${X0+W/2}" y="60">לחצו "זרקו 60 פעמים" ותראו מה יוצא</text>`;
+  $('rollG').innerHTML=h;
+  if(rollN){
+    const fs2=faces(), hits=fs2.filter(e.f).reduce((a,x)=>a+(rolls[x]||0),0), th=fs2.filter(e.f).length/fs2.length;
+    $('rollInfo').textContent=`"${e.t}" יצא ${hits} פעמים מתוך ${rollN} (${pct(hits/rollN)}). לפי החישוב: ${pct(th)}.`;
+  } else $('rollInfo').textContent='';
+}
+$('roll60').onclick=()=>{ const fs=faces(); for(let k=0;k<60;k++){ const x=fs[Math.floor(Math.random()*fs.length)]; rolls[x]=(rolls[x]||0)+1; } rollN+=60; $('roll60').textContent=tool==='die'?'זרקו עוד 60':'הטילו עוד 60'; drawRolls(); };
+$('rollReset').onclick=()=>{ rolls=[]; rollN=0; $('roll60').textContent=tool==='die'?'זרקו 60 פעמים':'הטילו 60 פעמים'; drawRolls(); };
+function setTool(t){
+  tool=t; ev=t==='die'?1:0; rolls=[]; rollN=0;
+  $('tDie').classList.toggle('primary',t==='die'); $('tDie').setAttribute('aria-pressed',t==='die');
+  $('tCoin').classList.toggle('primary',t==='coin'); $('tCoin').setAttribute('aria-pressed',t==='coin');
+  $('roll60').textContent=t==='die'?'זרקו 60 פעמים':'הטילו 60 פעמים';
+  choices(); die();
+}
+$('tDie').onclick=()=>setTool('die'); $('tCoin').onclick=()=>setTool('coin');
+setTool('die');
+
+/* ---------- worked example ---------- */
+const EXS=[
+  'קודם סופרים את <strong>כל המקרים</strong>: <span class="eq">5 + 4 + 3 = 12</span> עפרונות. זה המספר שיבוא למטה בשבר.',
+  `<strong>מה הסיכוי לכחול?</strong> יש 4 כחולים, אז 4 מקרים מתאימים. ${fracFull(4,12)}.`,
+  `<strong>מה הסיכוי שלא ייצא כחול?</strong> כל השאר: <span class="eq">12 − 4 = 8</span> עפרונות. ${fracFull(8,12)}. אפשר גם כך: ${E('1 − '+F(1,3)+' = '+F(2,3))}.`,
+  `<strong>מה הסיכוי לאדום או ירוק?</strong> "או" אומר שגם אדום וגם ירוק מתאימים: <span class="eq">5 + 3 = 8</span>. ${fracFull(8,12)}. יצא בדיוק כמו "לא כחול", וזה הגיוני: מי שלא כחול הוא אדום או ירוק.`,
+  `<strong>מה הסיכוי לעיפרון סגול?</strong> אין אף סגול, אז ${fracFull(0,12)}. בלתי אפשרי.`,
+  'בדיקה: כל התשובות יצאו בין 0 ל-1. הסיכוי לכחול ועוד הסיכוי ללא כחול: <span class="eq"><span class="frac"><span>1</span><span>3</span></span> + <span class="frac"><span>2</span><span>3</span></span> = 1</span>. ככה זה תמיד עם מאורע משלים.'
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const BALL=['ורודים','כחולים','צהובים'], ONE=['ורוד','כחול','צהוב'];
+let pr=null, solved=0, streak=0;
+function genPr(){
+  const kind=pick(['color','color','not','or','die','die']);
+  if(kind==='die'){
+    const e=pick([
+      {q:'זורקים קובייה. מה הסיכוי שייצא 3?',f:x=>x===3,why:'רק הפאה 3'},
+      {q:'זורקים קובייה. מה הסיכוי שייצא מספר אי-זוגי?',f:x=>x%2===1,why:'1, 3, 5'},
+      {q:'זורקים קובייה. מה הסיכוי שייצא מספר קטן מ-3?',f:x=>x<3,why:'1, 2'},
+      {q:'זורקים קובייה. מה הסיכוי שייצא 1 או 6?',f:x=>x===1||x===6,why:'1, 6'},
+      {q:'זורקים קובייה. מה הסיכוי שלא ייצא 4?',f:x=>x!==4,why:'1, 2, 3, 5, 6',not:true,base:1},
+      {q:'זורקים קובייה. מה הסיכוי שייצא מספר זוגי וגם קטן מ-5?',f:x=>x%2===0&&x<5,why:'2, 4'}
+    ]);
+    const fav=[1,2,3,4,5,6].filter(e.f).length;
+    return {kind,q:e.q,fav,total:6,why:`מתאימות ${fav} פאות (${e.why}) מתוך 6`,not:!!e.not,base:e.base};
+  }
+  const n=[rnd(1,7),rnd(1,7),rnd(0,6)];
+  if(n[2]===0&&kind==='or') n[2]=rnd(1,5);
+  const total=n.reduce((a,b)=>a+b,0);
+  const desc=`בשקית ${n[0]} כדורים ורודים, ${n[1]} כחולים`+(n[2]?` ו-${n[2]} צהובים`:'')+'. שולפים כדור אחד בלי להסתכל.';
+  if(kind==='color'){ const c=pick(n[2]?[0,1,2]:[0,1]); return {kind,q:`${desc} מה הסיכוי שייצא ${ONE[c]}?`,fav:n[c],total,why:`יש ${n[c]} ${BALL[c]} מתוך ${total} כדורים`,parts:[n[c]]}; }
+  if(kind==='not'){ const c=pick(n[2]?[0,1,2]:[0,1]); return {kind,q:`${desc} מה הסיכוי שלא ייצא ${ONE[c]}?`,fav:total-n[c],total,why:`כל מה שלא ${ONE[c]}: ${total} − ${n[c]} = ${total-n[c]} כדורים מתוך ${total}`,not:true,base:n[c]}; }
+  const [a,b]=pick([[0,1],[0,2],[1,2]]);
+  return {kind,q:`${desc} מה הסיכוי שייצא ${ONE[a]} או ${ONE[b]}?`,fav:n[a]+n[b],total,why:`${n[a]} ${BALL[a]} ועוד ${n[b]} ${BALL[b]}, כלומר ${n[a]+n[b]} כדורים מתוך ${total}`,parts:[n[a],n[b]]};
+}
+function newPr(){
+  pr={...genPr(),tries:0,hint:0}; pr.ans=pr.fav/pr.total;
+  $('prQ').textContent=pr.q; $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function diagnose(v){
+  const {fav,total}=pr, other=total-fav;
+  if(v<0) return 'הסתברות לא יכולה להיות שלילית. היא תמיד בין 0 ל-1.';
+  if(v>1){
+    if(fav&&eqv(v,total/fav)) return 'הפכתם את השבר. למעלה: המקרים שמתאימים. למטה: כל המקרים.';
+    if(eqv(v,fav)) return `${fav} זה מספר המקרים שמתאימים. עכשיו חלקו בכל המקרים.`;
+    if(other&&eqv(v,fav/other)) return `חילקתם רק במקרים שלא מתאימים. למטה בשבר באים כל המקרים: ${total}.`;
+    return 'הסתברות לא יכולה להיות יותר מ-1. בדקו מה כתבתם למעלה ומה למטה בשבר.';
+  }
+  if(other&&eqv(v,fav/other)) return `חילקתם רק במקרים שלא מתאימים. למטה בשבר באים כל המקרים: ${total}.`;
+  if(pr.not&&eqv(v,pr.base/total)) return 'זה הסיכוי שכן ייצא. השאלה היא על "לא": כל השאר.';
+  if(pr.parts&&pr.parts.length===2&&pr.parts.some(p=>eqv(v,p/total))) return '"או" אומר ששני הצבעים מתאימים. ספרו את שניהם ביחד.';
+  return 'לא בדיוק. ספרו שוב כמה מקרים מתאימים, וכמה מקרים יש בסך הכול.';
+}
+$('prCheck').onclick=()=>{
+  const raw=$('prA').value.trim(), v=readAns(raw);
+  if(isNaN(v)){ $('prFb').innerHTML='<div class="fb err">כתבו שבר כמו 3/8, מספר עשרוני כמו 0.375 או אחוזים כמו 37.5%.</div>'; return; }
+  if(close(v,pr.ans,raw)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${pr.why}: ${fracFull(pr.fav,pr.total)}.</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(v)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const h=pr.hint===1?'שתי שאלות: כמה מקרים יש בסך הכול? וכמה מהם מתאימים למה ששאלו?'
+    :`בסך הכול יש ${pr.total} מקרים. ${pr.not?'"לא" אומר: כל המקרים חוץ מזה ששאלו עליו.':pr.kind==='or'?'"או" אומר: גם הצבע הראשון וגם השני מתאימים.':''} עכשיו כתבו: מתאימים חלקי ${pr.total}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${pr.why}. ${fracFull(pr.fav,pr.total)}. נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+
+/* ---------- challenge: which bag ---------- */
+let bg=null;
+function newBg(){
+  let a,b;
+  do{
+    const same=Math.random()<0.2;
+    const t1=rnd(3,10), p1=rnd(1,t1-1);
+    a=[p1,t1];
+    if(same){ const k=pick([2,3]); b=[p1*k,t1*k]; if(b[1]>20) b=[p1,t1]; }
+    else { const t2=rnd(3,12); b=[rnd(1,t2-1),t2]; }
+  }while(!(a[1]!==b[1]) || (a[0]*b[1]!==b[0]*a[1] && Math.abs(a[0]/a[1]-b[0]/b[1])<0.03));
+  const cmp=a[0]*b[1]-b[0]*a[1];
+  bg={a,b,ans:cmp>0?'א':cmp<0?'ב':'='};
+  $('bgQ').innerHTML=`שקית א: ${a[0]} ורודים מתוך ${a[1]} כדורים. שקית ב: ${b[0]} ורודים מתוך ${b[1]} כדורים.`;
+  $('bgFb').innerHTML='';
+  $('bgChoices').innerHTML=[['א','שקית א'],['ב','שקית ב'],['=','אותו סיכוי']].map(([k,t])=>`<button data-k="${k}">${t}</button>`).join('');
+  $('bgChoices').querySelectorAll('button').forEach(btn=>btn.onclick=()=>{
+    const ok=btn.dataset.k===bg.ans;
+    const expl=`בשקית א: ${E(F(a[0],a[1]))} (בערך ${E(pct(a[0]/a[1]))}). בשקית ב: ${E(F(b[0],b[1]))} (בערך ${E(pct(b[0]/b[1]))}).`;
+    if(ok){ $('bgChoices').querySelectorAll('button').forEach(x=>x.disabled=true); $('bgFb').innerHTML=`<div class="fb ok">נכון! ${expl}</div>`; }
+    else { btn.disabled=true; $('bgFb').innerHTML='<div class="fb err">לא בדיוק. אל תסתכלו רק על כמה ורודים יש. חשבו את השבר בכל שקית: ורודים חלקי כל הכדורים.</div>'; }
+  });
+}
+$('bgNew').onclick=newBg;
+newBg();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חוקי חזקות ושורשים · כיתה ח · מירי</title>
+<meta name="description" content="כל חוקי החזקות: כפל, חילוק, חזקה של חזקה, חזקת אפס וחזקה שלילית, וגם שורש ריבועי. מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/powers-roots/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חוקי חזקות ושורשים · כיתה ח · מירי">
+<meta property="og:description" content="כל חוקי החזקות: כפל, חילוק, חזקה של חזקה, חזקת אפס וחזקה שלילית, וגם שורש ריבועי. מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/powers-roots/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"חזקות ושורשים","item":"https://shohamtal.github.io/homework-site/math/grade-8/#powers"},{"@type":"ListItem","position":5,"name":"חוקי חזקות ושורשים","item":"https://shohamtal.github.io/homework-site/math/powers-roots/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה כל מספר בחזקת 0 שווה 1?","acceptedAnswer":{"@type":"Answer","text":"כשמחלקים מספר בעצמו יוצא 1, למשל 52 : 52 = 1. לפי חוק החילוק זה גם 52 − 2 = 50, ולכן 50 = 1. בחרו במעבדה \"5² : 5²\" ותראו את כל האריחים מצטמצמים."}},{"@type":"Question","name":"מה זה חזקה שלילית?","acceptedAnswer":{"@type":"Answer","text":"מעריך שלילי פירושו \"אחד חלקי\": 2−3 = 123 = 18. הוא מופיע כשמחלקים ולמטה יש יותר, למשל 22 : 25 = 2−3. התוצאה היא שבר חיובי, לא מספר שלילי. נסו במעבדה את \"2² : 2⁵\"."}},{"@type":"Question","name":"מה ההבדל בין שורש ריבועי לחזקה?","acceptedAnswer":{"@type":"Answer","text":"חזקה בריבוע כופלת מספר בעצמו: 62 = 36. שורש ריבועי עושה את הדרך ההפוכה ושואל איזה מספר בריבוע נותן 36: √36 = 6. נסו במעבדת השורש."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חוקי חזקות ושורשים","description":"כל חוקי החזקות: כפל, חילוק, חזקה של חזקה, חזקת אפס וחזקה שלילית, וגם שורש ריבועי. מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/powers-roots/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"חזקות ושורשים","teaches":"חוקי חזקות ושורשים","keywords":"חזקה, מעריך, שורש ריבועי","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.tiles{display:flex; flex-wrap:wrap; gap:4px; align-items:center; justify-content:center; direction:ltr; row-gap:8px}
+.tile{min-width:30px; height:30px; padding:0 4px; border:2px solid var(--blue); border-radius:8px; display:grid; place-items:center; font:700 1rem var(--f-math); color:var(--blue); background:var(--card)}
+.tile.y{border-color:var(--ink); background:var(--hl); color:var(--ink)}
+.tile.one{border-style:dashed; border-color:var(--muted); color:var(--muted)}
+.tile.x{opacity:.35; text-decoration:line-through}
+.op{font:700 1.2rem var(--f-math); padding:0 2px}
+.grp{display:inline-flex; flex-wrap:wrap; gap:3px; align-items:center; border:2px dashed var(--soft); border-radius:10px; padding:3px 5px}
+.tfrac{display:inline-flex; flex-direction:column; align-items:center; gap:6px}
+.tfrac .bar-line{align-self:stretch; height:0; border-top:2px solid var(--ink)}
+.viz{display:flex; flex-direction:column; gap:12px; align-items:center; min-width:0}
+.viz .res{font-size:1.6rem}
+.calc{display:flex; flex-direction:column; gap:6px}
+.opsel{display:flex; flex-wrap:wrap; gap:8px}
+.opsel button[aria-pressed="true"],.mode button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.mode{display:flex; flex-wrap:wrap; gap:8px}
+svg.sq{width:100%; max-width:260px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.sq .cell{fill:none; stroke:var(--blue); stroke-width:.8; opacity:.55}
+.sq .box{fill:var(--hint-bg); stroke:var(--ink); stroke-width:2}
+.sq .inner{fill:none; stroke:var(--blue); stroke-width:1.5; stroke-dasharray:4 3}
+.sq text{font:700 13px var(--f-body); fill:var(--ink)}
+.sq text.side{fill:var(--line)}
+.sq .bg{fill:var(--card)}
+.laws{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px}
+.laws .mini p{margin:0}
+.sup-in{display:inline-flex; align-items:flex-start; gap:2px; direction:ltr; font:1.5rem var(--f-math)}
+.sup-in input{width:3.2em; font:1rem var(--f-math); padding:4px 6px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; margin-top:-4px}
+.root-in{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.root-in input{width:4.5em; font:1.1rem var(--f-math); padding:6px 8px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="powers-roots">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#powers">חזקות ושורשים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חוקי חזקות ושורשים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · חזקות ושורשים</div>
+  <h1>חוקי חזקות ושורשים</h1>
+  <p class="lead">חזקה היא דרך קצרה לכתוב כפל של אותו מספר הרבה פעמים. יש כמה חוקים פשוטים שחוסכים המון חישובים, וכולם יוצאים מספירה. ושורש ריבועי הוא הפעולה ההפוכה לריבוע. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה: חזקות</a><a href="#lab2">מעבדה: שורש</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מה זה חזקה?</h3>
+      <p><span class="eq">2<sup>5</sup> = 2 · 2 · 2 · 2 · 2 = 32</span></p>
+      <p>המספר למטה (2) נקרא <strong>הבסיס</strong>: את מה כופלים.</p>
+      <p>המספר הקטן למעלה (5) נקרא <strong>המעריך</strong>: כמה פעמים.</p>
+    </div>
+    <div class="mini">
+      <h3>מה זה שורש ריבועי?</h3>
+      <p><span class="eq">√25 = 5</span>, כי <span class="eq">5<sup>2</sup> = 25</span>.</p>
+      <p>השורש שואל: איזה מספר, כפול עצמו, נותן 25?</p>
+      <p>בציור: אם לריבוע יש שטח 25, הצלע שלו היא 5.</p>
+    </div>
+  </div>
+  <p class="text"><strong>החוקים.</strong> בכולם הבסיס זהה. אם הבסיסים שונים, החוקים לא עובדים.</p>
+  <div class="laws">
+    <div class="mini"><p><strong>כפל: מחברים מעריכים</strong></p><p><span class="eq"><i>a</i><sup><i>m</i></sup> · <i>a</i><sup><i>n</i></sup> = <i>a</i><sup><i>m</i> + <i>n</i></sup></span></p><p><span class="eq">2<sup>3</sup> · 2<sup>2</sup> = 2<sup>5</sup></span></p></div>
+    <div class="mini"><p><strong>חילוק: מחסרים מעריכים</strong></p><p><span class="eq"><i>a</i><sup><i>m</i></sup> : <i>a</i><sup><i>n</i></sup> = <i>a</i><sup><i>m</i> − <i>n</i></sup></span></p><p><span class="eq">3<sup>5</sup> : 3<sup>2</sup> = 3<sup>3</sup></span></p></div>
+    <div class="mini"><p><strong>חזקה של חזקה: כופלים מעריכים</strong></p><p><span class="eq">(<i>a</i><sup><i>m</i></sup>)<sup><i>n</i></sup> = <i>a</i><sup><i>m</i> · <i>n</i></sup></span></p><p><span class="eq">(2<sup>3</sup>)<sup>2</sup> = 2<sup>6</sup></span></p></div>
+    <div class="mini"><p><strong>מעריך 0: תמיד 1</strong></p><p><span class="eq"><i>a</i><sup>0</sup> = 1</span></p><p><span class="eq">7<sup>0</sup> = 1</span> (כל מספר חוץ מ-0)</p></div>
+    <div class="mini"><p><strong>מעריך שלילי: אחד חלקי</strong></p><p><span class="eq"><i>a</i><sup>−<i>n</i></sup> = <span class="frac"><span>1</span><span><i>a</i><sup><i>n</i></sup></span></span></span></p><p><span class="eq">2<sup>−3</sup> = <span class="frac"><span>1</span><span>2<sup>3</sup></span></span> = <span class="frac"><span>1</span><span>8</span></span></span></p></div>
+  </div>
+  <div class="callout"><strong>מאיפה בא מעריך שלילי?</strong> מחילוק שבו למטה יש יותר: <span class="eq">2<sup>2</sup> : 2<sup>5</sup> = 2<sup>2 − 5</sup> = 2<sup>−3</sup></span>. וגם בספירה: מצמצמים 2 זוגות, ולמטה נשארים שלושה 2. אז זה <span class="eq"><span class="frac"><span>1</span><span>2<sup>3</sup></span></span></span>. מעריך שלילי לא אומר שהמספר שלילי. <span class="eq">2<sup>−3</sup></span> הוא שבר חיובי קטן.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: רואים את החוקים</h2></div>
+  <p class="text">כל אריח הוא פעם אחת הבסיס. בחרו פעולה והזיזו את המחוונים. ספרו את האריחים ותראו מאיפה החוק מגיע.</p>
+  <div class="lab">
+    <div class="viz">
+      <div class="tiles" id="labTiles" aria-live="polite"></div>
+      <div class="big-eq res" id="labEq"></div>
+    </div>
+    <div class="ctrl">
+      <div class="opsel" id="labOps">
+        <button data-op="mul" aria-pressed="true">כפל</button><button data-op="div" aria-pressed="false">חילוק</button><button data-op="pow" aria-pressed="false">חזקה של חזקה</button>
+      </div>
+      <label class="slider" for="la"><span>הבסיס a</span><span class="eq" id="lav"></span></label>
+      <input type="range" id="la" min="2" max="5" step="1" value="2">
+      <label class="slider" for="lm"><span>המעריך הראשון m</span><span class="eq" id="lmv"></span></label>
+      <input type="range" class="blue" id="lm" min="0" max="6" step="1" value="3">
+      <label class="slider" for="ln"><span id="lnLabel">המעריך השני n</span><span class="eq" id="lnv"></span></label>
+      <input type="range" class="hl" id="ln" min="0" max="6" step="1" value="2">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="mul,2,3,2">2³ · 2²</button>
+          <button data-p="div,3,4,2">3⁴ : 3²</button>
+          <button data-p="div,5,2,2">5² : 5² (מעריך 0)</button>
+          <button data-p="pow,2,3,2">(2³)²</button>
+          <button data-p="mul,3,2,0">3² · 3⁰</button>
+          <button data-p="div,2,2,5">2² : 2⁵ (מעריך שלילי)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab2">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מעבדה: שורש הוא צלע של ריבוע</h2></div>
+  <p class="text">הזיזו את השטח של הריבוע. השורש של השטח הוא אורך הצלע.</p>
+  <div class="lab">
+    <svg class="sq" id="sqG" viewBox="0 0 240 240" role="img" aria-label="ריבוע עם שטח וצלע"></svg>
+    <div class="ctrl">
+      <label class="slider" for="sA"><span>השטח</span><span class="eq" id="sAv"></span></label>
+      <input type="range" id="sA" min="1" max="100" step="1" value="49">
+      <div class="explain fb hint calc" id="sqTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-a="25">25</button><button data-a="36">36</button><button data-a="50">50</button><button data-a="2">2</button><button data-a="80">80</button><button data-a="100">100</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="callout"><strong>ריבועים שכדאי להכיר:</strong> <span class="eq">1, 4, 9, 16, 25, 36, 49, 64, 81, 100</span>. בעזרתם מעריכים כל שורש: <span class="eq">√50</span> נמצא בין <span class="eq">√49 = 7</span> לבין <span class="eq">√64 = 8</span>.</div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">4</span><h2>ארבע מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חזקה זה לא כפל במעריך</h3>
+      <p><span class="eq">2<sup>3</sup> = 2 · 2 · 2 = 8</span>, ולא <span class="eq">2 · 3 = 6</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>בכפל מחברים, לא כופלים</h3>
+      <p><span class="eq">2<sup>3</sup> · 2<sup>2</sup> = 2<sup>5</sup></span>, ולא <span class="eq">2<sup>6</sup></span>. כופלים מעריכים רק בחזקה של חזקה: <span class="eq">(2<sup>3</sup>)<sup>2</sup> = 2<sup>6</sup></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>בסיסים שונים לא מתחברים</h3>
+      <p><span class="eq">2<sup>3</sup> · 3<sup>2</sup></span> זה לא <span class="eq">6<sup>5</sup></span>. מחשבים כל אחד לבד: <span class="eq">8 · 9 = 72</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מעריך 0 נותן 1, לא 0</h3>
+      <p><span class="eq">5<sup>0</sup> = 1</span>. כי <span class="eq">5<sup>2</sup> : 5<sup>2</sup> = 1</span>, ולפי החוק זה גם <span class="eq">5<sup>2 − 2</sup> = 5<sup>0</sup></span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ועוד אחת על שורשים:</strong> <span class="eq">√(9 + 16)</span> זה לא <span class="eq">√9 + √16</span>. בדקו: <span class="eq">√25 = 5</span>, אבל <span class="eq">3 + 4 = 7</span>. קודם מחשבים מה שבתוך השורש.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">5</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (חזקה של חזקה)</button>
+  </div>
+  <div class="stepper">
+    <div class="big-eq" id="exEq" style="font-size:1.7rem"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">6</span><h2>תרגול</h2></div>
+  <div class="mode" id="prMode">
+    <button data-m="pow" aria-pressed="true">חזקות: מה המעריך?</button><button data-m="root" aria-pressed="false">שורשים</button>
+  </div>
+  <p class="text" id="prInfo"></p>
+  <div class="big-eq" id="prQ" style="font-size:1.7rem"></div>
+  <div class="ctrl">
+    <div id="prIn"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה כל מספר בחזקת 0 שווה 1?</h3>
+    <p>כשמחלקים מספר בעצמו יוצא 1, למשל <span class="eq">5<sup>2</sup> : 5<sup>2</sup> = 1</span>. לפי חוק החילוק זה גם <span class="eq">5<sup>2 − 2</sup> = 5<sup>0</sup></span>, ולכן <span class="eq">5<sup>0</sup> = 1</span>. <a href="#lab">בחרו במעבדה "5² : 5²"</a> ותראו את כל האריחים מצטמצמים.</p>
+    <h3>מה זה חזקה שלילית?</h3>
+    <p>מעריך שלילי פירושו "אחד חלקי": <span class="eq">2<sup>−3</sup> = <span class="frac"><span>1</span><span>2<sup>3</sup></span></span> = <span class="frac"><span>1</span><span>8</span></span></span>. הוא מופיע כשמחלקים ולמטה יש יותר, למשל <span class="eq">2<sup>2</sup> : 2<sup>5</sup> = 2<sup>−3</sup></span>. התוצאה היא שבר חיובי, לא מספר שלילי. <a href="#lab">נסו במעבדה את "2² : 2⁵"</a>.</p>
+    <h3>מה ההבדל בין שורש ריבועי לחזקה?</h3>
+    <p>חזקה בריבוע כופלת מספר בעצמו: <span class="eq">6<sup>2</sup> = 36</span>. שורש ריבועי עושה את הדרך ההפוכה ושואל איזה מספר בריבוע נותן 36: <span class="eq">√36 = 6</span>. <a href="#lab2">נסו במעבדת השורש</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/factoring/"><small>→ הנושא הקודם</small>פירוק לגורמים</a><a class="next" href="../../math/pythagoras/"><small>הנושא הבא ←</small>משפט פיתגורס</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const pw=(a,e)=>`${a}<sup>${typeof e==="string"?e:numTxt(e)}</sup>`;
+const E=s=>`<span class="eq">${s}</span>`;
+const big=v=>v<=1e7;
+const valTxt=(a,e)=>{
+  if(e>=0) return big(a**e)?numTxt(a**e):null;
+  return big(a**-e)?`<span class="frac"><span>1</span><span>${a**-e}</span></span>`:null;
+};
+function pressed(el,attr,val){ el.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset[attr]===val)); }
+
+/* ---------- lab 1: tiles ---------- */
+const LA=$('la'), LM=$('lm'), LN=$('ln'); let op='mul';
+const tile=(a,cls='')=>`<span class="tile ${cls}">${a}</span>`;
+const tilesOf=(a,n,cls)=>n===0?tile(1,'one'):Array.from({length:n},()=>tile(a,cls)).join('');
+function lab(){
+  const a=+LA.value, m=+LM.value, n=+LN.value;
+  if(op==='pow'){ LN.max=4; if(+LN.value>4) LN.value=4; } else LN.max=6;
+  const nn=+LN.value;
+  $('lav').textContent=a; $('lmv').textContent=m; $('lnv').textContent=nn;
+  $('lnLabel').textContent=op==='pow'?'המעריך שבחוץ n':'המעריך השני n';
+  let tiles='', eq='', txt='';
+  if(op==='mul'){
+    const r=m+nn;
+    tiles=`<span class="grp">${tilesOf(a,m,'')}</span><span class="op">·</span><span class="grp">${tilesOf(a,nn,'y')}</span>`;
+    eq=E(`${pw(a,m)} · ${pw(a,nn)} = ${pw(a,r)}`);
+    txt=`<div>ב-${E(pw(a,m))} יש ${m} אריחים כחולים, וב-${E(pw(a,nn))} יש ${nn} אריחים צהובים.</div>
+      <div>ביחד יש <strong>${m} + ${nn} = ${r}</strong> פעמים ${a}. לכן <strong>מחברים את המעריכים</strong>.</div>`;
+    if(m===0||nn===0) txt+=`<div>אריח מקווקו עם 1 הוא חזקה עם מעריך 0. כפל ב-1 לא משנה כלום.</div>`;
+    const v1=valTxt(a,m), v2=valTxt(a,nn), v=valTxt(a,r);
+    if(v1&&v2&&v) txt+=`<div>בדיקה: ${E(`${v1} · ${v2} = ${v}`)} ✓</div>`;
+  } else if(op==='div'){
+    const r=m-nn, c=Math.min(m,nn);
+    const top=m===0?tile(1,'one'):Array.from({length:m},(_,i)=>tile(a,i<c?'x':'')).join('');
+    const bot=nn===0?tile(1,'one'):Array.from({length:nn},(_,i)=>tile(a,'y'+(i<c?' x':''))).join('');
+    tiles=`<span class="tfrac"><span class="tiles">${top}</span><span class="bar-line"></span><span class="tiles">${bot}</span></span>`;
+    eq=E(`${pw(a,m)} : ${pw(a,nn)} = ${pw(a,r)}`);
+    txt=`<div>כל ${a} למטה מצטמצם עם ${a} אחד למעלה. ${c>0?`מחקנו ${c} זוגות.`:''}</div>`;
+    if(r>0) txt+=`<div>למעלה נשארו <strong>${m} − ${nn} = ${r}</strong> אריחים. לכן <strong>מחסרים את המעריכים</strong>.</div>`;
+    else if(r===0) txt+=`<div>הכול הצטמצם ונשאר <strong>1</strong>. לפי החוק זה ${E(pw(a,0))}, ולכן ${E(`${pw(a,0)} = 1`)}.</div>`;
+    else txt+=`<div>נשארו ${-r} אריחים <strong>למטה</strong>, אז יוצא שבר: ${E(`1 : ${pw(a,-r)}`)}. לפי חוק החילוק זה ${E(`${pw(a,m)} : ${pw(a,nn)} = ${pw(a,r)}`)}, כי ${E(`${m} − ${nn} = ${numTxt(r)}`)}.</div><div><strong>מעריך שלילי פירושו "אחד חלקי":</strong> ${E(`${pw(a,r)} = 1 : ${pw(a,-r)}`)}. זה שבר חיובי, לא מספר שלילי.</div>`;
+    const v1=valTxt(a,m), v2=valTxt(a,nn), v=valTxt(a,r);
+    if(v1&&v2&&v) txt+=`<div>בדיקה: ${E(`${v1} : ${v2} = ${v}`)} ✓</div>`;
+  } else {
+    const r=m*nn;
+    tiles = nn===0 ? tile(1,'one') : Array.from({length:nn},(_,i)=>`<span class="grp">${tilesOf(a,m,i%2?'y':'')}</span>`).join('<span class="op">·</span>');
+    eq=E(`(${pw(a,m)})<sup>${nn}</sup> = ${pw(a,r)}`);
+    txt=`<div>${E(`(${pw(a,m)})<sup>${nn}</sup>`)} פירושו לכפול את ${E(pw(a,m))} בעצמו ${nn} פעמים. יש ${nn} קבוצות.</div>
+      <div>בכל קבוצה ${m} אריחים, אז ביחד <strong>${m} · ${nn} = ${r}</strong>. לכן <strong>כופלים את המעריכים</strong>.</div>`;
+    const v1=valTxt(a,m), v=valTxt(a,r);
+    if(v1&&v) txt+=`<div>בדיקה: ${E(`${v1}<sup>${nn}</sup> = ${v}`)} ✓</div>`;
+  }
+  $('labTiles').innerHTML=tiles; $('labEq').innerHTML=eq; $('labTxt').innerHTML=txt;
+}
+$('labOps').querySelectorAll('button').forEach(b=>b.onclick=()=>{op=b.dataset.op; pressed($('labOps'),'op',op); lab();});
+[LA,LM,LN].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [o,a,m,n]=btn.dataset.p.split(','); op=o; pressed($('labOps'),'op',op);
+  LN.max=o==='pow'?4:6; LA.value=a; LM.value=m; LN.value=n; lab();
+}));
+lab();
+
+/* ---------- lab 2: square root ---------- */
+const SA=$('sA');
+function sq(){
+  const A=+SA.value, r=Math.sqrt(A), lo=Math.floor(r), perfect=lo*lo===A;
+  $('sAv').textContent=A;
+  const U=22, s=r*U, x0=10, y0=10;
+  let h=`<rect class="bg" x="0" y="0" width="240" height="240"/>`;
+  h+=`<rect class="box" x="${x0}" y="${y0}" width="${s}" height="${s}"/>`;
+  if(perfect){ for(let i=1;i<lo;i++){ h+=`<line class="cell" x1="${x0+i*U}" y1="${y0}" x2="${x0+i*U}" y2="${y0+s}"/><line class="cell" x1="${x0}" y1="${y0+i*U}" x2="${x0+s}" y2="${y0+i*U}"/>`; } }
+  else if(lo>0) h+=`<rect class="inner" x="${x0}" y="${y0}" width="${lo*U}" height="${lo*U}"/>`;
+  const side=perfect?String(lo):'≈ '+r.toFixed(2);
+  h+=`<text class="side" x="${x0+s/2}" y="${Math.min(y0+s+16,236)}" text-anchor="middle">${side}</text>`;
+  h+=`<text x="${x0+s/2}" y="${y0+s/2+5}" text-anchor="middle">${A}</text>`;
+  $('sqG').innerHTML=h;
+  let t;
+  if(perfect) t=`<div>${E(`√${A} = ${lo}`)}, כי ${E(`${lo}<sup>2</sup> = ${lo} · ${lo} = ${A}`)}.</div><div>ריבוע עם שטח ${A} הוא ${lo} על ${lo}, אז הצלע שלו ${lo}.</div>`;
+  else{
+    const hi=lo+1, near=(A-lo*lo)<=(hi*hi-A)?lo:hi;
+    t=`<div>${A} הוא לא ריבוע של מספר שלם.</div>
+      <div>${E(`${lo}<sup>2</sup> = ${lo*lo}`)} ו-${E(`${hi}<sup>2</sup> = ${hi*hi}`)}. ${A} נמצא ביניהם, אז ${E(`√${A}`)} נמצא <strong>בין ${lo} לבין ${hi}</strong>.</div>
+      <div>${A} יותר קרוב ל-${near*near}, אז השורש יותר קרוב ל-${near}. בערך ${E(r.toFixed(2))}.</div>`;
+    if(lo>0) t+=`<div>הריבוע המקווקו הוא ${lo} על ${lo}, עם שטח ${lo*lo}. הריבוע שלנו קצת יותר גדול.</div>`;
+  }
+  $('sqTxt').innerHTML=t;
+}
+SA.addEventListener('input',sq);
+document.querySelectorAll('#lab2 .tries button').forEach(b=>b.addEventListener('click',()=>{SA.value=b.dataset.a; sq();}));
+sq();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{q:`(${pw(3,4)} · ${pw(3,2)}) : ${pw(3,3)}`,steps:[
+    `מפשטים ${E(`(${pw(3,4)} · ${pw(3,2)}) : ${pw(3,3)}`)}. בכל מקום הבסיס הוא 3, אז החוקים עובדים.`,
+    `<strong>קודם הסוגריים, כפל:</strong> מחברים מעריכים. ${E(`${pw(3,4)} · ${pw(3,2)} = ${pw(3,'6')}`)}, כי ${E('4 + 2 = 6')}.`,
+    `<strong>עכשיו חילוק:</strong> מחסרים מעריכים. ${E(`${pw(3,6)} : ${pw(3,3)} = ${pw(3,3)}`)}, כי ${E('6 − 3 = 3')}.`,
+    `<strong>מחשבים:</strong> ${E(`${pw(3,3)} = 3 · 3 · 3 = 27`)}.`,
+    `<strong>בודקים בדרך הארוכה:</strong> ${E(`(81 · 9) : 27 = 729 : 27 = 27`)} ✓ החוקים חסכו את כל החישוב הזה.`
+  ]},
+  B:{q:`(${pw(2,2)})<sup>3</sup> · 2`,steps:[
+    `מפשטים ${E(`(${pw(2,2)})<sup>3</sup> · 2`)}.`,
+    `<strong>חזקה של חזקה:</strong> כופלים מעריכים. ${E(`(${pw(2,2)})<sup>3</sup> = ${pw(2,6)}`)}, כי ${E('2 · 3 = 6')}.`,
+    `<strong>שימו לב ל-2 שנשאר:</strong> מספר בלי מעריך הוא בחזקת 1. ${E(`2 = ${pw(2,1)}`)}.`,
+    `<strong>כפל:</strong> מחברים מעריכים. ${E(`${pw(2,6)} · ${pw(2,1)} = ${pw(2,7)}`)}.`,
+    `<strong>מחשבים:</strong> ${E(`${pw(2,7)} = 128`)}. בדיקה: ${E('4 · 4 · 4 · 2 = 128')} ✓`
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey];
+  $('exEq').innerHTML=E(e.q);
+  $('exText').innerHTML=e.steps[exI];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+let mode='pow', pr={}, streak=0, solved=0;
+function newPow(){
+  const t=pick(['mul','mul','div','div','pow','pow','zero','mix','neg','neg','inv']), a=pick([2,3,5,7,10,'a','x']);
+  const A=typeof a==='string'?`<i>${a}</i>`:a;
+  let m,n,p,ans,q;
+  if(t==='mul'){ m=ri(2,7); n=ri(1,6); ans=m+n; q=`${pw(A,m)} · ${pw(A,n)}`; }
+  else if(t==='div'){ m=ri(4,10); n=ri(1,m-1); ans=m-n; q=`${pw(A,m)} : ${pw(A,n)}`; }
+  else if(t==='pow'){ m=ri(2,5); n=ri(2,4); ans=m*n; q=`(${pw(A,m)})<sup>${n}</sup>`; }
+  else if(t==='zero'){ m=ri(2,6); n=m; ans=0; q=`${pw(A,m)} : ${pw(A,m)}`; }
+  else if(t==='neg'){ m=ri(1,5); n=ri(m+1,9); ans=m-n; q=`${pw(A,m)} : ${pw(A,n)}`; }
+  else if(t==='inv'){ n=ri(2,6); ans=-n; q=`<span class="frac"><span>1</span><span>${pw(A,n)}</span></span>`; }
+  else { m=ri(2,6); n=ri(2,5); p=ri(1,m+n-1); ans=m+n-p; q=`(${pw(A,m)} · ${pw(A,n)}) : ${pw(A,p)}`; }
+  pr={kind:'pow',t,A,m,n,p,ans,q,tries:0,hint:0};
+  $('prInfo').innerHTML='כתבו את הכול כחזקה אחת עם אותו בסיס. מה המעריך? מעריך שלילי כותבים עם מינוס, למשל −3.';
+  $('prQ').innerHTML=E(q);
+  $('prIn').innerHTML=`<div class="sup-in"><span class="eq">= ${A}</span><input id="prA" inputmode="text" autocomplete="off" aria-label="המעריך"></div>`;
+}
+function newRoot(){
+  if(Math.random()<0.55){ const r=ri(2,15); pr={kind:'root',t:'perfect',N:r*r,r,tries:0,hint:0};
+    $('prInfo').innerHTML='כמה זה השורש? כתבו מספר שלם.';
+    $('prQ').innerHTML=E(`√${r*r} = ?`);
+    $('prIn').innerHTML=`<div class="root-in"><label for="prA">√${r*r} =</label><input id="prA" inputmode="numeric" autocomplete="off"></div>`;
+  } else {
+    let N; do{ N=ri(3,150); } while(Number.isInteger(Math.sqrt(N)));
+    const lo=Math.floor(Math.sqrt(N)); pr={kind:'root',t:'est',N,lo,tries:0,hint:0};
+    $('prInfo').innerHTML='זה לא ריבוע של מספר שלם. בין אילו שני מספרים שלמים, אחד אחרי השני, נמצא השורש?';
+    $('prQ').innerHTML=E(`√${N}`);
+    $('prIn').innerHTML=`<div class="root-in"><span>בין</span><input id="prA" inputmode="numeric" autocomplete="off" aria-label="המספר הקטן"><span>לבין</span><input id="prB" inputmode="numeric" autocomplete="off" aria-label="המספר הגדול"></div>`;
+  }
+}
+function newPr(){
+  const old=JSON.stringify(pr);
+  for(let i=0;i<5;i++){ mode==='pow'?newPow():newRoot(); if(JSON.stringify({...pr,tries:0})!==old) break; }
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prIn').querySelectorAll('input').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solutionPow(){
+  const {t,A,m,n,p,ans}=pr;
+  if(t==='mul') return `כפל עם אותו בסיס: מחברים. ${E(`${m} + ${n} = ${ans}`)}, אז ${E(pw(A,ans))}.`;
+  if(t==='div') return `חילוק עם אותו בסיס: מחסרים. ${E(`${m} − ${n} = ${ans}`)}, אז ${E(pw(A,ans))}.`;
+  if(t==='pow') return `חזקה של חזקה: כופלים. ${E(`${m} · ${n} = ${ans}`)}, אז ${E(pw(A,ans))}.`;
+  if(t==='neg') return `חילוק עם אותו בסיס: מחסרים. ${E(`${m} − ${n} = ${numTxt(ans)}`)}, אז ${E(pw(A,ans))}. למטה היו יותר, אז יצא מעריך שלילי: ${E(`${pw(A,ans)} = 1 : ${pw(A,-ans)}`)}.`;
+  if(t==='inv') return `"אחד חלקי" ${E(pw(A,n))} הוא מעריך שלילי: ${E(pw(A,ans))}. כי ${E(`${pw(A,0)} : ${pw(A,n)} = ${pw(A,'0 − '+n)}`)}.`;
+  if(t==='zero') return `מחסרים: ${E(`${m} − ${m} = 0`)}, אז ${E(pw(A,0))}. וזה שווה 1, כי מספר חלקי עצמו הוא 1.`;
+  return `קודם הסוגריים: ${E(`${m} + ${n} = ${m+n}`)}. אחר כך החילוק: ${E(`${m+n} − ${p} = ${ans}`)}. התשובה ${E(pw(A,ans))}.`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), v=parseNum($('prA').value);
+  let ok=false, msg='';
+  if(pr.kind==='pow'){
+    if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו את המעריך, מספר שלם.</div>'; return; }
+    const {t,m,n,p,ans}=pr; ok=eqv(v,ans);
+    if(!ok){
+      if((t==='mul'||t==='mix') && eqv(v,m*n)) msg='כפלתם את המעריכים. בכפל של חזקות עם אותו בסיס <strong>מחברים</strong> מעריכים. כופלים רק בחזקה של חזקה.';
+      else if(t==='div' && eqv(v,m+n)) msg='חיברתם. בחילוק <strong>מחסרים</strong> את המעריכים: הגדול פחות הקטן.';
+      else if(t==='neg' && eqv(v,n-m)) msg=`החשבון נכון, אבל הסימן לא. מחסרים לפי הסדר: המעריך למעלה פחות המעריך למטה, ${E(`${m} − ${n}`)}. יוצא מספר שלילי.`;
+      else if(t==='neg' && eqv(v,0)) msg='לא הכול מצטמצם. למטה יש יותר פעמים את הבסיס מאשר למעלה, אז נשארים כמה למטה. זה מעריך שלילי.';
+      else if(t==='inv' && eqv(v,n)) msg=`כמעט! הבסיס נמצא <strong>למטה</strong> בשבר, ולכן המעריך שלילי: מינוס ${n}.`;
+      else if(t==='inv' && eqv(v,1)) msg='"אחד חלקי" זה לא מעריך 1. כשהחזקה למטה בשבר, המעריך מקבל מינוס.';
+      else if(t==='div' && eqv(v,m/n)) msg='בחילוק לא מחלקים את המעריכים. <strong>מחסרים</strong> אותם.';
+      else if(t==='pow' && eqv(v,m+n)) msg='חיברתם. בחזקה של חזקה יש כמה קבוצות זהות, אז <strong>כופלים</strong> את המעריכים.';
+      else if(t==='zero' && eqv(v,1)) msg='כמעט! הערך באמת שווה 1, אבל שאלנו על המעריך. כמה זה <span class="eq">'+m+' − '+m+'</span>?';
+      else if(t==='mix' && eqv(v,m+n)) msg='את הסוגריים עשיתם נכון. עכשיו עוד צריך לחלק: מחסרים את המעריך '+p+'.';
+      else if(t==='mix' && eqv(v,m+n+p)) msg='בסוף יש חילוק, אז את '+p+' צריך לחסר, לא לחבר.';
+      else msg='עוד לא. איזו פעולה יש כאן: כפל, חילוק או חזקה של חזקה? כל אחת עם חוק משלה.';
+    }
+  } else if(pr.t==='perfect'){
+    if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר שלם.</div>'; return; }
+    const {N,r}=pr; ok=eqv(v,r);
+    if(!ok){
+      if(eqv(v,N/2)) msg=`שורש זה לא חצי. מחפשים מספר שכפול עצמו נותן ${N}. בדקו: ${E(`${numTxt(v)} · ${numTxt(v)} = ${numTxt(v*v)}`)}.`;
+      else if(eqv(v,N*N)||eqv(v,N)) msg=`שורש הוא הפעולה ההפוכה לריבוע. איזה מספר, כפול עצמו, נותן ${N}?`;
+      else if(v>0 && Number.isInteger(v)) msg=`בדקו: ${E(`${v} · ${v} = ${v*v}`)}. ${v*v>N?'זה יותר מדי. נסו מספר קטן יותר.':'זה מעט מדי. נסו מספר גדול יותר.'}`;
+      else msg=`איזה מספר שלם, כפול עצמו, נותן ${N}?`;
+    }
+  } else {
+    const w=parseNum($('prB').value), {N,lo}=pr;
+    if(isNaN(v)||isNaN(w)){ fb.innerHTML='<div class="fb err">כתבו שני מספרים שלמים.</div>'; return; }
+    ok=eqv(v,lo)&&eqv(w,lo+1);
+    if(!ok){
+      if(eqv(w,lo)&&eqv(v,lo+1)) msg='המספרים נכונים, רק הפוכים. בתיבה הראשונה את הקטן.';
+      else if(w-v!==1) msg='צריך שני מספרים שלמים, אחד אחרי השני, למשל 6 ו-7.';
+      else if(v*v>N) msg=`${E(`${v}<sup>2</sup> = ${v*v}`)}, וזה כבר יותר מ-${N}. נסו מספרים קטנים יותר.`;
+      else msg=`${E(`${w}<sup>2</sup> = ${w*w}`)}, וזה עדיין פחות מ-${N}. נסו מספרים גדולים יותר.`;
+    }
+  }
+  if(ok){ streak++; solved++; streakTxt();
+    const done = pr.kind==='pow' ? `${E(pw(pr.A,pr.ans))}` : pr.t==='perfect' ? E(`√${pr.N} = ${pr.r}`) : `${E(`√${pr.N}`)} נמצא בין ${pr.lo} לבין ${pr.lo+1}`;
+    fb.innerHTML=`<div class="fb ok">נכון! ${done}.</div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.kind==='pow'){
+    const {t,A,m,n}=pr;
+    const law={mul:'כאן יש כפל של חזקות עם אותו בסיס.',div:'כאן יש חילוק של חזקות עם אותו בסיס.',pow:'כאן יש חזקה של חזקה: סוגריים, ומעריך גם בחוץ.',zero:'כאן מחלקים חזקה בעצמה.',mix:'קודם הסוגריים (כפל), ואחר כך החילוק.',neg:'כאן יש חילוק, ולמטה המעריך גדול יותר.',inv:'כאן יש "אחד חלקי חזקה".'}[t];
+    h = pr.hint===1 ? `${law} איזה חוק מתאים? אפשר להציץ ב<a href="#idea">ארבעת החוקים</a>.`
+      : t==='mul'?`מחברים: ${E(`${m} + ${n}`)}.` : t==='div'?`מחסרים: ${E(`${m} − ${n}`)}.` : t==='pow'?`כופלים: ${E(`${m} · ${n}`)}. או חשבו: ${n} קבוצות של ${m} אריחים.` : t==='zero'?`מחסרים: ${E(`${m} − ${m}`)}.` : t==='neg'?`מחסרים לפי הסדר: ${E(`${m} − ${n}`)}. התוצאה תהיה שלילית.` : t==='inv'?`חזקה שנמצאת למטה בשבר הופכת למעריך שלילי: ${E(`1 : ${pw(A,'<i>n</i>')} = ${pw(A,'−<i>n</i>')}`)}.` : `בסוגריים: ${E(`${m} + ${n} = ${m+n}`)}. עכשיו מחסרים את ${pr.p}.`;
+  } else if(pr.t==='perfect'){
+    h = pr.hint===1 ? `איזה מספר, כפול עצמו, נותן ${pr.N}? נסו לנחש ולבדוק.` : `${pr.N} גדול מ-${E(`${pr.r-1}<sup>2</sup> = ${(pr.r-1)**2}`)}. נסו את המספר הבא.`;
+  } else {
+    h = pr.hint===1 ? 'כתבו את הריבועים לפי הסדר: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144. בין אילו שניים נמצא המספר?' : `${E(`${pr.lo}<sup>2</sup> = ${pr.lo*pr.lo}`)}. מה הריבוע הבא?`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  let s;
+  if(pr.kind==='pow') s=solutionPow();
+  else if(pr.t==='perfect') s=`${E(`√${pr.N} = ${pr.r}`)}, כי ${E(`${pr.r} · ${pr.r} = ${pr.N}`)}.`;
+  else s=`${E(`${pr.lo}<sup>2</sup> = ${pr.lo*pr.lo}`)} ו-${E(`${pr.lo+1}<sup>2</sup> = ${(pr.lo+1)**2}`)}. ${pr.N} נמצא ביניהם, אז ${E(`√${pr.N}`)} נמצא בין ${pr.lo} לבין ${pr.lo+1}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${s} עכשיו נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+$('prMode').querySelectorAll('button').forEach(b=>b.onclick=()=>{mode=b.dataset.m; pressed($('prMode'),'m',mode); newPr();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

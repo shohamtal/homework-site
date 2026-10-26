@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>נוסחאות הכפל המקוצר · כיתה ח · מירי</title>
+<meta name="description" content="שלוש נוסחאות הכפל המקוצר, כולל (a+b)², (a−b)² ו-(a+b)(a−b), עם הסבר בעזרת שטחים, דוגמאות ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/short-multiplication/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="נוסחאות הכפל המקוצר · כיתה ח · מירי">
+<meta property="og:description" content="שלוש נוסחאות הכפל המקוצר, כולל (a+b)², (a−b)² ו-(a+b)(a−b), עם הסבר בעזרת שטחים, דוגמאות ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/short-multiplication/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"כפל מקוצר ופירוק לגורמים","item":"https://shohamtal.github.io/homework-site/math/grade-8/#algebra"},{"@type":"ListItem","position":5,"name":"נוסחאות הכפל המקוצר","item":"https://shohamtal.github.io/homework-site/math/short-multiplication/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך זוכרים את נוסחאות הכפל המקוצר?","acceptedAnswer":{"@type":"Answer","text":"משפט אחד: \"ריבוע הראשון, פעמיים הראשון כפול השני, ריבוע השני\". הסימן באמצע הוא הסימן שבסוגריים, ו-b² בסוף תמיד עם פלוס. תרגלו למטה עד שזה יוצא לבד."}},{"@type":"Question","name":"למה (a+b)² לא שווה a²+b²?","acceptedAnswer":{"@type":"Answer","text":"כי בריבוע הגדול יש עוד שני מלבנים, כל אחד בשטח ab. למשל (3 + 2)² = 25, אבל 9 + 4 = 13, וחסרים בדיוק 2 · 6 = 12. ראו את המלבנים במעבדה."}},{"@type":"Question","name":"מתי משתמשים בנוסחת הפרש ריבועים?","acceptedAnswer":{"@type":"Answer","text":"כשכופלים סכום בהפרש של אותם שני דברים, כמו (x + 7)(x − 7) = x² − 49. היא עוזרת גם בחשבון בראש: 31 · 29 = 30² − 1 = 899. בחרו \"הפרש ריבועים\" במעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"נוסחאות הכפל המקוצר","description":"שלוש נוסחאות הכפל המקוצר, כולל (a+b)², (a−b)² ו-(a+b)(a−b), עם הסבר בעזרת שטחים, דוגמאות ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/short-multiplication/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"כפל מקוצר ופירוק לגורמים","teaches":"נוסחאות הכפל המקוצר","keywords":"(a + b)², (a − b)², הפרש ריבועים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.area{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.area .unit{stroke:var(--grid); stroke-width:.6}
+.area .pa{fill:var(--line); fill-opacity:.18; stroke:var(--line); stroke-width:1.6}
+.area .pab{fill:var(--blue); fill-opacity:.16; stroke:var(--blue); stroke-width:1.6}
+.area .pab2{fill:var(--green); fill-opacity:.16; stroke:var(--green); stroke-width:1.6}
+.area .pb{fill:var(--hl); fill-opacity:.6; stroke:var(--ink); stroke-width:1.6}
+.area .cut{fill:none; stroke:var(--muted); stroke-width:1.4; stroke-dasharray:4 3}
+.area .gone{fill:var(--muted); fill-opacity:.12; stroke:var(--muted); stroke-width:1.2; stroke-dasharray:4 3}
+.area .lbl{fill:var(--ink); font:700 11px var(--f-body); text-anchor:middle; dominant-baseline:middle}
+.area .lbl.sm{font-size:9px}
+.area .side{fill:var(--muted); font:700 10px var(--f-body); text-anchor:middle; dominant-baseline:middle}
+.area .cap{fill:var(--ink); font:700 11px var(--f-body); text-anchor:middle}
+.modes{display:flex; flex-wrap:wrap; gap:8px}
+.modes button[aria-pressed="true"]{background:var(--line); color:#fff}
+.poly{display:flex; flex-wrap:wrap; align-items:center; gap:6px; direction:ltr; justify-content:flex-end; font-family:var(--f-math); font-size:1.15rem}
+.poly input{width:3.6em; font:1.1rem var(--f-math); padding:4px 6px; border-radius:8px; border:2px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+.calc{display:flex; flex-direction:column; gap:4px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="short-multiplication">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#algebra">כפל מקוצר ופירוק לגורמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">נוסחאות הכפל המקוצר</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · כפל מקוצר ופירוק לגורמים</div>
+  <h1>נוסחאות הכפל המקוצר</h1>
+  <p class="lead">כמה זה <span class="eq">(<i>a</i> + <i>b</i>)²</span>? הרבה חושבים שזה <span class="eq"><i>a</i>² + <i>b</i>²</span>, אבל חסר שם משהו. כאן תראו בציור של ריבוע מה חסר, ותלמדו שלוש נוסחאות שחוסכות הרבה עבודה. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bonus">חשבון בראש</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שלוש נוסחאות, שלושה ציורים</h2></div>
+  <p class="text">כשכופלים סוגריים בסוגריים, כל איבר כופלים בכל איבר. בשלושה מקרים שחוזרים כל הזמן, התוצאה תמיד נראית אותו דבר. לכן שווה לזכור אותה.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>ריבוע של סכום</h3>
+      <p class="big-eq" style="font-size:1.4rem"><span class="eq">(<i>a</i> + <i>b</i>)² = <i>a</i>² + 2<i>ab</i> + <i>b</i>²</span></p>
+      <p>ריבוע הראשון, ועוד פעמיים הראשון כפול השני, ועוד ריבוע השני.</p>
+    </div>
+    <div class="mini">
+      <h3>ריבוע של הפרש</h3>
+      <p class="big-eq" style="font-size:1.4rem"><span class="eq">(<i>a</i> − <i>b</i>)² = <i>a</i>² − 2<i>ab</i> + <i>b</i>²</span></p>
+      <p>אותו דבר, רק שהאיבר האמצעי עם מינוס. ה-<span class="eq"><i>b</i>²</span> בסוף תמיד עם פלוס.</p>
+    </div>
+    <div class="mini">
+      <h3>הפרש ריבועים</h3>
+      <p class="big-eq" style="font-size:1.4rem"><span class="eq">(<i>a</i> + <i>b</i>)(<i>a</i> − <i>b</i>) = <i>a</i>² − <i>b</i>²</span></p>
+      <p>סכום כפול הפרש של אותם שני דברים. האיברים האמצעיים מבטלים זה את זה.</p>
+    </div>
+    <div class="mini">
+      <h3>למה זה נכון?</h3>
+      <p>פותחים סוגריים רגיל: <span class="eq">(<i>a</i> + <i>b</i>)(<i>a</i> + <i>b</i>)</span> <span class="eq">= <i>a</i>² + <i>ab</i> + <i>ba</i> + <i>b</i>²</span>.</p>
+      <p>ו-<span class="eq"><i>ab</i></span> ועוד <span class="eq"><i>ba</i></span> זה פעמיים <span class="eq"><i>ab</i></span>. משם מגיע ה-2.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הריבוע שמסביר הכול</h2></div>
+  <p class="text">בחרו נוסחה והזיזו את <span class="eq"><i>a</i></span> ואת <span class="eq"><i>b</i></span>. כל משבצת קטנה היא 1, אז השטח של כל חלק הוא מספר המשבצות שבו.</p>
+  <div class="modes" id="modes" role="group" aria-label="בחירת נוסחה">
+    <button data-mode="sum" aria-pressed="true"><span class="eq">(<i>a</i> + <i>b</i>)²</span></button>
+    <button data-mode="diff" aria-pressed="false"><span class="eq">(<i>a</i> − <i>b</i>)²</span></button>
+    <button data-mode="dos" aria-pressed="false"><span class="eq">(<i>a</i> + <i>b</i>)(<i>a</i> − <i>b</i>)</span></button>
+  </div>
+  <div class="lab">
+    <svg class="area" id="labG" viewBox="0 0 260 260" role="img" aria-label="ציור שטחים של הנוסחה"></svg>
+    <div class="ctrl">
+      <label class="slider" for="sa"><span><i>a</i> (הצלע הגדולה)</span><span class="eq" id="sav"></span></label>
+      <input type="range" id="sa" min="1" max="8" step="1" value="5">
+      <label class="slider" for="sb"><span><i>b</i> (הצלע הקטנה)</span><span class="eq" id="sbv"></span></label>
+      <input type="range" class="hl" id="sb" min="1" max="5" step="1" value="2">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="sum,5,2">הדוגמה הרגילה</button>
+          <button data-p="sum,3,3">a ו-b שווים</button>
+          <button data-p="sum,8,1">b קטן מאוד</button>
+          <button data-p="diff,6,2">ריבוע של הפרש</button>
+          <button data-p="dos,5,3">הפרש ריבועים</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את האמצע</h3>
+      <p><span class="eq">(<i>x</i> + 3)² ≠ <i>x</i>² + 9</span>. חסר האיבר <span class="eq">6<i>x</i></span>.</p>
+      <p>בדיקה במספרים: <span class="eq">(1 + 3)² = 16</span>, אבל <span class="eq">1 + 9 = 10</span>. לא שווה.</p>
+    </div>
+    <div class="mini">
+      <h3>גם המקדם עולה בריבוע</h3>
+      <p><span class="eq">(2<i>x</i>)² = 2<i>x</i> · 2<i>x</i> = 4<i>x</i>²</span>, ולא <span class="eq">2<i>x</i>²</span>.</p>
+      <p>ה-<span class="eq"><i>a</i></span> בנוסחה הוא כל <span class="eq">2<i>x</i></span>, לא רק ה-<span class="eq"><i>x</i></span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הסימן של <span class="eq"><i>b</i>²</span>:</strong> בריבוע של הפרש, <span class="eq"><i>b</i>²</span> יוצא עם פלוס, כי מינוס כפול מינוס זה פלוס: <span class="eq">(<i>x</i> − 4)² = <i>x</i>² − 8<i>x</i> + 16</span>. מינוס בסוף יש רק בהפרש ריבועים.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (עם מינוס)</button>
+    <button id="exC" role="tab" aria-selected="false">דוגמה ג (הפרש ריבועים)</button>
+  </div>
+  <div class="big-eq" id="exQ" style="font-size:1.6rem"></div>
+  <div class="stepper">
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: פתחו את הסוגריים</h2></div>
+  <p class="text">כתבו את התוצאה בצורה <span class="eq">□<i>x</i>² + □<i>x</i> + □</span>. אם יש מינוס, כתבו אותו בתוך התיבה, למשל <span class="eq">−6</span>. אם אין איבר עם <span class="eq"><i>x</i></span>, כתבו 0.</p>
+  <div class="big-eq" id="prQ" style="font-size:1.8rem"></div>
+  <div class="poly" id="prIn">
+    <input id="prA" inputmode="numeric" autocomplete="off" aria-label="המקדם של x בריבוע"><span class="eq"><i>x</i>² +</span>
+    <input id="prB" inputmode="numeric" autocomplete="off" aria-label="המקדם של x"><span class="eq"><i>x</i> +</span>
+    <input id="prC" inputmode="numeric" autocomplete="off" aria-label="המספר החופשי">
+  </div>
+  <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="bonus">
+  <div class="sec-head"><span class="sec-num">6</span><h2>אתגר: חשבון בראש</h2></div>
+  <p class="text">הנוסחאות עוזרות גם בלי <span class="eq"><i>x</i></span>. למשל <span class="eq">21²</span> <span class="eq">= (20 + 1)²</span> <span class="eq">= 400 + 40 + 1</span> <span class="eq">= 441</span>. נסו לחשב בלי מחשבון:</p>
+  <div class="big-eq" id="bnQ" style="font-size:1.8rem"></div>
+  <div class="inputs">
+    <label for="bnA">התשובה<input id="bnA" inputmode="numeric" autocomplete="off"></label>
+    <button id="bnCheck" class="primary">בדיקה</button><button id="bnHint">רמז</button><button id="bnNew">תרגיל חדש</button>
+  </div>
+  <div id="bnFb" aria-live="polite"></div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך זוכרים את נוסחאות הכפל המקוצר?</h3>
+    <p>משפט אחד: "ריבוע הראשון, פעמיים הראשון כפול השני, ריבוע השני". הסימן באמצע הוא הסימן שבסוגריים, ו-<span class="eq"><i>b</i>²</span> בסוף תמיד עם פלוס. <a href="#practice">תרגלו למטה</a> עד שזה יוצא לבד.</p>
+    <h3>למה (a+b)² לא שווה a²+b²?</h3>
+    <p>כי בריבוע הגדול יש עוד שני מלבנים, כל אחד בשטח <span class="eq"><i>ab</i></span>. למשל <span class="eq">(3 + 2)² = 25</span>, אבל <span class="eq">9 + 4 = 13</span>, וחסרים בדיוק <span class="eq">2 · 6 = 12</span>. <a href="#lab">ראו את המלבנים במעבדה</a>.</p>
+    <h3>מתי משתמשים בנוסחת הפרש ריבועים?</h3>
+    <p>כשכופלים סכום בהפרש של אותם שני דברים, כמו <span class="eq">(<i>x</i> + 7)(<i>x</i> − 7) = <i>x</i>² − 49</span>. היא עוזרת גם בחשבון בראש: <span class="eq">31 · 29 = 30² − 1 = 899</span>. <a href="#lab">בחרו "הפרש ריבועים" במעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/inequalities/"><small>→ הנושא הקודם</small>אי-שוויונות ממעלה ראשונה</a><a class="next" href="../../math/factoring/"><small>הנושא הבא ←</small>פירוק לגורמים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const neg=n=>n<0?'−'+Math.abs(n):String(n);
+const I=s=>`<i>${s}</i>`;
+const E=s=>`<span class="eq">${s}</span>`;
+
+/* polynomial A x² + B x + C as HTML */
+function poly(A,B,C){
+  const terms=[[A,'<i>x</i>²'],[B,'<i>x</i>'],[C,'']].filter(t=>t[0]!==0);
+  if(!terms.length) return E('0');
+  return E(terms.map(([c,v],i)=>{
+    const abs=Math.abs(c), co=(abs===1&&v)?'':abs;
+    const sign=i===0?(c<0?'−':''):(c<0?' − ':' + ');
+    return sign+co+v;
+  }).join(''));
+}
+const term=(p)=>p===1?'<i>x</i>':p+'<i>x</i>';
+
+/* ---------- lab ---------- */
+let mode='sum';
+const svg=$('labG'), NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,text){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(text!=null) e.textContent=text; svg.appendChild(e); return e; }
+function grid(x0,y0,w,h,u){
+  for(let i=1;i<w;i++) el('line',{x1:x0+i*u,y1:y0,x2:x0+i*u,y2:y0+h*u,class:'unit'});
+  for(let j=1;j<h;j++) el('line',{x1:x0,y1:y0+j*u,x2:x0+w*u,y2:y0+j*u,class:'unit'});
+}
+function piece(x0,y0,u,x,y,w,h,cls,l1,l2){
+  if(w<=0||h<=0) return;
+  el('rect',{x:x0+x*u,y:y0+y*u,width:w*u,height:h*u,class:cls});
+  const cx=x0+(x+w/2)*u, cy=y0+(y+h/2)*u, small=Math.min(w,h)*u;
+  if(small>=34 && l2!=null){ el('text',{x:cx,y:cy-7,class:'lbl'},l1); el('text',{x:cx,y:cy+8,class:'lbl'},l2); }
+  else if(small>=14) el('text',{x:cx,y:cy,class:'lbl'+(small<22?' sm':'')},l2!=null?l2:l1);
+}
+function lab(){
+  let a=+$('sa').value, b=+$('sb').value;
+  if(mode!=='sum' && b>=a){ b=a-1; }
+  if(mode!=='sum' && a===1){ a=2; b=1; }
+  $('sa').value=a; $('sb').value=b;
+  $('sav').textContent=a; $('sbv').textContent=b;
+  svg.innerHTML='';
+  const P=28, room=224;
+  if(mode==='sum'){
+    const s=a+b, u=room/s, x0=P, y0=P;
+    grid(x0,y0,s,s,u);
+    piece(x0,y0,u,0,0,a,a,'pa','a²',a*a);
+    piece(x0,y0,u,a,0,b,a,'pab','ab',a*b);
+    piece(x0,y0,u,0,a,a,b,'pab','ab',a*b);
+    piece(x0,y0,u,a,a,b,b,'pb','b²',b*b);
+    el('text',{x:x0+a*u/2,y:y0-10,class:'side'},'a = '+a); el('text',{x:x0+(a+b/2)*u,y:y0-10,class:'side'},'b = '+b);
+    el('text',{x:x0-12,y:y0+a*u/2,class:'side'},'a'); el('text',{x:x0-12,y:y0+(a+b/2)*u,class:'side'},'b');
+    $('labTxt').innerHTML=`<div><strong>הריבוע הגדול:</strong> ${E(`(${a} + ${b})² = ${s}² = ${s*s}`)}</div>
+      <div><strong>החלקים:</strong> ${E(`${a*a} + ${a*b} + ${a*b} + ${b*b} = ${s*s}`)}</div>
+      <div>כלומר ${E('<i>a</i>² + 2<i>ab</i> + <i>b</i>²')}. בלי שני המלבנים הכחולים יוצא רק ${E(`${a*a} + ${b*b} = ${a*a+b*b}`)}, וחסרים ${E(String(2*a*b))}.</div>`;
+  } else if(mode==='diff'){
+    const u=room/a, x0=P, y0=P, c=a-b;
+    grid(x0,y0,a,a,u);
+    el('rect',{x:x0,y:y0,width:a*u,height:a*u,class:'cut'});
+    piece(x0,y0,u,0,0,c,c,'pa','(a−b)²',c*c);
+    piece(x0,y0,u,c,0,b,c,'pab','ab',null);
+    piece(x0,y0,u,0,c,c,b,'pab2','ab',null);
+    piece(x0,y0,u,c,c,b,b,'pb','b²',b*b);
+    el('text',{x:x0+c*u/2,y:y0-10,class:'side'},'a − b = '+c); el('text',{x:x0+(c+b/2)*u,y:y0-10,class:'side'},'b = '+b);
+    el('text',{x:x0-12,y:y0+a*u/2,class:'side'},'a');
+    $('labTxt').innerHTML=`<div>הריבוע הגדול הוא ${E(`<i>a</i>² = ${a*a}`)}. רוצים רק את הריבוע הוורוד, ${E(`(${a} − ${b})² = ${c*c}`)}.</div>
+      <div>מורידים את הפס הכחול (${E(`<i>ab</i> = ${a*b}`)}) ואת הפס הירוק (${E(`<i>ab</i> = ${a*b}`)}). אבל הפינה הצהובה ${E(`<i>b</i>² = ${b*b}`)} נמצאת בשני הפסים, אז ירדה פעמיים. מחזירים אותה פעם אחת.</div>
+      <div>${E(`${a*a} − ${a*b} − ${a*b} + ${b*b} = ${c*c}`)}, כלומר ${E('<i>a</i>² − 2<i>ab</i> + <i>b</i>²')}.</div>`;
+  } else {
+    const c=a-b, W=a+b, H=a+1+c, u=Math.min(room/W, room/H), x0=P, y0=P, y1=a+1;
+    grid(x0,y0,a,a,u);
+    piece(x0,y0,u,0,0,a,c,'pa',null,a*c);
+    piece(x0,y0,u,0,c,c,b,'pab',null,c*b);
+    el('rect',{x:x0+c*u,y:y0+c*u,width:b*u,height:b*u,class:'gone'});
+    el('text',{x:x0+(c+b/2)*u,y:y0+(c+b/2)*u,class:'lbl sm'},'b²');
+    el('text',{x:x0+a*u/2,y:y0-10,class:'side'},'a² − b² = '+(a*a-b*b));
+    grid(x0,y0+y1*u,W,c,u);
+    piece(x0,y0+y1*u,u,0,0,a,c,'pa',null,a*c);
+    piece(x0,y0+y1*u,u,a,0,b,c,'pab',null,c*b);
+    el('text',{x:x0+W*u/2,y:y0+(y1+c)*u+14,class:'cap'},`(${a} + ${b}) × (${a} − ${b}) = ${W} × ${c}`);
+    $('labTxt').innerHTML=`<div>למעלה: ריבוע ${E(`<i>a</i>² = ${a*a}`)} שחתכו ממנו פינה ${E(`<i>b</i>² = ${b*b}`)}. נשארו ${E(String(a*a-b*b))} משבצות.</div>
+      <div>מזיזים את החתיכה הכחולה לצד של הוורודה, ומקבלים מלבן: רוחב ${E(`<i>a</i> + <i>b</i> = ${W}`)}, גובה ${E(`<i>a</i> − <i>b</i> = ${c}`)}.</div>
+      <div>${E(`${W} × ${c} = ${W*c} = ${a*a} − ${b*b}`)}, כלומר ${E('(<i>a</i> + <i>b</i>)(<i>a</i> − <i>b</i>) = <i>a</i>² − <i>b</i>²')}.</div>`;
+  }
+}
+function setMode(m){ mode=m; document.querySelectorAll('#modes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===m)); lab(); }
+document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+['sa','sb'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{ const [m,a,bb]=b.dataset.p.split(','); $('sa').value=a; $('sb').value=bb; setMode(m); });
+lab();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{q:E('(<i>x</i> + 4)²'),steps:[
+    `זה ריבוע של סכום. ${E('<i>a</i> = <i>x</i>')} ו-${E('<i>b</i> = 4')}.`,
+    `ריבוע הראשון: ${E('<i>a</i>² = <i>x</i>²')}.`,
+    `פעמיים הראשון כפול השני: ${E('2<i>ab</i> = 2 · <i>x</i> · 4 = 8<i>x</i>')}.`,
+    `ריבוע השני: ${E('<i>b</i>² = 4² = 16')}.`,
+    `התשובה: ${E('(<i>x</i> + 4)² = <i>x</i>² + 8<i>x</i> + 16')}. בדיקה עם ${E('<i>x</i> = 1')}: ${E('(1 + 4)² = 25')}, וגם ${E('1 + 8 + 16 = 25')}. מצוין.`]},
+  B:{q:E('(3<i>x</i> − 2)²'),steps:[
+    `זה ריבוע של הפרש. ${E('<i>a</i> = 3<i>x</i>')} (כל ה-${E('3<i>x</i>')}!) ו-${E('<i>b</i> = 2')}.`,
+    `ריבוע הראשון: ${E('(3<i>x</i>)² = 3<i>x</i> · 3<i>x</i> = 9<i>x</i>²')}.`,
+    `פעמיים הראשון כפול השני, עם מינוס: ${E('2 · 3<i>x</i> · 2 = 12<i>x</i>')}, ולכן ${E('−12<i>x</i>')}.`,
+    `ריבוע השני, תמיד עם פלוס: ${E('2² = 4')}.`,
+    `התשובה: ${E('(3<i>x</i> − 2)² = 9<i>x</i>² − 12<i>x</i> + 4')}. בדיקה עם ${E('<i>x</i> = 1')}: ${E('(3 − 2)² = 1')}, וגם ${E('9 − 12 + 4 = 1')}.`]},
+  C:{q:E('(<i>x</i> + 6)(<i>x</i> − 6)'),steps:[
+    `סכום כפול הפרש של אותם שני דברים: ${E('<i>a</i> = <i>x</i>')} ו-${E('<i>b</i> = 6')}. זה הפרש ריבועים.`,
+    `אם פותחים רגיל: ${E('<i>x</i>² − 6<i>x</i> + 6<i>x</i> − 36')}. שני האיברים האמצעיים מבטלים זה את זה.`,
+    `לכן ישר לפי הנוסחה: ${E('<i>a</i>² − <i>b</i>² = <i>x</i>² − 36')}.`,
+    `בדיקה עם ${E('<i>x</i> = 10')}: ${E('16 · 4 = 64')}, וגם ${E('100 − 36 = 64')}.`]}
+};
+let exK='A', exI=0;
+function ex(){
+  const e=EX[exK]; $('exQ').innerHTML=e.q;
+  $('exText').innerHTML=e.steps.slice(0,exI+1).map((s,i)=>`<div>${i+1}. ${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+  ['A','B','C'].forEach(k=>{ const b=$('ex'+k); b.classList.toggle('primary',k===exK); b.setAttribute('aria-selected',k===exK); });
+}
+['A','B','C'].forEach(k=>$('ex'+k).onclick=()=>{exK=k; exI=0; ex();});
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const pick=arr=>arr[Math.floor(Math.random()*arr.length)];
+let pr={}, streak=0, solved=0;
+function newPr(){
+  const type=pick(['sum','sum','diff','diff','dos']);
+  const p=pick([1,1,1,2,3]), q=rnd(1,p===3?5:7);
+  let q1, A=p*p, B, C;
+  if(type==='sum'){ q1=E(`(${term(p)} + ${q})²`); B=2*p*q; C=q*q; }
+  else if(type==='diff'){ q1=E(`(${term(p)} − ${q})²`); B=-2*p*q; C=q*q; }
+  else { q1=Math.random()<.5?E(`(${term(p)} + ${q})(${term(p)} − ${q})`):E(`(${term(p)} − ${q})(${term(p)} + ${q})`); B=0; C=-q*q; }
+  pr={type,p,q,A,B,C,tries:0,hint:0};
+  $('prQ').innerHTML=q1; ['prA','prB','prC'].forEach(id=>$(id).value='');
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const num=s=>{ s=String(s).replace(/−/g,'-').replace(/\s/g,''); return /^[-+]?\d+$/.test(s)?parseInt(s,10):null; };
+function solution(){
+  const {type,p,q,A,B,C}=pr, a=term(p);
+  if(type==='dos') return `<div>${E(`<i>a</i> = ${a}`)}, ${E(`<i>b</i> = ${q}`)}. הפרש ריבועים: ${E(`<i>a</i>² − <i>b</i>² = ${A===1?'':A}<i>x</i>² − ${q*q}`)}.</div><div>התשובה: ${poly(A,B,C)}.</div>`;
+  const s=type==='sum'?'+':'−';
+  return `<div>${E(`<i>a</i> = ${a}`)}, ${E(`<i>b</i> = ${q}`)}.</div>
+    <div>${E(`<i>a</i>² = (${a})² = ${A===1?'':A}<i>x</i>²`)}, ${E(`2<i>ab</i> = 2 · ${a} · ${q} = ${Math.abs(B)}<i>x</i>`)} (עם ${s}), ${E(`<i>b</i>² = ${q*q}`)}.</div>
+    <div>התשובה: ${poly(A,B,C)}.</div>`;
+}
+$('prCheck').onclick=()=>{
+  const a=num($('prA').value), b=num($('prB').value), c=num($('prC').value);
+  if(a===null||b===null||c===null){ $('prFb').innerHTML='<div class="fb err">מלאו את שלוש התיבות במספרים שלמים. אם אין איבר עם x, כתבו 0.</div>'; return; }
+  const {type,p,q,A,B,C}=pr;
+  if(a===A&&b===B&&c===C){
+    streak++; solved++;
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${$('prQ').innerHTML} = ${poly(A,B,C)}. נסו תרגיל חדש.</div>`;
+    $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; return;
+  }
+  streak=0; pr.tries++;
+  const msg=[];
+  if(a!==A) msg.push(a===p&&p!==1?`גם המקדם עולה בריבוע: ${E(`(${p}<i>x</i>)² = ${p}<i>x</i> · ${p}<i>x</i> = ${A}<i>x</i>²`)}.`:`האיבר הראשון הוא ${E('<i>a</i>²')}. כמה זה ${E(`(${term(p)})²`)}?`);
+  if(b!==B){
+    if(type==='dos') msg.push('בהפרש ריבועים שני האיברים האמצעיים מבטלים זה את זה, אז אין איבר עם x. כתבו 0.');
+    else if(b===0) msg.push(`שכחתם את האיבר האמצעי ${E('2<i>ab</i>')}. זו הטעות הכי נפוצה!`);
+    else if(b===-B) msg.push('הסימן של האיבר האמצעי הוא הסימן שבתוך הסוגריים.');
+    else if(Math.abs(b)===p*q) msg.push(`באיבר האמצעי יש ${E('2')}: ${E('2 · <i>a</i> · <i>b</i>')}. שכחתם להכפיל ב-2.`);
+    else msg.push(`בדקו את האיבר האמצעי: ${E('2 · <i>a</i> · <i>b</i>')}.`);
+  }
+  if(c!==C){
+    if(type!=='dos' && c===-C) msg.push(`${E('<i>b</i>²')} תמיד יוצא חיובי, גם בריבוע של הפרש: מינוס כפול מינוס זה פלוס.`);
+    else if(type==='dos' && c===-C) msg.push('בהפרש ריבועים המספר בסוף יוצא עם מינוס.');
+    else if(Math.abs(c)===2*q||Math.abs(c)===q) msg.push(`המספר בסוף הוא ${E('<i>b</i>²')}, כלומר ${E(`${q} · ${q}`)}.`);
+    else msg.push(`בדקו את המספר בסוף: ${E('<i>b</i>²')}.`);
+  }
+  $('prFb').innerHTML=`<div class="fb err">עוד לא. <ul>${msg.map(m=>`<li>${m}</li>`).join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,p,q}=pr, a=term(p);
+  const name=type==='sum'?'ריבוע של סכום':type==='diff'?'ריבוע של הפרש':'הפרש ריבועים';
+  const h1=`זה ${name}. מי ה-${E('<i>a</i>')} ומי ה-${E('<i>b</i>')}? כאן ${E(`<i>a</i> = ${a}`)} ו-${E(`<i>b</i> = ${q}`)}.`;
+  const h2=type==='dos'?`הנוסחה: ${E('<i>a</i>² − <i>b</i>²')}. חשבו את ${E(`(${a})²`)} ואת ${E(`${q}²`)}. ומה עם האיבר עם x?`
+    :`חשבו שלושה דברים: ${E(`(${a})²`)}, אחר כך ${E(`2 · ${a} · ${q}`)} (הסימן כמו בסוגריים), ובסוף ${E(`${q}²`)}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hint===1?h1:h1+'<br>'+h2}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${solution()}<div>אחר כך נסו תרגיל חדש.</div></div>`; };
+$('prNew').onclick=newPr;
+['prA','prB','prC'].forEach(id=>$(id).addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+newPr();
+
+/* ---------- mental math ---------- */
+const BN=[
+  {q:'21²',a:441,h:`${E('(20 + 1)²')}: ${E('400 + 2 · 20 · 1 + 1')}`},
+  {q:'19²',a:361,h:`${E('(20 − 1)²')}: ${E('400 − 2 · 20 · 1 + 1')}`},
+  {q:'31 × 29',a:899,h:`${E('(30 + 1)(30 − 1) = 30² − 1²')}`},
+  {q:'52 × 48',a:2496,h:`${E('(50 + 2)(50 − 2) = 50² − 2²')}`},
+  {q:'99²',a:9801,h:`${E('(100 − 1)²')}: ${E('10000 − 200 + 1')}`},
+  {q:'102 × 98',a:9996,h:`${E('(100 + 2)(100 − 2) = 100² − 2²')}`},
+  {q:'41²',a:1681,h:`${E('(40 + 1)²')}: ${E('1600 + 80 + 1')}`},
+  {q:'49²',a:2401,h:`${E('(50 − 1)²')}: ${E('2500 − 100 + 1')}`}
+];
+let bn=null;
+function newBn(){ let n; do{ n=pick(BN); }while(n===bn && BN.length>1); bn=n; $('bnQ').innerHTML=E(bn.q.replace('×','·')); $('bnA').value=''; $('bnFb').innerHTML=''; }
+$('bnCheck').onclick=()=>{
+  const v=num($('bnA').value);
+  if(v===null){ $('bnFb').innerHTML='<div class="fb err">כתבו מספר שלם.</div>'; return; }
+  $('bnFb').innerHTML=v===bn.a?`<div class="fb ok">נכון! ${E(bn.q.replace('×','·')+' = '+bn.a)}. ככה מחשבים בראש מהר.</div>`
+    :`<div class="fb err">עוד לא. לחצו "רמז" ונסו לפרק את המספר לעשרות עגולות.</div>`;
+};
+$('bnHint').onclick=()=>{ $('bnFb').innerHTML=`<div class="fb hint">כתבו את זה כך: ${bn.h}</div>`; };
+$('bnNew').onclick=newBn;
+$('bnA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('bnCheck').click(); });
+newBn();
+})();
+</script>
+</body>
+</html>

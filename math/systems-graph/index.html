@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פתרון גרפי של מערכת משוואות · כיתה ח · מירי</title>
+<meta name="description" content="איך פותרים מערכת של שתי משוואות בעזרת גרף: מציירים שני ישרים ומוצאים את נקודת החיתוך. מעבדה שאפשר להזיז ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/systems-graph/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פתרון גרפי של מערכת משוואות · כיתה ח · מירי">
+<meta property="og:description" content="איך פותרים מערכת של שתי משוואות בעזרת גרף: מציירים שני ישרים ומוצאים את נקודת החיתוך. מעבדה שאפשר להזיז ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/systems-graph/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"מערכת של שתי משוואות","item":"https://shohamtal.github.io/homework-site/math/grade-8/#systems"},{"@type":"ListItem","position":5,"name":"פתרון גרפי של מערכת משוואות","item":"https://shohamtal.github.io/homework-site/math/systems-graph/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה פתרון של מערכת משוואות?","acceptedAnswer":{"@type":"Answer","text":"זה זוג מספרים, x ו-y, שמתאים לשתי המשוואות באותו זמן. בגרף זאת הנקודה שבה שני הקווים נפגשים. נסו במעבדה למעלה."}},{"@type":"Question","name":"מה עושים אם הישרים מקבילים?","acceptedAnswer":{"@type":"Answer","text":"ישרים מקבילים לא נפגשים אף פעם, ולכן למערכת אין פתרון. מזהים אותם לפי אותו שיפוע ו-b שונה. נסו במעבדה למעלה עם הכפתור \"קווים מקבילים\"."}},{"@type":"Question","name":"איך יודעים שיש אינסוף פתרונות?","acceptedAnswer":{"@type":"Answer","text":"כששתי המשוואות הן בעצם אותו קו: אותו שיפוע ואותו b. אז כל נקודה על הקו מתאימה לשתיהן. לפעמים צריך קודם לחלק משוואה במספר כדי לראות את זה, כמו באתגר למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"פתרון גרפי של מערכת משוואות","description":"איך פותרים מערכת של שתי משוואות בעזרת גרף: מציירים שני ישרים ומוצאים את נקודת החיתוך. מעבדה שאפשר להזיז ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/systems-graph/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"מערכת של שתי משוואות","teaches":"פתרון גרפי של מערכת משוואות","keywords":"נקודת חיתוך, שני ישרים, פתרון גרפי","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.g .ln2.dash{stroke-dasharray:7 5}
+.k1{color:var(--line); font-weight:700}
+.k2{color:var(--blue); font-weight:700}
+.eqs{display:flex; flex-direction:column; gap:4px; font-size:1.05rem}
+.calc{display:flex; flex-direction:column; gap:4px}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="systems-graph">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#systems">מערכת של שתי משוואות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">פתרון גרפי של מערכת משוואות</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · מערכת של שתי משוואות</div>
+  <h1>פתרון גרפי של מערכת משוואות</h1>
+  <p class="lead">יש לנו שתי משוואות, וכל אחת מהן היא קו ישר. מחפשים נקודה אחת שנמצאת על שני הקווים ביחד. זאת הנקודה שבה הם נפגשים, והיא הפתרון. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bonus">אתגר</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">מערכת של שתי משוואות היא שתי משוואות שצריכות להתקיים <strong>באותו זמן</strong>. מחפשים x ו-y שמתאימים לשתיהן.</p>
+  <div class="two">
+    <div class="mini">
+      <svg class="g" id="ideaG" viewBox="0 0 240 240" role="img" aria-label="שני ישרים שנפגשים בנקודה (1, 2)"></svg>
+    </div>
+    <div class="mini">
+      <h3>שני קווים, נקודה אחת</h3>
+      <p><span class="k1">הקו הוורוד:</span> <span class="eq"><i>y</i> = <i>x</i> + 1</span></p>
+      <p><span class="k2">הקו הכחול:</span> <span class="eq"><i>y</i> = −<i>x</i> + 3</span></p>
+      <p>הם נפגשים בנקודה <span class="eq">(1, 2)</span>. כלומר <span class="eq"><i>x</i> = 1</span> ו-<span class="eq"><i>y</i> = 2</span>.</p>
+      <p>בודקים: <span class="eq">1 + 1 = 2</span> וגם <span class="eq">−1 + 3 = 2</span>. מתאים לשתיהן!</p>
+    </div>
+  </div>
+  <div class="callout">כל נקודה על קו היא פתרון של המשוואה שלו. רק נקודת המפגש נמצאת על שני הקווים, ולכן רק היא פתרון של שתי המשוואות ביחד.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו את שני הקווים</h2></div>
+  <p class="text">הזיזו את המחוונים ותראו איפה הקווים נפגשים. מה קורה כשהשיפועים שווים?</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה עם שני ישרים"></svg>
+    <div class="ctrl">
+      <label class="slider" for="m1"><span><span class="k1">ורוד:</span> השיפוע m</span><span class="eq" id="m1v"></span></label>
+      <input type="range" id="m1" min="-3" max="3" step="0.5" value="1">
+      <label class="slider" for="b1"><span><span class="k1">ורוד:</span> b</span><span class="eq" id="b1v"></span></label>
+      <input type="range" id="b1" min="-5" max="5" step="1" value="1">
+      <label class="slider" for="m2"><span><span class="k2">כחול:</span> השיפוע m</span><span class="eq" id="m2v"></span></label>
+      <input type="range" class="blue" id="m2" min="-3" max="3" step="0.5" value="-1">
+      <label class="slider" for="b2"><span><span class="k2">כחול:</span> b</span><span class="eq" id="b2v"></span></label>
+      <input type="range" class="blue" id="b2" min="-5" max="5" step="1" value="3">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="1,1,-1,3">נפגשים ב-(1, 2)</button>
+          <button data-p="2,-1,-1,-1">נפגשים על ציר y</button>
+          <button data-p="2,1,2,-3">קווים מקבילים</button>
+          <button data-p="0.5,-1,0.5,-1">אותו קו בדיוק</button>
+          <button data-p="1,0,-1,1">נקודה עם שבר</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>לבדוק רק משוואה אחת</h3>
+      <p>נקודה שמתאימה רק לאחת המשוואות היא לא פתרון. היא סתם נקודה על אחד הקווים.</p>
+      <p>תמיד מציבים את הנקודה <strong>בשתי</strong> המשוואות.</p>
+    </div>
+    <div class="mini">
+      <h3>x קודם, y אחר כך</h3>
+      <p>בנקודה <span class="eq">(3, 1)</span> ה-x הוא 3 וה-y הוא 1. זאת נקודה אחרת מ-<span class="eq">(1, 3)</span>.</p>
+      <p>קודם זזים ימינה או שמאלה (x), ורק אחר כך למעלה או למטה (y).</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ומה אם הקווים לא נפגשים?</strong> אם יש להם אותו שיפוע ו-b שונה, הם מקבילים, ול<strong>מערכת אין פתרון</strong>. אם יש להם אותו שיפוע ואותו b, זה אותו קו, ויש <strong>אינסוף פתרונות</strong>. ועוד דבר: כשהמפגש נופל בין משבצות, קשה לקרוא אותו מהגרף. בשביל זה יש גם פתרון אלגברי.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (קווים מקבילים)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: איפה הקווים נפגשים?</h2></div>
+  <p class="text">קראו מהגרף את נקודת המפגש וכתבו את ה-x וה-y שלה. אחר כך תבדקו אותה בהצבה.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="eqs" id="prEqs"></div>
+      <div class="inputs">
+        <label for="prX">x =<input id="prX" inputmode="text" autocomplete="off"></label>
+        <label for="prY">y =<input id="prY" inputmode="text" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">קווים חדשים</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <div id="ckBox" hidden>
+        <p class="text" id="ckQ"></p>
+        <div class="inputs">
+          <label for="ck1"><span class="k1">y בקו הוורוד</span><input id="ck1" inputmode="text" autocomplete="off"></label>
+          <label for="ck2"><span class="k2">y בקו הכחול</span><input id="ck2" inputmode="text" autocomplete="off"></label>
+          <button id="ckGo" class="primary">בדיקה</button>
+        </div>
+        <div id="ckFb" aria-live="polite"></div>
+      </div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="bonus">
+  <div class="sec-head"><span class="sec-num">6</span><h2>אתגר: כמה פתרונות?</h2></div>
+  <p class="text">בלי לצייר! הסתכלו על השיפוע ועל b של כל משוואה, והחליטו כמה פתרונות יש למערכת.</p>
+  <div class="eqs" id="bnEqs"></div>
+  <div class="choices" id="bnChoices">
+    <button data-a="one" aria-pressed="false">פתרון אחד</button>
+    <button data-a="none" aria-pressed="false">אין פתרון</button>
+    <button data-a="many" aria-pressed="false">אינסוף פתרונות</button>
+  </div>
+  <div class="row"><button id="bnCheck" class="primary">בדיקה</button><button id="bnNew">אתגר חדש</button></div>
+  <div id="bnFb" aria-live="polite"></div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה פתרון של מערכת משוואות?</h3>
+    <p>זה זוג מספרים, x ו-y, שמתאים לשתי המשוואות באותו זמן. בגרף זאת הנקודה שבה שני הקווים נפגשים. <a href="#lab">נסו במעבדה למעלה</a>.</p>
+    <h3>מה עושים אם הישרים מקבילים?</h3>
+    <p>ישרים מקבילים לא נפגשים אף פעם, ולכן למערכת אין פתרון. מזהים אותם לפי אותו שיפוע ו-b שונה. <a href="#lab">נסו במעבדה למעלה</a> עם הכפתור "קווים מקבילים".</p>
+    <h3>איך יודעים שיש אינסוף פתרונות?</h3>
+    <p>כששתי המשוואות הן בעצם אותו קו: אותו שיפוע ואותו b. אז כל נקודה על הקו מתאימה לשתיהן. לפעמים צריך קודם לחלק משוואה במספר כדי לראות את זה, כמו ב<a href="#practice">אתגר למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/draw-line/">ציור ישר לפי משוואה</a> · <a href="../../math/equation-from-points/">משוואת ישר לפי שיפוע ונקודה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/triangle-area/"><small>→ הנושא הקודם</small>שטח משולש בין ישרים לצירים</a><a class="next" href="../../math/systems-algebra/"><small>הנושא הבא ←</small>מערכת משוואות: שיטת ההצבה וההשוואה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,signedFracHTML,fracTxt,eqHTML,parseNum,eqv,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const P=(x,y)=>`<span class="eq">(${numTxt(x)}, ${numTxt(y)})</span>`;
+const PF=(x,y)=>`<span class="eq">(${signedFracHTML(x)}, ${signedFracHTML(y)})</span>`;
+const paren=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const inView=(x,y)=>Math.abs(x)<=5.4 && Math.abs(y)<=5.4;
+const isInt=v=>Math.abs(v-Math.round(v))<1e-9;
+
+/* where two lines y = m1x + b1 and y = m2x + b2 meet: {x,y}, 'parallel' or 'same' */
+function meet(m1,b1,m2,b2){
+  if(eqv(m1,m2)) return eqv(b1,b2)?'same':'parallel';
+  const x=(b2-b1)/(m1-m2); return {x,y:m1*x+b1};
+}
+/* value of m·x + b written out, e.g. "2 · 3 − 1 = 5" */
+function subst(m,b,x){
+  let s;
+  if(m===0) s='';
+  else if(m===1) s=paren(x);
+  else if(m===-1) s=MINUS+paren(x);
+  else s=fracTxt(m)+' · '+paren(x);
+  if(s===''){ s=numTxt(b); }
+  else{ if(b>0) s+=' + '+numTxt(b); if(b<0) s+=' '+MINUS+' '+numTxt(-b); }
+  return `<span class="eq">${s} = ${numTxt(m*x+b)}</span>`;
+}
+function drawSys(svg,m1,b1,m2,b2,opt={}){
+  const r=meet(m1,b1,m2,b2), pts=(opt.points||[]).slice();
+  if(opt.show!==false && typeof r==='object' && inView(r.x,r.y))
+    pts.push({x:r.x,y:r.y,cls:'dot',label:opt.label===false?'':`(${numTxt(r.x)}, ${numTxt(r.y)})`});
+  draw(svg,m1,b1,{lines:[{m:m2,b:b2,cls:r==='same'?'ln2 dash':'ln2'}],points:pts,extra:opt.extra});
+}
+
+/* idea */
+drawSys($('ideaG'),1,1,-1,3);
+
+/* lab */
+const R=['m1','b1','m2','b2'].map($);
+function lab(){
+  const [m1,b1,m2,b2]=R.map(r=>+r.value);
+  R.forEach(r=>$(r.id+'v').textContent=numTxt(+r.value));
+  drawSys($('labG'),m1,b1,m2,b2);
+  const r=meet(m1,b1,m2,b2);
+  let t=`<div><span class="k1">ורוד:</span> ${eqHTML(m1,b1)}</div><div><span class="k2">כחול:</span> ${eqHTML(m2,b2)}</div>`;
+  if(r==='parallel') t+=`<div><strong>אותו שיפוע, b שונה.</strong> הקווים מקבילים ולא נפגשים אף פעם. <strong>אין פתרון.</strong></div>`;
+  else if(r==='same') t+=`<div><strong>אותו שיפוע ואותו b.</strong> זה אותו קו פעמיים, כל נקודה עליו מתאימה לשתי המשוואות. <strong>אינסוף פתרונות.</strong></div>`;
+  else{
+    t+=`<div><strong>נקודת המפגש:</strong> ${PF(r.x,r.y)}</div>`;
+    t+=`<div>בודקים בוורוד: ${subst(m1,b1,r.x)}. בכחול: ${subst(m2,b2,r.x)}. אותו y!</div>`;
+    if(!inView(r.x,r.y)) t+='<div>הנקודה יוצאת מחוץ לגרף. הקווים נפגשים, רק רחוק יותר.</div>';
+    else if(!isInt(r.x)||!isInt(r.y)) t+='<div>הנקודה נופלת בין המשבצות, אז קשה לקרוא אותה בדיוק מהגרף. כאן עוזר הפתרון האלגברי.</div>';
+  }
+  $('labTxt').innerHTML=t;
+}
+R.forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  b.dataset.p.split(',').forEach((v,i)=>R[i].value=v); lab();
+});
+lab();
+
+/* worked examples */
+const EX={
+  A:{s:[2,-1,-1,5],steps:[
+    ()=>[{only:1},`נפתור את המערכת <span class="eq"><i>y</i> = 2<i>x</i> − 1</span> ו-<span class="eq"><i>y</i> = −<i>x</i> + 5</span>. קודם מציירים את הקו הוורוד: מתחילים ב-<span class="eq">(0, −1)</span>, ובכל משבצת ימינה עולים 2.`],
+    ()=>[{},`עכשיו הקו הכחול: מתחילים ב-<span class="eq">(0, 5)</span>, ובכל משבצת ימינה יורדים 1.`],
+    ()=>[{dot:true},`הקווים נפגשים בנקודה <span class="eq">(2, 3)</span>. זה המועמד שלנו לפתרון: <span class="eq"><i>x</i> = 2</span>, <span class="eq"><i>y</i> = 3</span>.`],
+    ()=>[{dot:true},`בודקים במשוואה הוורודה: ${subst(2,-1,2)}. יצא 3, כמו ה-y שלנו.`],
+    ()=>[{dot:true},`בודקים במשוואה הכחולה: ${subst(-1,5,2)}. גם כאן 3. הפתרון הוא <span class="eq"><i>x</i> = 2</span>, <span class="eq"><i>y</i> = 3</span>.`]
+  ]},
+  B:{s:[1,2,1,-1],steps:[
+    ()=>[{},`נפתור את המערכת <span class="eq"><i>y</i> = <i>x</i> + 2</span> ו-<span class="eq"><i>y</i> = <i>x</i> − 1</span>. מציירים את שני הקווים.`],
+    ()=>[{},`לשניהם אותו שיפוע: 1. הם עולים באותה מהירות, אז המרחק ביניהם נשאר תמיד אותו דבר.`],
+    ()=>[{},`ה-b שונה (2 ו-<span class="eq">−1</span>), אז זה לא אותו קו. הקווים מקבילים ולא נפגשים. <strong>למערכת אין פתרון.</strong>`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [o,txt]=e.steps[exI](), [m1,b1,m2,b2]=e.s;
+  if(o.only) draw($('exG'),m1,b1,{dot:true,tri:true});
+  else drawSys($('exG'),m1,b1,m2,b2,{show:!!o.dot});
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice: read the meeting point, then check it by substitution */
+const SL=[-3,-2,-1,-0.5,0,0.5,1,2,3];
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let px,py,m1,m2,b1,b2;
+  for(;;){
+    px=ri(-3,3); py=ri(-3,3); m1=pick(SL); m2=pick(SL);
+    if(m1===m2) continue;
+    b1=py-m1*px; b2=py-m2*px;
+    if(!isInt(b1)||!isInt(b2)||Math.abs(b1)>5||Math.abs(b2)>5) continue;
+    if(px===pr.px && py===pr.py) continue;
+    break;
+  }
+  pr={px,py,m1,b1,m2,b2,tries:0,hint:0,done:false};
+  $('prEqs').innerHTML=`<div><span class="k1">ורוד:</span> ${eqHTML(m1,b1)}</div><div><span class="k2">כחול:</span> ${eqHTML(m2,b2)}</div>`;
+  $('prX').value=''; $('prY').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('ckBox').hidden=true; $('ck1').value=''; $('ck2').value=''; $('ckFb').innerHTML='';
+  drawSys($('prG'),m1,b1,m2,b2,{show:false});
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function openCheck(){
+  $('ckQ').innerHTML=`עכשיו בדקו בהצבה: שימו <span class="eq"><i>x</i> = ${numTxt(pr.px)}</span> בכל משוואה. כמה יוצא y?`;
+  $('ckBox').hidden=false;
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prX').value), y=parseNum($('prY').value), fb=$('prFb');
+  if(isNaN(x)||isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר גם ל-x וגם ל-y.</div>'; return; }
+  const {m1,b1,m2,b2,px,py}=pr, on1=eqv(y,m1*x+b1), on2=eqv(y,m2*x+b2);
+  if(on1&&on2){
+    if(!pr.done){ streak++; solved++; pr.done=true; }
+    streakTxt();
+    drawSys($('prG'),m1,b1,m2,b2);
+    fb.innerHTML=`<div class="fb ok">נכון! הקווים נפגשים ב-${P(px,py)}.</div>`;
+    openCheck(); return;
+  }
+  streak=0; pr.tries++; streakTxt();
+  let msg;
+  if(eqv(x,py)&&eqv(y,px)) msg='החלפתם בין x ל-y. ה-x הוא כמה זזים ימינה או שמאלה, וה-y הוא כמה עולים או יורדים.';
+  else if(on1) msg='הנקודה שלכם על הקו <span class="k1">הוורוד</span>, אבל לא על הכחול. הפתרון צריך להיות על שני הקווים.';
+  else if(on2) msg='הנקודה שלכם על הקו <span class="k2">הכחול</span>, אבל לא על הוורוד. הפתרון צריך להיות על שני הקווים.';
+  else msg='הנקודה הזאת לא על אף אחד מהקווים. חפשו את המקום שבו הם נוגעים זה בזה, וספרו משבצות מהראשית.';
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const {m1,b1,m2,b2,px,py}=pr, sx=G.sx, sy=G.sy;
+  if(pr.hint===1){
+    drawSys($('prG'),m1,b1,m2,b2,{show:false});
+    $('prFb').innerHTML='<div class="fb hint">חפשו את המקום שבו הקו הוורוד והקו הכחול נוגעים. מהראשית: כמה משבצות ימינה או שמאלה? זה ה-x. כמה למעלה או למטה? זה ה-y.</div>';
+  }else{
+    const guide=`<path d="M${sx(px)} ${sy(py)} V${sy(0)} M${sx(px)} ${sy(py)} H${sx(0)}" style="stroke:var(--green); stroke-width:1.6; stroke-dasharray:3 3; fill:none"/><circle cx="${sx(px)}" cy="${sy(py)}" r="7" style="fill:none; stroke:var(--green); stroke-width:2"/>`;
+    drawSys($('prG'),m1,b1,m2,b2,{show:false,extra:guide});
+    $('prFb').innerHTML='<div class="fb hint">סימנתי בירוק את נקודת המפגש, וקווים מקווקווים ממנה אל הצירים. איפה הקו הירוק פוגש את ציר x? ואיפה את ציר y?</div>';
+  }
+};
+$('prShow').onclick=()=>{
+  const {m1,b1,m2,b2,px,py}=pr;
+  drawSys($('prG'),m1,b1,m2,b2);
+  $('prFb').innerHTML=`<div class="fb hint calc"><div>הקווים נפגשים ב-${P(px,py)}.</div><div>בוורוד: ${subst(m1,b1,px)}</div><div>בכחול: ${subst(m2,b2,px)}</div><div>שתי המשוואות נותנות <span class="eq"><i>y</i> = ${numTxt(py)}</span>. עכשיו נסו קווים חדשים.</div></div>`;
+};
+$('ckGo').onclick=()=>{
+  const a=parseNum($('ck1').value), c=parseNum($('ck2').value), fb=$('ckFb');
+  if(isNaN(a)||isNaN(c)){ fb.innerHTML='<div class="fb err">כתבו את ה-y שיצא בכל אחת מהמשוואות.</div>'; return; }
+  const {m1,b1,m2,b2,px,py}=pr, ok1=eqv(a,m1*px+b1), ok2=eqv(c,m2*px+b2);
+  if(ok1&&ok2){ fb.innerHTML=`<div class="fb ok">מצוין! בשתי המשוואות יוצא <span class="eq"><i>y</i> = ${numTxt(py)}</span>. ככה יודעים בטוח שהנקודה ${P(px,py)} היא הפתרון.</div>`; return; }
+  const bad=[]; if(!ok1) bad.push(`בוורוד: ${subst(m1,b1,px)}`); if(!ok2) bad.push(`בכחול: ${subst(m2,b2,px)}`);
+  fb.innerHTML=`<div class="fb err">כמעט. בדקו שוב: ${bad.join(' · ')}. זהירות עם מינוסים.</div>`;
+};
+$('prNew').onclick=newPr;
+['prX','prY'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+['ck1','ck2'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('ckGo').click();}));
+newPr(); streakTxt();
+
+/* challenge: how many solutions, without drawing */
+let bn={}, bnPick=null;
+/* k·y = (k·m)x + k·b as HTML */
+function sysEq(m,b,k){
+  const km=k*m, kb=k*b;
+  let s=`<span class="eq">${k===1?'':k}<i>y</i> = `;
+  if(km===0) s+=numTxt(kb);
+  else{
+    s+=(km===1?'':km===-1?MINUS:fracTxt(km))+'<i>x</i>';
+    if(kb>0) s+=' + '+numTxt(kb); if(kb<0) s+=' '+MINUS+' '+numTxt(-kb);
+  }
+  return s+'</span>';
+}
+function newBn(){
+  const type=pick(['one','none','many']), M=[-3,-2,-1,1,2,3];
+  const m=pick(M), b=ri(-4,4);
+  let m2=m, b2=b, k=1;
+  if(type==='one'){ do{ m2=pick(M); }while(m2===m); b2=ri(-4,4); }
+  if(type==='none'){ do{ b2=ri(-4,4); }while(b2===b); }
+  if(type==='many'){ k=pick([2,3]); }
+  bn={type,m,b,m2,b2,k}; bnPick=null;
+  $('bnEqs').innerHTML=`<div>${sysEq(m,b,1)}</div><div>${sysEq(m2,b2,k)}</div>`;
+  $('bnChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));
+  $('bnFb').innerHTML='';
+}
+$('bnChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  bnPick=b.dataset.a; $('bnChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+});
+$('bnCheck').onclick=()=>{
+  if(!bnPick){ $('bnFb').innerHTML='<div class="fb err">קודם בחרו תשובה.</div>'; return; }
+  const {type,m,b,m2,b2,k}=bn;
+  const why = type==='one' ? `השיפועים שונים (${numTxt(m)} ו-${numTxt(m2)}), אז הקווים חייבים להיפגש בנקודה אחת.`
+    : type==='none' ? `אותו שיפוע (${numTxt(m)}) אבל b שונה (${numTxt(b)} ו-${numTxt(b2)}). הקווים מקבילים ולא נפגשים.`
+    : `אם מחלקים את המשוואה השנייה ב-${k}, מקבלים בדיוק את הראשונה: ${sysEq(m,b,1)}. זה אותו קו, אז כל נקודה עליו היא פתרון.`;
+  $('bnFb').innerHTML = bnPick===type ? `<div class="fb ok">נכון! ${why}</div>` : `<div class="fb err">לא הפעם. ${why}</div>`;
+};
+$('bnNew').onclick=newBn;
+newBn();
+})();
+</script>
+</body>
+</html>

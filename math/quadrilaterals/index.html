@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז · מירי</title>
+<meta name="description" content="התכונות של כל מרובע: מקבילית, מלבן, מעוין, ריבוע וטרפז, ואיך מוכיחים שמרובע הוא אחד מהם. מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/quadrilaterals/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז · מירי">
+<meta property="og:description" content="התכונות של כל מרובע: מקבילית, מלבן, מעוין, ריבוע וטרפז, ואיך מוכיחים שמרובע הוא אחד מהם. מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/quadrilaterals/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"גאומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-8/#geometry"},{"@type":"ListItem","position":5,"name":"מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז","item":"https://shohamtal.github.io/homework-site/math/quadrilaterals/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"האם ריבוע הוא גם מלבן?","acceptedAnswer":{"@type":"Answer","text":"כן. מלבן הוא מקבילית שכל הזוויות שלה ישרות, ולריבוע יש את זה. לריבוע יש עוד תכונה: כל הצלעות שוות. תרגלו זיהוי צורות למטה."}},{"@type":"Question","name":"מה ההבדל בין מעוין לריבוע?","acceptedAnswer":{"@type":"Answer","text":"בשניהם כל הצלעות שוות. בריבוע כל הזוויות ישרות, ובמעוין הן לא חייבות להיות. כל ריבוע הוא מעוין, אבל לא כל מעוין הוא ריבוע. נסו במעבדה למעלה ושנו את הזווית של המעוין."}},{"@type":"Question","name":"איך מוכיחים שמרובע הוא מקבילית?","acceptedAnswer":{"@type":"Answer","text":"מראים אחד מחמשת התנאים: שני זוגות צלעות נגדיות מקבילות, או שוות, או זוג אחד שהוא גם שווה וגם מקביל, או אלכסונים שחוצים זה את זה, או שני זוגות זוויות נגדיות שוות. בדקו במעבדה למעלה שהאלכסונים של מקבילית תמיד חוצים זה את זה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז","description":"התכונות של כל מרובע: מקבילית, מלבן, מעוין, ריבוע וטרפז, ואיך מוכיחים שמרובע הוא אחד מהם. מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/quadrilaterals/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"גאומטריה","teaches":"מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז","keywords":"מקבילית, מעוין, טרפז, אלכסונים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.q{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.q .shape{fill:var(--hl); fill-opacity:.28; stroke:var(--ink); stroke-width:2.2; stroke-linejoin:round}
+.q .diag{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:5 4}
+.q .tick{stroke:var(--line); stroke-width:2; stroke-linecap:round}
+.q .par{stroke:var(--green); stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.q .right{stroke:var(--ink); stroke-width:1.4; fill:none}
+.q .vlbl{fill:var(--ink); font:700 13px var(--f-body)}
+.q .ang{fill:var(--muted); font:600 11px var(--f-body)}
+.props{list-style:none; margin:4px 0 0; padding:0; display:flex; flex-direction:column; gap:2px}
+.props .y{color:var(--ok); font-weight:700}
+.props .n{color:var(--muted)}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.tree{display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center}
+.tree .lvl{display:flex; flex-wrap:wrap; justify-content:center; gap:10px}
+.tree .node{border:2px solid var(--border); border-radius:10px; padding:2px 12px; background:var(--card); font-weight:700}
+.tree .arrow{color:var(--muted); font-size:.9rem}
+.mode button[aria-pressed="true"]{background:var(--ink); color:var(--card)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="quadrilaterals">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#geometry">גאומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · גאומטריה</div>
+  <h1>מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז</h1>
+  <p class="lead">מקבילית, מלבן, מעוין, ריבוע וטרפז הם כולם מרובעים: צורות עם ארבע צלעות. מה שמבדיל ביניהם הוא הצלעות, הזוויות והאלכסונים. כאן תלמדו לזהות כל אחד, להבין למה ריבוע הוא גם מלבן וגם מעוין, ולהוכיח שמרובע הוא מקבילית. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">המשפחה</a><a href="#prove">הוכחה</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bonus">נכון או לא?</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>המשפחה של המרובעים</h2></div>
+  <p class="text">כל צורה למטה בעץ היא מקרה מיוחד של הצורה שמעליה. היא מקבלת את כל התכונות של ההורים שלה, ועוד משהו משלה.</p>
+  <div class="tree" aria-label="עץ המשפחה של המרובעים">
+    <div class="lvl"><span class="node">מרובע</span></div>
+    <div class="arrow">↙ ↘</div>
+    <div class="lvl"><span class="node">טרפז</span><span class="node">מקבילית</span></div>
+    <div class="arrow">↓ &nbsp; &nbsp; &nbsp; &nbsp; ↙ ↘</div>
+    <div class="lvl"><span class="node">טרפז שווה שוקיים</span><span class="node">מלבן</span><span class="node">מעוין</span></div>
+    <div class="arrow">↘ ↙</div>
+    <div class="lvl"><span class="node">ריבוע</span></div>
+  </div>
+  <div class="two">
+    <div class="mini">
+      <h3>מקבילית</h3>
+      <p>שני זוגות של צלעות נגדיות מקבילות.</p>
+      <p>הצלעות הנגדיות שוות, הזוויות הנגדיות שוות, והאלכסונים חוצים זה את זה.</p>
+    </div>
+    <div class="mini">
+      <h3>מלבן</h3>
+      <p>מקבילית שכל הזוויות שלה ישרות (90°).</p>
+      <p>בונוס: האלכסונים שווים באורכם.</p>
+    </div>
+    <div class="mini">
+      <h3>מעוין</h3>
+      <p>מקבילית שכל הצלעות שלה שוות.</p>
+      <p>בונוס: האלכסונים מאונכים זה לזה, וחוצים את הזוויות.</p>
+    </div>
+    <div class="mini">
+      <h3>ריבוע</h3>
+      <p>גם מלבן וגם מעוין: כל הצלעות שוות וכל הזוויות ישרות.</p>
+      <p>האלכסונים שווים, מאונכים וחוצים זה את זה.</p>
+    </div>
+    <div class="mini">
+      <h3>טרפז</h3>
+      <p>בדיוק זוג אחד של צלעות מקבילות. הן נקראות <strong>בסיסים</strong>, ושתי הצלעות האחרות נקראות <strong>שוקיים</strong>.</p>
+    </div>
+    <div class="mini">
+      <h3>טרפז שווה שוקיים</h3>
+      <p>טרפז שהשוקיים שלו שוות.</p>
+      <p>זוויות הבסיס שוות, והאלכסונים שווים באורכם.</p>
+    </div>
+  </div>
+  <h3 id="prove">איך מוכיחים שמרובע הוא מקבילית?</h3>
+  <p class="text">מספיק להראות <strong>אחד</strong> מהדברים האלה. כל אחד מהם הוא משפט שמותר להשתמש בו בהוכחה:</p>
+  <ol class="steps">
+    <li><div>שני זוגות של צלעות נגדיות <strong>מקבילות</strong>. זו ההגדרה של מקבילית.</div></li>
+    <li><div>שני זוגות של צלעות נגדיות <strong>שוות</strong>.</div></li>
+    <li><div>זוג אחד של צלעות נגדיות שהן גם <strong>שוות</strong> וגם <strong>מקבילות</strong>.</div></li>
+    <li><div>האלכסונים <strong>חוצים</strong> זה את זה.</div></li>
+    <li><div>שני זוגות של זוויות נגדיות <strong>שוות</strong>.</div></li>
+  </ol>
+  <div class="callout"><strong>דוגמה קצרה:</strong> במרובע ABCD ידוע <span class="eq">AB = DC</span> וגם <span class="eq">AB ∥ DC</span>. זוג אחד של צלעות נגדיות שוות ומקבילות, ולכן ABCD מקבילית (לפי משפט 3).</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מרובע אחד, הרבה צורות</h2></div>
+  <p class="text">הזיזו את המחוונים ותראו איך המרובע משנה את השם שלו. צלעות שוות מסומנות בקווים קטנים באותו מספר. צלעות מקבילות מסומנות בחץ ירוק. האלכסונים מקווקווים בכחול.</p>
+  <div class="row mode" role="group" aria-label="סוג המרובע">
+    <button id="mPar" aria-pressed="true">מקבילית: הצלע העליונה שווה לתחתונה</button>
+    <button id="mTrap" aria-pressed="false">טרפז: הצלע העליונה משתנה</button>
+  </div>
+  <div class="lab">
+    <svg class="q" id="labG" viewBox="0 0 280 210" role="img" aria-label="המרובע של המעבדה"></svg>
+    <div class="ctrl">
+      <label class="slider" for="sa"><span>הצלע התחתונה AB</span><span class="eq" id="sav"></span></label>
+      <input type="range" id="sa" min="2" max="8" step="1" value="6">
+      <label class="slider" for="sb"><span>הצלע השמאלית AD</span><span class="eq" id="sbv"></span></label>
+      <input type="range" class="blue" id="sb" min="2" max="8" step="1" value="4">
+      <label class="slider" for="sg"><span>הזווית A</span><span class="eq" id="sgv"></span></label>
+      <input type="range" class="hl" id="sg" min="30" max="150" step="5" value="60">
+      <label class="slider" for="st"><span>הצלע העליונה DC</span><span class="eq" id="stv"></span></label>
+      <input type="range" id="st" min="1" max="10" step="1" value="6" disabled>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="rect">הפכו למלבן</button>
+          <button data-p="rhombus">הפכו למעוין</button>
+          <button data-p="square">ריבוע</button>
+          <button data-p="isos">טרפז שווה שוקיים</button>
+          <button data-p="rtrap">טרפז ישר זווית</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מעוין הוא לא תמיד ריבוע</h3>
+      <p>במעוין כל הצלעות שוות, אבל הזוויות לא חייבות להיות ישרות. רק אם יש בו זווית ישרה, הוא ריבוע.</p>
+    </div>
+    <div class="mini">
+      <h3>האלכסונים מספרים סיפור</h3>
+      <p>במלבן האלכסונים <strong>שווים</strong>, אבל לא מאונכים. במעוין הם <strong>מאונכים</strong>, אבל לא שווים. רק בריבוע יש את שניהם.</p>
+    </div>
+    <div class="mini">
+      <h3>מקבילית היא לא טרפז</h3>
+      <p>לטרפז יש <strong>בדיוק</strong> זוג אחד של צלעות מקבילות. למקבילית יש שני זוגות, ולכן היא לא טרפז.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>טיפ:</strong> כשמזהים צורה, מתחילים מהשאלה "כמה זוגות של צלעות מקבילות יש?". אחד: טרפז. שניים: מקבילית. אחר כך בודקים צלעות, זוויות ואלכסונים.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (טרפז)</button>
+  </div>
+  <div class="lab">
+    <svg class="q" id="exG" viewBox="0 0 280 210" role="img" aria-label="המרובע של הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: איזה מרובע זה?</h2></div>
+  <p class="text">קראו את התכונות ובחרו את השם <strong>הכי מדויק</strong> שאפשר לתת למרובע. אם מותר רק שם כללי יותר, בחרו אותו.</p>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="choices" id="prChoices"></div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="bonus">
+  <div class="sec-head"><span class="sec-num">6</span><h2>אתגר: נכון או לא נכון?</h2></div>
+  <p class="text" id="bnQ" style="font-weight:700"></p>
+  <div class="row"><button id="bnYes">נכון</button><button id="bnNo">לא נכון</button><button id="bnNew">טענה חדשה</button></div>
+  <div id="bnFb" aria-live="polite"></div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>האם ריבוע הוא גם מלבן?</h3>
+    <p>כן. מלבן הוא מקבילית שכל הזוויות שלה ישרות, ולריבוע יש את זה. לריבוע יש עוד תכונה: כל הצלעות שוות. <a href="#practice">תרגלו זיהוי צורות למטה</a>.</p>
+    <h3>מה ההבדל בין מעוין לריבוע?</h3>
+    <p>בשניהם כל הצלעות שוות. בריבוע כל הזוויות ישרות, ובמעוין הן לא חייבות להיות. כל ריבוע הוא מעוין, אבל לא כל מעוין הוא ריבוע. <a href="#lab">נסו במעבדה למעלה</a> ושנו את הזווית של המעוין.</p>
+    <h3>איך מוכיחים שמרובע הוא מקבילית?</h3>
+    <p>מראים אחד מחמשת התנאים: שני זוגות צלעות נגדיות מקבילות, או שוות, או זוג אחד שהוא גם שווה וגם מקביל, או אלכסונים שחוצים זה את זה, או שני זוגות זוויות נגדיות שוות. <a href="#lab">בדקו במעבדה למעלה</a> שהאלכסונים של מקבילית תמיד חוצים זה את זה.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/congruence/">חפיפת משולשים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/congruence/"><small>→ הנושא הקודם</small>חפיפת משולשים</a><a class="next" href="../../math/solids/"><small>הנושא הבא ←</small>נפח ושטח פנים של גופים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id), EPS=1e-6, NS='http://www.w3.org/2000/svg';
+const near=(a,b)=>Math.abs(a-b)<EPS;
+const pickOne=a=>a[Math.floor(Math.random()*a.length)];
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+/* geometry: A(0,0), B(a,0), D at angle g from AB with length b, C = D + (t,0). t = a gives a parallelogram. */
+function verts(p){
+  const r=p.g*Math.PI/180, dx=p.b*Math.cos(r), dy=p.b*Math.sin(r);
+  return {A:[0,0], B:[p.a,0], C:[dx+p.t,dy], D:[dx,dy]};
+}
+const sub=(P,Q)=>[P[0]-Q[0],P[1]-Q[1]], len=v=>Math.hypot(v[0],v[1]), dot=(u,v)=>u[0]*v[0]+u[1]*v[1], cross=(u,v)=>u[0]*v[1]-u[1]*v[0];
+function analyse(p){
+  const V=verts(p), {A,B,C,D}=V;
+  const AB=len(sub(B,A)), BC=len(sub(C,B)), CD=len(sub(D,C)), DA=len(sub(A,D));
+  const parAD=Math.abs(cross(sub(D,A),sub(C,B)))<EPS;
+  const ang=(P,X,Q)=>{ const u=sub(P,X), v=sub(Q,X); return Math.acos(Math.max(-1,Math.min(1,dot(u,v)/(len(u)*len(v)))))*180/Math.PI; };
+  const angs={A:ang(D,A,B), B:ang(A,B,C), C:ang(B,C,D), D:ang(C,D,A)};
+  const right=Object.fromEntries(Object.entries(angs).map(([k,v])=>[k,Math.abs(v-90)<1e-4]));
+  const AC=sub(C,A), BD=sub(D,B);
+  const mid1=[(A[0]+C[0])/2,(A[1]+C[1])/2], mid2=[(B[0]+D[0])/2,(B[1]+D[1])/2];
+  const pr={
+    twoPairs:parAD,
+    oppEq:near(AB,CD)&&near(BC,DA),
+    allEq:near(AB,BC)&&near(BC,CD)&&near(CD,DA),
+    allRight:right.A&&right.B&&right.C&&right.D,
+    bisect:near(mid1[0],mid2[0])&&near(mid1[1],mid2[1]),
+    diagEq:near(len(AC),len(BD)),
+    diagPerp:Math.abs(dot(AC,BD))<1e-4,
+    legsEq:!parAD&&near(BC,DA)
+  };
+  let name;
+  if(parAD) name=pr.allRight&&pr.allEq?'ריבוע':pr.allRight?'מלבן':pr.allEq?'מעוין':'מקבילית';
+  else name=pr.legsEq?'טרפז שווה שוקיים':(right.A||right.B)?'טרפז ישר זווית':'טרפז';
+  return {V,sides:{AB,BC,CD,DA},angs,right,pr,name};
+}
+
+/* drawing */
+function el(tag,attrs,parent){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; }
+function drawQuad(svg,p){
+  const R=analyse(p), {A,B,C,D}=R.V, W=280, H=210, pad=30;
+  const xs=[A[0],B[0],C[0],D[0]], ys=[A[1],B[1],C[1],D[1]];
+  const minX=Math.min(...xs), maxX=Math.max(...xs), minY=Math.min(...ys), maxY=Math.max(...ys);
+  const s=Math.min((W-2*pad)/(maxX-minX),(H-2*pad)/(maxY-minY),26);
+  const ox=(W-(maxX-minX)*s)/2-minX*s, oy=(H+(maxY-minY)*s)/2+minY*s;
+  const S=P=>[ox+P[0]*s, oy-P[1]*s];
+  const P={A:S(A),B:S(B),C:S(C),D:S(D)};
+  svg.innerHTML='';
+  el('polygon',{class:'shape',points:[P.A,P.B,P.C,P.D].map(q=>q.join(',')).join(' ')},svg);
+  el('line',{class:'diag',x1:P.A[0],y1:P.A[1],x2:P.C[0],y2:P.C[1]},svg);
+  el('line',{class:'diag',x1:P.B[0],y1:P.B[1],x2:P.D[0],y2:P.D[1]},svg);
+  /* equal-side ticks */
+  const sides=[['AB',P.A,P.B],['BC',P.B,P.C],['CD',P.C,P.D],['DA',P.D,P.A]], groups=[];
+  sides.forEach(sd=>{ const L=R.sides[sd[0]]; let g=groups.find(g=>near(g.L,L)); if(!g){ g={L,m:[]}; groups.push(g); } g.m.push(sd); });
+  let k=0;
+  groups.filter(g=>g.m.length>1).forEach(g=>{ k++; g.m.forEach(([,p1,p2])=>{
+    const d=sub(p2,p1), l=len(d), u=[d[0]/l,d[1]/l], n=[-u[1],u[0]], M=[(p1[0]+p2[0])/2,(p1[1]+p2[1])/2];
+    for(let i=0;i<k;i++){ const o=(i-(k-1)/2)*5; const c=[M[0]+u[0]*o, M[1]+u[1]*o];
+      el('line',{class:'tick',x1:c[0]-n[0]*6,y1:c[1]-n[1]*6,x2:c[0]+n[0]*6,y2:c[1]+n[1]*6},svg); }
+  }); });
+  /* parallel marks: one chevron on AB and DC, two on AD and BC when they are parallel too */
+  function chev(p1,p2,count){
+    const d=sub(p2,p1), l=len(d), u=[d[0]/l,d[1]/l], n=[-u[1],u[0]];
+    for(let i=0;i<count;i++){ const t=0.25+i*0.06; const c=[p1[0]+d[0]*t, p1[1]+d[1]*t];
+      el('polyline',{class:'par',points:`${c[0]-u[0]*5+n[0]*5},${c[1]-u[1]*5+n[1]*5} ${c[0]},${c[1]} ${c[0]-u[0]*5-n[0]*5},${c[1]-u[1]*5-n[1]*5}`},svg); }
+  }
+  chev(P.A,P.B,1); chev(P.D,P.C,1);
+  if(R.pr.twoPairs){ chev(P.A,P.D,2); chev(P.B,P.C,2); }
+  /* right-angle squares */
+  const nb={A:['D','B'],B:['A','C'],C:['B','D'],D:['C','A']};
+  Object.keys(nb).forEach(v=>{ if(!R.right[v]) return;
+    const X=P[v], U=sub(P[nb[v][0]],X), Wv=sub(P[nb[v][1]],X), lu=len(U), lw=len(Wv), z=11;
+    const u=[U[0]/lu*z,U[1]/lu*z], w=[Wv[0]/lw*z,Wv[1]/lw*z];
+    el('polyline',{class:'right',points:`${X[0]+u[0]},${X[1]+u[1]} ${X[0]+u[0]+w[0]},${X[1]+u[1]+w[1]} ${X[0]+w[0]},${X[1]+w[1]}`},svg);
+  });
+  /* labels */
+  const cx=(P.A[0]+P.B[0]+P.C[0]+P.D[0])/4, cy=(P.A[1]+P.B[1]+P.C[1]+P.D[1])/4;
+  ['A','B','C','D'].forEach(v=>{ const d=sub(P[v],[cx,cy]), l=len(d)||1;
+    const t=el('text',{class:'vlbl','text-anchor':'middle','dominant-baseline':'middle',x:P[v][0]+d[0]/l*14,y:P[v][1]+d[1]/l*14},svg); t.textContent=v; });
+  return R;
+}
+
+/* lab */
+let mode='par';
+const lab={a:6,b:4,g:60,t:6};
+function readLab(){ lab.a=+$('sa').value; lab.b=+$('sb').value; lab.g=+$('sg').value; lab.t=mode==='par'?lab.a:+$('st').value; }
+const FAMILY={
+  'ריבוע':'ריבוע הוא גם מלבן, גם מעוין וגם מקבילית. יש לו את כל התכונות.',
+  'מלבן':'כל מלבן הוא גם מקבילית. השוו את שתי הצלעות, והוא יהפוך לריבוע.',
+  'מעוין':'כל מעוין הוא גם מקבילית. שנו את הזווית ל-90°, והוא יהפוך לריבוע.',
+  'מקבילית':'נסו זווית של 90°, או צלעות שוות, ותראו איך השם משתנה.',
+  'טרפז שווה שוקיים':'השוקיים שוות, אז גם זוויות הבסיס שוות וגם האלכסונים שווים.',
+  'טרפז ישר זווית':'שוק אחת מאונכת לבסיסים, אז יש בו שתי זוויות ישרות.',
+  'טרפז':'רק זוג אחד של צלעות מקבילות. נסו להשוות את השוקיים.'
+};
+function propRow(ok,txt){ return `<li><span class="${ok?'y':'n'}">${ok?'✓':'✗'}</span> ${txt}</li>`; }
+function renderLab(){
+  readLab();
+  $('sav').textContent=lab.a; $('sbv').textContent=lab.b; $('sgv').textContent=lab.g+'°'; $('stv').textContent=lab.t;
+  $('st').value=lab.t; $('st').disabled=mode==='par';
+  const R=drawQuad($('labG'),lab), pr=R.pr;
+  const angTxt=`A = ${Math.round(R.angs.A)}°, B = ${Math.round(R.angs.B)}°, C = ${Math.round(R.angs.C)}°, D = ${Math.round(R.angs.D)}°`;
+  $('labTxt').innerHTML=`<div>זה <strong>${R.name}</strong>.</div>
+    <ul class="props">
+      ${propRow(true,'זוג אחד של צלעות מקבילות (AB ו-DC)')}
+      ${propRow(pr.twoPairs,'זוג שני של צלעות מקבילות (AD ו-BC)')}
+      ${propRow(pr.oppEq,'צלעות נגדיות שוות')}
+      ${propRow(pr.allEq,'כל הצלעות שוות')}
+      ${propRow(pr.allRight,'כל הזוויות ישרות')}
+      ${propRow(pr.bisect,'האלכסונים חוצים זה את זה')}
+      ${propRow(pr.diagEq,'האלכסונים שווים')}
+      ${propRow(pr.diagPerp,'האלכסונים מאונכים')}
+    </ul>
+    <div class="eq" style="font-size:.85em; white-space:normal">${angTxt}</div>
+    <div>${FAMILY[R.name]}</div>`;
+}
+function setMode(m){
+  mode=m; $('mPar').setAttribute('aria-pressed',m==='par'); $('mTrap').setAttribute('aria-pressed',m==='trap');
+  if(m==='trap' && +$('st').value===+$('sa').value) $('st').value=Math.max(1,+$('sa').value-2);
+  renderLab();
+}
+$('mPar').onclick=()=>setMode('par'); $('mTrap').onclick=()=>setMode('trap');
+['sa','sb','sg','st'].forEach(id=>$(id).addEventListener('input',renderLab));
+const PRESETS={
+  rect:()=>{ const a=+$('sa').value, b=+$('sb').value; return {m:'par',a,b:a===b?(a>2?a-2:a+2):b,g:90}; },
+  rhombus:()=>({m:'par',a:5,b:5,g:60}),
+  square:()=>({m:'par',a:5,b:5,g:90}),
+  isos:()=>({m:'trap',a:8,b:4,g:60,t:4}),
+  rtrap:()=>({m:'trap',a:7,b:4,g:90,t:4})
+};
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.onclick=()=>{
+  const p=PRESETS[btn.dataset.p]();
+  $('sa').value=p.a; $('sb').value=p.b; $('sg').value=p.g; if(p.t) $('st').value=p.t;
+  setMode(p.m);
+});
+renderLab();
+
+/* worked examples */
+const EX={
+  A:{shape:{a:5,b:5,g:60,t:5}, steps:[
+    'במרובע ABCD ידוע: <span class="eq">AB ∥ DC</span> וגם <span class="eq">AD ∥ BC</span>. בנוסף <span class="eq">AB = AD</span>. איזה מרובע זה?',
+    '<strong>צעד 1:</strong> יש שני זוגות של צלעות מקבילות. לכן זו <strong>מקבילית</strong>.',
+    '<strong>צעד 2:</strong> במקבילית הצלעות הנגדיות שוות: <span class="eq">AB = DC</span> ו-<span class="eq">AD = BC</span>.',
+    '<strong>צעד 3:</strong> ידוע גם <span class="eq">AB = AD</span>. אז כל ארבע הצלעות שוות. מקבילית עם כל הצלעות שוות היא <strong>מעוין</strong>.',
+    '<strong>צעד 4:</strong> אולי זה ריבוע? לא ידוע לנו כלום על הזוויות. לכן התשובה הכי מדויקת היא <strong>מעוין</strong>.'
+  ]},
+  B:{shape:{a:8,b:4,g:60,t:4}, steps:[
+    'במרובע ABCD יש <strong>בדיוק</strong> זוג אחד של צלעות מקבילות: <span class="eq">AB ∥ DC</span>. האלכסונים <span class="eq">AC</span> ו-<span class="eq">BD</span> שווים. איזה מרובע זה?',
+    '<strong>צעד 1:</strong> רק זוג אחד של צלעות מקבילות. לכן זה <strong>טרפז</strong>, ולא מקבילית.',
+    '<strong>צעד 2:</strong> בטרפז, האלכסונים שווים רק כשהשוקיים שוות. זה משפט שלומדים בכיתה.',
+    '<strong>צעד 3:</strong> לכן זה <strong>טרפז שווה שוקיים</strong>. בדקו במעבדה: לחצו על "טרפז שווה שוקיים" ותראו שהאלכסונים שווים.'
+  ]}
+};
+let exK='A', exI=0;
+function ex(){
+  const e=EX[exK]; drawQuad($('exG'),e.shape);
+  $('exText').innerHTML=e.steps[exI]; $('exCount').textContent=`${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+function exTab(k){ exK=k; exI=0; [['exA','A'],['exB','B']].forEach(([id,kk])=>{ $(id).classList.toggle('primary',kk===k); $(id).setAttribute('aria-selected',kk===k); }); ex(); }
+$('exA').onclick=()=>exTab('A'); $('exB').onclick=()=>exTab('B');
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* practice: name the most specific shape */
+const NAMES=['מקבילית','מלבן','מעוין','ריבוע','טרפז','טרפז שווה שוקיים'];
+const UP={'ריבוע':['מלבן','מעוין','מקבילית'],'מלבן':['מקבילית'],'מעוין':['מקבילית'],'טרפז שווה שוקיים':['טרפז'],'מקבילית':[],'טרפז':[]};
+const QS=[
+  {q:'שני זוגות של צלעות נגדיות מקבילות, וכל הזוויות ישרות. הצלעות הסמוכות לא שוות.', a:'מלבן',
+   h:['כמה זוגות של צלעות מקבילות יש? מה זה אומר?','מקבילית עם זוויות ישרות. האם הצלעות כולן שוות?'], why:'שני זוגות מקבילים זו מקבילית. זוויות ישרות הופכות אותה למלבן. הצלעות הסמוכות לא שוות, אז זה לא ריבוע.'},
+  {q:'כל ארבע הצלעות שוות, ויש בו זווית ישרה.', a:'ריבוע',
+   h:['מרובע שכל הצלעות שלו שוות הוא מעוין. מה הזווית הישרה מוסיפה?','במקבילית, זווית ישרה אחת גוררת שכל הזוויות ישרות.'], why:'כל הצלעות שוות: מעוין. זווית ישרה במעוין הופכת את כל הזוויות לישרות. מעוין עם זוויות ישרות הוא ריבוע.'},
+  {q:'כל ארבע הצלעות שוות, ואף זווית היא לא ישרה.', a:'מעוין',
+   h:['מה השם של מרובע שכל הצלעות שלו שוות?','אין זווית ישרה, אז הוא לא יכול להיות ריבוע.'], why:'כל הצלעות שוות: מעוין. בלי זוויות ישרות זה לא ריבוע.'},
+  {q:'האלכסונים חוצים זה את זה. לא ידוע שום דבר נוסף.', a:'מקבילית',
+   h:['באיזה מרובע האלכסונים תמיד חוצים זה את זה?','לא נאמר שהם שווים ולא שהם מאונכים.'], why:'מרובע שהאלכסונים שלו חוצים זה את זה הוא מקבילית. לא ידוע יותר מזה.'},
+  {q:'האלכסונים חוצים זה את זה ושווים באורכם.', a:'מלבן',
+   h:['אלכסונים שחוצים זה את זה: מקבילית. איזו מקבילית יש לה אלכסונים שווים?','זה יכול להיות ריבוע, אבל האם זה בטוח? לא נאמר שהאלכסונים מאונכים.'], why:'מקבילית עם אלכסונים שווים היא מלבן. כדי לדעת שזה ריבוע, צריך גם אלכסונים מאונכים.'},
+  {q:'האלכסונים חוצים זה את זה ומאונכים זה לזה.', a:'מעוין',
+   h:['אלכסונים שחוצים זה את זה: מקבילית. איזו מקבילית יש לה אלכסונים מאונכים?','לא נאמר שהאלכסונים שווים.'], why:'מקבילית עם אלכסונים מאונכים היא מעוין. בלי אלכסונים שווים, לא ידוע שזה ריבוע.'},
+  {q:'האלכסונים חוצים זה את זה, שווים באורכם ומאונכים זה לזה.', a:'ריבוע',
+   h:['אלכסונים שווים הופכים מקבילית למלבן. אלכסונים מאונכים הופכים אותה למעוין.','מה השם של מרובע שהוא גם מלבן וגם מעוין?'], why:'גם מלבן (אלכסונים שווים) וגם מעוין (אלכסונים מאונכים). זה ריבוע.'},
+  {q:'יש בו בדיוק זוג אחד של צלעות מקבילות.', a:'טרפז',
+   h:['כמה זוגות של צלעות מקבילות יש במקבילית?','בדיוק זוג אחד: זה השם הכללי. האם נאמר משהו על השוקיים?'], why:'בדיוק זוג אחד של צלעות מקבילות: טרפז. לא נאמר שהשוקיים שוות.'},
+  {q:'יש בו בדיוק זוג אחד של צלעות מקבילות, ושתי הצלעות האחרות שוות זו לזו.', a:'טרפז שווה שוקיים',
+   h:['זוג אחד מקביל: איזו משפחה?','הצלעות שאינן מקבילות נקראות שוקיים. מה קורה כשהן שוות?'], why:'זוג אחד מקביל: טרפז. השוקיים שוות: טרפז שווה שוקיים.'},
+  {q:'שני זוגות של צלעות נגדיות שוות. לא ידוע שום דבר נוסף.', a:'מקבילית',
+   h:['באיזה מרובע הצלעות הנגדיות תמיד שוות?','לא נאמר כלום על זוויות או על צלעות סמוכות.'], why:'מרובע ששני זוגות הצלעות הנגדיות שלו שווים הוא מקבילית.'},
+  {q:'מקבילית ששתי צלעות סמוכות בה שוות.', a:'מעוין',
+   h:['במקבילית הצלעות הנגדיות שוות. מה קורה אם גם שתי צלעות סמוכות שוות?','אז כל ארבע הצלעות שוות.'], why:'במקבילית הצלעות הנגדיות שוות. אם גם שתי צלעות סמוכות שוות, כל הצלעות שוות: מעוין.'},
+  {q:'יש בו בדיוק זוג אחד של צלעות מקבילות, והאלכסונים שלו שווים.', a:'טרפז שווה שוקיים',
+   h:['זוג אחד מקביל: זה טרפז.','באיזה טרפז האלכסונים שווים?'], why:'בטרפז, האלכסונים שווים רק כשהשוקיים שוות. לכן זה טרפז שווה שוקיים.'}
+];
+let pr=null, prOrder=[], streak=0, solved=0;
+function newPr(){
+  if(!prOrder.length) prOrder=shuffle(QS.map((_,i)=>i)).filter(i=>!pr||QS[i]!==pr.Q);
+  const Q=QS[prOrder.pop()];
+  pr={Q,wrong:0,hint:0,done:false};
+  $('prQ').textContent=Q.q;
+  $('prChoices').innerHTML=NAMES.map(n=>`<button aria-pressed="false">${n}</button>`).join('');
+  $('prChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>answer(b));
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function answer(btn){
+  if(pr.done) return;
+  const v=btn.textContent, Q=pr.Q;
+  $('prChoices').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b===btn));
+  if(v===Q.a){
+    pr.done=true; streak++; solved++;
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${Q.why}</div>`;
+  } else {
+    pr.wrong++; streak=0;
+    let msg;
+    if(UP[Q.a].includes(v)) msg=`נכון שזה ${v}, אבל אפשר לדייק יותר. מה עוד אומרות התכונות?`;
+    else if(UP[v]&&UP[v].includes(Q.a)) msg=`זה <strong>יכול</strong> להיות ${v}, אבל זה לא בטוח. איזו תכונה של ${v} לא נאמרה כאן?`;
+    else if((v.startsWith('טרפז'))!==(Q.a.startsWith('טרפז'))) msg=v.startsWith('טרפז')?'בטרפז יש בדיוק זוג אחד של צלעות מקבילות. האם זה מה שכתוב כאן?':'למקבילית יש שני זוגות של צלעות מקבילות. כמה זוגות יש כאן?';
+    else msg=`לא מתאים: ל${v} יש תכונה שלא נאמרה כאן, או שחסרה לו תכונה שכן נאמרה. קראו שוב לאט.`;
+    $('prFb').innerHTML=`<div class="fb err">${msg}</div>`;
+    if(pr.wrong>=2) $('prShow').disabled=false;
+  }
+  score();
+}
+$('prHint').onclick=()=>{
+  if(!pr||pr.done) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  $('prFb').innerHTML=`<div class="fb hint">${pr.Q.h.slice(0,pr.hint).map((h,i)=>`<div><strong>רמז ${i+1}:</strong> ${h}</div>`).join('')}</div>`;
+};
+$('prShow').onclick=()=>{ pr.done=true; $('prFb').innerHTML=`<div class="fb hint">הפתרון: <strong>${pr.Q.a}</strong>. ${pr.Q.why} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+newPr(); score();
+
+/* bonus: true or false */
+const TF=[
+  {s:'כל ריבוע הוא מלבן.', a:true, why:'לריבוע יש ארבע זוויות ישרות, וזה מה שצריך כדי להיות מלבן.'},
+  {s:'כל מלבן הוא ריבוע.', a:false, why:'במלבן הצלעות הסמוכות לא חייבות להיות שוות. למשל מלבן של 6 על 4.'},
+  {s:'כל מעוין הוא מקבילית.', a:true, why:'במעוין הצלעות הנגדיות מקבילות, ולכן הוא מקבילית.'},
+  {s:'כל מקבילית היא מעוין.', a:false, why:'במקבילית רק הצלעות הנגדיות שוות. הצלעות הסמוכות לא חייבות להיות שוות.'},
+  {s:'כל ריבוע הוא מעוין.', a:true, why:'בריבוע כל הצלעות שוות, וזה מה שצריך כדי להיות מעוין.'},
+  {s:'כל מקבילית היא טרפז.', a:false, why:'בטרפז יש בדיוק זוג אחד של צלעות מקבילות, ובמקבילית יש שניים.'},
+  {s:'כל מלבן הוא מקבילית.', a:true, why:'במלבן שני זוגות של צלעות נגדיות מקבילות.'},
+  {s:'כל מעוין הוא ריבוע.', a:false, why:'במעוין הזוויות לא חייבות להיות ישרות.'},
+  {s:'בכל מלבן האלכסונים שווים.', a:true, why:'זו תכונה של המלבן. נסו במעבדה: לחצו "הפכו למלבן".'},
+  {s:'בכל מעוין האלכסונים שווים.', a:false, why:'במעוין האלכסונים מאונכים, אבל שווים רק כשהוא ריבוע.'},
+  {s:'בכל מעוין האלכסונים מאונכים זה לזה.', a:true, why:'זו תכונה של המעוין. נסו במעבדה: לחצו "הפכו למעוין".'},
+  {s:'בכל טרפז שווה שוקיים האלכסונים שווים.', a:true, why:'זו תכונה של טרפז שווה שוקיים. נסו את זה במעבדה.'},
+  {s:'בכל מקבילית האלכסונים חוצים זה את זה.', a:true, why:'זו תכונה של כל מקבילית, ולכן גם של מלבן, מעוין וריבוע.'}
+];
+let bn=null, bnOrder=[];
+function newBn(){
+  if(!bnOrder.length) bnOrder=shuffle(TF.map((_,i)=>i)).filter(i=>!bn||TF[i]!==bn);
+  bn=TF[bnOrder.pop()]; $('bnQ').textContent=bn.s; $('bnFb').innerHTML='';
+}
+function bnAnswer(v){ $('bnFb').innerHTML=v===bn.a?`<div class="fb ok">נכון! ${bn.why}</div>`:`<div class="fb err">לא בדיוק. ${bn.why}</div>`; }
+$('bnYes').onclick=()=>bnAnswer(true); $('bnNo').onclick=()=>bnAnswer(false); $('bnNew').onclick=newBn;
+newBn();
+})();
+</script>
+</body>
+</html>

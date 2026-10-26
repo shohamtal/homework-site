@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>אי-שוויונות ממעלה ראשונה · כיתה ח · מירי</title>
+<meta name="description" content="איך פותרים אי-שוויון, מתי הופכים את סימן אי-השוויון ואיך מסמנים את הפתרון על ציר המספרים. מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/inequalities/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אי-שוויונות ממעלה ראשונה · כיתה ח · מירי">
+<meta property="og:description" content="איך פותרים אי-שוויון, מתי הופכים את סימן אי-השוויון ואיך מסמנים את הפתרון על ציר המספרים. מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/inequalities/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"אי-שוויונות","item":"https://shohamtal.github.io/homework-site/math/grade-8/#inequalities"},{"@type":"ListItem","position":5,"name":"אי-שוויונות ממעלה ראשונה","item":"https://shohamtal.github.io/homework-site/math/inequalities/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה הופכים את הסימן כשכופלים במספר שלילי?","acceptedAnswer":{"@type":"Answer","text":"כי מספר שלילי הופך את הסדר על ציר המספרים. 2 &lt; 3, אבל אחרי כפל ב-−1 מקבלים −2 ו-−3, ו-−2 &gt; −3. אותו דבר קורה בחילוק במספר שלילי. נסו במעבדה למעלה ושימו a שלילי."}},{"@type":"Question","name":"איך מסמנים פתרון של אי-שוויון על ציר המספרים?","acceptedAnswer":{"@type":"Answer","text":"שמים עיגול על המספר ומציירים קרן: ימינה לגדול מ, שמאלה לקטן מ. העיגול ריק ב-&gt; או &lt;, ומלא ב-≥ או ≤, כי אז גם המספר עצמו פתרון. החליפו סימן במעבדה ותראו את הציר משתנה."}},{"@type":"Question","name":"מה ההבדל בין משוואה לאי-שוויון?","acceptedAnswer":{"@type":"Answer","text":"למשוואה כמו 2x = 6 יש פתרון אחד, x = 3. לאי-שוויון כמו 2x &gt; 6 יש אינסוף פתרונות: כל מספר גדול מ-3. פותרים כמעט אותו דבר, רק שבכפל או חילוק במספר שלילי הסימן מתהפך. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אי-שוויונות ממעלה ראשונה","description":"איך פותרים אי-שוויון, מתי הופכים את סימן אי-השוויון ואיך מסמנים את הפתרון על ציר המספרים. מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/inequalities/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"אי-שוויונות","teaches":"אי-שוויונות ממעלה ראשונה","keywords":"ציר המספרים, היפוך סימן, גדול מ, קטן מ","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.nl{width:100%; max-width:460px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.nl .axis{stroke:var(--ink); stroke-width:1.5}
+.nl .tk{stroke:var(--ink); stroke-width:1.2}
+.nl text{font:11px var(--f-body); fill:var(--muted)}
+.nl text.zero{fill:var(--ink); font-weight:700}
+.nl .ray{stroke:var(--line); stroke-width:5; stroke-linecap:round}
+.nl .head{fill:var(--line)}
+.nl .dot{stroke:var(--line); stroke-width:3}
+.nl .dot.open{fill:var(--card)}
+.nl .dot.closed{fill:var(--line)}
+.nl .klbl{fill:var(--line); font:700 12px var(--f-body)}
+.nl .bg{fill:var(--card)}
+.calc{display:flex; flex-direction:column; gap:6px}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button{min-width:2.6em; font-family:var(--f-math); font-size:1.15rem}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.flip{color:var(--err); font-weight:800}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center; direction:ltr; justify-content:flex-end}
+.ansrow .xvar{font:italic 1.5rem var(--f-math)}
+.ansrow input{font:1.1rem var(--f-math); width:5.5em; padding:6px 10px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+.labrow{display:flex; flex-direction:column; gap:14px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="inequalities">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#inequalities">אי-שוויונות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">אי-שוויונות ממעלה ראשונה</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · אי-שוויונות</div>
+  <h1>אי-שוויונות ממעלה ראשונה</h1>
+  <p class="lead">במשוואה יש תשובה אחת, כמו <span class="eq"><i>x</i> = 3</span>. באי-שוויון יש הרבה תשובות, כמו כל המספרים שגדולים מ-3. פותרים כמעט כמו משוואה, עם כלל אחד חשוב שצריך לזכור. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bonus">אתגר</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>ארבעה סימנים</h3>
+      <p><span class="eq"><i>x</i> &gt; 3</span>: <i>x</i> גדול מ-3.</p>
+      <p><span class="eq"><i>x</i> ≥ 3</span>: <i>x</i> גדול מ-3 או שווה ל-3.</p>
+      <p><span class="eq"><i>x</i> &lt; 3</span>: <i>x</i> קטן מ-3.</p>
+      <p><span class="eq"><i>x</i> ≤ 3</span>: <i>x</i> קטן מ-3 או שווה ל-3.</p>
+      <p>טיפ: הצד הפתוח של הסימן תמיד פונה למספר הגדול.</p>
+    </div>
+    <div class="mini">
+      <h3>מציירים על ציר המספרים</h3>
+      <svg class="nl" id="ideaNL" viewBox="0 0 320 74" role="img" aria-label="ציר מספרים עם הפתרון x גדול מ-3"></svg>
+      <p>זה <span class="eq"><i>x</i> &gt; 3</span>. העיגול <strong>ריק</strong>, כי 3 עצמו לא גדול מ-3.</p>
+      <p>אם היה כתוב <span class="eq"><i>x</i> ≥ 3</span>, העיגול היה <strong>מלא</strong>, כי גם 3 מתאים.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הכלל החשוב:</strong> פותרים כמו משוואה. אבל כשכופלים או מחלקים את שני הצדדים <strong>במספר שלילי</strong>, הסימן מתהפך: &gt; הופך ל-&lt;, ו-≥ הופך ל-≤.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו ותראו</h2></div>
+  <p class="text">בנו אי-שוויון בצורה <span class="eq"><span class="m"><i>a</i></span><i>x</i> + <span class="b"><i>b</i></span> ? <i>c</i></span>. שימו לב מה קורה כש-<span class="m">a</span> שלילי.</p>
+  <div class="labrow">
+    <div class="big-eq" id="labEq"></div>
+    <svg class="nl" id="labNL" viewBox="0 0 320 74" role="img" aria-label="ציר המספרים של המעבדה"></svg>
+    <div class="lab">
+      <div class="ctrl">
+        <label class="slider" for="sa"><span>a (המספר שליד x)</span><span class="eq" id="sav"></span></label>
+        <input type="range" id="sa" min="-4" max="4" step="1" value="3">
+        <label class="slider" for="sb"><span>b</span><span class="eq" id="sbv"></span></label>
+        <input type="range" class="hl" id="sb" min="-8" max="8" step="1" value="-4">
+        <label class="slider" for="sc"><span>c (הצד הימני)</span><span class="eq" id="scv"></span></label>
+        <input type="range" class="blue" id="sc" min="-8" max="8" step="1" value="5">
+        <div><p style="font-weight:700; margin-bottom:6px">הסימן:</p>
+          <div class="choices" id="labSigns"></div></div>
+      </div>
+      <div class="ctrl">
+        <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p="3,-4,5,>">3x − 4 &gt; 5</button>
+            <button data-p="-2,1,7,≤">−2x + 1 ≤ 7</button>
+            <button data-p="-1,0,3,>">−x &gt; 3</button>
+            <button data-p="4,-2,4,≥">4x − 2 ≥ 4</button>
+            <button data-p="1,2,0,<">x + 2 &lt; 0</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שכחו להפוך</h3>
+      <p><span class="eq">−2<i>x</i> &lt; 6</span>. מחלקים ב-<span class="eq">−2</span>, מספר שלילי, אז הסימן מתהפך: <span class="eq"><i>x</i> &gt; −3</span>.</p>
+      <p>בדיקה: <span class="eq"><i>x</i> = 0</span> גדול מ-<span class="eq">−3</span>. מציבים: <span class="eq">−2 · 0 = 0</span>, ו-<span class="eq">0 &lt; 6</span>. נכון.</p>
+    </div>
+    <div class="mini">
+      <h3>הופכים רק בכפל ובחילוק</h3>
+      <p><span class="eq"><i>x</i> − 3 &gt; −5</span>. מוסיפים 3 לשני הצדדים: <span class="eq"><i>x</i> &gt; −2</span>.</p>
+      <p>חיבור וחיסור לא הופכים את הסימן, גם כשהמספר שלילי. רק כפל או חילוק <strong>במספר שלילי</strong>.</p>
+    </div>
+    <div class="mini">
+      <h3>עיגול ריק או מלא</h3>
+      <p>&gt; או &lt;: העיגול ריק. המספר עצמו לא פתרון.</p>
+      <p>≥ או ≤: העיגול מלא. המספר עצמו כן פתרון.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>למה הסימן מתהפך?</strong> <span class="eq">2 &lt; 3</span>, נכון? כופלים את שני הצדדים ב-<span class="eq">−1</span> ומקבלים <span class="eq">−2</span> ו-<span class="eq">−3</span>. אבל <span class="eq">−2</span> גדול מ-<span class="eq">−3</span>. אז עכשיו צריך <span class="eq">−2 &gt; −3</span>. הסימן התהפך.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (מחלקים בשלילי)</button>
+  </div>
+  <div class="stepper">
+    <div class="big-eq" id="exEq" style="font-size:1.6rem"></div>
+    <svg class="nl" id="exNL" viewBox="0 0 320 74" role="img" aria-label="ציר המספרים של הדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: פתרו את אי-השוויון</h2></div>
+  <p class="text">פתרו, ואז בחרו את הסימן וכתבו את המספר. אם המספר הוא שבר, כתבו אותו עם קו נטוי, למשל <span class="eq">5/2</span>.</p>
+  <div class="big-eq" id="prQ" style="font-size:1.7rem"></div>
+  <div class="ctrl">
+    <div class="ansrow">
+      <span class="xvar">x</span>
+      <div class="choices" id="prSigns"></div>
+      <input id="prK" inputmode="text" autocomplete="off" aria-label="המספר בפתרון">
+    </div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <svg class="nl" id="prNL" viewBox="0 0 320 74" role="img" aria-label="ציר המספרים של התרגיל"></svg>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="bonus">
+  <div class="sec-head"><span class="sec-num">6</span><h2>אתגר: מה כתוב על הציר?</h2></div>
+  <p class="text">על הציר מצויר הפתרון של אי-שוויון. איזה אי-שוויון זה?</p>
+  <svg class="nl" id="bnNL" viewBox="0 0 320 74" role="img" aria-label="ציר המספרים של האתגר"></svg>
+  <div class="choices" id="bnChoices" style="justify-content:center"></div>
+  <div class="row"><button id="bnCheck" class="primary">בדיקה</button><button id="bnNew">אתגר חדש</button></div>
+  <div id="bnFb" aria-live="polite"></div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה הופכים את הסימן כשכופלים במספר שלילי?</h3>
+    <p>כי מספר שלילי הופך את הסדר על ציר המספרים. <span class="eq">2 &lt; 3</span>, אבל אחרי כפל ב-<span class="eq">−1</span> מקבלים <span class="eq">−2</span> ו-<span class="eq">−3</span>, ו-<span class="eq">−2 &gt; −3</span>. אותו דבר קורה בחילוק במספר שלילי. <a href="#lab">נסו במעבדה למעלה</a> ושימו a שלילי.</p>
+    <h3>איך מסמנים פתרון של אי-שוויון על ציר המספרים?</h3>
+    <p>שמים עיגול על המספר ומציירים קרן: ימינה לגדול מ, שמאלה לקטן מ. העיגול ריק ב-&gt; או &lt;, ומלא ב-≥ או ≤, כי אז גם המספר עצמו פתרון. <a href="#lab">החליפו סימן במעבדה</a> ותראו את הציר משתנה.</p>
+    <h3>מה ההבדל בין משוואה לאי-שוויון?</h3>
+    <p>למשוואה כמו <span class="eq">2<i>x</i> = 6</span> יש פתרון אחד, <span class="eq"><i>x</i> = 3</span>. לאי-שוויון כמו <span class="eq">2<i>x</i> &gt; 6</span> יש אינסוף פתרונות: כל מספר גדול מ-3. פותרים כמעט אותו דבר, רק שבכפל או חילוק במספר שלילי הסימן מתהפך. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/systems-algebra/">מערכת משוואות: שיטת ההצבה וההשוואה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/systems-algebra/"><small>→ הנושא הקודם</small>מערכת משוואות: שיטת ההצבה וההשוואה</a><a class="next" href="../../math/short-multiplication/"><small>הנושא הבא ←</small>נוסחאות הכפל המקוצר</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,signedFracHTML,fracTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const SIGNS=['<','≤','>','≥'];
+const SH={'<':'&lt;','≤':'≤','>':'&gt;','≥':'≥'};
+const FLIP={'<':'>','>':'<','≤':'≥','≥':'≤'};
+const isRight=s=>s==='>'||s==='≥', isStrict=s=>s==='<'||s==='>';
+const paren=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+/* "ax + b" as HTML */
+function lhs(a,b){
+  let s=(a===1?'':a===-1?'−':numTxt(a))+'<i>x</i>';
+  if(b>0) s+=' + '+numTxt(b); if(b<0) s+=' − '+numTxt(-b);
+  return s;
+}
+const ineq=(L,s,R)=>`<span class="eq">${L} ${SH[s]} ${R}</span>`;
+const xSol=(s,k)=>ineq('<i>x</i>',s,signedFracHTML(k));
+
+/* number line: k = boundary (or null for an empty axis), s = sign of the solution x ? k */
+function nl(svg,k,s,opt={}){
+  const lo=opt.lo!=null?opt.lo:(k==null?-6:Math.floor(k)-6), hi=lo+12, X=v=>22+(v-lo)*(276/12), Y=42;
+  let h=`<rect class="bg" x="0" y="0" width="320" height="74"/>`;
+  h+=`<line class="axis" x1="6" y1="${Y}" x2="314" y2="${Y}"/>`;
+  h+=`<polygon class="head" style="fill:var(--ink)" points="316,${Y} 308,${Y-4} 308,${Y+4}"/><polygon style="fill:var(--ink)" points="4,${Y} 12,${Y-4} 12,${Y+4}"/>`;
+  for(let i=lo;i<=hi;i++){
+    h+=`<line class="tk" x1="${X(i)}" y1="${Y-5}" x2="${X(i)}" y2="${Y+5}"/>`;
+    h+=`<text x="${X(i)}" y="${Y+19}" text-anchor="middle"${i===0?' class="zero"':''}>${numTxt(i)}</text>`;
+  }
+  if(k!=null && s){
+    const x0=X(k), right=isRight(s), end=right?306:14;
+    h+=`<line class="ray" x1="${x0}" y1="${Y}" x2="${end}" y2="${Y}"/>`;
+    h+=right?`<polygon class="head" points="316,${Y} 304,${Y-8} 304,${Y+8}"/>`:`<polygon class="head" points="4,${Y} 16,${Y-8} 16,${Y+8}"/>`;
+    h+=`<circle class="dot ${isStrict(s)?'open':'closed'}" cx="${x0}" cy="${Y}" r="6.5"/>`;
+    if(!Number.isInteger(k)) h+=`<text class="klbl" x="${x0}" y="${Y-12}" text-anchor="middle">${fracTxt(k)}</text>`;
+  }
+  svg.innerHTML=h;
+}
+function signButtons(el,onPick){
+  el.innerHTML=SIGNS.map(s=>`<button type="button" data-s="${s}" aria-pressed="false" aria-label="סימן ${s}">${SH[s]}</button>`).join('');
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>{ setSign(el,b.dataset.s); onPick(b.dataset.s); });
+}
+function setSign(el,s){ el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.s===s)); }
+/* the steps of solving ax + b ? c, as HTML lines */
+function steps(a,b,c,s){
+  const out=[], r=c-b, s2=a<0?FLIP[s]:s, k=r/a;
+  if(b!==0) out.push(`<div><strong>צעד 1:</strong> ${b>0?`מחסרים ${numTxt(b)} משני הצדדים`:`מוסיפים ${numTxt(-b)} לשני הצדדים`}: ${ineq((a===1?'':a===-1?'−':numTxt(a))+'<i>x</i>',s,numTxt(r))}</div>`);
+  if(a===1) out.push(`<div><strong>${b!==0?'צעד 2':'צעד 1'}:</strong> נשאר <i>x</i> לבד, אין צורך לחלק.</div>`);
+  else if(a<0) out.push(`<div><strong>${b!==0?'צעד 2':'צעד 1'}:</strong> מחלקים ב-<span class="eq">${numTxt(a)}</span>. <span class="flip">זה מספר שלילי, אז הסימן מתהפך: ${SH[s]} הופך ל-${SH[s2]}.</span></div>`);
+  else out.push(`<div><strong>${b!==0?'צעד 2':'צעד 1'}:</strong> מחלקים ב-<span class="eq">${numTxt(a)}</span>. זה מספר חיובי, אז הסימן לא משתנה.</div>`);
+  out.push(`<div><strong>הפתרון:</strong> ${xSol(s2,k)}</div>`);
+  return {html:out.join(''),s2,k};
+}
+/* a whole number inside the solution, plugged into the original */
+function checkLine(a,b,c,s,s2,k){
+  const t=isRight(s2)?Math.floor(k)+1:Math.ceil(k)-1, v=a*t+b;
+  const bTxt=b===0?'':` ${b<0?'−':'+'} ${numTxt(Math.abs(b))}`;
+  return `<div>בדיקה: מציבים <span class="eq"><i>x</i> = ${numTxt(t)}</span>: <span class="eq">${numTxt(a)} · ${paren(t)}${bTxt} = ${numTxt(v)}</span>, ו-${ineq(numTxt(v),s,numTxt(c))} נכון ✓</div>`;
+}
+
+/* idea */
+nl($('ideaNL'),3,'>',{lo:-3});
+
+/* lab */
+const R={a:$('sa'),b:$('sb'),c:$('sc')}; let labS='>';
+signButtons($('labSigns'),s=>{labS=s; lab();});
+function lab(){
+  const a=+R.a.value, b=+R.b.value, c=+R.c.value;
+  $('sav').textContent=numTxt(a); $('sbv').textContent=numTxt(b); $('scv').textContent=numTxt(c);
+  setSign($('labSigns'),labS);
+  if(a===0){
+    $('labEq').innerHTML=ineq(numTxt(b),labS,numTxt(c));
+    $('labTxt').innerHTML='<div>כש-a = 0 אין בכלל <i>x</i>. הזיזו את a למספר אחר.</div>';
+    nl($('labNL'),null); return;
+  }
+  $('labEq').innerHTML=ineq(lhs(a,b),labS,numTxt(c));
+  const st=steps(a,b,c,labS);
+  const dot=isStrict(st.s2)
+    ?`<div>העיגול <strong>ריק</strong>: ${signedFracHTML(st.k)} עצמו לא פתרון, כי יש ${SH[labS]} בלי שווה.</div>`
+    :`<div>העיגול <strong>מלא</strong>: גם ${signedFracHTML(st.k)} עצמו פתרון, כי יש שווה.</div>`;
+  $('labTxt').innerHTML=st.html+dot+checkLine(a,b,c,labS,st.s2,st.k);
+  nl($('labNL'),st.k,st.s2);
+}
+Object.values(R).forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [a,b,c,s]=btn.dataset.p.split(','); R.a.value=a; R.b.value=b; R.c.value=c; labS=s; lab();
+}));
+lab();
+
+/* worked examples */
+const EX={
+  A:{a:2,b:-3,c:5,s:'<',steps:[
+    [null,null,`פותרים <span class="eq">2<i>x</i> − 3 &lt; 5</span>. המטרה: להשאיר את <i>x</i> לבד בצד אחד.`],
+    [null,null,`<strong>מוסיפים 3 לשני הצדדים:</strong> ${ineq('2<i>x</i>','<','8')}. חיבור לא הופך את הסימן.`],
+    [4,'<',`<strong>מחלקים ב-2:</strong> ${ineq('<i>x</i>','<','4')}. 2 הוא חיובי, אז הסימן נשאר.`],
+    [4,'<',`<strong>מציירים:</strong> עיגול ריק ב-4 (כי 4 עצמו לא קטן מ-4), וקרן שמאלה, לכל המספרים הקטנים מ-4.`],
+    [4,'<',`<strong>בודקים:</strong> מציבים <span class="eq"><i>x</i> = 0</span>: <span class="eq">2 · 0 − 3 = −3</span>, ו-<span class="eq">−3 &lt; 5</span>. נכון ✓`]
+  ]},
+  B:{a:-3,b:5,c:11,s:'≥',steps:[
+    [null,null,`פותרים <span class="eq">−3<i>x</i> + 5 ≥ 11</span>.`],
+    [null,null,`<strong>מחסרים 5 משני הצדדים:</strong> ${ineq('−3<i>x</i>','≥','6')}.`],
+    [-2,'≤',`<strong>מחלקים ב-<span class="eq">−3</span>:</strong> <span class="flip">מספר שלילי, אז ≥ הופך ל-≤.</span> ${ineq('<i>x</i>','≤','−2')}.`],
+    [-2,'≤',`<strong>מציירים:</strong> עיגול מלא ב-<span class="eq">−2</span> (כי יש שווה), וקרן שמאלה.`],
+    [-2,'≤',`<strong>בודקים:</strong> מציבים <span class="eq"><i>x</i> = −3</span>: <span class="eq">−3 · (−3) + 5 = 14</span>, ו-<span class="eq">14 ≥ 11</span>. נכון ✓ ואם מציבים <span class="eq"><i>x</i> = 0</span> יוצא <span class="eq">5 ≥ 11</span>, וזה לא נכון. בדיוק כמו שהציר אומר.`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [k,s,txt]=e.steps[exI];
+  $('exEq').innerHTML=ineq(lhs(e.a,e.b),e.s,numTxt(e.c));
+  nl($('exNL'),k,s,{lo:exKey==='A'?-4:-8});
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice */
+let pr={}, prS=null, streak=0, solved=0;
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+signButtons($('prSigns'),s=>{prS=s;});
+function newPr(){
+  let a,b,k,c;
+  do{ a=pick([-4,-3,-2,-1,-2,-3,1,2,3,4,5]); k=ri(-6,6); b=ri(-9,9); c=a*k+b; } while(Math.abs(c)>20 || (a===pr.a&&b===pr.b&&c===pr.c));
+  if(Math.random()<0.2 && Math.abs(a)>1){ // sometimes a fraction answer: c − b not divisible by a
+    const off=pick([1,-1]); c+=off; k=(c-b)/a;
+  }
+  const s=pick(SIGNS);
+  pr={a,b,c,s,k:(c-b)/a,s2:a<0?FLIP[s]:s,tries:0,hint:0};
+  $('prQ').innerHTML=ineq(lhs(a,b),s,numTxt(c));
+  $('prK').value=''; prS=null; setSign($('prSigns'),null);
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+  nl($('prNL'),null,null,{lo:Math.floor(pr.k)-6});
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const sameDir=(x,y)=>isRight(x)===isRight(y);
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), v=parseNum($('prK').value), {a,b,c,s,s2,k}=pr;
+  if(!prS){ fb.innerHTML='<div class="fb err">בחרו סימן: &lt;, ≤, &gt; או ≥.</div>'; return; }
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 3, −2 או 5/2.</div>'; $('prK').focus(); return; }
+  const numOK=eqv(v,k), signOK=prS===s2;
+  if(numOK&&signOK){
+    streak++; solved++; streakTxt();
+    fb.innerHTML=`<div class="fb ok">נכון! ${xSol(s2,k)}${a<0?'. לא שכחתם להפוך את הסימן':''}.</div>`;
+    nl($('prNL'),k,s2); return;
+  }
+  streak=0; pr.tries++; streakTxt();
+  let msg;
+  if(numOK){
+    if(a<0 && prS===s) msg=`המספר נכון, אבל שכחתם להפוך את הסימן. בצעד האחרון מחלקים ב-<span class="eq">${numTxt(a)}</span>, וזה מספר שלילי.`;
+    else if(a>0 && prS===FLIP[s]) msg=`המספר נכון, אבל הפכתם את הסימן בלי סיבה. מחלקים ב-<span class="eq">${numTxt(a)}</span>, מספר חיובי, אז הסימן נשאר.`;
+    else if(sameDir(prS,s2)) msg=`הכיוון נכון. עכשיו בדקו אם ${signedFracHTML(k)} עצמו פתרון: באי-השוויון יש ${SH[s]}, ${isStrict(s)?'בלי שווה. אז גם בתשובה בלי שווה.':'עם שווה. אז גם בתשובה עם שווה.'}`;
+    else msg='המספר נכון. בדקו את הסימן: האם מחלקים במספר שלילי? והאם יש שווה?';
+  } else {
+    if(b!==0 && eqv(v,(c+b)/a)) msg=`בדקו את הצעד הראשון. כדי להעביר את <span class="eq">${numTxt(b)}</span> לצד השני, ${b>0?'מחסרים':'מוסיפים'} אותו בשני הצדדים. ככה הוא מחליף סימן.`;
+    else if(eqv(v,-k)) msg=`המספר יצא עם סימן הפוך. בדקו את החילוק: <span class="eq">${numTxt(c-b)} ÷ ${paren(a)}</span>.`;
+    else if(a!==1 && eqv(v,c-b)) msg=`אחרי הצעד הראשון קיבלתם <span class="eq">${numTxt(c-b)}</span>. נכון! אבל עוד צריך לחלק ב-<span class="eq">${numTxt(a)}</span>.`;
+    else msg='עוד לא. עשו את זה בשני צעדים: קודם מעבירים את b לצד השני, אחר כך מחלקים ב-a.';
+  }
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const {a,b,c,s}=pr; pr.hint=Math.min(pr.hint+1,2);
+  const ax=(a===1?'':a===-1?'−':numTxt(a))+'<i>x</i>';
+  let h = b!==0
+    ? `קודם מעבירים את <span class="eq">${numTxt(b)}</span> לצד השני: ${b>0?'מחסרים':'מוסיפים'} אותו בשני הצדדים. מה יוצא בצד ימין?`
+    : `כאן אין b. ישר מחלקים ב-a.`;
+  if(pr.hint>=2) h=`אחרי הצעד הראשון: ${ineq(ax,s,numTxt(c-b))}. עכשיו מחלקים ב-<span class="eq">${numTxt(a)}</span>. ${a<0?'זה מספר שלילי. מה קורה לסימן?':a===1?'אין צורך לחלק.':'זה מספר חיובי, אז הסימן נשאר.'}`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {a,b,c,s,k,s2}=pr, st=steps(a,b,c,s);
+  $('prFb').innerHTML=`<div class="fb hint calc">${st.html}${checkLine(a,b,c,s,s2,k)}<div>עכשיו נסו תרגיל חדש.</div></div>`;
+  nl($('prNL'),k,s2);
+};
+$('prNew').onclick=newPr;
+$('prK').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+
+/* bonus: read the number line */
+let bn={}, bnPick=null;
+function newBn(){
+  let k,s; do{ k=ri(-5,5); s=pick(SIGNS); } while(k===bn.k && s===bn.s);
+  bn={k,s}; bnPick=null;
+  nl($('bnNL'),k,s,{lo:-6});
+  $('bnChoices').innerHTML=SIGNS.map(x=>`<button data-s="${x}" aria-pressed="false">${ineq('<i>x</i>',x,numTxt(k))}</button>`).join('');
+  $('bnChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{bnPick=b.dataset.s;
+    $('bnChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));});
+  $('bnFb').innerHTML='';
+}
+$('bnCheck').onclick=()=>{
+  if(!bnPick){ $('bnFb').innerHTML='<div class="fb err">קודם בחרו תשובה.</div>'; return; }
+  const {k,s}=bn, why=`הקרן הולכת ${isRight(s)?'ימינה, למספרים הגדולים':'שמאלה, למספרים הקטנים'}, והעיגול ${isStrict(s)?'ריק, אז בלי שווה':'מלא, אז עם שווה'}.`;
+  if(bnPick===s) $('bnFb').innerHTML=`<div class="fb ok">נכון! ${why}</div>`;
+  else if(sameDir(bnPick,s)) $('bnFb').innerHTML=`<div class="fb err">הכיוון נכון. עכשיו הסתכלו על העיגול: הוא ${isStrict(s)?'ריק':'מלא'}.</div>`;
+  else $('bnFb').innerHTML=`<div class="fb err">לא הפעם. לאיזה כיוון הולכת הקרן? ימינה זה גדול מ-${numTxt(k)}, שמאלה זה קטן מ-${numTxt(k)}.</div>`;
+};
+$('bnNew').onclick=newBn;
+newBn();
+})();
+</script>
+</body>
+</html>

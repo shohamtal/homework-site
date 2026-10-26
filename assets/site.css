@@ -38,11 +38,9 @@ nav.toc a{color:var(--ink); text-decoration:none; background:var(--card); border
 nav.toc a:hover,nav.toc a:focus-visible{border-color:var(--line); outline:none}
 
 /* site bar + breadcrumbs */
-.sitebar{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; font-size:.95rem}
+.sitebar{display:flex; flex-direction:column; align-items:flex-start; gap:10px; font-size:.95rem}
 .sitebar .brand{font-family:var(--f-display); color:var(--ink); text-decoration:none; font-size:1.15rem}
 .crumbs{display:flex; flex-wrap:wrap; gap:6px; color:var(--muted)}
-.crumbs a{color:var(--muted); text-decoration:none}
-.crumbs a:hover{color:var(--ink); text-decoration:underline}
 
 section.card{background:var(--card); border:2px solid var(--border); border-radius:16px; box-shadow:-5px 5px 0 var(--hard); padding:26px clamp(18px,3vw,34px); display:flex; flex-direction:column; gap:16px; scroll-margin-top:16px}
 .sec-head{display:flex; align-items:baseline; gap:12px}
@@ -166,3 +164,12 @@ h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
 .sitebar .avatar{width:32px; height:32px; border-radius:50%}
 .miri-tip{display:flex; align-items:center; gap:8px; font-weight:700; font-size:.9rem; margin-bottom:4px}
 .miri-tip img{width:40px; height:40px; border-radius:50%; flex:none}
+
+/* breadcrumbs: clear path subject › grade › chapter › topic */
+.crumbs{font-weight:600; align-items:center; row-gap:2px}
+.crumbs a{color:var(--ink); text-decoration:underline; text-decoration-color:var(--soft); text-underline-offset:3px}
+.crumbs a:hover{text-decoration-color:var(--line)}
+.crumbs [aria-current="page"]{color:var(--line)}
+.crumbs .sep{color:var(--muted)}
+.crumbs{font-size:1rem; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:4px 14px}
+.related{margin:0}

@@ -9,12 +9,20 @@ window.NAV={
     const i=flat.findIndex(t=>t.slug===slug);
     return {subj,flat,i,cur:flat[i]};
   },
-  bar(root,subjectId,slug){
-    const {subj,cur}=NAV.ctx(subjectId,slug);
-    let c=`<a href="${root}">כל המקצועות</a>`;
-    if(subj) c+=` <span aria-hidden="true">‹</span> <a href="${root}${subj.id}/">${subj.name}</a>`;
-    if(cur) c+=` <span aria-hidden="true">‹</span> <span>${cur.chapter.name}</span>`;
-    return `<a class="brand" href="${root}"><img class="avatar" src="${root}assets/miri/avatar-64.webp" width="32" height="32" alt="">${SITE.name}</a><nav class="crumbs" aria-label="מיקום באתר">${c}</nav>`;
+  gradeOf(subj,chapter){ return (subj.grades||[]).find(g=>g.name===chapter.grade); },
+  /* breadcrumbs: כל המקצועות ‹ subject ‹ grade ‹ chapter ‹ topic (the last one is the current page) */
+  bar(root,subjectId,slug,gradeId){
+    const {subj,cur}=NAV.ctx(subjectId,slug), sep=' <span class="sep" dir="ltr" aria-hidden="true">‹</span> ';
+    const grade=subj&&(cur?NAV.gradeOf(subj,cur.chapter):(subj.grades||[]).find(g=>g.id===gradeId));
+    const crumbs=[`<a href="${root}">כל המקצועות</a>`];
+    if(subjectId==='requests') crumbs.push('<span aria-current="page">בקשות נושאים</span>');
+    if(subj) crumbs.push(grade?`<a href="${root}${subj.id}/">${subj.name}</a>`:`<span aria-current="page">${subj.name}</span>`);
+    if(grade) crumbs.push(cur?`<a href="${root}${subj.id}/${grade.id}/">${grade.name}</a>`:`<span aria-current="page">${grade.name}</span>`);
+    if(cur){
+      crumbs.push(grade?`<a href="${root}${subj.id}/${grade.id}/#${cur.chapter.id}">${cur.chapter.name}</a>`:`<span>${cur.chapter.name}</span>`);
+      crumbs.push(`<span aria-current="page">${cur.title}</span>`);
+    }
+    return `<a class="brand" href="${root}"><img class="avatar" src="${root}assets/miri/avatar-64.webp" width="32" height="32" alt="">${SITE.name}</a><nav class="crumbs" aria-label="מיקום באתר">${crumbs.join(sep)}</nav>`;
   },
   topicNav(root,subjectId,slug){
     const {subj,flat,i,cur}=NAV.ctx(subjectId,slug); if(!cur) return '';
@@ -26,7 +34,7 @@ window.NAV={
 if(typeof document!=='undefined') (function(){
   const b=document.body, root=b.dataset.root||'./';
   const bar=document.getElementById('sitebar');
-  if(bar && !bar.children.length){ bar.className='sitebar'; bar.innerHTML=NAV.bar(root,b.dataset.subject,b.dataset.topic); }
+  if(bar && !bar.children.length){ bar.className='sitebar'; bar.innerHTML=NAV.bar(root,b.dataset.subject,b.dataset.topic,b.dataset.grade); }
   const nav=document.getElementById('topicNav');
   /* "רמז ממירי": label the hint box that a hint button just filled (only boxes the click changed) */
   document.addEventListener('click',e=>{

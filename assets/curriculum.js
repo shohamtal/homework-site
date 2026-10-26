@@ -4,7 +4,7 @@
 window.CURRICULUM={
   grades:['כיתה ד','כיתה ה','כיתה ו','כיתה ז','כיתה ח','כיתה ט','כיתה י','כיתה יא','כיתה יב'],
   topics:{
-    'חשבון':{
+    'מתמטיקה':{
       'כיתה ד':['מספרים עד מיליון','חיבור וחיסור במאונך','כפל במספר דו-ספרתי','חילוק ארוך','סימני התחלקות','שברים פשוטים','שברים שקולים והשוואת שברים','זוויות','מצולעים ומרובעים','היקף ושטח של מלבן','מדידות: אורך, משקל וזמן'],
       'כיתה ה':['מספרים ראשוניים ופריקים','מחלקים וכפולות','חיבור וחיסור שברים','כפל שברים','מספרים מעורבים','שברים עשרוניים','סוגי משולשים','שטח מקבילית ומשולש','תיבה ונפח','ממוצע'],
       'כיתה ו':['חילוק שברים','כפל וחילוק שברים עשרוניים','אחוזים','יחס ופרופורציה','קנה מידה','מעגל והיקף מעגל','שטח עיגול','מנסרות וגופים','סדר פעולות חשבון','סטטיסטיקה וגרפים'],
@@ -40,15 +40,18 @@ window.CURRICULUM={
   }
 };
 (function(){
-  const C=window.CURRICULUM, onSite={}, siteTitles={};
+  const C=window.CURRICULUM, onSite={}, siteTitles={}, akaOf={};
   (window.SITE?SITE.subjects:[]).forEach(s=>s.chapters.forEach(ch=>ch.topics.forEach(t=>{
     onSite[s.name+'|'+t.title]=`${s.id}/${t.slug}/`;
+    (t.aka||[]).forEach(a=>{ onSite[s.name+'|'+a]=onSite[s.name+'|'+a]||`${s.id}/${t.slug}/`; });
     ((siteTitles[s.name]=siteTitles[s.name]||{})[ch.grade]=siteTitles[s.name][ch.grade]||[]).push(t.title);
+    akaOf[s.name+'|'+t.title]=t.aka||[];
   })));
   /* site topics first, in site order, then the rest of the list */
   Object.keys(siteTitles).forEach(subj=>Object.keys(siteTitles[subj]).forEach(g=>{
     const byS=(C.topics[subj]=C.topics[subj]||{}), cur=byS[g]||[], st=siteTitles[subj][g];
-    byS[g]=st.concat(cur.filter(t=>!st.includes(t)));
+    const covered=new Set(st.flatMap(t=>[t].concat(akaOf[subj+'|'+t]||[])));
+    byS[g]=st.concat(cur.filter(t=>!covered.has(t)));
   }));
   /* path of the site page for a topic, or '' */
   C.siteLink=(subject,topic)=>onSite[subject+'|'+topic]||'';

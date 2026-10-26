@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פירוק לגורמים · כיתה ח · מירי</title>
+<meta name="description" content="פירוק לגורמים בהוצאת גורם משותף ובעזרת נוסחאות הכפל המקוצר. שלבים ברורים, טעויות נפוצות ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/factoring/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פירוק לגורמים · כיתה ח · מירי">
+<meta property="og:description" content="פירוק לגורמים בהוצאת גורם משותף ובעזרת נוסחאות הכפל המקוצר. שלבים ברורים, טעויות נפוצות ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/factoring/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"כפל מקוצר ופירוק לגורמים","item":"https://shohamtal.github.io/homework-site/math/grade-8/#algebra"},{"@type":"ListItem","position":5,"name":"פירוק לגורמים","item":"https://shohamtal.github.io/homework-site/math/factoring/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה פירוק לגורמים ולמה צריך את זה?","acceptedAnswer":{"@type":"Answer","text":"לכתוב ביטוי כמכפלה, כלומר משהו כפול משהו: 6x + 9 = 3(2x + 3). זה עוזר לצמצם שברים ולפתור משוואות בהמשך, למשל x(x + 5) = 0. נסו במעבדה למעלה."}},{"@type":"Question","name":"איך מוצאים גורם משותף?","acceptedAnswer":{"@type":"Answer","text":"מחפשים את המספר הגדול ביותר שמחלק את כל המקדמים. אם בכל האיברים יש גם x, מוציאים גם אותו: 4x² + 6x = 2x(2x + 3). תרגלו למטה."}},{"@type":"Question","name":"איך יודעים שסיימנו לפרק?","acceptedAnswer":{"@type":"Answer","text":"כשבתוך הסוגריים כבר אין גורם משותף, ואין שם הפרש ריבועים או ריבוע שאפשר לפרק. בסוף פותחים את הסוגריים לבדיקה: אם חזרתם לביטוי המקורי, הפירוק נכון. נסו בתרגול."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"פירוק לגורמים","description":"פירוק לגורמים בהוצאת גורם משותף ובעזרת נוסחאות הכפל המקוצר. שלבים ברורים, טעויות נפוצות ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/factoring/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"כפל מקוצר ופירוק לגורמים","teaches":"פירוק לגורמים","keywords":"גורם משותף, הפרש ריבועים, פירוק","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.tiles{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.tiles .tx{fill:var(--line); fill-opacity:.22; stroke:var(--line); stroke-width:1.4}
+.tiles .t1{fill:var(--hl); fill-opacity:.7; stroke:var(--ink); stroke-width:1.2}
+.tiles .miss{fill:var(--err-bg); stroke:var(--err); stroke-width:1.2; stroke-dasharray:3 2}
+.tiles .frame{fill:none; stroke:var(--ok); stroke-width:2.4}
+.tiles .tl{fill:var(--ink); font:700 10px var(--f-math); font-style:italic; text-anchor:middle; dominant-baseline:middle}
+.tiles .side{fill:var(--muted); font:700 11px var(--f-body); text-anchor:middle; dominant-baseline:middle}
+.tiles .bad{fill:var(--err); font:700 11px var(--f-body); text-anchor:middle}
+.tiles .good{fill:var(--ok); font:700 11px var(--f-body); text-anchor:middle}
+.calc{display:flex; flex-direction:column; gap:4px}
+.fill{display:flex; flex-wrap:wrap; align-items:center; gap:4px; direction:ltr; justify-content:center; font-family:var(--f-math); font-size:1.4rem}
+.fill input{width:3.2em; font:1.2rem var(--f-math); padding:4px 6px; border-radius:8px; border:2px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="factoring">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#algebra">כפל מקוצר ופירוק לגורמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">פירוק לגורמים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · כפל מקוצר ופירוק לגורמים</div>
+  <h1>פירוק לגורמים</h1>
+  <p class="lead">פתיחת סוגריים הופכת מכפלה לסכום: <span class="eq">3(2<i>x</i> + 3) = 6<i>x</i> + 9</span>. פירוק לגורמים הולך בכיוון ההפוך: מתחילים מ-<span class="eq">6<i>x</i> + 9</span> ומגיעים חזרה לסוגריים. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שלוש דרכים לפרק</h2></div>
+  <p class="text">לפרק לגורמים זה לכתוב ביטוי כמכפלה, כלומר משהו כפול משהו. יש שלוש דרכים שחוזרות כל הזמן:</p>
+  <div class="two">
+    <div class="mini">
+      <h3>הוצאת גורם משותף</h3>
+      <p>מחפשים מה מחלק את כל האיברים, ומוציאים אותו מחוץ לסוגריים.</p>
+      <p><span class="eq">6<i>x</i> + 9 = 3(2<i>x</i> + 3)</span></p>
+      <p><span class="eq"><i>x</i>² + 5<i>x</i> = <i>x</i>(<i>x</i> + 5)</span></p>
+    </div>
+    <div class="mini">
+      <h3>הפרש ריבועים</h3>
+      <p>משהו בריבוע, פחות משהו בריבוע:</p>
+      <p><span class="eq"><i>a</i>² − <i>b</i>² = (<i>a</i> + <i>b</i>)(<i>a</i> − <i>b</i>)</span></p>
+      <p><span class="eq"><i>x</i>² − 9 = (<i>x</i> + 3)(<i>x</i> − 3)</span></p>
+    </div>
+    <div class="mini">
+      <h3>ריבוע של סכום או הפרש</h3>
+      <p>נוסחאות הכפל המקוצר בכיוון ההפוך:</p>
+      <p><span class="eq"><i>x</i>² + 6<i>x</i> + 9 = (<i>x</i> + 3)²</span></p>
+      <p><span class="eq"><i>x</i>² − 10<i>x</i> + 25 = (<i>x</i> − 5)²</span></p>
+    </div>
+    <div class="mini">
+      <h3>תמיד אפשר לבדוק</h3>
+      <p>פותחים את הסוגריים של התשובה. אם חזרתם לביטוי שהתחלתם ממנו, הפירוק נכון.</p>
+      <p><span class="eq">3(2<i>x</i> + 3)</span> <span class="eq">= 3 · 2<i>x</i> + 3 · 3</span> <span class="eq">= 6<i>x</i> + 9</span> ✓</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מסדרים אריחים בשורות</h2></div>
+  <p class="text">כל אריח ורוד הוא <span class="eq"><i>x</i></span>, וכל אריח צהוב הוא 1. בחרו גורם, ונסדר את כל האריחים בשורות במספר הזה. אם כל השורות יוצאות שוות, מצאתם גורם משותף, ושורה אחת היא מה שנכנס לסוגריים.</p>
+  <div class="lab">
+    <svg class="tiles" id="labG" viewBox="0 0 260 260" role="img" aria-label="אריחים מסודרים בשורות"></svg>
+    <div class="ctrl">
+      <label class="slider" for="sm"><span>כמה <i>x</i></span><span class="eq" id="smv"></span></label>
+      <input type="range" id="sm" min="1" max="12" step="1" value="6">
+      <label class="slider" for="sn"><span>כמה אחדות</span><span class="eq" id="snv"></span></label>
+      <input type="range" class="hl" id="sn" min="1" max="12" step="1" value="9">
+      <label class="slider" for="sk"><span>הגורם (כמה שורות)</span><span class="eq" id="skv"></span></label>
+      <input type="range" class="blue" id="sk" min="1" max="12" step="1" value="3">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="6,9,3">6x + 9</button>
+          <button data-p="12,8,2">12x + 8 עם 2</button>
+          <button data-p="4,4,4">4x + 4</button>
+          <button data-p="5,7,2">5x + 7</button>
+          <button data-p="12,18,6">12x + 18</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>לא הוצאתם הכול</h3>
+      <p><span class="eq">12<i>x</i> + 18 = 2(6<i>x</i> + 9)</span> זה נכון, אבל עוד לא סיימתם: גם 6 וגם 9 מתחלקים ב-3.</p>
+      <p>הגורם הגדול ביותר הוא 6: <span class="eq">12<i>x</i> + 18 = 6(2<i>x</i> + 3)</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>לא לשכוח את ה-1</h3>
+      <p><span class="eq">4<i>x</i> + 4 = 4(<i>x</i> + 1)</span>, ולא <span class="eq">4(<i>x</i>)</span>.</p>
+      <p>כשמחלקים 4 ב-4 נשאר 1. הוא לא נעלם.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בלי מינוס אין הפרש ריבועים:</strong> <span class="eq"><i>x</i>² − 9 = (<i>x</i> + 3)(<i>x</i> − 3)</span>, אבל <span class="eq"><i>x</i>² + 9</span> לא מתפרק כך. נסו לפתוח <span class="eq">(<i>x</i> + 3)(<i>x</i> − 3)</span> ותראו שיוצא מינוס.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (גורם משותף)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (הפרש ריבועים)</button>
+    <button id="exC" role="tab" aria-selected="false">דוגמה ג (ריבוע)</button>
+  </div>
+  <div class="big-eq" id="exQ" style="font-size:1.6rem"></div>
+  <div class="stepper">
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: השלימו את הפירוק</h2></div>
+  <p class="text">השלימו את המספרים החסרים. אם יש מינוס, כתבו אותו בתוך התיבה, למשל <span class="eq">−3</span>. נבדוק את התשובה שלכם בפתיחת סוגריים.</p>
+  <div class="big-eq" id="prQ" style="font-size:1.8rem"></div>
+  <div class="fill" id="prIn"></div>
+  <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה פירוק לגורמים ולמה צריך את זה?</h3>
+    <p>לכתוב ביטוי כמכפלה, כלומר משהו כפול משהו: <span class="eq">6<i>x</i> + 9 = 3(2<i>x</i> + 3)</span>. זה עוזר לצמצם שברים ולפתור משוואות בהמשך, למשל <span class="eq"><i>x</i>(<i>x</i> + 5) = 0</span>. <a href="#lab">נסו במעבדה למעלה</a>.</p>
+    <h3>איך מוצאים גורם משותף?</h3>
+    <p>מחפשים את המספר הגדול ביותר שמחלק את כל המקדמים. אם בכל האיברים יש גם <span class="eq"><i>x</i></span>, מוציאים גם אותו: <span class="eq">4<i>x</i>² + 6<i>x</i> = 2<i>x</i>(2<i>x</i> + 3)</span>. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>איך יודעים שסיימנו לפרק?</h3>
+    <p>כשבתוך הסוגריים כבר אין גורם משותף, ואין שם הפרש ריבועים או ריבוע שאפשר לפרק. בסוף פותחים את הסוגריים לבדיקה: אם חזרתם לביטוי המקורי, הפירוק נכון. <a href="#practice">נסו בתרגול</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/short-multiplication/">נוסחאות הכפל המקוצר</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/short-multiplication/"><small>→ הנושא הקודם</small>נוסחאות הכפל המקוצר</a><a class="next" href="../../math/powers-roots/"><small>הנושא הבא ←</small>חוקי חזקות ושורשים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const gcd=(a,b)=>{ a=Math.abs(a); b=Math.abs(b); while(b){ [a,b]=[b,a%b]; } return a; };
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const pick=arr=>arr[Math.floor(Math.random()*arr.length)];
+
+/* A x² + B x + C as HTML */
+function polyRaw(A,B,C){
+  const terms=[[A,'<i>x</i>²'],[B,'<i>x</i>'],[C,'']].filter(t=>t[0]!==0);
+  if(!terms.length) return '0';
+  return terms.map(([c,v],i)=>{
+    const abs=Math.abs(c), co=(abs===1&&v)?'':abs;
+    return (i===0?(c<0?'−':''):(c<0?' − ':' + '))+co+v;
+  }).join('');
+}
+const poly=(A,B,C)=>E(polyRaw(A,B,C));
+/* "u x + v" inside brackets */
+const lin=(u,v)=>polyRaw(0,u,v);
+
+/* ---------- lab ---------- */
+const svg=$('labG'), NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,text){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(text!=null) e.textContent=text; svg.appendChild(e); return e; }
+const divisors=n=>{ const d=[]; for(let i=1;i<=n;i++) if(n%i===0) d.push(i); return d; };
+function lab(){
+  const m=+$('sm').value, n=+$('sn').value, k=+$('sk').value;
+  $('smv').textContent=m; $('snv').textContent=n; $('skv').textContent=k;
+  svg.innerHTML='';
+  const cx=Math.ceil(m/k), cn=Math.ceil(n/k), gap=0.7, rowW=cx+gap+cn;
+  const u=Math.min(26, 220/rowW, 196/k), x0=(260-rowW*u)/2+6, y0=36, pad=u*0.08;
+  const ok=m%k===0 && n%k===0;
+  for(let r=0;r<k;r++){
+    const hx=Math.floor(m/k)+(r<m%k?1:0), hn=Math.floor(n/k)+(r<n%k?1:0);
+    for(let j=0;j<cx;j++){
+      const x=x0+j*u, y=y0+r*u;
+      if(j<hx){ el('rect',{x:x+pad,y:y+pad,width:u-2*pad,height:u-2*pad,rx:3,class:'tx'}); if(u>=13) el('text',{x:x+u/2,y:y+u/2,class:'tl'},'x'); }
+      else el('rect',{x:x+pad,y:y+pad,width:u-2*pad,height:u-2*pad,rx:3,class:'miss'});
+    }
+    for(let j=0;j<cn;j++){
+      const x=x0+(cx+gap+j)*u, y=y0+r*u;
+      if(j<hn){ el('rect',{x:x+pad,y:y+pad,width:u-2*pad,height:u-2*pad,rx:3,class:'t1'}); if(u>=13) el('text',{x:x+u/2,y:y+u/2,class:'tl'},'1'); }
+      else el('rect',{x:x+pad,y:y+pad,width:u-2*pad,height:u-2*pad,rx:3,class:'miss'});
+    }
+  }
+  el('text',{x:x0-12,y:y0+k*u/2,class:'side'},k);
+  if(ok){
+    el('rect',{x:x0-2,y:y0-2,width:rowW*u+4,height:k*u+4,rx:5,class:'frame'});
+    el('text',{x:x0+rowW*u/2,y:y0-14,class:'good'},'שורה אחת: '+lin(m/k,n/k).replace(/<\/?i>/g,''));
+  } else el('text',{x:130,y:y0-14,class:'bad'},'השורות לא יוצאות שוות');
+  const g=gcd(m,n), expr=poly(0,m,n);
+  let t=`<div><strong>הביטוי:</strong> ${expr}. הגורמים המשותפים של ${m} ו-${n}: ${divisors(g).join(', ')}.</div>`;
+  if(!ok){
+    const which=[m%k?`${m} לא מתחלק ב-${k}`:'',n%k?`${n} לא מתחלק ב-${k}`:''].filter(Boolean).join(' ו-');
+    t+=`<div>${which}, ולכן בשורות לא יוצא אותו מספר אריחים (המשבצות האדומות חסרות). ${E(String(k))} הוא לא גורם משותף.</div>`;
+  } else if(k===1){
+    t+=`<div>גורם 1 תמיד מתאים, אבל הוא לא עוזר: ${E(`1(${lin(m,n)})`)}.${g>1?` נסו גורם גדול יותר.`:` כאן אין גורם משותף אחר, אז הביטוי לא מתפרק בהוצאת גורם משותף.`}</div>`;
+  } else {
+    t+=`<div>כל שורה היא ${E(lin(m/k,n/k))}, ויש ${k} שורות: ${expr} ${E('=')} ${E(`${k}(${lin(m/k,n/k)})`)}.</div>`;
+    t+=k<g?`<div>נכון, אבל אפשר להוציא עוד: בסוגריים, ${m/k} ו-${n/k} עוד מתחלקים ב-${g/k}. הגורם המשותף הגדול ביותר הוא ${g}.</div>`
+          :`<div><strong>זה הגורם המשותף הגדול ביותר.</strong> בסוגריים כבר אין מספר שמחלק את שני האיברים.</div>`;
+  }
+  $('labTxt').innerHTML=t;
+}
+['sm','sn','sk'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{ const [m,n,k]=b.dataset.p.split(','); $('sm').value=m; $('sn').value=n; $('sk').value=k; lab(); });
+lab();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{q:E('12<i>x</i> + 18'),steps:[
+    'מחפשים את המספר הגדול ביותר שמחלק גם את 12 וגם את 18. המחלקים של 12: 1, 2, 3, 4, 6, 12. מתוכם גם 18 מתחלק ב-1, 2, 3, 6.',
+    'הגדול ביותר הוא 6. אותו מוציאים מחוץ לסוגריים.',
+    `מחלקים כל איבר ב-6: ${E('12<i>x</i> ÷ 6 = 2<i>x</i>')} ו-${E('18 ÷ 6 = 3')}.`,
+    `התשובה: ${E('12<i>x</i> + 18 = 6(2<i>x</i> + 3)')}.`,
+    `בדיקה בפתיחת סוגריים: ${E('6 · 2<i>x</i> + 6 · 3 = 12<i>x</i> + 18')} ✓`]},
+  B:{q:E('<i>x</i>² − 25'),steps:[
+    'יש כאן שני איברים ומינוס ביניהם. האם שניהם ריבועים?',
+    `כן: ${E('<i>x</i>² = <i>x</i> · <i>x</i>')} ו-${E('25 = 5 · 5')}. זה הפרש ריבועים ${E('<i>a</i>² − <i>b</i>²')} עם ${E('<i>a</i> = <i>x</i>')} ו-${E('<i>b</i> = 5')}.`,
+    `לפי הנוסחה: ${E('<i>a</i>² − <i>b</i>² = (<i>a</i> + <i>b</i>)(<i>a</i> − <i>b</i>)')}.`,
+    `התשובה: ${E('<i>x</i>² − 25 = (<i>x</i> + 5)(<i>x</i> − 5)')}.`,
+    `בדיקה: ${E('<i>x</i>² − 5<i>x</i> + 5<i>x</i> − 25 = <i>x</i>² − 25')} ✓`]},
+  C:{q:E('<i>x</i>² + 10<i>x</i> + 25'),steps:[
+    'שלושה איברים. האם הראשון והאחרון ריבועים?',
+    `כן: ${E('<i>x</i>²')} הוא ${E('<i>x</i>')} בריבוע, ו-25 הוא 5 בריבוע. אולי זה ${E('(<i>a</i> + <i>b</i>)²')} עם ${E('<i>a</i> = <i>x</i>')} ו-${E('<i>b</i> = 5')}.`,
+    `בודקים את האמצע: ${E('2<i>ab</i> = 2 · <i>x</i> · 5 = 10<i>x</i>')}. בדיוק מה שיש!`,
+    `התשובה: ${E('<i>x</i>² + 10<i>x</i> + 25 = (<i>x</i> + 5)²')}.`]}
+};
+let exK='A', exI=0;
+function ex(){
+  const e=EX[exK]; $('exQ').innerHTML=e.q;
+  $('exText').innerHTML=e.steps.slice(0,exI+1).map((s,i)=>`<div>${i+1}. ${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+  ['A','B','C'].forEach(k=>{ const b=$('ex'+k); b.classList.toggle('primary',k===exK); b.setAttribute('aria-selected',k===exK); });
+}
+['A','B','C'].forEach(k=>$('ex'+k).onclick=()=>{exK=k; exI=0; ex();});
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ----------
+   each type: q (shown expression), tpl (inputs), target [A,B,C], expand(vals) → [A,B,C],
+   full(vals) → fully factored?, diag(vals) → extra tips, hints, sol */
+const box=k=>`<input data-k="${k}" inputmode="numeric" autocomplete="off" aria-label="מספר חסר">`;
+const I='<i>x</i>';
+function makeNum(){
+  let a,b; do{ a=rnd(1,6); b=rnd(1,9)*(Math.random()<.3?-1:1); }while(gcd(a,b)!==1);
+  const k=rnd(2,9), A=0,B=k*a,C=k*b, g=gcd(B,C);
+  return {q:poly(A,B,C), tpl:`${box('k')}(${box('u')}${I} + ${box('v')})`, target:[A,B,C],
+    expand:v=>[0,v.k*v.u,v.k*v.v], full:v=>gcd(v.u,v.v)===1,
+    diag:v=>v.k*v.u===B && v.k*v.v===-C?['שימו לב לסימן של המספר בתוך הסוגריים.']:(B%v.k||C%v.k)&&v.k?[`${v.k} לא מחלק גם את ${B} וגם את ${Math.abs(C)}.`]:[],
+    hints:[`מצאו את המספר הגדול ביותר שמחלק גם את ${B} וגם את ${Math.abs(C)}.`,`הגורם המשותף הוא ${g}. חלקו כל איבר ב-${g}: ${E(`${B}<i>x</i> ÷ ${g}`)} ו-${E(`${C<0?'−':''}${Math.abs(C)} ÷ ${g}`)}.`],
+    sol:`הגורם המשותף הגדול ביותר של ${B} ו-${Math.abs(C)} הוא ${g}. ${poly(A,B,C)} ${E('=')} ${E(`${g}(${lin(B/g,C/g)})`)}.`};
+}
+function makeX(){
+  let u,v; do{ u=rnd(1,3); v=rnd(1,7)*(Math.random()<.35?-1:1); }while(gcd(u,v)!==1);
+  const g=rnd(1,5), A=g*u,B=g*v,C=0;
+  return {q:poly(A,B,C), tpl:`${box('g')}${I}(${box('u')}${I} + ${box('v')})`, target:[A,B,C],
+    expand:w=>[w.g*w.u,w.g*w.v,0], full:w=>gcd(w.u,w.v)===1,
+    diag:w=>w.g*w.u===A && w.g*w.v===-B?['שימו לב לסימן של המספר בתוך הסוגריים.']:[],
+    hints:[`בשני האיברים יש ${E('<i>x</i>')}, אז אותו מוציאים. ומה עוד משותף ל-${A} ול-${Math.abs(B)}?`,
+      `מוציאים ${E((g===1?'':g)+'<i>x</i>')}. חלקו: ${E(`${polyRaw(A,0,0)} ÷ ${g===1?'':g}<i>x</i>`)} ו-${E(`${polyRaw(0,B,0)} ÷ ${g===1?'':g}<i>x</i>`)}.`],
+    sol:`בשני האיברים יש ${E('<i>x</i>')}${g>1?`, ושני המקדמים מתחלקים ב-${g}`:''}. מוציאים ${E((g===1?'':g)+'<i>x</i>')}: ${poly(A,B,C)} ${E('=')} ${E(`${g===1?'':g}<i>x</i>(${lin(u,v)})`)}.`};
+}
+function makeDos(){
+  let p,q; do{ p=pick([1,1,1,2,3]); q=rnd(1,9); }while(gcd(p,q)!==1);
+  const A=p*p,B=0,C=-q*q, a=(p===1?'':p)+'<i>x</i>';
+  return {q:poly(A,B,C), tpl:`(${box('P')}${I} + ${box('Q')})(${box('P2')}${I} − ${box('Q2')})`, target:[A,B,C],
+    expand:w=>(w.P===w.P2&&w.Q===w.Q2)?[w.P*w.P,0,-w.Q*w.Q]:[w.P*w.P2,w.Q*w.P2-w.P*w.Q2,-w.Q*w.Q2], full:()=>true,
+    diag:w=>{ const t=[]; if(Math.abs(w.Q)===q*q||Math.abs(w.Q2)===q*q) t.push(`צריך את המספר שבריבוע נותן ${q*q}, כלומר ${q}.`);
+      if(p>1&&(w.P===A||w.P2===A)) t.push(`צריך את מה שבריבוע נותן ${E(polyRaw(A,0,0))}, כלומר ${E(a)}.`);
+      if(w.P!==w.P2||w.Q!==w.Q2) t.push('בהפרש ריבועים שני הסוגריים זהים, חוץ מהסימן באמצע.'); return t; },
+    hints:[`זה הפרש ריבועים ${E('<i>a</i>² − <i>b</i>²')}. מה בריבוע נותן ${E(polyRaw(A,0,0))}? ומה בריבוע נותן ${q*q}?`,
+      `${E(`<i>a</i> = ${a}`)} ו-${E(`<i>b</i> = ${q}`)}. עכשיו ${E('(<i>a</i> + <i>b</i>)(<i>a</i> − <i>b</i>)')}.`],
+    sol:`${E(`${polyRaw(A,0,0)} = (${a})²`)} ו-${E(`${q*q} = ${q}²`)}. לכן ${poly(A,B,C)} ${E('=')} ${E(`(${a} + ${q})(${a} − ${q})`)}.`};
+}
+function makeSq(){
+  const q=rnd(1,9)*(Math.random()<.5?-1:1), A=1,B=2*q,C=q*q, s=q<0?'−':'+';
+  return {q:poly(A,B,C), tpl:`(${I} + ${box('Q')})²`, note:`אם יש מינוס, כתבו אותו בתיבה: ${E('(<i>x</i> + −3)²')} פירושו ${E('(<i>x</i> − 3)²')}.`, target:[A,B,C],
+    expand:w=>[1,2*w.Q,w.Q*w.Q], full:()=>true,
+    diag:w=>{ const t=[]; if(Math.abs(w.Q)===C) t.push(`צריך את המספר שבריבוע נותן ${C}, כלומר ${Math.abs(q)}.`);
+      else if(w.Q===-q) t.push('הסימן בסוגריים הוא הסימן של האיבר האמצעי.');
+      else if(Math.abs(w.Q)===Math.abs(B)) t.push(`האיבר האמצעי הוא ${E('2<i>ab</i>')}. המספר בסוגריים הוא רק ${E('<i>b</i>')}, חצי ממנו.`); return t; },
+    hints:[`זה ${q<0?'ריבוע של הפרש':'ריבוע של סכום'}: ${E(`<i>a</i>² ${s} 2<i>ab</i> + <i>b</i>²`)} עם ${E('<i>a</i> = <i>x</i>')}. מה בריבוע נותן ${C}?`,
+      `${E(`<i>b</i> = ${Math.abs(q)}`)}. בדקו את האמצע: ${E(`2 · <i>x</i> · ${Math.abs(q)} = ${Math.abs(B)}<i>x</i>`)}, והסימן ${s}.`],
+    sol:`${C} הוא ${Math.abs(q)} בריבוע, והאמצע ${E(`${Math.abs(B)}<i>x</i> = 2 · <i>x</i> · ${Math.abs(q)}`)} עם ${s}. לכן ${poly(A,B,C)} ${E('=')} ${E(`(<i>x</i> ${s} ${Math.abs(q)})²`)}.`};
+}
+let pr=null, tries=0, hintLv=0, streak=0, solved=0;
+const num=s=>{ s=String(s).replace(/−/g,'-').replace(/\s/g,''); return /^[-+]?\d+$/.test(s)?parseInt(s,10):null; };
+function newPr(){
+  pr=pick([makeNum,makeNum,makeX,makeX,makeDos,makeSq])();
+  tries=0; hintLv=0;
+  $('prQ').innerHTML=pr.q; $('prIn').innerHTML=pr.q+` ${E('=')} `+pr.tpl;
+  $('prFb').innerHTML=pr.note?`<div class="fb hint">${pr.note}</div>`:''; $('prShow').disabled=true;
+  $('prIn').querySelectorAll('input').forEach(inp=>inp.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+}
+const same=(x,y)=>x.every((v,i)=>v===y[i]);
+$('prCheck').onclick=()=>{
+  const v={}; let empty=false;
+  $('prIn').querySelectorAll('input').forEach(inp=>{ const n=num(inp.value); if(n===null) empty=true; v[inp.dataset.k]=n; });
+  if(empty){ $('prFb').innerHTML='<div class="fb err">מלאו את כל התיבות במספרים שלמים.</div>'; return; }
+  const got=pr.expand(v), back=`<div>פתחנו את הסוגריים שלכם, ויצא ${poly(...got)}.</div>`;
+  if(same(got,pr.target)){
+    if(pr.full(v)){
+      streak++; solved++;
+      $('prFb').innerHTML=`<div class="fb ok">נכון! ${back.replace('<div>','').replace('</div>','')} בדיוק הביטוי שהתחלנו ממנו. נסו תרגיל חדש.</div>`;
+      $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`;
+    } else {
+      $('prFb').innerHTML=`<div class="fb hint">${back}<div>זה שווה, אבל עוד לא סיימתם: בתוך הסוגריים עדיין יש גורם משותף. הוציאו גם אותו.</div></div>`;
+    }
+    return;
+  }
+  streak=0; tries++;
+  const tips=pr.diag(v);
+  $('prFb').innerHTML=`<div class="fb err">${back}<div>זה לא ${pr.q}, אז משהו לא מסתדר.</div>${tips.length?`<ul>${tips.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}</div>`;
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hintLv=Math.min(hintLv+1,pr.hints.length); $('prFb').innerHTML=`<div class="fb hint">${pr.hints.slice(0,hintLv).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${pr.sol}<div>אחר כך נסו תרגיל חדש.</div></div>`; };
+$('prNew').onclick=newPr;
+newPr();
+})();
+</script>
+</body>
+</html>

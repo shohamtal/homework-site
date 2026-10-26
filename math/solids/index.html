@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>נפח ושטח פנים של גופים · כיתה ח · מירי</title>
+<meta name="description" content="איך מחשבים נפח ושטח פנים של תיבה, קובייה, מנסרה וגליל. פריסות, נוסחאות, דוגמאות פתורות ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/solids/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="נפח ושטח פנים של גופים · כיתה ח · מירי">
+<meta property="og:description" content="איך מחשבים נפח ושטח פנים של תיבה, קובייה, מנסרה וגליל. פריסות, נוסחאות, דוגמאות פתורות ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/solids/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/math/grade-8/"},{"@type":"ListItem","position":4,"name":"נפח ושטח פנים","item":"https://shohamtal.github.io/homework-site/math/grade-8/#solids"},{"@type":"ListItem","position":5,"name":"נפח ושטח פנים של גופים","item":"https://shohamtal.github.io/homework-site/math/solids/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין נפח לשטח פנים?","acceptedAnswer":{"@type":"Answer","text":"נפח אומר כמה נכנס בתוך הגוף, כמו כמה מים נכנסים בקופסה. שטח פנים אומר כמה נייר צריך כדי לעטוף את הגוף מבחוץ. נסו במעבדה למעלה ותראו ששני המספרים משתנים בצורה שונה."}},{"@type":"Question","name":"באילו יחידות מודדים נפח?","acceptedAnswer":{"@type":"Answer","text":"ביחידות מעוקבות: סמ\"ק (סנטימטר מעוקב) או מ\"ק (מטר מעוקב). שטח פנים מודדים ביחידות רבועות: סמ\"ר או מ\"ר. תרגלו למטה."}},{"@type":"Question","name":"איך מחשבים נפח של גליל?","acceptedAnswer":{"@type":"Answer","text":"מחשבים את שטח העיגול שבבסיס, πr², וכופלים בגובה: V = πr²h. אם נתון קוטר, מחלקים אותו ב-2 כדי לקבל את הרדיוס. נסו את הגליל במעבדה למעלה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"נפח ושטח פנים של גופים","description":"איך מחשבים נפח ושטח פנים של תיבה, קובייה, מנסרה וגליל. פריסות, נוסחאות, דוגמאות פתורות ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/solids/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"נפח ושטח פנים","teaches":"נפח ושטח פנים של גופים","keywords":"תיבה, מנסרה, גליל, פריסה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.s3{width:100%; max-width:300px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.s3 .face{fill:var(--hl); fill-opacity:.25; stroke:var(--ink); stroke-width:1.8; stroke-linejoin:round}
+.s3 .face2{fill:var(--hl); fill-opacity:.45; stroke:var(--ink); stroke-width:1.8; stroke-linejoin:round}
+.s3 .face3{fill:var(--blue); fill-opacity:.12; stroke:var(--ink); stroke-width:1.8; stroke-linejoin:round}
+.s3 .hid{stroke:var(--muted); stroke-width:1.2; stroke-dasharray:4 3; fill:none}
+.s3 .edge{stroke:var(--ink); stroke-width:1.8; fill:none}
+.s3 .rad{stroke:var(--line); stroke-width:1.8}
+.s3 .dim{fill:var(--line); font:700 11px var(--f-body)}
+.s3 .area{fill:var(--ink); font:600 10px var(--f-body)}
+.views{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:8px}
+.views figure{margin:0; display:flex; flex-direction:column; gap:4px; align-items:center}
+.views figcaption{color:var(--muted); font-weight:700; font-size:.9rem}
+.calc{display:flex; flex-direction:column; gap:4px}
+.mode button[aria-pressed="true"]{background:var(--ink); color:var(--card)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="solids">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-8/#solids">נפח ושטח פנים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">נפח ושטח פנים של גופים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · נפח ושטח פנים</div>
+  <h1>נפח ושטח פנים של גופים</h1>
+  <p class="lead">תיבה, קובייה, מנסרה וגליל הם גופים במרחב. <strong>נפח</strong> אומר כמה נכנס בתוך הגוף. <strong>שטח פנים</strong> אומר כמה נייר צריך כדי לעטוף אותו. כאן תלמדו לחשב את שניהם, בעזרת הפריסה של הגוף. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שני מספרים לכל גוף</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>נפח: כמה נכנס בפנים</h3>
+      <p>סופרים כמה קוביות של 1 ס"מ על 1 ס"מ על 1 ס"מ נכנסות בגוף. היחידה היא <strong>סמ"ק</strong> (סנטימטר מעוקב).</p>
+      <p>בכל מנסרה ובכל גליל: <span class="eq">נפח = שטח הבסיס × גובה</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שטח פנים: כמה נייר לעטיפה</h3>
+      <p>פורסים את הגוף על השולחן, כמו קופסה שפותחים. מחברים את השטחים של כל החלקים. היחידה היא <strong>סמ"ר</strong> (סנטימטר רבוע).</p>
+    </div>
+    <div class="mini">
+      <h3>תיבה וקובייה</h3>
+      <p>לתיבה יש 6 פאות מלבניות, ב-3 זוגות שווים: <span class="eq"><i>V</i> = <i>a</i> · <i>b</i> · <i>h</i></span>, <span class="eq"><i>S</i> = 2(<i>ab</i> + <i>ah</i> + <i>bh</i>)</span>.</p>
+      <p><strong>קובייה</strong> היא תיבה שכל הצלעות שלה שוות: <span class="eq"><i>V</i> = <i>a</i>³</span>, <span class="eq"><i>S</i> = 6<i>a</i>²</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מנסרה משולשת וגליל</h3>
+      <p>מנסרה: שני משולשים שווים ושלושה מלבנים. גליל: שני עיגולים ומלבן אחד, שהרוחב שלו הוא ההיקף של העיגול, <span class="eq">2π<i>r</i></span>.</p>
+      <p>כאן נשתמש ב-<span class="eq">π ≈ 3.14</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הגוף והפריסה שלו</h2></div>
+  <p class="text">בחרו גוף והזיזו את המחוונים. משמאל רואים את הגוף, ולידו את הפריסה שלו. המספרים בתוך הפריסה הם השטחים של החלקים. כל המידות בס"מ.</p>
+  <div class="row mode" role="group" aria-label="בחירת גוף">
+    <button id="mBox" aria-pressed="true">תיבה</button>
+    <button id="mPrism" aria-pressed="false">מנסרה משולשת</button>
+    <button id="mCyl" aria-pressed="false">גליל</button>
+  </div>
+  <div class="views">
+    <figure><svg class="s3" id="labSolid" viewBox="0 0 240 200" role="img" aria-label="הגוף"></svg><figcaption>הגוף</figcaption></figure>
+    <figure><svg class="s3" id="labNet" viewBox="0 0 240 200" role="img" aria-label="הפריסה של הגוף"></svg><figcaption>הפריסה</figcaption></figure>
+  </div>
+  <div class="ctrl">
+    <label class="slider" for="s1"><span id="s1l"></span><span class="eq" id="s1v"></span></label>
+    <input type="range" id="s1" min="1" max="8" step="1" value="5">
+    <label class="slider" for="s2"><span id="s2l"></span><span class="eq" id="s2v"></span></label>
+    <input type="range" class="blue" id="s2" min="1" max="6" step="1" value="3">
+    <div id="s3wrap">
+      <label class="slider" for="s3"><span id="s3l"></span><span class="eq" id="s3v"></span></label>
+      <input type="range" class="hl" id="s3" min="1" max="8" step="1" value="4">
+    </div>
+    <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+    <div>
+      <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+      <div class="tries">
+        <button data-p="box,3,3,3">קובייה 3 × 3 × 3</button>
+        <button data-p="box,5,3,4">תיבה 5 × 3 × 4</button>
+        <button data-p="box,1,1,8">מגדל צר</button>
+        <button data-p="prism,3,4,6">מנסרה עם ניצבים 3 ו-4</button>
+        <button data-p="cyl,3,5,0">גליל עם רדיוס 3</button>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: בתיבה "מגדל צר" הנפח קטן, אבל יש הרבה שטח פנים יחסית לנפח. נפח ושטח פנים הם שני דברים שונים.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>ארבע מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>נפח או שטח פנים?</h3>
+      <p>נפח סופר קוביות, ולכן היחידה היא <strong>סמ"ק</strong>. שטח פנים סופר ריבועים, ולכן היחידה היא <strong>סמ"ר</strong>. קראו את השאלה: "כמה נכנס" זה נפח, "כמה נייר" או "כמה צבע" זה שטח פנים.</p>
+    </div>
+    <div class="mini">
+      <h3>שכחתם פאה?</h3>
+      <p>לתיבה יש <strong>6</strong> פאות, ולא 3. לכל פאה יש תאומה מולה. בגליל יש <strong>שני</strong> עיגולים: למעלה ולמטה.</p>
+    </div>
+    <div class="mini">
+      <h3>קוטר או רדיוס?</h3>
+      <p>הנוסחאות של העיגול משתמשות ברדיוס <span class="eq"><i>r</i></span>. אם נתון קוטר, מחלקים אותו ב-2 קודם: קוטר 6 הוא רדיוס 3.</p>
+    </div>
+    <div class="mini">
+      <h3>איזה גובה?</h3>
+      <p>הגובה של המנסרה הוא המרחק בין שני המשולשים. זה לא הגובה של המשולש עצמו. בגובה של המשולש משתמשים רק כדי לחשב את שטח הבסיס.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (תיבה)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (גליל)</button>
+  </div>
+  <div class="lab">
+    <svg class="s3" id="exG" viewBox="0 0 240 200" role="img" aria-label="הגוף של הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">בכל שאלה כתבו רק את המספר, בלי יחידות. בשאלות של גליל אפשר לכתוב תשובה עם π, למשל <span class="eq">45π</span>, או מספר עם <span class="eq">π ≈ 3.14</span>, למשל <span class="eq">141.3</span>.</p>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="lab">
+    <svg class="s3" id="prG" viewBox="0 0 240 200" role="img" aria-label="הגוף של התרגיל"></svg>
+    <div class="ctrl">
+      <div class="inputs">
+        <label for="prA">התשובה<input id="prA" inputmode="text" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין נפח לשטח פנים?</h3>
+    <p>נפח אומר כמה נכנס בתוך הגוף, כמו כמה מים נכנסים בקופסה. שטח פנים אומר כמה נייר צריך כדי לעטוף את הגוף מבחוץ. <a href="#lab">נסו במעבדה למעלה</a> ותראו ששני המספרים משתנים בצורה שונה.</p>
+    <h3>באילו יחידות מודדים נפח?</h3>
+    <p>ביחידות מעוקבות: סמ"ק (סנטימטר מעוקב) או מ"ק (מטר מעוקב). שטח פנים מודדים ביחידות רבועות: סמ"ר או מ"ר. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>איך מחשבים נפח של גליל?</h3>
+    <p>מחשבים את שטח העיגול שבבסיס, <span class="eq">π<i>r</i>²</span>, וכופלים בגובה: <span class="eq"><i>V</i> = π<i>r</i>²<i>h</i></span>. אם נתון קוטר, מחלקים אותו ב-2 כדי לקבל את הרדיוס. <a href="#lab">נסו את הגליל במעבדה למעלה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/pythagoras/">משפט פיתגורס</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/quadrilaterals/"><small>→ הנושא הקודם</small>מרובעים: מקבילית, מלבן, מעוין, ריבוע וטרפז</a><a class="next" href="../../math/statistics/"><small>הנושא הבא ←</small>ממוצע, חציון ושכיח</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg', PI=3.14;
+const r2=x=>Math.round(x*100)/100;
+const fmt=x=>String(r2(x));
+const pickOne=a=>a[Math.floor(Math.random()*a.length)];
+const rnd=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const CM3='סמ"ק', CM2='סמ"ר';
+
+/* ---------- math for each solid ---------- */
+function calc(shape,d){
+  if(shape==='box'){ const {a,b,h}=d; return {V:a*b*h, S:2*(a*b+a*h+b*h)}; }
+  if(shape==='prism'){ const {p,q,L}=d, c=Math.hypot(p,q); return {c, base:p*q/2, V:p*q/2*L, S:p*q+(p+q+c)*L}; }
+  const {r,h}=d; return {Vc:r*r*h, Sc:2*r*r+2*r*h};   /* coefficients of π */
+}
+
+/* ---------- drawing ---------- */
+function el(tag,attrs,parent,text){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(text!=null) e.textContent=text; if(parent) parent.appendChild(e); return e; }
+function fitter(pts,W=240,H=200,pad=26,maxS=30){
+  const xs=pts.map(p=>p[0]), ys=pts.map(p=>p[1]);
+  const minX=Math.min(...xs), maxX=Math.max(...xs), minY=Math.min(...ys), maxY=Math.max(...ys);
+  const s=Math.min((W-2*pad)/((maxX-minX)||1),(H-2*pad)/((maxY-minY)||1),maxS);
+  const ox=(W-(maxX-minX)*s)/2-minX*s, oy=(H+(maxY-minY)*s)/2+minY*s;
+  const f=P=>[ox+P[0]*s, oy-P[1]*s]; f.s=s; return f;
+}
+const pts=a=>a.map(p=>p.join(',')).join(' ');
+const K=0.36;   /* depth drawn at 45°, shortened */
+function drawSolid(svg,shape,d){
+  svg.innerHTML='';
+  if(shape==='box'){
+    const {a,b,h}=d, dx=b*K, dy=b*K;
+    const F=[[0,0],[a,0],[a,h],[0,h]], B=F.map(p=>[p[0]+dx,p[1]+dy]);
+    const S=fitter(F.concat(B)), f=F.map(S), g=B.map(S);
+    [[g[0],g[1]],[g[0],g[3]],[g[0],f[0]]].forEach(([p,q])=>el('line',{class:'hid',x1:p[0],y1:p[1],x2:q[0],y2:q[1]},svg));
+    el('polygon',{class:'face',points:pts([f[0],f[1],f[2],f[3]])},svg);
+    el('polygon',{class:'face2',points:pts([f[3],f[2],g[2],g[3]])},svg);
+    el('polygon',{class:'face3',points:pts([f[1],g[1],g[2],f[2]])},svg);
+    el('text',{class:'dim','text-anchor':'middle',x:(f[0][0]+f[1][0])/2,y:f[0][1]+14},svg,'a = '+a);
+    el('text',{class:'dim','text-anchor':'end',x:f[0][0]-5,y:(f[0][1]+f[3][1])/2+4},svg,'h = '+h);
+    el('text',{class:'dim','text-anchor':'start',x:(f[1][0]+g[1][0])/2+6,y:(f[1][1]+g[1][1])/2+10},svg,'b = '+b);
+  } else if(shape==='prism'){
+    const {p,q,L}=d, dx=L*K, dy=L*K;
+    const T=[[0,0],[p,0],[0,q]], B=T.map(t=>[t[0]+dx,t[1]+dy]);
+    const S=fitter(T.concat(B)), t=T.map(S), g=B.map(S);
+    [[g[0],g[1]],[g[0],g[2]],[g[0],t[0]]].forEach(([u,v])=>el('line',{class:'hid',x1:u[0],y1:u[1],x2:v[0],y2:v[1]},svg));
+    el('polygon',{class:'face3',points:pts([t[1],g[1],g[2],t[2]])},svg);
+    el('polygon',{class:'face2',points:pts(t)},svg);
+    const z=8; el('polyline',{class:'edge',points:pts([[t[0][0]+z,t[0][1]],[t[0][0]+z,t[0][1]-z],[t[0][0],t[0][1]-z]])},svg);
+    el('text',{class:'dim','text-anchor':'middle',x:(t[0][0]+t[1][0])/2,y:t[0][1]+14},svg,'p = '+p);
+    el('text',{class:'dim','text-anchor':'end',x:t[0][0]-5,y:(t[0][1]+t[2][1])/2+4},svg,'q = '+q);
+    el('text',{class:'dim','text-anchor':'start',x:(t[1][0]+g[1][0])/2+6,y:(t[1][1]+g[1][1])/2+10},svg,'L = '+L);
+  } else {
+    const {r,h}=d, ry=0.32;
+    const S=fitter([[-r,-r*ry],[r,-r*ry],[-r,h+r*ry],[r,h+r*ry]]), s=S.s;
+    const c0=S([0,0]), c1=S([0,h]), rx=r*s, ryy=r*ry*s;
+    el('rect',{x:c1[0]-rx,y:c1[1],width:2*rx,height:c0[1]-c1[1],style:'fill:var(--blue); fill-opacity:.12; stroke:none'},svg);
+    el('path',{class:'hid',d:`M${c0[0]-rx},${c0[1]} A${rx},${ryy} 0 0 1 ${c0[0]+rx},${c0[1]}`},svg);
+    el('path',{class:'edge',d:`M${c0[0]-rx},${c0[1]} A${rx},${ryy} 0 0 0 ${c0[0]+rx},${c0[1]}`},svg);
+    el('line',{class:'edge',x1:c0[0]-rx,y1:c0[1],x2:c1[0]-rx,y2:c1[1]},svg);
+    el('line',{class:'edge',x1:c0[0]+rx,y1:c0[1],x2:c1[0]+rx,y2:c1[1]},svg);
+    el('ellipse',{class:'face2',cx:c1[0],cy:c1[1],rx,ry:ryy},svg);
+    el('line',{class:'rad',x1:c1[0],y1:c1[1],x2:c1[0]+rx,y2:c1[1]},svg);
+    el('circle',{cx:c1[0],cy:c1[1],r:2.5,style:'fill:var(--line)'},svg);
+    el('text',{class:'dim','text-anchor':'middle',x:c1[0]+rx/2,y:c1[1]-5},svg,(d.dia?'d = '+2*r:'r = '+r));
+    el('text',{class:'dim','text-anchor':'start',x:c0[0]+rx+5,y:(c0[1]+c1[1])/2+4},svg,'h = '+h);
+  }
+}
+function drawNet(svg,shape,d){
+  svg.innerHTML='';
+  const rects=[], label=(R,txt)=>R.push(txt);
+  if(shape==='box'){
+    const {a,b,h}=d;
+    const faces=[[0,b,b,h],[b,b,a,h],[b+a,b,b,h],[2*b+a,b,a,h],[b,b+h,a,b],[b,0,a,b]];   /* x,y,w,hgt */
+    const S=fitter([[0,0],[2*a+2*b,2*b+h]],240,200,10);
+    faces.forEach(([x,y,w,hh],i)=>{
+      const p=S([x,y+hh]), q=S([x+w,y]);
+      el('rect',{class:i===1||i===3?'face':i>=4?'face2':'face3',x:p[0],y:p[1],width:q[0]-p[0],height:q[1]-p[1]},svg);
+      if(Math.min(q[0]-p[0],q[1]-p[1])>=13) el('text',{class:'area','text-anchor':'middle',x:(p[0]+q[0])/2,y:(p[1]+q[1])/2+4},svg,fmt(w*hh));
+    });
+  } else if(shape==='prism'){
+    const {p,q,L}=d, c=Math.hypot(p,q);
+    const row=[[0,q],[q,p],[q+p,c]];   /* x, width: rectangles of height L */
+    const S=fitter([[0,-q],[q+p+c,L+q]],240,200,10);
+    row.forEach(([x,w],i)=>{ const A=S([x,L]), B=S([x+w,0]);
+      el('rect',{class:i===1?'face':'face3',x:A[0],y:A[1],width:B[0]-A[0],height:B[1]-A[1]},svg);
+      if(Math.min(B[0]-A[0],B[1]-A[1])>=13) el('text',{class:'area','text-anchor':'middle',x:(A[0]+B[0])/2,y:(A[1]+B[1])/2+4},svg,fmt(w*L)); });
+    const x0=q;
+    [[ [x0,L],[x0+p,L],[x0,L+q] ],[ [x0,0],[x0+p,0],[x0,-q] ]].forEach(tri=>{
+      const P=tri.map(S); el('polygon',{class:'face2',points:pts(P)},svg);
+      const cx=(P[0][0]+P[1][0]+P[2][0])/3, cy=(P[0][1]+P[1][1]+P[2][1])/3;
+      if(S.s*Math.min(p,q)>=26) el('text',{class:'area','text-anchor':'middle',x:cx,y:cy+4},svg,fmt(p*q/2));
+    });
+  } else {
+    const {r,h}=d, w=2*Math.PI*r;
+    const S=fitter([[0,-2*r],[w,h+2*r]],240,200,10);
+    const A=S([0,h]), B=S([w,0]);
+    el('rect',{class:'face3',x:A[0],y:A[1],width:B[0]-A[0],height:B[1]-A[1]},svg);
+    el('text',{class:'area','text-anchor':'middle',x:(A[0]+B[0])/2,y:(A[1]+B[1])/2+4},svg,`${fmt(2*r*h)}π`);
+    [[w/2,h+r],[w/2,-r]].forEach(cc=>{ const C=S(cc); el('circle',{class:'face2',cx:C[0],cy:C[1],r:r*S.s},svg);
+      if(r*S.s>=12) el('text',{class:'area','text-anchor':'middle',x:C[0],y:C[1]+4},svg,`${fmt(r*r)}π`); });
+  }
+}
+
+/* ---------- lab ---------- */
+const CFG={
+  box:{l:['אורך a','רוחב b','גובה h'], rng:[[1,8],[1,6],[1,8]], keys:['a','b','h']},
+  prism:{l:['ניצב p (בסיס המשולש)','ניצב q (גובה המשולש)','אורך המנסרה L'], rng:[[1,8],[1,8],[1,10]], keys:['p','q','L']},
+  cyl:{l:['רדיוס r','גובה h',''], rng:[[1,6],[1,10],[1,1]], keys:['r','h']}
+};
+let shape='box';
+function setShape(sh,vals){
+  shape=sh;
+  [['mBox','box'],['mPrism','prism'],['mCyl','cyl']].forEach(([id,k])=>$(id).setAttribute('aria-pressed',k===sh));
+  const c=CFG[sh];
+  [1,2,3].forEach(i=>{ const inp=$('s'+i), [lo,hi]=c.rng[i-1]; inp.min=lo; inp.max=hi; $('s'+i+'l').textContent=c.l[i-1];
+    if(vals&&vals[i-1]!=null) inp.value=vals[i-1]; if(+inp.value>hi) inp.value=hi; });
+  $('s3wrap').hidden=sh==='cyl';
+  renderLab();
+}
+function labDims(){ const c=CFG[shape], d={}; c.keys.forEach((k,i)=>d[k]=+$('s'+(i+1)).value); return d; }
+function renderLab(){
+  const d=labDims(), R=calc(shape,d);
+  CFG[shape].keys.forEach((k,i)=>$('s'+(i+1)+'v').textContent=d[k]);
+  drawSolid($('labSolid'),shape,d); drawNet($('labNet'),shape,d);
+  let t;
+  if(shape==='box'){
+    const {a,b,h}=d, cube=a===b&&b===h;
+    t=`<div><strong>נפח:</strong> <span class="eq">${a} × ${b} × ${h} = ${R.V}</span> ${CM3}</div>
+       <div><strong>שטח פנים:</strong> <span class="eq">2 × (${a}×${b} + ${a}×${h} + ${b}×${h})</span> <span class="eq">= 2 × (${a*b} + ${a*h} + ${b*h})</span> <span class="eq">= ${R.S}</span> ${CM2}</div>
+       ${cube?`<div>זו <strong>קובייה</strong>! כל הצלעות שוות, אז <span class="eq"><i>V</i> = ${a}³ = ${R.V}</span> ו-<span class="eq"><i>S</i> = 6 × ${a}² = ${R.S}</span>.</div>`:'<div>יש 6 פאות: 3 זוגות של מלבנים שווים. רואים אותם בפריסה.</div>'}`;
+  } else if(shape==='prism'){
+    const {p,q,L}=d;
+    t=`<div><strong>שטח הבסיס (המשולש):</strong> <span class="eq">${p} × ${q} ÷ 2 = ${fmt(R.base)}</span> ${CM2}</div>
+       <div><strong>נפח:</strong> שטח הבסיס × אורך = <span class="eq">${fmt(R.base)} × ${L} = ${fmt(R.V)}</span> ${CM3}</div>
+       <div><strong>היתר:</strong> לפי פיתגורס <span class="eq"><i>c</i> = √(${p}² + ${q}²) ${Number.isInteger(R.c)?'=':'≈'} ${fmt(R.c)}</span></div>
+       <div><strong>שטח פנים:</strong> 2 משולשים + 3 מלבנים = <span class="eq">2 × ${fmt(R.base)} + (${p} + ${q} + ${fmt(R.c)}) × ${L} ${Number.isInteger(R.S)?'=':'≈'} ${fmt(R.S)}</span> ${CM2}</div>`;
+  } else {
+    const {r,h}=d;
+    t=`<div><strong>שטח הבסיס:</strong> <span class="eq">π × ${r}² = ${r*r}π ≈ ${fmt(r*r*PI)}</span> ${CM2}</div>
+       <div><strong>נפח:</strong> <span class="eq">${r*r}π × ${h} = ${R.Vc}π ≈ ${fmt(R.Vc*PI)}</span> ${CM3}</div>
+       <div><strong>שטח פנים:</strong> 2 עיגולים + מלבן = <span class="eq">2 × ${r*r}π + 2π × ${r} × ${h} = ${2*r*r}π + ${2*r*h}π = ${R.Sc}π ≈ ${fmt(R.Sc*PI)}</span> ${CM2}</div>
+       <div>הרוחב של המלבן בפריסה הוא ההיקף של העיגול: <span class="eq">2π × ${r} = ${2*r}π</span>.</div>`;
+  }
+  $('labTxt').innerHTML=t;
+}
+$('mBox').onclick=()=>setShape('box'); $('mPrism').onclick=()=>setShape('prism'); $('mCyl').onclick=()=>setShape('cyl');
+['s1','s2','s3'].forEach(id=>$(id).addEventListener('input',renderLab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.onclick=()=>{
+  const [sh,...v]=btn.dataset.p.split(','); setShape(sh,v.map(Number));
+});
+setShape('box',[5,3,4]);
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{shape:'box', d:{a:5,b:3,h:4}, steps:[
+    'תיבה באורך 5 ס"מ, רוחב 3 ס"מ וגובה 4 ס"מ. מה הנפח שלה, ומה שטח הפנים שלה?',
+    '<strong>צעד 1, נפח:</strong> שטח הבסיס הוא <span class="eq">5 × 3 = 15</span>. כופלים בגובה: <span class="eq">15 × 4 = 60</span>. הנפח הוא <strong>60 סמ"ק</strong>.',
+    '<strong>צעד 2, שטח פנים:</strong> יש 3 סוגים של פאות: <span class="eq">5 × 3 = 15</span>, <span class="eq">5 × 4 = 20</span>, <span class="eq">3 × 4 = 12</span>.',
+    '<strong>צעד 3:</strong> מכל סוג יש שתי פאות. <span class="eq">15 + 20 + 12 = 47</span>, ואז <span class="eq">2 × 47 = 94</span>. שטח הפנים הוא <strong>94 סמ"ר</strong>.',
+    '<strong>בדיקה:</strong> שימו לב ליחידות. נפח בסמ"ק, שטח פנים בסמ"ר. נסו את התיבה הזאת במעבדה.'
+  ]},
+  B:{shape:'cyl', d:{r:3,h:5,dia:true}, steps:[
+    'לגליל יש <strong>קוטר</strong> 6 ס"מ וגובה 5 ס"מ. מה הנפח שלו, ומה שטח הפנים? השתמשו ב-<span class="eq">π ≈ 3.14</span>.',
+    '<strong>צעד 1:</strong> נתון קוטר, אז מחלקים ב-2: הרדיוס הוא <span class="eq"><i>r</i> = 3</span>.',
+    '<strong>צעד 2, נפח:</strong> שטח הבסיס הוא <span class="eq">π × 3² = 9π</span>. כופלים בגובה: <span class="eq">9π × 5 = 45π ≈ 141.3</span> סמ"ק.',
+    '<strong>צעד 3, שטח פנים:</strong> שני עיגולים: <span class="eq">2 × 9π = 18π</span>. המלבן: <span class="eq">2π × 3 × 5 = 30π</span>.',
+    '<strong>צעד 4:</strong> <span class="eq">18π + 30π = 48π ≈ 150.72</span> סמ"ר.'
+  ]}
+};
+let exK='A', exI=0;
+function ex(){
+  const e=EX[exK]; drawSolid($('exG'),e.shape,e.d);
+  $('exText').innerHTML=e.steps[exI]; $('exCount').textContent=`${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+function exTab(k){ exK=k; exI=0; [['exA','A'],['exB','B']].forEach(([id,kk])=>{ $(id).classList.toggle('primary',kk===k); $(id).setAttribute('aria-selected',kk===k); }); ex(); }
+$('exA').onclick=()=>exTab('A'); $('exB').onclick=()=>exTab('B');
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const TRIPLES=[[3,4],[6,8],[5,12]];
+const GEN={
+  boxV(){ const a=rnd(2,9),b=rnd(2,6),h=rnd(2,9), V=a*b*h, S=2*(a*b+a*h+b*h);
+    return {shape:'box',d:{a,b,h},q:`תיבה באורך ${a} ס"מ, רוחב ${b} ס"מ וגובה ${h} ס"מ. מה הנפח שלה? (בסמ"ק)`, ans:V,
+      wrong:[[S,'זה שטח הפנים, לא הנפח. נפח הוא כמה נכנס בפנים: אורך × רוחב × גובה.'],[a*b,'זה רק שטח הבסיס. כדי לקבל נפח, כופלים גם בגובה.'],[a*h,'זה שטח של פאה אחת. בנפח כופלים את שלוש המידות.'],[b*h,'זה שטח של פאה אחת. בנפח כופלים את שלוש המידות.'],[a+b+h,'חיברתם את המידות. בנפח כופלים אותן.']],
+      hints:['נפח של תיבה: אורך × רוחב × גובה.',`<span class="eq">${a} × ${b} = ${a*b}</span>. עכשיו כפלו ב-${h}.`],
+      sol:`<span class="eq">${a} × ${b} × ${h} = ${V}</span> סמ"ק.`}; },
+  boxS(){ const a=rnd(2,8),b=rnd(2,6),h=rnd(2,8), V=a*b*h, S=2*(a*b+a*h+b*h), half=a*b+a*h+b*h;
+    return {shape:'box',d:{a,b,h},q:`תיבה באורך ${a} ס"מ, רוחב ${b} ס"מ וגובה ${h} ס"מ. מה שטח הפנים שלה? (בסמ"ר)`, ans:S,
+      wrong:[[V,'זה הנפח. שטח פנים הוא כמה נייר צריך לעטיפה: מחברים את השטחים של כל הפאות.'],[half,'ספרתם רק 3 פאות. לתיבה יש 6 פאות, ולכל אחת יש תאומה מולה. כפלו ב-2.'],[S-a*b,'שכחתם פאה אחת. ספרו בפריסה: 6 פאות.'],[S-a*h,'שכחתם פאה אחת. ספרו בפריסה: 6 פאות.'],[S-b*h,'שכחתם פאה אחת. ספרו בפריסה: 6 פאות.'],[S-2*a*b,'שכחתם זוג פאות: את הבסיס ואת המכסה.']],
+      hints:['יש 3 סוגים של פאות. חשבו את השטח של כל סוג, חברו, וכפלו ב-2.',`<span class="eq">${a}×${b} = ${a*b}</span>, <span class="eq">${a}×${h} = ${a*h}</span>, <span class="eq">${b}×${h} = ${b*h}</span>. כמה זה ביחד, כפול 2?`],
+      sol:`<span class="eq">2 × (${a*b} + ${a*h} + ${b*h})</span> <span class="eq">= 2 × ${half} = ${S}</span> סמ"ר.`}; },
+  cube(){ const a=rnd(2,6), V=a**3, S=6*a*a, askV=Math.random()<.5;
+    return askV
+      ?{shape:'box',d:{a,b:a,h:a},q:`קובייה עם צלע של ${a} ס"מ. מה הנפח שלה? (בסמ"ק)`, ans:V,
+        wrong:[[S,'זה שטח הפנים. נפח של קובייה: צלע × צלע × צלע.'],[a*a,'זה שטח של פאה אחת. כופלים עוד פעם בצלע.'],[3*a,'כפלתם ב-3. צריך לכפול את הצלע בעצמה 3 פעמים.']],
+        hints:['בקובייה כל הצלעות שוות, אז הנפח הוא <span class="eq"><i>a</i>³ = <i>a</i> × <i>a</i> × <i>a</i></span>.',`<span class="eq">${a} × ${a} = ${a*a}</span>. עכשיו כפלו ב-${a}.`],
+        sol:`<span class="eq">${a}³ = ${a} × ${a} × ${a} = ${V}</span> סמ"ק.`}
+      :{shape:'box',d:{a,b:a,h:a},q:`קובייה עם צלע של ${a} ס"מ. מה שטח הפנים שלה? (בסמ"ר)`, ans:S,
+        wrong:[[V,'זה הנפח. שטח הפנים הוא השטח של כל 6 הפאות ביחד.'],[a*a,'זו פאה אחת. לקובייה יש 6 פאות שוות.'],[4*a*a,'ספרתם רק 4 פאות. שכחתם את הבסיס ואת המכסה.'],[5*a*a,'שכחתם פאה אחת. לקובייה יש 6.']],
+        hints:['לקובייה יש 6 פאות, וכולן ריבועים שווים.',`פאה אחת: <span class="eq">${a} × ${a} = ${a*a}</span>. כמה זה פי 6?`],
+        sol:`<span class="eq">6 × ${a}² = 6 × ${a*a} = ${S}</span> סמ"ר.`}; },
+  prismV(){ const k=pickOne(TRIPLES), [p,q]=Math.random()<.5?k:[k[1],k[0]], L=rnd(2,8), base=p*q/2, V=base*L, c=Math.hypot(p,q), S=p*q+(p+q+c)*L;
+    return {shape:'prism',d:{p,q,L},q:`הבסיס של מנסרה הוא משולש ישר זווית עם ניצבים ${p} ס"מ ו-${q} ס"מ. אורך המנסרה ${L} ס"מ. מה הנפח? (בסמ"ק)`, ans:V,
+      wrong:[[p*q*L,'שכחתם לחלק ב-2. שטח של משולש ישר זווית הוא מכפלת הניצבים חלקי 2.'],[base,'זה רק שטח המשולש. כופלים אותו באורך המנסרה.'],[S,'זה שטח הפנים, לא הנפח.']],
+      hints:['נפח של מנסרה: שטח הבסיס × אורך המנסרה. הבסיס הוא המשולש.',`שטח המשולש: <span class="eq">${p} × ${q} ÷ 2 = ${base}</span>. עכשיו כפלו ב-${L}.`],
+      sol:`<span class="eq">${base} × ${L} = ${V}</span> סמ"ק.`}; },
+  prismS(){ const k=pickOne(TRIPLES), [p,q]=Math.random()<.5?k:[k[1],k[0]], L=rnd(2,8), c=Math.hypot(p,q), base=p*q/2, S=p*q+(p+q+c)*L, V=base*L;
+    return {shape:'prism',d:{p,q,L},q:`הבסיס של מנסרה הוא משולש ישר זווית עם ניצבים ${p} ס"מ ו-${q} ס"מ, והיתר שלו ${c} ס"מ. אורך המנסרה ${L} ס"מ. מה שטח הפנים? (בסמ"ר)`, ans:S,
+      wrong:[[(p+q+c)*L,'שכחתם את שני המשולשים: הבסיס והמכסה של המנסרה.'],[base+(p+q+c)*L,'ספרתם רק משולש אחד. יש שניים, אחד בכל צד.'],[p*q+(p+q)*L,'שכחתם את המלבן של היתר. יש 3 מלבנים, אחד לכל צלע של המשולש.'],[V,'זה הנפח, לא שטח הפנים.'],[p*q*2+(p+q+c)*L,'שטח משולש הוא מכפלת הניצבים חלקי 2. שני משולשים הם בדיוק מכפלת הניצבים.']],
+      hints:['שטח הפנים: 2 משולשים + 3 מלבנים. לכל מלבן יש צלע אחת של המשולש וצלע של אורך המנסרה.',`שני המשולשים: <span class="eq">2 × ${base} = ${p*q}</span>. המלבנים: <span class="eq">(${p} + ${q} + ${c}) × ${L}</span>. חברו.`],
+      sol:`<span class="eq">${p*q} + ${p+q+c} × ${L} = ${p*q} + ${(p+q+c)*L} = ${S}</span> סמ"ר.`}; },
+  cylV(){ const r=rnd(1,5), h=rnd(2,9), dia=Math.random()<.5, D=2*r;
+    return {shape:'cyl',pi:true,d:{r,h,dia},q:`לגליל יש ${dia?`קוטר ${D}`:`רדיוס ${r}`} ס"מ וגובה ${h} ס"מ. מה הנפח שלו? (בסמ"ק)`, ans:r*r*h,
+      wrong:[[D*D*h,'השתמשתם בקוטר במקום ברדיוס. הרדיוס הוא חצי מהקוטר.'],[r*h,'כפלתם ברדיוס ולא ברדיוס בריבוע. שטח העיגול הוא π × r × r.'],[2*r*h,'זה השטח של הצד של הגליל. נפח הוא שטח העיגול כפול הגובה.'],[2*r*r+2*r*h,'זה שטח הפנים, לא הנפח.']],
+      hints:[`נפח של גליל: <span class="eq">π<i>r</i>² × <i>h</i></span>.${dia?' שימו לב: נתון קוטר.':''}`,`<span class="eq"><i>r</i> = ${r}</span>, אז שטח הבסיס הוא <span class="eq">${r*r}π</span>. כפלו ב-${h}.`],
+      sol:`${dia?`<span class="eq"><i>r</i> = ${D} ÷ 2 = ${r}</span>. `:''}<span class="eq">π × ${r}² × ${h} = ${r*r*h}π ≈ ${fmt(r*r*h*PI)}</span> סמ"ק.`}; },
+  cylS(){ const r=rnd(1,5), h=rnd(2,9), dia=Math.random()<.5, D=2*r, Sc=2*r*r+2*r*h;
+    return {shape:'cyl',pi:true,d:{r,h,dia},q:`לגליל יש ${dia?`קוטר ${D}`:`רדיוס ${r}`} ס"מ וגובה ${h} ס"מ. מה שטח הפנים שלו? (בסמ"ר)`, ans:Sc,
+      wrong:[[2*r*h,'שכחתם את שני העיגולים, למעלה ולמטה.'],[r*r+2*r*h,'ספרתם רק עיגול אחד. לגליל יש שניים.'],[2*r*r+r*h,'הרוחב של המלבן הוא ההיקף של העיגול: 2πr, ולא πr.'],[2*D*D+2*D*h,'השתמשתם בקוטר במקום ברדיוס. הרדיוס הוא חצי מהקוטר.'],[r*r*h,'זה הנפח, לא שטח הפנים.']],
+      hints:[`שטח הפנים: 2 עיגולים + מלבן. <span class="eq">2π<i>r</i>² + 2π<i>r</i><i>h</i></span>.${dia?' שימו לב: נתון קוטר.':''}`,`שני העיגולים: <span class="eq">2 × ${r*r}π = ${2*r*r}π</span>. המלבן: <span class="eq">2π × ${r} × ${h} = ${2*r*h}π</span>. חברו.`],
+      sol:`${dia?`<span class="eq"><i>r</i> = ${D} ÷ 2 = ${r}</span>. `:''}<span class="eq">${2*r*r}π + ${2*r*h}π = ${Sc}π ≈ ${fmt(Sc*PI)}</span> סמ"ר.`}; }
+};
+/* read an answer: plain number, or a multiple of π like "45π" / "45pi" / "π" */
+function parse(s){
+  s=s.trim().replace(/,/g,'.').replace(/\s+/g,'').replace(/[−–]/g,'-');
+  if(!s) return null;
+  const m=s.match(/^(-?\d*\.?\d*)\*?(π|pi|פאי)$/i);
+  if(m){ const c=m[1]===''?1:m[1]==='-'?-1:parseFloat(m[1]); return isNaN(c)?null:{pi:true,v:c}; }
+  const v=Number(s); return isNaN(v)?null:{pi:false,v};
+}
+/* does the parsed answer x equal target (a plain number, or a coefficient of π when isPi)? */
+function same(x,target,isPi){
+  if(!isPi) return !x.pi && Math.abs(x.v-target)<1e-6;
+  if(x.pi) return Math.abs(x.v-target)<1e-6;
+  const a=target*PI, b=target*Math.PI;
+  return Math.abs(x.v-a)<=Math.max(0.05,a*0.002) || Math.abs(x.v-b)<=Math.max(0.05,b*0.002);
+}
+let pr=null, streak=0, solved=0, lastType='';
+function newPr(){
+  const types=Object.keys(GEN).filter(t=>t!==lastType), t=pickOne(types); lastType=t;
+  pr={...GEN[t](),tries:0,hint:0,done:false};
+  $('prQ').innerHTML=pr.q; drawSolid($('prG'),pr.shape,pr.d);
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  if(!pr||pr.done) return;
+  const x=parse($('prA').value);
+  if(!x){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל <span class="eq">60</span>, או תשובה עם π, למשל <span class="eq">45π</span>.</div>'; return; }
+  if(x.pi&&!pr.pi){ $('prFb').innerHTML='<div class="fb err">בשאלה הזאת אין עיגול, אז אין צורך ב-π. כתבו מספר רגיל.</div>'; return; }
+  if(same(x,pr.ans,pr.pi)){
+    pr.done=true; streak++; solved++;
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${pr.sol}</div>`;
+  } else {
+    pr.tries++; streak=0;
+    const w=pr.wrong.find(([v])=>same(x,v,pr.pi));
+    $('prFb').innerHTML=`<div class="fb err">${w?w[1]:'לא בדיוק. בדקו שוב את החישוב, צעד אחרי צעד.'}</div>`;
+    if(pr.tries>=2) $('prShow').disabled=false;
+  }
+  score();
+};
+$('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+$('prHint').onclick=()=>{
+  if(!pr||pr.done) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hints.slice(0,pr.hint).map((h,i)=>`<div><strong>רמז ${i+1}:</strong> ${h}</div>`).join('')}</div>`;
+};
+$('prShow').onclick=()=>{ pr.done=true; $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${pr.sol} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+newPr(); score();
+})();
+</script>
+</body>
+</html>

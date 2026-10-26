@@ -66,3 +66,10 @@ header.hero .miri{height:300px; width:auto; mix-blend-mode:multiply; filter:brig
   header.hero .eyebrow{align-self:end}
   header.hero .lead,header.hero .search{grid-column:1 / -1}
 }
+
+/* grade level in the TOC */
+.toc-grade-block{display:flex; flex-direction:column; gap:16px}
+.toc-grade-block + .toc-grade-block{margin-top:12px}
+.toc-gname{font-size:1.25rem}
+.toc-gname a{color:var(--ink); text-decoration:none; background:var(--hl); border:2px solid var(--border); border-radius:10px; padding:0 .5em}
+.toc-chapter{scroll-margin-top:16px}
