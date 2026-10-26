@@ -60,13 +60,15 @@ function jsonLd(pg, m) {
 }
 
 function head(pg, root) {
-  const m = meta(pg), url = BASE + pg.p, img = BASE + 'assets/og.png';
+  const m = meta(pg), url = BASE + pg.p, img = BASE + 'assets/og.jpg';
   return [
     `<title>${esc(m.title)}</title>`,
     `<meta name="description" content="${esc(m.description)}">`,
     `<link rel="canonical" href="${url}">`,
-    `<link rel="icon" href="${root}assets/favicon.svg" type="image/svg+xml">`,
+    `<link rel="icon" href="${root}assets/miri/favicon-32.png" sizes="32x32" type="image/png">`,
+    `<link rel="icon" href="${root}assets/miri/icon-192.png" sizes="192x192" type="image/png">`,
     `<link rel="apple-touch-icon" href="${root}assets/apple-touch-icon.png">`,
+    `<link rel="manifest" href="${root}site.webmanifest">`,
     `<meta name="theme-color" content="${cfg.themeColor}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:site_name" content="${esc(cfg.name)}">`,
@@ -111,6 +113,12 @@ for (const pg of pages) {
   if (pg.kind === 'subject') html = region(html, 'toc', `<div id="toc">${TOC.html([pg.subj], root, {hideSubject: true})}</div>`, file);
   fs.writeFileSync(path.join(ROOT, file), html);
 }
+
+fs.writeFileSync(path.join(ROOT, 'site.webmanifest'), JSON.stringify({
+  name: `${cfg.name} · ${cfg.slogan}`, short_name: cfg.name, lang: 'he', dir: 'rtl', start_url: './', scope: './', display: 'browser',
+  background_color: '#FAFAFC', theme_color: cfg.themeColor,
+  icons: [{src: 'assets/miri/icon-192.png', sizes: '192x192', type: 'image/png'}, {src: 'assets/miri/icon-512.png', sizes: '512x512', type: 'image/png'}]
+}, null, 2) + '\n');
 
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

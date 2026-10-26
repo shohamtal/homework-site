@@ -7,8 +7,10 @@
 <title>שיפוע בין שתי נקודות · פונקציה קווית כיתה ח · מירי</title>
 <meta name="description" content="איך מחשבים שיפוע בין שתי נקודות בלי גרף, בעזרת נוסחת השיפוע. מעבדה שאפשר להזיז, טעויות נפוצות ותרגול עם רמזים.">
 <link rel="canonical" href="https://shohamtal.github.io/homework-site/math/slope-two-points/">
-<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
 <meta name="theme-color" content="#FF3D7F">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="מירי">
@@ -16,7 +18,7 @@
 <meta property="og:title" content="שיפוע בין שתי נקודות · פונקציה קווית כיתה ח · מירי">
 <meta property="og:description" content="איך מחשבים שיפוע בין שתי נקודות בלי גרף, בעזרת נוסחת השיפוע. מעבדה שאפשר להזיז, טעויות נפוצות ותרגול עם רמזים.">
 <meta property="og:url" content="https://shohamtal.github.io/homework-site/math/slope-two-points/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.png">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -38,7 +40,7 @@
 <body data-root="../../" data-subject="math" data-topic="slope-two-points">
 <div class="wrap">
 <!-- build:sitebar -->
-<div id="sitebar" class="sitebar"><a class="brand" href="../../">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span aria-hidden="true">‹</span> <a href="../../math/">חשבון</a> <span aria-hidden="true">‹</span> <span>פונקציה קווית</span></nav></div>
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span aria-hidden="true">‹</span> <a href="../../math/">חשבון</a> <span aria-hidden="true">‹</span> <span>פונקציה קווית</span></nav></div>
 <!-- /build:sitebar -->
 
 <header class="page">
@@ -267,7 +269,7 @@ function newPr(){
   let x1,y1,x2,y2;
   do{ x1=rnd(); y1=rnd(); x2=rnd(); y2=rnd(); } while(x1===x2 || (x1===pr.x1&&y1===pr.y1&&x2===pr.x2&&y2===pr.y2));
   pr={x1,y1,x2,y2,m:(y2-y1)/(x2-x1),tries:0};
-  $('prPts').innerHTML=`<span class="bl">A</span> = ${P(x1,y1)} &nbsp; <span class="bl">B</span> = ${P(x2,y2)}`;
+  $('prPts').innerHTML=`<span class="eq"><span class="bl">A</span> = ${P(x1,y1)}</span> &nbsp; <span class="eq"><span class="bl">B</span> = ${P(x2,y2)}</span>`;
   $('prM').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
   drawTwo($('prG'),x1,y1,x2,y2,{seg:false,line:false});
 }

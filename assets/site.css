@@ -160,3 +160,9 @@ h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
 .faq{display:flex; flex-direction:column; gap:6px}
 .faq h3{margin-top:12px}
 .faq h3:first-child{margin-top:0}
+
+/* Miri: sitebar avatar and the "רמז ממירי" label on hint boxes */
+.sitebar .brand{display:inline-flex; align-items:center; gap:8px}
+.sitebar .avatar{width:32px; height:32px; border-radius:50%}
+.miri-tip{display:flex; align-items:center; gap:8px; font-weight:700; font-size:.9rem; margin-bottom:4px}
+.miri-tip img{width:40px; height:40px; border-radius:50%; flex:none}

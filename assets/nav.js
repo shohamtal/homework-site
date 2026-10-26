@@ -14,7 +14,7 @@ window.NAV={
     let c=`<a href="${root}">כל המקצועות</a>`;
     if(subj) c+=` <span aria-hidden="true">‹</span> <a href="${root}${subj.id}/">${subj.name}</a>`;
     if(cur) c+=` <span aria-hidden="true">‹</span> <span>${cur.chapter.name}</span>`;
-    return `<a class="brand" href="${root}">${SITE.name}</a><nav class="crumbs" aria-label="מיקום באתר">${c}</nav>`;
+    return `<a class="brand" href="${root}"><img class="avatar" src="${root}assets/miri/avatar-64.webp" width="32" height="32" alt="">${SITE.name}</a><nav class="crumbs" aria-label="מיקום באתר">${c}</nav>`;
   },
   topicNav(root,subjectId,slug){
     const {subj,flat,i,cur}=NAV.ctx(subjectId,slug); if(!cur) return '';
@@ -28,5 +28,15 @@ if(typeof document!=='undefined') (function(){
   const bar=document.getElementById('sitebar');
   if(bar && !bar.children.length){ bar.className='sitebar'; bar.innerHTML=NAV.bar(root,b.dataset.subject,b.dataset.topic); }
   const nav=document.getElementById('topicNav');
+  /* "רמז ממירי": label the hint box that a hint button just filled (only boxes the click changed) */
+  document.addEventListener('click',e=>{
+    const btn=e.target.closest('button'); if(!btn || !(/Hint$/.test(btn.id) || btn.classList.contains('hnt'))) return;
+    const scope=btn.closest('.hwc, section')||document, before=new Map();
+    scope.querySelectorAll('.fb.hint').forEach(box=>before.set(box,box.innerHTML));
+    setTimeout(()=>scope.querySelectorAll('.fb.hint').forEach(box=>{
+      if(box.querySelector('.miri-tip') || before.get(box)===box.innerHTML) return;
+      box.insertAdjacentHTML('afterbegin',`<span class="miri-tip"><img src="${root}assets/miri/hint-96.webp" width="40" height="40" loading="lazy" alt="">רמז ממירי</span>`);
+    }));
+  },true);
   if(nav && !nav.children.length){ const h=NAV.topicNav(root,b.dataset.subject,b.dataset.topic); if(h){ nav.className='topic-nav'; nav.setAttribute('aria-label','נושא קודם ונושא הבא'); nav.innerHTML=h; } }
 })();
