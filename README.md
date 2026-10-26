@@ -1,4 +1,4 @@
-# אתר שיעורי הבית
+# מירי · המורה שלך להצלחה
 
 Interactive Hebrew study pages built from real homework topics: a simple explanation, a slider lab, step-by-step worked examples and practice that gives hints instead of answers.
 

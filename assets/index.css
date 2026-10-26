@@ -13,7 +13,7 @@
 .toc-sname a{color:var(--line); text-decoration:none; font-size:1.5rem}
 .toc-chapter{display:flex; flex-direction:column; gap:10px}
 .toc-chead{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; border-bottom:2px solid var(--ink); padding-bottom:4px}
-.toc-cname{font-family:var(--f-display); font-size:1.3rem}
+.toc-cname{font-family:var(--f-display); font-weight:400; font-size:1.3rem; margin:0}
 .toc-grade{color:var(--muted); font-weight:700; font-size:.9rem}
 .toc-list{list-style:none; margin:0; padding:0; counter-reset:t; display:flex; flex-direction:column; gap:8px}
 .toc-list li{counter-increment:t}

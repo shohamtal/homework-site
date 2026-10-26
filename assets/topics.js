@@ -2,7 +2,7 @@
    prev/next links on every topic page are all built from this one list.
    To add a topic: add an entry here and create <subject>/<slug>/index.html. */
 window.SITE={
-  name:'אתר שיעורי הבית',
+  name:'מירי', slogan:'המורה שלך להצלחה',
   subjects:[
     { id:'math', name:'חשבון', desc:'הסברים, מעבדות ותרגול לפי נושאים.',
       chapters:[
