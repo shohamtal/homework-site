@@ -52,3 +52,17 @@
 .req-form label{display:flex; flex-direction:column; gap:4px; font-weight:700}
 .req-form input,.req-form select{font:1rem var(--f-body); padding:8px 10px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); width:100%}
 .req-form .wide{grid-column:1 / -1}
+
+/* home hero: Miri on the start side (right in RTL), presenting the text next to her */
+header.hero{display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center; gap:8px 28px}
+header.hero .hero-txt{display:flex; flex-direction:column; gap:12px; min-width:0}
+header.hero .miri{height:300px; width:auto; mix-blend-mode:multiply; filter:brightness(1.06) contrast(1.04)}
+/* phones: Miri beside the eyebrow and H1, the lead and search full width under them */
+@media (max-width:620px){
+  header.hero{gap:6px 12px}
+  header.hero .hero-txt{display:contents}
+  header.hero .miri{height:180px; grid-row:1 / span 2; grid-column:1; align-self:end}
+  header.hero .eyebrow,header.hero h1{grid-column:2}
+  header.hero .eyebrow{align-self:end}
+  header.hero .lead,header.hero .search{grid-column:1 / -1}
+}
