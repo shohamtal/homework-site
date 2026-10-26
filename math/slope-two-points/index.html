@@ -44,9 +44,9 @@
 <header class="page">
   <div class="eyebrow">כיתה ח · פונקציה קווית</div>
   <h1>שיפוע בין שתי נקודות</h1>
-  <p class="lead">לפעמים אין לנו גרף, יש רק שתי נקודות. גם מהן אפשר לחשב את השיפוע <span class="m">m</span>. צריך רק לבדוק כמה עלינו וכמה זזנו ימינה.</p>
+  <p class="lead">לפעמים אין לנו גרף, יש רק שתי נקודות. גם מהן אפשר לחשב את השיפוע <span class="m">m</span>. צריך רק לבדוק כמה עלינו וכמה זזנו ימינה. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
   <nav class="toc" aria-label="פרקים">
-    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bonus">אתגר</a>
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#bonus">אתגר</a><a href="#faq">שאלות</a>
   </nav>
 </header>
 
@@ -158,6 +158,18 @@
   <div class="choices" id="bnChoices"></div>
   <div class="row"><button id="bnCheck" class="primary">בדיקה</button><button id="bnNew">אתגר חדש</button></div>
   <div id="bnFb" aria-live="polite"></div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה הנוסחה לשיפוע בין שתי נקודות?</h3>
+    <p><span class="eq"><i>m</i> = (<i>y</i>₂ − <i>y</i>₁) ÷ (<i>x</i>₂ − <i>x</i>₁)</span>. במילים: כמה עלינו, חלקי כמה זזנו ימינה. <a href="#lab">נסו במעבדה למעלה</a> והזיזו את הנקודות.</p>
+    <h3>מה קורה אם מחליפים את סדר הנקודות?</h3>
+    <p>השיפוע יוצא אותו דבר, בתנאי שמחליפים את הסדר גם בחיסור של y וגם בחיסור של x. אם מתחילים מנקודה אחת למעלה ומהשנייה למטה, יוצא סימן הפוך. זאת אחת <a href="#traps">המלכודות למעלה</a>.</p>
+    <h3>מה השיפוע של ישר מאונך / מקביל לציר x?</h3>
+    <p>ישר מקביל לציר x הוא שטוח: ה-y לא משתנה, אז למעלה בנוסחה יוצא 0 והשיפוע הוא 0. ישר מאונך לציר x עומד: ה-x לא משתנה, אז למטה יוצא 0, ואי אפשר לחלק ב-0. לישר כזה אין שיפוע, והמשוואה שלו נראית כמו <span class="eq"><i>x</i> = 3</span>. <a href="#lab">נסו במעבדה למעלה</a> ושימו את שתי הנקודות באותו גובה.</p>
+  </div>
 </section>
 
 <!-- build:topicnav -->

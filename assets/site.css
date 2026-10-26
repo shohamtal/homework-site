@@ -155,3 +155,8 @@ footer.site{color:var(--muted); font-size:.9rem; text-align:center}
 
 /* brand line under the home H1 */
 h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
+
+/* questions people search for, at the end of a topic page */
+.faq{display:flex; flex-direction:column; gap:6px}
+.faq h3{margin-top:12px}
+.faq h3:first-child{margin-top:0}
