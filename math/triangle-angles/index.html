@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>סכום הזוויות במשולש · כיתה ז · מירי</title>
+<meta name="description" content="בכל משולש סכום הזוויות הוא 180°. רואים למה, ומוצאים זווית חסרה.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/triangle-angles/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="סכום הזוויות במשולש · כיתה ז · מירי">
+<meta property="og:description" content="בכל משולש סכום הזוויות הוא 180°. רואים למה, ומוצאים זווית חסרה.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/triangle-angles/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ז","item":"https://shohamtal.github.io/homework-site/math/grade-7/"},{"@type":"ListItem","position":4,"name":"זוויות","item":"https://shohamtal.github.io/homework-site/math/grade-7/#geometry-7"},{"@type":"ListItem","position":5,"name":"סכום הזוויות במשולש","item":"https://shohamtal.github.io/homework-site/math/triangle-angles/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה סכום הזוויות במשולש הוא 180 מעלות?","acceptedAnswer":{"@type":"Answer","text":"מעבירים דרך קודקוד אחד ישר שמקביל לצלע שמולו. בעזרת זוויות מתחלפות רואים ששלוש הזוויות של המשולש יושבות ביחד על הישר הזה, וזווית של קו ישר היא 180°. סמנו \"הראו למה\" במעבדה."}},{"@type":"Question","name":"איך מוצאים זווית חסרה במשולש?","acceptedAnswer":{"@type":"Answer","text":"מחברים את שתי הזוויות שיודעים ומורידים מ-180. אם הזוויות הן 45° ו-80°, הזווית השלישית היא 180 − 45 − 80 = 55 מעלות. במשולש שווה שוקיים זוכרים ששתי זוויות הבסיס שוות."}},{"@type":"Question","name":"מה זו זווית חיצונית במשולש?","acceptedAnswer":{"@type":"Answer","text":"זו הזווית שנוצרת כשממשיכים צלע של המשולש החוצה. היא שווה לסכום שתי הזוויות של המשולש שלא צמודות אליה. וגם, ביחד עם הזווית הצמודה לה בתוך המשולש, היא 180°. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סכום הזוויות במשולש","description":"בכל משולש סכום הזוויות הוא 180°. רואים למה, ומוצאים זווית חסרה.","url":"https://shohamtal.github.io/homework-site/math/triangle-angles/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ז","about":"זוויות","teaches":"סכום הזוויות במשולש","keywords":"180 מעלות, זווית חיצונית, זווית חסרה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.ta{width:100%; max-width:460px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.ta .bg{fill:var(--card)}
+.ta .tri{fill:var(--paper); stroke:var(--ink); stroke-width:2.2; stroke-linejoin:round}
+.ta .sa{fill:var(--hl); fill-opacity:.9; stroke:var(--ink); stroke-width:1}
+.ta .sb{fill:var(--blue); fill-opacity:.35; stroke:var(--ink); stroke-width:1}
+.ta .sc{fill:var(--line); fill-opacity:.45; stroke:var(--ink); stroke-width:1}
+.ta .sx{fill:var(--green); fill-opacity:.35; stroke:var(--ink); stroke-width:1}
+.ta .par{stroke:var(--muted); stroke-width:1.6; stroke-dasharray:6 4}
+.ta .ext{stroke:var(--ink); stroke-width:1.6; stroke-dasharray:6 4}
+.ta .vx{font:700 14px var(--f-body); fill:var(--ink); text-anchor:middle; dominant-baseline:middle}
+.ta .val{font:700 12px var(--f-body); fill:var(--ink); text-anchor:middle; dominant-baseline:middle; paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.ta .msg{font:700 14px var(--f-body); fill:var(--err); text-anchor:middle}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.ansrow input{font:1.1rem var(--f-math); width:5em; padding:6px 10px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+.labrow{display:flex; flex-direction:column; gap:14px}
+.calc{display:flex; flex-direction:column; gap:6px}
+.q{font-size:1.15rem; font-weight:600}
+.chk{display:flex; gap:8px; align-items:center; font-weight:600}
+.chk input{width:20px; height:20px; accent-color:var(--line)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="triangle-angles">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/">כיתה ז</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/#geometry-7">זוויות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">סכום הזוויות במשולש</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ז · זוויות</div>
+  <h1>סכום הזוויות במשולש <span class="slogan">תמיד 180°</span></h1>
+  <p class="lead">קטן או גדול, שמן או רזה: בכל משולש שלוש הזוויות ביחד הן 180°. לומדים למה זה נכון, איך מוצאים זווית חסרה, ומה זו זווית חיצונית. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הכלל</h3>
+      <p><span class="eq">∢<i>A</i> + ∢<i>B</i> + ∢<i>C</i> = 180°</span></p>
+      <p>יודעים שתי זוויות? הזווית השלישית היא 180 פחות שתיהן.</p>
+      <p><span class="eq">∢<i>C</i> = 180° − ∢<i>A</i> − ∢<i>B</i></span></p>
+    </div>
+    <div class="mini">
+      <h3>למה 180?</h3>
+      <p>מעבירים דרך הקודקוד העליון ישר שמקביל לבסיס. לידו נוצרות שתי זוויות מתחלפות: אחת שווה ל-A ואחת שווה ל-B.</p>
+      <p>A, C ו-B יושבות עכשיו ביחד על קו ישר. וקו ישר הוא 180°. <a href="../parallel-angles/">חזרה על זוויות מתחלפות</a>.</p>
+    </div>
+    <div class="mini">
+      <h3>זווית חיצונית</h3>
+      <p>ממשיכים צלע אחת החוצה. הזווית שנוצרת בחוץ שווה לסכום של שתי הזוויות <strong>הרחוקות</strong> ממנה.</p>
+      <p>אם <span class="eq">∢<i>A</i> = 50°</span> ו-<span class="eq">∢<i>C</i> = 70°</span>, הזווית החיצונית ליד B היא <span class="eq">120°</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>שווה שוקיים:</strong> במשולש שווה שוקיים שתי זוויות הבסיס שוות. במשולש שווה צלעות כל הזוויות שוות, וכל אחת היא <span class="eq">180 ÷ 3 = 60°</span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים משולש מזוויות</h2></div>
+  <p class="text">בחרו את זווית A ואת זווית B. המשולש נבנה לבד, והזווית C היא מה שנשאר עד 180°.</p>
+  <div class="labrow">
+    <svg class="ta" id="labG" viewBox="0 0 360 240" role="img" aria-label="המשולש של המעבדה"></svg>
+    <div class="lab">
+      <div class="ctrl">
+        <label class="slider" for="sA"><span>זווית A</span><span class="eq" id="sAv"></span></label>
+        <input type="range" class="hl" id="sA" min="10" max="150" step="1" value="50">
+        <label class="slider" for="sB"><span>זווית B</span><span class="eq" id="sBv"></span></label>
+        <input type="range" class="blue" id="sB" min="10" max="150" step="1" value="70">
+        <label class="chk"><input type="checkbox" id="cWhy"> הראו למה זה 180°</label>
+        <label class="chk"><input type="checkbox" id="cExt"> הראו זווית חיצונית ליד B</label>
+      </div>
+      <div class="ctrl">
+        <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p="60,60">שווה צלעות</button>
+            <button data-p="90,45">ישר זווית ושווה שוקיים</button>
+            <button data-p="30,30">קהה זווית</button>
+            <button data-p="100,85">אין משולש כזה</button>
+            <button data-p="20,140">זווית ענקית</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שתי זוויות ישרות? אין דבר כזה</h3>
+      <p><span class="eq">90 + 90 = 180</span>, ולא נשאר כלום לזווית השלישית. לכן במשולש יש <strong>לכל היותר</strong> זווית ישרה אחת, או זווית קהה אחת.</p>
+    </div>
+    <div class="mini">
+      <h3>שווה שוקיים: לא לשכוח לחלק</h3>
+      <p>זווית הראש 40°. נשאר <span class="eq">180 − 40 = 140</span>. אבל זה <strong>לשתי</strong> זוויות הבסיס. כל אחת היא <span class="eq">140 ÷ 2 = 70°</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>זווית חיצונית לא שווה ל-180 פחות כולן</h3>
+      <p>הזווית החיצונית ליד B היא <span class="eq">180 − ∢<i>B</i></span>. וזה בדיוק <span class="eq">∢<i>A</i> + ∢<i>C</i></span>. לא מורידים את A ו-C מ-180.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה:</strong> אחרי שמצאתם זווית, חברו את שלוש הזוויות. אם לא יצא 180, משהו לא נכון.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (שווה שוקיים)</button>
+  </div>
+  <div class="stepper">
+    <p class="q" id="exQ"></p>
+    <svg class="ta" id="exG" viewBox="0 0 360 240" role="img" aria-label="המשולש של הדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מצאו את הזווית</h2></div>
+  <p class="text">הציור לא תמיד מדויק. סמכו על המספרים, לא על המראה.</p>
+  <svg class="ta" id="prG" viewBox="0 0 360 240" role="img" aria-label="המשולש של התרגיל"></svg>
+  <p class="q" id="prQ"></p>
+  <div class="ctrl">
+    <div class="ansrow"><input id="prAns" inputmode="numeric" autocomplete="off" aria-label="כמה מעלות"><span>מעלות</span></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה סכום הזוויות במשולש הוא 180 מעלות?</h3>
+    <p>מעבירים דרך קודקוד אחד ישר שמקביל לצלע שמולו. בעזרת זוויות מתחלפות רואים ששלוש הזוויות של המשולש יושבות ביחד על הישר הזה, וזווית של קו ישר היא 180°. <a href="#lab">סמנו "הראו למה" במעבדה</a>.</p>
+    <h3>איך מוצאים זווית חסרה במשולש?</h3>
+    <p>מחברים את שתי הזוויות שיודעים ומורידים מ-180. אם הזוויות הן 45° ו-80°, הזווית השלישית היא <span class="eq">180 − 45 − 80 = 55</span> מעלות. במשולש שווה שוקיים זוכרים ששתי זוויות הבסיס שוות.</p>
+    <h3>מה זו זווית חיצונית במשולש?</h3>
+    <p>זו הזווית שנוצרת כשממשיכים צלע של המשולש החוצה. היא שווה לסכום שתי הזוויות של המשולש שלא צמודות אליה. וגם, ביחד עם הזווית הצמודה לה בתוך המשולש, היא 180°. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/parallel-angles/">זוויות בין ישרים מקבילים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/parallel-angles/"><small>→ הנושא הקודם</small>זוויות בין ישרים מקבילים</a><a class="next" href="../../math/coordinate-plane/"><small>הנושא הבא ←</small>מערכת צירים: נקודות ורביעים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const R=d=>d*Math.PI/180;
+const W=360,H=240;
+
+/* triangle from angles A (at left) and B (at right) on a horizontal base, fitted into the box.
+   Points are in "math" coordinates (y up) until fit() maps them to the SVG. */
+function tri(A,B){
+  const C=180-A-B, L=1, AC=L*Math.sin(R(B))/Math.sin(R(A+B));
+  return {A,B,C,pA:{x:0,y:0},pB:{x:L,y:0},pC:{x:AC*Math.cos(R(A)),y:AC*Math.sin(R(A))}};
+}
+function fit(pts,pad){
+  const xs=pts.map(p=>p.x), ys=pts.map(p=>p.y);
+  const x0=Math.min(...xs), x1=Math.max(...xs), y0=Math.min(...ys), y1=Math.max(...ys);
+  const k=Math.min((W-2*pad)/(x1-x0||1),(H-2*pad)/(y1-y0||1));
+  const ox=(W-k*(x1-x0))/2, oy=(H-k*(y1-y0))/2;
+  return p=>({x:ox+(p.x-x0)*k, y:H-oy-(p.y-y0)*k});
+}
+/* sector at P (svg coords) from math angle a1, size sz */
+function sector(P,a1,sz,r,cls){
+  const A={x:P.x+r*Math.cos(R(a1)),y:P.y-r*Math.sin(R(a1))}, B={x:P.x+r*Math.cos(R(a1+sz)),y:P.y-r*Math.sin(R(a1+sz))};
+  return `<path class="${cls}" d="M${P.x},${P.y} L${A.x.toFixed(1)},${A.y.toFixed(1)} A${r},${r} 0 ${sz>180?1:0} 0 ${B.x.toFixed(1)},${B.y.toFixed(1)} Z"/>`;
+}
+const lbl=(P,a,r,t,cls='val')=>`<text class="${cls}" x="${(P.x+r*Math.cos(R(a))).toFixed(1)}" y="${(P.y-r*Math.sin(R(a))).toFixed(1)}">${t}</text>`;
+/* opt.vals {A,B,C} texts, opt.why, opt.ext (exterior at B), opt.real {A,B} drawing angles */
+function draw(svg,A,B,opt={}){
+  if(A+B>=180){ svg.innerHTML=`<rect class="bg" width="${W}" height="${H}"/><text class="msg" direction="rtl" x="${W/2}" y="${H/2-10}">אין משולש כזה</text><text class="msg" direction="rtl" x="${W/2}" y="${H/2+14}">לא נשאר מקום לזווית C</text>`; return; }
+  const t=tri(A,B), C=t.C, pts=[t.pA,t.pB,t.pC];
+  if(opt.ext) pts.push({x:1.45,y:0});
+  if(opt.why){ pts.push({x:t.pC.x-0.5,y:t.pC.y},{x:t.pC.x+0.5,y:t.pC.y}); }
+  const f=fit(pts,opt.why?36:30), a=f(t.pA), b=f(t.pB), c=f(t.pC);
+  const v=opt.vals||{A:A+'°',B:B+'°',C:Math.round(C)+'°'};
+  const r=Math.max(16,Math.min(34,Math.hypot(b.x-a.x,b.y-a.y)/6));
+  let s=`<rect class="bg" width="${W}" height="${H}"/>`;
+  s+=`<polygon class="tri" points="${a.x},${a.y} ${b.x},${b.y} ${c.x},${c.y}"/>`;
+  const dirCA=Math.atan2(-(a.y-c.y),a.x-c.x)*180/Math.PI; /* math angle from C toward A */
+  if(opt.why){
+    const L=f({x:t.pC.x-0.5,y:t.pC.y}), Rr=f({x:t.pC.x+0.5,y:t.pC.y});
+    s+=`<line class="par" x1="${L.x}" y1="${L.y}" x2="${Rr.x}" y2="${Rr.y}"/>`;
+    s+=sector(c,180,A,r,'sa')+sector(c,-B,B,r,'sb'); /* alternate angles next to C */
+    s+=lbl(c,180+A/2,r+14,v.A)+lbl(c,-B/2,r+14,v.B);
+  }
+  if(opt.ext){
+    const E=f({x:1.45,y:0});
+    s+=`<line class="ext" x1="${b.x}" y1="${b.y}" x2="${E.x}" y2="${E.y}"/>`;
+    s+=sector(b,0,180-B,r*0.8,'sx')+lbl(b,(180-B)/2,r*0.8+16,opt.extVal||Math.round(180-B)+'°');
+  }
+  s+=sector(a,0,A,r,'sa')+sector(b,180-B,B,r,'sb')+sector(c,dirCA,C,r,'sc');
+  s+=lbl(a,A/2,r+14,v.A)+lbl(b,180-B/2,r+14,v.B)+lbl(c,dirCA+C/2,r+14,v.C);
+  s+=lbl(a,180+A/2,14,'A','vx')+lbl(b,-B/2,14,'B','vx');
+  s+=lbl(c,dirCA+C/2+180,14,'C','vx');
+  svg.innerHTML=s;
+}
+const kind=(A,B,C)=>{const m=Math.max(A,B,C); return m>90?'קהה זווית':m===90?'ישר זווית':'חד זווית';};
+
+/* lab */
+function lab(){
+  const A=+$('sA').value, B=+$('sB').value, C=180-A-B;
+  $('sAv').textContent=A+'°'; $('sBv').textContent=B+'°';
+  draw($('labG'),A,B,{why:$('cWhy').checked,ext:$('cExt').checked});
+  if(C<=0){ $('labTxt').innerHTML=`<div><span class="eq">${A} + ${B} = ${A+B}</span>. זה ${A+B===180?'בדיוק':'יותר מ-'}180°, אז לא נשאר כלום לזווית C. אין משולש כזה.</div><div>הקטינו את A או את B.</div>`; return; }
+  let h=`<div><span class="eq">∢<i>C</i> = 180 − ${A} − ${B} = ${C}°</span></div><div>בדיקה: <span class="eq">${A} + ${B} + ${C} = 180</span> ✓</div><div>המשולש <strong>${kind(A,B,C)}</strong>.`;
+  if(A===B&&B===C) h+=' כל הזוויות שוות, אז הוא גם שווה צלעות.';
+  else if(A===B||B===C||A===C) h+=' יש שתי זוויות שוות, אז הוא שווה שוקיים.';
+  h+='</div>';
+  if($('cWhy').checked) h+=`<div>הקו המקווקו מקביל לבסיס. ליד C נוצרו זוויות מתחלפות: ${A}° (כמו A) ו-${B}° (כמו B). ביחד עם C הן על קו ישר: <span class="eq">${A} + ${C} + ${B} = 180</span>.</div>`;
+  if($('cExt').checked) h+=`<div>הזווית החיצונית ליד B: <span class="eq">180 − ${B} = ${180-B}°</span>. וזה בדיוק <span class="eq">∢<i>A</i> + ∢<i>C</i> = ${A} + ${C}</span>.</div>`;
+  $('labTxt').innerHTML=h;
+}
+['sA','sB'].forEach(id=>$(id).addEventListener('input',lab));
+['cWhy','cExt'].forEach(id=>$(id).addEventListener('change',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [A,B]=btn.dataset.p.split(','); $('sA').value=A; $('sB').value=B; lab();
+}));
+lab();
+
+/* worked examples */
+const EX={
+  A:{q:'במשולש ABC זווית A היא 48° וזווית B היא 67°. מצאו את זווית C.',A:48,B:67,steps:[
+    [{A:'48°',B:'67°',C:'?'},'מה יודעים? שתי זוויות. ואת הכלל: כל שלוש ביחד הן 180°.'],
+    [{A:'48°',B:'67°',C:'?'},'<strong>מחברים את מה שיודעים:</strong> <span class="eq">48 + 67 = 115</span>.'],
+    [{A:'48°',B:'67°',C:'65°'},'<strong>מורידים מ-180:</strong> <span class="eq">180 − 115 = 65</span>. זווית C היא 65°.'],
+    [{A:'48°',B:'67°',C:'65°'},'<strong>בודקים:</strong> <span class="eq">48 + 67 + 65 = 180</span> ✓ כל הזוויות קטנות מ-90°, אז המשולש חד זווית.']
+  ]},
+  B:{q:'משולש שווה שוקיים. זווית הראש (C) היא 36°. מצאו את זוויות הבסיס.',A:72,B:72,steps:[
+    [{A:'?',B:'?',C:'36°'},'במשולש שווה שוקיים זוויות הבסיס, A ו-B, שוות זו לזו.'],
+    [{A:'?',B:'?',C:'36°'},'<strong>מה נשאר לשתיהן ביחד:</strong> <span class="eq">180 − 36 = 144</span>.'],
+    [{A:'72°',B:'72°',C:'36°'},'<strong>מחלקים לשתיים:</strong> <span class="eq">144 ÷ 2 = 72</span>. כל זווית בסיס היא 72°.'],
+    [{A:'72°',B:'72°',C:'36°'},'<strong>בודקים:</strong> <span class="eq">72 + 72 + 36 = 180</span> ✓ טעות נפוצה: לענות 144. זה הסכום של שתיהן, לא של אחת.']
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [vals,txt]=e.steps[exI];
+  $('exQ').textContent=e.q;
+  draw($('exG'),e.A,e.B,{vals});
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice: missing / isosceles apex given / isosceles base given / exterior */
+let pr={}, streak=0, solved=0;
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+function newPr(){
+  let t; do{ t=pick(['miss','miss','apex','base','ext']); } while(t===pr.t&&Math.random()<.6);
+  let A,B,C,q,ans,vals,opt={};
+  if(t==='miss'){ do{ A=ri(25,110); B=ri(20,110); }while(A+B>160); C=180-A-B; ans=C; vals={A:A+'°',B:B+'°',C:'?'}; q='מצאו את זווית C.'; }
+  if(t==='apex'){ C=2*ri(10,60); A=B=(180-C)/2; ans=A; vals={A:'?',B:'',C:C+'°'}; q=`המשולש שווה שוקיים (AC = BC). זווית הראש C היא ${C}°. כמה מעלות זווית A?`; }
+  if(t==='base'){ A=B=ri(25,80); C=180-2*A; ans=C; vals={A:A+'°',B:'',C:'?'}; q=`המשולש שווה שוקיים (AC = BC). זווית הבסיס A היא ${A}°. כמה מעלות זווית הראש C?`; }
+  if(t==='ext'){ A=ri(30,80); B=ri(40,100); C=180-A-B; if(C<20){B=180-A-30; C=30;} ans=A+C; vals={A:A+'°',B:'',C:C+'°'}; opt={ext:true,extVal:'?'}; q='כמה מעלות הזווית החיצונית ליד B (הירוקה)?'; }
+  pr={t,A,B,C,ans,q,vals,opt,tries:0,hint:0};
+  draw($('prG'),A,B,{vals,...opt});
+  $('prQ').textContent=q; $('prAns').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {t,A,B,C}=pr;
+  if(t==='miss') return `<span class="eq">180 − ${A} − ${B} = ${C}</span>. בדיקה: <span class="eq">${A} + ${B} + ${C} = 180</span> ✓`;
+  if(t==='apex') return `לשתי זוויות הבסיס ביחד נשאר <span class="eq">180 − ${C} = ${180-C}</span>. כל אחת: <span class="eq">${180-C} ÷ 2 = ${A}</span>.`;
+  if(t==='base') return `שתי זוויות הבסיס שוות, כל אחת ${A}°. ביחד <span class="eq">${2*A}</span>. אז <span class="eq">∢<i>C</i> = 180 − ${2*A} = ${C}</span>.`;
+  return `הזווית החיצונית שווה לסכום שתי הזוויות הרחוקות: <span class="eq">${A} + ${C} = ${A+C}</span>. (או: B היא <span class="eq">180 − ${A} − ${C} = ${B}</span>, והחיצונית <span class="eq">180 − ${B} = ${A+C}</span>.)`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), v=parseNum($('prAns').value), {t,A,B,C,ans}=pr;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר מעלות, למשל 65.</div>'; $('prAns').focus(); return; }
+  if(v===ans){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    const vals={...pr.vals}; if(t==='miss'||t==='base') vals.C=ans+'°'; if(t==='apex') vals.A=ans+'°';
+    draw($('prG'),A,B,{vals,...pr.opt,extVal:t==='ext'?ans+'°':undefined}); return; }
+  streak=0; pr.tries++; streakTxt();
+  let msg='עוד לא. זכרו: שלוש הזוויות ביחד הן 180°.';
+  if(t==='miss'&&(v===180-A||v===180-B)) msg='הורדתם מ-180 רק זווית אחת. צריך להוריד את שתי הזוויות שנתונות.';
+  else if(t==='miss'&&v===A+B) msg=`זה הסכום של A ו-B. כמה <strong>נשאר</strong> עד 180?`;
+  else if(t==='apex'&&v===180-C) msg=`${180-C} זה מה שנשאר לשתי זוויות הבסיס <strong>ביחד</strong>. כמה לכל אחת?`;
+  else if(t==='apex'&&v===C) msg='זווית A היא זווית בסיס, לא זווית הראש. זוויות הבסיס שוות זו לזו, לא לזווית הראש.';
+  else if(t==='base'&&v===180-A) msg=`הורדתם רק זווית בסיס אחת. במשולש שווה שוקיים יש <strong>שתי</strong> זוויות בסיס של ${A}°.`;
+  else if(t==='base'&&v===A) msg='זווית הראש לא שווה לזוויות הבסיס. רק שתי זוויות הבסיס שוות זו לזו.';
+  else if(t==='ext'&&v===B) msg=`${B}° זו הזווית שבתוך המשולש ליד B. הזווית החיצונית היא בחוץ, ליד הקו המקווקו.`;
+  else if(t==='ext'&&v===180-A-C) msg='זו זווית B שבתוך המשולש. הירוקה היא הזווית שליד, בחוץ. ביחד הן 180°.';
+  else if(v>=180) msg='זווית במשולש חייבת להיות קטנה מ-180°.';
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const {t,A,B,C}=pr; pr.hint=Math.min(pr.hint+1,2); let h;
+  if(t==='miss') h=pr.hint<2?'כל שלוש הזוויות ביחד הן 180°. מה הסכום של שתי הזוויות שאתם יודעים?':`<span class="eq">${A} + ${B} = ${A+B}</span>. כמה נשאר עד 180?`;
+  if(t==='apex') h=pr.hint<2?'במשולש שווה שוקיים שתי זוויות הבסיס, A ו-B, שוות. כמה נשאר לשתיהן ביחד?':`לשתיהן ביחד <span class="eq">180 − ${C} = ${180-C}</span>. עכשיו מחלקים לשתיים.`;
+  if(t==='base') h=pr.hint<2?`גם זווית B היא ${A}°, כי זוויות הבסיס שוות.`:`<span class="eq">${A} + ${A} = ${2*A}</span>. כמה נשאר עד 180?`;
+  if(t==='ext') h=pr.hint<2?'הזווית החיצונית שווה לסכום של שתי הזוויות של המשולש שרחוקות ממנה.':`הזוויות הרחוקות הן A ו-C: <span class="eq">${A} + ${C}</span>.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint calc"><div>${solution()}</div><div>עכשיו נסו תרגיל חדש.</div></div>`; };
+$('prNew').onclick=newPr;
+$('prAns').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

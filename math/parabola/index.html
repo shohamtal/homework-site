@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פונקציה ריבועית: הפרבולה · כיתה ט · מירי</title>
+<meta name="description" content="הגרף של y = ax² + bx + c הוא פרבולה. מזיזים את a, b ו-c ורואים איך היא נפתחת, זזה ומתהפכת. וקודקוד, ציר סימטריה וחיתוכים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/parabola/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פונקציה ריבועית: הפרבולה · כיתה ט · מירי">
+<meta property="og:description" content="הגרף של y = ax² + bx + c הוא פרבולה. מזיזים את a, b ו-c ורואים איך היא נפתחת, זזה ומתהפכת. וקודקוד, ציר סימטריה וחיתוכים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/parabola/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"פונקציה ריבועית ומשוואה ריבועית","item":"https://shohamtal.github.io/homework-site/math/grade-9/#quadratic-9"},{"@type":"ListItem","position":5,"name":"פונקציה ריבועית: הפרבולה","item":"https://shohamtal.github.io/homework-site/math/parabola/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים את הקודקוד של פרבולה?","acceptedAnswer":{"@type":"Answer","text":"קודם מוצאים את ה-x של הקודקוד בנוסחה x = −b ÷ (2a). אחר כך מציבים את ה-x הזה במשוואה ומקבלים את ה-y. למשל ב-y = x² − 4x + 3 יוצא x = 2 ו-y = −1, כלומר הקודקוד ב-(2, −1). תרגלו למטה."}},{"@type":"Question","name":"איך יודעים אם פרבולה פתוחה למעלה או למטה?","acceptedAnswer":{"@type":"Answer","text":"מסתכלים רק על a, המספר שלפני x². אם הוא חיובי, הפרבולה פתוחה למעלה ולקודקוד יש ערך מינימום. אם הוא שלילי, היא פתוחה למטה ולקודקוד יש ערך מקסימום. נסו במעבדה למעלה."}},{"@type":"Question","name":"מה זה ציר הסימטריה של פרבולה?","acceptedAnswer":{"@type":"Answer","text":"זה קו אנכי שעובר דרך הקודקוד ומחלק את הפרבולה לשני חצאים זהים, כמו מראה. המשוואה שלו היא x = ה-x של הקודקוד. לכן שתי נקודות באותו מרחק מהציר, אחת מימין ואחת משמאל, נמצאות תמיד באותו גובה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"פונקציה ריבועית: הפרבולה","description":"הגרף של y = ax² + bx + c הוא פרבולה. מזיזים את a, b ו-c ורואים איך היא נפתחת, זזה ומתהפכת. וקודקוד, ציר סימטריה וחיתוכים.","url":"https://shohamtal.github.io/homework-site/math/parabola/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"פונקציה ריבועית ומשוואה ריבועית","teaches":"פונקציה ריבועית: הפרבולה","keywords":"קודקוד, ציר סימטריה, מקסימום ומינימום","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .axs{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:5 4; fill:none}
+  .g .vtx{fill:var(--line); stroke:var(--ink); stroke-width:1.2}
+  .props{display:flex; flex-wrap:wrap; gap:6px 14px; font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="parabola">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#quadratic-9">פונקציה ריבועית ומשוואה ריבועית</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">פונקציה ריבועית: הפרבולה</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · פונקציה ריבועית ומשוואה ריבועית</div>
+  <h1>פונקציה ריבועית: הפרבולה <span class="slogan">חיוך, עצב וקודקוד אחד</span></h1>
+  <p class="lead">כשיש במשוואה <span class="eq"><i>x</i>²</span>, הגרף כבר לא ישר. הוא מתעקל ויוצר צורה שנקראת <strong>פרבולה</strong>.
+  כל פונקציה ריבועית כותבים בצורה <span class="eq"><i>y</i> = <span class="m"><i>a</i></span><i>x</i>² + <i>b</i><i>x</i> + <span class="b"><i>c</i></span></span>.
+  נלמד מה כל מספר עושה לגרף, איך מוצאים את הקודקוד, ואיפה הפרבולה חותכת את הצירים. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: מה כל מספר עושה?</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3><span class="m">a</span> · למעלה או למטה</h3>
+      <p>אם <span class="m">a</span> חיובי, הפרבולה פתוחה <strong>למעלה</strong>, כמו חיוך. אם <span class="m">a</span> שלילי, היא פתוחה <strong>למטה</strong>, כמו עצב.</p>
+      <svg class="g" id="introA" viewBox="0 0 240 240" role="img" aria-label="שתי פרבולות: אחת פתוחה למעלה ואחת פתוחה למטה"></svg>
+      <p>בוורוד <span class="eq"><i>y</i> = <i>x</i>²</span>, הפתוחה למעלה. בכחול <span class="eq"><i>y</i> = −<i>x</i>² + 4</span>, הפתוחה למטה. ככל ש-<span class="m">a</span> רחוק יותר מאפס, הפרבולה צרה יותר.</p>
+    </div>
+    <div class="mini">
+      <h3>קודקוד, ציר סימטריה ו-<span class="b">c</span></h3>
+      <p>ה<strong>קודקוד</strong> הוא הנקודה הכי נמוכה (או הכי גבוהה) של הפרבולה. דרכו עובר <strong>ציר הסימטריה</strong>, קו שמחלק את הפרבולה לשני חצאים זהים.</p>
+      <svg class="g" id="introV" viewBox="0 0 240 240" role="img" aria-label="פרבולה עם קודקוד בנקודה 1 ומינוס 4 וציר סימטריה x שווה 1"></svg>
+      <p>כאן <span class="eq"><i>y</i> = <i>x</i>² − 2<i>x</i> − 3</span>. הקודקוד הוורוד ב-<span class="eq">(1, −4)</span>, ציר הסימטריה <span class="eq"><i>x</i> = 1</span>, והנקודה הצהובה <span class="eq">(0, −3)</span> היא <span class="b">c</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הנוסחה שכדאי לזכור:</strong> ה-x של הקודקוד הוא <span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span>. את ה-y של הקודקוד מקבלים כשמציבים את ה-x הזה במשוואה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו ותראו</h2></div>
+  <p class="text">הזיזו את המחוונים. <span class="m">a</span> פותח, סוגר והופך את הפרבולה. <span class="b">c</span> מזיז אותה למעלה ולמטה. <i>b</i> מזיז את הקודקוד הצידה (וגם קצת למטה או למעלה).</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="aRange"><span><span class="m">a</span> (פתיחה)</span><span class="eq" id="aVal"></span></label>
+      <input type="range" id="aRange" min="-3" max="3" step="0.5" value="1">
+      <label class="slider" for="bRange"><span><i>b</i></span><span class="eq" id="bVal"></span></label>
+      <input type="range" id="bRange" min="-6" max="6" step="1" value="-2">
+      <label class="slider" for="cRange"><span><span class="b">c</span> (חיתוך עם ציר y)</span><span class="eq" id="cVal"></span></label>
+      <input type="range" id="cRange" class="hl" min="-5" max="5" step="1" value="-3">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="1,0,0" dir="ltr">y = x²</button>
+          <button data-p="-1,0,0" dir="ltr">y = −x²</button>
+          <button data-p="3,0,0" dir="ltr">y = 3x²</button>
+          <button data-p="0.5,0,0" dir="ltr">y = ½x²</button>
+          <button data-p="1,0,-4" dir="ltr">y = x² − 4</button>
+          <button data-p="1,-2,1" dir="ltr">y = x² − 2x + 1</button>
+          <button data-p="1,0,2" dir="ltr">y = x² + 2</button>
+          <button data-p="0,2,1">מה קורה כש-a = 0?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כש-<i>b</i> = 0 הקודקוד תמיד על ציר y, ואז הוא בדיוק הנקודה הצהובה. ויש פרבולות שלא פוגשות את ציר x בכלל. נסו את <span class="eq"><i>y</i> = <i>x</i>² + 2</span>. איך פותרים את המשוואה של נקודות החיתוך לומדים ב<a href="../quadratic-equation/">משוואה ריבועית ונוסחת השורשים</a>.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>c הוא לא הקודקוד.</strong> <span class="b">c</span> הוא המקום שבו הפרבולה חותכת את ציר y. הוא שווה לקודקוד רק כש-<span class="eq"><i>b</i> = 0</span>.</div></li>
+    <li><div><strong>שוכחים את המינוס.</strong> ה-x של הקודקוד הוא <span class="eq">−<i>b</i> ÷ (2<i>a</i>)</span>. ב-<span class="eq"><i>y</i> = <i>x</i>² − 6<i>x</i></span> יש <span class="eq"><i>b</i> = −6</span>, ולכן <span class="eq"><i>x</i> = 6 ÷ 2 = 3</span>, ולא 3−.</div></li>
+    <li><div><strong>מחלקים ב-a במקום ב-2a.</strong> <span class="eq"><i>y</i> = 2<i>x</i>² − 8<i>x</i></span>: <span class="eq"><i>x</i> = 8 ÷ 4 = 2</span>. מי שמחלק רק ב-2 מקבל 4, וזה לא נכון.</div></li>
+    <li><div><strong>מספר שלילי בריבוע.</strong> כשמציבים <span class="eq"><i>x</i> = −3</span>, כותבים בסוגריים: <span class="eq">(−3)² = 9</span>. הריבוע של מספר שלילי הוא תמיד <strong>חיובי</strong>.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> מצאתם קודקוד? הציבו x אחד מימינו ו-x אחד משמאלו, באותו מרחק. אם יוצא אותו y, ציר הסימטריה שלכם נכון.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">לחצו "הצעד הבא" ותראו איך מתארים פרבולה מתוך המשוואה שלה.</p>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (פתוחה למטה)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: קודקוד והצבה</h2></div>
+  <p class="text">כל פעם תופיע פונקציה חדשה ושאלה עליה. אפשר לכתוב שבר עם קו נטוי (<span class="eq">1/2</span>) או מספר עשרוני (<span class="eq">0.5</span>).</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים את הקודקוד של פרבולה?</h3>
+    <p>קודם מוצאים את ה-x של הקודקוד בנוסחה <span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span>. אחר כך מציבים את ה-x הזה במשוואה ומקבלים את ה-y. למשל ב-<span class="eq"><i>y</i> = <i>x</i>² − 4<i>x</i> + 3</span> יוצא <span class="eq"><i>x</i> = 2</span> ו-<span class="eq"><i>y</i> = −1</span>, כלומר הקודקוד ב-<span class="eq">(2, −1)</span>. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>איך יודעים אם פרבולה פתוחה למעלה או למטה?</h3>
+    <p>מסתכלים רק על <span class="m">a</span>, המספר שלפני <span class="eq"><i>x</i>²</span>. אם הוא חיובי, הפרבולה פתוחה למעלה ולקודקוד יש ערך מינימום. אם הוא שלילי, היא פתוחה למטה ולקודקוד יש ערך מקסימום. <a href="#lab">נסו במעבדה למעלה</a>.</p>
+    <h3>מה זה ציר הסימטריה של פרבולה?</h3>
+    <p>זה קו אנכי שעובר דרך הקודקוד ומחלק את הפרבולה לשני חצאים זהים, כמו מראה. המשוואה שלו היא <span class="eq"><i>x</i> = ה-x של הקודקוד</span>. לכן שתי נקודות באותו מרחק מהציר, אחת מימין ואחת משמאל, נמצאות תמיד באותו גובה.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/equation-from-graph/">משוואת ישר מתוך גרף</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/probability/"><small>→ הנושא הקודם</small>הסתברות: מה הסיכוי?</a><a class="next" href="../../math/quadratic-equation/"><small>הנושא הבא ←</small>משוואה ריבועית ונוסחת השורשים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const f=(x,a,b,c)=>a*x*x+b*x+c;
+const r2=v=>Math.round(v*100)/100;
+const nt=v=>numTxt(r2(v));
+let pid=0;
+
+/* y = ax² + bx + c as HTML (a in pink, c highlighted) */
+function polyHTML(a,b,c){
+  const parts=[];
+  if(a){ const k=a===1?'':a===-1?MINUS:(a<0?MINUS:'')+fracHTML(a); parts.push({neg:false,h:`<span class="m">${k}</span><i>x</i>²`}); }
+  if(b){ const k=Math.abs(b)===1?'':fracHTML(b); parts.push({neg:b<0,h:`${k}<i>x</i>`}); }
+  if(c||!parts.length) parts.push({neg:c<0,h:`<span class="b">${fracHTML(c)}</span>`});
+  let s='<span class="eq"><i>y</i> = ';
+  parts.forEach((p,i)=>{
+    if(i===0){ s+=(p.neg?MINUS:'')+p.h; return; }
+    s+=` ${p.neg?MINUS:'+'} ${p.h}`;
+  });
+  return s+'</span>';
+}
+
+/* parabola (or line if a = 0) drawn on the shared grid. opt: vertex, axis, yint, roots, points, color */
+function plot(svg,a,b,c,opt={}){
+  const id='pc'+(++pid);
+  let d='';
+  for(let x=-6;x<=6.001;x+=0.1){ const y=Math.max(-40,Math.min(40,f(x,a,b,c))); d+=(d?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); }
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  (opt.more||[]).forEach(p=>{ let dd=''; for(let x=-6;x<=6.001;x+=0.1){ const y=Math.max(-40,Math.min(40,f(x,p[0],p[1],p[2]))); dd+=(dd?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); } h+=`<path class="ln2" d="${dd}"/>`; });
+  const xv=a?-b/(2*a):null, yv=a?f(xv,a,b,c):null;
+  if(opt.axis&&a) h+=`<line class="axs" x1="${sx(xv)}" y1="${sy(6)}" x2="${sx(xv)}" y2="${sy(-6)}"/>`;
+  if(opt.curve!==false) h+=`<path class="ln" d="${d}"/>`;
+  h+='</g>';
+  const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+  if(opt.roots&&a){ rootsOf(a,b,c).forEach(r=>{ if(inG(r,0)) h+=`<circle class="pt-ok" cx="${sx(r)}" cy="${sy(0)}" r="4.5"/>`; }); }
+  if(opt.yint&&inG(0,c)) h+=`<circle class="dot" cx="${sx(0)}" cy="${sy(c)}" r="4.5"/>`;
+  (opt.points||[]).forEach(p=>{ if(inG(p.x,p.y)){ h+=`<circle class="${p.cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`; if(p.label) h+=`<text class="ptlbl" x="${sx(p.x)+6}" y="${sy(p.y)-6}">${p.label}</text>`; } });
+  if(opt.vertex&&a&&inG(xv,yv)) h+=`<circle class="vtx" cx="${sx(xv)}" cy="${sy(yv)}" r="5"/>`;
+  draw(svg,null,0,{extra:h});
+}
+function rootsOf(a,b,c){
+  const D=b*b-4*a*c;
+  if(D<-1e-9) return [];
+  if(Math.abs(D)<1e-9) return [-b/(2*a)];
+  const s=Math.sqrt(D); return [(-b-s)/(2*a),(-b+s)/(2*a)].sort((p,q)=>p-q);
+}
+const isInt=v=>Math.abs(v-Math.round(v))<1e-9;
+const rootTxt=v=>isInt(v)?numTxt(Math.round(v)):'≈ '+nt(v);
+
+/* intro */
+plot($('introA'),1,0,0,{vertex:true,more:[[-1,0,4]]});
+plot($('introV'),1,-2,-3,{vertex:true,axis:true,yint:true});
+
+/* lab */
+const aR=$('aRange'), bR=$('bRange'), cR=$('cRange');
+function lab(){
+  const a=+aR.value, b=+bR.value, c=+cR.value;
+  $('labEq').innerHTML=polyHTML(a,b,c);
+  $('aVal').innerHTML=(a<0?MINUS:'')+fracHTML(a); $('bVal').textContent=numTxt(b); $('cVal').textContent=numTxt(c);
+  if(a===0){
+    plot($('labG'),0,b,c,{yint:true});
+    $('labExplain').innerHTML=`<div>כש-<span class="m">a = 0</span> אין <span class="eq"><i>x</i>²</span> במשוואה, ולכן זו כבר <strong>לא פרבולה</strong>. זה ישר רגיל, כמו ב<a href="../equation-from-graph/">פונקציה קווית</a>.</div><div>הזיזו את <span class="m">a</span> חזרה ותראו את הישר מתעקל.</div>`;
+    return;
+  }
+  plot($('labG'),a,b,c,{vertex:true,axis:true,yint:true,roots:true});
+  const xv=-b/(2*a), yv=f(xv,a,b,c), rs=rootsOf(a,b,c);
+  let t=`<div>${a>0?'<span class="m">a</span> חיובי, ולכן הפרבולה <strong>פתוחה למעלה</strong>, כמו חיוך.':'<span class="m">a</span> שלילי, ולכן הפרבולה <strong>פתוחה למטה</strong>, כמו עצב.'}${Math.abs(a)>=2?' היא צרה, כי a רחוק מאפס.':Math.abs(a)<1?' היא רחבה, כי a קרוב לאפס.':''}</div>`;
+  t+=`<div><strong>קודקוד:</strong> <span class="eq"><i>x</i> = ${b?`${numTxt(-b)} ÷ ${numTxt(2*a)} = `:''}${nt(xv)}</span>, ובהצבה <span class="eq"><i>y</i> = ${nt(yv)}</span>. הקודקוד ב-<span class="eq">(${nt(xv)}, ${nt(yv)})</span>, והוא נקודת ה${a>0?'מינימום':'מקסימום'}.</div>`;
+  t+=`<div><strong>ציר הסימטריה:</strong> <span class="eq"><i>x</i> = ${nt(xv)}</span> (הקו הכחול המקווקו).</div>`;
+  t+=`<div><strong>חיתוך עם ציר y:</strong> <span class="eq">(0, ${numTxt(c)})</span>, הנקודה הצהובה.</div>`;
+  t+=`<div><strong>חיתוך עם ציר x:</strong> ${rs.length===0?'אין. הפרבולה לא פוגשת את ציר x בכלל.':rs.length===1?`נוגעת בציר x רק בנקודה אחת, בקודקוד <span class="eq">(${rootTxt(rs[0])}, 0)</span>.`:`בשתי נקודות, <span class="eq"><i>x</i> = ${rootTxt(rs[0])}</span> ו-<span class="eq"><i>x</i> = ${rootTxt(rs[1])}</span> (הנקודות הירוקות).`}</div>`;
+  if(Math.abs(xv)>5.5||Math.abs(yv)>5.5) t+='<div>הקודקוד יצא מחוץ לגרף. נסו להקטין את b או את c.</div>';
+  $('labExplain').innerHTML=t;
+}
+[aR,bR,cR].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [a,b,c]=btn.dataset.p.split(','); aR.value=a; bR.value=b; cR.value=c; lab(); }));
+lab();
+
+/* worked examples */
+const EX={
+  A:{p:[1,-4,3],steps:[
+    [{},'נתונה הפונקציה <span class="eq"><i>y</i> = <i>x</i>² − 4<i>x</i> + 3</span>. נמצא את כל מה שחשוב בה, ונצייר.'],
+    [{curve:false},'<strong>צעד 1, הכיוון:</strong> <span class="eq"><i>a</i> = 1</span>, מספר חיובי. לכן הפרבולה פתוחה <strong>למעלה</strong>, ולקודקוד יהיה ערך מינימום.'],
+    [{curve:false,yint:true},'<strong>צעד 2, חיתוך עם ציר y:</strong> מציבים <span class="eq"><i>x</i> = 0</span> ונשאר <span class="eq"><i>y</i> = 3</span>. זו הנקודה הצהובה <span class="eq">(0, 3)</span>.'],
+    [{curve:false,yint:true,axis:true},'<strong>צעד 3, ה-x של הקודקוד:</strong> <span class="eq"><i>a</i> = 1</span>, <span class="eq"><i>b</i> = −4</span>. <span class="eq"><i>x</i> = 4 ÷ 2 = 2</span>. זה גם ציר הסימטריה, <span class="eq"><i>x</i> = 2</span>.'],
+    [{curve:false,yint:true,axis:true,vertex:true},'<strong>צעד 4, ה-y של הקודקוד:</strong> מציבים <span class="eq"><i>x</i> = 2</span>: <span class="eq">4 − 8 + 3 = −1</span>. הקודקוד ב-<span class="eq">(2, −1)</span>.'],
+    [{curve:false,yint:true,axis:true,vertex:true,points:[{x:4,y:3,cls:'pt'}]},'<strong>צעד 5, סימטריה:</strong> הנקודה <span class="eq">(0, 3)</span> נמצאת 2 צעדים משמאל לציר. אז גם 2 צעדים מימין, ב-<span class="eq">(4, 3)</span>, יש נקודה באותו גובה. בלי חישוב!'],
+    [{yint:true,axis:true,vertex:true,roots:true,points:[{x:4,y:3,cls:'pt'}]},'<strong>צעד 6, חיתוך עם ציר x:</strong> הפרבולה חוצה את ציר x ב-<span class="eq"><i>x</i> = 1</span> וב-<span class="eq"><i>x</i> = 3</span>. בדיקה: <span class="eq">1 − 4 + 3 = 0</span> ו-<span class="eq">9 − 12 + 3 = 0</span>. שימו לב ששתיהן באותו מרחק מהציר <span class="eq"><i>x</i> = 2</span>.']
+  ]},
+  B:{p:[-1,2,3],steps:[
+    [{},'עכשיו <span class="eq"><i>y</i> = −<i>x</i>² + 2<i>x</i> + 3</span>. הפעם יש מינוס לפני <span class="eq"><i>x</i>²</span>.'],
+    [{curve:false},'<strong>צעד 1, הכיוון:</strong> <span class="eq"><i>a</i> = −1</span>, מספר שלילי. הפרבולה פתוחה <strong>למטה</strong>, ולקודקוד יהיה ערך מקסימום.'],
+    [{curve:false,yint:true},'<strong>צעד 2, חיתוך עם ציר y:</strong> <span class="eq"><i>c</i> = 3</span>, ולכן הנקודה הצהובה היא <span class="eq">(0, 3)</span>.'],
+    [{curve:false,yint:true,axis:true},'<strong>צעד 3, ה-x של הקודקוד:</strong> <span class="eq"><i>b</i> = 2</span>, <span class="eq">2<i>a</i> = −2</span>. <span class="eq"><i>x</i> = −2 ÷ (−2) = 1</span>. מינוס חלקי מינוס יוצא פלוס.'],
+    [{curve:false,yint:true,axis:true,vertex:true},'<strong>צעד 4, ה-y של הקודקוד:</strong> מציבים <span class="eq"><i>x</i> = 1</span>: <span class="eq">−1 + 2 + 3 = 4</span>. הקודקוד ב-<span class="eq">(1, 4)</span>, הנקודה הכי גבוהה.'],
+    [{yint:true,axis:true,vertex:true,roots:true},'<strong>צעד 5, חיתוך עם ציר x:</strong> ב-<span class="eq"><i>x</i> = −1</span> וב-<span class="eq"><i>x</i> = 3</span>. בדיקה עם סוגריים: <span class="eq">−(−1)² + 2·(−1) + 3</span> <span class="eq">= −1 − 2 + 3 = 0</span>. מתאים.']
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [opt,txt]=e.steps[exI];
+  plot($('exG'),...e.p,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0;
+  $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].steps.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+['A','B'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice: two kinds of questions. vertex = find (x, y) of the vertex; value = find y for a given x */
+let pr=null, streak=0, solved=0;
+function newPr(){
+  let a,b,c,h,k,guard=0;
+  do{
+    a=pick([1,1,-1,-1,2,-2]); h=Math.floor(Math.random()*7)-3; k=Math.floor(Math.random()*9)-4;
+    b=-2*a*h; c=a*h*h+k; guard++;
+  }while((b===0&&Math.random()<0.7||Math.abs(c)>12||(pr&&pr.a===a&&pr.b===b&&pr.c===c))&&guard<60);
+  const kind=Math.random()<0.6?'vertex':'value';
+  const p=pick([-3,-2,-1,1,2,3].filter(x=>x!==0));
+  pr={a,b,c,xv:h,yv:k,kind,p,ans:f(p,a,b,c),tries:0,hint:0};
+  $('prEq').innerHTML=polyHTML(a,b,c);
+  if(kind==='vertex'){
+    $('prQ').textContent='איפה הקודקוד של הפרבולה?';
+    $('prInputs').innerHTML='<label for="prX">x של הקודקוד =<input id="prX" inputmode="text" autocomplete="off"></label><label for="prY">y של הקודקוד =<input id="prY" inputmode="text" autocomplete="off"></label>';
+    plot($('prG'),a,b,c,{curve:false});
+  }else{
+    $('prQ').innerHTML=`מה הערך של y כש-<span class="eq"><i>x</i> = ${numTxt(p)}</span>?`;
+    $('prInputs').innerHTML='<label for="prY">y =<input id="prY" inputmode="text" autocomplete="off"></label>';
+    plot($('prG'),a,b,c,{});
+  }
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {a,b,c}=pr;
+  if(pr.kind==='vertex') return `<span class="eq"><i>x</i> = ${numTxt(-b)} ÷ ${numTxt(2*a)} = ${numTxt(pr.xv)}</span>. מציבים: <span class="eq"><i>y</i> = ${numTxt(pr.yv)}</span>. הקודקוד ב-<span class="eq">(${numTxt(pr.xv)}, ${numTxt(pr.yv)})</span>.`;
+  const P=`(${numTxt(pr.p)})`;
+  return `<span class="eq"><i>y</i> = ${a===1?'':a===-1?MINUS:numTxt(a)+'·'}${P}²${b?` ${b<0?MINUS:'+'} ${Math.abs(b)===1?'':numTxt(Math.abs(b))+'·'}${P}`:''}${c?` ${c<0?MINUS:'+'} ${numTxt(Math.abs(c))}`:''}</span> <span class="eq">= ${numTxt(a*pr.p*pr.p)}${[b*pr.p,c].filter(v=>v).map(v=>` ${v<0?MINUS:'+'} ${numTxt(Math.abs(v))}`).join('')}</span> <span class="eq">= ${numTxt(pr.ans)}</span>`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), {a,b,c}=pr, msgs=[];
+  if(pr.kind==='vertex'){
+    const x=parseNum($('prX').value), y=parseNum($('prY').value);
+    if(isNaN(x)||isNaN(y)){ fb.innerHTML='<div class="fb err">מלאו מספר גם ב-x וגם ב-y של הקודקוד.</div>'; return; }
+    if(eqv(x,pr.xv)&&eqv(y,pr.yv)){ streak++; solved++; score(); plot($('prG'),a,b,c,{vertex:true,axis:true}); fb.innerHTML=`<div class="fb ok">נכון! הקודקוד ב-<span class="eq">(${numTxt(pr.xv)}, ${numTxt(pr.yv)})</span>.</div>`; return; }
+    if(!eqv(x,pr.xv)){
+      if(pr.xv!==0&&eqv(x,-pr.xv)) msgs.push('הסימן של x הפוך. הנוסחה היא <span class="eq">−<i>b</i> ÷ (2<i>a</i>)</span>, עם מינוס לפני ה-b.');
+      else if(eqv(x,-b/a)||eqv(x,b/a)) msgs.push('נראה שחילקתם ב-a. צריך לחלק ב-<strong>2a</strong>.');
+      else if(eqv(x,c)) msgs.push('c הוא החיתוך עם ציר y, לא הקודקוד.');
+      else msgs.push('ה-x לא נכון. השתמשו ב-<span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span>.');
+      if(eqv(y,f(x,a,b,c))) msgs.push('ה-y שכתבתם מתאים ל-x שלכם, אז ההצבה טובה. תקנו רק את ה-x.');
+    }else{
+      msgs.push('ה-x נכון!');
+      const wrongSq=-a*x*x+b*x+c;
+      if(x<0&&eqv(y,wrongSq)) msgs.push('בהצבה, מספר שלילי בריבוע יוצא חיובי. כתבו אותו בסוגריים: <span class="eq">('+numTxt(x)+')² = '+numTxt(x*x)+'</span>.');
+      else msgs.push('ה-y לא נכון. הציבו את ה-x של הקודקוד במשוואה וחשבו לאט.');
+    }
+  }else{
+    const y=parseNum($('prY').value), p=pr.p;
+    if(isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    if(eqv(y,pr.ans)){ streak++; solved++; score(); plot($('prG'),a,b,c,{points:[{x:p,y:pr.ans,cls:'pt-ok'}]}); fb.innerHTML=`<div class="fb ok">נכון! <span class="eq"><i>y</i> = ${numTxt(pr.ans)}</span>, והנקודה <span class="eq">(${numTxt(p)}, ${numTxt(pr.ans)})</span> נמצאת על הפרבולה.</div>`; return; }
+    if(p<0&&eqv(y,-a*p*p+b*p+c)) msgs.push('בדקו את <span class="eq"><i>x</i>²</span>: <span class="eq">('+numTxt(p)+')² = '+numTxt(p*p)+'</span>, חיובי. מספר שלילי בריבוע יוצא חיובי.');
+    else if(eqv(y,a*2*p+b*p+c)) msgs.push('<span class="eq"><i>x</i>²</span> זה x כפול x, ולא 2 כפול x.');
+    else if(eqv(y,(a*p)*(a*p)+b*p+c)&&a!==1&&a!==-1) msgs.push('קודם מעלים את x בריבוע, ורק אחר כך כופלים ב-a.');
+    else msgs.push('לא בדיוק. הציבו את ה-x בסוגריים בכל מקום שיש x, ואז חשבו לפי סדר הפעולות.');
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(m=>'<li>'+m+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const {a,b,c}=pr; let t;
+  if(pr.kind==='vertex'){
+    if(pr.hint===1) t=`כאן <span class="eq"><i>a</i> = ${numTxt(a)}</span> ו-<span class="eq"><i>b</i> = ${numTxt(b)}</span>. הציבו בנוסחה <span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span>.`;
+    else { t=`ה-x של הקודקוד הוא <span class="eq">${numTxt(pr.xv)}</span>. סימנו לכם את ציר הסימטריה. עכשיו הציבו <span class="eq"><i>x</i> = ${numTxt(pr.xv)}</span> במשוואה כדי למצוא את ה-y.`; plot($('prG'),a,b,c,{axis:true}); }
+  }else{
+    const P=`(${numTxt(pr.p)})`;
+    if(pr.hint===1) t=`כתבו את המשוואה מחדש, ובמקום כל x שימו <span class="eq">${P}</span> בסוגריים.`;
+    else t=`<span class="eq">${P}² = ${numTxt(pr.p*pr.p)}</span>. עכשיו: <span class="eq">${numTxt(a)}·${numTxt(pr.p*pr.p)} = ${numTxt(a*pr.p*pr.p)}</span>${b?`, ו-<span class="eq">${numTxt(b)}·${P} = ${numTxt(b*pr.p)}</span>`:''}. חברו הכול${c?` עם ${numTxt(c)}`:''}.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {a,b,c}=pr;
+  if(pr.kind==='vertex') plot($('prG'),a,b,c,{vertex:true,axis:true}); else plot($('prG'),a,b,c,{points:[{x:pr.p,y:pr.ans,cls:'pt-ok'}]});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

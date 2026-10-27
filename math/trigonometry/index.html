@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>טריגונומטריה: סינוס, קוסינוס וטנגנס · כיתה ט · מירי</title>
+<meta name="description" content="במשולש ישר זווית, היחס בין הצלעות תלוי רק בזווית. מוצאים צלע או זווית בעזרת sin, cos ו-tan.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/trigonometry/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="טריגונומטריה: סינוס, קוסינוס וטנגנס · כיתה ט · מירי">
+<meta property="og:description" content="במשולש ישר זווית, היחס בין הצלעות תלוי רק בזווית. מוצאים צלע או זווית בעזרת sin, cos ו-tan.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/trigonometry/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"גאומטריה וטריגונומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-9/#geometry-9"},{"@type":"ListItem","position":5,"name":"טריגונומטריה: סינוס, קוסינוס וטנגנס","item":"https://shohamtal.github.io/homework-site/math/trigonometry/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך יודעים מתי להשתמש בסינוס, בקוסינוס או בטנגנס?","acceptedAnswer":{"@type":"Answer","text":"מסמנים את שתי הצלעות שמשתתפות בשאלה: זו שידועה וזו שמחפשים. אם הן מול ויתר, זה סינוס. ליד ויתר, זה קוסינוס. מול וליד, זה טנגנס. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"איך מוצאים זווית בעזרת טריגונומטריה?","acceptedAnswer":{"@type":"Answer","text":"מחלקים את שתי הצלעות הידועות כדי לקבל את היחס, ואז משתמשים בפעולה ההפוכה במחשבון. למשל ניצב מול 3 וניצב ליד 4: tan α = 0.75, ולכן α = tan⁻¹(0.75) ≈ 36.9°."}},{"@type":"Question","name":"למה המחשבון נותן תשובה לא נכונה ל-sin?","acceptedAnswer":{"@type":"Answer","text":"כנראה שהמחשבון במצב רדיאנים (RAD). העבירו אותו למעלות (DEG) ובדקו ש-sin 30 יוצא 0.5."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"טריגונומטריה: סינוס, קוסינוס וטנגנס","description":"במשולש ישר זווית, היחס בין הצלעות תלוי רק בזווית. מוצאים צלע או זווית בעזרת sin, cos ו-tan.","url":"https://shohamtal.github.io/homework-site/math/trigonometry/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"גאומטריה וטריגונומטריה","teaches":"טריגונומטריה: סינוס, קוסינוס וטנגנס","keywords":"סינוס, קוסינוס, טנגנס, ניצב ויתר","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.tg{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.tg .tri{fill:var(--hl); fill-opacity:.45; stroke:var(--ink); stroke-width:2; stroke-linejoin:round}
+.tg .op{stroke:var(--line); stroke-width:5; stroke-linecap:round}
+.tg .ad{stroke:var(--blue); stroke-width:5; stroke-linecap:round}
+.tg .hy{stroke:var(--ink); stroke-width:5; stroke-linecap:round}
+.tg .ra{fill:none; stroke:var(--ink); stroke-width:1.4}
+.tg .ang{fill:var(--line); fill-opacity:.2; stroke:var(--line); stroke-width:1.6}
+.tg .lbl{font:700 13px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.tg .lbl.miss{fill:var(--line)}
+.tg .word{font:700 12px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--muted); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.tg .wop{fill:var(--line)} .tg .wad{fill:var(--blue)}
+.calc{display:flex; flex-direction:column; gap:4px}
+table.ratios{border-collapse:collapse; margin-top:4px}
+table.ratios td{padding:2px 8px; border-bottom:1px solid var(--soft)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="trigonometry">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#geometry-9">גאומטריה וטריגונומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">טריגונומטריה: סינוס, קוסינוס וטנגנס</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · גאומטריה וטריגונומטריה</div>
+  <h1>טריגונומטריה: סינוס, קוסינוס וטנגנס <span class="slogan">הזווית קובעת את היחס</span></h1>
+  <p class="lead">במשולש ישר זווית, אם יודעים זווית אחת וצלע אחת, אפשר לחשב את כל השאר. הסוד: היחס בין שתי צלעות תלוי רק בזווית, ולא בגודל המשולש. כאן תלמדו מתי משתמשים בסינוס, בקוסינוס ובטנגנס. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מול, ליד ויתר</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שמות הצלעות לפי הזווית</h3>
+      <svg class="tg" id="ideaG" viewBox="0 0 280 200" role="img" aria-label="משולש ישר זווית עם ניצב מול הזווית, ניצב ליד הזווית ויתר"></svg>
+      <p>מסתכלים מהזווית <span class="eq">α</span> (אלפא):</p>
+      <p><strong>ניצב מול</strong> (ורוד): הצלע שמולה, היא לא נוגעת בזווית.</p>
+      <p><strong>ניצב ליד</strong> (כחול): הניצב שנוגע בזווית.</p>
+      <p><strong>יתר</strong>: מול הזווית הישרה, הכי ארוך.</p>
+    </div>
+    <div class="mini">
+      <h3>שלושה יחסים</h3>
+      <div class="big-eq"><span class="eq">sin α = מול : יתר</span></div>
+      <div class="big-eq"><span class="eq">cos α = ליד : יתר</span></div>
+      <div class="big-eq"><span class="eq">tan α = מול : ליד</span></div>
+      <p>את הערכים מוצאים במחשבון. למשל <span class="eq">sin 30° = 0.5</span>: בכל משולש ישר זווית עם זווית של 30°, הניצב שמולה הוא בדיוק חצי מהיתר.</p>
+    </div>
+  </div>
+  <div class="callout">למה היחס לא תלוי בגודל? כי כל המשולשים הישרי זווית עם אותה זווית α הם <a href="../similarity/">משולשים דומים</a>. הם רק הגדלה אחד של השני, והיחסים בין הצלעות נשארים.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: זווית, גודל, ויחסים</h2></div>
+  <p class="text">שנו את הזווית ואת אורך היתר. שימו לב: כשמשנים רק את הגודל, הצלעות משתנות, אבל sin, cos ו-tan נשארים אותו דבר.</p>
+  <div class="lab">
+    <svg class="tg" id="labG" viewBox="0 0 280 200" role="img" aria-label="משולש ישר זווית שאפשר לשנות"></svg>
+    <div class="ctrl">
+      <label class="slider" for="la"><span>הזווית <i>α</i></span><span class="eq" id="lav"></span></label>
+      <input type="range" class="blue" id="la" min="5" max="85" step="5" value="30">
+      <label class="slider" for="lh"><span>אורך היתר</span><span class="eq" id="lhv"></span></label>
+      <input type="range" class="hl" id="lh" min="2" max="12" step="1" value="10">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="30,10">30° ויתר 10</button>
+          <button data-p="30,4">30° ויתר 4</button>
+          <button data-p="45,8">45°</button>
+          <button data-p="60,10">60°</button>
+          <button data-p="80,10">זווית גדולה</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">ב-45° הניצבים שווים, ולכן <span class="eq">tan 45° = 1</span>. וככל שהזווית גדלה, הניצב שמולה גדל, ו-sin גדל.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מול וליד תלויים בזווית</h3>
+      <p>אותו ניצב יכול להיות "מול" לזווית אחת ו"ליד" לזווית השנייה.</p>
+      <p>תמיד שאלו קודם: מאיזו זווית אני מסתכל? ורק אז תנו שמות לצלעות.</p>
+    </div>
+    <div class="mini">
+      <h3>המחשבון במעלות</h3>
+      <p>במחשבון צריך להופיע <strong>DEG</strong> (מעלות), לא RAD.</p>
+      <p>בדיקה מהירה: <span class="eq">sin 30</span> צריך לצאת <span class="eq">0.5</span>. יצא <span class="eq">−0.988</span>? המחשבון ברדיאנים.</p>
+    </div>
+    <div class="mini">
+      <h3>זווית? משתמשים בהפוך</h3>
+      <p>כשמחפשים את הזווית, מחשבים את היחס, ואז לוחצים על <span class="eq">sin⁻¹</span> (או <span class="eq">cos⁻¹</span>, <span class="eq">tan⁻¹</span>).</p>
+      <p>התשובה היא זווית במעלות, לא מספר קטן כמו 0.6.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקת שפיות:</strong> היתר הוא הכי ארוך, ולכן <span class="eq">sin</span> ו-<span class="eq">cos</span> תמיד קטנים מ-1. אם יצא לכם ניצב ארוך מהיתר, משהו התבלבל.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: מוצאים צלע</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: מוצאים זווית</button>
+  </div>
+  <div class="lab">
+    <svg class="tg" id="exG" viewBox="0 0 280 200" role="img" aria-label="משולש הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <div class="row" role="tablist">
+    <button id="tabSide" class="primary" role="tab" aria-selected="true">מצאו צלע</button>
+    <button id="tabAng" role="tab" aria-selected="false">מצאו זווית</button>
+  </div>
+
+  <div id="paneSide">
+    <p class="text">השתמשו במחשבון. עגלו לספרה אחת אחרי הנקודה.</p>
+    <div class="lab">
+      <svg class="tg" id="prG" viewBox="0 0 280 200" role="img" aria-label="משולש לתרגול"></svg>
+      <div class="ctrl">
+        <p id="prQ"></p>
+        <div class="inputs">
+          <label for="prA"><span>הצלע החסרה ≈</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+          <button id="prCheck" class="primary">בדיקה</button>
+        </div>
+        <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">משולש חדש</button></div>
+        <div id="prFb" aria-live="polite"></div>
+        <p class="counter" id="prStreak"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="paneAng" hidden>
+    <p class="text">נתונות שתי צלעות. מצאו את הזווית <span class="eq">α</span> במעלות, מעוגלת למספר שלם.</p>
+    <div class="lab">
+      <svg class="tg" id="agG" viewBox="0 0 280 200" role="img" aria-label="משולש לתרגול מציאת זווית"></svg>
+      <div class="ctrl">
+        <p id="agQ"></p>
+        <div class="inputs">
+          <label for="agA"><span>α ≈</span><input id="agA" inputmode="decimal" autocomplete="off"></label>
+          <button id="agCheck" class="primary">בדיקה</button>
+        </div>
+        <div class="row"><button id="agHint">רמז</button><button id="agShow" disabled>הראו לי את הפתרון</button><button id="agNew">משולש חדש</button></div>
+        <div id="agFb" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך יודעים מתי להשתמש בסינוס, בקוסינוס או בטנגנס?</h3>
+    <p>מסמנים את שתי הצלעות שמשתתפות בשאלה: זו שידועה וזו שמחפשים. אם הן מול ויתר, זה סינוס. ליד ויתר, זה קוסינוס. מול וליד, זה טנגנס. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>איך מוצאים זווית בעזרת טריגונומטריה?</h3>
+    <p>מחלקים את שתי הצלעות הידועות כדי לקבל את היחס, ואז משתמשים בפעולה ההפוכה במחשבון. למשל ניצב מול 3 וניצב ליד 4: <span class="eq">tan α = 0.75</span>, ולכן <span class="eq">α = tan⁻¹(0.75) ≈ 36.9°</span>.</p>
+    <h3>למה המחשבון נותן תשובה לא נכונה ל-sin?</h3>
+    <p>כנראה שהמחשבון במצב רדיאנים (RAD). העבירו אותו למעלות (DEG) ובדקו ש-<span class="eq">sin 30</span> יוצא <span class="eq">0.5</span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/pythagoras/">משפט פיתגורס</a> · <a href="../../math/similarity/">דמיון משולשים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/circle-angles/"><small>→ הנושא הקודם</small>מעגל: זווית מרכזית, זווית היקפית ומיתרים</a><a class="next" href="../../math/sequences/"><small>הנושא הבא ←</small>סדרות: איבר כללי וחוקיות</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const D=Math.PI/180;
+const r1=v=>Math.round(v*10)/10, r3=v=>Math.round(v*1000)/1000;
+const n1=v=>String(r1(v)), n3=v=>String(r3(v));
+const near=(a,b,t)=>Math.abs(a-b)<=t;
+const fx=v=>v.toFixed(1);
+
+/* right triangle: A (angle α) at the left, right angle at C on the right, B above C.
+   o.lab {op,ad,hy}: labels; o.miss: side shown in pink; o.hot: list of sides to color; o.words: show מול/ליד/יתר; o.alpha: text at the angle */
+function tri(svg,alpha,h,o={}){
+  const W=280,H=200,pad=30;
+  const ad=h*Math.cos(alpha*D), op=h*Math.sin(alpha*D);
+  const k=Math.min((W-2*pad)/ad,(H-2*pad)/op);
+  const ox=(W-ad*k)/2, oy=(H+op*k)/2;
+  const A=[ox,oy], C=[ox+ad*k,oy], B=[ox+ad*k,oy-op*k];
+  const L=(p,q,cls)=>`<line class="${cls}" x1="${fx(p[0])}" y1="${fx(p[1])}" x2="${fx(q[0])}" y2="${fx(q[1])}"/>`;
+  let s='';
+  const hot=o.hot||[];
+  if(hot.includes('op')) s+=L(C,B,'op');
+  if(hot.includes('ad')) s+=L(A,C,'ad');
+  if(hot.includes('hy')) s+=L(A,B,'hy');
+  s+=`<polygon class="tri" points="${[A,B,C].map(p=>p.map(fx).join(',')).join(' ')}"/>`;
+  const m=Math.min(10,op*k/3,ad*k/3);
+  s+=`<polyline class="ra" points="${fx(C[0]-m)},${fx(C[1])} ${fx(C[0]-m)},${fx(C[1]-m)} ${fx(C[0])},${fx(C[1]-m)}"/>`;
+  const r=Math.min(28,ad*k*.4), e=[A[0]+r*Math.cos(alpha*D),A[1]-r*Math.sin(alpha*D)];
+  s+=`<path class="ang" d="M${fx(A[0])},${fx(A[1])} L${fx(A[0]+r)},${fx(A[1])} A${fx(r)},${fx(r)} 0 0 0 ${fx(e[0])},${fx(e[1])} Z"/>`;
+  const ha=alpha/2*D;
+  s+=`<text class="lbl" x="${fx(A[0]+(r+14)*Math.cos(ha))}" y="${fx(A[1]-(r+14)*Math.sin(ha))}">${o.alpha||'α'}</text>`;
+  const Lb=o.lab||{}, cls=key=>'lbl'+(o.miss===key?' miss':'');
+  if(Lb.ad!=null) s+=`<text class="${cls('ad')}" x="${fx((A[0]+C[0])/2)}" y="${fx(C[1]+15)}">${Lb.ad}</text>`;
+  if(Lb.op!=null) s+=`<text class="${cls('op')}" x="${fx(C[0]+20)}" y="${fx((C[1]+B[1])/2)}">${Lb.op}</text>`;
+  const nx=-Math.sin(alpha*D), ny=-Math.cos(alpha*D);   /* outward normal of AB, screen coords */
+  const mx=(A[0]+B[0])/2, my=(A[1]+B[1])/2;
+  if(Lb.hy!=null) s+=`<text class="${cls('hy')}" x="${fx(mx+nx*16)}" y="${fx(my+ny*16)}">${Lb.hy}</text>`;
+  if(o.words){
+    s+=`<text class="word wad" x="${fx((A[0]+C[0])/2)}" y="${fx(C[1]+(Lb.ad!=null?30:15))}">ליד</text>`;
+    s+=`<text class="word wop" x="${fx(C[0]+(Lb.op!=null?24:16))}" y="${fx((C[1]+B[1])/2+(Lb.op!=null?16:0))}">מול</text>`;
+    s+=`<text class="word" x="${fx(mx+nx*(Lb.hy!=null?34:18))}" y="${fx(my+ny*(Lb.hy!=null?34:18))}">יתר</text>`;
+  }
+  svg.innerHTML=s;
+}
+tri($('ideaG'),35,10,{hot:['op','ad'],words:true});
+
+/* ---------- lab ---------- */
+const LA=$('la'), LH=$('lh');
+function lab(){
+  const a=+LA.value, h=+LH.value, op=h*Math.sin(a*D), ad=h*Math.cos(a*D);
+  $('lav').textContent=a+'°'; $('lhv').textContent=h;
+  tri($('labG'),a,h,{lab:{op:n1(op),ad:n1(ad),hy:String(h)},hot:['op','ad'],alpha:a+'°'});
+  let x=`<div>מול ≈ ${E(n1(op))}, ליד ≈ ${E(n1(ad))}, יתר = ${E(h)}.</div>`;
+  x+=`<table class="ratios"><tr><td>${E(`sin ${a}°`)}</td><td>${E(`${n1(op)} : ${h}`)}</td><td>≈ ${E(n3(Math.sin(a*D)))}</td></tr>`;
+  x+=`<tr><td>${E(`cos ${a}°`)}</td><td>${E(`${n1(ad)} : ${h}`)}</td><td>≈ ${E(n3(Math.cos(a*D)))}</td></tr>`;
+  x+=`<tr><td>${E(`tan ${a}°`)}</td><td>${E(`${n1(op)} : ${n1(ad)}`)}</td><td>≈ ${E(n3(Math.tan(a*D)))}</td></tr></table>`;
+  x+='<div>שנו רק את היתר: הצלעות משתנות, אבל שלושת היחסים נשארים.</div>';
+  if(a===45) x+='<div>ב-45° שני הניצבים שווים, ולכן tan יוצא 1.</div>';
+  $('labTxt').innerHTML=x;
+}
+[LA,LH].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{const [a,h]=b.dataset.p.split(','); LA.value=a; LH.value=h; lab();}));
+lab();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{a:35,h:10,steps:[
+    [{lab:{hy:'10',op:'x'},miss:'op',alpha:'35°'},`במשולש ישר זווית ${E('α = 35°')} והיתר 10. מצאו את הניצב x שמול הזווית.`],
+    [{lab:{hy:'10',op:'x'},miss:'op',alpha:'35°',hot:['op','hy'],words:true},'מסמנים את שתי הצלעות שבשאלה: x הוא <strong>מול</strong>, ו-10 הוא <strong>יתר</strong>. מול ויתר? זה סינוס.'],
+    [{lab:{hy:'10',op:'x'},miss:'op',alpha:'35°',hot:['op','hy']},`כותבים: ${E('sin 35° = x : 10')}. כופלים את שני הצדדים ב-10: ${E('x = 10 · sin 35°')}.`],
+    [{lab:{hy:'10',op:'5.7'},alpha:'35°',hot:['op']},`במחשבון: ${E('sin 35° ≈ 0.574')}, ולכן ${E('x ≈ 5.7')}. בדיקה: 5.7 קצר מהיתר 10. מתאים!`]
+  ]},
+  B:{a:Math.atan(3/4)/D,h:5,steps:[
+    [{lab:{op:'3',ad:'4'},alpha:'α'},'הניצבים 3 ו-4. מצאו את הזווית α.'],
+    [{lab:{op:'3',ad:'4'},alpha:'α',hot:['op','ad'],words:true},'מסתכלים מ-α: הניצב 3 <strong>מול</strong> הזווית, והניצב 4 <strong>ליד</strong>. מול וליד? זה טנגנס.'],
+    [{lab:{op:'3',ad:'4'},alpha:'α',hot:['op','ad']},`${E('tan α = 3 : 4 = 0.75')}. זה עוד לא הזווית, זה היחס.`],
+    [{lab:{op:'3',ad:'4'},alpha:'36.9°'},`משתמשים בפעולה ההפוכה: ${E('α = tan⁻¹(0.75) ≈ 36.9°')}.`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [o,txt]=e.steps[exI];
+  tri($('exG'),e.a,e.h,o);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k; exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- tabs ---------- */
+function tab(k){
+  $('paneSide').hidden=k!=='side'; $('paneAng').hidden=k!=='ang';
+  [['tabSide','side'],['tabAng','ang']].forEach(([id,kk])=>{$(id).classList.toggle('primary',kk===k); $(id).setAttribute('aria-selected',kk===k);});
+}
+$('tabSide').onclick=()=>tab('side'); $('tabAng').onclick=()=>tab('ang');
+
+const NAME={op:'הניצב שמול α',ad:'הניצב שליד α',hy:'היתר'};
+/* which function links two sides, and how */
+function rel(known,ask){
+  const pair=[known,ask].sort().join('');
+  return {hyop:'sin',adhy:'cos',adop:'tan'}[pair];
+}
+const F={sin:Math.sin,cos:Math.cos,tan:Math.tan};
+
+/* ---------- practice: find a side ---------- */
+let pr={}, streak=0, solved=0;
+function newPr(){
+  const a=pick([25,30,35,40,50,55,60,65]), K=pick([5,6,8,10,12,15,20]);
+  let known,ask; do{ known=pick(['op','ad','hy']); ask=pick(['op','ad','hy']); } while(known===ask||(pr.known===known&&pr.ask===ask&&pr.a===a));
+  const s=Math.sin(a*D), c=Math.cos(a*D), t=Math.tan(a*D);
+  let side;
+  if(known==='hy') side={hy:K,op:K*s,ad:K*c};
+  if(known==='op') side={op:K,hy:K/s,ad:K/t};
+  if(known==='ad') side={ad:K,hy:K/c,op:K*t};
+  const fn=rel(known,ask);
+  pr={a,K,known,ask,side,fn,ans:side[ask],tries:0,hint:0};
+  pr.lab={[known]:String(K),[ask]:'x'};
+  tri($('prG'),a,side.hy,{lab:pr.lab,miss:ask,alpha:a+'°'});
+  $('prQ').innerHTML=`${E(`α = ${a}°`)}, ${NAME[known]} ${K}. מצאו את x (${NAME[ask]}).`;
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function prSol(){
+  const {a,K,known,ask,fn,ans}=pr, W={op:'מול',ad:'ליד',hy:'יתר'};
+  const top=fn==='sin'?'op':fn==='cos'?'ad':'op', bot=fn==='tan'?'ad':'hy';
+  const eq=`${fn} ${a}° = ${W[top]} : ${W[bot]}`;
+  const mult=ask===top;            /* asking the top of the ratio: multiply, else divide */
+  return `${W[known]} ו${W[ask]}, אז ${E(eq)}. ${mult?E(`x = ${K} · ${fn} ${a}°`):E(`x = ${K} : ${fn} ${a}°`)} ≈ ${E(n1(ans))}.`;
+}
+$('prCheck').onclick=()=>{
+  const v=parseNum($('prA').value), fb=$('prFb'), p=pr;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 5.7.</div>'; return; }
+  if(near(v,p.ans,.15)){ streak++; solved++; streakTxt();
+    tri($('prG'),p.a,p.side.hy,{lab:{[p.known]:String(p.K),[p.ask]:n1(p.ans)},hot:[p.known,p.ask],alpha:p.a+'°'});
+    fb.innerHTML=`<div class="fb ok">נכון! ${prSol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  const x=p.a*D, alts=[];
+  for(const f in F){ alts.push({f,op:'*',v:p.K*F[f](x)},{f,op:'/',v:p.K/F[f](x)}); }
+  const rad=[p.K*Math.sin(p.a),p.K/Math.sin(p.a),p.K*Math.cos(p.a),p.K/Math.cos(p.a),p.K*Math.tan(p.a),p.K/Math.tan(p.a)];
+  const hit=alts.find(o=>near(v,o.v,.15));
+  let m;
+  if(p.ask!=='hy'&&v>p.side.hy+.2) m='יצא ניצב ארוך מהיתר. זה בלתי אפשרי, היתר הוא הצלע הכי ארוכה. כנראה חילקתם במקום לכפול.';
+  else if(hit&&hit.f===p.fn) m=hit.op==='/'?'בחרתם את היחס הנכון, אבל חילקתם במקום לכפול. x נמצא במונה של היחס? אז כופלים.':'בחרתם את היחס הנכון, אבל כפלתם במקום לחלק. x נמצא במכנה של היחס? אז מחלקים.';
+  else if(hit) m=`השתמשתם ב-${hit.f}. אבל השאלה היא על ${NAME[p.known]} ועל ${NAME[p.ask]}. איזה יחס מחבר את שתיהן?`;
+  else if(rad.some(r=>near(v,r,.15))) m='נראה שהמחשבון ברדיאנים. העבירו ל-DEG (מעלות) ונסו שוב.';
+  else m='עוד לא. סמנו קודם: מה ידוע, מה מחפשים, ואיזה יחס (sin, cos או tan) מחבר ביניהם.';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2);
+  tri($('prG'),p.a,p.side.hy,{lab:p.lab,miss:p.ask,alpha:p.a+'°',hot:[p.known,p.ask],words:p.hint===1});
+  const W={op:'מול',ad:'ליד',hy:'יתר'};
+  const h=p.hint===1
+    ?`הצלעות שבשאלה צבועות. הצלע הידועה היא ${W[p.known]}, ו-x הוא ${W[p.ask]}. איזה יחס משתמש בשתיהן?`
+    :`זה ${E(p.fn)}. כתבו ${E(`${p.fn} ${p.a}° = ${W[p.fn==='cos'?'ad':'op']} : ${W[p.fn==='tan'?'ad':'hy']}`)}, הציבו את מה שידוע ובודדו את x.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const p=pr;
+  tri($('prG'),p.a,p.side.hy,{lab:{[p.known]:String(p.K),[p.ask]:n1(p.ans)},hot:[p.known,p.ask],alpha:p.a+'°'});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${prSol()} עכשיו נסו משולש חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+
+/* ---------- practice: find the angle ---------- */
+const PAIRS=[['op','hy',3,5],['ad','hy',4,5],['op','ad',5,12],['op','ad',7,7],['op','hy',6,10],['ad','hy',5,8],['op','ad',8,5],['op','hy',2,7],['ad','hy',9,10],['op','ad',3,10]];
+let ag={};
+function newAg(){
+  let q; do{ q=pick(PAIRS); } while(q===ag.q);
+  const [s1,s2,v1,v2]=q, fn=rel(s1,s2);
+  const ratio=v1/v2;          /* PAIRS list the top of the ratio first */
+  const a=(fn==='sin'?Math.asin(ratio):fn==='cos'?Math.acos(ratio):Math.atan(ratio))/D;
+  ag={q,s1,s2,v1,v2,fn,ratio,a,ans:Math.round(a),tries:0,hint:0};
+  ag.h=fn==='tan'?Math.hypot(v1,v2):v2;
+  ag.lab={[s1]:String(v1),[s2]:String(v2)};
+  tri($('agG'),a,ag.h,{lab:ag.lab});
+  $('agQ').innerHTML=`${NAME[s1]} ${v1}, ${NAME[s2]} ${v2}. כמה מעלות היא α?`;
+  $('agA').value=''; $('agFb').innerHTML=''; $('agShow').disabled=true;
+}
+const inv=f=>f+'⁻¹';
+const agSol=()=>`${E(`${ag.fn} α = ${ag.v1} : ${ag.v2} ≈ ${n3(ag.ratio)}`)}, ולכן ${E(`α = ${inv(ag.fn)}(${n3(ag.ratio)}) ≈ ${ag.ans}°`)}.`;
+$('agCheck').onclick=()=>{
+  const v=parseNum($('agA').value.replace('°','')), fb=$('agFb'), p=ag;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 37.</div>'; return; }
+  if(near(v,p.a,.6)){ tri($('agG'),p.a,p.h,{lab:p.lab,alpha:p.ans+'°'}); fb.innerHTML=`<div class="fb ok">נכון! ${agSol()}</div>`; return; }
+  p.tries++;
+  const others=['sin','cos','tan'].filter(f=>f!==p.fn).map(f=>{ const r=p.ratio; if(f!=='tan'&&r>1) return NaN; return (f==='sin'?Math.asin(r):f==='cos'?Math.acos(r):Math.atan(r))/D; });
+  let m;
+  if(near(v,p.ratio,.02)||near(v,1/p.ratio,.02)) m=`זה היחס, עוד לא הזווית. עכשיו לחצו על ${E(inv(p.fn))} במחשבון.`;
+  else if(near(v,90-p.a,.6)) m='קיבלתם את הזווית השנייה של המשולש (90° פחות α). בדקו שוב מי מול α ומי ליד.';
+  else if(others.some(o=>near(v,o,.6))) m=`בחרתם יחס אחר. הצלעות הן ${NAME[p.s1]} ו${NAME[p.s2]}. איזה יחס מחבר אותן?`;
+  else if(v>=90) m='זווית במשולש ישר זווית (שאינה הישרה) תמיד קטנה מ-90°.';
+  else m='עוד לא. מצאו איזה יחס מתאים, חשבו אותו, ואז השתמשו בפעולה ההפוכה.';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('agShow').disabled=false;
+};
+$('agHint').onclick=()=>{
+  const p=ag; p.hint=Math.min(p.hint+1,2);
+  tri($('agG'),p.a,p.h,{lab:p.lab,hot:[p.s1,p.s2],words:p.hint===1});
+  const h=p.hint===1?`הצלעות הנתונות הן ${NAME[p.s1]} ו${NAME[p.s2]}. זה ${E(p.fn)}.`
+    :`${E(`${p.fn} α = ${p.v1} : ${p.v2}`)}. חשבו את המספר, ואז ${E(inv(p.fn))} במחשבון.`;
+  $('agFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('agShow').onclick=()=>{ tri($('agG'),ag.a,ag.h,{lab:ag.lab,alpha:ag.ans+'°'}); $('agFb').innerHTML=`<div class="fb hint">הפתרון: ${agSol()}</div>`; };
+$('agNew').onclick=newAg;
+$('agA').addEventListener('keydown',e=>{if(e.key==='Enter')$('agCheck').click();});
+newAg();
+})();
+</script>
+</body>
+</html>

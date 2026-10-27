@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>טבלת שכיחויות ודיאגרמות · כיתה ט · מירי</title>
+<meta name="description" content="מסדרים נתונים בטבלת שכיחויות, מציירים דיאגרמת עמודות, ומחשבים ממוצע וחציון ישר מהטבלה.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/frequency-tables/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="טבלת שכיחויות ודיאגרמות · כיתה ט · מירי">
+<meta property="og:description" content="מסדרים נתונים בטבלת שכיחויות, מציירים דיאגרמת עמודות, ומחשבים ממוצע וחציון ישר מהטבלה.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/frequency-tables/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"סטטיסטיקה והסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-9/#stats-9"},{"@type":"ListItem","position":5,"name":"טבלת שכיחויות ודיאגרמות","item":"https://shohamtal.github.io/homework-site/math/frequency-tables/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים ממוצע מטבלת שכיחויות?","acceptedAnswer":{"@type":"Answer","text":"כופלים כל ערך בשכיחות שלו, מחברים את כל המכפלות, ומחלקים בסכום השכיחויות (כמה נשאלו). לא מחלקים במספר השורות בטבלה. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"מה זה שכיחות יחסית?","acceptedAnswer":{"@type":"Answer","text":"איזה חלק מכל הנשאלים קיבל ערך מסוים. מחלקים את השכיחות בסך הכול, ובדרך כלל כופלים ב-100 כדי לקבל אחוזים. 9 מתוך 20 זה 45%. כל השכיחויות היחסיות ביחד נותנות 100%."}},{"@type":"Question","name":"איך מוצאים חציון בטבלת שכיחויות?","acceptedAnswer":{"@type":"Answer","text":"מחשבים איפה האמצע: אם נשאלו 21, האמצע הוא במקום 11. אם נשאלו 20, האמצע הוא בין המקום ה-10 ל-11. אחר כך סופרים שכיחויות מההתחלה עד שמגיעים למקום הזה, ורואים באיזו שורה הוא נמצא. נסו במעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"טבלת שכיחויות ודיאגרמות","description":"מסדרים נתונים בטבלת שכיחויות, מציירים דיאגרמת עמודות, ומחשבים ממוצע וחציון ישר מהטבלה.","url":"https://shohamtal.github.io/homework-site/math/frequency-tables/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"סטטיסטיקה והסתברות","teaches":"טבלת שכיחויות ודיאגרמות","keywords":"שכיחות, שכיחות יחסית, דיאגרמת עמודות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.vt.ft{direction:rtl}
+.vt.ft th{font-style:normal; font-family:var(--f-body); font-size:.85rem; white-space:normal; max-width:7em}
+.vt.ft td{min-width:2.6em; padding:3px 8px}
+.vt.ft tr.mode td{background:var(--hint-bg)}
+.vt.ft tr.sum td{font-weight:700; border-top:2px solid var(--border)}
+.vt.ft .eq{font-size:1em}
+.sliders{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px 14px}
+@media (max-width:420px){.sliders{grid-template-columns:minmax(0,1fr)}}
+.calc .eq{white-space:normal}
+svg.plot{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.plot .axis{stroke:var(--ink); stroke-width:1.3}
+.plot .gridln{stroke:var(--soft); stroke-width:1}
+.plot .tick{fill:var(--muted); font:9px var(--f-body); text-anchor:middle}
+.plot .xl{fill:var(--ink); font:700 11px var(--f-math); text-anchor:middle}
+.plot .bar{fill:var(--blue); stroke:var(--ink); stroke-width:1.2}
+.plot .bar.mode{fill:var(--hl)}
+.plot .flbl{fill:var(--ink); font:700 10px var(--f-math); text-anchor:middle}
+.plot .mean{stroke:var(--line); stroke-width:2.6}
+.plot .meanlbl{fill:var(--line); font:700 10px var(--f-body); text-anchor:middle}
+.plot .med{fill:var(--green); stroke:var(--ink); stroke-width:1}
+.plot .medlbl{fill:var(--green); font:700 10px var(--f-body); text-anchor:middle}
+.legend{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; font-size:.9rem; font-weight:600}
+.legend span::before{content:""; display:inline-block; width:12px; height:12px; border-radius:50%; margin-inline-end:6px; vertical-align:-1px; border:1px solid var(--ink)}
+.legend .lg-mean::before{background:var(--line); border-radius:2px; width:4px}
+.legend .lg-med::before{background:var(--green)}
+.legend .lg-mode::before{background:var(--hl); border-radius:2px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="frequency-tables">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#stats-9">סטטיסטיקה והסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">טבלת שכיחויות ודיאגרמות</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · סטטיסטיקה והסתברות</div>
+  <h1>טבלת שכיחויות ודיאגרמות <span class="slogan">הרבה נתונים, טבלה אחת</span></h1>
+  <p class="lead">כששואלים 30 ילדים כמה אחים יש להם, לא כותבים 30 מספרים. מסדרים אותם בטבלה: כל ערך, וכמה פעמים הוא הופיע. מהטבלה מציירים דיאגרמה ומחשבים ממוצע, חציון ושכיח. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מה יש בטבלת שכיחויות?</h2></div>
+  <p class="text">שאלנו 20 ילדים כמה חיות מחמד יש להם בבית. במקום רשימה ארוכה, הנה הטבלה:</p>
+  <div class="scroll-x"><table class="vt ft" aria-label="טבלת שכיחויות של חיות מחמד">
+    <tr><th>מספר חיות (ערך)</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+    <tr><th>מספר ילדים (שכיחות)</th><td>6</td><td>9</td><td>4</td><td>1</td></tr>
+  </table></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שכיחות</h3>
+      <p>כמה פעמים ערך הופיע. 9 ילדים אמרו "חיה אחת", אז השכיחות של 1 היא 9.</p>
+      <p>סכום כל השכיחויות הוא כמה נשאלו: <span class="eq">6 + 9 + 4 + 1 = 20</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שכיחות יחסית</h3>
+      <p>איזה חלק מכולם. מחלקים בסך הכול וכופלים ב-100.</p>
+      <p><span class="eq">9 ÷ 20 = 0.45</span>, כלומר 45% מהילדים.</p>
+      <p>כל השכיחויות היחסיות ביחד נותנות 100%.</p>
+    </div>
+    <div class="mini">
+      <h3>דיאגרמת עמודות</h3>
+      <p>לכל ערך עמודה. הגובה שלה הוא השכיחות.</p>
+      <p>העמודה הכי גבוהה היא <strong>השכיח</strong>. כאן זה 1.</p>
+    </div>
+  </div>
+  <div class="callout">את המושגים ממוצע, חציון ושכיח ראינו כבר ב<a href="../statistics/">ממוצע, חציון ושכיח</a> לכיתה ח. כאן לומדים לחשב אותם ישר מהטבלה, בלי לכתוב את כל הרשימה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: כמה ספרים קראתם החודש?</h2></div>
+  <p class="text">כל מחוון הוא שורה בטבלה: כמה ילדים קראו 0 ספרים, כמה קראו ספר אחד, וכן הלאה. הזיזו ותראו איך הדיאגרמה, הממוצע, החציון והשכיח משתנים.</p>
+  <div class="lab">
+    <div>
+      <svg class="plot" id="labG" viewBox="0 0 320 200" role="img" aria-label="דיאגרמת עמודות"></svg>
+      <div class="legend"><span class="lg-mode">שכיח</span><span class="lg-mean">ממוצע</span><span class="lg-med">חציון</span></div>
+      <div class="scroll-x"><table class="vt ft" id="labT" aria-label="טבלת השכיחויות של המעבדה"></table></div>
+    </div>
+    <div class="ctrl">
+      <div class="sliders" id="sliders"></div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-f="2,5,8,5,2,0">סימטרי</button>
+          <button data-f="8,6,3,1,1,1">רובם קראו מעט</button>
+          <button data-f="1,1,1,2,6,9">רובם קראו הרבה</button>
+          <button data-f="2,6,1,1,6,2">שני שכיחים</button>
+          <button data-f="3,3,3,3,3,3">כולם אותו דבר</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כשרוב הילדים קראו מעט ורק מעטים קראו הרבה, הממוצע נמשך לכיוון העמודות הנמוכות שבצד של המספרים הגדולים, והחציון נשאר ליד הרוב.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חילוק במספר השורות</h3>
+      <p>בטבלת חיות המחמד יש 4 ערכים, אבל 20 ילדים.</p>
+      <p>סכום הערך כפול השכיחות הוא <span class="eq">0 + 9 + 8 + 3 = 20</span>. הממוצע הוא <span class="eq">20 ÷ 20 = 1</span>, ולא <span class="eq">20 ÷ 4 = 5</span>. מחלקים בסכום השכיחויות.</p>
+    </div>
+    <div class="mini">
+      <h3>השכיח הוא ערך, לא שכיחות</h3>
+      <p>השכיחות הכי גדולה היא 9. אבל השכיח הוא <strong>הערך</strong> שלה: 1 חיה.</p>
+      <p>התשובה "9" היא תשובה לשאלה אחרת.</p>
+    </div>
+    <div class="mini">
+      <h3>החציון הוא לא אמצע הטבלה</h3>
+      <p>החציון הוא האמצע של <strong>הילדים</strong>, לא של השורות.</p>
+      <p>20 ילדים בשורה: באמצע עומדים הילד ה-10 וה-11. שניהם בעמודה של 1, אז החציון 1.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>איך מוצאים את הילד ה-10?</strong> סופרים שכיחויות מההתחלה. 6 ילדים עם 0 חיות, ועוד 9 עם חיה אחת, זה 15. הילדים 7 עד 15 נמצאים בשורה של 1, ולכן גם הילד ה-10 וגם ה-11.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">שאלו ילדים כמה שעות מסך היו להם אתמול:</p>
+  <div class="scroll-x"><table class="vt ft" aria-label="טבלת שעות מסך">
+    <tr><th>שעות מסך</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+    <tr><th>מספר ילדים</th><td>3</td><td>5</td><td>8</td><td>3</td><td>1</td></tr>
+  </table></div>
+  <p class="text">כמה ילדים נשאלו? מה הממוצע, החציון והשכיח? ואיזה אחוז מהילדים ישבו מול מסך 3 שעות?</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו מהטבלה</h2></div>
+  <p class="text">כל פעם תקבלו טבלה חדשה ושאלה אחת. אפשר לכתוב מספר עשרוני, למשל <span class="eq">2.5</span>. אחוזים כותבים בלי הסימן %, למשל <span class="eq">40</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="n" aria-pressed="false">כמה נשאלו</button>
+    <button data-t="mean" aria-pressed="false">ממוצע</button>
+    <button data-t="median" aria-pressed="false">חציון</button>
+    <button data-t="mode" aria-pressed="false">שכיח</button>
+    <button data-t="rel" aria-pressed="false">שכיחות יחסית</button>
+  </div>
+  <div class="scroll-x"><table class="vt ft" id="prT" aria-label="טבלת התרגיל"></table></div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prLbl">התשובה</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">טבלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים ממוצע מטבלת שכיחויות?</h3>
+    <p>כופלים כל ערך בשכיחות שלו, מחברים את כל המכפלות, ומחלקים בסכום השכיחויות (כמה נשאלו). לא מחלקים במספר השורות בטבלה. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>מה זה שכיחות יחסית?</h3>
+    <p>איזה חלק מכל הנשאלים קיבל ערך מסוים. מחלקים את השכיחות בסך הכול, ובדרך כלל כופלים ב-100 כדי לקבל אחוזים. 9 מתוך 20 זה 45%. כל השכיחויות היחסיות ביחד נותנות 100%.</p>
+    <h3>איך מוצאים חציון בטבלת שכיחויות?</h3>
+    <p>מחשבים איפה האמצע: אם נשאלו 21, האמצע הוא במקום 11. אם נשאלו 20, האמצע הוא בין המקום ה-10 ל-11. אחר כך סופרים שכיחויות מההתחלה עד שמגיעים למקום הזה, ורואים באיזו שורה הוא נמצא. <a href="#lab">נסו במעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/statistics/">ממוצע, חציון ושכיח</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/sequences/"><small>→ הנושא הקודם</small>סדרות: איבר כללי וחוקיות</a><a class="next" href="../../math/probability-two-stage/"><small>הנושא הבא ←</small>הסתברות בניסוי דו-שלבי</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const nice=v=>numTxt(Math.round(v*100)/100);
+const isRound=v=>Math.abs(v*100-Math.round(v*100))<1e-9;
+const numIn=s=>parseNum(String(s).trim().replace('%','').replace(/^(\d+),(\d+)$/,'$1.$2'));
+
+/* stats straight from a frequency table: xs values, fs frequencies */
+function tstats(xs,fs){
+  const N=fs.reduce((a,b)=>a+b,0), prods=xs.map((x,i)=>x*fs[i]), S=prods.reduce((a,b)=>a+b,0);
+  const at=p=>{ let c=0; for(let i=0;i<xs.length;i++){ c+=fs[i]; if(p<=c) return xs[i]; } return xs[xs.length-1]; };
+  const pos=N%2?[(N+1)/2]:[N/2,N/2+1];
+  const median=N? (at(pos[0])+at(pos[pos.length-1]))/2 : 0;
+  const maxF=Math.max(...fs), modes=xs.filter((x,i)=>fs[i]===maxF&&maxF>0);
+  const cum=[]; fs.reduce((a,f,i)=>(cum[i]=a+f),0);
+  return {N,prods,S,mean:N?S/N:0,pos,median,maxF,modes,cum,at};
+}
+function tableHTML(xs,fs,hx,hf,opt={}){
+  const st=tstats(xs,fs);
+  let h=`<tr><th>${hx}</th><th>${hf}</th>${opt.prod?'<th>ערך × שכיחות</th>':''}${opt.rel?'<th>שכיחות יחסית</th>':''}</tr>`;
+  xs.forEach((x,i)=>{
+    h+=`<tr${opt.prod&&st.modes.includes(x)&&st.modes.length<xs.length?' class="mode"':''}><td>${numTxt(x)}</td><td>${fs[i]}</td>${opt.prod?`<td>${numTxt(st.prods[i])}</td>`:''}${opt.rel?`<td>${st.N?nice(fs[i]/st.N*100)+'%':''}</td>`:''}</tr>`;
+  });
+  if(opt.sum) h+=`<tr class="sum"><td>סה״כ</td><td>${st.N}</td>${opt.prod?`<td>${numTxt(st.S)}</td>`:''}${opt.rel?`<td>${st.N?'100%':''}</td>`:''}</tr>`;
+  return h;
+}
+function medianTxt(xs,fs,st,unit){
+  if(!st.N) return '';
+  const where=p=>{ const i=st.cum.findIndex(c=>p<=c); const from=i?st.cum[i-1]+1:1; return `המקומות ${from} עד ${st.cum[i]} הם בשורה של ${numTxt(xs[i])}`; };
+  if(st.N%2) return `${st.N} ${unit}, אז האמצע הוא המקום ${E(`(${st.N} + 1) ÷ 2 = ${st.pos[0]}`)}. ${where(st.pos[0])}, ולכן החציון ${E(numTxt(st.median))}.`;
+  const a=st.at(st.pos[0]), b=st.at(st.pos[1]);
+  return `${st.N} ${unit}, מספר זוגי, אז באמצע עומדים המקומות ${st.pos[0]} ו-${st.pos[1]}. ${where(st.pos[0])}${a!==b?`, ו${where(st.pos[1])}`:''}. החציון ${a===b?E(numTxt(a)):E(`(${numTxt(a)} + ${numTxt(b)}) ÷ 2 = ${nice(st.median)}`)}.`;
+}
+function modeTxt(xs,st){
+  if(st.modes.length===xs.length) return 'לכל הערכים אותה שכיחות, ולכן <strong>אין שכיח</strong>.';
+  if(st.modes.length===1) return `השכיחות הכי גדולה היא ${st.maxF}, של הערך ${E(numTxt(st.modes[0]))}. השכיח הוא ${E(numTxt(st.modes[0]))}.`;
+  return `לכמה ערכים יש את השכיחות הכי גדולה (${st.maxF}): ${E(st.modes.map(numTxt).join(', '))}. כולם שכיחים.`;
+}
+const meanTxt=(xs,fs,st)=>`${E(st.prods.map(numTxt).join(' + ')+' = '+numTxt(st.S))}, ואז ${E(`${numTxt(st.S)} ÷ ${st.N} = ${nice(st.mean)}`)}${isRound(st.mean)?'':' (בערך)'}`;
+
+/* ---------- lab ---------- */
+const LX=[0,1,2,3,4,5];
+$('sliders').innerHTML=LX.map(x=>`<div><label class="slider" for="f${x}"><span>${x===1?'ספר אחד':x+' ספרים'}</span><span class="eq" id="f${x}v"></span></label>
+  <input type="range" id="f${x}" min="0" max="10" step="1" value="${[2,5,8,5,2,0][x]}"></div>`).join('');
+function plot(svg,xs,fs,st){
+  const X=i=>48+i*46, base=160, top=20, Y=f=>base-f/10*(base-top);
+  let h='';
+  for(let f=0;f<=10;f+=2) h+=`<line class="gridln" x1="24" y1="${Y(f)}" x2="306" y2="${Y(f)}"/><text class="tick" x="14" y="${Y(f)+3}">${f}</text>`;
+  xs.forEach((x,i)=>{
+    const f=fs[i], isM=st.modes.includes(x)&&st.modes.length<xs.length;
+    if(f) h+=`<rect class="bar${isM?' mode':''}" x="${X(i)-16}" y="${Y(f)}" width="32" height="${base-Y(f)}" rx="2"/>`;
+    h+=`<text class="flbl" x="${X(i)}" y="${Y(f)-4}">${f}</text><text class="xl" x="${X(i)}" y="${base+14}">${x}</text>`;
+  });
+  h+=`<line class="axis" x1="24" y1="${base}" x2="306" y2="${base}"/>`;
+  if(st.N){
+    const XV=v=>X(0)+(v-xs[0])/(xs[1]-xs[0])*46;
+    const mx=XV(st.mean);
+    h+=`<line class="mean" x1="${mx}" y1="${top-4}" x2="${mx}" y2="${base}"/><text class="meanlbl" x="${Math.min(290,Math.max(30,mx))}" y="${top-8}">ממוצע ${nice(st.mean)}</text>`;
+    const dx=XV(st.median);
+    h+=`<path class="med" d="M${dx} ${base+18} l-6 10 h12 z"/><text class="medlbl" x="${Math.min(290,Math.max(30,dx))}" y="${base+38}">חציון ${nice(st.median)}</text>`;
+  }
+  svg.innerHTML=h;
+}
+function lab(){
+  const fs=LX.map(x=>+$('f'+x).value);
+  LX.forEach((x,i)=>$('f'+x+'v').textContent=fs[i]+' ילדים');
+  const st=tstats(LX,fs);
+  plot($('labG'),LX,fs,st);
+  $('labT').innerHTML=tableHTML(LX,fs,'ספרים','ילדים',{prod:true,rel:true,sum:true});
+  if(!st.N){ $('labCalc').innerHTML='<div>אין אף ילד בטבלה. הזיזו לפחות מחוון אחד.</div>'; return; }
+  $('labCalc').innerHTML=`<div><strong>כמה נשאלו:</strong> ${E(fs.join(' + ')+' = '+st.N)}</div>
+    <div><strong>ממוצע:</strong> כופלים כל ערך בשכיחות ומחברים: ${meanTxt(LX,fs,st)}.</div>
+    <div><strong>חציון:</strong> ${medianTxt(LX,fs,st,'ילדים')}</div>
+    <div><strong>שכיח:</strong> ${modeTxt(LX,st)}</div>`;
+}
+LX.forEach(x=>$('f'+x).addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  b.dataset.f.split(',').forEach((v,i)=>$('f'+i).value=v); lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>כמה נשאלו:</strong> מחברים את השכיחויות. ${E('3 + 5 + 8 + 3 + 1 = 20')}. נשאלו 20 ילדים.`,
+  `<strong>ממוצע, שלב 1:</strong> כופלים כל ערך בשכיחות שלו: ${E('1 · 3 = 3')}, ${E('2 · 5 = 10')}, ${E('3 · 8 = 24')}, ${E('4 · 3 = 12')}, ${E('5 · 1 = 5')}.`,
+  `<strong>ממוצע, שלב 2:</strong> מחברים: ${E('3 + 10 + 24 + 12 + 5 = 54')}, ומחלקים ב-20 ילדים: ${E('54 ÷ 20 = 2.7')}. הממוצע 2.7 שעות.`,
+  `<strong>חציון:</strong> 20 ילדים, אז באמצע עומדים הילד ה-10 וה-11. סופרים: 3 ילדים עם שעה, ועוד 5 זה 8. ועוד 8 זה 16. הילדים 9 עד 16 נמצאים בשורה של 3 שעות. החציון 3.`,
+  `<strong>שכיח:</strong> השכיחות הכי גדולה היא 8, של 3 שעות. השכיח הוא 3 (ולא 8!).`,
+  `<strong>שכיחות יחסית של 3 שעות:</strong> ${E('8 ÷ 20 = 0.4')}, כלומר ${E('40%')} מהילדים.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const CTX=[
+  {hx:'מספר אחים', hf:'מספר ילדים', unit:'ילדים', xs:[0,1,2,3,4]},
+  {hx:'ציון בבוחן', hf:'מספר תלמידים', unit:'תלמידים', xs:[6,7,8,9,10]},
+  {hx:'מספר שערים', hf:'מספר משחקים', unit:'משחקים', xs:[0,1,2,3,4,5]},
+  {hx:'מידת נעליים', hf:'מספר זוגות', unit:'זוגות', xs:[36,37,38,39,40]},
+  {hx:'ימי ספורט בשבוע', hf:'מספר ילדים', unit:'ילדים', xs:[1,2,3,4,5]}
+];
+let mode='mix', pr=null, solved=0, streak=0;
+function newPr(){
+  const type=mode==='mix'?pick(['n','mean','median','mode','rel']):mode;
+  const c=pick(CTX); let fs, st, k=0;
+  do{
+    fs=c.xs.map(()=>rnd(0,9)); st=tstats(c.xs,fs); k++;
+    var good=st.N>=8&&st.modes.length===1;
+    if(type==='rel') good=good&&[10,20,25,40,50].includes(st.N);
+    if(type==='rel'&&!good&&k>40){ /* force a nice total */ fs=c.xs.map(()=>rnd(1,6)); const t=pick([20,25]); let s=fs.reduce((a,b)=>a+b,0); fs[fs.length-1]+=Math.max(0,t-s); st=tstats(c.xs,fs); good=st.modes.length===1&&[20,25].includes(st.N); }
+  }while(!good);
+  const ri=c.xs.findIndex((x,i)=>fs[i]>0&&!st.modes.includes(x)), ri2=ri<0?0:ri;
+  const ans={n:st.N,mean:st.mean,median:st.median,mode:st.modes[0],rel:fs[ri2]/st.N*100}[type];
+  pr={type,c,fs,st,ans,ri:ri2,tries:0,hint:0};
+  $('prT').innerHTML=`<tr><th>${c.hx}</th>${c.xs.map(x=>`<td>${x}</td>`).join('')}</tr><tr><th>${c.hf}</th>${fs.map(f=>`<td>${f}</td>`).join('')}</tr>`;
+  const xv=c.xs[ri2];
+  $('prQ').innerHTML={n:`כמה ${c.unit} יש בסך הכול בטבלה?`,mean:`מה הממוצע של "${c.hx}"?`,median:`מה החציון של "${c.hx}"?`,mode:`מה השכיח של "${c.hx}"?`,rel:`מה השכיחות היחסית של הערך ${xv}, באחוזים?`}[type];
+  $('prLbl').textContent={n:'סך הכול =',mean:'ממוצע =',median:'חציון =',mode:'שכיח =',rel:'אחוזים ='}[type];
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {type,c,fs,st,ri}=pr;
+  const nT=`${E(fs.join(' + ')+' = '+st.N)}`;
+  if(type==='n') return `מחברים את השכיחויות: ${nT}.`;
+  if(type==='mean') return `סך הכול ${nT}. כופלים כל ערך בשכיחות ומחברים: ${meanTxt(c.xs,fs,st)}.`;
+  if(type==='median') return `סך הכול ${nT}. ${medianTxt(c.xs,fs,st,c.unit)}`;
+  if(type==='mode') return modeTxt(c.xs,st);
+  return `השכיחות של ${c.xs[ri]} היא ${fs[ri]}, וסך הכול ${st.N}. ${E(`${fs[ri]} ÷ ${st.N} · 100 = ${nice(pr.ans)}%`)}.`;
+}
+function diagnose(v){
+  const {type,c,fs,st,ri}=pr, rows=c.xs.length, sumX=c.xs.reduce((a,b)=>a+b,0);
+  if(type==='n'){
+    if(eqv(v,rows)) return 'ספרתם כמה ערכים יש בטבלה. צריך לחבר את השכיחויות, כלומר את השורה התחתונה.';
+    if(eqv(v,st.S)) return 'זה סכום של ערך כפול שכיחות. כאן צריך רק לחבר את השכיחויות.';
+    if(eqv(v,sumX)) return 'חיברתם את הערכים. צריך לחבר את השכיחויות, כלומר את השורה התחתונה.';
+    return 'לא בדיוק. חברו שוב את כל המספרים בשורה התחתונה.';
+  }
+  if(type==='mean'){
+    if(eqv(v,st.S)) return 'זה הסכום של ערך כפול שכיחות. עכשיו חלקו בסך הכול.';
+    if(eqv(v,st.S/rows)) return `חילקתם במספר הערכים (${rows}). צריך לחלק בסך כל השכיחויות.`;
+    if(eqv(v,sumX/rows)) return 'זה הממוצע של הערכים בלי השכיחויות. כל ערך צריך להיספר כמה פעמים שהוא מופיע.';
+    if(eqv(v,st.N/rows)) return 'זה ממוצע השכיחויות. צריך לכפול כל ערך בשכיחות שלו.';
+    if(eqv(v,st.median)) return 'זה החציון. הממוצע הוא סכום ערך כפול שכיחות, חלקי סך הכול.';
+    return 'לא בדיוק. כפלו כל ערך בשכיחות שלו, חברו, וחלקו בסך הכול.';
+  }
+  if(type==='median'){
+    const midRow=rows%2?c.xs[(rows-1)/2]:(c.xs[rows/2-1]+c.xs[rows/2])/2;
+    if(eqv(v,midRow)&&!eqv(midRow,st.median)) return `לקחתם את הערך שבאמצע הטבלה. החציון הוא האמצע של ה${c.unit}, לא של השורות.`;
+    if(eqv(v,st.mean)) return 'זה הממוצע. החציון הוא הערך שבאמצע, אחרי שמסדרים את כולם בשורה.';
+    if(fs.includes(v)&&!c.xs.includes(v)) return 'זו שכיחות. החציון הוא אחד הערכים (או ממוצע של שניים מהם).';
+    return `לא בדיוק. מצאו קודם את המקום של האמצע, ואז ספרו שכיחויות מההתחלה עד שתגיעו אליו.`;
+  }
+  if(type==='mode'){
+    if(eqv(v,st.maxF)) return `${st.maxF} היא השכיחות הכי גדולה. השכיח הוא הערך שיש לו את השכיחות הזאת.`;
+    if(c.xs.includes(v)) return `לערך ${numTxt(v)} יש שכיחות ${fs[c.xs.indexOf(v)]}. חפשו ערך עם שכיחות גדולה יותר.`;
+    return 'השכיח הוא אחד הערכים בשורה העליונה.';
+  }
+  if(eqv(v,fs[ri])) return `זו השכיחות עצמה. חלקו אותה בסך הכול (${st.N}) וכפלו ב-100.`;
+  if(eqv(v,fs[ri]/st.N)) return 'כמעט! זה השבר. כפלו ב-100 כדי לקבל אחוזים.';
+  if(eqv(v,fs[ri]/rows*100)) return 'חילקתם במספר הערכים. צריך לחלק בסך כל השכיחויות.';
+  return 'לא בדיוק. שכיחות חלקי סך הכול, כפול 100.';
+}
+$('prCheck').onclick=()=>{
+  const v=numIn($('prA').value);
+  if(isNaN(v)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 12 או 2.5.</div>'; return; }
+  if(eqv(v,pr.ans)||(!isRound(pr.ans)&&Math.abs(v-pr.ans)<0.051)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(v)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,c,fs,st,ri}=pr; let h;
+  if(type==='n') h=pr.hint===1?'כל שכיחות אומרת כמה יש מכל ערך. מה עושים כדי לדעת כמה יש בסך הכול?':'חברו את כל המספרים בשורה התחתונה.';
+  else if(type==='mean') h=pr.hint===1?'כפלו כל ערך בשכיחות שלו, וחברו את כל המכפלות.':`הסכום יוצא ${E(numTxt(st.S))}. עכשיו חלקו בסך הכול: כמה ${c.unit} יש?`;
+  else if(type==='median') h=pr.hint===1?`כמה ${c.unit} יש בסך הכול? באיזה מקום נמצא האמצע?`:`יש ${st.N}, אז האמצע ${st.N%2?`הוא המקום ${st.pos[0]}`:`בין המקום ${st.pos[0]} למקום ${st.pos[1]}`}. חברו שכיחויות מהערך הקטן והלאה: ${E(st.cum.join(', '))}.`;
+  else if(type==='mode') h=pr.hint===1?'חפשו את השכיחות הכי גדולה בשורה התחתונה.':`השכיחות הכי גדולה היא ${st.maxF}. איזה ערך עומד מעליה?`;
+  else h=pr.hint===1?'קודם חשבו כמה יש בסך הכול.':`השכיחות היא ${fs[ri]} מתוך ${st.N}. חלקו וכפלו ב-100.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו טבלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>משוואה ריבועית ונוסחת השורשים · כיתה ט · מירי</title>
+<meta name="description" content="פותרים ax² + bx + c = 0 בנוסחת השורשים. מה הדיסקרימיננטה אומרת: שני פתרונות, אחד או אף אחד.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/quadratic-equation/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משוואה ריבועית ונוסחת השורשים · כיתה ט · מירי">
+<meta property="og:description" content="פותרים ax² + bx + c = 0 בנוסחת השורשים. מה הדיסקרימיננטה אומרת: שני פתרונות, אחד או אף אחד.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/quadratic-equation/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"פונקציה ריבועית ומשוואה ריבועית","item":"https://shohamtal.github.io/homework-site/math/grade-9/#quadratic-9"},{"@type":"ListItem","position":5,"name":"משוואה ריבועית ונוסחת השורשים","item":"https://shohamtal.github.io/homework-site/math/quadratic-equation/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך פותרים משוואה ריבועית?","acceptedAnswer":{"@type":"Answer","text":"מסדרים את המשוואה כך שבצד אחד יהיה 0, ומזהים את a, b ו-c עם הסימנים שלהם. מחשבים את הדיסקרימיננטה b² − 4ac, ואז מציבים בנוסחת השורשים: פעם עם פלוס ופעם עם מינוס. ראו את הדוגמה הפתורה."}},{"@type":"Question","name":"מה זו דיסקרימיננטה?","acceptedAnswer":{"@type":"Answer","text":"זה המספר שמתחת לשורש בנוסחת השורשים: Δ = b² − 4ac. אם הוא חיובי יש שני פתרונות, אם הוא 0 יש פתרון אחד, ואם הוא שלילי אין פתרון. נסו במעבדה למעלה."}},{"@type":"Question","name":"מתי למשוואה ריבועית אין פתרון?","acceptedAnswer":{"@type":"Answer","text":"כשהדיסקרימיננטה שלילית, כי אין שורש למספר שלילי. בגרף רואים את זה כפרבולה שלא נוגעת בציר x בכלל, למשל x² + 2x + 5 = 0. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"משוואה ריבועית ונוסחת השורשים","description":"פותרים ax² + bx + c = 0 בנוסחת השורשים. מה הדיסקרימיננטה אומרת: שני פתרונות, אחד או אף אחד.","url":"https://shohamtal.github.io/homework-site/math/quadratic-equation/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"פונקציה ריבועית ומשוואה ריבועית","teaches":"משוואה ריבועית ונוסחת השורשים","keywords":"נוסחת השורשים, דיסקרימיננטה, שני פתרונות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .formula{font-size:clamp(1.3rem,5vw,1.9rem); text-align:center; margin:4px 0}
+  .dval{font:700 1.15rem var(--f-math); direction:ltr; display:inline-block}
+  .sol-count{display:inline-block; padding:2px 10px; border-radius:999px; border:1.5px solid var(--border); background:var(--hl); font-weight:700}
+  .nosol{display:flex; align-items:center; gap:6px; font-weight:700}
+  .nosol input{width:auto; transform:scale(1.2)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="quadratic-equation">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#quadratic-9">פונקציה ריבועית ומשוואה ריבועית</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">משוואה ריבועית ונוסחת השורשים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · פונקציה ריבועית ומשוואה ריבועית</div>
+  <h1>משוואה ריבועית ונוסחת השורשים <span class="slogan">נוסחה אחת לכל המשוואות</span></h1>
+  <p class="lead">משוואה ריבועית נראית כך: <span class="eq"><i>a</i><i>x</i>² + <i>b</i><i>x</i> + <i>c</i> = 0</span>.
+  יש נוסחה אחת שפותרת את כולן, ומספר אחד, הדיסקרימיננטה, שמגלה מראש כמה פתרונות יהיו. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מה צריך לדעת</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מה זו משוואה ריבועית?</h3>
+      <p>משוואה שיש בה <span class="eq"><i>x</i>²</span>, ואין חזקה גדולה יותר. מסדרים אותה כך שבצד אחד יהיה 0:</p>
+      <p><span class="eq"><i>a</i><i>x</i>² + <i>b</i><i>x</i> + <i>c</i> = 0</span></p>
+      <p>ה-<i>a</i> לא יכול להיות 0. אחרת אין <span class="eq"><i>x</i>²</span>, וזו משוואה רגילה.</p>
+    </div>
+    <div class="mini">
+      <h3>נוסחת השורשים</h3>
+      <p>מציבים את <i>a</i>, <i>b</i> ו-<i>c</i> בנוסחה:</p>
+      <div class="formula"><span class="eq"><i>x</i> = <span class="frac"><span>−<i>b</i> ± √<span style="text-decoration:overline"><i>b</i>² − 4<i>a</i><i>c</i></span></span><span>2<i>a</i></span></span></span></div>
+      <p>הסימן ± אומר: פעם אחת עם פלוס, ופעם אחת עם מינוס. כך מקבלים שני פתרונות.</p>
+    </div>
+    <div class="mini">
+      <h3>הדיסקרימיננטה</h3>
+      <p>המספר שמתחת לשורש: <span class="eq"><i>Δ</i> = <i>b</i>² − 4<i>a</i><i>c</i></span>. הוא מגלה כמה פתרונות יש:</p>
+      <p>חיובי: שני פתרונות. אפס: פתרון אחד. שלילי: אין פתרון, כי אין שורש למספר שלילי.</p>
+    </div>
+    <div class="mini">
+      <h3>ומה רואים בגרף?</h3>
+      <p>הגרף של <span class="eq"><i>y</i> = <i>a</i><i>x</i>² + <i>b</i><i>x</i> + <i>c</i></span> הוא <a href="../parabola/">פרבולה</a>. הפתרונות של המשוואה הם הנקודות שבהן הפרבולה פוגשת את ציר x, כי שם <span class="eq"><i>y</i> = 0</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: כמה פעמים הפרבולה פוגשת את ציר x?</h2></div>
+  <p class="text">הזיזו את <i>a</i>, <i>b</i> ו-<i>c</i>. תסתכלו על הדיסקרימיננטה ועל הנקודות הירוקות על ציר x: אלה הפתרונות.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף הפרבולה והפתרונות על ציר x"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr" style="font-size:clamp(1.3rem,5vw,2rem)"></div>
+      <label class="slider" for="aR"><span><i>a</i></span><span class="eq" id="aV"></span></label>
+      <input type="range" id="aR" min="-3" max="3" step="0.5" value="1">
+      <label class="slider" for="bR"><span><i>b</i></span><span class="eq" id="bV"></span></label>
+      <input type="range" id="bR" class="hl" min="-6" max="6" step="1" value="-5">
+      <label class="slider" for="cR"><span><i>c</i></span><span class="eq" id="cV"></span></label>
+      <input type="range" id="cR" class="blue" min="-6" max="6" step="1" value="6">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="1,-5,6" dir="ltr">x² − 5x + 6</button>
+          <button data-p="1,-4,4" dir="ltr">x² − 4x + 4</button>
+          <button data-p="1,2,5" dir="ltr">x² + 2x + 5</button>
+          <button data-p="2,-3,-2" dir="ltr">2x² − 3x − 2</button>
+          <button data-p="-1,1,6" dir="ltr">−x² + x + 6</button>
+          <button data-p="1,0,-4" dir="ltr">x² − 4</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כשמזיזים את <i>c</i> הפרבולה עולה ויורדת. ברגע שהיא מפסיקה לגעת בציר x, הדיסקרימיננטה הופכת לשלילית.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>המינוס של −b</h3>
+      <p>אם <span class="eq"><i>b</i> = −5</span>, אז <span class="eq">−<i>b</i> = 5</span>. מינוס כפול מינוס נותן פלוס.</p>
+      <p>וגם <span class="eq"><i>b</i>² = (−5)² = 25</span>, תמיד חיובי. לא 25−.</p>
+    </div>
+    <div class="mini">
+      <h3>מחלקים את כל המונה ב-2a</h3>
+      <p>הקו של השבר הוא מתחת לכל <span class="eq">−<i>b</i> ± √<i>Δ</i></span>, לא רק מתחת לשורש.</p>
+      <p>וזה <span class="eq">2<i>a</i></span>, לא <span class="eq"><i>a</i></span>. כש-<span class="eq"><i>a</i> = 1</span> מחלקים ב-2.</p>
+    </div>
+    <div class="mini">
+      <h3>קודם מסדרים ל-0</h3>
+      <p>ב-<span class="eq"><i>x</i>² = 5<i>x</i> − 6</span> אי אפשר לקרוא מיד את <i>b</i> ו-<i>c</i>.</p>
+      <p>מעבירים הכול לצד אחד: <span class="eq"><i>x</i>² − 5<i>x</i> + 6 = 0</span>. עכשיו <span class="eq"><i>b</i> = −5</span>, <span class="eq"><i>c</i> = 6</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>דיסקרימיננטה שלילית?</strong> אל תנסו להוציא ממנה שורש. כותבים "אין פתרון", ובגרף רואים פרבולה שלא נוגעת בציר x בכלל.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (שני פתרונות)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (פתרון אחד)</button>
+    <button id="exC" role="tab" aria-selected="false">דוגמה ג (מסדרים קודם)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: פתרו את המשוואה</h2></div>
+  <p class="text">קודם חשבו את הדיסקרימיננטה, ואז את הפתרונות. אם יש רק פתרון אחד, השאירו את התיבה השנייה ריקה. שבר כותבים כך: <span class="eq">1/2</span> או <span class="eq">-0.5</span>.</p>
+  <div class="big-eq" id="prQ" dir="ltr" style="font-size:clamp(1.4rem,5.5vw,2rem)"></div>
+  <div class="inputs">
+    <label for="prD">Δ =<input id="prD" inputmode="text" autocomplete="off"></label>
+    <label for="prX1">x₁ =<input id="prX1" inputmode="text" autocomplete="off"></label>
+    <label for="prX2">x₂ =<input id="prX2" inputmode="text" autocomplete="off"></label>
+    <label class="nosol" for="prNone"><input type="checkbox" id="prNone">אין פתרון</label>
+  </div>
+  <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">משוואה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך פותרים משוואה ריבועית?</h3>
+    <p>מסדרים את המשוואה כך שבצד אחד יהיה 0, ומזהים את <i>a</i>, <i>b</i> ו-<i>c</i> עם הסימנים שלהם. מחשבים את הדיסקרימיננטה <span class="eq"><i>b</i>² − 4<i>a</i><i>c</i></span>, ואז מציבים בנוסחת השורשים: פעם עם פלוס ופעם עם מינוס. <a href="#example">ראו את הדוגמה הפתורה</a>.</p>
+    <h3>מה זו דיסקרימיננטה?</h3>
+    <p>זה המספר שמתחת לשורש בנוסחת השורשים: <span class="eq"><i>Δ</i> = <i>b</i>² − 4<i>a</i><i>c</i></span>. אם הוא חיובי יש שני פתרונות, אם הוא 0 יש פתרון אחד, ואם הוא שלילי אין פתרון. <a href="#lab">נסו במעבדה למעלה</a>.</p>
+    <h3>מתי למשוואה ריבועית אין פתרון?</h3>
+    <p>כשהדיסקרימיננטה שלילית, כי אין שורש למספר שלילי. בגרף רואים את זה כפרבולה שלא נוגעת בציר x בכלל, למשל <span class="eq"><i>x</i>² + 2<i>x</i> + 5 = 0</span>. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/parabola/">פונקציה ריבועית: הפרבולה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/parabola/"><small>→ הנושא הקודם</small>פונקציה ריבועית: הפרבולה</a><a class="next" href="../../math/trinomial-factoring/"><small>הנושא הבא ←</small>פירוק טרינום</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,parseNum,eqv,sx,sy,MINUS}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const isInt=v=>Math.abs(v-Math.round(v))<1e-9;
+
+/* a number as a short string: whole, ½-style fraction, or rounded with ≈ */
+function nice(v){
+  const [n,d]=G.toFrac(Math.abs(v));
+  if(d<=4 && isInt(n)) return G.fracTxt(v);
+  return '≈ '+numTxt(r2(v));
+}
+/* ax² + bx + c as HTML (no "= 0") */
+function polyHTML(a,b,c){
+  const term=(k,v,first)=>{
+    if(k===0) return '';
+    const s=k<0?MINUS:'+', m=Math.abs(k), mag=(m===1&&v)?'':numTxt(m);
+    return (first?(k<0?MINUS:''):` ${s} `)+mag+v;
+  };
+  let h=term(a,'<i>x</i>²',true);
+  h+=term(b,'<i>x</i>',!h);
+  h+=term(c,'',!h);
+  return h||'0';
+}
+const eqLine=(a,b,c)=>`<span class="eq">${polyHTML(a,b,c)} = 0</span>`;
+const par=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+
+/* the parabola y = ax² + bx + c as raw svg, clipped to the grid */
+let cid=0;
+function curve(a,b,c,cls){
+  const id='qc'+(++cid);
+  let d='';
+  for(let x=-5.8;x<=5.81;x+=0.05){
+    const y=Math.max(-9,Math.min(9,a*x*x+b*x+c));
+    d+=(d?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1);
+  }
+  return `<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="${G.S*11.2}" height="${G.S*11.2}"/></clipPath></defs><path class="${cls||'ln'}" clip-path="url(#${id})" d="${d}"/>`;
+}
+function solve(a,b,c){
+  const D=b*b-4*a*c;
+  if(D<-1e-9) return {D,xs:[]};
+  if(Math.abs(D)<1e-9) return {D:0,xs:[-b/(2*a)]};
+  const s=Math.sqrt(D);
+  return {D,xs:[(-b+s)/(2*a),(-b-s)/(2*a)].sort((p,q)=>q-p)};
+}
+const rootPts=xs=>xs.filter(x=>Math.abs(x)<=5.5).map(x=>({x,y:0,cls:'pt-ok',r:5}));
+function plot(svg,a,b,c,opt={}){
+  const {xs}=solve(a,b,c);
+  draw(svg,null,0,{extra:curve(a,b,c),points:opt.roots===false?[]:rootPts(xs)});
+}
+const sqrtTxt=D=>isInt(Math.sqrt(D))?`√${numTxt(D)} = ${numTxt(Math.sqrt(D))}`:`√${numTxt(D)} ≈ ${numTxt(r2(Math.sqrt(D)))}`;
+
+/* lab */
+const aR=$('aR'), bR=$('bR'), cR=$('cR');
+function lab(){
+  const a=+aR.value, b=+bR.value, c=+cR.value;
+  $('aV').textContent=numTxt(a); $('bV').textContent=numTxt(b); $('cV').textContent=numTxt(c);
+  if(a===0){
+    draw($('labG'),b,c,{});
+    $('labEq').innerHTML=eqLine(0,b,c);
+    $('labTxt').innerHTML='<div><span class="eq"><i>a</i> = 0</span>, אז אין <span class="eq"><i>x</i>²</span>. זו כבר לא משוואה ריבועית, והגרף הוא קו ישר ולא פרבולה. הזיזו את <i>a</i> חזרה.</div>';
+    return;
+  }
+  plot($('labG'),a,b,c);
+  $('labEq').innerHTML=eqLine(a,b,c);
+  const {D,xs}=solve(a,b,c);
+  let t=`<div><span class="dval">Δ = ${par(b)}² − 4·${par(a)}·${par(c)} = ${numTxt(r2(D))}</span></div>`;
+  if(D>0){
+    t+=`<div><span class="sol-count">שני פתרונות</span> הדיסקרימיננטה חיובית, ולכן הפרבולה חותכת את ציר x פעמיים.</div>`;
+    t+=`<div><span class="eq"><i>x</i>₁ = ${nice(xs[0])}</span> <span class="eq"><i>x</i>₂ = ${nice(xs[1])}</span></div>`;
+  }else if(D===0){
+    t+=`<div><span class="sol-count">פתרון אחד</span> הדיסקרימיננטה 0, אז ±0 לא משנה כלום. הפרבולה רק נוגעת בציר x.</div>`;
+    t+=`<div><span class="eq"><i>x</i> = ${nice(xs[0])}</span></div>`;
+  }else{
+    t+=`<div><span class="sol-count">אין פתרון</span> הדיסקרימיננטה שלילית, ואין שורש למספר שלילי. הפרבולה לא נוגעת בציר x.</div>`;
+  }
+  if(xs.some(x=>Math.abs(x)>5.5)) t+='<div>חלק מהפתרונות נמצאים מחוץ לגרף, אבל הם קיימים.</div>';
+  $('labTxt').innerHTML=t;
+}
+[aR,bR,cR].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [a,b,c]=btn.dataset.p.split(','); aR.value=a; bR.value=b; cR.value=c; lab();
+}));
+lab();
+
+/* worked examples */
+const EX={
+  A:{a:2,b:-3,c:-2,steps:[
+    [false,`נפתור את ${eqLine(2,-3,-2)}.`],
+    [false,`<strong>שלב 1:</strong> מזהים את המקדמים, עם הסימנים: <span class="eq"><i>a</i> = 2</span>, <span class="eq"><i>b</i> = −3</span>, <span class="eq"><i>c</i> = −2</span>.`],
+    [false,`<strong>שלב 2:</strong> הדיסקרימיננטה: <span class="eq">(−3)² − 4·2·(−2)</span> <span class="eq">= 9 + 16 = 25</span>. היא חיובית, אז יהיו שני פתרונות.`],
+    [false,`<strong>שלב 3:</strong> מציבים בנוסחה: <span class="eq"><i>x</i> = <span class="frac"><span>3 ± √25</span><span>2·2</span></span> = <span class="frac"><span>3 ± 5</span><span>4</span></span></span>`],
+    [true,`<strong>שלב 4:</strong> פעם עם פלוס: <span class="eq"><span class="frac"><span>3 + 5</span><span>4</span></span> = 2</span>. פעם עם מינוס: <span class="eq"><span class="frac"><span>3 − 5</span><span>4</span></span> = −½</span>. בגרף רואים את שתי הנקודות הירוקות.`],
+    [true,`<strong>בדיקה:</strong> מציבים <span class="eq"><i>x</i> = 2</span>: <span class="eq">2·4 − 3·2 − 2</span> <span class="eq">= 8 − 6 − 2 = 0</span> ✓`]
+  ]},
+  B:{a:1,b:6,c:9,steps:[
+    [false,`נפתור את ${eqLine(1,6,9)}.`],
+    [false,`<strong>שלב 1:</strong> <span class="eq"><i>a</i> = 1</span>, <span class="eq"><i>b</i> = 6</span>, <span class="eq"><i>c</i> = 9</span>. כשאין מספר לפני <span class="eq"><i>x</i>²</span>, המקדם הוא 1.`],
+    [false,`<strong>שלב 2:</strong> <span class="eq">6² − 4·1·9</span> <span class="eq">= 36 − 36 = 0</span>. הדיסקרימיננטה 0, אז יש פתרון אחד בלבד.`],
+    [true,`<strong>שלב 3:</strong> <span class="eq"><i>x</i> = <span class="frac"><span>−6 ± 0</span><span>2</span></span> = −3</span>. הפרבולה רק נוגעת בציר x בנקודה אחת.`],
+    [true,`<strong>שימו לב:</strong> <span class="eq"><i>x</i>² + 6<i>x</i> + 9</span> הוא בדיוק <span class="eq">(<i>x</i> + 3)²</span> מנוסחאות הכפל המקוצר. לכן הפתרון היחיד הוא 3−.`]
+  ]},
+  C:{a:1,b:-4,c:5,steps:[
+    [false,`נפתור את <span class="eq"><i>x</i>² = 4<i>x</i> − 5</span>.`],
+    [false,`<strong>שלב 1:</strong> קודם מסדרים ל-0. מעבירים את <span class="eq">4<i>x</i></span> ואת <span class="eq">−5</span> שמאלה, והסימנים מתהפכים: ${eqLine(1,-4,5)}.`],
+    [false,`<strong>שלב 2:</strong> עכשיו <span class="eq"><i>a</i> = 1</span>, <span class="eq"><i>b</i> = −4</span>, <span class="eq"><i>c</i> = 5</span>.`],
+    [false,`<strong>שלב 3:</strong> <span class="eq">(−4)² − 4·1·5</span> <span class="eq">= 16 − 20 = −4</span>.`],
+    [true,`<strong>שלב 4:</strong> הדיסקרימיננטה שלילית, ואין שורש ל-4−. לכן <strong>אין פתרון</strong>. בגרף הפרבולה כולה מעל ציר x.`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [showRoots,txt]=e.steps[exI];
+  plot($('exG'),e.a,e.b,e.c,{roots:showRoots});
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0;
+  $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].steps.length-1){exI++;ex();} };
+$('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+['A','B','C'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B','C'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice: built from nice roots, so the answers come out whole or halves */
+let pr=null, streak=0, solved=0, last='';
+function newPr(){
+  let a,b,c,guard=0;
+  do{
+    const kind=Math.random();
+    if(kind<0.15){ // no solution
+      a=G.pick([1,1,2]); b=G.pick([-4,-2,0,2,4]); c=Math.ceil(b*b/(4*a))+G.pick([1,2,3]);
+    }else{
+      a=G.pick([1,1,1,2,-1]);
+      const r1=G.pick([-5,-4,-3,-2,-1,1,2,3,4,5,0]);
+      let r2v;
+      if(kind<0.27) r2v=r1;                                   // one solution
+      else if(a===2) r2v=G.pick([-5,-3,-1,1,3,5])/2;          // a half
+      else r2v=G.pick([-6,-5,-4,-3,-2,-1,1,2,3,4,5,6]);
+      b=-a*(r1+r2v); c=a*r1*r2v;
+    }
+    guard++;
+  }while((a+','+b+','+c===last || !isInt(b) || !isInt(c) || Math.abs(b)>14 || Math.abs(c)>30) && guard<60);
+  last=a+','+b+','+c;
+  pr={a,b,c,...solve(a,b,c),tries:0,hint:0};
+  $('prQ').innerHTML=eqLine(a,b,c);
+  ['prD','prX1','prX2'].forEach(id=>$(id).value='');
+  $('prNone').checked=false;
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const sameSet=(u,t)=>u.length===t.length && t.every(x=>u.some(y=>eqv(x,y))) && u.every(y=>t.some(x=>eqv(x,y)));
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), {a,b,c,D,xs}=pr;
+  const d=parseNum($('prD').value);
+  const none=$('prNone').checked;
+  const raw=[$('prX1').value,$('prX2').value].filter(s=>s.trim()!=='');
+  const us=raw.map(parseNum);
+  if(isNaN(d)){ fb.innerHTML='<div class="fb err">קודם כתבו את הדיסקרימיננטה Δ כמספר.</div>'; return; }
+  if(us.some(isNaN)){ fb.innerHTML='<div class="fb err">הפתרונות צריכים להיות מספרים, למשל 3, -2 או 1/2.</div>'; return; }
+  if(!none && !us.length){ fb.innerHTML='<div class="fb err">כתבו את הפתרונות, או סמנו "אין פתרון".</div>'; return; }
+  const msgs=[];
+  const dOk=eqv(d,D);
+  if(!dOk){
+    if(eqv(d,b*b+4*a*c)) msgs.push('בדקו את Δ: בנוסחה יש מינוס, <span class="eq"><i>b</i>² <b>−</b> 4<i>a</i><i>c</i></span>. שימו לב גם לסימן של <i>a</i> ושל <i>c</i>.');
+    else if(eqv(d,-b*b-4*a*c)) msgs.push(`בדקו את <span class="eq"><i>b</i>²</span>: גם כש-<i>b</i> שלילי, הריבוע שלו חיובי. <span class="eq">${par(b)}² = ${numTxt(b*b)}</span>.`);
+    else if(eqv(d,b*b-2*a*c)||eqv(d,b*b-a*c)) msgs.push('בדקו את <span class="eq">4<i>a</i><i>c</i></span>: כופלים 4, כפול <i>a</i>, כפול <i>c</i>.');
+    else msgs.push('Δ לא נכון. חשבו לאט: קודם <span class="eq"><i>b</i>²</span>, אחר כך <span class="eq">4·<i>a</i>·<i>c</i></span> עם הסימנים, ואז חסרו.');
+  }else msgs.push('Δ נכון.');
+  let ok=false;
+  if(!xs.length){
+    if(none && !us.length) ok=dOk;
+    else if(!none) msgs.push('Δ שלילי. אפשר להוציא שורש ממספר שלילי? מה זה אומר על מספר הפתרונות?');
+    else msgs.push('סימנתם "אין פתרון" וגם כתבתם פתרונות. השאירו רק אחד מהם.');
+  }else if(none){
+    msgs.push(`Δ ${D===0?'שווה 0':'חיובי'}, אז יש ${D===0?'פתרון אחד':'שני פתרונות'}. בטלו את הסימון "אין פתרון".`);
+  }else if(sameSet(us,xs)){
+    ok=dOk;
+  }else{
+    const s=Math.sqrt(D);
+    const neg=xs.map(x=>-x), overA=[(-b+s)/a,(-b-s)/a], noDiv=[-b+s,-b-s], wrongB=[(b+s)/(2*a),(b-s)/(2*a)];
+    const some=t=>us.length&&us.every(y=>t.some(x=>eqv(x,y)));
+    if(some(neg)||some(wrongB)) msgs.push(`בדקו את המינוס של <span class="eq">−<i>b</i></span>: כאן <span class="eq"><i>b</i> = ${numTxt(b)}</span>, אז <span class="eq">−<i>b</i> = ${numTxt(-b)}</span>.`);
+    else if(some(overA)&&a!==0.5) msgs.push('מחלקים ב-<span class="eq">2<i>a</i></span>, לא ב-<span class="eq"><i>a</i></span>.');
+    else if(some(noDiv)) msgs.push('שכחתם לחלק ב-<span class="eq">2<i>a</i></span>. קו השבר הוא מתחת לכל המונה.');
+    else if(xs.length===2 && us.length===1 && xs.some(x=>eqv(x,us[0]))) msgs.push('פתרון אחד נכון! Δ חיובי, אז יש עוד פתרון: חשבו גם עם הסימן השני של ±.');
+    else if(xs.length===1 && us.length===2 && us.every(y=>eqv(y,xs[0]))) ok=dOk;
+    else if(xs.length===1 && us.length===2) msgs.push('Δ = 0, אז ±0 נותן את אותו מספר פעמיים. יש פתרון אחד בלבד.');
+    else msgs.push('הפתרונות לא נכונים. הציבו בנוסחה: פעם עם פלוס ופעם עם מינוס, וחלקו ב-2a.');
+  }
+  if(ok){
+    streak++; solved++; score();
+    fb.innerHTML=`<div class="fb ok">נכון! ${xs.length?xs.map((x,i)=>`<span class="eq"><i>x</i>${xs.length>1?(i?'₂':'₁'):''} = ${G.fracTxt(x)}</span>`).join(' '):'אין פתרון.'}</div>`;
+    return;
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(x=>'<li>'+x+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  const {a,b,c,D}=pr;
+  pr.hint=Math.min(pr.hint+1,2);
+  let h=`<strong>רמז 1:</strong> <span class="eq"><i>a</i> = ${numTxt(a)}</span>, <span class="eq"><i>b</i> = ${numTxt(b)}</span>, <span class="eq"><i>c</i> = ${numTxt(c)}</span>. הציבו אותם ב-<span class="eq"><i>b</i>² − 4<i>a</i><i>c</i></span>.`;
+  if(pr.hint>=2) h+=`<br><strong>רמז 2:</strong> <span class="eq">Δ = ${par(b)}² − 4·${par(a)}·${par(c)}</span> <span class="eq">= ${numTxt(D)}</span>. `+(D<0?'מה אומרת דיסקרימיננטה שלילית?':`עכשיו <span class="eq">${sqrtTxt(D)}</span>, ומציבים ב-<span class="eq"><span class="frac"><span>${numTxt(-b)} ± ${numTxt(Math.sqrt(D))}</span><span>${numTxt(2*a)}</span></span></span>.`);
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {a,b,c,D,xs}=pr;
+  let h=`הפתרון: <span class="eq">Δ = ${par(b)}² − 4·${par(a)}·${par(c)}</span> <span class="eq">= ${numTxt(D)}</span>. `;
+  if(!xs.length) h+='Δ שלילי, ולכן <strong>אין פתרון</strong>.';
+  else if(xs.length===1) h+=`Δ = 0, ולכן פתרון אחד: <span class="eq"><i>x</i> = <span class="frac"><span>${numTxt(-b)}</span><span>${numTxt(2*a)}</span></span> = ${G.fracTxt(xs[0])}</span>.`;
+  else h+=`<span class="eq"><i>x</i> = <span class="frac"><span>${numTxt(-b)} ± ${numTxt(Math.sqrt(D))}</span><span>${numTxt(2*a)}</span></span></span>, כלומר <span class="eq"><i>x</i>₁ = ${G.fracTxt(xs[0])}</span> <span class="eq"><i>x</i>₂ = ${G.fracTxt(xs[1])}</span>.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h} נסו עכשיו משוואה חדשה.</div>`;
+};
+$('prNew').onclick=newPr;
+['prD','prX1','prX2'].forEach(id=>$(id).addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+newPr(); score();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מערכת צירים: נקודות ורביעים · כיתה ז · מירי</title>
+<meta name="description" content="איך כותבים נקודה כזוג (x, y), איך מוצאים אותה על הדף, ובאיזה רביע היא נמצאת.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/coordinate-plane/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מערכת צירים: נקודות ורביעים · כיתה ז · מירי">
+<meta property="og:description" content="איך כותבים נקודה כזוג (x, y), איך מוצאים אותה על הדף, ובאיזה רביע היא נמצאת.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/coordinate-plane/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ז","item":"https://shohamtal.github.io/homework-site/math/grade-7/"},{"@type":"ListItem","position":4,"name":"מערכת צירים","item":"https://shohamtal.github.io/homework-site/math/grade-7/#coords-7"},{"@type":"ListItem","position":5,"name":"מערכת צירים: נקודות ורביעים","item":"https://shohamtal.github.io/homework-site/math/coordinate-plane/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה כותבים קודם בנקודה, x או y?","acceptedAnswer":{"@type":"Answer","text":"תמיד x קודם. בנקודה (5, 1) הולכים 5 ימינה ואז 1 למעלה. אם מחליפים את הסדר מקבלים נקודה אחרת לגמרי. נסו במעבדה את (2, 4) ואת (4, 2)."}},{"@type":"Question","name":"איך יודעים באיזה רביע נמצאת נקודה?","acceptedAnswer":{"@type":"Answer","text":"מסתכלים על הסימנים. שניהם חיוביים: רביע ראשון. x שלילי ו-y חיובי: רביע שני. שניהם שליליים: רביע שלישי. x חיובי ו-y שלילי: רביע רביעי."}},{"@type":"Question","name":"באיזה רביע נמצאת הנקודה (0, 5)?","acceptedAnswer":{"@type":"Answer","text":"באף רביע. כש-x הוא 0 הנקודה נמצאת על ציר y, וכש-y הוא 0 היא על ציר x. הצירים הם הגבולות בין הרביעים. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מערכת צירים: נקודות ורביעים","description":"איך כותבים נקודה כזוג (x, y), איך מוצאים אותה על הדף, ובאיזה רביע היא נמצאת.","url":"https://shohamtal.github.io/homework-site/math/coordinate-plane/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ז","about":"מערכת צירים","teaches":"מערכת צירים: נקודות ורביעים","keywords":"שיעורים, רביעים, ציר x וציר y","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.g .ql{fill:var(--muted); font:700 9px var(--f-body); opacity:.75}
+.g .qbg{fill:var(--hint-bg); opacity:.7}
+.g .walk{stroke:var(--blue); stroke-width:2.2; stroke-dasharray:4 3; fill:none}
+.g .big{fill:var(--line); stroke:var(--ink); stroke-width:1.2}
+.choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+table.q{border-collapse:collapse; margin-inline:auto; direction:ltr; font-family:var(--f-math)}
+table.q td,table.q th{border:1.5px solid var(--soft); padding:5px 12px; text-align:center}
+table.q th{font-family:var(--f-body); background:var(--paper)}
+.calc{display:flex; flex-direction:column; gap:6px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="coordinate-plane">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/">כיתה ז</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/#coords-7">מערכת צירים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מערכת צירים: נקודות ורביעים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ז · מערכת צירים</div>
+  <h1>מערכת צירים: נקודות ורביעים <span class="slogan">קודם ימינה או שמאלה, אחר כך למעלה או למטה</span></h1>
+  <p class="lead">כל נקודה בדף אפשר לתאר בשני מספרים, כמו כתובת. המספר הראשון אומר כמה ללכת לצדדים, והשני כמה ללכת למעלה או למטה. כאן לומדים לקרוא נקודות, לסמן אותן ולמצוא באיזה רביע הן. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שני צירים</h3>
+      <p><strong>ציר x</strong> הוא הקו השוכב. <strong>ציר y</strong> הוא הקו העומד.</p>
+      <p>הם נפגשים בנקודה <span class="eq">(0, 0)</span>, שנקראת <strong>ראשית הצירים</strong>.</p>
+    </div>
+    <div class="mini">
+      <h3>נקודה היא זוג מספרים</h3>
+      <p>כותבים נקודה כך: <span class="eq">(<i>x</i>, <i>y</i>)</span>. תמיד <i>x</i> ראשון.</p>
+      <p><span class="eq">(3, −2)</span>: הולכים 3 ימינה, ואז 2 למטה.</p>
+      <p>שני המספרים נקראים <strong>השיעורים</strong> של הנקודה.</p>
+    </div>
+    <div class="mini">
+      <h3>ארבעה רביעים</h3>
+      <svg class="g" id="ideaG" viewBox="0 0 240 240" role="img" aria-label="מערכת צירים עם ארבעת הרביעים"></svg>
+    </div>
+  </div>
+  <table class="q" aria-label="הסימנים בכל רביע">
+    <tr><th>רביע</th><th>x</th><th>y</th><th>דוגמה</th></tr>
+    <tr><th>ראשון</th><td>+</td><td>+</td><td>(2, 4)</td></tr>
+    <tr><th>שני</th><td>−</td><td>+</td><td>(−2, 4)</td></tr>
+    <tr><th>שלישי</th><td>−</td><td>−</td><td>(−2, −4)</td></tr>
+    <tr><th>רביעי</th><td>+</td><td>−</td><td>(2, −4)</td></tr>
+  </table>
+  <div class="callout"><strong>לזכור:</strong> הרביעים ממוספרים נגד כיוון השעון, מתחילים מלמעלה ימינה. נקודה שנמצאת על אחד הצירים לא שייכת לאף רביע.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו ותראו</h2></div>
+  <p class="text">הזיזו את <span class="m">x</span> ואת <span class="b">y</span>. הקו המקווקו מראה את הדרך מהראשית אל הנקודה.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq"></div>
+      <label class="slider" for="sx"><span>שיעור <span class="m">x</span> (ימינה או שמאלה)</span><span class="eq" id="sxv"></span></label>
+      <input type="range" id="sx" min="-5" max="5" step="1" value="3">
+      <label class="slider" for="sy"><span>שיעור <span class="b">y</span> (למעלה או למטה)</span><span class="eq" id="syv"></span></label>
+      <input type="range" id="sy" class="blue" min="-5" max="5" step="1" value="2">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="-4,1" dir="ltr">(−4, 1)</button>
+          <button data-p="-2,-3" dir="ltr">(−2, −3)</button>
+          <button data-p="5,-4" dir="ltr">(5, −4)</button>
+          <button data-p="0,3" dir="ltr">(0, 3)</button>
+          <button data-p="-3,0" dir="ltr">(−3, 0)</button>
+          <button data-p="2,4" dir="ltr">(2, 4) ו-(4, 2)?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הפכו את הסדר</h3>
+      <p><span class="eq">(2, 4)</span> ו-<span class="eq">(4, 2)</span> הן שתי נקודות <strong>שונות</strong>.</p>
+      <p>תמיד קודם <i>x</i> (לצדדים), ורק אחר כך <i>y</i> (למעלה או למטה).</p>
+    </div>
+    <div class="mini">
+      <h3>נקודה על ציר</h3>
+      <p><span class="eq">(0, 3)</span> נמצאת על ציר <strong>y</strong>, כי לא זזים בכלל לצדדים.</p>
+      <p><span class="eq">(3, 0)</span> נמצאת על ציר <strong>x</strong>. הן לא בשום רביע.</p>
+    </div>
+    <div class="mini">
+      <h3>שכחו את המינוס</h3>
+      <p><span class="eq">(−3, 2)</span>: המינוס של ה-3 אומר ללכת <strong>שמאלה</strong>.</p>
+      <p>מינוס ב-<i>y</i> אומר ללכת <strong>למטה</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">סמנו את הנקודה <span class="eq"><i>A</i>(−3, 4)</span> ומצאו באיזה רביע היא נמצאת.</p>
+  <div class="stepper">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף התרגיל"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prQ" style="font-size:1.6rem"></div>
+      <div class="inputs" id="prIn">
+        <label for="prX">שיעור x<input id="prX" autocomplete="off"></label>
+        <label for="prY">שיעור y<input id="prY" autocomplete="off"></label>
+      </div>
+      <div class="choices" id="prQuad"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה כותבים קודם בנקודה, x או y?</h3>
+    <p>תמיד x קודם. בנקודה <span class="eq">(5, 1)</span> הולכים 5 ימינה ואז 1 למעלה. אם מחליפים את הסדר מקבלים נקודה אחרת לגמרי. <a href="#lab">נסו במעבדה</a> את <span class="eq">(2, 4)</span> ואת <span class="eq">(4, 2)</span>.</p>
+    <h3>איך יודעים באיזה רביע נמצאת נקודה?</h3>
+    <p>מסתכלים על הסימנים. שניהם חיוביים: רביע ראשון. x שלילי ו-y חיובי: רביע שני. שניהם שליליים: רביע שלישי. x חיובי ו-y שלילי: רביע רביעי.</p>
+    <h3>באיזה רביע נמצאת הנקודה (0, 5)?</h3>
+    <p>באף רביע. כש-x הוא 0 הנקודה נמצאת על ציר y, וכש-y הוא 0 היא על ציר x. הצירים הם הגבולות בין הרביעים. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/negative-numbers/">מספרים שליליים וציר המספרים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/triangle-angles/"><small>→ הנושא הקודם</small>סכום הזוויות במשולש</a><a class="next" href="../../math/equation-from-graph/"><small>הנושא הבא ←</small>משוואת ישר מתוך גרף</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,sx,sy,numTxt,parseNum,pick,gridPoint}=G;
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const PT=(x,y)=>`(${numTxt(x)}, ${numTxt(y)})`;
+const QN=['','ראשון','שני','שלישי','רביעי'];
+const quad=(x,y)=>x===0||y===0?0:x>0?(y>0?1:4):(y>0?2:3);
+const qLabels=hl=>[[1,3.6,3.6],[2,-3.6,3.6],[3,-3.6,-3.6],[4,3.6,-3.6]].map(([q,x,y])=>
+  (hl===q?`<rect class="qbg" x="${sx(x>0?0.1:-5.4)}" y="${sy(y>0?5.4:-0.1)}" width="${5.3*20}" height="${5.3*20}"/>`:'')+
+  `<text class="ql" x="${sx(x)}" y="${sy(y)+3}" text-anchor="middle">רביע ${QN[q]}</text>`).join('');
+const walk=(x,y)=>`<path class="walk" d="M${sx(0)} ${sy(0)} H${sx(x)} V${sy(y)}"/>`;
+const where=(x,y)=>{ const q=quad(x,y);
+  if(x===0&&y===0) return 'זו <strong>ראשית הצירים</strong>. היא לא בשום רביע.';
+  if(x===0) return `x הוא 0, אז הנקודה על <strong>ציר y</strong>. היא לא בשום רביע.`;
+  if(y===0) return `y הוא 0, אז הנקודה על <strong>ציר x</strong>. היא לא בשום רביע.`;
+  return `x ${x>0?'חיובי':'שלילי'} ו-y ${y>0?'חיובי':'שלילי'}, אז הנקודה ב<strong>רביע ה${QN[q]}</strong>.`; };
+const steps=(x,y)=>{
+  const t=[`מתחילים בראשית <span class="eq">(0, 0)</span>.`];
+  t.push(x===0?'x הוא 0: לא זזים לצדדים.':`x הוא ${numTxt(x)}: הולכים ${Math.abs(x)} ${x>0?'ימינה':'שמאלה'}.`);
+  t.push(y===0?'y הוא 0: לא זזים למעלה או למטה.':`y הוא ${numTxt(y)}: הולכים ${Math.abs(y)} ${y>0?'למעלה':'למטה'}.`);
+  return t; };
+
+/* idea */
+draw($('ideaG'),null,null,{extra:qLabels(0)});
+
+/* lab */
+const X=$('sx'), Y=$('sy');
+function lab(){
+  const x=+X.value, y=+Y.value, q=quad(x,y);
+  $('sxv').textContent=numTxt(x); $('syv').textContent=numTxt(y);
+  $('labEq').innerHTML=`<span class="eq">(<span class="m">${numTxt(x)}</span>, <span class="b">${numTxt(y)}</span>)</span>`;
+  draw($('labG'),null,null,{extra:qLabels(q)+walk(x,y),points:[{x,y,cls:'big',r:5.5,label:PT(x,y)}]});
+  $('labTxt').innerHTML=steps(x,y).map(s=>`<div>${s}</div>`).join('')+`<div>${where(x,y)}</div>`;
+}
+[X,Y].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [x,y]=btn.dataset.p.split(','); X.value=x; Y.value=y; lab();
+  if(x==='2'&&y==='4') $('labTxt').innerHTML+='<div>עכשיו שימו x = 4 ו-y = 2. רואים? זו נקודה אחרת. הסדר חשוב.</div>';
+}));
+lab();
+
+/* worked example A(−3, 4) */
+const EX=[
+  {pts:[{x:0,y:0,cls:'pt'}], ex:'', t:'מתחילים בראשית הצירים, <span class="eq">(0, 0)</span>.'},
+  {pts:[{x:-3,y:0,cls:'pt'}], ex:`<path class="walk" d="M${sx(0)} ${sy(0)} H${sx(-3)}"/>`, t:'המספר הראשון, x, הוא <span class="eq">−3</span>. מינוס אומר שמאלה. הולכים 3 משבצות שמאלה.'},
+  {pts:[{x:-3,y:4,cls:'big',r:5.5,label:'A'}], ex:walk(-3,4), t:'המספר השני, y, הוא <span class="eq">4</span>. חיובי, אז הולכים 4 משבצות למעלה. כאן מסמנים את <i>A</i>.'},
+  {pts:[{x:-3,y:4,cls:'big',r:5.5,label:'A'}], ex:qLabels(2)+walk(-3,4), t:'x שלילי ו-y חיובי. זה <strong>הרביע השני</strong>, למעלה משמאל ✓'}
+];
+let exI=0;
+function ex(){
+  const s=EX[exI];
+  draw($('exG'),null,null,{extra:s.ex,points:s.pts});
+  $('exText').innerHTML=s.t;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* practice: read (type x,y) / plot (click) / quadrant (choose) */
+let pr={}, picked=null, qPick=null, streak=0, solved=0;
+$('prQuad').innerHTML=[1,2,3,4,0].map(q=>`<button type="button" data-q="${q}" aria-pressed="false">${q?'רביע '+QN[q]:'על ציר, בלי רביע'}</button>`).join('');
+const setQ=q=>$('prQuad').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.q===q));
+$('prQuad').querySelectorAll('button').forEach(b=>b.onclick=()=>{qPick=+b.dataset.q; setQ(qPick);});
+function prDraw(extraPts=[],ex=''){
+  const pts=pr.kind==='read'?[{x:pr.x,y:pr.y,cls:'big',r:5.5,label:'P'}]:[];
+  draw($('prG'),null,null,{extra:ex,points:pts.concat(extraPts)});
+}
+function newPr(){
+  const kind=pick(['read','read','plot','plot','quad']);
+  let x,y;
+  do{ x=ri(-5,5); y=ri(-5,5); if(kind!=='quad'&&Math.random()<.75){ if(x===0)x=pick([-3,2]); if(y===0)y=pick([-2,4]); } if(Math.abs(x)===Math.abs(y)&&Math.random()<.6) y=y>0?y-1:y+1; } while(x===pr.x&&y===pr.y);
+  if(kind==='quad'&&Math.random()<.2) (Math.random()<.5)?x=0:y=0;
+  pr={kind,x,y,tries:0,hint:0}; picked=null; qPick=null; setQ(-1);
+  $('prIn').hidden=kind!=='read'; $('prQuad').hidden=kind!=='quad';
+  $('prG').classList.toggle('clickable',kind==='plot');
+  $('prAsk').textContent=kind==='read'?'מה השיעורים של הנקודה P? כתבו x ו-y.':kind==='plot'?'לחצו על הגרף במקום של הנקודה, ואז על "בדיקה".':'באיזה רביע נמצאת הנקודה? (אפשר לדמיין אותה, או לצייר בראש)';
+  $('prQ').innerHTML=kind==='read'?'<span class="eq"><i>P</i>(?, ?)</span>':`<span class="eq">${PT(x,y)}</span>`;
+  $('prX').value=''; $('prY').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  prDraw();
+}
+$('prG').addEventListener('click',e=>{
+  if(pr.kind!=='plot') return;
+  const p=gridPoint($('prG'),e); if(!p) return;
+  picked=p; prDraw([{x:p.x,y:p.y,cls:'pt',label:PT(p.x,p.y)}]);
+});
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function good(t){ streak++; solved++; streakTxt(); $('prFb').innerHTML=`<div class="fb ok">נכון! ${t}</div>`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), {kind,x,y}=pr; let msg=null;
+  if(kind==='read'){
+    const vx=parseNum($('prX').value), vy=parseNum($('prY').value);
+    if(isNaN(vx)||isNaN(vy)){ fb.innerHTML='<div class="fb err">כתבו שני מספרים, אחד ל-x ואחד ל-y.</div>'; return; }
+    if(vx===x&&vy===y) return good(`<span class="eq"><i>P</i>${PT(x,y)}</span>`);
+    if(vx===y&&vy===x) msg='המספרים נכונים, אבל בסדר הפוך. x הוא כמה הולכים לצדדים, והוא בא ראשון.';
+    else if(Math.abs(vx)===Math.abs(x)&&Math.abs(vy)===Math.abs(y)) msg=`המרחקים נכונים. בדקו את הסימנים: ${vx!==x?`P נמצאת ${x>0?'מימין':'משמאל'} לציר y.`:''} ${vy!==y?`P נמצאת ${y>0?'מעל':'מתחת ל'} ציר x.`:''}`;
+    else msg='עוד לא. מהראשית, כמה משבצות צריך ללכת לצדדים עד P? וכמה למעלה או למטה?';
+  } else if(kind==='plot'){
+    if(!picked){ fb.innerHTML='<div class="fb err">קודם לחצו על הגרף כדי לסמן נקודה.</div>'; return; }
+    if(picked.x===x&&picked.y===y){ prDraw([{x,y,cls:'pt-ok',r:5.5,label:PT(x,y)}],walk(x,y)); return good('סימנתם בדיוק במקום.'); }
+    if(picked.x===y&&picked.y===x) msg='סימנתם את הנקודה עם x ו-y הפוכים. קודם הולכים לצדדים, לפי המספר הראשון.';
+    else if(Math.abs(picked.x)===Math.abs(x)&&Math.abs(picked.y)===Math.abs(y)) msg='המרחקים נכונים, אבל אחד הכיוונים הפוך. מינוס ב-x זה שמאלה, ומינוס ב-y זה למטה.';
+    else msg='לא בדיוק. התחילו מהראשית וספרו משבצות.';
+  } else {
+    if(qPick==null){ fb.innerHTML='<div class="fb err">בחרו רביע.</div>'; return; }
+    const q=quad(x,y);
+    if(qPick===q){ prDraw([{x,y,cls:'pt-ok',r:5.5}],qLabels(q)); return good(where(x,y)); }
+    if(q===0) msg='תסתכלו טוב: אחד השיעורים הוא 0. איפה נמצאת נקודה כזאת?';
+    else if(qPick===0) msg='אף אחד מהשיעורים הוא לא 0, אז הנקודה לא על ציר.';
+    else msg='בדקו את הסימן של x ואת הסימן של y, ואז השוו לטבלה למעלה.';
+  }
+  streak=0; pr.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const {kind,x,y}=pr; pr.hint=Math.min(pr.hint+1,2); let h;
+  if(kind==='quad') h=pr.hint<2?'מה הסימן של x? ומה הסימן של y?':`x ${x>0?'חיובי':x<0?'שלילי':'הוא 0'}, y ${y>0?'חיובי':y<0?'שלילי':'הוא 0'}. עכשיו הסתכלו בטבלה.`;
+  else if(pr.hint<2) h='מתחילים בראשית. קודם לצדדים (x), אחר כך למעלה או למטה (y).';
+  else h=kind==='read'?`P נמצאת ${x>0?'מימין':'משמאל'} לציר y, ${y>0?'מעל':'מתחת ל'} ציר x. ספרו את המשבצות בכל כיוון.`:steps(x,y).slice(1).join(' ');
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {x,y}=pr;
+  prDraw([{x,y,cls:'pt-ok',r:5.5,label:PT(x,y)}],qLabels(quad(x,y))+walk(x,y));
+  $('prFb').innerHTML=`<div class="fb hint calc">${steps(x,y).map(s=>`<div>${s}</div>`).join('')}<div>${where(x,y)}</div><div>עכשיו נסו תרגיל חדש.</div></div>`;
+};
+$('prNew').onclick=newPr;
+['prX','prY'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

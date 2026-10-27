@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>סדרות: איבר כללי וחוקיות · כיתה ט · מירי</title>
+<meta name="description" content="מוצאים את החוקיות, כותבים איבר כללי כמו aₙ = 3n + 2, ומגלים מה יהיה האיבר ה-100 בלי לכתוב את כולם.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/sequences/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="סדרות: איבר כללי וחוקיות · כיתה ט · מירי">
+<meta property="og:description" content="מוצאים את החוקיות, כותבים איבר כללי כמו aₙ = 3n + 2, ומגלים מה יהיה האיבר ה-100 בלי לכתוב את כולם.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/sequences/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"סדרות","item":"https://shohamtal.github.io/homework-site/math/grade-9/#sequences-9"},{"@type":"ListItem","position":5,"name":"סדרות: איבר כללי וחוקיות","item":"https://shohamtal.github.io/homework-site/math/sequences/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים איבר כללי של סדרה חשבונית?","acceptedAnswer":{"@type":"Answer","text":"מוצאים את ההפרש d (איבר פחות האיבר שלפניו), ומציבים בנוסחה an = a1 + (n − 1) · d. אחר כך פותחים סוגריים. למשל ב-7, 11, 15 יוצא 4n + 3. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"איך בודקים אם מספר נמצא בסדרה?","acceptedAnswer":{"@type":"Answer","text":"משווים את האיבר הכללי למספר ופותרים משוואה. אם n יוצא מספר שלם וחיובי, המספר בסדרה, וזה גם המקום שלו. אם יוצא שבר או מספר שלילי, הוא לא בסדרה."}},{"@type":"Question","name":"מה ההבדל בין n ל-an?","acceptedAnswer":{"@type":"Answer","text":"n הוא המקום של האיבר: ראשון, שני, עשירי. an הוא הערך שעומד במקום הזה. ב-5, 8, 11 המקום 3 והערך 11, ולכן a3 = 11. הזיזו את n במעבדה ותראו."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סדרות: איבר כללי וחוקיות","description":"מוצאים את החוקיות, כותבים איבר כללי כמו aₙ = 3n + 2, ומגלים מה יהיה האיבר ה-100 בלי לכתוב את כולם.","url":"https://shohamtal.github.io/homework-site/math/sequences/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"סדרות","teaches":"סדרות: איבר כללי וחוקיות","keywords":"איבר כללי, סדרה חשבונית, הפרש","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.seq{display:flex; flex-wrap:wrap; gap:4px 2px; direction:ltr; justify-content:center; align-items:center}
+.seq .chip{font-family:var(--f-math); font-size:1.15rem; min-width:2.4em; text-align:center}
+.seq .chip.on{background:var(--hl); font-weight:600}
+.seq .gap{font:700 .8rem var(--f-math); color:var(--line); padding:0 2px}
+.seq .dots{font-family:var(--f-math); color:var(--muted); padding:0 4px}
+.places{display:flex; gap:2px; direction:ltr; justify-content:center; font-size:.8rem; color:var(--muted)}
+svg.plot{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.plot .axis{stroke:var(--ink); stroke-width:1.3}
+.plot .gridln{stroke:var(--soft); stroke-width:1}
+.plot .tick{fill:var(--muted); font:9px var(--f-body); text-anchor:middle}
+.plot .trend{stroke:var(--line); stroke-width:1.4; stroke-dasharray:4 4}
+.plot .pt{fill:var(--blue); stroke:var(--card); stroke-width:1.2}
+.plot .pt.on{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+.plot .ptlbl{fill:var(--ink); font:700 10px var(--f-math); text-anchor:middle}
+.calc .eq{white-space:normal}
+.vt td.lit{background:var(--hint-bg)}
+.inputs .eq{font-size:1.2rem}
+.inputs .rule{display:flex; align-items:center; gap:6px; direction:ltr; font-family:var(--f-math); font-size:1.2rem}
+.inputs .rule input{width:4.5em}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="sequences">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#sequences-9">סדרות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">סדרות: איבר כללי וחוקיות</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · סדרות</div>
+  <h1>סדרות: איבר כללי וחוקיות <span class="slogan">מה יהיה האיבר ה-100?</span></h1>
+  <p class="lead">סדרה היא רשימה של מספרים שיש בה חוקיות. כשמוצאים את החוקיות, אפשר לדעת כל איבר בסדרה בלי לכתוב את כל מה שלפניו. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מקום וערך</h2></div>
+  <p class="text">הנה סדרה. כל פעם מוסיפים 3:</p>
+  <div class="seq"><span class="chip">5</span><span class="gap">+3</span><span class="chip">8</span><span class="gap">+3</span><span class="chip">11</span><span class="gap">+3</span><span class="chip">14</span><span class="dots">…</span></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מקום וערך</h3>
+      <p>לכל איבר יש <strong>מקום</strong> n (ראשון, שני, שלישי) ו<strong>ערך</strong>.</p>
+      <p>כותבים <span class="eq"><i>a</i><sub>1</sub> = 5</span> וגם <span class="eq"><i>a</i><sub>3</sub> = 11</span>.</p>
+      <p>המספר הקטן למטה הוא המקום. המספר אחרי השווה הוא הערך.</p>
+    </div>
+    <div class="mini">
+      <h3>סדרה חשבונית</h3>
+      <p>בסדרה חשבונית מוסיפים כל פעם אותו מספר. קוראים לו <strong>ההפרש</strong> <i>d</i>.</p>
+      <p>מוצאים אותו כך: איבר פחות האיבר שלפניו. <span class="eq">8 − 5 = 3</span></p>
+      <p>אם הסדרה יורדת, ההפרש שלילי.</p>
+    </div>
+    <div class="mini">
+      <h3>האיבר הכללי</h3>
+      <p>נוסחה שנותנת את הערך לפי המקום:</p>
+      <p><span class="eq"><i>a</i><sub><i>n</i></sub> = 3<i>n</i> + 2</span></p>
+      <p>רוצים את האיבר ה-100? מציבים <span class="eq"><i>n</i> = 100</span> ומקבלים <span class="eq">302</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הנוסחה הכללית:</strong> <span class="eq"><i>a</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub> + (<i>n</i> − 1) · <i>d</i></span>. מתחילים מהאיבר הראשון, ומוסיפים את ההפרש <span class="eq"><i>n</i> − 1</span> פעמים.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים סדרה</h2></div>
+  <p class="text">בחרו איבר ראשון והפרש. בחרו גם מקום n, ותראו איך מגיעים לאיבר שלו. כל איבר הוא נקודה בגרף: המקום למטה, הערך למעלה.</p>
+  <div class="lab">
+    <div>
+      <div class="seq" id="labSeq"></div>
+      <svg class="plot" id="labG" viewBox="0 0 320 220" role="img" aria-label="גרף של איברי הסדרה"></svg>
+    </div>
+    <div class="ctrl">
+      <div><label class="slider" for="a1"><span>האיבר הראשון <span class="eq"><i>a</i><sub>1</sub></span></span><span class="eq" id="a1v"></span></label>
+        <input type="range" id="a1" min="-10" max="20" step="1" value="5"></div>
+      <div><label class="slider" for="d"><span>ההפרש <span class="eq"><i>d</i></span></span><span class="eq" id="dv"></span></label>
+        <input type="range" id="d" class="hl" min="-5" max="5" step="1" value="3"></div>
+      <div><label class="slider" for="n"><span>המקום <span class="eq"><i>n</i></span></span><span class="eq" id="nv"></span></label>
+        <input type="range" id="n" class="blue" min="1" max="10" step="1" value="4"></div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-a="5" data-d="3" data-n="4">עולה ב-3</button>
+          <button data-a="20" data-d="-4" data-n="6">סדרה יורדת</button>
+          <button data-a="1" data-d="2" data-n="10">המספרים האי-זוגיים</button>
+          <button data-a="-7" data-d="2" data-n="5">מתחילה בשלילי</button>
+          <button data-a="6" data-d="0" data-n="8">הפרש 0</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב לגרף: הנקודות של סדרה חשבונית תמיד יושבות על קו ישר, וההפרש <i>d</i> הוא השיפוע שלו. זה בדיוק כמו <a href="../equation-from-graph/">משוואת ישר</a>, רק שיש נקודות רק במקומות 1, 2, 3 וכן הלאה.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>n פעמים במקום n − 1</h3>
+      <p>בסדרה <span class="eq">5, 8, 11, …</span> האיבר העשירי הוא לא <span class="eq">5 + 10 · 3 = 35</span>.</p>
+      <p>מהאיבר הראשון לעשירי יש רק 9 קפיצות: <span class="eq">5 + 9 · 3 = 32</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מקום או ערך?</h3>
+      <p>"האם 50 בסדרה?" שואלים על <strong>ערך</strong>. פותרים <span class="eq">3<i>n</i> + 2 = 50</span> ומקבלים <span class="eq"><i>n</i> = 16</span>.</p>
+      <p>זה עובד רק אם n יוצא מספר שלם וחיובי. אחרת, 50 לא בסדרה.</p>
+    </div>
+    <div class="mini">
+      <h3>הפרש בסדרה יורדת</h3>
+      <p>בסדרה <span class="eq">20, 16, 12, …</span> ההפרש הוא <span class="eq">16 − 20 = −4</span>, ולא 4.</p>
+      <p>תמיד מחסרים: <strong>האיבר השני פחות הראשון</strong>, באותו כיוון.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> כתבתם איבר כללי? הציבו <span class="eq"><i>n</i> = 1</span> ו-<span class="eq"><i>n</i> = 2</span>. אם יוצאים שני האיברים הראשונים של הסדרה, הנוסחה נכונה.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">נתונה הסדרה:</p>
+  <div class="seq"><span class="chip">7</span><span class="chip">11</span><span class="chip">15</span><span class="chip">19</span><span class="dots">…</span></div>
+  <p class="text">מצאו את האיבר הכללי ואת האיבר ה-30. האם 99 נמצא בסדרה? ומה עם 100?</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">כל פעם תקבלו סדרה חדשה ושאלה אחת. מספר שלילי כותבים עם מינוס, למשל <span class="eq">-4</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="d" aria-pressed="false">הפרש</button>
+    <button data-t="term" aria-pressed="false">איבר במקום n</button>
+    <button data-t="rule" aria-pressed="false">איבר כללי</button>
+    <button data-t="place" aria-pressed="false">באיזה מקום?</button>
+  </div>
+  <div class="seq" id="prSeq"></div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA" id="prOne"><span id="prLbl">התשובה</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <div class="rule" id="prTwo" hidden><span><i>a</i><sub><i>n</i></sub> =</span><input id="prM" aria-label="המספר שלפני n" inputmode="text" autocomplete="off"><span><i>n</i> +</span><input id="prC" aria-label="המספר החופשי" inputmode="text" autocomplete="off"></div>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">סדרה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים איבר כללי של סדרה חשבונית?</h3>
+    <p>מוצאים את ההפרש d (איבר פחות האיבר שלפניו), ומציבים בנוסחה <span class="eq"><i>a</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub> + (<i>n</i> − 1) · <i>d</i></span>. אחר כך פותחים סוגריים. למשל ב-<span class="eq">7, 11, 15</span> יוצא <span class="eq">4<i>n</i> + 3</span>. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>איך בודקים אם מספר נמצא בסדרה?</h3>
+    <p>משווים את האיבר הכללי למספר ופותרים משוואה. אם n יוצא מספר שלם וחיובי, המספר בסדרה, וזה גם המקום שלו. אם יוצא שבר או מספר שלילי, הוא לא בסדרה.</p>
+    <h3>מה ההבדל בין n ל-a<sub>n</sub>?</h3>
+    <p>n הוא המקום של האיבר: ראשון, שני, עשירי. <span class="eq"><i>a</i><sub><i>n</i></sub></span> הוא הערך שעומד במקום הזה. ב-<span class="eq">5, 8, 11</span> המקום 3 והערך 11, ולכן <span class="eq"><i>a</i><sub>3</sub> = 11</span>. <a href="#lab">הזיזו את n במעבדה</a> ותראו.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/trigonometry/"><small>→ הנושא הקודם</small>טריגונומטריה: סינוס, קוסינוס וטנגנס</a><a class="next" href="../../math/frequency-tables/"><small>הנושא הבא ←</small>טבלת שכיחויות ודיאגרמות</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const A=k=>`<i>a</i><sub>${k}</sub>`, AN=A('<i>n</i>'), N='<i>n</i>';
+const term=(a1,d,n)=>a1+(n-1)*d;
+/* "3n + 2", "−4n + 24", "n − 1", "5" */
+function ruleTxt(d,c){
+  let s=d===0?'':(d===1?'':d===-1?'−':numTxt(d))+N;
+  if(d===0) return numTxt(c);
+  if(c>0) s+=' + '+c; if(c<0) s+=' − '+Math.abs(c);
+  return s;
+}
+/* "(−4)" for negatives inside a product */
+const par=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const gapTxt=d=>(d<0?'−':'+')+Math.abs(d);
+function seqHTML(list,on,more){
+  return list.map((v,i)=>(i?`<span class="gap">${gapTxt(list[i]-list[i-1])}</span>`:'')+`<span class="chip${i===on?' on':''}">${numTxt(v)}</span>`).join('')+(more?'<span class="dots">…</span>':'');
+}
+
+/* ---------- lab ---------- */
+function plot(svg,a1,d,n){
+  const vals=Array.from({length:10},(x,i)=>term(a1,d,i+1));
+  let lo=Math.min(0,...vals), hi=Math.max(0,...vals);
+  if(hi-lo<10){ hi=lo+10; }
+  const step=(hi-lo)>40?10:5; lo=Math.floor(lo/step)*step; hi=Math.ceil(hi/step)*step;
+  const X=k=>40+(k-1)*28, Y=v=>196-(v-lo)/(hi-lo)*180;
+  let h='';
+  for(let v=lo;v<=hi;v+=step) h+=`<line class="gridln" x1="30" y1="${Y(v)}" x2="310" y2="${Y(v)}"/><text class="tick" x="18" y="${Y(v)+3}">${numTxt(v)}</text>`;
+  h+=`<line class="axis" x1="30" y1="${Y(0)}" x2="310" y2="${Y(0)}"/><line class="axis" x1="30" y1="10" x2="30" y2="200"/>`;
+  for(let k=1;k<=10;k++) h+=`<text class="tick" x="${X(k)}" y="${Math.min(212,Y(0)+12)}">${k}</text>`;
+  h+=`<line class="trend" x1="${X(1)}" y1="${Y(vals[0])}" x2="${X(10)}" y2="${Y(vals[9])}"/>`;
+  vals.forEach((v,i)=>{ h+=`<circle class="pt${i+1===n?' on':''}" cx="${X(i+1)}" cy="${Y(v)}" r="${i+1===n?7:5}"/>`; });
+  const yv=Y(vals[n-1]);
+  h+=`<text class="ptlbl" x="${X(n)}" y="${yv<24?yv+20:yv-11}">${numTxt(vals[n-1])}</text>`;
+  svg.innerHTML=h;
+}
+function lab(){
+  const a1=+$('a1').value, d=+$('d').value, n=+$('n').value;
+  $('a1v').textContent=numTxt(a1); $('dv').textContent=numTxt(d); $('nv').textContent=n;
+  const list=Array.from({length:Math.max(5,n)},(x,i)=>term(a1,d,i+1)).slice(0,Math.max(5,n));
+  $('labSeq').innerHTML=seqHTML(list,n-1,true);
+  plot($('labG'),a1,d,n);
+  const an=term(a1,d,n), c=a1-d;
+  let t=`<div>${d>0?`כל פעם מוסיפים ${d}.`:d<0?`כל פעם מורידים ${Math.abs(d)}, ולכן ההפרש שלילי.`:'ההפרש 0: כל האיברים שווים.'}</div>`;
+  t+=`<div><strong>האיבר במקום ${n}:</strong> מהאיבר הראשון יש ${n-1} קפיצות. ${E(`${A(n)} = ${numTxt(a1)} + ${n-1} · ${par(d)} = ${numTxt(an)}`)}</div>`;
+  t+=`<div><strong>האיבר הכללי:</strong> ${E(`${AN} = ${numTxt(a1)} + (${N} − 1) · ${par(d)} = ${ruleTxt(d,c)}`)}</div>`;
+  t+=`<div><strong>והאיבר ה-100?</strong> ${E(`${A(100)} = ${numTxt(term(a1,d,100))}`)}. בלי לכתוב 100 מספרים.</div>`;
+  $('labCalc').innerHTML=t;
+}
+['a1','d','n'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  $('a1').value=b.dataset.a; $('d').value=b.dataset.d; $('n').value=b.dataset.n; lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>ההפרש:</strong> איבר פחות האיבר שלפניו. ${E('11 − 7 = 4')}, וגם ${E('15 − 11 = 4')}. אז ${E('<i>d</i> = 4')}.`,
+  `<strong>הנוסחה:</strong> ${E(`${AN} = 7 + (${N} − 1) · 4`)}.`,
+  `<strong>פותחים סוגריים:</strong> ${E(`7 + 4${N} − 4 = 4${N} + 3`)}. האיבר הכללי: ${E(`${AN} = 4${N} + 3`)}.`,
+  `<strong>בודקים:</strong> ${E(`${N} = 1`)} נותן ${E('4 + 3 = 7')}, ו-${E(`${N} = 2`)} נותן ${E('8 + 3 = 11')}. מתאים לסדרה.`,
+  `<strong>האיבר ה-30:</strong> ${E(`${A(30)} = 4 · 30 + 3 = 123`)}.`,
+  `<strong>האם 99 בסדרה?</strong> פותרים ${E(`4${N} + 3 = 99`)}, ואז ${E(`4${N} = 96`)} ו-${E(`${N} = 24`)}. מספר שלם! 99 הוא האיבר ה-24.`,
+  `<strong>ומה עם 100?</strong> ${E(`4${N} + 3 = 100`)}, ואז ${E(`4${N} = 97`)} ו-${E(`${N} = 24.25`)}. אין מקום 24.25, ולכן 100 <strong>לא</strong> בסדרה.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, solved=0, streak=0;
+const numIn=s=>parseNum(String(s).trim());
+function newPr(){
+  const type=mode==='mix'?pick(['d','term','rule','place']):mode;
+  let d=0; while(d===0) d=rnd(-6,7);
+  const a1=rnd(-8,20);
+  const p={type,a1,d,c:a1-d,tries:0,hint:0};
+  if(type==='term') p.n=pick([8,10,12,15,20,25,50]);
+  if(type==='place'){ p.n=rnd(9,40); p.v=term(a1,d,p.n); }
+  p.ans=type==='d'?d:type==='term'?term(a1,d,p.n):type==='place'?p.n:null;
+  pr=p;
+  $('prSeq').innerHTML=Array.from({length:4},(x,i)=>`<span class="chip">${numTxt(term(a1,d,i+1))}</span>`).join('')+'<span class="dots">…</span>';
+  $('prQ').innerHTML={d:'מה ההפרש d של הסדרה?',term:`מה האיבר במקום ${p.n}? כלומר, כמה זה ${E(A(p.n))}?`,rule:'כתבו את האיבר הכללי של הסדרה.',place:`המספר ${E(numTxt(p.v))} נמצא בסדרה. באיזה מקום?`}[type];
+  $('prLbl').innerHTML={d:'<i>d</i> =',term:A(p.n)+' =',place:'<i>n</i> ='}[type]||'';
+  $('prOne').hidden=type==='rule'; $('prTwo').hidden=type!=='rule';
+  ['prA','prM','prC'].forEach(id=>$(id).value='');
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {type,a1,d,c,n,v}=pr;
+  const s1=`ההפרש: ${E(`${numTxt(term(a1,d,2))} − ${par(a1)} = ${numTxt(d)}`)}.`;
+  const rule=`${E(`${AN} = ${numTxt(a1)} + (${N} − 1) · ${par(d)} = ${ruleTxt(d,c)}`)}`;
+  if(type==='d') return s1;
+  if(type==='term') return `${s1} ${E(`${A(n)} = ${numTxt(a1)} + ${n-1} · ${par(d)} = ${numTxt(term(a1,d,n))}`)}.`;
+  if(type==='rule') return `${s1} ${rule}.`;
+  return `${s1} האיבר הכללי ${rule}. פותרים ${E(`${ruleTxt(d,c)} = ${numTxt(v)}`)}, ואז ${E(`${numTxt(d)}${N} = ${numTxt(v-c)}`)} ו-${E(`${N} = ${n}`)}.`;
+}
+function diagnose(x,y){
+  const {type,a1,d,c,n,v}=pr;
+  if(type==='d'){
+    if(eqv(x,-d)) return 'הסימן הפוך. מחסרים את האיבר הראשון מהשני, ולא להפך. אם הסדרה יורדת, ההפרש שלילי.';
+    if(eqv(x,a1)) return 'זה האיבר הראשון. ההפרש הוא כמה מוסיפים כל פעם.';
+    return 'לא בדיוק. חשבו: האיבר השני פחות האיבר הראשון.';
+  }
+  if(type==='term'){
+    if(eqv(x,a1+n*d)) return `הוספתם את ההפרש ${n} פעמים. מהאיבר הראשון עד המקום ${n} יש רק ${n-1} קפיצות.`;
+    if(eqv(x,a1+(n-2)*d)) return `הוספתם את ההפרש ${n-2} פעמים. מהאיבר הראשון עד המקום ${n} יש ${n-1} קפיצות.`;
+    if(eqv(x,a1+(n-1)*-d)) return 'בדקו את הסימן של ההפרש. הסדרה עולה או יורדת?';
+    if(eqv(x,n*d)) return 'שכחתם להתחיל מהאיבר הראשון.';
+    return 'לא בדיוק. מתחילים מהאיבר הראשון, ומוסיפים את ההפרש (n − 1) פעמים.';
+  }
+  if(type==='rule'){
+    if(eqv(x,d)&&eqv(y,a1)) return `המספר לפני n נכון! אבל המספר החופשי הוא לא ${numTxt(a1)}. אם תציבו n = 1 תקבלו ${numTxt(d+a1)}, ולא ${numTxt(a1)}. זוכרים את (n − 1)?`;
+    if(eqv(x,d)) return 'המספר לפני n נכון. עכשיו בדקו את המספר החופשי: הציבו n = 1 וודאו שיוצא האיבר הראשון.';
+    if(eqv(x,-d)) return 'בדקו את הסימן של ההפרש. הסדרה עולה או יורדת?';
+    if(eqv(x,a1)) return 'המספר שלפני n הוא ההפרש d, ולא האיבר הראשון.';
+    return 'לא בדיוק. המספר לפני n הוא ההפרש. בדקו את המספר החופשי עם n = 1.';
+  }
+  if(eqv(x,n-1)||eqv(x,n+1)) return 'קרוב מאוד! בדקו: הציבו את התשובה שלכם באיבר הכללי. יוצא בדיוק המספר?';
+  if(eqv(x,v)) return 'זה הערך. השאלה היא באיזה מקום הוא עומד, כלומר מה n.';
+  return 'לא בדיוק. כתבו קודם את האיבר הכללי, השוו אותו למספר ופתרו משוואה.';
+}
+$('prCheck').onclick=()=>{
+  let ok, x, y;
+  if(pr.type==='rule'){
+    const ms=$('prM').value.trim().replace(/[−–]/g,'-');
+    x=ms===''?NaN:(ms==='-'?-1:(ms==='+'?1:numIn(ms))); y=$('prC').value.trim()===''?0:numIn($('prC').value);
+    if(isNaN(x)||isNaN(y)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר בכל אחת מהתיבות, למשל 4 ו-3. אם המספר החופשי שלילי, כתבו מינוס, למשל -5.</div>'; return; }
+    ok=eqv(x,pr.d)&&eqv(y,pr.c);
+  }else{
+    x=numIn($('prA').value);
+    if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 12 או -4.</div>'; return; }
+    ok=eqv(x,pr.ans);
+  }
+  if(ok){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x,y)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,a1,d,c,n,v}=pr; let h;
+  if(type==='d') h=pr.hint===1?'קחו את האיבר השני והורידו ממנו את הראשון.':`${E(`${numTxt(term(a1,d,2))} − ${par(a1)}`)}. בדקו שגם השלישי פחות השני נותן אותו דבר.`;
+  else if(type==='term') h=pr.hint===1?`קודם מצאו את ההפרש. אחר כך חשבו: כמה קפיצות יש מהמקום 1 למקום ${n}?`:`ההפרש ${E(numTxt(d))}, ויש ${n-1} קפיצות. חשבו ${E(`${numTxt(a1)} + ${n-1} · ${par(d)}`)}.`;
+  else if(type==='rule') h=pr.hint===1?'המספר לפני n הוא ההפרש d.':`${E(`${AN} = ${numTxt(a1)} + (${N} − 1) · ${par(d)}`)}. פתחו את הסוגריים וכנסו את המספרים.`;
+  else h=pr.hint===1?'קודם כתבו את האיבר הכללי.':`האיבר הכללי ${E(`${AN} = ${ruleTxt(d,c)}`)}. פתרו ${E(`${ruleTxt(d,c)} = ${numTxt(v)}`)}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו סדרה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+['prA','prM','prC'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

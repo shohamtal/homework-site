@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מערכת אי-שוויונות ואי-שוויון כפול · כיתה ט · מירי</title>
+<meta name="description" content="שני תנאים ביחד: פותרים כל אחד, מציירים על ציר המספרים ומוצאים איפה הם נפגשים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/compound-inequalities/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מערכת אי-שוויונות ואי-שוויון כפול · כיתה ט · מירי">
+<meta property="og:description" content="שני תנאים ביחד: פותרים כל אחד, מציירים על ציר המספרים ומוצאים איפה הם נפגשים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/compound-inequalities/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"מערכות משוואות ואי-שוויונות","item":"https://shohamtal.github.io/homework-site/math/grade-9/#equations-9"},{"@type":"ListItem","position":5,"name":"מערכת אי-שוויונות ואי-שוויון כפול","item":"https://shohamtal.github.io/homework-site/math/compound-inequalities/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך פותרים אי-שוויון כפול?","acceptedAnswer":{"@type":"Answer","text":"עושים את אותה פעולה על שלושת החלקים ביחד, עד ש-x נשאר לבד באמצע. למשל 1 &lt; 2x − 3 ≤ 7: מוסיפים 3 לכל החלקים ומקבלים 4 &lt; 2x ≤ 10, ואז מחלקים ב-2: 2 &lt; x ≤ 5. תרגלו למטה."}},{"@type":"Question","name":"מה ההבדל בין \"וגם\" לבין \"או\" במערכת אי-שוויונות?","acceptedAnswer":{"@type":"Answer","text":"\"וגם\" אומר ש-x צריך לקיים את שני התנאים, אז הפתרון הוא רק החלק המשותף על הציר. \"או\" אומר שמספיק תנאי אחד, אז הפתרון הוא כל מה שצבוע, משני התנאים ביחד. החליפו במעבדה בין \"וגם\" ל\"או\" ותראו את ההבדל."}},{"@type":"Question","name":"מתי למערכת אי-שוויונות אין פתרון?","acceptedAnswer":{"@type":"Answer","text":"כשמחברים עם \"וגם\" ושני התנאים לא נפגשים על הציר. למשל x &gt; 4 וגם x &lt; 1: אין מספר שעומד בשניהם. אם התנאים נוגעים רק בנקודה אחת, כמו x ≥ 2 וגם x ≤ 2, הפתרון הוא רק x = 2."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מערכת אי-שוויונות ואי-שוויון כפול","description":"שני תנאים ביחד: פותרים כל אחד, מציירים על ציר המספרים ומוצאים איפה הם נפגשים.","url":"https://shohamtal.github.io/homework-site/math/compound-inequalities/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"מערכות משוואות ואי-שוויונות","teaches":"מערכת אי-שוויונות ואי-שוויון כפול","keywords":"וגם, אי-שוויון כפול, תחום משותף","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.nl{width:100%; max-width:480px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.nl .axis{stroke:var(--ink); stroke-width:1.5}
+.nl .tk{stroke:var(--ink); stroke-width:1.2}
+.nl text{font:10px var(--f-body); fill:var(--muted)}
+.nl text.zero{fill:var(--ink); font-weight:700}
+.nl .bg{fill:var(--card)}
+.nl .r1{stroke:var(--line); fill:var(--line)}
+.nl .r2{stroke:var(--blue); fill:var(--blue)}
+.nl .r3{stroke:var(--green); fill:var(--green)}
+.nl line.seg{stroke-width:4; stroke-linecap:round}
+.nl line.r3.seg{stroke-width:7}
+.nl circle{stroke-width:2.5}
+.nl circle.open{fill:var(--card)}
+.nl .tag{font:700 10px var(--f-body)}
+.nl .tag.r1{fill:var(--line); stroke:none}
+.nl .tag.r2{fill:var(--blue); stroke:none}
+.calc{display:flex; flex-direction:column; gap:6px}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button{min-width:2.6em; font-family:var(--f-math); font-size:1.1rem}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.flip{color:var(--err); font-weight:800}
+.labrow{display:flex; flex-direction:column; gap:14px}
+.conds{display:flex; flex-direction:column; gap:10px}
+.cond{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.cond .tagc{font-weight:800}
+.ansrow{display:flex; flex-wrap:wrap; gap:6px; align-items:center; direction:ltr; justify-content:center}
+.ansrow .xvar{font:italic 1.5rem var(--f-math)}
+.ansrow input{font:1.1rem var(--f-math); width:4.2em; padding:6px 8px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+.ansrow .choices button{min-width:2.2em}
+.c1{color:var(--line); font-weight:700}
+.c2{color:var(--blue); font-weight:700}
+.c3{color:var(--green); font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="compound-inequalities">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#equations-9">מערכות משוואות ואי-שוויונות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מערכת אי-שוויונות ואי-שוויון כפול</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · מערכות משוואות ואי-שוויונות</div>
+  <h1>מערכת אי-שוויונות ואי-שוויון כפול <span class="slogan">שני תנאים, פתרון אחד</span></h1>
+  <p class="lead">לפעמים <i>x</i> צריך לעמוד בשני תנאים ביחד. פותרים כל תנאי לבד, מציירים את שניהם על אותו ציר, ומחפשים איפה הם נפגשים. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>"וגם": איפה שניהם נכונים</h3>
+      <p><span class="eq"><i>x</i> &gt; −2</span> וגם <span class="eq"><i>x</i> ≤ 3</span>.</p>
+      <svg class="nl" id="ideaAnd" viewBox="0 0 320 96" role="img" aria-label="שני תנאים על ציר המספרים והקטע המשותף בין מינוס 2 ל-3"></svg>
+      <p>הפתרון הוא <span class="c3">הקטע הירוק</span>, החלק שבו שני הקווים נמצאים ביחד.</p>
+    </div>
+    <div class="mini">
+      <h3>אי-שוויון כפול</h3>
+      <p>את אותו פתרון כותבים בקיצור:</p>
+      <p class="big-eq" style="font-size:1.8rem"><span class="eq">−2 &lt; <i>x</i> ≤ 3</span></p>
+      <p>קוראים: <i>x</i> גדול מ-<span class="eq">−2</span> וקטן או שווה ל-3. כלומר <i>x</i> נמצא <strong>בין</strong> שני המספרים.</p>
+    </div>
+    <div class="mini">
+      <h3>"או": מספיק שאחד נכון</h3>
+      <p><span class="eq"><i>x</i> &lt; −1</span> או <span class="eq"><i>x</i> &gt; 4</span>.</p>
+      <svg class="nl" id="ideaOr" viewBox="0 0 320 96" role="img" aria-label="שני תנאים עם או, הפתרון הוא שני חלקים נפרדים"></svg>
+      <p>כאן הפתרון הוא <strong>שני</strong> החלקים, כל מה שצבוע בירוק.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>איך פותרים:</strong> כל תנאי פותרים בדיוק כמו <a href="../inequalities/">אי-שוויון רגיל ממעלה ראשונה</a>, כולל הכלל של היפוך הסימן בכפל או חילוק במספר שלילי. אחר כך מציירים את שני הפתרונות על אותו ציר ומחברים: "וגם" זה החלק המשותף, "או" זה הכול ביחד.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו ותראו</h2></div>
+  <p class="text">בנו שני תנאים: <span class="c1">תנאי 1</span> בוורוד ו<span class="c2">תנאי 2</span> בכחול. בחרו "וגם" או "או" ותראו את <span class="c3">הפתרון בירוק</span> על הציר.</p>
+  <div class="labrow">
+    <div class="big-eq" id="labEq" style="font-size:clamp(1.3rem,5vw,2rem)"></div>
+    <svg class="nl" id="labNL" viewBox="0 0 320 96" role="img" aria-label="ציר המספרים של המעבדה"></svg>
+    <div class="lab">
+      <div class="ctrl">
+        <div class="conds">
+          <div class="cond"><span class="tagc c1">תנאי 1: <i>x</i></span><div class="choices" id="s1"></div></div>
+          <label class="slider" for="p1"><span>המספר בתנאי 1</span><span class="eq" id="p1v"></span></label>
+          <input type="range" id="p1" min="-6" max="6" step="1" value="-2">
+          <div class="cond"><span class="tagc c2">תנאי 2: <i>x</i></span><div class="choices" id="s2"></div></div>
+          <label class="slider" for="p2"><span>המספר בתנאי 2</span><span class="eq" id="p2v"></span></label>
+          <input type="range" class="blue" id="p2" min="-6" max="6" step="1" value="3">
+          <div class="cond"><span class="tagc">מחברים עם:</span><div class="choices" id="conn"></div></div>
+        </div>
+      </div>
+      <div class="ctrl">
+        <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p=">,-2,≤,3,and">בין −2 ל-3</button>
+            <button data-p=">,4,<,1,and">אין פתרון</button>
+            <button data-p="≥,2,≤,2,and">נקודה אחת</button>
+            <button data-p=">,1,>,-3,and">שניהם ימינה</button>
+            <button data-p="<,-1,>,4,or">"או" עם רווח</button>
+            <button data-p=">,-3,<,2,or">"או" שמכסה הכול</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>פעולה רק על האמצע</h3>
+      <p>באי-שוויון כפול <span class="eq">1 &lt; <i>x</i> + 4 &lt; 9</span> יש <strong>שלושה</strong> חלקים. מה שעושים לאמצע, עושים לכולם:</p>
+      <p><span class="eq">1 − 4 &lt; <i>x</i> + 4 − 4 &lt; 9 − 4</span></p>
+      <p>ומקבלים <span class="eq">−3 &lt; <i>x</i> &lt; 5</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>חילוק בשלילי באי-שוויון כפול</h3>
+      <p><span class="eq">−6 ≤ −2<i>x</i> &lt; 4</span>. מחלקים ב-<span class="eq">−2</span>: <span class="flip">שני הסימנים מתהפכים</span>.</p>
+      <p><span class="eq">3 ≥ <i>x</i> &gt; −2</span></p>
+      <p>ואז מסדרים מהקטן לגדול: <span class="eq">−2 &lt; <i>x</i> ≤ 3</span>. כל סימן הולך עם המספר שלו.</p>
+    </div>
+    <div class="mini">
+      <h3>"וגם" בלי חלק משותף</h3>
+      <p><span class="eq"><i>x</i> &gt; 4</span> וגם <span class="eq"><i>x</i> &lt; 1</span>. אין מספר שגם גדול מ-4 וגם קטן מ-1.</p>
+      <p>אז כותבים: <strong>אין פתרון</strong>. זו תשובה נכונה, לא טעות.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> בחרו מספר אחד מתוך הקטע הירוק והציבו אותו בשני התנאים המקוריים. שניהם צריכים לצאת נכונים. אחר כך בחרו מספר מחוץ לקטע, ולפחות אחד מהם צריך לצאת לא נכון.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (אי-שוויון כפול)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (מערכת)</button>
+  </div>
+  <div class="stepper">
+    <div class="big-eq" id="exEq" style="font-size:clamp(1.2rem,5vw,1.6rem)"></div>
+    <svg class="nl" id="exNL" viewBox="0 0 320 96" role="img" aria-label="ציר המספרים של הדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: פתרו את אי-השוויון הכפול</h2></div>
+  <p class="text">כתבו את הפתרון בצורה <span class="eq">מספר ? <i>x</i> ? מספר</span>, מהקטן לגדול. בחרו לכל צד &lt; או ≤. אם יוצא שבר, כתבו אותו עם קו נטוי, למשל <span class="eq">5/2</span>.</p>
+  <div class="big-eq" id="prQ" style="font-size:clamp(1.3rem,5vw,1.7rem)"></div>
+  <div class="ctrl">
+    <div class="ansrow">
+      <input id="prLo" inputmode="text" autocomplete="off" aria-label="המספר הקטן">
+      <div class="choices" id="prS1"></div>
+      <span class="xvar">x</span>
+      <div class="choices" id="prS2"></div>
+      <input id="prHi" inputmode="text" autocomplete="off" aria-label="המספר הגדול">
+    </div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <svg class="nl" id="prNL" viewBox="0 0 320 96" role="img" aria-label="ציר המספרים של התרגיל"></svg>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך פותרים אי-שוויון כפול?</h3>
+    <p>עושים את אותה פעולה על <strong>שלושת</strong> החלקים ביחד, עד ש-<i>x</i> נשאר לבד באמצע. למשל <span class="eq">1 &lt; 2<i>x</i> − 3 ≤ 7</span>: מוסיפים 3 לכל החלקים ומקבלים <span class="eq">4 &lt; 2<i>x</i> ≤ 10</span>, ואז מחלקים ב-2: <span class="eq">2 &lt; <i>x</i> ≤ 5</span>. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>מה ההבדל בין "וגם" לבין "או" במערכת אי-שוויונות?</h3>
+    <p>"וגם" אומר ש-<i>x</i> צריך לקיים את שני התנאים, אז הפתרון הוא רק החלק המשותף על הציר. "או" אומר שמספיק תנאי אחד, אז הפתרון הוא כל מה שצבוע, משני התנאים ביחד. <a href="#lab">החליפו במעבדה</a> בין "וגם" ל"או" ותראו את ההבדל.</p>
+    <h3>מתי למערכת אי-שוויונות אין פתרון?</h3>
+    <p>כשמחברים עם "וגם" ושני התנאים לא נפגשים על הציר. למשל <span class="eq"><i>x</i> &gt; 4</span> וגם <span class="eq"><i>x</i> &lt; 1</span>: אין מספר שעומד בשניהם. אם התנאים נוגעים רק בנקודה אחת, כמו <span class="eq"><i>x</i> ≥ 2</span> וגם <span class="eq"><i>x</i> ≤ 2</span>, הפתרון הוא רק <span class="eq"><i>x</i> = 2</span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/inequalities/">אי-שוויונות ממעלה ראשונה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/systems-word-problems/"><small>→ הנושא הקודם</small>בעיות מילוליות עם שני נעלמים</a><a class="next" href="../../math/circle-angles/"><small>הנושא הבא ←</small>מעגל: זווית מרכזית, זווית היקפית ומיתרים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,signedFracHTML,fracTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const SH={'<':'&lt;','≤':'≤','>':'&gt;','≥':'≥'};
+const FLIP={'<':'>','>':'<','≤':'≥','≥':'≤'};
+const isStrict=s=>s==='<'||s==='>';
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const I=Infinity;
+const eq=h=>`<span class="eq">${h}</span>`;
+const X_='<i>x</i>';
+
+/* a condition "x ? p" as an interval {lo,loI,hi,hiI} */
+function toInt(s,p){
+  if(s==='>'||s==='≥') return {lo:p,loI:s==='≥',hi:I,hiI:false};
+  return {lo:-I,loI:false,hi:p,hiI:s==='≤'};
+}
+function inter(A,B){
+  let lo,loI,hi,hiI;
+  if(A.lo>B.lo){lo=A.lo;loI=A.loI;} else if(B.lo>A.lo){lo=B.lo;loI=B.loI;} else {lo=A.lo;loI=A.loI&&B.loI;}
+  if(A.hi<B.hi){hi=A.hi;hiI=A.hiI;} else if(B.hi<A.hi){hi=B.hi;hiI=B.hiI;} else {hi=A.hi;hiI=A.hiI&&B.hiI;}
+  if(lo>hi || (lo===hi && !(loI&&hiI))) return [];
+  return [{lo,loI,hi,hiI}];
+}
+function union(A,B){
+  const [P,Q]=A.lo<B.lo||(A.lo===B.lo&&A.loI)?[A,B]:[B,A];
+  const touch=Q.lo<P.hi || (Q.lo===P.hi && (Q.loI||P.hiI));
+  if(!touch) return [P,Q];
+  let hi=P.hi,hiI=P.hiI;
+  if(Q.hi>P.hi){hi=Q.hi;hiI=Q.hiI;} else if(Q.hi===P.hi) hiI=P.hiI||Q.hiI;
+  return [{lo:P.lo,loI:P.loI||(P.lo===Q.lo&&Q.loI),hi,hiI}];
+}
+/* interval as text */
+function intTxt(v){
+  if(v.lo===-I && v.hi===I) return 'כל המספרים';
+  if(v.lo===-I) return eq(`${X_} ${v.hiI?'≤':'&lt;'} ${signedFracHTML(v.hi)}`);
+  if(v.hi===I) return eq(`${X_} ${v.loI?'≥':'&gt;'} ${signedFracHTML(v.lo)}`);
+  if(v.lo===v.hi) return eq(`${X_} = ${signedFracHTML(v.lo)}`);
+  return eq(`${signedFracHTML(v.lo)} ${v.loI?'≤':'&lt;'} ${X_} ${v.hiI?'≤':'&lt;'} ${signedFracHTML(v.hi)}`);
+}
+
+/* number line: rows = [{v:interval, cls:'r1'|'r2', tag}], res = intervals painted green on the axis */
+function nl(svg,rows,res,opt={}){
+  const lo=opt.lo!=null?opt.lo:-8, n=opt.n||16, X=v=>20+(Math.max(lo-0.6,Math.min(lo+n+0.6,v))-lo)*(280/n), AY=70;
+  let h=`<rect class="bg" x="0" y="0" width="320" height="96"/>`;
+  h+=`<line class="axis" x1="4" y1="${AY}" x2="316" y2="${AY}"/>`;
+  for(let i=lo;i<=lo+n;i++){
+    h+=`<line class="tk" x1="${X(i)}" y1="${AY-4}" x2="${X(i)}" y2="${AY+4}"/>`;
+    h+=`<text x="${X(i)}" y="${AY+17}" text-anchor="middle"${i===0?' class="zero"':''}>${numTxt(i)}</text>`;
+  }
+  const seg=(v,y,cls)=>{
+    const a=v.lo===-I?6:X(v.lo), b=v.hi===I?314:X(v.hi);
+    let s='';
+    if(a!==b) s+=`<line class="${cls} seg" x1="${a}" y1="${y}" x2="${b}" y2="${y}"/>`;
+    if(v.lo===-I) s+=`<polygon class="${cls}" points="2,${y} 12,${y-6} 12,${y+6}"/>`;
+    if(v.hi===I) s+=`<polygon class="${cls}" points="318,${y} 308,${y-6} 308,${y+6}"/>`;
+    if(v.lo!==-I) s+=`<circle class="${cls} ${v.loI?'':'open'}" cx="${a}" cy="${y}" r="5"/>`;
+    if(v.hi!==I && !(v.lo===v.hi)) s+=`<circle class="${cls} ${v.hiI?'':'open'}" cx="${b}" cy="${y}" r="5"/>`;
+    return s;
+  };
+  (rows||[]).forEach((r,i)=>{ const y=16+i*20; h+=seg(r.v,y,r.cls); });
+  (res||[]).forEach(v=>{ h+=seg(v,AY,'r3'); });
+  svg.innerHTML=h;
+}
+function signButtons(el,signs,onPick){
+  el.innerHTML=signs.map(s=>`<button type="button" data-s="${s}" aria-pressed="false" aria-label="סימן ${s}">${SH[s]||s}</button>`).join('');
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>{ setSign(el,b.dataset.s); onPick(b.dataset.s); });
+}
+function setSign(el,s){ el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.s===s)); }
+
+/* idea pictures */
+{ const A=toInt('>',-2), B=toInt('≤',3); nl($('ideaAnd'),[{v:A,cls:'r1'},{v:B,cls:'r2'}],inter(A,B)); }
+{ const A=toInt('<',-1), B=toInt('>',4); nl($('ideaOr'),[{v:A,cls:'r1'},{v:B,cls:'r2'}],union(A,B)); }
+
+/* lab */
+const L={s1:'>',s2:'≤',con:'and'}, P1=$('p1'), P2=$('p2');
+const S4=['<','≤','>','≥'];
+signButtons($('s1'),S4,s=>{L.s1=s;lab();});
+signButtons($('s2'),S4,s=>{L.s2=s;lab();});
+$('conn').innerHTML='<button type="button" data-s="and" aria-pressed="false">וגם</button><button type="button" data-s="or" aria-pressed="false">או</button>';
+$('conn').querySelectorAll('button').forEach(b=>b.onclick=()=>{L.con=b.dataset.s;lab();});
+function lab(){
+  const p1=+P1.value, p2=+P2.value;
+  $('p1v').textContent=numTxt(p1); $('p2v').textContent=numTxt(p2);
+  setSign($('s1'),L.s1); setSign($('s2'),L.s2); setSign($('conn'),L.con);
+  const A=toInt(L.s1,p1), B=toInt(L.s2,p2), word=L.con==='and'?'וגם':'או';
+  const res=L.con==='and'?inter(A,B):union(A,B);
+  $('labEq').innerHTML=`<span class="c1">${eq(`${X_} ${SH[L.s1]} ${numTxt(p1)}`)}</span> ${word} <span class="c2">${eq(`${X_} ${SH[L.s2]} ${numTxt(p2)}`)}</span>`;
+  nl($('labNL'),[{v:A,cls:'r1'},{v:B,cls:'r2'}],res);
+  let t=`<div><span class="c1">תנאי 1</span>: ${eq(`${X_} ${SH[L.s1]} ${numTxt(p1)}`)}, הקרן הולכת ${L.s1==='>'||L.s1==='≥'?'ימינה':'שמאלה'}.</div>`;
+  t+=`<div><span class="c2">תנאי 2</span>: ${eq(`${X_} ${SH[L.s2]} ${numTxt(p2)}`)}, הקרן הולכת ${L.s2==='>'||L.s2==='≥'?'ימינה':'שמאלה'}.</div>`;
+  if(L.con==='and'){
+    t+=`<div>"וגם": מחפשים איפה <strong>שתי</strong> הקרניים נמצאות ביחד.</div>`;
+    if(!res.length) t+=`<div><strong>אין פתרון.</strong> הקרניים לא נפגשות, אין מספר שעומד בשני התנאים.</div>`;
+    else{
+      const v=res[0];
+      if(v.lo===v.hi) t+=`<div><strong>הפתרון:</strong> ${intTxt(v)}. הקרניים נוגעות רק בנקודה אחת, ושני העיגולים שם מלאים.</div>`;
+      else if(v.lo!==-I && v.hi!==I) t+=`<div><strong>הפתרון:</strong> ${intTxt(v)}. זה קטע בין שני מספרים, אז כותבים אותו כאי-שוויון כפול.</div>`;
+      else t+=`<div><strong>הפתרון:</strong> ${intTxt(v)}. שני התנאים הולכים לאותו כיוון, אז נשאר רק התנאי ה"חזק" יותר.</div>`;
+    }
+  } else {
+    t+=`<div>"או": מספיק שאחד התנאים נכון, אז לוקחים את <strong>כל</strong> מה שצבוע.</div>`;
+    if(res.length===2) t+=`<div><strong>הפתרון:</strong> ${intTxt(res[0])} או ${intTxt(res[1])}. יש רווח באמצע, אז נשארים שני חלקים.</div>`;
+    else t+=`<div><strong>הפתרון:</strong> ${intTxt(res[0])}.${res[0].lo===-I&&res[0].hi===I?' הקרניים מכסות את כל הציר, כל מספר מתאים.':''}</div>`;
+  }
+  $('labTxt').innerHTML=t;
+}
+[P1,P2].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [s1,p1,s2,p2,con]=btn.dataset.p.split(','); L.s1=s1; L.s2=s2; L.con=con; P1.value=p1; P2.value=p2; lab();
+}));
+lab();
+
+/* worked examples: steps = [rows, res, text] */
+const iA1=toInt('>',2), iA2=toInt('≤',4);
+const EX={
+  A:{q:`−3 &lt; 2${X_} + 1 ≤ 7`, steps:[
+    [[],[],`פותרים <span class="eq">−3 &lt; 2<i>x</i> + 1 ≤ 7</span>. יש כאן שלושה חלקים, והמטרה: להשאיר את <i>x</i> לבד <strong>באמצע</strong>.`],
+    [[],[],`<strong>מחסרים 1 משלושת החלקים:</strong> ${eq('−3 − 1 &lt; 2<i>x</i> ≤ 7 − 1')}, כלומר ${eq('−4 &lt; 2<i>x</i> ≤ 6')}.`],
+    [[],[{lo:-2,loI:false,hi:3,hiI:true}],`<strong>מחלקים את שלושת החלקים ב-2:</strong> ${eq('−2 &lt; <i>x</i> ≤ 3')}. 2 הוא חיובי, אז הסימנים לא משתנים.`],
+    [[],[{lo:-2,loI:false,hi:3,hiI:true}],`<strong>מציירים:</strong> עיגול ריק ב-<span class="eq">−2</span> (בלי שווה), עיגול מלא ב-3 (עם שווה), וקטע ביניהם.`],
+    [[],[{lo:-2,loI:false,hi:3,hiI:true}],`<strong>בודקים:</strong> מציבים <span class="eq"><i>x</i> = 0</span>: <span class="eq">2 · 0 + 1 = 1</span>, ו-<span class="eq">−3 &lt; 1 ≤ 7</span>. נכון ✓`]
+  ]},
+  B:{q:`3${X_} − 2 &gt; 4 &nbsp;וגם&nbsp; 5 − ${X_} ≥ 1`, steps:[
+    [[],[],`יש כאן שני תנאים שמחוברים ב"וגם". פותרים כל אחד לבד, כמו <a href="../inequalities/">אי-שוויון רגיל</a>.`],
+    [[{v:iA1,cls:'r1'}],[],`<span class="c1">תנאי 1:</span> ${eq('3<i>x</i> − 2 &gt; 4')}. מוסיפים 2: ${eq('3<i>x</i> &gt; 6')}. מחלקים ב-3: ${eq('<i>x</i> &gt; 2')}.`],
+    [[{v:iA1,cls:'r1'},{v:iA2,cls:'r2'}],[],`<span class="c2">תנאי 2:</span> ${eq('5 − <i>x</i> ≥ 1')}. מחסרים 5: ${eq('−<i>x</i> ≥ −4')}. מחלקים ב-<span class="eq">−1</span>, <span class="flip">והסימן מתהפך:</span> ${eq('<i>x</i> ≤ 4')}.`],
+    [[{v:iA1,cls:'r1'},{v:iA2,cls:'r2'}],inter(iA1,iA2),`<strong>מחפשים את החלק המשותף:</strong> הוורוד הולך ימינה מ-2, הכחול הולך שמאלה מ-4. הם נפגשים בין 2 ל-4.`],
+    [[{v:iA1,cls:'r1'},{v:iA2,cls:'r2'}],inter(iA1,iA2),`<strong>הפתרון:</strong> ${eq('2 &lt; <i>x</i> ≤ 4')}. בדיקה עם <span class="eq"><i>x</i> = 3</span>: <span class="eq">3 · 3 − 2 = 7 &gt; 4</span> ✓ וגם <span class="eq">5 − 3 = 2 ≥ 1</span> ✓`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [rows,res,txt]=e.steps[exI];
+  $('exEq').innerHTML=`<span class="eq">${e.q}</span>`;
+  nl($('exNL'),rows,res);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice: A s1 bx + c s2 D, solution lo t1 x t2 hi */
+let pr={}, prA=null, prB=null, streak=0, solved=0;
+const S2=['<','≤'];
+signButtons($('prS1'),S2,s=>{prA=s;});
+signButtons($('prS2'),S2,s=>{prB=s;});
+const bx=(b,c)=>{ let s=(b===1?'':b===-1?'−':numTxt(b))+X_; if(c>0) s+=' + '+numTxt(c); if(c<0) s+=' − '+numTxt(-c); return s; };
+function newPr(){
+  let b,c,lo,hi;
+  do{ b=pick([2,3,4,5,-2,-3,2,3,-1]); c=ri(-7,7); lo=ri(-6,4); hi=lo+ri(1,6); } while(hi>7 || Math.abs(b*lo+c)>30 || Math.abs(b*hi+c)>30 || (b===pr.b&&c===pr.c&&lo===pr.lo));
+  const s1=pick(S2), s2=pick(S2);
+  let A,D;
+  if(b>0){ A=b*lo+c; D=b*hi+c; } else { A=b*hi+c; D=b*lo+c; }
+  /* answer: for b>0, lo s1 x s2 hi. for b<0 the signs swap sides */
+  const t1=b>0?s1:s2, t2=b>0?s2:s1;
+  pr={b,c,A,D,s1,s2,lo,hi,t1,t2,tries:0,hint:0};
+  $('prQ').innerHTML=eq(`${numTxt(A)} ${SH[s1]} ${bx(b,c)} ${SH[s2]} ${numTxt(D)}`);
+  $('prLo').value=''; $('prHi').value=''; prA=null; prB=null; setSign($('prS1'),null); setSign($('prS2'),null);
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+  nl($('prNL'),[],[]);
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {b,c,A,D,s1,s2,lo,hi,t1,t2}=pr, A2=A-c, D2=D-c;
+  let h='';
+  if(c!==0) h+=`<div><strong>צעד 1:</strong> ${c>0?`מחסרים ${numTxt(c)}`:`מוסיפים ${numTxt(-c)}`} בשלושת החלקים: ${eq(`${numTxt(A2)} ${SH[s1]} ${bx(b,0)} ${SH[s2]} ${numTxt(D2)}`)}</div>`;
+  const n=c!==0?'צעד 2':'צעד 1';
+  if(b===1) h+=`<div><strong>${n}:</strong> <i>x</i> כבר לבד.</div>`;
+  else if(b>0) h+=`<div><strong>${n}:</strong> מחלקים את שלושת החלקים ב-${numTxt(b)}: ${eq(`${numTxt(lo)} ${SH[s1]} ${X_} ${SH[s2]} ${numTxt(hi)}`)}</div>`;
+  else h+=`<div><strong>${n}:</strong> מחלקים ב-<span class="eq">${numTxt(b)}</span>. <span class="flip">מספר שלילי, אז שני הסימנים מתהפכים:</span> ${eq(`${numTxt(hi)} ${SH[FLIP[s1]]} ${X_} ${SH[FLIP[s2]]} ${numTxt(lo)}`)}</div><div>מסדרים מהקטן לגדול: ${eq(`${numTxt(lo)} ${SH[t1]} ${X_} ${SH[t2]} ${numTxt(hi)}`)}</div>`;
+  return h;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), u=parseNum($('prLo').value), w=parseNum($('prHi').value), {b,c,A,D,lo,hi,t1,t2}=pr;
+  if(isNaN(u)||isNaN(w)){ fb.innerHTML='<div class="fb err">כתבו מספר בשתי התיבות, למשל 3, −2 או 5/2.</div>'; return; }
+  if(!prA||!prB){ fb.innerHTML='<div class="fb err">בחרו סימן בשני הצדדים של <i>x</i>: &lt; או ≤.</div>'; return; }
+  const numOK=eqv(u,lo)&&eqv(w,hi), signOK=prA===t1&&prB===t2;
+  if(numOK&&signOK){
+    streak++; solved++; streakTxt();
+    fb.innerHTML=`<div class="fb ok">נכון! ${eq(`${numTxt(lo)} ${SH[t1]} ${X_} ${SH[t2]} ${numTxt(hi)}`)}${b<0?'. ולא שכחתם להפוך את הסימנים':''}.</div>`;
+    nl($('prNL'),[],[{lo,loI:t1==='≤',hi,hiI:t2==='≤'}]); return;
+  }
+  streak=0; pr.tries++; streakTxt();
+  let msg;
+  if(numOK){
+    if(b<0 && prA===pr.s1 && prB===pr.s2 && pr.s1!==pr.s2) msg='המספרים נכונים. אבל כשמחלקים בשלילי והופכים את הסדר, כל סימן עובר צד יחד עם המספר שלו. בדקו איזה סימן היה ליד כל מספר.';
+    else msg='המספרים נכונים! עכשיו בדקו את הסימנים: איפה היה ≤ (עם שווה) ואיפה &lt; (בלי שווה)?';
+  }
+  else if(eqv(u,hi)&&eqv(w,lo)) msg='אלה המספרים הנכונים, אבל בסדר הפוך. כותבים מהקטן לגדול: המספר הקטן משמאל ל-<i>x</i>.';
+  else if(b!==1 && eqv(u,Math.min(A-c,D-c)) && eqv(w,Math.max(A-c,D-c))) msg=`הצעד הראשון נכון! אבל עוד צריך לחלק את שלושת החלקים ב-<span class="eq">${numTxt(b)}</span>.`;
+  else if(c!==0 && eqv(u,Math.min(A/b,D/b)) && eqv(w,Math.max(A/b,D/b))) msg=`נראה שחילקתם בלי להעביר קודם את <span class="eq">${numTxt(c)}</span>. קודם ${c>0?'מחסרים':'מוסיפים'} אותו בשלושת החלקים, ורק אחר כך מחלקים.`;
+  else if(c!==0 && (eqv(u,(A-c)/b)||eqv(w,(D-c)/b)||eqv(u,Math.min(A,D))||eqv(w,Math.max(A,D)))) msg='אחד המספרים נכון והשני לא. זכרו: כל פעולה עושים על <strong>שלושת</strong> החלקים, גם על השמאלי וגם על הימני.';
+  else msg='עוד לא. עבדו בשני צעדים: קודם מעבירים את המספר שליד <i>x</i> בשלושת החלקים, אחר כך מחלקים.';
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const {b,c,A,D,s1,s2}=pr; pr.hint=Math.min(pr.hint+1,3);
+  let h;
+  if(pr.hint===1) h='באי-שוויון כפול יש שלושה חלקים. כל פעולה שעושים, עושים על שלושתם ביחד. המטרה: <i>x</i> לבד באמצע.';
+  else if(pr.hint===2) h=c!==0?`${c>0?'מחסרים':'מוסיפים'} ${numTxt(Math.abs(c))} בשלושת החלקים: ${eq(`${numTxt(A-c)} ${SH[s1]} ${bx(b,0)} ${SH[s2]} ${numTxt(D-c)}`)}. מה הצעד הבא?`:`אין כאן מספר להעביר. ישר מחלקים ב-<span class="eq">${numTxt(b)}</span>.`;
+  else h=b<0?`עכשיו מחלקים ב-<span class="eq">${numTxt(b)}</span>. זה מספר שלילי, אז שני הסימנים מתהפכים. אחר כך מסדרים מהקטן לגדול, וכל סימן הולך עם המספר שלו.`:b===1?'אחרי הצעד הקודם <i>x</i> כבר לבד. קראו את התשובה.':`עכשיו מחלקים את שלושת החלקים ב-${numTxt(b)}. זה מספר חיובי, אז הסימנים נשארים.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {lo,hi,t1,t2}=pr;
+  $('prFb').innerHTML=`<div class="fb hint calc">${solution()}<div>עכשיו נסו תרגיל חדש.</div></div>`;
+  nl($('prNL'),[],[{lo,loI:t1==='≤',hi,hiI:t2==='≤'}]);
+};
+$('prNew').onclick=newPr;
+['prLo','prHi'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

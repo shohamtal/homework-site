@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חיבור, חיסור, כפל וחילוק של מספרים מכוונים · כיתה ז · מירי</title>
+<meta name="description" content="מה קורה כשמחברים או מחסרים מספר שלילי, ולמה מינוס כפול מינוס יוצא פלוס.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/signed-operations/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חיבור, חיסור, כפל וחילוק של מספרים מכוונים · כיתה ז · מירי">
+<meta property="og:description" content="מה קורה כשמחברים או מחסרים מספר שלילי, ולמה מינוס כפול מינוס יוצא פלוס.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/signed-operations/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ז","item":"https://shohamtal.github.io/homework-site/math/grade-7/"},{"@type":"ListItem","position":4,"name":"מספרים מכוונים","item":"https://shohamtal.github.io/homework-site/math/grade-7/#numbers-7"},{"@type":"ListItem","position":5,"name":"חיבור, חיסור, כפל וחילוק של מספרים מכוונים","item":"https://shohamtal.github.io/homework-site/math/signed-operations/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה מינוס כפול מינוס זה פלוס?","acceptedAnswer":{"@type":"Answer","text":"כפל במספר שלילי הופך כיוון על ציר המספרים. 3 · (−2) זה שלוש קפיצות של 2 שמאלה, −6. ב-(−3) · (−2) הופכים את הכיוון עוד פעם, וחוזרים ימינה: 6. נסו את זה במעבדה."}},{"@type":"Question","name":"איך מחסרים מספר שלילי?","acceptedAnswer":{"@type":"Answer","text":"מחליפים את החיסור בחיבור של הנגדי. 5 − (−3) = 5 + 3 = 8. על הציר זה צעד ימינה, לא שמאלה."}},{"@type":"Question","name":"מה הסימן של התוצאה כשמחברים מספר חיובי ומספר שלילי?","acceptedAnswer":{"@type":"Answer","text":"מסתכלים מי רחוק יותר מאפס. ב-−7 + 3 ה-7 גדול יותר והוא שלילי, אז התוצאה שלילית: −4. את המספר עצמו מוצאים בחיסור: 7 − 3 = 4. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חיבור, חיסור, כפל וחילוק של מספרים מכוונים","description":"מה קורה כשמחברים או מחסרים מספר שלילי, ולמה מינוס כפול מינוס יוצא פלוס.","url":"https://shohamtal.github.io/homework-site/math/signed-operations/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ז","about":"מספרים מכוונים","teaches":"חיבור, חיסור, כפל וחילוק של מספרים מכוונים","keywords":"חוקי הסימנים, מינוס כפול מינוס, חיסור שלילי","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.nl{width:100%; max-width:480px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.nl .axis{stroke:var(--ink); stroke-width:1.5}
+.nl .tk{stroke:var(--ink); stroke-width:1.1}
+.nl text{font:10px var(--f-body); fill:var(--muted)}
+.nl text.zero{fill:var(--ink); font-weight:700}
+.nl .bg{fill:var(--card)}
+.nl .pa{fill:var(--line); stroke:var(--ink); stroke-width:1.2}
+.nl .pr{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+.nl .lbl{font:700 11px var(--f-body); fill:var(--ink)}
+.nl .jump{fill:none; stroke:var(--blue); stroke-width:2.4}
+.nl .jumpn{fill:none; stroke:var(--line); stroke-width:2.4}
+.nl .ah{fill:var(--blue)} .nl .ahn{fill:var(--line)}
+.nl .jl{font:700 10px var(--f-body); fill:var(--blue)}
+.nl .jln{font:700 10px var(--f-body); fill:var(--line)}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button{min-width:2.8em; font-family:var(--f-math); font-size:1.2rem}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center}
+.ansrow input{font:1.1rem var(--f-math); width:5em; padding:6px 10px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.labrow{display:flex; flex-direction:column; gap:14px}
+.calc{display:flex; flex-direction:column; gap:6px}
+table.signs{border-collapse:collapse; margin-inline:auto; font-family:var(--f-math); font-size:1.15rem; direction:ltr}
+table.signs td,table.signs th{border:1.5px solid var(--soft); padding:6px 14px; text-align:center}
+table.signs th{background:var(--paper); font-family:var(--f-body); font-size:.95rem}
+table.signs .plus{color:var(--ok); font-weight:700} table.signs .minus{color:var(--err); font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="signed-operations">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/">כיתה ז</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/#numbers-7">מספרים מכוונים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חיבור, חיסור, כפל וחילוק של מספרים מכוונים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ז · מספרים מכוונים</div>
+  <h1>חיבור, חיסור, כפל וחילוק של מספרים מכוונים <span class="slogan">למה מינוס כפול מינוס זה פלוס?</span></h1>
+  <p class="lead">על ציר המספרים חיבור הוא צעד ימינה, וחיסור הוא צעד שמאלה. ומה קורה כשמחסרים מספר שלילי? כאן רואים את זה בקפיצות על הציר, ולומדים את חוקי הסימנים של כפל וחילוק. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חיבור: הולכים על הציר</h3>
+      <p>מתחילים במספר הראשון. מוסיפים מספר חיובי? הולכים <strong>ימינה</strong>. מוסיפים מספר שלילי? הולכים <strong>שמאלה</strong>.</p>
+      <p><span class="eq">−2 + 5 = 3</span>, <span class="eq">4 + (−6) = −2</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>חיסור: מוסיפים את הנגדי</h3>
+      <p>לחסר מספר זה כמו לחבר את הנגדי שלו.</p>
+      <p><span class="eq">3 − 7</span> <span class="eq">= 3 + (−7) = −4</span></p>
+      <p><span class="eq">3 − (−7)</span> <span class="eq">= 3 + 7 = 10</span></p>
+      <p>שני מינוסים צמודים הופכים לפלוס.</p>
+    </div>
+    <div class="mini">
+      <h3>כפל וחילוק: חוקי הסימנים</h3>
+      <table class="signs" aria-label="טבלת הסימנים בכפל ובחילוק">
+        <tr><th>×, ÷</th><th>+</th><th>−</th></tr>
+        <tr><th>+</th><td class="plus">+</td><td class="minus">−</td></tr>
+        <tr><th>−</th><td class="minus">−</td><td class="plus">+</td></tr>
+      </table>
+      <p>סימנים שווים: התוצאה חיובית. סימנים שונים: התוצאה שלילית.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>טיפ:</strong> בכפל ובחילוק קודם מחליטים על הסימן, ואחר כך מחשבים את המספר בלי סימנים. <span class="eq">(−6) · (−4)</span>: סימנים שווים, אז פלוס. <span class="eq">6 · 4 = 24</span>. התשובה <span class="eq">24</span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו ותראו</h2></div>
+  <p class="text">בחרו פעולה ושני מספרים. בחיבור ובחיסור רואים את הקפיצה על הציר. בכפל רואים כמה קפיצות שוות עושים מאפס.</p>
+  <div class="labrow">
+    <div class="big-eq" id="labEq"></div>
+    <svg class="nl" id="labNL" viewBox="0 0 340 80" role="img" aria-label="ציר המספרים של המעבדה"></svg>
+    <div class="lab">
+      <div class="ctrl">
+        <div><p style="font-weight:700; margin-bottom:6px">הפעולה:</p><div class="choices" id="labOps"></div></div>
+        <label class="slider" for="sa"><span>המספר הראשון</span><span class="eq" id="sav"></span></label>
+        <input type="range" id="sa" min="-6" max="6" step="1" value="3">
+        <label class="slider" for="sb"><span>המספר השני</span><span class="eq" id="sbv"></span></label>
+        <input type="range" class="blue" id="sb" min="-6" max="6" step="1" value="-5">
+      </div>
+      <div class="ctrl">
+        <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p="+,3,-5" dir="ltr">3 + (−5)</button>
+            <button data-p="-,2,-4" dir="ltr">2 − (−4)</button>
+            <button data-p="-,-1,5" dir="ltr">−1 − 5</button>
+            <button data-p="×,-3,-2" dir="ltr">(−3) · (−2)</button>
+            <button data-p="×,3,-2" dir="ltr">3 · (−2)</button>
+            <button data-p="÷,-6,2" dir="ltr">(−6) : 2</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מינוס מינוס בחיבור</h3>
+      <p><span class="eq">−3 − 5</span> זה לא <span class="eq">8</span> ולא <span class="eq">−2</span>.</p>
+      <p>מתחילים ב-<span class="eq">−3</span> והולכים עוד 5 שמאלה: <span class="eq">−8</span>.</p>
+      <p>"מינוס כפול מינוס" נכון רק כשבאמת יש כפל, או שני מינוסים צמודים.</p>
+    </div>
+    <div class="mini">
+      <h3>שכחו לשנות את הסימן</h3>
+      <p><span class="eq">4 − (−3)</span> זה <span class="eq">4 + 3 = 7</span>, לא <span class="eq">1</span>.</p>
+      <p>מחסרים מספר שלילי? הולכים <strong>ימינה</strong>.</p>
+    </div>
+    <div class="mini">
+      <h3>הסימן של התוצאה בחיבור</h3>
+      <p><span class="eq">−9 + 4</span>: ל-9 יש יותר צעדים, והוא שלילי. אז התוצאה שלילית: <span class="eq">−5</span>.</p>
+      <p>בחיבור הסימן הולך לפי המספר שרחוק יותר מאפס.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (חיסור)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (כפל וחילוק)</button>
+  </div>
+  <div class="stepper">
+    <div class="big-eq" id="exEq" style="font-size:1.6rem"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: כמה זה?</h2></div>
+  <p class="text">כתבו את התוצאה. מינוס כותבים עם המקש <span class="eq">-</span>, למשל <span class="eq">-7</span>.</p>
+  <div class="big-eq" id="prQ" style="font-size:1.7rem"></div>
+  <div class="ctrl">
+    <div class="ansrow"><input id="prN" inputmode="text" autocomplete="off" aria-label="התוצאה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <svg class="nl" id="prNL" viewBox="0 0 340 80" role="img" aria-label="ציר המספרים של התרגיל"></svg>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה מינוס כפול מינוס זה פלוס?</h3>
+    <p>כפל במספר שלילי הופך כיוון על ציר המספרים. <span class="eq">3 · (−2)</span> זה שלוש קפיצות של 2 שמאלה, <span class="eq">−6</span>. ב-<span class="eq">(−3) · (−2)</span> הופכים את הכיוון עוד פעם, וחוזרים ימינה: <span class="eq">6</span>. <a href="#lab">נסו את זה במעבדה</a>.</p>
+    <h3>איך מחסרים מספר שלילי?</h3>
+    <p>מחליפים את החיסור בחיבור של הנגדי. <span class="eq">5 − (−3)</span> <span class="eq">= 5 + 3 = 8</span>. על הציר זה צעד ימינה, לא שמאלה.</p>
+    <h3>מה הסימן של התוצאה כשמחברים מספר חיובי ומספר שלילי?</h3>
+    <p>מסתכלים מי רחוק יותר מאפס. ב-<span class="eq">−7 + 3</span> ה-7 גדול יותר והוא שלילי, אז התוצאה שלילית: <span class="eq">−4</span>. את המספר עצמו מוצאים בחיסור: <span class="eq">7 − 3 = 4</span>. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/negative-numbers/">מספרים שליליים וציר המספרים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/negative-numbers/"><small>→ הנושא הקודם</small>מספרים שליליים וציר המספרים</a><a class="next" href="../../math/algebraic-expressions/"><small>הנושא הבא ←</small>ביטויים אלגבריים והצבה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const P=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const E=v=>`<span class="eq">${numTxt(v)}</span>`;
+const OPS=['+','-','×','÷'], OPH={'+':'+','-':'−','×':'·','÷':':'};
+const calc=(op,a,b)=>op==='+'?a+b:op==='-'?a-b:op==='×'?a*b:a/b;
+const expr=(op,a,b)=>`${op==='×'||op==='÷'?P(a):numTxt(a)} ${OPH[op]} ${P(b)}`;
+
+/* number line from lo to hi with points and jump arcs [{from,to,neg,lab}] */
+function nl(svg,opt){
+  let lo=opt.lo, hi=opt.hi;
+  const n=hi-lo, X=v=>20+(v-lo)*(300/n), Y=52;
+  let h=`<rect class="bg" x="0" y="0" width="340" height="80"/>`;
+  h+=`<line class="axis" x1="6" y1="${Y}" x2="334" y2="${Y}"/>`;
+  h+=`<polygon style="fill:var(--ink)" points="336,${Y} 328,${Y-4} 328,${Y+4}"/><polygon style="fill:var(--ink)" points="4,${Y} 12,${Y-4} 12,${Y+4}"/>`;
+  const step=n>48?10:n>24?5:n>14?2:1;
+  for(let i=lo;i<=hi;i++){
+    if(n>24&&i%step!==0) continue;
+    h+=`<line class="tk" x1="${X(i)}" y1="${Y-4}" x2="${X(i)}" y2="${Y+4}"/>`;
+    if(i%step===0) h+=`<text x="${X(i)}" y="${Y+17}" text-anchor="middle"${i===0?' class="zero"':''}>${numTxt(i)}</text>`;
+  }
+  (opt.jumps||[]).forEach((j,k)=>{
+    const x1=X(j.from), x2=X(j.to), hgt=Math.min(26,8+Math.abs(x2-x1)*.35), mx=(x1+x2)/2, c=j.neg?'n':'';
+    h+=`<path class="jump${c}" d="M${x1} ${Y} Q${mx} ${Y-2*hgt} ${x2} ${Y-3}"/>`;
+    const dir=x2>x1?1:-1;
+    h+=`<polygon class="ah${c}" points="${x2},${Y-1} ${x2-dir*7},${Y-8} ${x2-dir*1},${Y-10}"/>`;
+    if(j.lab) h+=`<text class="jl${c}" x="${mx}" y="${Y-hgt-6}" text-anchor="middle">${j.lab}</text>`;
+  });
+  (opt.points||[]).forEach(p=>{
+    h+=`<circle class="${p.cls}" cx="${X(p.v)}" cy="${Y}" r="5.5"/>`;
+    if(p.lab) h+=`<text class="lbl" x="${X(p.v)}" y="${Y+30}" text-anchor="middle">${p.lab}</text>`;
+  });
+  svg.innerHTML=h;
+}
+/* the picture for a op b */
+function picture(svg,op,a,b){
+  const r=calc(op,a,b);
+  if(op==='+'||op==='-'){
+    const move=op==='+'?b:-b, lo=Math.min(-6,a,r)-1, hi=Math.max(6,a,r)+1;
+    nl(svg,{lo,hi,jumps:move===0?[]:[{from:a,to:r,neg:move<0,lab:(move>0?'+':'−')+Math.abs(move)}],
+      points:[{v:a,cls:'pa'},{v:r,cls:'pr'}]});
+  } else if(op==='×'){
+    const lo=Math.min(-6,r)-1, hi=Math.max(6,r)+1, step=a<0?-b:b, jumps=[];
+    for(let k=0;k<Math.abs(a)&&b!==0;k++) jumps.push({from:k*step,to:(k+1)*step,neg:step<0});
+    nl(svg,{lo,hi,jumps,points:[{v:0,cls:'pa'},{v:r,cls:'pr'}]});
+  } else {
+    nl(svg,{lo:Math.min(-6,a,r)-1,hi:Math.max(6,a,r)+1,points:[{v:a,cls:'pa'},{v:r,cls:'pr'}]});
+  }
+}
+/* explanation lines */
+function explain(op,a,b){
+  const r=calc(op,a,b), t=[];
+  if(op==='+'){
+    t.push(`מתחילים ב-${E(a)}. ${b>0?`מוסיפים מספר חיובי, אז הולכים ${b} צעדים <strong>ימינה</strong>.`:b<0?`מוסיפים מספר שלילי, אז הולכים ${-b} צעדים <strong>שמאלה</strong>.`:'מוסיפים 0, לא זזים.'}`);
+  } else if(op==='-'){
+    if(b<0) t.push(`מחסרים מספר שלילי. זה כמו להוסיף את הנגדי: <span class="eq">${numTxt(a)} − ${P(b)} = ${numTxt(a)} + ${-b}</span>. הולכים ${-b} צעדים <strong>ימינה</strong>.`);
+    else if(b>0) t.push(`מחסרים ${b}: מתחילים ב-${E(a)} והולכים ${b} צעדים <strong>שמאלה</strong>.`);
+    else t.push('מחסרים 0, לא זזים.');
+  } else {
+    const same=(a<0)===(b<0);
+    if(op==='÷'&&b===0) return ['אי אפשר לחלק ב-0. הזיזו את המספר השני.'];
+    if(a===0||b===0) t.push('כשאחד המספרים הוא 0 התוצאה היא 0.');
+    else{
+      t.push(`הסימנים: ${a<0?'מינוס':'פלוס'} ו${b<0?'מינוס':'פלוס'}. ${same?'סימנים <strong>שווים</strong>, אז התוצאה <strong>חיובית</strong>.':'סימנים <strong>שונים</strong>, אז התוצאה <strong>שלילית</strong>.'}`);
+      t.push(`המספר בלי סימנים: <span class="eq">${Math.abs(a)} ${OPH[op]} ${Math.abs(b)} = ${Math.abs(r)}</span>.`);
+      if(op==='×') t.push(a>0?`על הציר: ${a} קפיצות של ${E(b)} מאפס.`:`על הציר: ${-a} קפיצות של ${E(-b)}, כי ${E(a)} שלילי והופך את הכיוון של ${E(b)}.`);
+    }
+  }
+  t.push(`<strong>התוצאה:</strong> <span class="eq">${expr(op,a,b)} = ${numTxt(r)}</span>`);
+  return t;
+}
+
+/* lab */
+let labOp='+';
+const A=$('sa'), B=$('sb');
+$('labOps').innerHTML=OPS.map(o=>`<button type="button" data-o="${o}" aria-pressed="false" aria-label="פעולה ${o}">${o==='-'?'−':o}</button>`).join('');
+const setOp=o=>$('labOps').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.o===o));
+$('labOps').querySelectorAll('button').forEach(b=>b.onclick=()=>{labOp=b.dataset.o; lab();});
+function lab(){
+  let a=+A.value, b=+B.value;
+  setOp(labOp);
+  $('sav').textContent=numTxt(a); $('sbv').textContent=numTxt(b);
+  if(labOp==='÷'){
+    if(b===0){ $('labEq').innerHTML=`<span class="eq">${expr('÷',a,b)} = ?</span>`; $('labTxt').innerHTML='<div>אי אפשר לחלק ב-0. הזיזו את המספר השני.</div>'; nl($('labNL'),{lo:-7,hi:7,points:[{v:a,cls:'pa'}]}); return; }
+    /* show division as the reverse of multiplication: a·b ÷ b */
+    const prod=a*b;
+    $('sav').textContent=numTxt(prod);
+    $('labEq').innerHTML=`<span class="eq">${expr('÷',prod,b)} = ${numTxt(a)}</span>`;
+    $('labTxt').innerHTML=explain('÷',prod,b).map(x=>`<div>${x}</div>`).join('')+`<div>בדיקה בכפל: <span class="eq">${P(a)} · ${P(b)} = ${numTxt(prod)}</span> ✓</div>`;
+    picture($('labNL'),'÷',prod,b); return;
+  }
+  $('labEq').innerHTML=`<span class="eq">${expr(labOp,a,b)} = ${numTxt(calc(labOp,a,b))}</span>`;
+  $('labTxt').innerHTML=explain(labOp,a,b).map(x=>`<div>${x}</div>`).join('');
+  picture($('labNL'),labOp,a,b);
+}
+[A,B].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [o,a,b]=btn.dataset.p.split(',');
+  labOp=o;
+  if(o==='÷'){ A.value=(+a)/(+b); B.value=b; } else { A.value=a; B.value=b; }
+  lab();
+}));
+lab();
+
+/* worked examples */
+const EX={
+  A:{q:'−4 − (−9) − 7',steps:[
+    'פותרים משמאל לימין. מתחילים ב-<span class="eq">−4 − (−9)</span>.',
+    'שני מינוסים צמודים הופכים לפלוס: <span class="eq">−4 + 9</span>.',
+    'מתחילים ב-<span class="eq">−4</span> והולכים 9 ימינה: <span class="eq">5</span>.',
+    'נשאר <span class="eq">5 − 7</span>. מתחילים ב-5 והולכים 7 שמאלה: <span class="eq">−2</span>.',
+    '<strong>התשובה:</strong> <span class="eq">−4 − (−9) − 7 = −2</span> ✓'
+  ]},
+  B:{q:'(−3) · 8 : (−6)',steps:[
+    'כפל וחילוק פותרים משמאל לימין. מתחילים ב-<span class="eq">(−3) · 8</span>.',
+    'סימנים שונים, אז שלילי. <span class="eq">3 · 8 = 24</span>, לכן <span class="eq">(−3) · 8 = −24</span>.',
+    'עכשיו <span class="eq">(−24) : (−6)</span>. סימנים שווים, אז חיובי.',
+    '<span class="eq">24 : 6 = 4</span>. <strong>התשובה:</strong> <span class="eq">4</span> ✓',
+    'קיצור דרך: סופרים מינוסים. יש שניים, מספר זוגי, אז התוצאה חיובית.'
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey];
+  $('exEq').innerHTML=`<span class="eq">${e.q}</span>`;
+  $('exText').innerHTML=e.steps[exI];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice */
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let op,a,b;
+  do{
+    op=pick(['+','+','-','-','-','×','÷']);
+    if(op==='÷'){ const q=pick([-1,1])*ri(1,9); b=pick([-1,1])*ri(2,9); a=q*b; }
+    else if(op==='×'){ a=pick([-1,1])*ri(2,9); b=pick([-1,1])*ri(2,9); if(a>0&&b>0) a=-a; }
+    else { a=pick([-1,1,-1])*ri(1,12); b=pick([-1,1])*ri(1,12); if(a>0&&b>0) b=-b; }
+  } while(op===pr.op&&a===pr.a&&b===pr.b);
+  pr={op,a,b,r:calc(op,a,b),tries:0,hint:0};
+  $('prQ').innerHTML=`<span class="eq">${expr(op,a,b)} = ?</span>`;
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prNL').innerHTML='';
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), v=parseNum($('prN').value), {op,a,b,r}=pr;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 5 או -5.</div>'; $('prN').focus(); return; }
+  if(v===r){ streak++; solved++; streakTxt(); picture($('prNL'),op,a,b);
+    fb.innerHTML=`<div class="fb ok">נכון! <span class="eq">${expr(op,a,b)} = ${numTxt(r)}</span></div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  let msg;
+  if(v===-r&&r!==0) msg=(op==='×'||op==='÷')?'המספר נכון, אבל הסימן הפוך. סימנים שווים נותנים פלוס, סימנים שונים נותנים מינוס.':'המספר נכון, אבל הסימן הפוך. בדקו לאיזה צד של האפס הגעתם.';
+  else if(op==='-'&&b<0&&v===a+b) msg='שכחתם שמינוס של מספר שלילי הופך לפלוס. מחסרים מספר שלילי? הולכים ימינה.';
+  else if(op==='-'&&b>0&&a<0&&v===a+b) msg=`מחסרים ${b}, אז הולכים שמאלה מ-${E(a)}, לא ימינה.`;
+  else if(op==='+'&&(a<0)!==(b<0)&&Math.abs(v)===Math.abs(a)+Math.abs(b)) msg='כשלמספרים יש סימנים שונים, הצעדים מבטלים זה את זה. מחסרים את המרחקים, לא מחברים.';
+  else if(op==='+'&&a<0&&b<0) msg='שני המספרים שליליים. שני הצעדים הולכים שמאלה, אז מחברים את המרחקים.';
+  else msg='עוד לא. נסו לצייר את זה על ציר המספרים בראש.';
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const {op,a,b}=pr; pr.hint=Math.min(pr.hint+1,2); let h;
+  if(op==='×'||op==='÷') h=pr.hint<2?'קודם הסימן: האם לשני המספרים יש אותו סימן?':`${(a<0)===(b<0)?'סימנים שווים, אז התוצאה חיובית':'סימנים שונים, אז התוצאה שלילית'}. עכשיו חשבו <span class="eq">${Math.abs(a)} ${OPH[op]} ${Math.abs(b)}</span>.`;
+  else if(op==='-'&&b<0) h=pr.hint<2?'יש כאן שני מינוסים צמודים. למה הם הופכים?':`<span class="eq">${numTxt(a)} − ${P(b)} = ${numTxt(a)} + ${-b}</span>. עכשיו הולכים ${-b} צעדים ימינה מ-${E(a)}.`;
+  else { const m=op==='+'?b:-b; h=pr.hint<2?`מתחילים ב-${E(a)}. לאיזה כיוון הולכים, ימינה או שמאלה?`:`מתחילים ב-${E(a)} והולכים ${Math.abs(m)} צעדים ${m>0?'ימינה':'שמאלה'}.`; }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {op,a,b}=pr; picture($('prNL'),op,a,b);
+  $('prFb').innerHTML=`<div class="fb hint calc">${explain(op,a,b).map(x=>`<div>${x}</div>`).join('')}<div>עכשיו נסו תרגיל חדש.</div></div>`;
+};
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

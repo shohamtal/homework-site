@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חזקות: בסיס ומעריך · כיתה ז · מירי</title>
+<meta name="description" content="חזקה היא כפל חוזר. מחשבים חזקות, מבינים מה קורה עם בסיס שלילי, ומסדרים את סדר פעולות החשבון.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/powers-intro/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חזקות: בסיס ומעריך · כיתה ז · מירי">
+<meta property="og:description" content="חזקה היא כפל חוזר. מחשבים חזקות, מבינים מה קורה עם בסיס שלילי, ומסדרים את סדר פעולות החשבון.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/powers-intro/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ז","item":"https://shohamtal.github.io/homework-site/math/grade-7/"},{"@type":"ListItem","position":4,"name":"חזקות","item":"https://shohamtal.github.io/homework-site/math/grade-7/#powers-7"},{"@type":"ListItem","position":5,"name":"חזקות: בסיס ומעריך","item":"https://shohamtal.github.io/homework-site/math/powers-intro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים חזקה?","acceptedAnswer":{"@type":"Answer","text":"כופלים את הבסיס בעצמו כמה פעמים שהמעריך אומר. 43 = 4 · 4 · 4. מחשבים צעד צעד: 4 · 4 = 16, ואז 16 · 4 = 64. ראו את זה במעבדה."}},{"@type":"Question","name":"מה יוצא כשמעלים מספר שלילי בחזקה?","acceptedAnswer":{"@type":"Answer","text":"זה תלוי במעריך. אם הוא זוגי, כמו 2 או 4, התוצאה חיובית: (−3)2 = 9. אם הוא אי-זוגי, כמו 3 או 5, התוצאה שלילית: (−3)3 = −27. ושימו לב: בלי סוגריים, −32 הוא −9."}},{"@type":"Question","name":"למה כל מספר בחזקת 0 שווה 1?","acceptedAnswer":{"@type":"Answer","text":"הסתכלו על הסדרה 33 = 27, 32 = 9, 31 = 3. בכל צעד מחלקים ב-3. הצעד הבא הוא 3 ÷ 3 = 1, ולכן 30 = 1. ככה זה בכל מספר חוץ מ-0. נסו במעבדה מעריך 0."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חזקות: בסיס ומעריך","description":"חזקה היא כפל חוזר. מחשבים חזקות, מבינים מה קורה עם בסיס שלילי, ומסדרים את סדר פעולות החשבון.","url":"https://shohamtal.github.io/homework-site/math/powers-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ז","about":"חזקות","teaches":"חזקות: בסיס ומעריך","keywords":"בסיס, מעריך, סדר פעולות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.pw{width:100%; max-width:440px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.pw .bg{fill:var(--card)}
+.pw .zero{stroke:var(--ink); stroke-width:1.5}
+.pw .pos{fill:var(--hl); stroke:var(--ink); stroke-width:2}
+.pw .neg{fill:var(--blue); stroke:var(--ink); stroke-width:2}
+.pw text{font:11px var(--f-body); fill:var(--ink); text-anchor:middle}
+.pw text.k{fill:var(--muted)}
+.pw text.big{font:700 14px var(--f-body); fill:var(--muted)}
+.chain{direction:ltr; text-align:center; font:1.25rem var(--f-math); line-height:1.8}
+.chain .eq{white-space:normal}
+.calc{display:flex; flex-direction:column; gap:6px}
+.labrow{display:flex; flex-direction:column; gap:14px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:flex-start}
+.ansrow input{font:1.1rem var(--f-math); width:6.5em; padding:6px 10px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="powers-intro">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/">כיתה ז</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-7/#powers-7">חזקות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חזקות: בסיס ומעריך</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ז · חזקות</div>
+  <h1>חזקות: בסיס ומעריך <span class="slogan">כפל שחוזר על עצמו</span></h1>
+  <p class="lead">במקום לכתוב <span class="eq">2 · 2 · 2 · 2 · 2</span> כותבים <span class="eq">2<sup>5</sup></span>. זו חזקה. כאן לומדים לחשב חזקות, מה קורה כשהבסיס שלילי, ובאיזה סדר מחשבים תרגיל שיש בו חזקה. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>בסיס ומעריך</h3>
+      <p>ב-<span class="eq">3<sup>4</sup></span> המספר 3 הוא <strong>הבסיס</strong>, והמספר הקטן 4 הוא <strong>המעריך</strong>.</p>
+      <p>המעריך אומר כמה פעמים כופלים את הבסיס: <span class="eq">3<sup>4</sup> = 3 · 3 · 3 · 3 = 81</span>.</p>
+      <p>קוראים: "שלוש בחזקת ארבע". <span class="eq">5<sup>2</sup></span> זה "חמש בריבוע", ו-<span class="eq">2<sup>3</sup></span> זה "שתיים בשלישית".</p>
+    </div>
+    <div class="mini">
+      <h3>בסיס שלילי</h3>
+      <p><span class="eq">(−2)<sup>2</sup> = (−2) · (−2) = 4</span>. מינוס כפול מינוס זה פלוס.</p>
+      <p><span class="eq">(−2)<sup>3</sup> = 4 · (−2) = −8</span>.</p>
+      <p>מעריך <strong>זוגי</strong> נותן תשובה חיובית. מעריך <strong>אי-זוגי</strong> נותן תשובה שלילית.</p>
+    </div>
+    <div class="mini">
+      <h3>סדר פעולות חשבון</h3>
+      <p><strong>1.</strong> סוגריים</p>
+      <p><strong>2.</strong> חזקות</p>
+      <p><strong>3.</strong> כפל וחילוק, משמאל לימין</p>
+      <p><strong>4.</strong> חיבור וחיסור, משמאל לימין</p>
+      <p>ב-<span class="eq">2 + 3 · 4<sup>2</sup></span> מחשבים קודם <span class="eq">4<sup>2</sup> = 16</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: כופלים שוב ושוב</h2></div>
+  <p class="text">בחרו בסיס ומעריך. כל עמודה היא עוד כפל בבסיס. עמודה צהובה היא מספר חיובי, ועמודה כחולה היא מספר שלילי.</p>
+  <div class="labrow">
+    <div class="chain" id="labChain"></div>
+    <svg class="pw" id="labSvg" viewBox="0 0 320 160" role="img" aria-label="עמודות של התוצאה אחרי כל כפל"></svg>
+    <div class="lab">
+      <div class="ctrl">
+        <label class="slider" for="sa"><span>הבסיס</span><span class="eq" id="sav"></span></label>
+        <input type="range" id="sa" min="-5" max="6" step="1" value="2">
+        <label class="slider" for="sn"><span>המעריך</span><span class="eq" id="snv"></span></label>
+        <input type="range" class="hl" id="sn" min="0" max="6" step="1" value="5">
+      </div>
+      <div class="ctrl">
+        <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p="2,5">2⁵</button>
+            <button data-p="-2,4">(−2)⁴</button>
+            <button data-p="-2,5">(−2)⁵</button>
+            <button data-p="3,0">3⁰</button>
+            <button data-p="1,6">1⁶</button>
+            <button data-p="-1,6">(−1)⁶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חזקה היא לא כפל במעריך</h3>
+      <p><span class="eq">3<sup>2</sup></span> זה <span class="eq">3 · 3 = 9</span>, ולא <span class="eq">3 · 2 = 6</span>.</p>
+      <p><span class="eq">2<sup>4</sup></span> זה 16, ולא 8.</p>
+    </div>
+    <div class="mini">
+      <h3>סוגריים משנים הכול</h3>
+      <p><span class="eq">(−3)<sup>2</sup> = 9</span>: הבסיס הוא <span class="eq">−3</span>.</p>
+      <p><span class="eq">−3<sup>2</sup> = −9</span>: בלי סוגריים החזקה רק על 3, והמינוס נשאר בחוץ.</p>
+    </div>
+    <div class="mini">
+      <h3>חזקה לפני חיבור</h3>
+      <p><span class="eq">2 + 3<sup>2</sup> = 2 + 9 = 11</span>.</p>
+      <p>לא <span class="eq">5<sup>2</sup> = 25</span>. מחברים קודם רק אם יש סוגריים: <span class="eq">(2 + 3)<sup>2</sup> = 25</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בכיתה ח ממשיכים:</strong> כופלים ומחלקים חזקות בעזרת חוקים, ולומדים מה זה שורש. ראו <a href="../powers-roots/">חוקי חזקות ושורשים</a>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: סדר פעולות</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: עם ובלי סוגריים</button>
+  </div>
+  <div class="stepper">
+    <div class="big-eq" id="exEq" style="font-size:1.6rem"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: כמה זה יוצא?</h2></div>
+  <p class="text">חשבו וכתבו את התוצאה. מספר שלילי כותבים עם מינוס, למשל <span class="eq">−8</span>.</p>
+  <div class="big-eq" id="prQ" style="font-size:1.8rem"></div>
+  <div class="ctrl">
+    <div class="ansrow">
+      <label for="prK" style="font-weight:700">התוצאה:</label>
+      <input id="prK" inputmode="text" autocomplete="off">
+    </div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים חזקה?</h3>
+    <p>כופלים את הבסיס בעצמו כמה פעמים שהמעריך אומר. <span class="eq">4<sup>3</sup> = 4 · 4 · 4</span>. מחשבים צעד צעד: <span class="eq">4 · 4 = 16</span>, ואז <span class="eq">16 · 4 = 64</span>. <a href="#lab">ראו את זה במעבדה</a>.</p>
+    <h3>מה יוצא כשמעלים מספר שלילי בחזקה?</h3>
+    <p>זה תלוי במעריך. אם הוא זוגי, כמו 2 או 4, התוצאה חיובית: <span class="eq">(−3)<sup>2</sup> = 9</span>. אם הוא אי-זוגי, כמו 3 או 5, התוצאה שלילית: <span class="eq">(−3)<sup>3</sup> = −27</span>. ושימו לב: בלי סוגריים, <span class="eq">−3<sup>2</sup></span> הוא <span class="eq">−9</span>.</p>
+    <h3>למה כל מספר בחזקת 0 שווה 1?</h3>
+    <p>הסתכלו על הסדרה <span class="eq">3<sup>3</sup> = 27</span>, <span class="eq">3<sup>2</sup> = 9</span>, <span class="eq">3<sup>1</sup> = 3</span>. בכל צעד מחלקים ב-3. הצעד הבא הוא <span class="eq">3 ÷ 3 = 1</span>, ולכן <span class="eq">3<sup>0</sup> = 1</span>. ככה זה בכל מספר חוץ מ-0. <a href="#lab">נסו במעבדה מעריך 0</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/word-problems/"><small>→ הנושא הקודם</small>בעיות מילוליות</a><a class="next" href="../../math/percent/"><small>הנושא הבא ←</small>אחוזים: הנחה, התייקרות ואחוז מתוך</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const E=h=>`<span class="eq">${h}</span>`;
+const B=a=>a<0?`(${numTxt(a)})`:numTxt(a);
+const pw=(a,n)=>`${B(a)}<sup>${n}</sup>`;
+const P=(a,n)=>Math.pow(a,n), SUP='⁰¹²³⁴⁵⁶';
+
+/* lab */
+const R={a:$('sa'),n:$('sn')};
+function lab(){
+  const a=+R.a.value, n=+R.n.value;
+  $('sav').textContent=numTxt(a); $('snv').textContent=n;
+  const svg=$('labSvg'); let h=`<rect class="bg" x="0" y="0" width="320" height="160"/><line class="zero" x1="10" y1="80" x2="310" y2="80"/>`;
+  let txt='';
+  if(a===0&&n===0){
+    $('labChain').innerHTML=E(pw(0,0));
+    svg.innerHTML=h+`<text class="big" x="160" y="60">את זה לא מחשבים</text>`;
+    $('labTxt').innerHTML='<div><span class="eq">0<sup>0</sup></span> הוא מקרה מיוחד, ובכיתה ז לא מחשבים אותו. הזיזו את הבסיס או את המעריך.</div>';
+    return;
+  }
+  if(n===0){
+    $('labChain').innerHTML=E(`${pw(a,0)} = 1`);
+    svg.innerHTML=h+`<text class="big" x="160" y="60">אין כפל בכלל, התשובה 1</text>`;
+    $('labTxt').innerHTML=`<div>מעריך 0: כל מספר בחזקת 0 שווה 1 (חוץ מ-0).</div><div>למה? ${E(`${pw(a,2)} = ${numTxt(a*a)}`)}, ${E(`${pw(a,1)} = ${numTxt(a)}`)}. בכל צעד מחלקים ב-${numTxt(a)}, והצעד הבא יוצא ${E(`${numTxt(a)} ÷ ${B(a)} = 1`)}.</div>`;
+    return;
+  }
+  const prods=[]; for(let k=1;k<=n;k++) prods.push(P(a,k));
+  const v=prods[n-1], mx=Math.max(1,...prods.map(Math.abs)), gap=300/n, bw=Math.min(34,gap*0.6);
+  prods.forEach((p,i)=>{
+    const x=10+gap*i+gap/2, hh=Math.max(p===0?0:2,Math.abs(p)/mx*58), y=p>=0?80-hh:80;
+    h+=`<rect class="${p>=0?'pos':'neg'}" x="${x-bw/2}" y="${y}" width="${bw}" height="${hh}"/>`;
+    h+=`<text x="${x}" y="${p>=0?y-5:y+hh+13}">${numTxt(p)}</text>`;
+    h+=`<text class="k" x="${x}" y="${p>=0?96:72}">${B(a)+SUP[i+1]}</text>`;
+  });
+  svg.innerHTML=h;
+  $('labChain').innerHTML=E(`${pw(a,n)} = ${Array(n).fill(B(a)).join(' · ')} = ${numTxt(v)}`);
+  txt+=`<div>הבסיס ${E(numTxt(a))} מופיע בכפל <strong>${n}</strong> פעמים, כי המעריך הוא ${n}.</div>`;
+  if(n>1) txt+=`<div>צעד צעד: ${prods.map(numTxt).join(', ')}. כל מספר הוא הקודם כפול ${E(numTxt(a))}.</div>`;
+  if(a<0) txt+=`<div>יש <strong>${n}</strong> מינוסים בכפל. ${n%2===0?'מספר זוגי של מינוסים, אז התוצאה <strong>חיובית</strong>.':'מספר אי-זוגי של מינוסים, אז התוצאה <strong>שלילית</strong>.'} ראו איך העמודות מתחלפות: למטה, למעלה, למטה.</div>`
+    +`<div>ובלי סוגריים? ${E(`−${numTxt(-a)}<sup>${n}</sup> = −${numTxt(P(-a,n))}`)}. החזקה רק על ${numTxt(-a)}, והמינוס מחוץ לה.</div>`;
+  if(a===1||a===-1) txt+=`<div>${a===1?'1 בכל חזקה נשאר 1.':'−1 בחזקה קופץ בין −1 ל-1.'}</div>`;
+  if(a>1&&n>1) txt+=`<div>שימו לב כמה מהר זה גדל. זה לא ${E(`${numTxt(a)} · ${n} = ${numTxt(a*n)}`)}!</div>`;
+  $('labTxt').innerHTML=txt;
+}
+Object.values(R).forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [a,n]=btn.dataset.p.split(','); R.a.value=a; R.n.value=n; lab();
+}));
+lab();
+
+/* worked examples */
+const EX={
+  A:[
+    [`2 + 3 · 2<sup>3</sup>`,'מחשבים <span class="eq">2 + 3 · 2<sup>3</sup></span>. אין סוגריים, אז מתחילים בחזקה.'],
+    [`2 + 3 · 8`,'<strong>חזקה:</strong> <span class="eq">2<sup>3</sup> = 2 · 2 · 2 = 8</span>.'],
+    [`2 + 24`,'<strong>כפל לפני חיבור:</strong> <span class="eq">3 · 8 = 24</span>.'],
+    [`26`,'<strong>חיבור:</strong> <span class="eq">2 + 24 = 26</span>. מי שמחבר קודם מקבל <span class="eq">5 · 8 = 40</span>, וזה לא נכון.']
+  ],
+  B:[
+    [`(−2)<sup>4</sup> &emsp; −2<sup>4</sup>`,'שני תרגילים שנראים כמעט אותו דבר. ההבדל: הסוגריים.'],
+    [`(−2)<sup>4</sup> = (−2) · (−2) · (−2) · (−2)`,'<strong>עם סוגריים</strong> הבסיס הוא <span class="eq">−2</span>, וכופלים אותו 4 פעמים.'],
+    [`(−2)<sup>4</sup> = 16`,'4 מינוסים, מספר זוגי, אז התוצאה חיובית: <span class="eq">2 · 2 · 2 · 2 = 16</span>.'],
+    [`−2<sup>4</sup> = −(2 · 2 · 2 · 2)`,'<strong>בלי סוגריים</strong> החזקה רק על 2. המינוס מחכה בחוץ.'],
+    [`−2<sup>4</sup> = −16`,'<span class="eq">2<sup>4</sup> = 16</span>, ועם המינוס: <span class="eq">−16</span>. אז <span class="eq">(−2)<sup>4</sup> = 16</span> אבל <span class="eq">−2<sup>4</sup> = −16</span>.']
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const st=EX[exKey], [e,txt]=st[exI];
+  $('exEq').innerHTML=E(e); $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${st.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===st.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice: each make() → {q, k, wrong:[[v,msg]], hints:[h1,h2], sol} */
+const chainTxt=(a,n)=>Array(n).fill(B(a)).join(' · ');
+const T=[
+  ()=>{ const a=ri(2,5), n=pick(a===2?[0,3,4,5,6]:a===5?[0,2,3]:[0,2,3,4]), v=P(a,n);
+    if(n===0) return {q:pw(a,0),k:1,wrong:[[0,'כל מספר בחזקת 0 שווה 1, ולא 0. בסדרה '+E(`${pw(a,2)}, ${pw(a,1)}, ${pw(a,0)}`)+' מחלקים כל פעם ב-'+a+'.'],[a,'זה '+E(pw(a,1))+'. בחזקת 0 התשובה היא 1.']],
+      hints:['כל מספר (חוץ מ-0) בחזקת 0 שווה אותו דבר. מה?',`${E(`${pw(a,1)} = ${a}`)}. חלקו ב-${a} עוד פעם אחת.`],sol:`${E(`${pw(a,0)} = 1`)}. כל מספר חוץ מ-0 בחזקת 0 שווה 1.`};
+    return {q:pw(a,n),k:v,wrong:[[a*n,`כפלתם את הבסיס במעריך. ${E(pw(a,n))} זה ${E(chainTxt(a,n))}, ולא ${E(`${a} · ${n}`)}.`]],
+      hints:[`כתבו את זה ככפל: ${E(chainTxt(a,n))}.`,`חשבו צעד צעד: ${Array.from({length:n},(_,i)=>numTxt(P(a,i+1))).slice(0,-1).join(', ')}, ומה הלאה?`],sol:`${E(`${pw(a,n)} = ${chainTxt(a,n)} = ${numTxt(v)}`)}`}; },
+  ()=>{ const a=-ri(2,4), n=a===-4?pick([2,3]):pick([2,3,4,5]), v=P(a,n);
+    return {q:pw(a,n),k:v,wrong:[[-v,`הגודל נכון, הסימן לא. בכפל יש ${n} מינוסים. ${n%2===0?'זוגי, אז התוצאה חיובית.':'אי-זוגי, אז התוצאה שלילית.'}`],[a*n,`כפלתם את הבסיס במעריך. צריך לכפול את ${E(B(a))} בעצמו ${n} פעמים.`]],
+      hints:[`כתבו את זה ככפל: ${E(chainTxt(a,n))}.`,`קודם הגודל: ${E(`${pw(-a,n)} = ${P(-a,n)}`)}. עכשיו הסימן: כמה מינוסים יש בכפל?`],sol:`${E(`${pw(a,n)} = ${chainTxt(a,n)} = ${numTxt(v)}`)}. ${n} מינוסים, ${n%2===0?'זוגי, אז חיובי.':'אי-זוגי, אז שלילי.'}`}; },
+  ()=>{ const a=ri(2,5), n=a>3?2:pick([2,4]), v=-P(a,n);
+    return {q:`−${a}<sup>${n}</sup>`,k:v,wrong:[[-v,`אין כאן סוגריים. החזקה רק על ${a}, והמינוס נשאר בחוץ. ${E(`−${a}<sup>${n}</sup> = −(${chainTxt(a,n)})`)}.`]],
+      hints:[`אין סוגריים, אז הבסיס הוא ${a} ולא ${E(numTxt(-a))}. המינוס מחכה בחוץ.`,`${E(`${a}<sup>${n}</sup> = ${P(a,n)}`)}. עכשיו הוסיפו את המינוס.`],sol:`${E(`−${a}<sup>${n}</sup> = −(${chainTxt(a,n)}) = ${numTxt(v)}`)}`}; },
+  ()=>{ const p=ri(1,9), q=ri(2,5), a=ri(2,3), n=pick([2,3]), an=P(a,n), v=p+q*an;
+    return {q:`${p} + ${q} · ${a}<sup>${n}</sup>`,k:v,wrong:[[(p+q)*an,`חיברתם קודם. לפי סדר הפעולות, חזקה וכפל באים לפני חיבור.`],[p+P(q*a,n),`החזקה רק על ${a}, לא על ${E(`${q} · ${a}`)}.`],[p+q*a*n,`${E(`${a}<sup>${n}</sup>`)} זה לא ${E(`${a} · ${n}`)}. זה ${E(chainTxt(a,n))}.`]],
+      hints:['סדר פעולות: סוגריים, חזקות, כפל וחילוק, חיבור וחיסור. מה מחשבים קודם?',`${E(`${a}<sup>${n}</sup> = ${an}`)}, אז התרגיל הוא ${E(`${p} + ${q} · ${an}`)}. עכשיו הכפל.`],
+      sol:`${E(`${a}<sup>${n}</sup> = ${an}`)}, ${E(`${q} · ${an} = ${q*an}`)}, ${E(`${p} + ${q*an} = ${v}`)}`}; },
+  ()=>{ const p=ri(1,6), q=ri(1,6), s=p+q, v=s*s;
+    return {q:`(${p} + ${q})<sup>2</sup>`,k:v,wrong:[[p*p+q*q,`העליתם כל מספר בריבוע לבד. קודם מחשבים את מה שבסוגריים: ${E(`${p} + ${q} = ${s}`)}.`],[s*2,`${E(`${s}<sup>2</sup>`)} זה ${E(`${s} · ${s}`)}, ולא ${E(`${s} · 2`)}.`]],
+      hints:['יש סוגריים, אז מתחילים מהם.',`${E(`${p} + ${q} = ${s}`)}. עכשיו ${E(`${s}<sup>2</sup> = ${s} · ${s}`)}.`],sol:`${E(`(${p} + ${q})<sup>2</sup> = ${s}<sup>2</sup> = ${s} · ${s} = ${v}`)}`}; }
+];
+let pr={}, prT=-1, streak=0, solved=0;
+function newPr(){
+  let t; do{ t=ri(0,T.length-1); } while(t===prT); prT=t;
+  pr=Object.assign(T[t](),{tries:0,hint:0});
+  $('prQ').innerHTML=E(pr.q+' = ?'); $('prK').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), v=parseNum($('prK').value);
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 16 או −8.</div>'; $('prK').focus(); return; }
+  if(eqv(v,pr.k)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${pr.sol}</div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  const w=pr.wrong.find(([val])=>eqv(v,val));
+  fb.innerHTML=`<div class="fb err">${w?w[1]:'עוד לא. כתבו את החזקה ככפל וחשבו צעד צעד, או לחצו על רמז.'}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hints[pr.hint-1]}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint calc"><div>${pr.sol}</div><div>עכשיו נסו תרגיל חדש.</div></div>`; };
+$('prNew').onclick=newPr;
+$('prK').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

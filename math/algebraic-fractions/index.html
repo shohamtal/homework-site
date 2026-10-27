@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>שברים אלגבריים: צמצום, כפל וחיבור · כיתה ט · מירי</title>
+<meta name="description" content="שבר עם x במונה או במכנה. מפרקים ומצמצמים, מוצאים תחום הגדרה, ומחברים בעזרת מכנה משותף.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/algebraic-fractions/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="שברים אלגבריים: צמצום, כפל וחיבור · כיתה ט · מירי">
+<meta property="og:description" content="שבר עם x במונה או במכנה. מפרקים ומצמצמים, מוצאים תחום הגדרה, ומחברים בעזרת מכנה משותף.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/algebraic-fractions/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"שברים אלגבריים","item":"https://shohamtal.github.io/homework-site/math/grade-9/#fractions-9"},{"@type":"ListItem","position":5,"name":"שברים אלגבריים: צמצום, כפל וחיבור","item":"https://shohamtal.github.io/homework-site/math/algebraic-fractions/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מצמצמים שבר אלגברי?","acceptedAnswer":{"@type":"Answer","text":"מפרקים לגורמים את המונה ואת המכנה, למשל בהוצאת גורם משותף, בהפרש ריבועים או בפירוק טרינום. אחר כך מוחקים גורם שמופיע גם למעלה וגם למטה. למשל x² + 5x + 6x + 2 = (x + 2)(x + 3)x + 2 = x + 3. נסו במעבדה."}},{"@type":"Question","name":"מה זה תחום הגדרה של שבר אלגברי?","acceptedAnswer":{"@type":"Answer","text":"אלה כל המספרים שמותר להציב ב-x. אסור שהמכנה יהיה 0, אז מוציאים מהתחום כל x שמאפס אותו. ב-1x(x + 4) התחום הוא x ≠ 0 וגם x ≠ −4. מוצאים את התחום לפני הצמצום."}},{"@type":"Question","name":"איך מחברים שברים אלגבריים עם מכנים שונים?","acceptedAnswer":{"@type":"Answer","text":"מוצאים מכנה משותף, בדרך כלל המכפלה של המכנים, ומרחיבים כל שבר אליו. למשל 2x + 3x + 1 = 2(x + 1) + 3xx(x + 1) = 5x + 2x(x + 1). ראו את הדוגמה הפתורה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"שברים אלגבריים: צמצום, כפל וחיבור","description":"שבר עם x במונה או במכנה. מפרקים ומצמצמים, מוצאים תחום הגדרה, ומחברים בעזרת מכנה משותף.","url":"https://shohamtal.github.io/homework-site/math/algebraic-fractions/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"שברים אלגבריים","teaches":"שברים אלגבריים: צמצום, כפל וחיבור","keywords":"צמצום, תחום הגדרה, מכנה משותף","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.g .hole{fill:var(--card); stroke:var(--line); stroke-width:2.2}
+.calc{display:flex; flex-direction:column; gap:6px}
+.bigf{font-size:clamp(1.5rem,6vw,2.2rem); text-align:center}
+.bigf .frac{font-size:.8em}
+.cut{text-decoration:line-through; text-decoration-color:var(--err); text-decoration-thickness:2px}
+.no{color:var(--err); font-weight:800}
+.choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.choices button{font-family:var(--f-math); font-size:1.1rem; min-width:4em}
+.choices button.txt{font-family:var(--f-body); font-size:.95rem}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.vt td.undef{color:var(--err); font-family:var(--f-body); font-size:.85rem; font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="algebraic-fractions">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#fractions-9">שברים אלגבריים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">שברים אלגבריים: צמצום, כפל וחיבור</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · שברים אלגבריים</div>
+  <h1>שברים אלגבריים: צמצום, כפל וחיבור <span class="slogan">מפרקים, ואז מצמצמים</span></h1>
+  <p class="lead">שבר אלגברי הוא שבר שיש בו <i>x</i> במונה או במכנה. עובדים איתו כמו עם שבר רגיל, עם שני כללים חשובים: אסור לחלק באפס, ומצמצמים רק כפל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>תחום הגדרה</h3>
+      <p class="bigf"><span class="eq"><span class="frac"><span>5</span><span><i>x</i> − 2</span></span></span></p>
+      <p>אסור לחלק באפס. המכנה יוצא 0 כש-<span class="eq"><i>x</i> = 2</span>, אז כותבים: <strong>תחום ההגדרה הוא <span class="eq"><i>x</i> ≠ 2</span></strong>.</p>
+      <p>מוצאים אותו תמיד <strong>לפני</strong> שמצמצמים.</p>
+    </div>
+    <div class="mini">
+      <h3>צמצום: מפרקים קודם</h3>
+      <p>כמו ש-<span class="eq"><span class="frac"><span>6</span><span>9</span></span> = <span class="frac"><span>2 · 3</span><span>3 · 3</span></span> = <span class="frac"><span>2</span><span>3</span></span></span>, גם כאן מפרקים לגורמים ומצמצמים גורם שמופיע למעלה ולמטה:</p>
+      <p class="bigf" style="font-size:1.4rem"><span class="eq"><span class="frac"><span><i>x</i>² − 9</span><span><i>x</i> − 3</span></span> =</span> <span class="eq"><span class="frac"><span>(<i>x</i> + 3)<span class="cut">(<i>x</i> − 3)</span></span><span class="cut"><i>x</i> − 3</span></span> = <i>x</i> + 3</span></p>
+      <p>הפירוק הוא <a href="../factoring/">פירוק לגורמים</a> או <a href="../trinomial-factoring/">פירוק טרינום</a>.</p>
+    </div>
+    <div class="mini">
+      <h3>כפל וחיבור</h3>
+      <p><strong>כפל:</strong> מונה כפול מונה, מכנה כפול מכנה, ואז מצמצמים.</p>
+      <p><strong>חיבור:</strong> צריך מכנה משותף, בדיוק כמו <span class="eq"><span class="frac"><span>1</span><span>2</span></span> + <span class="frac"><span>1</span><span>3</span></span> = <span class="frac"><span>3 + 2</span><span>6</span></span></span>.</p>
+      <p><span class="eq"><span class="frac"><span>2</span><span><i>x</i></span></span> + <span class="frac"><span>3</span><span><i>x</i></span></span> = <span class="frac"><span>5</span><span><i>x</i></span></span></span>: כשהמכנה זהה, מחברים רק את המונים.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הכלל של הצמצום:</strong> מצמצמים רק <strong>גורמים</strong>, דברים שמוכפלים בכל המונה ובכל המכנה. איבר שמחובר אי אפשר למחוק. ב-<span class="eq"><span class="frac"><span><i>x</i> + 6</span><span>6</span></span></span> אסור למחוק את ה-6, כי הוא מחובר ל-<i>x</i>, לא מוכפל בו.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: השבר והחור בגרף</h2></div>
+  <p class="text">השבר <span class="eq"><span class="frac"><span>(<i>x</i> + <span class="m">a</span>)(<i>x</i> + <span class="b">b</span>)</span><span><i>x</i> + <span class="m">a</span></span></span></span> מצטמצם ל-<span class="eq"><i>x</i> + <span class="b">b</span></span>. אבל הוא לא בדיוק אותו דבר: בנקודה אחת השבר לא מוגדר, ובגרף יש שם <strong>חור</strong>.</p>
+  <div class="bigf" id="labF"></div>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="הגרף של השבר: ישר עם חור בנקודה שבה המכנה הוא אפס"></svg>
+    <div class="ctrl">
+      <label class="slider" for="sa"><span>a (במכנה)</span><span class="eq" id="sav"></span></label>
+      <input type="range" id="sa" min="-4" max="4" step="1" value="-3">
+      <label class="slider" for="sb"><span>b</span><span class="eq" id="sbv"></span></label>
+      <input type="range" class="hl" id="sb" min="-4" max="4" step="1" value="3">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="-3,3">x² − 9</button>
+          <button data-p="2,3">x² + 5x + 6</button>
+          <button data-p="-2,-2">x² − 4x + 4</button>
+          <button data-p="0,1">x² + x</button>
+          <button data-p="1,-4">x² − 3x − 4</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-x"><table class="vt" id="labT"></table></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מוחקים איבר מחובר</h3>
+      <p><span class="eq"><span class="frac"><span><i>x</i>² + 4</span><span><i>x</i> + 2</span></span></span>: אי אפשר "למחוק" ולקבל <i>x</i> + 2.</p>
+      <p>בדקו עם <span class="eq"><i>x</i> = 1</span>: השבר הוא <span class="eq"><span class="frac"><span>5</span><span>3</span></span></span>, ו-<span class="eq">1 + 2 = 3</span>. לא שווה. <span class="eq"><i>x</i>² + 4</span> לא מתפרק, אז השבר כבר מצומצם.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את תחום ההגדרה</h3>
+      <p>אחרי הצמצום <span class="eq"><span class="frac"><span><i>x</i>² − 9</span><span><i>x</i> − 3</span></span> = <i>x</i> + 3</span>, ה-<span class="eq"><i>x</i> − 3</span> נעלם מהמכנה.</p>
+      <p>אבל עדיין <span class="eq"><i>x</i> ≠ 3</span>! תחום ההגדרה נקבע מהשבר <strong>המקורי</strong>.</p>
+    </div>
+    <div class="mini">
+      <h3>סוגריים הפוכים</h3>
+      <p><span class="eq"><span class="frac"><span>2 − <i>x</i></span><span><i>x</i> − 2</span></span></span> נראה כמו 1, אבל הוא <span class="eq">−1</span>.</p>
+      <p>כי <span class="eq">2 − <i>x</i> = −(<i>x</i> − 2)</span>. מוציאים מינוס, ורק אז מצמצמים.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">צמצום</button>
+    <button id="exB" role="tab" aria-selected="false">כפל</button>
+    <button id="exC" role="tab" aria-selected="false">חיבור</button>
+  </div>
+  <div class="stepper">
+    <div class="bigf" id="exEq" style="font-size:clamp(1.3rem,5vw,1.8rem)"></div>
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: בחרו את התשובה</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="bigf" id="prQ"></div>
+  <div class="ctrl">
+    <div class="choices" id="prChoices"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מצמצמים שבר אלגברי?</h3>
+    <p>מפרקים לגורמים את המונה ואת המכנה, למשל בהוצאת גורם משותף, בהפרש ריבועים או בפירוק טרינום. אחר כך מוחקים גורם שמופיע גם למעלה וגם למטה. למשל <span class="eq"><span class="frac"><span><i>x</i>² + 5<i>x</i> + 6</span><span><i>x</i> + 2</span></span> =</span> <span class="eq"><span class="frac"><span>(<i>x</i> + 2)(<i>x</i> + 3)</span><span><i>x</i> + 2</span></span> = <i>x</i> + 3</span>. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה זה תחום הגדרה של שבר אלגברי?</h3>
+    <p>אלה כל המספרים שמותר להציב ב-<i>x</i>. אסור שהמכנה יהיה 0, אז מוציאים מהתחום כל <i>x</i> שמאפס אותו. ב-<span class="eq"><span class="frac"><span>1</span><span><i>x</i>(<i>x</i> + 4)</span></span></span> התחום הוא <span class="eq"><i>x</i> ≠ 0</span> וגם <span class="eq"><i>x</i> ≠ −4</span>. מוצאים את התחום לפני הצמצום.</p>
+    <h3>איך מחברים שברים אלגבריים עם מכנים שונים?</h3>
+    <p>מוצאים מכנה משותף, בדרך כלל המכפלה של המכנים, ומרחיבים כל שבר אליו. למשל <span class="eq"><span class="frac"><span>2</span><span><i>x</i></span></span> + <span class="frac"><span>3</span><span><i>x</i> + 1</span></span> = <span class="frac"><span>2(<i>x</i> + 1) + 3<i>x</i></span><span><i>x</i>(<i>x</i> + 1)</span></span> = <span class="frac"><span>5<i>x</i> + 2</span><span><i>x</i>(<i>x</i> + 1)</span></span></span>. <a href="#example">ראו את הדוגמה הפתורה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/factoring/">פירוק לגורמים</a> · <a href="../../math/trinomial-factoring/">פירוק טרינום</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/trinomial-factoring/"><small>→ הנושא הקודם</small>פירוק טרינום</a><a class="next" href="../../math/systems-word-problems/"><small>הנושא הבא ←</small>בעיות מילוליות עם שני נעלמים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,draw,pick}=G;
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const X_='<i>x</i>';
+const fr=(n,d)=>`<span class="frac"><span>${n}</span><span>${d}</span></span>`;
+const eq=h=>`<span class="eq">${h}</span>`;
+/* x + k */
+const xk=k=>k===0?X_:`${X_} ${k>0?'+':'−'} ${numTxt(Math.abs(k))}`;
+const px=k=>k===0?X_:`(${xk(k)})`;
+/* x² + p x + q */
+function poly(p,q){
+  let s=`${X_}²`;
+  if(p) s+=` ${p>0?'+':'−'} ${Math.abs(p)===1?'':numTxt(Math.abs(p))}${X_}`;
+  if(q) s+=` ${q>0?'+':'−'} ${numTxt(Math.abs(q))}`;
+  return s;
+}
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+/* lab */
+const A=$('sa'), B=$('sb');
+function lab(){
+  const a=+A.value, b=+B.value, h=-a, hy=-a+b;
+  $('sav').textContent=numTxt(a); $('sbv').textContent=numTxt(b);
+  const num=poly(a+b,a*b);
+  $('labF').innerHTML=eq(`${fr(num,xk(a))} =`)+' '+eq(`${fr(`${px(a)}${px(b)}`,xk(a))} = ${xk(b)}`);
+  let t=`<div><strong>מפרקים:</strong> ${eq(`${num} = ${px(a)}${px(b)}`)}</div>`;
+  t+=`<div><strong>תחום הגדרה:</strong> המכנה ${eq(xk(a))} הוא 0 כש-${eq(`${X_} = ${numTxt(h)}`)}. אז ${eq(`${X_} ≠ ${numTxt(h)}`)}.</div>`;
+  t+=`<div><strong>מצמצמים:</strong> ${eq(px(a))} למעלה ולמטה, ונשאר ${eq(xk(b))}.</div>`;
+  if(a===b) t+=`<div>כאן a = b, אז במונה יש ריבוע: ${eq(`${px(a)}²`)}. עדיין נשאר גורם אחד אחרי הצמצום.</div>`;
+  t+=`<div>בגרף רואים את הישר ${eq(`y = ${xk(b)}`)}, עם <strong>חור</strong> ב-${eq(`(${numTxt(h)}, ${numTxt(hy)})`)}${Math.abs(hy)>5?' (מחוץ לגרף, הזיזו את b)':''}. שם השבר הוא ${eq(fr('0','0'))}, וזה לא מוגדר.</div>`;
+  $('labTxt').innerHTML=t;
+  draw($('labG'),1,b,{points:Math.abs(hy)<=5.5?[{x:h,y:hy,cls:'hole',r:4.5}]:[]});
+  let r1=`<tr><th>${X_}</th>`, r2=`<tr><th>השבר</th>`;
+  for(let x=h-2;x<=h+2;x++){
+    r1+=`<td>${numTxt(x)}</td>`;
+    if(x===h) r2+=`<td class="undef">לא מוגדר</td>`;
+    else{ const n=x*x+(a+b)*x+a*b, d=x+a; r2+=`<td>${numTxt(n)}/${numTxt(d)} = ${numTxt(n/d)}</td>`; }
+  }
+  $('labT').innerHTML=r1+'</tr>'+r2+'</tr>';
+}
+[A,B].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [a,b]=btn.dataset.p.split(','); A.value=a; B.value=b; lab();
+}));
+lab();
+
+/* worked examples */
+const EX={
+  A:{q:fr(`${X_}² − 9`,`${X_}² + 3${X_}`), steps:[
+    `מצמצמים את השבר. קודם מפרקים את המונה ואת המכנה לגורמים.`,
+    `<strong>המונה:</strong> הפרש ריבועים: ${eq(`${X_}² − 9 = (${X_} − 3)(${X_} + 3)`)}`,
+    `<strong>המכנה:</strong> גורם משותף ${X_}: ${eq(`${X_}² + 3${X_} = ${X_}(${X_} + 3)`)}`,
+    `<strong>תחום הגדרה:</strong> המכנה ${eq(`${X_}(${X_} + 3)`)} הוא 0 כש-${eq(`${X_} = 0`)} או ${eq(`${X_} = −3`)}. אז ${eq(`${X_} ≠ 0`)} וגם ${eq(`${X_} ≠ −3`)}.`,
+    `<strong>מצמצמים</strong> את ${eq(`(${X_} + 3)`)}: ${eq(`${fr(`(${X_} − 3)<span class="cut">(${X_} + 3)</span>`,`${X_}<span class="cut">(${X_} + 3)</span>`)} = ${fr(`${X_} − 3`,X_)}`)}`,
+    `<strong>תשובה:</strong> ${eq(fr(`${X_} − 3`,X_))}, כש-${eq(`${X_} ≠ 0, −3`)}. בדיקה עם ${eq(`${X_} = 1`)}: בשבר המקורי ${eq(`${fr('1 − 9','1 + 3')} = −2`)}, ובתשובה ${eq(`${fr('1 − 3','1')} = −2`)} ✓`
+  ]},
+  B:{q:`${fr(`${X_}² − 4`,`3${X_}`)} · ${fr('6',`${X_} + 2`)}`, steps:[
+    `כופלים שני שברים. כדאי לפרק ולצמצם <strong>לפני</strong> שכופלים, כך המספרים נשארים קטנים.`,
+    `<strong>מפרקים:</strong> ${eq(`${X_}² − 4 = (${X_} − 2)(${X_} + 2)`)}, ו-${eq('6 = 2 · 3')}.`,
+    `<strong>תחום הגדרה:</strong> ${eq(`${X_} ≠ 0`)} (מהמכנה ${eq(`3${X_}`)}) וגם ${eq(`${X_} ≠ −2`)} (מהמכנה ${eq(`${X_} + 2`)}).`,
+    `<strong>כותבים הכול כשבר אחד:</strong> ${eq(fr(`(${X_} − 2)(${X_} + 2) · 2 · 3`,`3${X_}(${X_} + 2)`))}`,
+    `<strong>מצמצמים</strong> את ${eq(`(${X_} + 2)`)} ואת 3: ${eq(fr(`2(${X_} − 2)`,X_))}`,
+    `<strong>תשובה:</strong> ${eq(fr(`2(${X_} − 2)`,X_))}, כש-${eq(`${X_} ≠ 0, −2`)}. אפשר גם לכתוב ${eq(fr(`2${X_} − 4`,X_))}.`
+  ]},
+  C:{q:`${fr('2',X_)} + ${fr('3',`${X_} + 1`)}`, steps:[
+    `מחברים שני שברים עם מכנים שונים. צריך מכנה משותף.`,
+    `<strong>תחום הגדרה:</strong> ${eq(`${X_} ≠ 0`)} וגם ${eq(`${X_} ≠ −1`)}.`,
+    `<strong>מכנה משותף:</strong> המכפלה של המכנים, ${eq(`${X_}(${X_} + 1)`)}.`,
+    `<strong>מרחיבים:</strong> את השבר הראשון ב-${eq(`(${X_} + 1)`)}, ואת השני ב-${eq(X_)}: ${eq(`${fr(`2(${X_} + 1)`,`${X_}(${X_} + 1)`)} + ${fr(`3${X_}`,`${X_}(${X_} + 1)`)}`)}`,
+    `<strong>מחברים את המונים:</strong> ${eq(`2${X_} + 2 + 3${X_} = 5${X_} + 2`)}`,
+    `<strong>תשובה:</strong> ${eq(fr(`5${X_} + 2`,`${X_}(${X_} + 1)`))}. בדיקה עם ${eq(`${X_} = 1`)}: ${eq(`${fr('2','1')} + ${fr('3','2')} = 3.5`)}, ו-${eq(`${fr('7','2')} = 3.5`)} ✓`
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey];
+  $('exEq').innerHTML=eq(e.q);
+  $('exText').innerHTML=e.steps.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B','C'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B','C'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* practice: multiple choice. each choice: {h, ok, why} */
+const NOT='אי אפשר לצמצם';
+const TPL=[
+  ()=>{ let a,b; do{ a=ri(-5,5); b=ri(-5,5); } while(!a||!b||a===b||a===-b);
+    return {ask:'צמצמו את השבר. מה יוצא?', q:fr(poly(a+b,a*b),xk(a)),
+      ch:[{h:xk(b),ok:1},{h:xk(a),why:`מחקתם את הגורם הלא נכון. המונה הוא ${eq(`${px(a)}${px(b)}`)}, ומוחקים את הגורם ששווה למכנה, ${eq(px(a))}.`},
+          {h:xk(-b),why:'הסימן התהפך. בדקו את הפירוק: כפלו את הסוגריים בחזרה וראו אם יוצא המונה.'},
+          {h:NOT,txt:1,why:'אפשר! קודם מפרקים את המונה לשני סוגריים, ואחד מהם שווה למכנה.'}],
+      hints:[`פרקו את המונה לשני סוגריים: חפשו שני מספרים שהמכפלה שלהם ${numTxt(a*b)} והסכום ${numTxt(a+b)}.`,`${eq(`${poly(a+b,a*b)} = ${px(a)}${px(b)}`)}. איזה גורם שווה למכנה?`],
+      sol:`${eq(`${fr(`${px(a)}${px(b)}`,xk(a))} = ${xk(b)}`)}, כש-${eq(`${X_} ≠ ${numTxt(-a)}`)}.`}; },
+  ()=>{ let a,b; do{ a=ri(-6,6); b=ri(-6,6); } while(!a||!b||a===b||a===-b);
+    return {ask:'מה תחום ההגדרה של השבר?', q:fr(poly(a+b,a*b),xk(a)),
+      ch:[{h:`${X_} ≠ ${numTxt(-a)}`,ok:1},{h:`${X_} ≠ ${numTxt(a)}`,why:`הציבו ${eq(`${X_} = ${numTxt(a)}`)} במכנה: ${eq(`${numTxt(a)} ${a<0?'−':'+'} ${numTxt(Math.abs(a))} = ${numTxt(2*a)}`)}, וזה לא 0. איזה מספר באמת מאפס את המכנה?`},
+          {h:`${X_} ≠ ${numTxt(-b)}`,why:'זה המספר שמאפס את <strong>המונה</strong>. מונה 0 זה בסדר, השבר פשוט שווה 0. בודקים רק את המכנה.'},
+          {h:`כל ${X_}`,txt:1,why:'יש מספר אחד שאסור: זה שהופך את המכנה ל-0. אסור לחלק באפס.'}],
+      hints:['תחום ההגדרה נקבע רק מהמכנה. מתי המכנה שווה 0?',`פתרו ${eq(`${xk(a)} = 0`)}.`],
+      sol:`המכנה ${eq(xk(a))} הוא 0 כש-${eq(`${X_} = ${numTxt(-a)}`)}. אז ${eq(`${X_} ≠ ${numTxt(-a)}`)}.`}; },
+  ()=>{ const p=ri(2,9);
+    return {ask:'צמצמו את השבר. מה יוצא?', q:fr(`${X_}² − ${p*p}`,`${X_} − ${p}`),
+      ch:[{h:`${X_} + ${p}`,ok:1},{h:`${X_} − ${p}`,why:`בדקו את הפירוק של הפרש הריבועים: ${eq(`${X_}² − ${p*p} = (${X_} − ${p})(${X_} + ${p})`)}. אחד מהם נמחק, מי נשאר?`},
+          {h:X_,why:`אי אפשר למחוק איבר לבד. ${eq(`${X_}² − ${p*p}`)} הוא חיסור, לא כפל. קודם מפרקים לגורמים, ורק אז מצמצמים.`},
+          {h:NOT,txt:1,why:`אפשר! ${eq(`${X_}² − ${p*p}`)} הוא הפרש ריבועים, ומתפרק לשני סוגריים.`}],
+      hints:[`${eq(`${X_}² − ${p*p}`)} הוא הפרש ריבועים: ${eq(`${X_}² − ${p}²`)}. איך הוא מתפרק?`,`${eq(`${X_}² − ${p}² = (${X_} − ${p})(${X_} + ${p})`)}. איזה גורם שווה למכנה?`],
+      sol:`${eq(`${fr(`(${X_} − ${p})(${X_} + ${p})`,`${X_} − ${p}`)} = ${X_} + ${p}`)}, כש-${eq(`${X_} ≠ ${p}`)}.`}; },
+  ()=>{ const k=ri(2,9);
+    return {ask:'אפשר לצמצם את השבר? בחרו.', q:fr(`${X_} + ${k}`,`${k}`),
+      ch:[{h:'השבר כבר מצומצם',txt:1,ok:1},{h:X_,why:`ה-${k} למעלה <strong>מחובר</strong> ל-${X_}, הוא לא מוכפל בו. בדקו עם ${eq(`${X_} = 1`)}: ${eq(`${fr(`1 + ${k}`,k)} = ${fr(1+k,k)}`)}, ולא 1.`},
+          {h:`${X_} + 1`,why:`מחקתם ${k} מהמונה ו-${k} מהמכנה, אבל במונה הוא מחובר. בדקו עם ${eq(`${X_} = 1`)}: יוצא ${eq(fr(1+k,k))}, ולא 2.`},
+          {h:'1',why:'מונה ומכנה לא זהים, אז השבר לא שווה 1.'}],
+      hints:['מצמצמים רק גורם שמוכפל בכל המונה. האם המונה הוא מכפלה?','במונה יש חיבור. אפשר להוציא ממנו גורם משותף? אם לא, אין מה לצמצם.'],
+      sol:`במונה ${eq(`${X_} + ${k}`)} אין גורם משותף ל-${X_} ול-${k}, אז אין מה לצמצם. השבר כבר מצומצם (אפשר רק לפצל: ${eq(`${fr(X_,k)} + 1`)}).`}; },
+  ()=>{ const a=ri(1,7), b=ri(1,7), d=pick([X_,`${X_} + 1`,`${X_} − 3`,`2${X_}`]), pd=d.includes(' ')?`(${d})`:d;
+    return {ask:'חברו את השברים. מה יוצא?', q:`${fr(a,d)} + ${fr(b,d)}`,
+      ch:[{h:fr(a+b,d),ok:1},{h:fr(a+b,`2${pd}`),why:'כשהמכנה זהה, לא מחברים את המכנים. כמו ¼ + ¼ = ²⁄₄, ולא ²⁄₈.'},
+          {h:fr(a*b,d),why:'בחיבור מחברים את המונים, לא כופלים אותם.'},
+          {h:fr(a+b,`${pd}²`),why:'המכנה המשותף הוא פשוט המכנה עצמו, כי הוא זהה בשני השברים. לא צריך לכפול אותו.'}],
+      hints:['למה זה דומה ב-¼ + ¼? מה קורה שם למכנה?','המכנה זהה, אז הוא נשאר. מחברים רק את המונים.'],
+      sol:`המכנה זהה, אז מחברים רק את המונים: ${eq(`${fr(`${a} + ${b}`,d)} = ${fr(a+b,d)}`)}.`}; }
+];
+let pr={}, sel=null, streak=0, solved=0;
+function newPr(){
+  let q; do{ q=pick(TPL)(); } while(q.q===pr.q);
+  pr={...q,ch:shuffle(q.ch.slice()),tries:0,hint:0}; sel=null;
+  $('prAsk').textContent=q.ask; $('prQ').innerHTML=eq(q.q);
+  $('prChoices').innerHTML=pr.ch.map((c,i)=>`<button type="button" data-i="${i}" aria-pressed="false" class="${c.txt?'txt':''}">${c.txt?c.h:eq(c.h)}</button>`).join('');
+  $('prChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i;
+    $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(sel==null){ fb.innerHTML='<div class="fb err">קודם בחרו תשובה.</div>'; return; }
+  const c=pr.ch[sel];
+  if(c.ok){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${pr.sol}</div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${c.why}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,pr.hints.length);
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hints[pr.hint-1]}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${pr.sol} עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

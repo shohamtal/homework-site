@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הסתברות בניסוי דו-שלבי · כיתה ט · מירי</title>
+<meta name="description" content="מטילים שתי קוביות או שולפים פעמיים: מסדרים את כל האפשרויות בטבלה או בעץ, ומחשבים את הסיכוי.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/probability-two-stage/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הסתברות בניסוי דו-שלבי · כיתה ט · מירי">
+<meta property="og:description" content="מטילים שתי קוביות או שולפים פעמיים: מסדרים את כל האפשרויות בטבלה או בעץ, ומחשבים את הסיכוי.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/probability-two-stage/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"סטטיסטיקה והסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-9/#stats-9"},{"@type":"ListItem","position":5,"name":"הסתברות בניסוי דו-שלבי","item":"https://shohamtal.github.io/homework-site/math/probability-two-stage/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים הסתברות בהטלה של שתי קוביות?","acceptedAnswer":{"@type":"Answer","text":"מציירים טבלה של 6 על 6, כלומר 36 משבצות. כל משבצת היא זוג תוצאות, וכולן באותו סיכוי. סופרים כמה משבצות מתאימות ומחלקים ב-36. למשל לסכום 7 יש 6 משבצות, אז ההסתברות 6/36 = 1/6. נסו במעבדה."}},{"@type":"Question","name":"מתי כופלים ומתי מחברים הסתברויות?","acceptedAnswer":{"@type":"Answer","text":"כופלים לאורך מסלול בעץ, כלומר כשצריך שיקרה גם השלב הראשון וגם השני. מחברים בין מסלולים שונים, כשכמה מסלולים מתאימים למאורע. למשל \"אחד מכל צבע\" הוא ורוד ואז כחול, או כחול ואז ורוד."}},{"@type":"Question","name":"מה ההבדל בין שליפה עם החזרה לבלי החזרה?","acceptedAnswer":{"@type":"Answer","text":"עם החזרה, השקית בשלב השני בדיוק כמו בהתחלה, אז ההסתברויות לא משתנות. בלי החזרה, יש כדור אחד פחות, וגם הצבע שיצא ירד באחד. לכן המכנה בשלב השני קטן ב-1. סמנו \"לא מחזירים\" במעבדה ותראו."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הסתברות בניסוי דו-שלבי","description":"מטילים שתי קוביות או שולפים פעמיים: מסדרים את כל האפשרויות בטבלה או בעץ, ומחשבים את הסיכוי.","url":"https://shohamtal.github.io/homework-site/math/probability-two-stage/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"סטטיסטיקה והסתברות","teaches":"הסתברות בניסוי דו-שלבי","keywords":"עץ הסתברות, טבלת אפשרויות, שני שלבים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc .eq{white-space:normal}
+svg.grid6{width:100%; max-width:320px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.grid6 .cell{fill:var(--card); stroke:var(--soft); stroke-width:1}
+.grid6 .cell.on{fill:var(--hl); stroke:var(--ink)}
+.grid6 .cell.last{stroke:var(--line); stroke-width:3}
+.grid6 .ct{fill:var(--ink); font:10px var(--f-math); text-anchor:middle}
+.grid6 .hd{font:700 13px var(--f-math); text-anchor:middle}
+.grid6 .hd.d1{fill:var(--blue)} .grid6 .hd.d2{fill:var(--line)}
+.grid6 .cap{font:700 10px var(--f-body); text-anchor:middle}
+.grid6 .cap.d1{fill:var(--blue)} .grid6 .cap.d2{fill:var(--line)}
+svg.tree{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.tree .br{stroke:var(--soft); stroke-width:2}
+.tree .br.on{stroke:var(--ink); stroke-width:3.2}
+.tree .pl{fill:var(--muted); font:700 10px var(--f-math); text-anchor:middle}
+.tree .pl.on{fill:var(--ink)}
+.tree .ball{stroke:var(--ink); stroke-width:1.2}
+.tree .ball.p{fill:var(--line)} .tree .ball.b{fill:var(--blue)}
+.tree .end{fill:var(--muted); font:10px var(--f-math)}
+.tree .end.on{fill:var(--ink); font-weight:700}
+.tree .root{fill:var(--card); stroke:var(--ink); stroke-width:1.4}
+.ctrl .chk{display:flex; gap:8px; align-items:center; font-weight:700}
+.ctrl .chk input{width:20px; height:20px; accent-color:var(--line)}
+.sim{display:flex; flex-direction:column; gap:6px}
+.ev{display:flex; flex-wrap:wrap; gap:6px}
+.ev button[aria-pressed=true]{background:var(--hl)}
+.dot{display:inline-block; width:12px; height:12px; border-radius:50%; border:1px solid var(--ink); vertical-align:-1px}
+.dot.p{background:var(--line)} .dot.b{background:var(--blue)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="probability-two-stage">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#stats-9">סטטיסטיקה והסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הסתברות בניסוי דו-שלבי</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · סטטיסטיקה והסתברות</div>
+  <h1>הסתברות בניסוי דו-שלבי <span class="slogan">שתי קוביות, שתי שליפות</span></h1>
+  <p class="lead">בניסוי דו-שלבי עושים שני דברים אחד אחרי השני: מטילים שתי קוביות, או שולפים פעמיים משקית. כדי לא לפספס אף אפשרות, מסדרים את כולן בטבלה או בעץ. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">טבלת קוביות</a><a href="#tree">עץ</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שתי דרכים לראות את כל האפשרויות</h2></div>
+  <p class="text">בניסוי של שלב אחד ראינו ש<a href="../probability/">הסתברות</a> היא המקרים המתאימים חלקי כל המקרים. גם כאן זה כך, רק שצריך לספור נכון את כל המקרים של שני השלבים ביחד.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>טבלה</h3>
+      <p>מתאימה כשכל שלב הוא קובייה, מטבע או סביבון. שורה לכל תוצאה של השלב הראשון, עמודה לכל תוצאה של השני.</p>
+      <p>שתי קוביות: <span class="eq">6 · 6 = 36</span> משבצות. כל משבצת היא מקרה אחד, וכולן באותו סיכוי.</p>
+    </div>
+    <div class="mini">
+      <h3>עץ</h3>
+      <p>מתאים כשהסיכויים לא שווים, למשל בשקית עם 3 ורודים ו-2 כחולים.</p>
+      <p>על כל ענף כותבים את ההסתברות שלו. מסלול מההתחלה עד הסוף הוא תוצאה אחת.</p>
+    </div>
+    <div class="mini">
+      <h3>כופלים ומחברים</h3>
+      <p><strong>לאורך מסלול</strong> כופלים: ורוד ואז ורוד זה <span class="eq">3/5 · 3/5</span>.</p>
+      <p><strong>בין מסלולים</strong> מחברים: אם כמה מסלולים מתאימים, מחברים את ההסתברויות שלהם.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה:</strong> סכום ההסתברויות של כל המסלולים בעץ הוא תמיד 1. אם לא יצא 1, משהו בעץ חסר.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מטילים שתי קוביות</h2></div>
+  <p class="text">בחרו מאורע. המשבצות הצהובות הן המקרים המתאימים. אחר כך הטילו הרבה פעמים ובדקו אם הניסוי מתקרב לחישוב.</p>
+  <div class="lab">
+    <div>
+      <svg class="grid6" id="dGrid" viewBox="0 0 290 290" role="img" aria-label="טבלה של כל 36 התוצאות של שתי קוביות"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="ev" id="dEv" role="group" aria-label="בחירת מאורע"></div>
+      <div id="sWrap"><label class="slider" for="dS"><span id="sLbl">המספר</span><span class="eq" id="dSv"></span></label>
+        <input type="range" id="dS" min="2" max="12" step="1" value="7"></div>
+      <div class="explain fb hint calc" id="dCalc" aria-live="polite"></div>
+      <div class="sim">
+        <div class="row"><button id="roll1">הטילו פעם אחת</button><button id="roll100" class="primary">הטילו 100 פעמים</button><button id="rollReset">התחילו מחדש</button></div>
+        <div id="dSim" aria-live="polite"></div>
+      </div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-e="sum" data-s="7">סכום 7</button>
+          <button data-e="sum" data-s="2">סכום 2</button>
+          <button data-e="double" data-s="">דאבל</button>
+          <button data-e="atleast" data-s="6">לפחות שש אחד</button>
+          <button data-e="sumge" data-s="10">סכום 10 או יותר</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: סכום 7 הוא הכי נפוץ, כי יש 6 משבצות כאלה. לסכום 2 ולסכום 12 יש רק משבצת אחת.</p>
+</section>
+
+<section class="card" id="tree">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מעבדה: שתי שליפות משקית</h2></div>
+  <p class="text">שולפים כדור, ואז עוד כדור. בחרו כמה כדורים יש מכל צבע, והאם מחזירים את הכדור הראשון לשקית. המסלולים המודגשים הם המאורע שבחרתם.</p>
+  <div class="lab">
+    <div>
+      <svg class="tree" id="tG" viewBox="0 0 360 250" role="img" aria-label="עץ הסתברות של שתי שליפות"></svg>
+    </div>
+    <div class="ctrl">
+      <div><label class="slider" for="tP"><span><span class="dot p"></span> כדורים ורודים</span><span class="eq" id="tPv"></span></label>
+        <input type="range" id="tP" min="1" max="6" step="1" value="3"></div>
+      <div><label class="slider" for="tB"><span><span class="dot b"></span> כדורים כחולים</span><span class="eq" id="tBv"></span></label>
+        <input type="range" id="tB" class="blue" min="1" max="6" step="1" value="2"></div>
+      <label class="chk"><input type="checkbox" id="tNo"> לא מחזירים את הכדור הראשון</label>
+      <div class="ev" id="tEv" role="group" aria-label="בחירת מאורע"></div>
+      <div class="explain fb hint calc" id="tCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="3" data-b="2" data-n="0" data-e="pp">3 ורודים ו-2 כחולים</button>
+          <button data-p="3" data-b="2" data-n="1" data-e="pp">אותו דבר, בלי החזרה</button>
+          <button data-p="1" data-b="4" data-n="1" data-e="pp">ורוד אחד בלבד, בלי החזרה</button>
+          <button data-p="3" data-b="3" data-n="0" data-e="mix">חצי חצי, אחד מכל צבע</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: עם ורוד אחד בלבד ובלי החזרה, אי אפשר לשלוף שני ורודים. ההסתברות יוצאת 0.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">4</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>(3, 4) ו-(4, 3) הם שני מקרים</h3>
+      <p>"3 בראשונה ו-4 בשנייה" זה לא אותו דבר כמו "4 בראשונה ו-3 בשנייה".</p>
+      <p>לכן יש 36 מקרים, ולא 21. לסכום 7 יש 6 משבצות: <span class="eq">6/36</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מחברים במקום לכפול</h3>
+      <p>הסיכוי לוורוד ואז ורוד הוא לא <span class="eq">3/5 + 3/5</span>. זה יותר מ-1!</p>
+      <p>לאורך מסלול כופלים: <span class="eq">3/5 · 3/5 = 9/25</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים שהכדור לא חזר</h3>
+      <p>בלי החזרה, בשלב השני יש כדור אחד פחות בשקית.</p>
+      <p>אחרי ורוד: <span class="eq">2/4</span> לוורוד, ולא <span class="eq">3/5</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>"לפחות אחד"?</strong> לפעמים קל יותר לחשב את ההפך. "לפחות ורוד אחד" זה הכול חוץ מ"שניהם כחולים": <span class="eq">1 − P(כחול, כחול)</span>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">5</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">בשקית 3 כדורים ורודים ו-2 כחולים. שולפים כדור, <strong>לא</strong> מחזירים, ושולפים עוד אחד. מה ההסתברות שיצא כדור אחד מכל צבע?</p>
+  <svg class="tree" id="exG" viewBox="0 0 360 250" role="img" aria-label="עץ הדוגמה: 3 ורודים ו-2 כחולים בלי החזרה"></svg>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">6</span><h2>תרגול: מה הסיכוי?</h2></div>
+  <p class="text">כתבו את התשובה כשבר, למשל <span class="eq">5/36</span>, או כמספר עשרוני. לא חייבים לצמצם.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="dice" aria-pressed="false">שתי קוביות</button>
+    <button data-t="tree" aria-pressed="false">שתי שליפות</button>
+  </div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span>ההסתברות =</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">7</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים הסתברות בהטלה של שתי קוביות?</h3>
+    <p>מציירים טבלה של 6 על 6, כלומר 36 משבצות. כל משבצת היא זוג תוצאות, וכולן באותו סיכוי. סופרים כמה משבצות מתאימות ומחלקים ב-36. למשל לסכום 7 יש 6 משבצות, אז ההסתברות <span class="eq">6/36 = 1/6</span>. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מתי כופלים ומתי מחברים הסתברויות?</h3>
+    <p>כופלים לאורך מסלול בעץ, כלומר כשצריך שיקרה גם השלב הראשון וגם השני. מחברים בין מסלולים שונים, כשכמה מסלולים מתאימים למאורע. למשל "אחד מכל צבע" הוא ורוד ואז כחול, או כחול ואז ורוד.</p>
+    <h3>מה ההבדל בין שליפה עם החזרה לבלי החזרה?</h3>
+    <p>עם החזרה, השקית בשלב השני בדיוק כמו בהתחלה, אז ההסתברויות לא משתנות. בלי החזרה, יש כדור אחד פחות, וגם הצבע שיצא ירד באחד. לכן המכנה בשלב השני קטן ב-1. <a href="#tree">סמנו "לא מחזירים" במעבדה</a> ותראו.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/probability/">הסתברות: מה הסיכוי?</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/frequency-tables/"><small>→ הנושא הקודם</small>טבלת שכיחויות ודיאגרמות</a><a class="next" href="../../math/"><small>סיימתם את הפרק ←</small>לכל הנושאים במתמטיקה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const gcd=(a,b)=>b?gcd(b,a%b):a;
+/* fractions as [numerator, denominator] */
+const F=(n,d)=>[n,d], red=([n,d])=>{ if(!n) return [0,1]; const g=gcd(n,d); return [n/g,d/g]; };
+const mul=(a,b)=>[a[0]*b[0],a[1]*b[1]];
+const add=(a,b)=>a[1]===b[1]?[a[0]+b[0],a[1]]:[a[0]*b[1]+b[0]*a[1],a[1]*b[1]];
+const val=f=>f[0]/f[1];
+const fr=([n,d])=>d===1||n===0?String(n):`<span class="frac"><span>${n}</span><span>${d}</span></span>`;
+const ft=([n,d])=>d===1||n===0?String(n):`${n}/${d}`;
+const pct=f=>{ const v=Math.round(val(f)*1000)/10; return numTxt(v)+'%'; };
+/* "6/36 = 1/6 (16.7%)" */
+const frFull=f=>{ const r=red(f); return (r[1]!==f[1]?`${fr(f)} = ${fr(r)}`:fr(f))+` (${pct(f)})`; };
+
+/* ---------- dice table ---------- */
+const DEV={
+  sum:{b:'סכום',t:s=>`הסכום הוא ${s}`,r:[2,12],lbl:'הסכום',test:(a,b,s)=>a+b===s},
+  sumge:{b:'סכום לפחות',t:s=>`הסכום ${s} או יותר`,r:[2,12],lbl:'הסכום לפחות',test:(a,b,s)=>a+b>=s},
+  double:{b:'דאבל',t:()=>'יוצא דאבל (אותו מספר בשתי הקוביות)',r:null,test:(a,b)=>a===b},
+  atleast:{b:'לפחות אחת',t:s=>`לפחות קובייה אחת מראה ${s}`,r:[1,6],lbl:'המספר',test:(a,b,s)=>a===s||b===s},
+  none:{b:'אף אחת',t:s=>`אף קובייה לא מראה ${s}`,r:[1,6],lbl:'המספר',test:(a,b,s)=>a!==s&&b!==s},
+  botheven:{b:'שתיהן זוגיות',t:()=>'שתי הקוביות מראות מספר זוגי',r:null,test:(a,b)=>a%2===0&&b%2===0}
+};
+const cells=(ev,s)=>{ const out=[]; for(let a=1;a<=6;a++) for(let b=1;b<=6;b++) if(DEV[ev].test(a,b,s)) out.push([a,b]); return out; };
+let dev='sum', sim={n:0,hit:0,last:null};
+$('dEv').innerHTML=Object.keys(DEV).map(k=>`<button data-k="${k}" aria-pressed="false">${DEV[k].b}</button>`).join('');
+function gridSVG(svg,ev,s,last){
+  const C=40, O=48; let h=`<text class="cap d1" x="${O+3*C}" y="12">קובייה ראשונה</text><text class="cap d2" transform="translate(12 ${O+3*C}) rotate(-90)">קובייה שנייה</text>`;
+  for(let i=1;i<=6;i++) h+=`<text class="hd d1" x="${O+(i-.5)*C}" y="${O-8}">${i}</text><text class="hd d2" x="${O-12}" y="${O+(i-.5)*C+4}">${i}</text>`;
+  for(let b=1;b<=6;b++) for(let a=1;a<=6;a++){
+    const on=DEV[ev].test(a,b,s), isLast=last&&last[0]===a&&last[1]===b;
+    h+=`<rect class="cell${on?' on':''}${isLast?' last':''}" x="${O+(a-1)*C}" y="${O+(b-1)*C}" width="${C}" height="${C}"/><text class="ct" x="${O+(a-.5)*C}" y="${O+(b-.5)*C+4}">${ev==='sum'||ev==='sumge'?a+b:a+','+b}</text>`;
+  }
+  svg.innerHTML=h;
+}
+function dice(){
+  const d=DEV[dev], sl=$('dS');
+  $('sWrap').hidden=!d.r;
+  if(d.r){ sl.min=d.r[0]; sl.max=d.r[1]; if(+sl.value<d.r[0]||+sl.value>d.r[1]) sl.value=d.r[0]; $('sLbl').textContent=d.lbl; }
+  const s=+sl.value; $('dSv').textContent=s;
+  document.querySelectorAll('#dEv button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===dev));
+  gridSVG($('dGrid'),dev,s,sim.last);
+  const c=cells(dev,s), f=F(c.length,36);
+  $('dCalc').innerHTML=`<div><strong>המאורע:</strong> ${d.t(s)}.</div>
+    <div>יש ${c.length} משבצות צהובות מתוך 36.</div>
+    <div><strong>ההסתברות:</strong> ${E(frFull(f))}</div>`;
+  simTxt();
+}
+function simTxt(){
+  const c=cells(dev,+$('dS').value).length;
+  $('dSim').innerHTML=sim.n?`<div class="fb ${Math.abs(sim.hit/sim.n-c/36)<.06?'ok':'hint'}">בניסוי: ${sim.hit} מתוך ${sim.n} הטלות, כלומר ${numTxt(Math.round(sim.hit/sim.n*1000)/10)}%. בחישוב: ${pct(F(c,36))}.${sim.n<100?' הטילו עוד, ככל שמטילים יותר זה מתקרב.':''}</div>`:'';
+}
+function roll(k){
+  const s=+$('dS').value;
+  for(let i=0;i<k;i++){ const a=rnd(1,6), b=rnd(1,6); sim.n++; if(DEV[dev].test(a,b,s)) sim.hit++; sim.last=[a,b]; }
+  dice();
+}
+const resetSim=()=>{ sim={n:0,hit:0,last:null}; };
+$('dEv').querySelectorAll('button').forEach(b=>b.onclick=()=>{ dev=b.dataset.k; resetSim(); dice(); });
+$('dS').addEventListener('input',()=>{ resetSim(); dice(); });
+$('roll1').onclick=()=>roll(1); $('roll100').onclick=()=>roll(100); $('rollReset').onclick=()=>{ resetSim(); dice(); };
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{ dev=b.dataset.e; if(b.dataset.s){ const d=DEV[dev]; $('dS').min=d.r[0]; $('dS').max=d.r[1]; $('dS').value=b.dataset.s; } resetSim(); dice(); });
+dice();
+
+/* ---------- tree ---------- */
+const TEV={
+  pp:{b:'שניהם ורודים',t:'שני הכדורים ורודים',paths:['pp']},
+  bb:{b:'שניהם כחולים',t:'שני הכדורים כחולים',paths:['bb']},
+  mix:{b:'אחד מכל צבע',t:'יצא כדור אחד מכל צבע',paths:['pb','bp']},
+  atleast:{b:'לפחות ורוד אחד',t:'יצא לפחות כדור ורוד אחד',paths:['pp','pb','bp']}
+};
+const NAME={p:'ורוד',b:'כחול'};
+/* branch probabilities of the two draws */
+function tprobs(P,B,no){
+  const N=P+B, f1={p:F(P,N),b:F(B,N)};
+  const f2=c=>no?{p:F(P-(c==='p'?1:0),N-1),b:F(B-(c==='b'?1:0),N-1)}:{p:F(P,N),b:F(B,N)};
+  const path=k=>mul(f1[k[0]],f2(k[0])[k[1]]);
+  return {f1,f2,path};
+}
+function treeSVG(svg,P,B,no,ev){
+  const {f1,f2,path}=tprobs(P,B,no), on=TEV[ev]?TEV[ev].paths:[];
+  const R=[24,125], L1={p:[130,62],b:[130,188]};
+  const L2={pp:[240,30],pb:[240,94],bp:[240,156],bb:[240,220]};
+  let h='';
+  const branch=(a,b,f,lit)=>{ const mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2; h+=`<line class="br${lit?' on':''}" x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}"/><rect x="${mx-17}" y="${my-9}" width="34" height="14" rx="3" fill="var(--card)"/><text class="pl${lit?' on':''}" x="${mx}" y="${my+2}">${ft(f)}</text>`; };
+  ['p','b'].forEach(c=>{
+    branch(R,L1[c],f1[c],on.some(k=>k[0]===c));
+    ['p','b'].forEach(c2=>{ const k=c+c2; branch(L1[c],L2[k],f2(c)[c2],on.includes(k)); });
+  });
+  h+=`<circle class="root" cx="${R[0]}" cy="${R[1]}" r="7"/>`;
+  ['p','b'].forEach(c=>h+=`<circle class="ball ${c}" cx="${L1[c][0]}" cy="${L1[c][1]}" r="9"/>`);
+  Object.keys(L2).forEach(k=>{ const [x,y]=L2[k]; h+=`<circle class="ball ${k[1]}" cx="${x}" cy="${y}" r="9"/><text class="end${on.includes(k)?' on':''}" x="${x+14}" y="${y+4}">${ft(path(k))}</text>`; });
+  svg.innerHTML=h;
+}
+function pathLine(k,P,B,no){
+  const {f1,f2,path}=tprobs(P,B,no);
+  return `${NAME[k[0]]} ואז ${NAME[k[1]]}: ${E(`${fr(f1[k[0]])} · ${fr(f2(k[0])[k[1]])} = ${fr(path(k))}`)}`;
+}
+function treeTotal(P,B,no,ev){ const {path}=tprobs(P,B,no); return TEV[ev].paths.map(path).reduce(add); }
+let tev='pp';
+$('tEv').innerHTML=Object.keys(TEV).map(k=>`<button data-k="${k}" aria-pressed="false">${TEV[k].b}</button>`).join('');
+function tree(){
+  const P=+$('tP').value, B=+$('tB').value, no=$('tNo').checked;
+  $('tPv').textContent=P; $('tBv').textContent=B;
+  document.querySelectorAll('#tEv button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===tev));
+  treeSVG($('tG'),P,B,no,tev);
+  const ps=TEV[tev].paths, tot=treeTotal(P,B,no,tev);
+  let t=`<div>בשקית ${P+B} כדורים. ${no?`בשלב השני יש כבר רק ${P+B-1}, כי הכדור הראשון לא חזר.`:'הכדור חוזר, אז בשלב השני השקית כמו בהתחלה.'}</div>`;
+  t+=ps.map(k=>`<div>${pathLine(k,P,B,no)}</div>`).join('');
+  if(ps.length>1) t+=`<div><strong>מחברים את המסלולים:</strong> ${E(ps.map(k=>fr(tprobs(P,B,no).path(k))).join(' + ')+' = '+frFull(tot))}</div>`;
+  else t+=`<div><strong>ההסתברות:</strong> ${E(frFull(tot))}</div>`;
+  if(tev==='atleast') t+=`<div>דרך קצרה: ההפך הוא "שניהם כחולים". ${E(`1 − ${fr(tprobs(P,B,no).path('bb'))} = ${fr(red(tot))}`)}</div>`;
+  $('tCalc').innerHTML=t;
+}
+['tP','tB'].forEach(id=>$(id).addEventListener('input',tree)); $('tNo').addEventListener('change',tree);
+$('tEv').querySelectorAll('button').forEach(b=>b.onclick=()=>{ tev=b.dataset.k; tree(); });
+document.querySelectorAll('#tree .tries button').forEach(b=>b.onclick=()=>{ $('tP').value=b.dataset.p; $('tB').value=b.dataset.b; $('tNo').checked=b.dataset.n==='1'; tev=b.dataset.e; tree(); });
+tree();
+
+/* ---------- worked example ---------- */
+treeSVG($('exG'),3,2,true,'mix');
+const EXS=[
+  `<strong>שלב ראשון:</strong> 5 כדורים בשקית. ${E(`P(ורוד) = ${fr(F(3,5))}`)}, ${E(`P(כחול) = ${fr(F(2,5))}`)}.`,
+  `<strong>שלב שני, אחרי ורוד:</strong> נשארו 4 כדורים: 2 ורודים ו-2 כחולים. אז ${fr(F(2,4))} לוורוד ו-${fr(F(2,4))} לכחול.`,
+  `<strong>שלב שני, אחרי כחול:</strong> נשארו 4 כדורים: 3 ורודים וכחול אחד. אז ${fr(F(3,4))} לוורוד ו-${fr(F(1,4))} לכחול.`,
+  `<strong>אילו מסלולים מתאימים?</strong> "אחד מכל צבע" זה ורוד ואז כחול, או כחול ואז ורוד. שני מסלולים.`,
+  `<strong>כופלים לאורך כל מסלול:</strong> ${pathLine('pb',3,2,true)}. ${pathLine('bp',3,2,true)}.`,
+  `<strong>מחברים את המסלולים:</strong> ${E(`${fr(F(6,20))} + ${fr(F(6,20))} = ${fr(F(12,20))} = ${fr(F(3,5))}`)}, כלומר 60%.`,
+  `<strong>בדיקה:</strong> שני ורודים ${E(fr(F(6,20)))}, שני כחולים ${E(fr(F(2,20)))}. ${E(`${fr(F(6,20))} + ${fr(F(2,20))} + ${fr(F(12,20))} = 1`)}. מצוין, לא פספסנו אף מסלול.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, solved=0, streak=0;
+function unorderedCount(ev,s){ let n=0; for(let a=1;a<=6;a++) for(let b=a;b<=6;b++) if(DEV[ev].test(a,b,s)) n++; return n; }
+function newPr(){
+  const type=mode==='mix'?pick(['dice','tree']):mode;
+  const p={type,tries:0,hint:0};
+  if(type==='dice'){
+    p.ev=pick(Object.keys(DEV)); const r=DEV[p.ev].r;
+    p.s=r?(p.ev==='sumge'?rnd(8,12):p.ev==='sum'?rnd(3,11):rnd(r[0],r[1])):0;
+    p.c=cells(p.ev,p.s); p.f=F(p.c.length,36);
+    $('prQ').innerHTML=`מטילים שתי קוביות. מה ההסתברות ש${DEV[p.ev].t(p.s)}?`;
+  }else{
+    p.P=rnd(1,5); p.B=rnd(1,5); p.no=Math.random()<.5; p.ev=pick(Object.keys(TEV));
+    if(p.no&&p.P+p.B<3) p.B++;
+    p.f=treeTotal(p.P,p.B,p.no,p.ev);
+    $('prQ').innerHTML=`בשקית ${p.P===1?'כדור ורוד אחד':p.P+' כדורים ורודים'} ו-${p.B===1?'כדור כחול אחד':p.B+' כדורים כחולים'}. שולפים כדור, ${p.no?'<strong>לא</strong> מחזירים אותו':'<strong>מחזירים</strong> אותו'}, ושולפים עוד כדור. מה ההסתברות ש${TEV[p.ev].t}?`;
+  }
+  p.ans=val(p.f); pr=p;
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  if(pr.type==='dice'){
+    const list=pr.c.map(([a,b])=>`(${a}, ${b})`);
+    return `המקרים המתאימים: ${pr.c.length>12?list.slice(0,12).join(', ')+' ועוד':list.join(', ')||'אין'}. יש ${pr.c.length} מתוך 36. ${E(frFull(pr.f))}.`;
+  }
+  const {P,B,no,ev}=pr, ps=TEV[ev].paths;
+  return ps.map(k=>pathLine(k,P,B,no)).join('. ')+'.'+(ps.length>1?` מחברים: ${E(frFull(pr.f))}.`:` ${E(frFull(pr.f))}.`);
+}
+function diagnose(v){
+  if(v>1) return 'הסתברות אף פעם לא גדולה מ-1. אם ספרתם מקרים, חלקו בכל המקרים.';
+  if(pr.type==='dice'){
+    const u=unorderedCount(pr.ev,pr.s);
+    if(eqv(v,u/21)||eqv(v,u/36)&&u!==pr.c.length) return 'ספרתם את (3, 4) ו-(4, 3) כמקרה אחד. בטבלה הם שתי משבצות שונות, ויש 36 משבצות.';
+    if(eqv(v,pr.c.length/12)) return 'חיברתם 6 + 6. בטבלה של שתי קוביות יש 6 · 6 = 36 משבצות.';
+    if(eqv(v,1-pr.ans)) return 'זה הסיכוי ההפוך, שזה לא יקרה. בדקו אילו משבצות מתאימות.';
+    return 'לא בדיוק. ציירו טבלה של 6 על 6 וספרו את המשבצות המתאימות.';
+  }
+  const {P,B,no,ev}=pr, ps=TEV[ev].paths, other=val(treeTotal(P,B,!no,ev)), t=tprobs(P,B,no);
+  if(!eqv(other,pr.ans)&&eqv(v,other)) return no?'חישבתם כאילו הכדור חוזר. בלי החזרה, בשלב השני יש כדור אחד פחות בשקית.':'חישבתם כאילו הכדור לא חוזר. כאן מחזירים אותו, אז השקית בשלב השני כמו בהתחלה.';
+  const sums=ps.map(k=>val(t.f1[k[0]])+val(t.f2(k[0])[k[1]]));
+  if(sums.some(x=>eqv(v,x))) return 'לאורך מסלול כופלים את ההסתברויות, ולא מחברים.';
+  if(ps.length>1&&ps.some(k=>eqv(v,val(t.path(k))))) return `זה רק מסלול אחד. יש כאן ${ps.length} מסלולים שמתאימים. חברו את כולם.`;
+  if(eqv(v,1-pr.ans)) return 'זה הסיכוי ההפוך. בדקו אילו מסלולים מתאימים לשאלה.';
+  return 'לא בדיוק. ציירו עץ, כתבו הסתברות על כל ענף, וכפלו לאורך המסלולים המתאימים.';
+}
+$('prCheck').onclick=()=>{
+  const raw=$('prA').value.trim().replace('%','');
+  let v=parseNum(raw.replace(/^(\d+),(\d+)$/,'$1.$2'));
+  if(isNaN(v)){ $('prFb').innerHTML='<div class="fb err">כתבו שבר, למשל 5/36, או מספר עשרוני, למשל 0.25.</div>'; return; }
+  const asPct=$('prA').value.includes('%')||(v>1&&v<=100&&!raw.includes('/'));
+  if(asPct&&Math.abs(v/100-pr.ans)<0.0006){ v=v/100; }
+  const close=raw.includes('.')&&Math.abs(v-pr.ans)<0.006;
+  if(eqv(v,pr.ans)||close){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(v)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.type==='dice') h=pr.hint===1?'כמה מקרים יש בסך הכול? בטבלה של שתי קוביות יש 6 · 6 = 36 משבצות. עכשיו חפשו את המתאימות.':`יש ${pr.c.length} משבצות מתאימות${pr.c.length&&pr.c.length<=6?': '+pr.c.map(([a,b])=>`(${a}, ${b})`).join(', '):''}. מה עושים עם המספר הזה?`;
+  else{
+    const {P,B,no,ev}=pr, t=tprobs(P,B,no);
+    h=pr.hint===1?`ציירו עץ. בשלב הראשון: ${E(`${fr(t.f1.p)}`)} לוורוד ו-${E(`${fr(t.f1.b)}`)} לכחול. ${no?'בשלב השני יש כדור אחד פחות.':'בשלב השני השקית כמו בהתחלה.'}`
+      :`המסלולים שמתאימים: ${TEV[ev].paths.map(k=>NAME[k[0]]+' ואז '+NAME[k[1]]).join(', ')}. כפלו לאורך כל מסלול${TEV[ev].paths.length>1?', ואז חברו':''}.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

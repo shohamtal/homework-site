@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מעגל: זווית מרכזית, זווית היקפית ומיתרים · כיתה ט · מירי</title>
+<meta name="description" content="זווית היקפית היא חצי מהזווית המרכזית שנשענת על אותה קשת. מזיזים נקודה על המעגל ורואים שהיא לא משתנה.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/circle-angles/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מעגל: זווית מרכזית, זווית היקפית ומיתרים · כיתה ט · מירי">
+<meta property="og:description" content="זווית היקפית היא חצי מהזווית המרכזית שנשענת על אותה קשת. מזיזים נקודה על המעגל ורואים שהיא לא משתנה.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/circle-angles/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/math/grade-9/"},{"@type":"ListItem","position":4,"name":"גאומטריה וטריגונומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-9/#geometry-9"},{"@type":"ListItem","position":5,"name":"מעגל: זווית מרכזית, זווית היקפית ומיתרים","item":"https://shohamtal.github.io/homework-site/math/circle-angles/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין זווית מרכזית לזווית היקפית?","acceptedAnswer":{"@type":"Answer","text":"בזווית מרכזית הקודקוד נמצא במרכז המעגל, והשוקיים הם רדיוסים. בזווית היקפית הקודקוד נמצא על המעגל עצמו, והשוקיים הם מיתרים. אם הן נשענות על אותה קשת, ההיקפית היא חצי מהמרכזית."}},{"@type":"Question","name":"למה זווית היקפית שנשענת על קוטר שווה 90°?","acceptedAnswer":{"@type":"Answer","text":"קוטר הוא קשת של חצי מעגל, אז הזווית המרכזית שלו היא 180° (קו ישר). ההיקפית היא חצי ממנה: 180° : 2 = 90°. נסו במעבדה את \"AB קוטר\" והזיזו את P."}},{"@type":"Question","name":"האם כל הזוויות ההיקפיות על אותה קשת שוות?","acceptedAnswer":{"@type":"Answer","text":"כן. כולן חצי מאותה זווית מרכזית, ולכן כולן שוות זו לזו. זה נכון כל עוד הקודקודים נמצאים באותו צד של המיתר AB."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מעגל: זווית מרכזית, זווית היקפית ומיתרים","description":"זווית היקפית היא חצי מהזווית המרכזית שנשענת על אותה קשת. מזיזים נקודה על המעגל ורואים שהיא לא משתנה.","url":"https://shohamtal.github.io/homework-site/math/circle-angles/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"גאומטריה וטריגונומטריה","teaches":"מעגל: זווית מרכזית, זווית היקפית ומיתרים","keywords":"זווית מרכזית, זווית היקפית, מיתר, קשת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.ci{width:100%; max-width:320px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.ci .circ{fill:var(--card); stroke:var(--ink); stroke-width:2}
+.ci .arcAB{fill:none; stroke:var(--line); stroke-width:5; stroke-linecap:round; stroke-opacity:.8}
+.ci .seg{stroke:var(--ink); stroke-width:2; stroke-linecap:round}
+.ci .rad{stroke:var(--blue); stroke-width:2; stroke-linecap:round}
+.ci .dia{stroke:var(--ink); stroke-width:2; stroke-dasharray:6 4}
+.ci .ang{fill:var(--line); fill-opacity:.18; stroke:var(--line); stroke-width:1.8}
+.ci .angO{fill:var(--blue); fill-opacity:.16; stroke:var(--blue); stroke-width:1.8}
+.ci .angX{fill:var(--hl); fill-opacity:.6; stroke:var(--ink); stroke-width:1.5}
+.ci .dot{fill:var(--ink)}
+.ci .dotP{fill:var(--line); stroke:var(--card); stroke-width:2}
+.ci .vx{font:700 14px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.ci .val{font:700 12px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.calc{display:flex; flex-direction:column; gap:4px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="circle-angles">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-9/#geometry-9">גאומטריה וטריגונומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מעגל: זווית מרכזית, זווית היקפית ומיתרים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · גאומטריה וטריגונומטריה</div>
+  <h1>מעגל: זווית מרכזית, זווית היקפית ומיתרים <span class="slogan">חצי מהמרכזית, תמיד</span></h1>
+  <p class="lead">במעגל יש זוויות שהקודקוד שלהן במרכז, וזוויות שהקודקוד שלהן על המעגל עצמו. יש ביניהן קשר פשוט: הזווית ההיקפית היא חצי מהזווית המרכזית שנשענת על אותה קשת. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>המילים של המעגל</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מי זה מי</h3>
+      <svg class="ci" id="ideaG" viewBox="0 0 260 260" role="img" aria-label="מעגל עם מרכז, מיתר, זווית מרכזית וזווית היקפית"></svg>
+      <p><strong>מיתר</strong>: קטע שמחבר שתי נקודות על המעגל. <strong>קוטר</strong> הוא מיתר שעובר דרך המרכז.</p>
+      <p><strong>קשת</strong>: חלק מהמעגל עצמו, בין שתי נקודות. כאן הקשת AB צבועה בוורוד.</p>
+    </div>
+    <div class="mini">
+      <h3>שתי זוויות ומשפט אחד</h3>
+      <p><strong>זווית מרכזית</strong> (כחולה): הקודקוד במרכז O, והשוקיים הם רדיוסים.</p>
+      <p><strong>זווית היקפית</strong> (ורודה): הקודקוד P על המעגל, והשוקיים הם מיתרים.</p>
+      <div class="big-eq"><span class="eq">∠APB = ½ · ∠AOB</span></div>
+      <p>כששתיהן נשענות על אותה קשת, ההיקפית היא <strong>חצי</strong> מהמרכזית.</p>
+    </div>
+  </div>
+  <div class="callout">שתי תוצאות שימושיות: כל הזוויות ההיקפיות שנשענות על אותה קשת <strong>שוות</strong>. וזווית היקפית שנשענת על קוטר היא תמיד <strong>90°</strong>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מזיזים את P על המעגל</h2></div>
+  <p class="text">הקשת AB בוורוד. שנו את גודל הקשת, והזיזו את הנקודה P על המעגל. מה קורה לזווית הוורודה?</p>
+  <div class="lab">
+    <svg class="ci" id="labG" viewBox="0 0 260 260" role="img" aria-label="מעגל עם זווית מרכזית וזווית היקפית על אותה קשת"></svg>
+    <div class="ctrl">
+      <label class="slider" for="lt"><span>הזווית המרכזית AOB</span><span class="eq" id="ltv"></span></label>
+      <input type="range" class="blue" id="lt" min="20" max="180" step="10" value="80">
+      <label class="slider" for="lp"><span>המקום של P על המעגל</span><span class="eq" id="lpv"></span></label>
+      <input type="range" class="hl" id="lp" min="5" max="95" step="5" value="50">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="80,50">80° באמצע</button>
+          <button data-p="80,15">80° בצד</button>
+          <button data-p="120,70">120°</button>
+          <button data-p="180,35">AB קוטר</button>
+          <button data-p="40,90">40°</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">גלו בעצמכם: P זזה, אבל הזווית ההיקפית נשארת אותו דבר. וכש-AB קוטר, היא תמיד 90°.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חצי, לא כפול</h3>
+      <p>הזווית <strong>המרכזית</strong> היא הגדולה. ההיקפית היא החצי שלה.</p>
+      <p>מרכזית 100°? ההיקפית 50°. היקפית 30°? המרכזית 60°.</p>
+    </div>
+    <div class="mini">
+      <h3>רק על אותה קשת</h3>
+      <p>המשפט עובד רק כששתי הזוויות "פתוחות" לאותה קשת.</p>
+      <p>בדקו: הקרניים של שתי הזוויות פוגעות במעגל באותן שתי נקודות, A ו-B.</p>
+    </div>
+    <div class="mini">
+      <h3>איפה הקודקוד?</h3>
+      <p>קודקוד במרכז = מרכזית. קודקוד על המעגל = היקפית.</p>
+      <p>זווית שהקודקוד שלה סתם בתוך המעגל היא לא זה ולא זה, והמשפט לא עובד עליה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ומיתרים?</strong> במעגל אחד, מיתרים שווים נשענים על קשתות שוות, ולכן גם על זוויות מרכזיות שוות. וגם להפך.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: מרכזית והיקפית</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: משולש על קוטר</button>
+  </div>
+  <div class="lab">
+    <svg class="ci" id="exG" viewBox="0 0 260 260" role="img" aria-label="ציור הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מצאו את הזווית הצהובה</h2></div>
+  <p class="text">O הוא מרכז המעגל. חשבו את הזווית הצהובה (במעלות).</p>
+  <div class="lab">
+    <svg class="ci" id="prG" viewBox="0 0 260 260" role="img" aria-label="מעגל לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs">
+        <label for="prA"><span>הזווית הצהובה =</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין זווית מרכזית לזווית היקפית?</h3>
+    <p>בזווית מרכזית הקודקוד נמצא במרכז המעגל, והשוקיים הם רדיוסים. בזווית היקפית הקודקוד נמצא על המעגל עצמו, והשוקיים הם מיתרים. אם הן נשענות על אותה קשת, ההיקפית היא חצי מהמרכזית.</p>
+    <h3>למה זווית היקפית שנשענת על קוטר שווה 90°?</h3>
+    <p>קוטר הוא קשת של חצי מעגל, אז הזווית המרכזית שלו היא 180° (קו ישר). ההיקפית היא חצי ממנה: <span class="eq">180° : 2 = 90°</span>. <a href="#lab">נסו במעבדה את "AB קוטר"</a> והזיזו את P.</p>
+    <h3>האם כל הזוויות ההיקפיות על אותה קשת שוות?</h3>
+    <p>כן. כולן חצי מאותה זווית מרכזית, ולכן כולן שוות זו לזו. זה נכון כל עוד הקודקודים נמצאים באותו צד של המיתר AB.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/compound-inequalities/"><small>→ הנושא הקודם</small>מערכת אי-שוויונות ואי-שוויון כפול</a><a class="next" href="../../math/trigonometry/"><small>הנושא הבא ←</small>טריגונומטריה: סינוס, קוסינוס וטנגנס</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const CX=130, CY=130, R=96, D=Math.PI/180;
+const at=deg=>[CX+R*Math.cos(deg*D), CY-R*Math.sin(deg*D)];
+const fx=v=>v.toFixed(1);
+
+/* cfg: pts {name:deg on circle} (O is the center), arc [fromDeg,toDeg] counter-clockwise, segs [[p,q,cls]],
+   angles [{v,a,b,cls,label}] (vertex v, rays to a and b), dots: names to dot in pink */
+function draw(svg,cfg){
+  const P=Object.assign({O:[CX,CY]},...Object.entries(cfg.pts||{}).map(([k,d])=>({[k]:at(d)})));
+  let s=`<circle class="circ" cx="${CX}" cy="${CY}" r="${R}"/>`;
+  if(cfg.arc){ const [f,t]=cfg.arc, span=((t-f)%360+360)%360, a=at(f), b=at(t);
+    s+=`<path class="arcAB" d="M${fx(a[0])},${fx(a[1])} A${R},${R} 0 ${span>180?1:0} 0 ${fx(b[0])},${fx(b[1])}"/>`; }
+  for(const [p,q,cls] of cfg.segs||[]) s+=`<line class="${cls||'seg'}" x1="${fx(P[p][0])}" y1="${fx(P[p][1])}" x2="${fx(P[q][0])}" y2="${fx(P[q][1])}"/>`;
+  for(const g of cfg.angles||[]){
+    const V=P[g.v], A=P[g.a], B=P[g.b], r=g.r||(g.v==='O'?22:26);
+    const u=[A[0]-V[0],A[1]-V[1]], w=[B[0]-V[0],B[1]-V[1]], nu=Math.hypot(...u), nw=Math.hypot(...w);
+    const s1=[V[0]+u[0]/nu*r,V[1]+u[1]/nu*r], s2=[V[0]+w[0]/nw*r,V[1]+w[1]/nw*r];
+    const cross=u[0]*w[1]-u[1]*w[0], dot=u[0]*w[0]+u[1]*w[1];
+    if(Math.abs(cross)<1e-6&&dot<0){            /* straight angle: half disc on the side of g.side */
+      s+=`<path class="${g.cls}" d="M${fx(V[0])},${fx(V[1])} L${fx(s1[0])},${fx(s1[1])} A${r},${r} 0 0 ${g.flip?1:0} ${fx(s2[0])},${fx(s2[1])} Z"/>`;
+    } else s+=`<path class="${g.cls}" d="M${fx(V[0])},${fx(V[1])} L${fx(s1[0])},${fx(s1[1])} A${r},${r} 0 0 ${cross>0?1:0} ${fx(s2[0])},${fx(s2[1])} Z"/>`;
+    if(g.label){ let bx=u[0]/nu+w[0]/nw, by=u[1]/nu+w[1]/nw, n=Math.hypot(bx,by);
+      if(n<1e-6){ bx=u[1]/nu*(g.flip?-1:1); by=-u[0]/nu*(g.flip?-1:1); n=1; }
+      s+=`<text class="val" x="${fx(V[0]+bx/n*(r+13))}" y="${fx(V[1]+by/n*(r+13))}">${g.label}</text>`; }
+  }
+  for(const k in P){ const [x,y]=P[k], dp=(cfg.dots||[]).includes(k);
+    s+=`<circle class="${dp?'dotP':'dot'}" cx="${fx(x)}" cy="${fx(y)}" r="${dp?5:3.2}"/>`;
+    const dx=x-CX, dy=y-CY, n=Math.hypot(dx,dy);
+    const lx=k==='O'?x+12:x+dx/n*15, ly=k==='O'?y+12:y+dy/n*15;
+    s+=`<text class="vx" x="${fx(lx)}" y="${fx(ly)}">${k}</text>`; }
+  svg.innerHTML=s;
+}
+/* arc AB of size t centered at the bottom; P at fraction p along the other arc */
+const AB=t=>({A:270-t/2, B:270+t/2});
+const onMajor=(t,p)=>270+t/2+p*(360-t);
+
+/* ---------- idea ---------- */
+draw($('ideaG'),{pts:{A:235,B:305,P:110},arc:[235,305],
+  segs:[['O','A','rad'],['O','B','rad'],['P','A'],['P','B']],
+  angles:[{v:'O',a:'A',b:'B',cls:'angO'},{v:'P',a:'A',b:'B',cls:'ang'}]});
+
+/* ---------- lab ---------- */
+const LT=$('lt'), LP=$('lp');
+function lab(){
+  const t=+LT.value, p=+LP.value/100, {A,B}=AB(t), Pd=onMajor(t,p);
+  $('ltv').textContent=t+'°'; $('lpv').textContent=Math.round(p*100)+'%';
+  const dia=t===180;
+  draw($('labG'),{pts:{A,B,P:Pd},arc:[A,B],dots:['P'],
+    segs:[[ 'O','A','rad'],['O','B','rad'],['P','A'],['P','B']],
+    angles:[{v:'O',a:'A',b:'B',cls:'angO',label:t+'°',flip:false},{v:'P',a:'A',b:'B',cls:'ang',label:(t/2)+'°'}]});
+  let x=`<div>הזווית המרכזית ${E(`∠AOB = ${t}°`)}.</div>`;
+  x+=`<div>הזווית ההיקפית ${E(`∠APB = ${t}° : 2 = ${t/2}°`)}.</div>`;
+  x+=dia?'<div><strong>AB קוטר!</strong> הרדיוסים יוצרים קו ישר (180°), וההיקפית יוצאת 90°. משולש APB ישר זווית, איפה ש-P לא תהיה.</div>'
+        :'<div>הזיזו את P: הזווית הוורודה לא משתנה, כי היא תמיד נשענת על אותה קשת.</div>';
+  $('labTxt').innerHTML=x;
+}
+[LT,LP].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{const [t,p]=b.dataset.p.split(','); LT.value=t; LP.value=p; lab();}));
+lab();
+
+/* ---------- worked examples ---------- */
+const exA={A:235,B:305,P:100};
+const exB={A:180,B:0,C:56};
+const EX={
+  A:[
+    [{pts:exA,arc:[235,305],segs:[['P','A'],['P','B']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:'35°'}]},`O מרכז המעגל. ${E('∠APB = 35°')}. כמה היא הזווית המרכזית ${E('∠AOB')}?`],
+    [{pts:exA,arc:[235,305],segs:[['P','A'],['P','B'],['O','A','rad'],['O','B','rad']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:'35°'},{v:'O',a:'A',b:'B',cls:'angX',label:'?'}]},'מסמנים את הזווית המרכזית. בודקים: שתיהן נשענות על הקשת הוורודה AB.'],
+    [{pts:exA,arc:[235,305],segs:[['P','A'],['P','B'],['O','A','rad'],['O','B','rad']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:'35°'},{v:'O',a:'A',b:'B',cls:'angX',label:'?'}]},`ההיקפית היא חצי מהמרכזית. אז המרכזית היא <strong>פי 2</strong> מההיקפית: ${E('∠AOB = 2 · 35°')}.`],
+    [{pts:exA,arc:[235,305],segs:[['P','A'],['P','B'],['O','A','rad'],['O','B','rad']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:'35°'},{v:'O',a:'A',b:'B',cls:'angO',label:'70°'}]},`${E('∠AOB = 70°')}. בדיקה: המרכזית יצאה גדולה יותר. מתאים!`]
+  ],
+  B:[
+    [{pts:exB,segs:[['A','B','dia'],['C','A'],['C','B']],angles:[{v:'A',a:'B',b:'C',cls:'ang',label:'28°'}]},`AB קוטר, ו-C נקודה על המעגל. ${E('∠CAB = 28°')}. מצאו את ${E('∠ABC')}.`],
+    [{pts:exB,arc:[180,360],segs:[['A','B','dia'],['C','A'],['C','B']],angles:[{v:'A',a:'B',b:'C',cls:'ang',label:'28°'},{v:'C',a:'A',b:'B',cls:'angO',label:'90°'}]},`הזווית ${E('∠ACB')} היא היקפית שנשענת על הקוטר AB (חצי מעגל). לכן ${E('∠ACB = 90°')}.`],
+    [{pts:exB,segs:[['A','B','dia'],['C','A'],['C','B']],angles:[{v:'A',a:'B',b:'C',cls:'ang',label:'28°'},{v:'C',a:'A',b:'B',cls:'angO',label:'90°'},{v:'B',a:'A',b:'C',cls:'angX',label:'?'}]},`במשולש ABC סכום הזוויות 180°: ${E('∠ABC = 180° − 90° − 28°')}.`],
+    [{pts:exB,segs:[['A','B','dia'],['C','A'],['C','B']],angles:[{v:'A',a:'B',b:'C',cls:'ang',label:'28°'},{v:'C',a:'A',b:'B',cls:'angO',label:'90°'},{v:'B',a:'A',b:'C',cls:'angX',label:'62°'}]},`${E('∠ABC = 62°')}. בדיקה: ${E('28 + 90 + 62 = 180')}.`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const [cfg,txt]=EX[exKey][exI];
+  draw($('exG'),cfg);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k; exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+/* kinds: c2i central→inscribed, i2c inscribed→central, i2i two inscribed on one arc, dia diameter triangle */
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let kind; do{ kind=pick(['c2i','i2c','i2i','dia']); } while(kind===pr.kind&&Math.random()<.6);
+  const o={kind,tries:0,hint:0};
+  if(kind==='dia'){
+    const g=pick([20,25,32,36,40,48,55]), Cd=2*g;          /* angle CAB = g when the arc CB (not through A) is 2g, so C sits at 2g degrees */
+    o.g=g; o.ans=90-g; o.pts={A:180,B:0,C:Cd};
+    o.cfg={pts:o.pts,segs:[['A','B','dia'],['C','A'],['C','B']],angles:[{v:'A',a:'B',b:'C',cls:'ang',label:g+'°'},{v:'B',a:'A',b:'C',cls:'angX',label:'?'}]};
+    o.q=`AB קוטר. ${E(`∠CAB = ${g}°`)}. כמה ${E('∠ABC')}?`;
+  } else {
+    const t=pick([40,60,70,80,100,110,120,140]), {A,B}=AB(t);
+    const P=onMajor(t,pick([.3,.45,.6])), Q=onMajor(t,pick([.12,.8]));
+    o.t=t; o.pts={A,B,P};
+    if(kind==='c2i'){ o.ans=t/2;
+      o.cfg={pts:o.pts,arc:[A,B],segs:[['O','A','rad'],['O','B','rad'],['P','A'],['P','B']],angles:[{v:'O',a:'A',b:'B',cls:'angO',label:t+'°'},{v:'P',a:'A',b:'B',cls:'angX',label:'?'}]};
+      o.q=`${E(`∠AOB = ${t}°`)}. כמה ${E('∠APB')}?`; }
+    if(kind==='i2c'){ o.ans=t;
+      o.cfg={pts:o.pts,arc:[A,B],segs:[['O','A','rad'],['O','B','rad'],['P','A'],['P','B']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:(t/2)+'°'},{v:'O',a:'A',b:'B',cls:'angX',label:'?'}]};
+      o.q=`${E(`∠APB = ${t/2}°`)}. כמה ${E('∠AOB')}?`; }
+    if(kind==='i2i'){ o.ans=t/2; o.pts.Q=Q;
+      o.cfg={pts:o.pts,arc:[A,B],segs:[['P','A'],['P','B'],['Q','A'],['Q','B']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:(t/2)+'°'},{v:'Q',a:'A',b:'B',cls:'angX',label:'?'}]};
+      o.q=`${E(`∠APB = ${t/2}°`)}. כמה ${E('∠AQB')}?`; }
+  }
+  pr=o; draw($('prG'),o.cfg);
+  $('prQ').innerHTML=o.q; $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr;
+  if(p.kind==='c2i') return `ההיקפית חצי מהמרכזית: ${E(`${p.t}° : 2 = ${p.ans}°`)}.`;
+  if(p.kind==='i2c') return `המרכזית פי 2 מההיקפית: ${E(`2 · ${p.t/2}° = ${p.ans}°`)}.`;
+  if(p.kind==='i2i') return `שתי הזוויות היקפיות על אותה קשת AB, ולכן הן שוות: ${E(`${p.ans}°`)}.`;
+  return `${E('∠ACB = 90°')} כי היא נשענת על קוטר. ולכן ${E(`∠ABC = 180° − 90° − ${p.g}° = ${p.ans}°`)}.`;
+}
+$('prCheck').onclick=()=>{
+  const v=parseNum($('prA').value.replace('°','')), fb=$('prFb'), p=pr;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 40.</div>'; return; }
+  if(eqv(v,p.ans)){ streak++; solved++; streakTxt();
+    const c=JSON.parse(JSON.stringify(p.cfg)); c.angles.forEach(a=>{ if(a.label==='?'){ a.label=p.ans+'°'; a.cls='angO'; } });
+    if(p.kind==='dia') c.angles.push({v:'C',a:'A',b:'B',cls:'ang',label:'90°'});
+    draw($('prG'),c);
+    fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  let m;
+  if(p.kind==='c2i'&&eqv(v,p.t*2)) m='כפלתם ב-2. אבל ההיקפית (הקודקוד על המעגל) היא הקטנה, היא <strong>חצי</strong> מהמרכזית.';
+  else if(p.kind==='i2c'&&eqv(v,p.t/4)) m='חילקתם ב-2. אבל המרכזית (הקודקוד ב-O) היא הגדולה, היא <strong>פי 2</strong> מההיקפית.';
+  else if(p.kind==='i2i'&&(eqv(v,p.t)||eqv(v,p.t/4))) m='שתי הזוויות היקפיות, שתיהן עם קודקוד על המעגל. אין כאן זווית מרכזית. מה אומרים על היקפיות על אותה קשת?';
+  else if(p.kind==='dia'&&eqv(v,180-p.g)) m='שכחתם זווית אחת במשולש. מה גודל הזווית ב-C, שנשענת על הקוטר?';
+  else if(p.kind==='dia'&&eqv(v,p.g)) m='הזווית ב-B לא חייבת להיות שווה לזווית ב-A. חשבו מסכום הזוויות במשולש.';
+  else if(p.kind==='dia'&&eqv(v,90)) m='90° היא הזווית ב-C, שנשענת על הקוטר. השאלה על הזווית ב-B.';
+  else m='עוד לא. מצאו קודם: איזו זווית היא מרכזית ואיזו היקפית? ועל איזו קשת הן נשענות?';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2);
+  let h;
+  if(p.kind==='dia') h=p.hint===1?'AB קוטר. הזווית ב-C נשענת על חצי מעגל. כמה היא?':`${E('∠ACB = 90°')}. עכשיו סכום הזוויות במשולש ABC הוא 180°.`;
+  else if(p.kind==='i2i') h=p.hint===1?'שתי הזוויות פוגעות במעגל באותן נקודות A ו-B. אז הן נשענות על אותה קשת.':'זוויות היקפיות על אותה קשת שוות זו לזו.';
+  else h=p.hint===1?'איזו זווית יש לה קודקוד ב-O, ואיזו על המעגל? אצל מי הזווית גדולה יותר?'
+    :(p.kind==='c2i'?`ההיקפית היא חצי מהמרכזית. כמה זה ${E(`${p.t} : 2`)}?`:`המרכזית היא פי 2 מההיקפית. כמה זה ${E(`2 · ${p.t/2}`)}?`);
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

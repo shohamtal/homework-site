@@ -96,6 +96,7 @@ function jsonLd(pg, m) {
 const GC_V = createHash('sha1').update(read('assets/goatcounter.js')).digest('hex').slice(0, 8);
 function head(pg, root) {
   const m = meta(pg), url = BASE + pg.p, img = BASE + 'assets/og.jpg';
+  const fonts = `https://fonts.googleapis.com/css2?${pg.kind === 'topic' ? FONT_LESSON : FONT_INDEX}`;
   return [
     `<title>${esc(m.title)}</title>`,
     `<meta name="description" content="${esc(m.description)}">`,
@@ -118,7 +119,10 @@ function head(pg, root) {
     `<meta name="twitter:card" content="summary_large_image">`,
     `<link rel="preconnect" href="https://fonts.googleapis.com">`,
     `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
-    `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?${pg.kind === 'topic' ? FONT_LESSON : FONT_INDEX}">`,
+    // fonts load without blocking the first paint (display=swap shows the fallback font until they arrive)
+    `<link rel="preload" as="style" href="${fonts}">`,
+    `<link rel="stylesheet" href="${fonts}" media="print" onload="this.media='all'">`,
+    `<noscript><link rel="stylesheet" href="${fonts}"></noscript>`,
     `<script data-goatcounter="${cfg.goatcounter}" async src="${root}assets/goatcounter.js?v=${GC_V}"></script>`,
     jsonLd(pg, m)
   ].join('\n');
