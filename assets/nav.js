@@ -49,7 +49,7 @@ if(typeof document!=='undefined') (function(){
   /* a long equation split into neighbouring .eq spans (so it can wrap) must still read left to right:
      wrap each run of adjacent .eq spans in one LTR isolate, also inside lab output rendered later */
   const group=el=>el.querySelectorAll('.eq').forEach(e=>{
-    if(e.parentElement.closest('.eq-run, .eq')) return;
+    if(e.parentElement.closest('.eq-run, .eq') || /flex|grid/.test(getComputedStyle(e.parentElement).display)) return;
     const run=[e]; let n=e.nextSibling;
     while(n){ if(n.nodeType===3 && !n.textContent.trim()){ n=n.nextSibling; continue; }
       if(n.nodeType===1 && n.classList.contains('eq')){ run.push(n); n=n.nextSibling; continue; } break; }

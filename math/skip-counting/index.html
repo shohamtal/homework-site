@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>ספירה בדילוגים · כיתה ב · מירי</title>
+<meta name="description" content="סופרים ב-2, ב-5 וב-10 על ישר המספרים ומגלים את החוקיות. ככה מתחילים להכיר את לוח הכפל. הסבר, מעבדה ותרגול עם רמזים לכיתה ב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/skip-counting/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="ספירה בדילוגים · כיתה ב · מירי">
+<meta property="og:description" content="סופרים ב-2, ב-5 וב-10 על ישר המספרים ומגלים את החוקיות. ככה מתחילים להכיר את לוח הכפל. הסבר, מעבדה ותרגול עם רמזים לכיתה ב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/skip-counting/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ב","item":"https://shohamtal.github.io/homework-site/math/grade-2/"},{"@type":"ListItem","position":4,"name":"מספרים","item":"https://shohamtal.github.io/homework-site/math/grade-2/#numbers-2"},{"@type":"ListItem","position":5,"name":"ספירה בדילוגים","item":"https://shohamtal.github.io/homework-site/math/skip-counting/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה ספירה בדילוגים?","acceptedAnswer":{"@type":"Answer","text":"סופרים בקפיצות שוות במקום אחד אחד. בדילוגים של 2: 2, 4, 6, 8. בדילוגים של 10: 10, 20, 30. כל פעם מוסיפים את אותו מספר. קפצו במעבדה ותראו את החוקיות בלוח המאה."}},{"@type":"Question","name":"איך ספירה בדילוגים עוזרת ללמוד את לוח הכפל?","acceptedAnswer":{"@type":"Answer","text":"מספר הקפיצות כפול גודל הקפיצה הוא המקום שבו נוחתים. 6 קפיצות של 5 נוחתות ב-30, ולכן 6 × 5 = 30. ילד שסופר בדילוגים מגיע לתשובה גם כשהוא עוד לא זוכר אותה בעל פה."}},{"@type":"Question","name":"איך מתרגלים ספירה בדילוגים בבית?","acceptedAnswer":{"@type":"Answer","text":"סופרים זוגות נעליים בשתיים, מטבעות של 5 שקלים בחמש, ושטרות של עשרה בעשר. אפשר גם לקפוץ על מדרגות ולהגיד את המספרים בקול. ואחר כך לנסות אחורה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"ספירה בדילוגים","description":"סופרים ב-2, ב-5 וב-10 על ישר המספרים ומגלים את החוקיות. ככה מתחילים להכיר את לוח הכפל. הסבר, מעבדה ותרגול עם רמזים לכיתה ב.","url":"https://shohamtal.github.io/homework-site/math/skip-counting/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ב","about":"מספרים","teaches":"ספירה בדילוגים","keywords":"דילוגים, חוקיות, ספירה ב-5","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.07rem}
+.row button,.tries button,.choices button{min-height:46px; min-width:46px}
+svg.nl{width:100%; max-width:560px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.nl .axis{stroke:var(--ink); stroke-width:1.5}
+.nl .tk{stroke:var(--ink); stroke-width:1}
+.nl text{font:9px var(--f-body); fill:var(--muted)}
+.nl text.land{fill:var(--ink); font-weight:700; font-size:10px}
+.nl .hop{fill:none; stroke:var(--line); stroke-width:2}
+.nl .hop.back{stroke:var(--blue)}
+.nl .dot{fill:var(--hl); stroke:var(--ink); stroke-width:1.2}
+.nl .start{fill:var(--card); stroke:var(--ink); stroke-width:1.2}
+.nl .hl{font:700 9px var(--f-body); fill:var(--line)}
+.hgrid{display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:3px; max-width:420px; margin:6px auto; direction:ltr}
+.hgrid span{display:flex; align-items:center; justify-content:center; aspect-ratio:1; border:1px solid var(--soft); border-radius:6px; font:clamp(.62rem,2.6vw,.95rem) var(--f-math); background:var(--card); color:var(--muted)}
+.hgrid span.on{background:var(--hl); color:var(--ink); border-color:var(--ink); font-weight:700}
+.hgrid span.last{background:var(--line); color:#fff; border-color:var(--ink)}
+.steps{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.steps button{font:1.3rem var(--f-math); min-width:56px}
+.steps button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.seq{font:1.6rem var(--f-math); direction:ltr; display:flex; flex-wrap:wrap; gap:6px 10px; justify-content:center; align-items:center}
+.seq b{display:inline-flex; align-items:center; justify-content:center; min-width:2.2em; height:1.9em; border:2px dashed var(--line); border-radius:10px; color:var(--line)}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center}
+.ansrow input{font:1.3rem var(--f-math); width:5em; padding:8px 10px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.labrow{display:flex; flex-direction:column; gap:14px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="skip-counting">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-2/">כיתה ב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-2/#numbers-2">מספרים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">ספירה בדילוגים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ב · מספרים</div>
+  <h1>ספירה בדילוגים <span class="slogan">קופצים כמו צפרדע</span></h1>
+  <p class="lead">במקום לספור אחד אחד, אפשר לקפוץ: <span class="eq">2, 4, 6, 8</span>. כך סופרים זוגות של גרביים, כפות ידיים עם חמש אצבעות, או שטרות של עשרה שקלים. ספירה בדילוגים היא הצעד הראשון ללוח הכפל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>קפיצות שוות</h3>
+      <p>בכל קפיצה מוסיפים <strong>אותו מספר</strong>. בדילוגים של 5: <span class="eq">5, 10, 15, 20</span>.</p>
+      <p>הגודל של הקפיצה לא משתנה באמצע.</p>
+    </div>
+    <div class="mini">
+      <h3>יש חוקיות</h3>
+      <p>בדילוגים של 10 כל מספר נגמר ב-<span class="eq">0</span>.</p>
+      <p>בדילוגים של 5 המספרים נגמרים ב-<span class="eq">5</span> או ב-<span class="eq">0</span>.</p>
+      <p>בדילוגים של 2 מההתחלה, כל המספרים זוגיים.</p>
+    </div>
+    <div class="mini">
+      <h3>אחורה גם אפשר</h3>
+      <p>אפשר לקפוץ אחורה ולהוריד בכל פעם: <span class="eq">30, 25, 20, 15</span>.</p>
+      <p>זה כמו ספירה לאחור לפני שיגור טיל, רק בקפיצות.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> 4 קפיצות של 5 מגיעות ל-<span class="eq">20</span>. זה בדיוק <span class="eq">4 × 5 = 20</span>. מי שיודע לקפוץ, כבר יודע כפל.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: קופצים על הישר</h2></div>
+  <p class="text">בחרו בכמה קופצים ומאיפה מתחילים, והזיזו את מספר הקפיצות. על הישר רואים את הקפיצות, ובלוח המאה נצבעים המספרים שנחתנו עליהם.</p>
+  <div class="labrow">
+    <div class="seq" id="labSeq" aria-live="polite"></div>
+    <svg class="nl" id="labNL" viewBox="0 0 340 80" role="img" aria-label="ישר המספרים עם הקפיצות"></svg>
+    <div class="lab">
+      <div class="ctrl">
+        <p style="font-weight:700; margin:0">גודל הקפיצה</p>
+        <div class="steps" id="labStep"></div>
+        <label class="slider" for="sn"><span>מספר הקפיצות</span><span class="eq" id="snv"></span></label>
+        <input type="range" id="sn" min="1" max="10" step="1" value="4">
+        <label class="slider" for="ss"><span>מתחילים מ-</span><span class="eq" id="ssv"></span></label>
+        <input type="range" class="blue" id="ss" min="0" max="9" step="1" value="0">
+        <div class="hgrid" id="labGrid" aria-label="לוח המאה"></div>
+      </div>
+      <div class="ctrl">
+        <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p="2,10,0">בדילוגים של 2</button>
+            <button data-p="5,10,0">בדילוגים של 5</button>
+            <button data-p="10,10,0">בדילוגים של 10</button>
+            <button data-p="3,10,0">בדילוגים של 3</button>
+            <button data-p="10,6,3">10 מ-3</button>
+            <button data-p="2,8,1">2 מ-1</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חוזרים לספור באחד</h3>
+      <p>אחרי <span class="eq">5, 10, 15</span> בא <span class="eq">20</span>, לא <span class="eq">16</span>. כל קפיצה היא 5, עד הסוף.</p>
+    </div>
+    <div class="mini">
+      <h3>סופרים את נקודת ההתחלה כקפיצה</h3>
+      <p>מתחילים ב-<span class="eq">0</span> ועוד לא קפצנו. רק אחרי הקפיצה הראשונה מגיעים ל-<span class="eq">5</span>. ככה 3 קפיצות של 5 מגיעות ל-<span class="eq">15</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>אחורה בכיוון הלא נכון</h3>
+      <p>ב-<span class="eq">40, 35, 30</span> המספרים <strong>קטנים</strong>. המספר הבא הוא <span class="eq">25</span>, לא <span class="eq">35</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">בקופסה יש שקיות, ובכל שקית <span class="eq">5</span> סוכריות. כמה סוכריות יש ב-<span class="eq">6</span> שקיות?</p>
+  <div class="stepper">
+    <svg class="nl" id="exNL" viewBox="0 0 340 80" role="img" aria-label="ישר המספרים של הדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="seq" id="prQ"></div>
+  <div class="ctrl">
+    <div class="ansrow"><input id="prN" inputmode="numeric" autocomplete="off" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <svg class="nl" id="prNL" viewBox="0 0 340 80" role="img" aria-label="ישר המספרים של התרגיל" hidden></svg>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה ספירה בדילוגים?</h3>
+    <p>סופרים בקפיצות שוות במקום אחד אחד. בדילוגים של 2: <span class="eq">2, 4, 6, 8</span>. בדילוגים של 10: <span class="eq">10, 20, 30</span>. כל פעם מוסיפים את אותו מספר. <a href="#lab">קפצו במעבדה</a> ותראו את החוקיות בלוח המאה.</p>
+    <h3>איך ספירה בדילוגים עוזרת ללמוד את לוח הכפל?</h3>
+    <p>מספר הקפיצות כפול גודל הקפיצה הוא המקום שבו נוחתים. 6 קפיצות של 5 נוחתות ב-<span class="eq">30</span>, ולכן <span class="eq">6 × 5 = 30</span>. ילד שסופר בדילוגים מגיע לתשובה גם כשהוא עוד לא זוכר אותה בעל פה.</p>
+    <h3>איך מתרגלים ספירה בדילוגים בבית?</h3>
+    <p>סופרים זוגות נעליים בשתיים, מטבעות של 5 שקלים בחמש, ושטרות של עשרה בעשר. אפשר גם לקפוץ על מדרגות ולהגיד את המספרים בקול. ואחר כך לנסות אחורה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/numbers-to-100/">מספרים עד 100 וישר המספרים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/numbers-to-1000/"><small>→ הנושא הקודם</small>מספרים עד 1,000 וערך המקום</a><a class="next" href="../../math/add-sub-100/"><small>הנושא הבא ←</small>חיבור וחיסור עד 100</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {pick}=G;
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const E=v=>`<span class="eq">${v}</span>`;
+
+/* number line lo..hi with hop arcs between consecutive values of `path` */
+function nl(svg,lo,hi,path,opt={}){
+  const X=v=>16+(v-lo)*(308/(hi-lo)), Y=58;
+  let s=`<line class="axis" x1="8" y1="${Y}" x2="332" y2="${Y}"/>`;
+  const span=hi-lo, lab=span<=20?1:span<=50?5:10;
+  for(let i=lo;i<=hi;i++){
+    const big=i%lab===0;
+    if(span<=60||big) s+=`<line class="tk" x1="${X(i)}" y1="${Y-(big?5:3)}" x2="${X(i)}" y2="${Y+(big?5:3)}"/>`;
+    if(big && !path.includes(i)) s+=`<text x="${X(i)}" y="${Y+16}" text-anchor="middle">${i}</text>`;
+  }
+  for(let k=1;k<path.length;k++){
+    const a=X(path[k-1]), b=X(path[k]), h=Math.min(34,8+Math.abs(b-a)*.55), m=(a+b)/2;
+    s+=`<path class="hop${path[k]<path[k-1]?' back':''}" d="M${a} ${Y-4} Q${m} ${Y-4-h*1.6} ${b} ${Y-4}"/>`;
+    if(opt.lbl) s+=`<text class="hl" x="${m}" y="${Y-6-h*.85}" text-anchor="middle">${path[k]>path[k-1]?'+':'−'}${Math.abs(path[k]-path[k-1])}</text>`;
+  }
+  path.forEach((v,k)=>{
+    s+=`<circle class="${k===0?'start':'dot'}" cx="${X(v)}" cy="${Y}" r="4.5"/>`;
+    s+=`<text class="land" x="${X(v)}" y="${Y+17}" text-anchor="middle">${v}</text>`;
+  });
+  svg.innerHTML=s;
+}
+const range=path=>{ const mx=Math.max(...path), mn=Math.min(...path); const step=mx-mn<=20?2:mx-mn<=50?5:10; return [Math.floor(mn/step)*step, Math.max(Math.ceil(mx/step)*step, Math.floor(mn/step)*step+10)]; };
+
+/* lab */
+const N=$('sn'), S=$('ss');
+let step=5;
+$('labStep').innerHTML=[2,3,5,10].map(v=>`<button type="button" data-v="${v}" aria-pressed="${v===step}">${v}</button>`).join('');
+$('labStep').querySelectorAll('button').forEach(b=>b.onclick=()=>{ step=+b.dataset.v; lab(); });
+$('labGrid').innerHTML=Array.from({length:100},(_,i)=>`<span>${i+1}</span>`).join('');
+function lab(){
+  const n=+N.value, st=+S.value, path=Array.from({length:n+1},(_,k)=>st+k*step);
+  $('snv').textContent=n; $('ssv').textContent=st;
+  $('labStep').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.v===step));
+  const [lo,hi]=range(path); nl($('labNL'),lo,hi,path,{lbl:n<=6});
+  $('labSeq').innerHTML=path.slice(1).map(v=>`<span>${v}</span>`).join('<span style="color:var(--muted)">,</span>');
+  const cells=$('labGrid').children, land=new Set(path.slice(1));
+  for(let i=0;i<100;i++){ cells[i].className=land.has(i+1)?(i+1===path[n]?'last':'on'):''; }
+  const last=path[n], t=[];
+  t.push(`<div>מתחילים ב-${E(st)} וקופצים ${E(n)} פעמים, בכל פעם ${E(step)}. נוחתים ב-${E(last)}.</div>`);
+  if(st===0) t.push(`<div>${E(n)} קפיצות של ${E(step)} זה בדיוק <span class="eq">${n} × ${step} = ${last}</span>.</div>`);
+  else t.push(`<div>הקפיצות הוסיפו <span class="eq">${n} × ${step} = ${n*step}</span>, ועוד ההתחלה: <span class="eq">${st} + ${n*step} = ${last}</span>.</div>`);
+  if(step===10) t.push(`<div>בדילוגים של 10 רק ספרת העשרות משתנה. היחידות נשארות ${E(st%10)}. בלוח המאה זה טור אחד, מלמעלה למטה.</div>`);
+  else if(step===5 && st%5===0) t.push('<div>בדילוגים של 5 כל המספרים נגמרים ב-5 או ב-0. בלוח המאה אלה שני טורים.</div>');
+  else if(step===2) t.push(st%2===0?'<div>מתחילים במספר זוגי וקופצים ב-2, לכן כל המספרים זוגיים.</div>':'<div>מתחילים במספר אי-זוגי וקופצים ב-2, לכן כל המספרים אי-זוגיים.</div>');
+  else if(step===3) t.push('<div>בדילוגים של 3 נוצרים בלוח המאה קווים אלכסוניים. מצאו אותם.</div>');
+  if(last>100) t.push('<div>עברנו את 100, אז בלוח המאה לא רואים את כל הנחיתות.</div>');
+  $('labTxt').innerHTML=t.join('');
+}
+N.addEventListener('input',lab); S.addEventListener('input',lab);
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [s,n,st]=btn.dataset.p.split(','); step=+s; N.value=n; S.value=st; lab();
+}));
+lab();
+
+/* worked example: 6 bags of 5 */
+const EX=[
+  {n:0,t:'כל שקית היא קפיצה של <span class="eq">5</span>. מתחילים ב-<span class="eq">0</span>, עוד לא פתחנו שקית.'},
+  {n:1,t:'שקית ראשונה: <span class="eq">5</span> סוכריות.'},
+  {n:2,t:'שקית שנייה: קופצים עוד 5 ומגיעים ל-<span class="eq">10</span>.'},
+  {n:4,t:'ממשיכים: <span class="eq">15</span>, <span class="eq">20</span>. כבר 4 שקיות.'},
+  {n:6,t:'ועוד שתיים: <span class="eq">25</span>, <span class="eq">30</span>. סופרים: 6 קפיצות ✓'},
+  {n:6,t:'ב-6 שקיות יש <span class="eq">30</span> סוכריות. ובכפל: <span class="eq">6 × 5 = 30</span>.'}
+];
+let exI=0;
+function ex(){
+  const s=EX[exI]; nl($('exNL'),0,30,Array.from({length:s.n+1},(_,k)=>k*5),{lbl:true});
+  $('exText').innerHTML=s.t;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* practice: next number, missing number, number of hops */
+let pr={}, streak=0, solved=0;
+function newPr(){
+  const kind=pick(['next','next','miss','hops']);
+  const step=pick([2,5,10,3,2,5,10]);
+  let seq,gap,back=false,ans,st;
+  if(kind==='hops'){
+    const n=ri(2,9); ans=n;
+    pr={kind,step,n,total:n*step,ans};
+    $('prAsk').textContent=`כמה קפיצות של ${step} צריך כדי להגיע מ-0 ל-${n*step}?`;
+    $('prQ').innerHTML=`<span>0</span><span style="color:var(--muted)">…</span><span>${n*step}</span>`;
+  } else {
+    back=Math.random()<.3;
+    st=back?step*ri(6,10)+pick([0,0,step===10?ri(1,9):0]):pick([0,0,step,step===10?ri(1,9):step*ri(1,3)]);
+    seq=Array.from({length:5},(_,k)=>back?st-k*step:st+k*step);
+    gap=kind==='next'?4:ri(1,3);
+    ans=seq[gap];
+    pr={kind,step,seq,gap,back,ans};
+    $('prAsk').textContent=kind==='next'?'איזה מספר בא אחר כך?':'איזה מספר חסר?';
+    $('prQ').innerHTML=seq.map((v,k)=>k===gap?'<b>?</b>':`<span>${v}</span>`).join('<span style="color:var(--muted)">,</span>');
+  }
+  pr.tries=0; pr.hint=0;
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true; $('prNL').hidden=true;
+}
+function draw(){
+  $('prNL').hidden=false;
+  const path=pr.kind==='hops'?Array.from({length:pr.n+1},(_,k)=>k*pr.step):pr.seq;
+  const [lo,hi]=range(path); nl($('prNL'),lo,hi,path,{lbl:path.length<=7});
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), raw=$('prN').value.trim(), v=raw===''?NaN:Number(raw);
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; $('prN').focus(); return; }
+  if(v===pr.ans){ streak++; solved++; streakTxt(); draw(); fb.innerHTML=`<div class="fb ok">נכון! התשובה ${E(pr.ans)}.</div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  let msg='עוד לא. בדקו בכמה קופצים בכל פעם.';
+  if(pr.kind==='hops'){
+    if(v===pr.total) msg='זה המקום שאליו מגיעים. השאלה היא כמה קפיצות עושים בדרך.';
+    else if(v===pr.n+1) msg='ספרתם גם את ה-0. ההתחלה היא לא קפיצה.';
+  } else {
+    const prev=pr.seq[pr.gap-1]!==undefined?pr.seq[pr.gap-1]:pr.seq[pr.gap+1];
+    if(v===prev+1||v===prev-1) msg='זזתם רק ב-1. כמה קופצים בכל פעם בסדרה הזאת?';
+    else if(pr.back && v===pr.seq[pr.gap-1]+pr.step) msg='הסדרה יורדת! המספרים קטנים בכל קפיצה.';
+    else if(!pr.back && pr.gap>0 && v===pr.seq[pr.gap-1]-pr.step) msg='הסדרה עולה. המספרים גדלים בכל קפיצה.';
+  }
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.kind==='hops') h=pr.hint<2?`קפצו ב-${pr.step} מ-0 וספרו את הקפיצות עד ${pr.total}.`:`${pr.step}, ${pr.step*2}, ${pr.step*3}… כל מספר הוא קפיצה אחת. כמה מספרים אמרתם עד ${pr.total}?`;
+  else h=pr.hint<2?'מה ההפרש בין שני מספרים צמודים? זה גודל הקפיצה.'
+    :`הקפיצה היא ${E(pr.step)}, והסדרה ${pr.back?'יורדת':'עולה'}. ${pr.gap>0?`מ-${E(pr.seq[pr.gap-1])} ${pr.back?'מורידים':'מוסיפים'} ${E(pr.step)}.`:''}`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  let t;
+  if(pr.kind==='hops') t=`${Array.from({length:pr.n},(_,k)=>(k+1)*pr.step).join(', ')}: אלה ${E(pr.n)} קפיצות. וגם <span class="eq">${pr.n} × ${pr.step} = ${pr.total}</span>.`;
+  else t=`בכל קפיצה ${pr.back?'מורידים':'מוסיפים'} ${E(pr.step)}: <span class="eq">${pr.seq.join(', ')}</span>. המספר החסר הוא ${E(pr.ans)}.`;
+  draw();
+  $('prFb').innerHTML=`<div class="fb hint">${t} עכשיו נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>
