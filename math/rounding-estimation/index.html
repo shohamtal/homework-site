@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>עיגול מספרים ואומדן · כיתה ג · מירי</title>
+<meta name="description" content="מעגלים לעשרת או למאה הקרובה, ובודקים בעזרת אומדן אם התשובה הגיונית לפני שמחשבים. הסבר, מעבדה ותרגול עם רמזים לכיתה ג.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/rounding-estimation/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="עיגול מספרים ואומדן · כיתה ג · מירי">
+<meta property="og:description" content="מעגלים לעשרת או למאה הקרובה, ובודקים בעזרת אומדן אם התשובה הגיונית לפני שמחשבים. הסבר, מעבדה ותרגול עם רמזים לכיתה ג.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/rounding-estimation/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ג","item":"https://shohamtal.github.io/homework-site/math/grade-3/"},{"@type":"ListItem","position":4,"name":"מספרים","item":"https://shohamtal.github.io/homework-site/math/grade-3/#numbers-3"},{"@type":"ListItem","position":5,"name":"עיגול מספרים ואומדן","item":"https://shohamtal.github.io/homework-site/math/rounding-estimation/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מעגלים מספר לעשרת הקרובה?","acceptedAnswer":{"@type":"Answer","text":"מסתכלים על ספרת היחידות. אם היא 0 עד 4, מעגלים למטה ומחליפים אותה ב-0. אם היא 5 עד 9, מעגלים למעלה: העשרות גדלות ב-1. למשל 73 הופך ל-70, ו-76 הופך ל-80."}},{"@type":"Question","name":"מה זה אומדן ולמה צריך אותו?","acceptedAnswer":{"@type":"Answer","text":"אומדן הוא חישוב בערך, עם מספרים מעוגלים שקל לחשב בראש. משתמשים בו כדי לבדוק אם תשובה מדויקת הגיונית, או כדי לדעת בקניות אם הכסף יספיק. ראו דוגמה."}},{"@type":"Question","name":"איך מסבירים לילד עיגול בעזרת ישר המספרים?","acceptedAnswer":{"@type":"Answer","text":"מסמנים את המספר על ישר, ואת שתי העשרות שמסביבו. שואלים: לאיזו עשרת הוא יותר קרוב? זה העיגול. האמצע הוא המקום שבו הוא קרוב לשתיהן באותה מידה, ושם מעגלים למעלה. נסו במעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"עיגול מספרים ואומדן","description":"מעגלים לעשרת או למאה הקרובה, ובודקים בעזרת אומדן אם התשובה הגיונית לפני שמחשבים. הסבר, מעבדה ותרגול עם רמזים לכיתה ג.","url":"https://shohamtal.github.io/homework-site/math/rounding-estimation/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ג","about":"מספרים","teaches":"עיגול מספרים ואומדן","keywords":"עיגול, אומדן, עשרת קרובה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.06rem}
+.row button,.tries button,.choices button{min-height:46px; min-width:46px}
+svg.nl{width:100%; max-width:560px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.nl .axis{stroke:var(--ink); stroke-width:1.6}
+.nl .tick{stroke:var(--ink); stroke-width:1}
+.nl .mid{stroke:var(--line); stroke-width:1.6; stroke-dasharray:3 3}
+.nl text{font:700 11px var(--f-body); fill:var(--ink)}
+.nl text.small{font-weight:400; font-size:9px; fill:var(--muted)}
+.nl text.midl{fill:var(--line); font-size:9px}
+.nl .end{fill:var(--card); stroke:var(--ink); stroke-width:1.4}
+.nl .end.win{fill:var(--green)}
+.nl .pt{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+.nl .arrow{fill:none; stroke:var(--green); stroke-width:2.4}
+.modes{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.modes button[aria-pressed="true"],.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.nudge{display:flex; gap:8px; justify-content:center; direction:ltr}
+.nudge button{font:1.1rem var(--f-math); min-width:56px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center}
+.ansrow input{font:1.3rem var(--f-math); width:6em; padding:8px 10px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.labrow{display:flex; flex-direction:column; gap:14px}
+.dig{color:var(--line); text-decoration:underline; text-underline-offset:3px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="rounding-estimation">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-3/">כיתה ג</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-3/#numbers-3">מספרים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">עיגול מספרים ואומדן</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ג · מספרים</div>
+  <h1>עיגול מספרים ואומדן <span class="slogan">בערך, אבל חכם</span></h1>
+  <p class="lead">לפעמים לא צריך תשובה מדויקת. "בערך 400" מספיק כדי לדעת אם יש מספיק כסף או אם התשובה בתרגיל הגיונית. כאן לומדים לעגל לעשרת, למאה ולאלף הקרובים, ולבדוק תשובות בעזרת אומדן. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>למי הכי קרוב?</h3>
+      <p>המספר <span class="eq">38</span> נמצא בין <span class="eq">30</span> ל-<span class="eq">40</span>. הוא הרבה יותר קרוב ל-<span class="eq">40</span>.</p>
+      <p>לכן <span class="eq">38</span> מעוגל לעשרת הוא <span class="eq">40</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מסתכלים על השכן מימין</h3>
+      <p>מעגלים לעשרות? מסתכלים על ספרת <strong>היחידות</strong>.</p>
+      <p>מעגלים למאות? מסתכלים על ספרת <strong>העשרות</strong>.</p>
+      <p><span class="eq">0</span> עד <span class="eq">4</span>: למטה. <span class="eq">5</span> עד <span class="eq">9</span>: למעלה.</p>
+    </div>
+    <div class="mini">
+      <h3>אומדן: בדיקה מהירה</h3>
+      <p>לפני שמחשבים <span class="eq">398 + 205</span>, מעגלים: <span class="eq">400 + 200 = 600</span>.</p>
+      <p>אם יצא לנו <span class="eq">6,030</span>, ברור שטעינו!</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ומה עם 5 בדיוק?</strong> <span class="eq">45</span> נמצא בדיוק באמצע בין <span class="eq">40</span> ל-<span class="eq">50</span>. הכלל המוסכם: מעגלים <strong>למעלה</strong>, ל-<span class="eq">50</span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: לאן המספר קופץ?</h2></div>
+  <p class="text">בחרו למה לעגל, והזיזו את המספר. הנקודה הצהובה היא המספר, והקו הוורוד המקווקו הוא האמצע. הנקודה הולכת לקצה הקרוב אליה.</p>
+  <div class="labrow">
+    <div class="modes" id="labMode"><button type="button" data-m="1" aria-pressed="true">לעשרת הקרובה</button><button type="button" data-m="2">למאה הקרובה</button><button type="button" data-m="3">לאלף הקרוב</button></div>
+    <div class="big-eq" id="labEq" style="font-size:2rem"></div>
+    <svg class="nl" id="labNL" viewBox="0 0 340 92" role="img" aria-label="ישר המספרים בין שתי האפשרויות לעיגול"></svg>
+    <div class="lab">
+      <div class="ctrl">
+        <label class="slider" for="ln"><span>המספר</span><span class="eq" id="lnv"></span></label>
+        <input type="range" id="ln" min="0" max="9999" step="1" value="1238">
+        <div class="nudge"><button type="button" data-d="-10">−10</button><button type="button" data-d="-1">−1</button><button type="button" data-d="1">+1</button><button type="button" data-d="10">+10</button></div>
+      </div>
+      <div class="ctrl">
+        <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p="1,38" dir="ltr">38</button>
+            <button data-p="1,45" dir="ltr">45</button>
+            <button data-p="2,650" dir="ltr">650</button>
+            <button data-p="2,1249" dir="ltr">1,249</button>
+            <button data-p="2,2970" dir="ltr">2,970</button>
+            <button data-p="3,7500" dir="ltr">7,500</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>רק מוחקים ספרות</h3>
+      <p><span class="eq">68</span> לעשרת זה לא <span class="eq">60</span>. מחיקת היחידות תמיד מעגלת למטה. כאן <span class="eq">8</span> אומר: למעלה, ל-<span class="eq">70</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מסתכלים על הספרה הלא נכונה</h3>
+      <p>מעגלים <span class="eq">1,249</span> למאה? מסתכלים על ה-<span class="eq">4</span> של העשרות, לא על ה-<span class="eq">9</span>. התשובה <span class="eq">1,200</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>קפיצה מעל תשע</h3>
+      <p><span class="eq">2,970</span> למאה: ה-<span class="eq">9</span> מאות עולה ל-<span class="eq">10</span> מאות, שהן אלף. התשובה <span class="eq">3,000</span>, לא <span class="eq">2,1000</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: האם התשובה הגיונית?</h2></div>
+  <p class="text">בכיתה חישבו <span class="eq">612 + 289</span> וקיבלו <span class="eq">801</span>. בואו נבדוק באומדן.</p>
+  <div class="stepper">
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="big-eq" id="prQ" style="font-size:1.6rem"></div>
+  <div class="ctrl">
+    <div class="ansrow" id="prIn"><input id="prN" inputmode="numeric" autocomplete="off" aria-label="התשובה"></div>
+    <div class="choices" id="prCh" hidden><button type="button" data-v="yes">הגיונית</button><button type="button" data-v="no">לא הגיונית</button></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מעגלים מספר לעשרת הקרובה?</h3>
+    <p>מסתכלים על ספרת היחידות. אם היא <span class="eq">0</span> עד <span class="eq">4</span>, מעגלים למטה ומחליפים אותה ב-<span class="eq">0</span>. אם היא <span class="eq">5</span> עד <span class="eq">9</span>, מעגלים למעלה: העשרות גדלות ב-<span class="eq">1</span>. למשל <span class="eq">73</span> הופך ל-<span class="eq">70</span>, ו-<span class="eq">76</span> הופך ל-<span class="eq">80</span>.</p>
+    <h3>מה זה אומדן ולמה צריך אותו?</h3>
+    <p>אומדן הוא חישוב בערך, עם מספרים מעוגלים שקל לחשב בראש. משתמשים בו כדי לבדוק אם תשובה מדויקת הגיונית, או כדי לדעת בקניות אם הכסף יספיק. <a href="#example">ראו דוגמה</a>.</p>
+    <h3>איך מסבירים לילד עיגול בעזרת ישר המספרים?</h3>
+    <p>מסמנים את המספר על ישר, ואת שתי העשרות שמסביבו. שואלים: לאיזו עשרת הוא יותר קרוב? זה העיגול. האמצע הוא המקום שבו הוא קרוב לשתיהן באותה מידה, ושם מעגלים למעלה. <a href="#lab">נסו במעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/numbers-to-10000/">מספרים עד 10,000 וערך המקום</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/numbers-to-10000/"><small>→ הנושא הקודם</small>מספרים עד 10,000 וערך המקום</a><a class="next" href="../../math/add-sub-10000/"><small>הנושא הבא ←</small>חיבור וחיסור עד 10,000</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {pick}=G;
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const F=n=>Number(n).toLocaleString('en-US');
+const E=v=>`<span class="eq">${v}</span>`;
+const STEP={1:10,2:100,3:1000}, TO={1:'לעשרת',2:'למאה',3:'לאלף'}, PLACE={1:'עשרות',2:'מאות',3:'אלפים'}, LOOK={1:'היחידות',2:'העשרות',3:'המאות'};
+const round=(n,s)=>Math.floor(n/s+.5)*s;
+/* the number with the deciding digit underlined */
+function marked(n,m){
+  const s=F(n), digits=[...s].map((c,i)=>[c,i]).filter(([c])=>c!==','), pos=digits.length-m;
+  if(pos<0) return E(s);
+  const idx=digits[pos][1];
+  return `<span class="eq">${[...s].map((c,i)=>i===idx?`<span class="dig">${c}</span>`:c).join('')}</span>`;
+}
+function line(svg,n,m){
+  const st=STEP[m], lo=Math.floor(n/st)*st, hi=lo+st, r=round(n,st);
+  const X=v=>20+(v-lo)/st*300;
+  let s=`<line class="axis" x1="14" y1="50" x2="326" y2="50"/>`;
+  for(let i=0;i<=10;i++){ const x=20+i*30; s+=`<line class="tick" x1="${x}" y1="${i%5?45:42}" x2="${x}" y2="${i%5?55:58}"/>`; if(i&&i<10&&i!==5) s+=`<text class="small" x="${x}" y="70" text-anchor="middle">${F(lo+i*st/10)}</text>`; }
+  s+=`<line class="mid" x1="170" y1="30" x2="170" y2="62"/><text class="midl" x="170" y="26" text-anchor="middle">אמצע: ${F(lo+st/2)}</text>`;
+  const px=X(n), tx=r===lo?20:320;
+  if(n!==r) s+=`<path class="arrow" d="M${px},40 Q${(px+tx)/2},${18} ${tx},40"/>`;
+  s+=`<circle class="end${r===lo?' win':''}" cx="20" cy="50" r="7"/><circle class="end${r===hi?' win':''}" cx="320" cy="50" r="7"/>`;
+  s+=`<text x="20" y="86" text-anchor="middle">${F(lo)}</text><text x="320" y="86" text-anchor="middle">${F(hi)}</text>`;
+  s+=`<circle class="pt" cx="${px}" cy="50" r="6"/>`;
+  svg.innerHTML=s;
+}
+
+/* lab */
+const N=$('ln'); let mode=1;
+function lab(){
+  const n=+N.value, st=STEP[mode], r=round(n,st), lo=Math.floor(n/st)*st, rest=n-lo;
+  $('lnv').textContent=F(n);
+  $('labEq').innerHTML=`${marked(n,mode)} ${E('≈ '+F(r))}`;
+  line($('labNL'),n,mode);
+  const d=Math.floor(n/(st/10))%10, tx=[];
+  if(rest===0){ tx.push(`<div>${E(F(n))} כבר עגול ${TO[mode]}. אין מה לעגל!</div>`); }
+  else {
+    tx.push(`<div>${E(F(n))} נמצא בין ${E(F(lo))} ל-${E(F(lo+st))}.</div>`);
+    tx.push(`<div>מסתכלים על ספרת ${LOOK[mode]}: ${E(d)}. ${d>=5?(d===5&&rest===st/2?`זה בדיוק האמצע, ובאמצע מעגלים <strong>למעלה</strong>.`:`${E(d)} הוא 5 או יותר, אז מעגלים <strong>למעלה</strong>.`):`${E(d)} קטן מ-5, אז מעגלים <strong>למטה</strong>.`}</div>`);
+    tx.push(`<div>התשובה: ${E(F(n)+' ≈ '+F(r))}.</div>`);
+    if(r!==lo && Math.floor(r/(st*10))!==Math.floor(n/(st*10))) tx.push(`<div>שימו לב: ה${PLACE[mode]} עברו את ה-9, ולכן גם הספרה שמשמאל גדלה.</div>`);
+  }
+  $('labTxt').innerHTML=tx.join('');
+}
+function setMode(m){ mode=m; $('labMode').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.m===m)); }
+N.addEventListener('input',lab);
+$('labMode').querySelectorAll('button').forEach(b=>b.onclick=()=>{ setMode(+b.dataset.m); lab(); });
+document.querySelectorAll('.nudge button').forEach(b=>b.onclick=()=>{ N.value=Math.max(0,Math.min(9999,+N.value+ +b.dataset.d)); lab(); });
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [m,v]=btn.dataset.p.split(','); setMode(+m); N.value=v; lab(); }));
+lab();
+
+/* worked example: estimation check */
+const EX=[
+  'מעגלים את <span class="eq">612</span> למאה: מסתכלים על ה-<span class="eq">1</span> של העשרות. הוא קטן מ-5, אז <span class="eq">612 ≈ 600</span>.',
+  'מעגלים את <span class="eq">289</span> למאה: ה-<span class="eq">8</span> של העשרות הוא 5 או יותר, אז <span class="eq">289 ≈ 300</span>.',
+  'מחברים את המספרים העגולים בראש: <span class="eq">600 + 300 = 900</span>. התשובה צריכה להיות <strong>בערך 900</strong>.',
+  'קיבלו <span class="eq">801</span>. זה רחוק מ-900 במאה שלמה. כנראה שכחו לשאת עשרת לטור המאות!',
+  'מחשבים שוב בזהירות: <span class="eq">612 + 289 = 901</span>. עכשיו זה קרוב ל-900, והתשובה הגיונית ✓'
+];
+let exI=0;
+function ex(){ $('exText').innerHTML=EX[exI]; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* practice: round, estimate a sum, is it reasonable */
+let pr={}, streak=0, solved=0, sel=null;
+function newPr(){
+  const kind=pick(['round','round','round','est','sense']);
+  sel=null; $('prCh').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed','false'));
+  $('prIn').hidden=kind==='sense'; $('prCh').hidden=kind!=='sense';
+  if(kind==='round'){
+    const m=pick([1,1,2,2,3]), st=STEP[m];
+    let n;
+    do{ n=m===1?ri(11,989):m===2?ri(101,9899):ri(1001,9499);
+      if(Math.random()<.25) n=Math.floor(n/st)*st+st/2;           /* exactly the middle */
+      if(m>1 && Math.random()<.25) n=Math.floor(n/(st*10))*st*10+9*st+ri(st/2,st-1); /* crosses a 9 */
+    } while(n%st===0 || n>9999 || n===pr.n);
+    pr={kind,m,n,st,ans:round(n,st)};
+    $('prAsk').innerHTML=`עגלו ${TO[m]} ${m===3?'הקרוב':'הקרובה'}:`;
+    $('prQ').innerHTML=E(F(n));
+  } else if(kind==='est'){
+    const a=ri(110,890), b=ri(110,890);
+    pr={kind,a,b,ra:round(a,100),rb:round(b,100)}; pr.ans=pr.ra+pr.rb;
+    $('prAsk').textContent='עגלו כל מספר למאה הקרובה, וחברו בראש. כמה יוצא בערך?';
+    $('prQ').innerHTML=E(F(a)+' + '+F(b)+' ≈ ?');
+  } else {
+    const a=ri(120,880), b=ri(120,880), exact=a+b, wrong=pick([exact*10,exact+300,Math.max(60,exact-300),Math.abs(a-b)+ri(0,9)]);
+    const est0=round(a,100)+round(b,100), ok=Math.random()<.45 || Math.abs(wrong-est0)<200, shown=ok?exact:wrong;
+    pr={kind,a,b,shown,exact,ans:ok?'yes':'no',est:round(a,100)+round(b,100)};
+    $('prAsk').textContent='מישהו חישב ויצא לו התשובה הזאת. האם היא הגיונית? בדקו באומדן.';
+    $('prQ').innerHTML=E(F(a)+' + '+F(b)+' = '+F(shown));
+  }
+  pr.tries=0; pr.hint=0;
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=b.dataset.v; $('prCh').querySelectorAll('button').forEach(e=>e.setAttribute('aria-pressed',e===b)); });
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function miss(msg){ streak=0; pr.tries++; streakTxt(); $('prFb').innerHTML=`<div class="fb err">${msg}</div>`; if(pr.tries>=2) $('prShow').disabled=false; }
+function good(msg){ streak++; solved++; streakTxt(); $('prFb').innerHTML=`<div class="fb ok">נכון! ${msg}</div>`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(pr.kind==='sense'){
+    if(!sel){ fb.innerHTML='<div class="fb err">בחרו קודם: הגיונית או לא הגיונית.</div>'; return; }
+    if(sel===pr.ans) return good(`באומדן יוצא בערך ${E(F(pr.est))}, ${pr.ans==='yes'?'והתשובה קרובה לזה.':'והתשובה רחוקה מזה.'}`);
+    return miss(sel==='yes'?`עגלו את שני המספרים למאה וחברו. יוצא בערך ${E(F(pr.est))}? עכשיו השוו לתשובה.`:'התשובה דווקא קרובה מאוד לאומדן. עגלו שוב ובדקו.');
+  }
+  const raw=$('prN').value.replace(/[,\s]/g,''), v=raw===''?NaN:Number(raw);
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 1,300.</div>'; $('prN').focus(); return; }
+  if(v===pr.ans) return good(pr.kind==='round'?`${E(F(pr.n)+' ≈ '+F(pr.ans))}.`:`${E(F(pr.ra)+' + '+F(pr.rb)+' = '+F(pr.ans))}.`);
+  let msg='עוד לא. נסו שוב.';
+  if(pr.kind==='round'){
+    const {n,st,m}=pr, lo=Math.floor(n/st)*st;
+    if(v===pr.n) msg='כתבתם את המספר בלי לעגל. מספר עגול '+TO[m]+' נגמר ב'+(m===1?'0':m===2?'00':'000')+'.';
+    else if(v===lo && pr.ans===lo+st) msg=`רק מחקתם ספרות, וזה תמיד מעגל למטה. בדקו את ספרת ${LOOK[m]}: היא 5 או יותר?`;
+    else if(v===lo+st && pr.ans===lo) msg=`עיגלתם למעלה, אבל ספרת ${LOOK[m]} קטנה מ-5. אז מעגלים למטה.`;
+    else if([10,100,1000].some(s=>s!==st && v===round(n,s))) msg=`עיגלתם למקום אחר. כאן מעגלים ${TO[m]}: המספר צריך להיגמר ב${m===1?'0':m===2?'00':'000'}.`;
+    else if(v%st!==0) msg='התשובה צריכה להיות מספר עגול. החליפו את הספרות שמימין לאפסים.';
+  } else {
+    if(v===pr.a+pr.b) msg='זה החישוב המדויק. באומדן מעגלים קודם כל מספר למאה, ואז מחברים.';
+    else if(v%100!==0) msg='באומדן מחברים מספרים עגולים, ולכן גם התשובה עגולה.';
+  }
+  miss(msg);
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.kind==='round'){ const {n,st,m}=pr, lo=Math.floor(n/st)*st;
+    h=pr.hint<2?`בין אילו שני מספרים עגולים נמצא ${E(F(n))}?`:`${E(F(n))} נמצא בין ${E(F(lo))} ל-${E(F(lo+st))}. מסתכלים על ספרת ${LOOK[m]}: ${marked(n,m)}.`; }
+  else if(pr.kind==='est') h=pr.hint<2?'עגלו כל מספר לבד: מסתכלים על ספרת העשרות שלו.':`${E(F(pr.a)+' ≈ '+F(pr.ra))} ו-${E(F(pr.b)+' ≈ '+F(pr.rb))}. עכשיו חברו בראש.`;
+  else h=pr.hint<2?'עגלו את שני המספרים למאה הקרובה וחברו בראש.':`האומדן הוא ${E(F(pr.est))}. האם ${E(F(pr.shown))} קרוב לזה?`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  let t;
+  if(pr.kind==='round') t=`${marked(pr.n,pr.m)}: ספרת ${LOOK[pr.m]} היא ${E(Math.floor(pr.n/(pr.st/10))%10)}, ולכן ${E(F(pr.n)+' ≈ '+F(pr.ans))}.`;
+  else if(pr.kind==='est') t=`${E(F(pr.ra)+' + '+F(pr.rb)+' = '+F(pr.ans))}. התשובה המדויקת היא ${E(F(pr.a+pr.b))}, באמת קרוב.`;
+  else t=`אומדן: ${E(F(round(pr.a,100))+' + '+F(round(pr.b,100))+' = '+F(pr.est))}. ${pr.ans==='yes'?'התשובה קרובה, היא הגיונית.':`התשובה רחוקה, היא לא הגיונית. המדויקת היא ${E(F(pr.exact))}.`}`;
+  $('prFb').innerHTML=`<div class="fb hint">${t} עכשיו נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>
