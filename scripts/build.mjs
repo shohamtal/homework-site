@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
@@ -91,6 +92,8 @@ function jsonLd(pg, m) {
   return out.map(o => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n');
 }
 
+/* self-hosted GoatCounter script (copy of genjutsu-studio/docs/goatcounter.js), cache-busted by content hash */
+const GC_V = createHash('sha1').update(read('assets/goatcounter.js')).digest('hex').slice(0, 8);
 function head(pg, root) {
   const m = meta(pg), url = BASE + pg.p, img = BASE + 'assets/og.jpg';
   return [
@@ -116,6 +119,7 @@ function head(pg, root) {
     `<link rel="preconnect" href="https://fonts.googleapis.com">`,
     `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
     `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?${pg.kind === 'topic' ? FONT_LESSON : FONT_INDEX}">`,
+    `<script data-goatcounter="${cfg.goatcounter}" async src="${root}assets/goatcounter.js?v=${GC_V}"></script>`,
     jsonLd(pg, m)
   ].join('\n');
 }
