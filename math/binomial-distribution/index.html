@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>התפלגות בינומית (ברנולי) · כיתה יא · מירי</title>
+<meta name="description" content="חוזרים על אותו ניסוי n פעמים: מה הסיכוי לבדיוק k הצלחות? נוסחת ברנולי עם היסטוגרמה חיה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/binomial-distribution/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="התפלגות בינומית (ברנולי) · כיתה יא · מירי">
+<meta property="og:description" content="חוזרים על אותו ניסוי n פעמים: מה הסיכוי לבדיוק k הצלחות? נוסחת ברנולי עם היסטוגרמה חיה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/binomial-distribution/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"הסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#probability-11"},{"@type":"ListItem","position":5,"name":"התפלגות בינומית (ברנולי)","item":"https://shohamtal.github.io/homework-site/math/binomial-distribution/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה התפלגות בינומית?","acceptedAnswer":{"@type":"Answer","text":"זו ההתפלגות של מספר ההצלחות כשחוזרים n פעמים על אותו ניסוי, עם שתי תוצאות בלבד וסיכוי קבוע p להצלחה, והפעמים לא תלויות זו בזו. למשל מספר העצים ב-10 הטלות מטבע. ראו את ההיסטוגרמה במעבדה."}},{"@type":"Question","name":"מה זו נוסחת ברנולי?","acceptedAnswer":{"@type":"Answer","text":"הנוסחה לסיכוי לבדיוק k הצלחות מתוך n: P(X = k) = (nk) · pk · qn−k. המקדם סופר את המסלולים, והחזקות נותנות את הסיכוי של מסלול אחד."}},{"@type":"Question","name":"איך מחשבים \"לפחות\" בהתפלגות בינומית?","acceptedAnswer":{"@type":"Answer","text":"מחברים את כל העמודות המתאימות. \"לפחות 4 מתוך 5\" הוא P(4) + P(5). כשיש הרבה עמודות לחבר, קל יותר לחשב את ההפך ולהוריד מ-1, למשל \"לפחות פעם אחת\" הוא 1 − qn. ראו בדוגמה הפתורה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"התפלגות בינומית (ברנולי)","description":"חוזרים על אותו ניסוי n פעמים: מה הסיכוי לבדיוק k הצלחות? נוסחת ברנולי עם היסטוגרמה חיה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/binomial-distribution/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"הסתברות","teaches":"התפלגות בינומית (ברנולי)","keywords":"ברנולי, n ניסויים, k הצלחות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc .eq{white-space:normal}
+.binom{display:inline-flex; align-items:center; vertical-align:middle}
+.binom .bp{font-size:1.9em; line-height:1; font-weight:300}
+.binom .st{display:inline-flex; flex-direction:column; align-items:center; line-height:1.05; font-size:.78em; padding:0 1px}
+svg.hist{width:100%; max-width:380px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.hist .b{fill:var(--soft); stroke:var(--ink); stroke-width:1}
+.hist .b.on{fill:var(--line)}
+.hist .v{fill:var(--ink); font:700 9px var(--f-math); text-anchor:middle}
+.hist .t{fill:var(--muted); font:10px var(--f-math); text-anchor:middle}
+.hist .ax{stroke:var(--ink); stroke-width:1.2}
+.hist .mean{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:4 3}
+.hist .ml{fill:var(--blue); font:700 9px var(--f-math); text-anchor:middle}
+.hist .cap{fill:var(--muted); font:10px var(--f-body); text-anchor:middle}
+.big-p{font-family:var(--f-math); font-size:1.3rem; text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:4px 8px; direction:ltr}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="binomial-distribution">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#probability-11">הסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">התפלגות בינומית (ברנולי)</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · הסתברות</div>
+  <h1>התפלגות בינומית <span class="slogan">נוסחת ברנולי</span></h1>
+  <p class="lead">מנחשים תשובות במבחן אמריקאי של 5 שאלות. מה הסיכוי לנחש נכון בדיוק 3? במקום לצייר עץ ענק, יש נוסחה אחת שסופרת את כל המסלולים. בעמוד הזה, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>אותו ניסוי, שוב ושוב</h2></div>
+  <p class="text">ב<a href="../multi-stage-probability/">עץ רב-שלבי</a> חישבנו "לפחות פעם אחת" ו"בדיוק פעם אחת". עכשיו נשאל על <strong>בדיוק k הצלחות</strong>, לכל k.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>מתי זה בינומי?</h3>
+      <p>חוזרים על אותו ניסוי <span class="eq"><i>n</i></span> פעמים. בכל פעם יש רק שתי תוצאות: הצלחה או כישלון.</p>
+      <p>הסיכוי להצלחה <span class="eq"><i>p</i></span> זהה בכל פעם, והפעמים לא משפיעות זו על זו.</p>
+    </div>
+    <div class="mini">
+      <h3>מסלול אחד</h3>
+      <p>מסלול עם <span class="eq"><i>k</i></span> הצלחות ו-<span class="eq"><i>n</i> − <i>k</i></span> כישלונות.</p>
+      <p>הסיכוי שלו: <span class="eq"><i>p</i><sup><i>k</i></sup> · <i>q</i><sup><i>n</i>−<i>k</i></sup></span>, כאשר <span class="eq"><i>q</i> = 1 − <i>p</i></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>כמה מסלולים?</h3>
+      <p>בכמה דרכים בוחרים באילו <span class="eq"><i>k</i></span> פעמים הייתה הצלחה? זה המקדם הבינומי:</p>
+      <p><span class="eq"><span class="binom"><span class="bp">(</span><span class="st"><span><i>n</i></span><span><i>k</i></span></span><span class="bp">)</span></span> = <span class="frac"><span><i>n</i>!</span><span><i>k</i>! (<i>n</i> − <i>k</i>)!</span></span></span></p>
+    </div>
+  </div>
+  <div class="callout"><strong>נוסחת ברנולי:</strong> <span class="eq"><i>P</i>(<i>X</i> = <i>k</i>) =</span> <span class="eq"><span class="binom"><span class="bp">(</span><span class="st"><span><i>n</i></span><span><i>k</i></span></span><span class="bp">)</span></span> · <i>p</i><sup><i>k</i></sup> · <i>q</i><sup><i>n</i>−<i>k</i></sup></span>. מספר המסלולים, כפול הסיכוי של מסלול אחד.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: ההיסטוגרמה של ההצלחות</h2></div>
+  <p class="text">בחרו כמה פעמים חוזרים על הניסוי ומה הסיכוי להצלחה. כל עמודה היא הסיכוי למספר הצלחות אחר. בחרו <span class="eq"><i>k</i></span>, ונסו גם "לפחות" ו"לכל היותר".</p>
+  <div class="lab">
+    <div>
+      <svg class="hist" id="labH" viewBox="0 0 380 180" role="img" aria-label="היסטוגרמה של הסיכוי לכל מספר הצלחות"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="big-p" id="labP"></div>
+      <div><label class="slider" for="n"><span>מספר הפעמים <span class="eq"><i>n</i></span></span><span class="eq" id="nv"></span></label>
+        <input type="range" id="n" min="1" max="10" step="1" value="5"></div>
+      <div><label class="slider" for="p"><span>הסיכוי להצלחה <span class="eq"><i>p</i></span></span><span class="eq" id="pv"></span></label>
+        <input type="range" id="p" min="0.05" max="0.95" step="0.05" value="0.25"></div>
+      <div><label class="slider" for="k"><span>מספר ההצלחות <span class="eq"><i>k</i></span></span><span class="eq" id="kv"></span></label>
+        <input type="range" id="k" class="blue" min="0" max="5" step="1" value="3"></div>
+      <div class="row" role="group" aria-label="סוג השאלה">
+        <button data-m="eq" class="primary" aria-pressed="true">בדיוק</button>
+        <button data-m="ge" aria-pressed="false">לפחות</button>
+        <button data-m="le" aria-pressed="false">לכל היותר</button>
+      </div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-n="5" data-p="0.25" data-k="3" data-m="eq">ניחוש, 5 שאלות</button>
+          <button dir="ltr" data-n="10" data-p="0.5" data-k="5" data-m="eq">מטבע 10 פעמים, 5 עצים</button>
+          <button dir="ltr" data-n="6" data-p="0.8" data-k="5" data-m="ge">קליעה 0.8, לפחות 5</button>
+          <button dir="ltr" data-n="8" data-p="0.1" data-k="1" data-m="le">פגום 0.1, לכל היותר 1</button>
+          <button dir="ltr" data-n="10" data-p="0.9" data-k="10" data-m="eq">p = 0.9, הכול מצליח</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: העמודה הגבוהה נמצאת ליד <span class="eq"><i>n</i> · <i>p</i></span>, הקו הכחול המקווקו. זה מספר ההצלחות הממוצע. כש-<span class="eq"><i>p</i> = 0.5</span> ההיסטוגרמה סימטרית, וכש-<span class="eq"><i>p</i></span> קטן היא נוטה לצד של מעט הצלחות.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את המקדם</h3>
+      <p><span class="eq"><i>p</i><sup><i>k</i></sup> · <i>q</i><sup><i>n</i>−<i>k</i></sup></span> הוא הסיכוי של <strong>מסלול אחד</strong> בלבד.</p>
+      <p>שתי הצלחות מתוך 4 יכולות לקרות ב-6 סדרים שונים, ולכן כופלים ב-<span class="eq"><span class="binom"><span class="bp">(</span><span class="st"><span>4</span><span>2</span></span><span class="bp">)</span></span> = 6</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>"בדיוק" או "לפחות"</h3>
+      <p>"לפחות 4 מתוך 5" זה גם 4 וגם 5. מחשבים שתי עמודות ומחברים.</p>
+      <p>"לפחות פעם אחת" עדיף מהסוף: <span class="eq">1 − <i>q</i><sup><i>n</i></sup></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>לא כל ניסוי חוזר הוא בינומי</h3>
+      <p>שולפים 3 כדורים מקופסה <strong>בלי להחזיר</strong>? הסיכוי משתנה אחרי כל שליפה, אז זה לא בינומי.</p>
+      <p>שם חוזרים לעץ ול<a href="../conditional-probability/">הסתברות מותנית</a>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> אם תחברו את כל העמודות, מ-<span class="eq"><i>k</i> = 0</span> ועד <span class="eq"><i>k</i> = <i>n</i></span>, תקבלו בדיוק 1. ובדקו שלא החלפתם בין <span class="eq"><i>p</i></span> ל-<span class="eq"><i>q</i></span>: החזקה של <span class="eq"><i>p</i></span> היא מספר ההצלחות.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">במבחן אמריקאי יש 5 שאלות, ולכל שאלה 4 תשובות שרק אחת מהן נכונה. מנחשים בכל השאלות. מה הסיכוי לנחש נכון בדיוק 3 שאלות? ומה הסיכוי לנחש נכון לפחות 4?</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">כתבו את התשובה כשבר, למשל <span class="eq">45/512</span>, או כמספר עשרוני עם שלוש ספרות אחרי הנקודה, למשל <span class="eq">0.088</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="exact" aria-pressed="false">בדיוק</button>
+    <button data-t="atleast" aria-pressed="false">לפחות</button>
+    <button data-t="atmost" aria-pressed="false">לכל היותר</button>
+  </div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span><i>P</i> =</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה התפלגות בינומית?</h3>
+    <p>זו ההתפלגות של מספר ההצלחות כשחוזרים <span class="eq"><i>n</i></span> פעמים על אותו ניסוי, עם שתי תוצאות בלבד וסיכוי קבוע <span class="eq"><i>p</i></span> להצלחה, והפעמים לא תלויות זו בזו. למשל מספר העצים ב-10 הטלות מטבע. <a href="#lab">ראו את ההיסטוגרמה במעבדה</a>.</p>
+    <h3>מה זו נוסחת ברנולי?</h3>
+    <p>הנוסחה לסיכוי לבדיוק <span class="eq"><i>k</i></span> הצלחות מתוך <span class="eq"><i>n</i></span>: <span class="eq"><i>P</i>(<i>X</i> = <i>k</i>) =</span> <span class="eq"><span class="binom"><span class="bp">(</span><span class="st"><span><i>n</i></span><span><i>k</i></span></span><span class="bp">)</span></span> · <i>p</i><sup><i>k</i></sup> · <i>q</i><sup><i>n</i>−<i>k</i></sup></span>. המקדם סופר את המסלולים, והחזקות נותנות את הסיכוי של מסלול אחד.</p>
+    <h3>איך מחשבים "לפחות" בהתפלגות בינומית?</h3>
+    <p>מחברים את כל העמודות המתאימות. "לפחות 4 מתוך 5" הוא <span class="eq"><i>P</i>(4) + <i>P</i>(5)</span>. כשיש הרבה עמודות לחבר, קל יותר לחשב את ההפך ולהוריד מ-1, למשל "לפחות פעם אחת" הוא <span class="eq">1 − <i>q</i><sup><i>n</i></sup></span>. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/multi-stage-probability/">הסתברות: עץ רב-שלבי ו"לפחות פעם אחת"</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/conditional-probability/"><small>→ הנושא הקודם</small>הסתברות מותנית</a><a class="next" href="../../math/normal-distribution/"><small>הנושא הבא ←</small>התפלגות נורמלית</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const C=(n,k)=>{ if(k<0||k>n) return 0; let r=1; for(let i=1;i<=k;i++) r=r*(n-k+i)/i; return Math.round(r); };
+const bin=(n,k)=>`<span class="binom"><span class="bp">(</span><span class="st"><span>${n}</span><span>${k}</span></span><span class="bp">)</span></span>`;
+const r4=v=>String(Math.round(v*10000)/10000);
+const r2=v=>String(Math.round(v*100)/100);
+const pmf=(n,p,k)=>C(n,k)*Math.pow(p,k)*Math.pow(1-p,n-k);
+const sum=(n,p,ks)=>ks.reduce((s,k)=>s+pmf(n,p,k),0);
+const range=(a,b)=>{const r=[]; for(let i=a;i<=b;i++) r.push(i); return r;};
+/* base^e as html; base is already formatted. Exponent 0 is left out, 1 has no superscript */
+const pw=(b,e,paren)=>e===0?'':e===1?b:`${paren?`(${b})`:b}<sup>${e}</sup>`;
+/* one Bernoulli term: C · p^k · q^(n−k), skipping factors that are 1 */
+function term(n,k,pS,qS,paren){
+  const parts=[];
+  if(C(n,k)!==1) parts.push(bin(n,k));
+  const a=pw(pS,k,paren), b=pw(qS,n-k,paren);
+  if(a) parts.push(a); if(b) parts.push(b);
+  return parts.length?parts.join(' · '):'1';
+}
+
+/* ---------- lab ---------- */
+let lm='eq';
+function ks(m,n,k){ return m==='eq'?[k]:m==='ge'?range(k,n):range(0,k); }
+function hist(svg,n,p,set){
+  const W=340, x0=22, base=150, slot=W/(n+1), bw=Math.min(28,slot*.7);
+  let mx=0; for(let i=0;i<=n;i++) mx=Math.max(mx,pmf(n,p,i));
+  let h=`<line class="ax" x1="${x0-4}" y1="${base}" x2="${x0+W+4}" y2="${base}"/>`;
+  for(let i=0;i<=n;i++){
+    const v=pmf(n,p,i), bh=v/mx*118, cx=x0+slot*(i+.5), on=set.includes(i);
+    h+=`<rect class="b${on?' on':''}" x="${cx-bw/2}" y="${base-bh}" width="${bw}" height="${Math.max(bh,0.5)}"/>`;
+    if(n<=6||on) h+=`<text class="v" x="${cx}" y="${base-bh-4}">${r2(v)}</text>`;
+    h+=`<text class="t" x="${cx}" y="${base+13}">${i}</text>`;
+  }
+  const mean=n*p, mxp=x0+slot*(mean+.5);
+  h+=`<line class="mean" x1="${mxp}" y1="${base}" x2="${mxp}" y2="14"/><text class="ml" x="${mxp}" y="10">n·p = ${r2(mean)}</text>`;
+  h+=`<text class="cap" x="${x0+W/2}" y="${base+28}" direction="rtl">מספר ההצלחות k</text>`;
+  svg.innerHTML=h;
+}
+function lab(){
+  const n=+$('n').value, p=Math.round(+$('p').value*100)/100, q=Math.round((1-p)*100)/100;
+  const kEl=$('k'); kEl.max=n; if(+kEl.value>n) kEl.value=n;
+  const k=+kEl.value;
+  $('nv').textContent=n; $('pv').textContent=p; $('kv').textContent=k;
+  const set=ks(lm,n,k), tot=sum(n,p,set);
+  hist($('labH'),n,p,set);
+  const sym=lm==='eq'?'=':lm==='ge'?'≥':'≤';
+  const pS=String(p), qS=String(q);
+  $('labP').innerHTML=lm==='eq'
+    ?`${E(`<i>P</i>(<i>X</i> = ${k}) =`)} ${E(term(n,k,pS,qS))} ${E(`≈ ${r4(tot)}`)}`
+    :`${E(`<i>P</i>(<i>X</i> ${sym} ${k}) ≈ ${r4(tot)}`)}`;
+  let t=`<div><strong>הצלחה:</strong> ${E(`<i>p</i> = ${pS}`)}, <strong>כישלון:</strong> ${E(`<i>q</i> = 1 − ${pS} = ${qS}`)}.</div>`;
+  if(lm==='eq'){
+    t+=`<div><strong>מסלולים עם ${k} הצלחות:</strong> ${E(`${bin(n,k)} = ${C(n,k)}`)}.</div>`;
+    t+=`<div><strong>מסלול אחד:</strong> ${E(`${pw(pS,k)||'1'}${k&&n-k?' · ':''}${pw(qS,n-k)} ≈ ${r4(Math.pow(p,k)*Math.pow(q,n-k))}`)}.</div>`;
+    t+=`<div><strong>ביחד:</strong> ${E(`${C(n,k)} · ${r4(Math.pow(p,k)*Math.pow(q,n-k))} ≈ ${r4(tot)}`)}.</div>`;
+  }else{
+    const words=lm==='ge'?`לפחות ${k}`:`לכל היותר ${k}`;
+    t+=`<div><strong>${words}:</strong> העמודות הוורודות, ${set.length===1?'עמודה אחת':set.length+' עמודות'}. מחשבים כל אחת בנוסחת ברנולי ומחברים.</div>`;
+    if(set.length<=3) t+=`<div>${E(set.map(i=>`<i>P</i>(${i})`).join(' + '))} ${E(`≈ ${set.map(i=>r4(pmf(n,p,i))).join(' + ')}`)}</div>`;
+    const rest=lm==='ge'?range(0,k-1):range(k+1,n);
+    if(rest.length&&rest.length<set.length) t+=`<div><strong>דרך קצרה:</strong> יש פחות עמודות בהפך. ${E(`1 − ${r4(1-tot)} = ${r4(tot)}`)}.</div>`;
+  }
+  t+=`<div>בממוצע מצליחים ${E(`<i>n</i> · <i>p</i> = ${r2(n*p)}`)} פעמים.</div>`;
+  $('labCalc').innerHTML=t;
+}
+['n','p','k'].forEach(id=>$(id).addEventListener('input',lab));
+function setMode(m){
+  lm=m;
+  document.querySelectorAll('#lab [data-m]').forEach(b=>{ if(b.closest('.tries')) return; const on=b.dataset.m===m; b.classList.toggle('primary',on); b.setAttribute('aria-pressed',on); });
+}
+document.querySelectorAll('#lab .row [data-m]').forEach(b=>b.onclick=()=>{ setMode(b.dataset.m); lab(); });
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  $('n').value=b.dataset.n; $('p').value=b.dataset.p; $('k').max=b.dataset.n; $('k').value=b.dataset.k; setMode(b.dataset.m); lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const F=(a,b)=>`<span class="frac"><span>${a}</span><span>${b}</span></span>`;
+const EXS=[
+  `<strong>זה בינומי?</strong> 5 שאלות, בכל אחת הצלחה (ניחוש נכון) או כישלון, הסיכוי זהה בכל שאלה והן לא תלויות זו בזו. כן. ${E('<i>n</i> = 5')}, ${E(`<i>p</i> = ${F(1,4)}`)}, ${E(`<i>q</i> = ${F(3,4)}`)}.`,
+  `<strong>מסלול אחד עם 3 הצלחות:</strong> למשל נכון, נכון, נכון, לא, לא. ${E(`(${F(1,4)})<sup>3</sup> · (${F(3,4)})<sup>2</sup> = ${F(1,64)} · ${F(9,16)} = ${F(9,1024)}`)}.`,
+  `<strong>כמה מסלולים כאלה?</strong> בוחרים 3 שאלות מתוך 5 שבהן ניחשנו נכון: ${E(`${bin(5,3)} = ${F('5!','3! · 2!')} = 10`)}.`,
+  `<strong>בדיוק 3:</strong> ${E(`10 · ${F(9,1024)} = ${F(90,1024)} = ${F(45,512)}`)}, בערך ${E('0.088')}. פחות מ-9%.`,
+  `<strong>לפחות 4:</strong> זה 4 או 5. שתי עמודות. ${E(`<i>P</i>(4) = ${bin(5,4)} · (${F(1,4)})<sup>4</sup> · ${F(3,4)} = 5 · ${F(3,1024)} = ${F(15,1024)}`)}.`,
+  `${E(`<i>P</i>(5) = (${F(1,4)})<sup>5</sup> = ${F(1,1024)}`)}. מחברים: ${E(`${F(15,1024)} + ${F(1,1024)} = ${F(16,1024)} = ${F(1,64)}`)}, בערך ${E('0.016')}.`,
+  `<strong>מה למדנו?</strong> לנחש 4 מתוך 5 קורה בערך פעם ב-64 מבחנים. בממוצע מנחשים נכון ${E(`5 · ${F(1,4)} = 1.25`)} שאלות. עדיף ללמוד.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+/* p is a fraction [a,b]; ps/qs are how p and q are written */
+const SC=[
+  {intro:n=>`מטילים מטבע ${n} פעמים.`, ev:'ייצא עץ', p:[1,2]},
+  {intro:n=>`מטילים קובייה רגילה ${n} פעמים.`, ev:'ייצא 6', p:[1,6]},
+  {intro:n=>`בכל זריקה לסל יש סיכוי של 0.8 לקליעה. זורקים ${n} פעמים.`, ev:'תהיה קליעה', p:[8,10]},
+  {intro:n=>`בכל בוקר יש סיכוי של 0.9 שהאוטובוס יגיע בזמן. בודקים ${n} בקרים.`, ev:'האוטובוס יגיע בזמן', p:[9,10]},
+  {intro:n=>`במבחן אמריקאי יש ${n} שאלות, ולכל אחת 4 תשובות שרק אחת מהן נכונה. מנחשים בכולן.`, ev:'הניחוש יצליח', p:[1,4]},
+  {intro:n=>`במפעל, 10% מהנורות פגומות. בוחרים ${n} נורות באקראי מתוך מלאי גדול.`, ev:'תצא נורה פגומה', p:[1,10]}
+];
+const fS=f=>f[1]===10?String(f[0]/10):F(f[0],f[1]);
+const cnt=(t,k)=>t==='exact'?(k===1?'בדיוק פעם אחת':`בדיוק ${k} פעמים`):t==='atleast'?(k===1?'לפחות פעם אחת':`לפחות ${k} פעמים`):'לכל היותר פעם אחת';
+let mode='mix', pr=null, solved=0, streak=0;
+function setOf(t,n,k){ return t==='exact'?[k]:t==='atleast'?range(k,n):[0,1]; }
+function newPr(){
+  const type=mode==='mix'?pick(['exact','exact','atleast','atmost']):mode;
+  /* skip questions whose answer rounds to almost 0 or 1: a rounded decimal can't be checked there */
+  let sc,n,k,p,set,ans,guard=0;
+  do{
+    sc=pick(SC); n=rnd(3,6);
+    k=type==='exact'?rnd(1,n-1):type==='atleast'?pick([1,n-1]):1;
+    p=sc.p[0]/sc.p[1]; set=setOf(type,n,k); ans=sum(n,p,set);
+  }while((ans<0.01||ans>0.99)&&++guard<50);
+  pr={type,sc,n,k,p,set,ans,tries:0,hint:0};
+  $('prQ').innerHTML=`${sc.intro(n)} מה הסיכוי ש${sc.ev} ${cnt(type,k)}?`;
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const qFr=f=>[f[1]-f[0],f[1]];
+function solution(){
+  const {type,sc,n,k,p,set}=pr, pS=fS(sc.p), qS=fS(qFr(sc.p)), paren=sc.p[1]!==10;
+  let s=`${E(`<i>n</i> = ${n}`)}, ${E(`<i>p</i> = ${pS}`)}, ${E(`<i>q</i> = ${qS}`)}. `;
+  if(type==='atleast'&&k===1) return s+`ההפך הוא "אף פעם": ${E(`${pw(qS,n,paren)} ≈ ${r4(Math.pow(1-p,n))}`)}. לכן ${E(`<i>P</i> = 1 − ${r4(Math.pow(1-p,n))} ≈ ${r4(pr.ans)}`)}.`;
+  s+=set.map(i=>`${E(`<i>P</i>(${i}) =`)} ${E(term(n,i,pS,qS,paren))} ${E(`≈ ${r4(pmf(n,p,i))}`)}`).join('. ')+'.';
+  if(set.length>1) s+=` מחברים: ${E(`<i>P</i> ≈ ${r4(pr.ans)}`)}.`;
+  return s;
+}
+const close=(x,v)=>Math.abs(x-v)<=Math.max(1e-6,Math.min(0.0051,v*0.05));
+function diagnose(x){
+  const {type,n,k,p,set}=pr, q=1-p, c=v=>close(x,v);
+  if(x>1) return 'הסתברות לא יכולה להיות יותר מ-1. בדקו שכפלתם ולא חיברתם בתוך מסלול.';
+  if(x<0) return 'הסתברות לא יכולה להיות שלילית.';
+  const noC=set.reduce((s,i)=>s+Math.pow(p,i)*Math.pow(q,n-i),0);
+  const swap=set.reduce((s,i)=>s+C(n,i)*Math.pow(q,i)*Math.pow(p,n-i),0);
+  if(Math.abs(p-q)>1e-9&&c(swap)) return 'החלפתם בין p ל-q. החזקה של p היא מספר ה<strong>הצלחות</strong>, והחזקה של q היא מספר הכישלונות.';
+  if(set.some(i=>C(n,i)>1)&&c(noC)) return `זה הסיכוי של מסלול אחד בלבד. ההצלחות יכולות לקרות בסדרים שונים, אז כופלים במקדם הבינומי, למשל ${E(`${bin(n,set[0])} = ${C(n,set[0])}`)}.`;
+  if(type==='exact'){
+    if(c(C(n,k)*Math.pow(p,k))) return `שכחתם את הכישלונות: גם ${n-k===1?'הפעם האחרת צריכה':`${n-k} הפעמים האחרות צריכות`} להיכשל. כפלו גם ב-${E(`<i>q</i><sup>${n-k}</sup>`)}.`;
+    if(c(sum(n,p,range(k,n)))) return `זה "לפחות ${k}". השאלה היא על בדיוק ${k}, עמודה אחת בלבד.`;
+    if(c(n*p)) return 'זה מספר ההצלחות הממוצע, n·p, ולא הסתברות. השתמשו בנוסחת ברנולי.';
+  }
+  if(type==='atleast'){
+    if(c(pmf(n,p,k))) return `זה בדיוק ${k}. "לפחות" כולל גם את כל מה שמעליו, עד ${n}. חברו את העמודות.`;
+    if(k===1&&c(Math.pow(q,n))) return 'זה "אף פעם". עכשיו הורידו אותו מ-1.';
+    if(k===1&&c(n*p)) return 'חיברתם את הסיכוי של כל פעם, וכך ספרתם מקרים פעמיים. חשבו את ההפך: 1 פחות "אף פעם".';
+    if(k===1&&c(1-Math.pow(p,n))) return 'ההפך של "לפחות פעם אחת" הוא "אף פעם", כלומר כישלון בכל הפעמים.';
+    if(c(pmf(n,p,n))) return `זה רק ${n} מתוך ${n}. "לפחות ${k}" כולל גם בדיוק ${k}.`;
+  }
+  if(type==='atmost'){
+    if(c(Math.pow(q,n))) return 'זה רק "אף פעם". "לכל היותר פעם אחת" כולל גם בדיוק פעם אחת.';
+    if(c(pmf(n,p,1))) return 'זה רק בדיוק פעם אחת. "לכל היותר" כולל גם אפס פעמים.';
+    if(c(1-pr.ans)) return 'זה ההפך, "לפחות פעמיים". השאלה היא על 0 או 1.';
+  }
+  return 'לא בדיוק. כתבו n, p ו-q, החליטו אילו עמודות מתאימות, וחשבו כל אחת בנוסחת ברנולי.';
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim());
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו שבר, למשל 45/512, או מספר עשרוני, למשל 0.088.</div>'; return; }
+  if(close(x,pr.ans)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const {type,sc,n,k,set}=pr, pS=fS(sc.p), qS=fS(qFr(sc.p)), paren=sc.p[1]!==10;
+  let h;
+  if(pr.hint===1){
+    const which=type==='exact'?`עמודה אחת: ${E(`<i>k</i> = ${k}`)}`:type==='atmost'?`שתי עמודות: ${E('<i>k</i> = 0')} ו-${E('<i>k</i> = 1')}`:k===1?'הרבה עמודות. עדיף לחשב את ההפך, "אף פעם"':`שתי עמודות: ${E(`<i>k</i> = ${n-1}`)} ו-${E(`<i>k</i> = ${n}`)}`;
+    h=`הצלחה כאן היא "${sc.ev}". ${E(`<i>n</i> = ${n}`)}, ${E(`<i>p</i> = ${pS}`)}, ${E(`<i>q</i> = ${qS}`)}. צריך ${which}.`;
+  }else{
+    h=(type==='atleast'&&k===1)
+      ?`"אף פעם" זה ${E(pw(qS,n,paren))}. הורידו מ-1.`
+      :set.map(i=>`${E(`<i>P</i>(${i}) =`)} ${E(term(n,i,pS,qS,paren))}`).join(', ')+(set.length>1?'. חשבו כל אחת וחברו.':'. חשבו.');
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

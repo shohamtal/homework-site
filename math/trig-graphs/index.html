@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>גרפים של sin ו-cos · כיתה יא · מירי</title>
+<meta name="description" content="הגרפים של sin x ו-cos x: מחזור, משרעת והזזה. מזיזים מחוונים ורואים את הגל משתנה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/trig-graphs/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="גרפים של sin ו-cos · כיתה יא · מירי">
+<meta property="og:description" content="הגרפים של sin x ו-cos x: מחזור, משרעת והזזה. מזיזים מחוונים ורואים את הגל משתנה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/trig-graphs/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"טריגונומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-11/#trig-11"},{"@type":"ListItem","position":5,"name":"גרפים של sin ו-cos","item":"https://shohamtal.github.io/homework-site/math/trig-graphs/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים את המחזור של פונקציה טריגונומטרית?","acceptedAnswer":{"@type":"Answer","text":"מחלקים 360° במספר שכופל את x. ב-y = sin 4x המחזור הוא 360° ÷ 4 = 90°, כלומר יש ארבעה גלים שלמים בין 0° ל-360°. נסו במעבדה."}},{"@type":"Question","name":"מה זו משרעת?","acceptedAnswer":{"@type":"Answer","text":"המשרעת היא המרחק מהקו האמצעי של הגל עד לנקודה הכי גבוהה שלו. ב-y = A sin x + D המשרעת היא |A|. היא תמיד חיובית, גם כש-A שלילי."}},{"@type":"Question","name":"מה ההבדל בין הגרף של sin לגרף של cos?","acceptedAnswer":{"@type":"Answer","text":"זה אותו גל, רק מוזז. sin מתחיל ב-0 ועולה, cos מתחיל ב-1 ויורד. לכן cos x = sin(x + 90°). ראו את שניהם בתחילת העמוד."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"גרפים של sin ו-cos","description":"הגרפים של sin x ו-cos x: מחזור, משרעת והזזה. מזיזים מחוונים ורואים את הגל משתנה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/trig-graphs/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"טריגונומטריה","teaches":"גרפים של sin ו-cos","keywords":"מחזור, משרעת, גל","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.tg{width:100%; max-width:380px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.tg .grid{stroke:var(--soft); stroke-width:1}
+.tg .ax{stroke:var(--ink); stroke-width:1.4}
+.tg .tick{fill:var(--muted); font:10px var(--f-math); text-anchor:middle}
+.tg .base{fill:none; stroke:var(--muted); stroke-width:1.6; stroke-dasharray:5 4}
+.tg .curve{fill:none; stroke:var(--line); stroke-width:3; stroke-linejoin:round}
+.tg .curve.b{stroke:var(--blue)}
+.tg .mid{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:6 4}
+.tg .amp{stroke:var(--ink); stroke-width:2}
+.tg .per{stroke:var(--ink); stroke-width:2; fill:none}
+.tg .lbl{font:700 11px var(--f-math); text-anchor:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.tg .lbl.p{fill:var(--line)} .tg .lbl.b{fill:var(--blue)}
+.tg .dot{fill:var(--hl); stroke:var(--ink); stroke-width:1.5}
+.big-eq{font-family:var(--f-math); font-size:1.4rem; text-align:center; direction:ltr}
+.calc .eq{white-space:normal}
+.seg{display:flex; gap:6px; flex-wrap:wrap}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="trig-graphs">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#trig-11">טריגונומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">גרפים של sin ו-cos</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · טריגונומטריה</div>
+  <h1>גרפים של sin ו-cos <span class="slogan">גלים שחוזרים על עצמם</span></h1>
+  <p class="lead">ב<a href="../unit-circle/">מעגל היחידה</a> הנקודה מסתובבת שוב ושוב. אם מציירים את הגובה שלה לפי הזווית, מקבלים גל. בעמוד הזה לומדים לקרוא את הגל של <span class="eq">y = <i>A</i> sin(<i>B</i>x + <i>C</i>) + <i>D</i></span>: כמה הוא גבוה, כמה הוא ארוך ואיפה הוא זז. הזוויות במעלות, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הגל הבסיסי</h2></div>
+  <svg class="tg" id="ideaG" viewBox="0 0 380 200" role="img" aria-label="הגרפים של sin x ושל cos x בין 0 ל-360 מעלות"></svg>
+  <div class="two">
+    <div class="mini">
+      <h3><span class="eq">y = sin x</span> (ורוד)</h3>
+      <p>מתחיל ב-0, עולה ל-1 ב-<span class="eq">90°</span>, חוזר ל-0 ב-<span class="eq">180°</span>, יורד ל-<span class="eq">−1</span> ב-<span class="eq">270°</span>, וחוזר ל-0 ב-<span class="eq">360°</span>.</p>
+    </div>
+    <div class="mini">
+      <h3><span class="eq">y = cos x</span> (כחול)</h3>
+      <p>אותו גל בדיוק, רק מתחיל למעלה, ב-1. הוא מוזז <span class="eq">90°</span> שמאלה ביחס לסינוס.</p>
+    </div>
+    <div class="mini">
+      <h3>ארבעת המספרים</h3>
+      <p><strong>משרעת</strong> <span class="eq">|<i>A</i>|</span>: כמה הגל עולה מעל הקו האמצעי.</p>
+      <p><strong>מחזור</strong> <span class="eq"><i>T</i> = 360° ÷ <i>B</i></span>: האורך של גל אחד.</p>
+      <p><strong>קו אמצעי</strong> <span class="eq">y = <i>D</i></span>, ו-<i>C</i> מזיז ימינה או שמאלה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ערך מקסימלי ומינימלי:</strong> הגל נע בין <span class="eq"><i>D</i> − |<i>A</i>|</span> ל-<span class="eq"><i>D</i> + |<i>A</i>|</span>. למשל <span class="eq">y = 3 sin x + 1</span> נע בין <span class="eq">−2</span> ל-4.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: משנים את הגל</h2></div>
+  <p class="text">הקו האפור המקווקו הוא הגל המקורי. שנו כל מחוון בנפרד ותראו מה הוא עושה. החץ השחור מראה את המשרעת, והסוגר למעלה מראה מחזור אחד.</p>
+  <div class="lab">
+    <svg class="tg" id="labG" viewBox="0 0 380 260" role="img" aria-label="גרף של הפונקציה הטריגונומטרית במעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq"></div>
+      <div class="seg" role="group" aria-label="סוג הפונקציה"><button id="fSin" class="primary" aria-pressed="true" dir="ltr">sin</button><button id="fCos" aria-pressed="false" dir="ltr">cos</button></div>
+      <div><label class="slider" for="lA"><span>המשרעת <span class="eq"><i>A</i></span></span><span class="eq" id="lAv"></span></label>
+        <input type="range" id="lA" min="-3" max="3" step="0.5" value="2"></div>
+      <div><label class="slider" for="lB"><span>כמה גלים ב-360°: <span class="eq"><i>B</i></span></span><span class="eq" id="lBv"></span></label>
+        <input type="range" id="lB" class="hl" min="0.5" max="4" step="0.5" value="1"></div>
+      <div><label class="slider" for="lC"><span>הזזה <span class="eq"><i>C</i></span></span><span class="eq" id="lCv"></span></label>
+        <input type="range" id="lC" class="blue" min="-180" max="180" step="15" value="0"></div>
+      <div><label class="slider" for="lD"><span>קו אמצעי <span class="eq"><i>D</i></span></span><span class="eq" id="lDv"></span></label>
+        <input type="range" id="lD" min="-2" max="2" step="0.5" value="0"></div>
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-f="sin" data-a="1" data-b="1" data-c="0" data-d="0">y = sin x</button>
+          <button dir="ltr" data-f="sin" data-a="2" data-b="2" data-c="0" data-d="0">y = 2 sin 2x</button>
+          <button dir="ltr" data-f="sin" data-a="-1" data-b="1" data-c="0" data-d="0">y = −sin x</button>
+          <button dir="ltr" data-f="cos" data-a="1" data-b="0.5" data-c="0" data-d="1">y = cos(x/2) + 1</button>
+          <button dir="ltr" data-f="sin" data-a="1" data-b="1" data-c="90" data-d="0">y = sin(x + 90°)</button>
+          <button dir="ltr" data-f="sin" data-a="3" data-b="4" data-c="0" data-d="-1">y = 3 sin 4x − 1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">גלו משהו: נסו את <span class="eq">y = sin(x + 90°)</span> ואחר כך עברו ל-cos עם <span class="eq"><i>C</i> = 0</span>. זה אותו גרף בדיוק.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>המחזור הפוך ל-<i>B</i></h3>
+      <p>ככל ש-<i>B</i> גדול יותר, הגלים <strong>צפופים</strong> יותר והמחזור <strong>קצר</strong> יותר.</p>
+      <p>ב-<span class="eq">sin 3x</span> המחזור <span class="eq">360° ÷ 3 = 120°</span>, לא <span class="eq">3 · 360°</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>משרעת שלילית</h3>
+      <p>ב-<span class="eq">y = −2 sin x</span> המשרעת היא 2, לא <span class="eq">−2</span>. המינוס רק הופך את הגל.</p>
+      <p>הערך המקסימלי הוא <span class="eq">2</span>, והמינימלי <span class="eq">−2</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>ההזזה מתחלקת ב-<i>B</i></h3>
+      <p><span class="eq">sin(2x + 60°) = sin 2(x + 30°)</span>.</p>
+      <p>הגל זז <span class="eq">30°</span> שמאלה, לא <span class="eq">60°</span>. ופלוס בתוך הסוגריים מזיז <strong>שמאלה</strong>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>מחשבון:</strong> בדקו שהמחשבון במצב מעלות (DEG). במצב רדיאנים המחזור של sin הוא בערך 6.28 ולא 360.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">שרטטו סקיצה של <span class="eq">y = 2 sin 3x − 1</span> בתחום <span class="eq">0° ≤ x ≤ 360°</span>.</p>
+  <div class="lab">
+    <svg class="tg" id="exG" viewBox="0 0 380 260" role="img" aria-label="גרף הדוגמה הפתורה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: קראו את הגל</h2></div>
+  <p class="text">כל פעם תקבלו פונקציה או גרף, ושאלה אחת. כתבו מספר בלבד, בלי סימן מעלות.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="period" aria-pressed="false">מחזור</button>
+    <button data-t="ext" aria-pressed="false">מקסימום ומינימום</button>
+    <button data-t="read" aria-pressed="false">קוראים מהגרף</button>
+  </div>
+  <svg class="tg" id="prG" viewBox="0 0 380 260" role="img" aria-label="גרף התרגיל" hidden></svg>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prLbl">התשובה</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים את המחזור של פונקציה טריגונומטרית?</h3>
+    <p>מחלקים 360° במספר שכופל את x. ב-<span class="eq">y = sin 4x</span> המחזור הוא <span class="eq">360° ÷ 4 = 90°</span>, כלומר יש ארבעה גלים שלמים בין 0° ל-360°. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה זו משרעת?</h3>
+    <p>המשרעת היא המרחק מהקו האמצעי של הגל עד לנקודה הכי גבוהה שלו. ב-<span class="eq">y = <i>A</i> sin x + <i>D</i></span> המשרעת היא <span class="eq">|<i>A</i>|</span>. היא תמיד חיובית, גם כש-<i>A</i> שלילי.</p>
+    <h3>מה ההבדל בין הגרף של sin לגרף של cos?</h3>
+    <p>זה אותו גל, רק מוזז. sin מתחיל ב-0 ועולה, cos מתחיל ב-1 ויורד. לכן <span class="eq">cos x = sin(x + 90°)</span>. ראו את שניהם <a href="#idea">בתחילת העמוד</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/unit-circle/">מעגל היחידה: סינוס וקוסינוס של כל זווית</a> · <a href="../../math/function-transformations/">הזזה ומתיחה של גרפים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/geometric-sequences/"><small>→ הנושא הקודם</small>סדרה הנדסית: איבר כללי וסכום</a><a class="next" href="../../math/trig-3d/"><small>הנושא הבא ←</small>טריגונומטריה במרחב</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const near=(a,b,t)=>Math.abs(a-b)<=(t??0.01);
+const R=Math.PI/180;
+const fval=(f,A,B,C,D,x)=>A*(f==='sin'?Math.sin:Math.cos)((B*x+C)*R)+D;
+
+/* "y = 2 sin(3x + 60°) − 1" with the 1s and 0s left out */
+function eqTxt(f,A,B,C,D){
+  let a=A===1?'':A===-1?MINUS:numTxt(A)+' ';
+  const bx=B===1?'x':B===0.5?'x/2':numTxt(B)+'x';
+  const arg=C===0?(B===1?' x':B===0.5?'(x/2)':` ${bx}`):`(${bx} ${C>0?'+':MINUS} ${Math.abs(C)}°)`;
+  let s=`y = ${a}${f}${C===0?arg:arg}`;
+  if(D) s+=` ${D>0?'+':MINUS} ${numTxt(Math.abs(D))}`;
+  return s.replace(/ {2,}/g,' ').replace(`${f} (`,`${f}(`);
+}
+
+/* graph: x from 0° to 360°, y from yMin to yMax */
+function frame(svg,yMin,yMax){
+  const x0=30, W=335, top=14, H=+svg.getAttribute('viewBox').split(' ')[3]-40;
+  const px=x=>x0+x/360*W, py=y=>top+(yMax-y)/(yMax-yMin)*H;
+  let h='';
+  for(let x=0;x<=360;x+=90) h+=`<line class="grid" x1="${px(x)}" y1="${top}" x2="${px(x)}" y2="${top+H}"/><text class="tick" x="${px(x)}" y="${top+H+14}">${x}°</text>`;
+  for(let y=Math.ceil(yMin);y<=yMax;y++){ h+=`<line class="grid" x1="${x0}" y1="${py(y)}" x2="${x0+W}" y2="${py(y)}"/>`; if(y!==0) h+=`<text class="tick" x="${x0-12}" y="${py(y)+3}">${numTxt(y)}</text>`; }
+  h+=`<line class="ax" x1="${x0}" y1="${py(0)}" x2="${x0+W}" y2="${py(0)}"/><line class="ax" x1="${x0}" y1="${top}" x2="${x0}" y2="${top+H}"/>`;
+  return {h,px,py,x0,W,top,H};
+}
+function path(px,py,fn,yMin,yMax){
+  let d='';
+  for(let x=0;x<=360;x+=2){ const y=Math.max(yMin-1,Math.min(yMax+1,fn(x))); d+=(x?'L':'M')+px(x).toFixed(1)+','+py(y).toFixed(1); }
+  return d;
+}
+/* first x ≥ 0 where a cycle starts (argument is a multiple of 360°), and the first maximum */
+function cycleStart(B,C){ const T=360/B; let x=(-C/B)%T; if(x<0) x+=T; return x; }
+function firstMax(f,A,B,C){
+  const T=360/B; let target=(f==='sin'?90:0)+(A<0?180:0);
+  let x=((target-C)/B)%T; if(x<0) x+=T; return x;
+}
+function wave(svg,f,A,B,C,D,opt={}){
+  const yMax=Math.max(3,Math.ceil(D+Math.abs(A))+1), yMin=Math.min(-3,Math.floor(D-Math.abs(A))-1);
+  const F=frame(svg,yMin,yMax); let h=F.h;
+  if(opt.base) h+=`<path class="base" d="${path(F.px,F.py,x=>fval(f,1,1,0,0,x),yMin,yMax)}"/>`;
+  if(opt.mid!==false && D!==0) h+=`<line class="mid" x1="${F.x0}" y1="${F.py(D)}" x2="${F.x0+F.W}" y2="${F.py(D)}"/>`;
+  if(opt.curve!==false) h+=`<path class="curve${opt.blue?' b':''}" d="${path(F.px,F.py,x=>fval(f,A,B,C,D,x),yMin,yMax)}"/>`;
+  if(opt.marks && A!==0){
+    const xm=firstMax(f,A,B,C);
+    if(xm<=360){
+      h+=`<line class="amp" x1="${F.px(xm)}" y1="${F.py(D)}" x2="${F.px(xm)}" y2="${F.py(D+Math.abs(A))}"/>`;
+      h+=`<circle class="dot" cx="${F.px(xm)}" cy="${F.py(D+Math.abs(A))}" r="4.5"/>`;
+      h+=`<text class="lbl" x="${F.px(xm)+(xm>300?-16:16)}" y="${(F.py(D)+F.py(D+Math.abs(A)))/2+4}">${numTxt(Math.abs(A))}</text>`;
+    }
+    const T=360/B, xs=cycleStart(B,C);
+    if(xs+T<=360.01){
+      const yb=F.top+4;
+      h+=`<path class="per" d="M${F.px(xs)},${yb+8}V${yb}H${F.px(xs+T)}V${yb+8}"/><text class="lbl" x="${F.px(xs+T/2)}" y="${yb+16}">T = ${numTxt(T)}°</text>`;
+    }
+  }
+  if(opt.extra) h+=opt.extra(F);
+  svg.innerHTML=h;
+}
+
+/* ---------- idea ---------- */
+(function(){
+  const svg=$('ideaG'), F=frame(svg,-1.5,1.5);
+  svg.innerHTML=F.h+`<path class="curve b" d="${path(F.px,F.py,x=>Math.cos(x*R),-1.5,1.5)}"/><path class="curve" d="${path(F.px,F.py,x=>Math.sin(x*R),-1.5,1.5)}"/>`
+    +`<text class="lbl p" x="${F.px(90)}" y="${F.py(1)-7}">sin</text><text class="lbl b" x="${F.px(8)+14}" y="${F.py(1)-7}">cos</text>`;
+})();
+
+/* ---------- lab ---------- */
+let fn='sin';
+function setF(f){ fn=f; $('fSin').classList.toggle('primary',f==='sin'); $('fCos').classList.toggle('primary',f==='cos'); $('fSin').setAttribute('aria-pressed',f==='sin'); $('fCos').setAttribute('aria-pressed',f==='cos'); }
+function lab(){
+  const A=+$('lA').value, B=+$('lB').value, C=+$('lC').value, D=+$('lD').value;
+  $('lAv').textContent=numTxt(A); $('lBv').textContent=numTxt(B); $('lCv').textContent=numTxt(C)+'°'; $('lDv').textContent=numTxt(D);
+  $('labEq').innerHTML=eqTxt(fn,A,B,C,D);
+  wave($('labG'),fn,A,B,C,D,{base:true,marks:true});
+  const T=360/B, amp=Math.abs(A);
+  let t='';
+  if(A===0) t+=`<div><strong>A = 0:</strong> אין גל בכלל, רק הקו הישר ${E(`y = ${numTxt(D)}`)}.</div>`;
+  else{
+    t+=`<div><strong>משרעת:</strong> ${E(`|${numTxt(A)}| = ${numTxt(amp)}`)}${A<0?'. המינוס הופך את הגל: הוא מתחיל בירידה':''}.</div>`;
+    t+=`<div><strong>מחזור:</strong> ${E(`<i>T</i> = 360° ÷ ${numTxt(B)} = ${numTxt(T)}°`)}${T>360?'. גל אחד ארוך יותר מ-360°, אז רואים רק חלק ממנו':B>1?`. יש ${numTxt(B)} גלים שלמים ב-360°`:''}.</div>`;
+    t+=`<div><strong>טווח:</strong> הגל נע בין ${E(numTxt(D-amp))} ל-${E(numTxt(D+amp))}.</div>`;
+  }
+  if(C!==0){ const sh=C/B; t+=`<div><strong>הזזה:</strong> ${E(`${numTxt(C)}° ÷ ${numTxt(B)} = ${numTxt(Math.abs(sh))}°`)} ${sh>0?'שמאלה':'ימינה'}.</div>`; }
+  if(D!==0) t+=`<div><strong>קו אמצעי:</strong> ${E(`y = ${numTxt(D)}`)} (הקו הכחול המקווקו). הגל כולו עלה ${D>0?'למעלה':'למטה'}.</div>`;
+  $('labTxt').innerHTML=t;
+}
+['lA','lB','lC','lD'].forEach(id=>$(id).addEventListener('input',lab));
+$('fSin').onclick=()=>{setF('sin');lab();}; $('fCos').onclick=()=>{setF('cos');lab();};
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  setF(b.dataset.f); $('lA').value=b.dataset.a; $('lB').value=b.dataset.b; $('lC').value=b.dataset.c; $('lD').value=b.dataset.d; lab();
+});
+lab();
+
+/* ---------- worked example: y = 2 sin 3x − 1 ---------- */
+const EX=[
+  {t:`<strong>קו אמצעי:</strong> ${E('<i>D</i> = −1')}, אז מציירים את הקו ${E('y = −1')}.`, o:{curve:false}},
+  {t:`<strong>משרעת:</strong> ${E('<i>A</i> = 2')}. הגל עולה 2 מעל הקו ויורד 2 מתחתיו: בין ${E('−3')} ל-${E('1')}.`, o:{curve:false,extra:F=>`<line class="mid" x1="${F.x0}" y1="${F.py(1)}" x2="${F.x0+F.W}" y2="${F.py(1)}" style="stroke:var(--muted)"/><line class="mid" x1="${F.x0}" y1="${F.py(-3)}" x2="${F.x0+F.W}" y2="${F.py(-3)}" style="stroke:var(--muted)"/>`}},
+  {t:`<strong>מחזור:</strong> ${E('<i>T</i> = 360° ÷ 3 = 120°')}. יש שלושה גלים שלמים בין 0° ל-360°.`, o:{curve:false,extra:F=>[120,240].map(x=>`<line class="mid" x1="${F.px(x)}" y1="${F.top}" x2="${F.px(x)}" y2="${F.top+F.H}" style="stroke:var(--muted)"/>`).join('')}},
+  {t:`<strong>נקודות מפתח בגל הראשון:</strong> רבע מחזור הוא ${E('30°')}. ב-${E('x = 30°')} מקסימום 1, ב-${E('60°')} חוזרים לקו האמצעי, וב-${E('90°')} מינימום ${E('−3')}.`, o:{curve:false,extra:F=>[[0,-1],[30,1],[60,-1],[90,-3],[120,-1]].map(([x,y])=>`<circle class="dot" cx="${F.px(x)}" cy="${F.py(y)}" r="4.5"/>`).join('')}},
+  {t:`<strong>מחברים ומעתיקים:</strong> מחברים את הנקודות בגל חלק, ומעתיקים אותו עוד פעמיים. זו הסקיצה.`, o:{marks:true}}
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EX.slice(0,exI+1).map(s=>`<div>${s.t}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+  wave($('exG'),'sin',2,3,0,-1,EX[exI].o);
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, solved=0, streak=0;
+function newPr(){
+  const type=mode==='mix'?pick(['period','ext','read']):mode;
+  const p={type,tries:0,hint:0,f:pick(['sin','cos'])};
+  if(type==='period'){
+    p.A=pick([1,2,3,-2]); p.B=pick([2,3,4,5,6,0.5]); p.C=0; p.D=pick([0,0,1,-2]);
+    p.ans=360/p.B; p.ask='period';
+  }else if(type==='ext'){
+    p.A=pick([2,3,4,-2,-3,-1,5]); p.B=pick([1,2,3]); p.C=0; p.D=rnd(-3,3);
+    p.ask=pick(['max','min']); p.ans=p.ask==='max'?p.D+Math.abs(p.A):p.D-Math.abs(p.A);
+  }else{
+    p.f='sin'; p.A=pick([1,2,3]); p.B=pick([1,2,3,4]); p.C=0; p.D=pick([0,1,-1,2]);
+    p.ask=pick(['B','A','D']); p.ans=p[p.ask];
+  }
+  pr=p;
+  const {f,A,B,C,D}=p;
+  $('prG').hidden=type!=='read';
+  if(type==='read'){
+    wave($('prG'),f,A,B,C,D,{mid:false});
+    $('prQ').innerHTML=`זה הגרף של ${E('y = <i>A</i> sin(<i>B</i>x) + <i>D</i>')}, כש-<i>A</i> חיובי. ${{B:'מה <i>B</i>?',A:'מה <i>A</i>?',D:'מה <i>D</i>?'}[p.ask]}`;
+    $('prLbl').innerHTML=`<i>${p.ask}</i> =`;
+  }else if(type==='period'){
+    $('prQ').innerHTML=`מה המחזור של ${E(eqTxt(f,A,B,C,D))}? (במעלות)`;
+    $('prLbl').innerHTML='<i>T</i> =';
+  }else{
+    $('prQ').innerHTML=`מה הערך ה${p.ask==='max'?'מקסימלי':'מינימלי'} של ${E(eqTxt(f,A,B,C,D))}?`;
+    $('prLbl').innerHTML=p.ask==='max'?'מקסימום =':'מינימום =';
+  }
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {type,A,B,D,ask}=pr, amp=Math.abs(A);
+  if(type==='period') return `${E(`<i>T</i> = 360° ÷ ${numTxt(B)} = ${numTxt(360/B)}°`)}.`;
+  if(type==='ext') return `המשרעת ${E(`|${numTxt(A)}| = ${amp}`)} והקו האמצעי ${E(`y = ${numTxt(D)}`)}. ${ask==='max'?E(`${numTxt(D)} + ${amp} = ${numTxt(D+amp)}`):E(`${numTxt(D)} − ${amp} = ${numTxt(D-amp)}`)}.`;
+  const mx=D+A, mn=D-A;
+  if(ask==='B') return `גל אחד באורך ${E(`${numTxt(360/B)}°`)}, ולכן ${E(`<i>B</i> = 360° ÷ ${numTxt(360/B)}° = ${numTxt(B)}`)}.`;
+  if(ask==='A') return `הגל נע בין ${E(numTxt(mn))} ל-${E(numTxt(mx))}. המשרעת היא חצי מההפרש: ${E(`(${numTxt(mx)} − ${mn<0?'('+numTxt(mn)+')':numTxt(mn)}) ÷ 2 = ${numTxt(A)}`)}.`;
+  return `הקו האמצעי באמצע בין ${E(numTxt(mx))} ל-${E(numTxt(mn))}: ${E(`(${numTxt(mx)} + ${mn<0?'('+numTxt(mn)+')':numTxt(mn)}) ÷ 2 = ${numTxt(D)}`)}.`;
+}
+function diagnose(x){
+  const {type,A,B,D,ask}=pr, amp=Math.abs(A);
+  if(type==='period'){
+    if(near(x,360*B)) return 'כפלתם ב-B. ככל ש-B גדול יותר הגלים צפופים יותר, אז המחזור קטן: מחלקים.';
+    if(near(x,B)) return 'זה B עצמו. המחזור הוא האורך של גל אחד במעלות: 360° ÷ B.';
+    if(near(x,2*Math.PI/B,0.02)) return 'זו התשובה ברדיאנים. בעמוד הזה עובדים במעלות: 360° ÷ B.';
+    if(near(x,180/B)) return 'זה חצי מחזור. גל שלם של sin או cos הוא 360°.';
+    return 'לא בדיוק. המחזור של sin x הוא 360°. חלקו ב-B.';
+  }
+  if(type==='ext'){
+    if(ask==='max'){
+      if(near(x,D+A)&&A<0) return 'המשרעת היא תמיד חיובית: |A|. המינוס רק הופך את הגל.';
+      if(near(x,amp)) return 'שכחתם את D. הגל כולו מורם או מורד בשיעור D.';
+      if(near(x,D)) return 'זה הקו האמצעי. המקסימום גבוה ממנו בשיעור המשרעת.';
+      if(near(x,D-amp)) return 'זה המינימום. במקסימום מוסיפים את המשרעת.';
+    }else{
+      if(near(x,D-A)&&A<0) return 'המשרעת היא תמיד חיובית: |A|. המינוס רק הופך את הגל.';
+      if(near(x,-amp)) return 'שכחתם את D. הגל כולו מורם או מורד בשיעור D.';
+      if(near(x,D)) return 'זה הקו האמצעי. המינימום נמוך ממנו בשיעור המשרעת.';
+      if(near(x,D+amp)) return 'זה המקסימום. במינימום מחסרים את המשרעת.';
+    }
+    return 'לא בדיוק. מצאו את הקו האמצעי D ואת המשרעת |A|.';
+  }
+  if(ask==='B'){
+    if(near(x,360/B)) return 'זה המחזור. B הוא כמה גלים שלמים נכנסים ב-360°: 360° ÷ T.';
+    if(near(x,1/B)) return 'הפכתם. B = 360° ÷ T.';
+    return 'לא בדיוק. מצאו כמה מעלות לוקח גל אחד, וחלקו 360° במספר הזה.';
+  }
+  if(ask==='A'){
+    if(near(x,2*A)) return 'זה המרחק מהמינימום למקסימום. המשרעת היא חצי ממנו.';
+    if(near(x,D+A)) return 'זה הערך המקסימלי. המשרעת נמדדת מהקו האמצעי, לא מציר x.';
+    return 'לא בדיוק. המשרעת היא חצי מהמרחק בין הנקודה הכי גבוהה לנקודה הכי נמוכה.';
+  }
+  if(near(x,D+A)) return 'זה המקסימום. D הוא הקו שבאמצע, בין המקסימום למינימום.';
+  if(near(x,D-A)) return 'זה המינימום. D הוא הקו שבאמצע, בין המקסימום למינימום.';
+  return 'לא בדיוק. D הוא הקו שבדיוק באמצע הגל.';
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim().replace('°',''));
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 120 או -2.</div>'; return; }
+  if(near(x,pr.ans)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,A,B,D,ask}=pr; let h;
+  if(type==='period') h=pr.hint===1?'המחזור של sin x ושל cos x הוא 360°. מה קורה כשכופלים את x במספר?':`חשבו ${E(`360° ÷ ${numTxt(B)}`)}.`;
+  else if(type==='ext') h=pr.hint===1?'מצאו שני דברים: הקו האמצעי D והמשרעת |A|.':`הקו האמצעי ${E(`y = ${numTxt(D)}`)} והמשרעת ${E(numTxt(Math.abs(A)))}. ${ask==='max'?'הוסיפו':'החסירו'}.`;
+  else if(ask==='B') h=pr.hint===1?'מצאו כמה מעלות לוקח גל אחד שלם, מלמעלה ועד למעלה הבא.':`גל אחד הוא ${E(`${numTxt(360/B)}°`)}. כמה כאלה נכנסים ב-360°?`;
+  else h=pr.hint===1?'קראו מהגרף את הערך הכי גבוה ואת הכי נמוך.':`הגל נע בין ${E(numTxt(D-A))} ל-${E(numTxt(D+A))}. ${ask==='A'?'המשרעת היא חצי מההפרש.':'D הוא הממוצע של השניים.'}`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

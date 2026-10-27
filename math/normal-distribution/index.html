@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>התפלגות נורמלית · כיתה יא · מירי</title>
+<meta name="description" content="עקומת הפעמון: ממוצע, סטיית תקן, וכמה אחוזים נמצאים בכל תחום. כולל ציון תקן. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/normal-distribution/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="התפלגות נורמלית · כיתה יא · מירי">
+<meta property="og:description" content="עקומת הפעמון: ממוצע, סטיית תקן, וכמה אחוזים נמצאים בכל תחום. כולל ציון תקן. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/normal-distribution/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"הסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#probability-11"},{"@type":"ListItem","position":5,"name":"התפלגות נורמלית","item":"https://shohamtal.github.io/homework-site/math/normal-distribution/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה התפלגות נורמלית?","acceptedAnswer":{"@type":"Answer","text":"התפלגות של נתונים שהגרף שלה הוא עקומת פעמון סימטרית. רוב הערכים קרובים לממוצע, וככל שמתרחקים ממנו יש פחות ערכים. שני מספרים קובעים את הפעמון: הממוצע μ וסטיית התקן σ. שחקו איתם במעבדה."}},{"@type":"Question","name":"איך מחשבים ציון תקן?","acceptedAnswer":{"@type":"Answer","text":"מחסרים את הממוצע מהערך ומחלקים בסטיית התקן: z = (x − μ) ÷ σ. אם הממוצע 70 וסטיית התקן 10, לציון 85 יש z = 1.5. ציון תקן שלילי אומר שהערך מתחת לממוצע."}},{"@type":"Question","name":"מה זה הכלל של 68, 95 ו-99.7?","acceptedAnswer":{"@type":"Answer","text":"בכל התפלגות נורמלית, בערך 68% מהנתונים נמצאים במרחק של סטיית תקן אחת מהממוצע, 95% במרחק של שתיים, ו-99.7% במרחק של שלוש. בגלל הסימטריה, בכל צד יש חצי מזה. ראו בדוגמה הפתורה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"התפלגות נורמלית","description":"עקומת הפעמון: ממוצע, סטיית תקן, וכמה אחוזים נמצאים בכל תחום. כולל ציון תקן. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/normal-distribution/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"הסתברות","teaches":"התפלגות נורמלית","keywords":"עקומת פעמון, סטיית תקן, ציון תקן","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.bell{width:100%; max-width:380px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.bell .ax{stroke:var(--ink); stroke-width:1.2}
+.bell .tk{stroke:var(--soft); stroke-width:1}
+.bell .mu{stroke:var(--ink); stroke-width:1.2; stroke-dasharray:4 3}
+.bell .cv{fill:none; stroke:var(--ink); stroke-width:2.2}
+.bell .sh{fill:var(--line); opacity:.35}
+.bell .bd{stroke:var(--line); stroke-width:2}
+.bell .lv{fill:var(--ink); font:10px var(--f-math); text-anchor:middle}
+.bell .lz{fill:var(--muted); font:9px var(--f-math); text-anchor:middle}
+.bell .pc{fill:var(--ink); font:700 14px var(--f-math); text-anchor:middle}
+.bell .sg{fill:var(--muted); font:700 9px var(--f-math); text-anchor:middle}
+.big-p{font-family:var(--f-math); font-size:1.3rem; text-align:center; direction:ltr}
+.calc .eq{white-space:normal}
+.rule{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; text-align:center}
+.rule div{border:1.5px solid var(--soft); border-radius:10px; padding:8px 4px; background:var(--card)}
+.rule b{display:block; font-family:var(--f-math); font-size:1.25rem}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="normal-distribution">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#probability-11">הסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">התפלגות נורמלית</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · הסתברות</div>
+  <h1>התפלגות נורמלית <span class="slogan">עקומת הפעמון</span></h1>
+  <p class="lead">גבהים, ציונים במבחן ארצי, משקל של תפוחים: הרבה נתונים מתרכזים סביב הממוצע, ומעט מאוד רחוקים ממנו. הצורה שמתקבלת היא פעמון. בעמוד הזה לומדים לקרוא אותו, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שני מספרים מתארים את כל הפעמון</h2></div>
+  <p class="text">ב<a href="../frequency-tables/">טבלת שכיחויות</a> ראינו עמודות. כשיש הרבה מאוד נתונים, העמודות נראות כמו עקומה חלקה. בהתפלגות נורמלית העקומה סימטרית, והשטח מתחתיה הוא 100%.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>הממוצע <span class="eq"><i>μ</i></span></h3>
+      <p>האמצע של הפעמון, הנקודה הכי גבוהה. חצי מהנתונים מתחתיו וחצי מעליו.</p>
+    </div>
+    <div class="mini">
+      <h3>סטיית התקן <span class="eq"><i>σ</i></span></h3>
+      <p>כמה הנתונים מפוזרים. <span class="eq"><i>σ</i></span> קטנה: פעמון צר וגבוה. <span class="eq"><i>σ</i></span> גדולה: פעמון רחב ונמוך.</p>
+    </div>
+    <div class="mini">
+      <h3>ציון תקן <span class="eq"><i>z</i></span></h3>
+      <p>כמה סטיות תקן ערך רחוק מהממוצע, ולאיזה כיוון.</p>
+      <p><span class="eq"><i>z</i> = (<i>x</i> − <i>μ</i>) ÷ <i>σ</i></span></p>
+    </div>
+  </div>
+  <p class="text"><strong>הכלל של 68, 95 ו-99.7:</strong> בכל התפלגות נורמלית, בערך כך מתחלקים הנתונים סביב הממוצע.</p>
+  <div class="rule">
+    <div><b>68%</b>בין <span class="eq"><i>μ</i> − <i>σ</i></span> ל-<span class="eq"><i>μ</i> + <i>σ</i></span></div>
+    <div><b>95%</b>בין <span class="eq"><i>μ</i> − 2<i>σ</i></span> ל-<span class="eq"><i>μ</i> + 2<i>σ</i></span></div>
+    <div><b>99.7%</b>בין <span class="eq"><i>μ</i> − 3<i>σ</i></span> ל-<span class="eq"><i>μ</i> + 3<i>σ</i></span></div>
+  </div>
+  <div class="callout"><strong>חצי מכל צד:</strong> הפעמון סימטרי, אז בין <span class="eq"><i>μ</i></span> ל-<span class="eq"><i>μ</i> + <i>σ</i></span> יש 34%. בין <span class="eq"><i>μ</i> + <i>σ</i></span> ל-<span class="eq"><i>μ</i> + 2<i>σ</i></span> יש 13.5%. ובין <span class="eq"><i>μ</i> + 2<i>σ</i></span> ל-<span class="eq"><i>μ</i> + 3<i>σ</i></span> יש 2.35%.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: צובעים שטח מתחת לפעמון</h2></div>
+  <p class="text">שנו את הממוצע ואת סטיית התקן, ובחרו תחום. החלק הוורוד הוא אחוז הנתונים שנמצאים בתחום.</p>
+  <div class="lab">
+    <div>
+      <svg class="bell" id="labG" viewBox="0 0 380 230" role="img" aria-label="עקומת פעמון עם התחום הצבוע"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="big-p" id="labP"></div>
+      <div><label class="slider" for="mu"><span>ממוצע <span class="eq"><i>μ</i></span></span><span class="eq" id="muv"></span></label>
+        <input type="range" id="mu" min="50" max="110" step="5" value="80"></div>
+      <div><label class="slider" for="sg"><span>סטיית תקן <span class="eq"><i>σ</i></span></span><span class="eq" id="sgv"></span></label>
+        <input type="range" id="sg" class="blue" min="4" max="15" step="1" value="10"></div>
+      <div><label class="slider" for="a"><span>מ-</span><span class="eq" id="av"></span></label>
+        <input type="range" id="a" min="20" max="140" step="1" value="70"></div>
+      <div><label class="slider" for="b"><span>עד</span><span class="eq" id="bv"></span></label>
+        <input type="range" id="b" min="20" max="140" step="1" value="90"></div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-k="-1,1">μ ± σ</button>
+          <button dir="ltr" data-k="-2,2">μ ± 2σ</button>
+          <button dir="ltr" data-k="-3,3">μ ± 3σ</button>
+          <button dir="ltr" data-k="0,9">מעל הממוצע</button>
+          <button dir="ltr" data-k="1,9">מעל μ + σ</button>
+          <button dir="ltr" data-k="-9,-2">מתחת ל-μ − 2σ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">הזיזו את <span class="eq"><i>σ</i></span> עם הכפתור "<span class="eq"><i>μ</i> ± <i>σ</i></span>": הפעמון משנה את הרוחב, אבל האחוז נשאר 68%. זה מה שהופך את ציון התקן לשימושי כל כך.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>ארבע מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים לחלק ב-<span class="eq"><i>σ</i></span></h3>
+      <p>ממוצע 70, סטיית תקן 10, ציון 90. <span class="eq">90 − 70 = 20</span> זה המרחק בנקודות, לא ציון התקן.</p>
+      <p>ציון התקן הוא <span class="eq">20 ÷ 10 = 2</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מוסיפים <span class="eq"><i>σ</i></span> פעם אחת בלבד</h3>
+      <p>"שתי סטיות תקן מעל הממוצע" זה <span class="eq"><i>μ</i> + 2<i>σ</i></span>, לא <span class="eq"><i>μ</i> + <i>σ</i></span>.</p>
+      <p>עם ממוצע 70 וסטיית תקן 10: <span class="eq">70 + 2 · 10 = 90</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>הצד הלא נכון של הפעמון</h3>
+      <p>"מעל <span class="eq"><i>μ</i> + <i>σ</i></span>" זה הזנב הימני: 16%. ה-84% הם "מתחת".</p>
+      <p>בדקו תמיד: התחום שלכם גדול או קטן?</p>
+    </div>
+    <div class="mini">
+      <h3>68% לצד אחד</h3>
+      <p>68% הם <strong>שני</strong> הצדדים ביחד. בין הממוצע ל-<span class="eq"><i>μ</i> + <i>σ</i></span> יש רק חצי: 34%.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ציירו לפני שמחשבים:</strong> פעמון קטן, קו באמצע, וצביעה של התחום. רוב הטעויות נעלמות כשרואים את התמונה.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">הגובה של תלמידים בשכבה מתפלג נורמלית, עם ממוצע 165 ס״מ וסטיית תקן 8 ס״מ. כמה אחוזים מהתלמידים גבוהים מ-157 ס״מ ונמוכים מ-181 ס״מ?</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">בשאלות על אחוזים השתמשו בכלל של 68, 95 ו-99.7, וכתבו את האחוז בלי הסימן %, למשל <span class="eq">47.5</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="z" aria-pressed="false">ציון תקן</button>
+    <button data-t="pct" aria-pressed="false">אחוז בתחום</button>
+    <button data-t="val" aria-pressed="false">ערך מתוך z</button>
+  </div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prL"></span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה התפלגות נורמלית?</h3>
+    <p>התפלגות של נתונים שהגרף שלה הוא עקומת פעמון סימטרית. רוב הערכים קרובים לממוצע, וככל שמתרחקים ממנו יש פחות ערכים. שני מספרים קובעים את הפעמון: הממוצע <span class="eq"><i>μ</i></span> וסטיית התקן <span class="eq"><i>σ</i></span>. <a href="#lab">שחקו איתם במעבדה</a>.</p>
+    <h3>איך מחשבים ציון תקן?</h3>
+    <p>מחסרים את הממוצע מהערך ומחלקים בסטיית התקן: <span class="eq"><i>z</i> = (<i>x</i> − <i>μ</i>) ÷ <i>σ</i></span>. אם הממוצע 70 וסטיית התקן 10, לציון 85 יש <span class="eq"><i>z</i> = 1.5</span>. ציון תקן שלילי אומר שהערך מתחת לממוצע.</p>
+    <h3>מה זה הכלל של 68, 95 ו-99.7?</h3>
+    <p>בכל התפלגות נורמלית, בערך 68% מהנתונים נמצאים במרחק של סטיית תקן אחת מהממוצע, 95% במרחק של שתיים, ו-99.7% במרחק של שלוש. בגלל הסימטריה, בכל צד יש חצי מזה. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/frequency-tables/">טבלת שכיחויות ודיאגרמות</a> · <a href="../../math/statistics/">ממוצע, חציון ושכיח</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/binomial-distribution/"><small>→ הנושא הקודם</small>התפלגות בינומית (ברנולי)</a><a class="next" href="../../math/"><small>סיימתם את הפרק ←</small>לכל הנושאים במתמטיקה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+/* standard normal CDF via the Abramowitz and Stegun erf approximation */
+function erf(x){
+  const s=x<0?-1:1; x=Math.abs(x);
+  const t=1/(1+0.3275911*x);
+  const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);
+  return s*y;
+}
+const Phi=z=>z===Infinity?1:z===-Infinity?0:0.5*(1+erf(z/Math.SQRT2));
+const p1=v=>numTxt(Math.round(v*10)/10);
+const zt=z=>numTxt(Math.round(z*100)/100);
+const MU='<i>μ</i>', SG='<i>σ</i>', MIN=20, MAX=140;
+
+/* ---------- lab ---------- */
+const X0=20, X1=360, BASE=180;
+const px=v=>X0+(v-MIN)/(MAX-MIN)*(X1-X0);
+function bell(svg,mu,sg,a,b){
+  const pdf=v=>Math.exp(-0.5*((v-mu)/sg)**2);
+  const H=150*Math.min(1,4.5/sg);
+  const py=v=>BASE-H*pdf(v);
+  let h='';
+  const sp=px(mu+sg)-px(mu);
+  for(let k=-3;k<=3;k++){
+    const v=mu+k*sg; if(v<MIN||v>MAX) continue;
+    h+=`<line class="${k?'tk':'mu'}" x1="${px(v)}" y1="${BASE}" x2="${px(v)}" y2="${k?BASE-H*pdf(v)-6:BASE-H-8}"/>`;
+    if(k===0||sp>=24||k%2===0){
+      h+=`<text class="lv" x="${px(v)}" y="${BASE+14}">${numTxt(v)}</text>`;
+      h+=`<text class="lz" x="${px(v)}" y="${BASE+26}">${k===0?'μ':(k>0?'+':'−')+(Math.abs(k)===1?'':Math.abs(k))+'σ'}</text>`;
+    }
+  }
+  /* shaded area */
+  const lo=Math.max(a,MIN), hi=Math.min(b,MAX);
+  if(hi>lo){
+    let d=`M${px(lo)},${BASE}`;
+    for(let v=lo; v<=hi; v+=0.5) d+=` L${px(v).toFixed(1)},${py(v).toFixed(1)}`;
+    d+=` L${px(hi).toFixed(1)},${py(hi).toFixed(1)} L${px(hi)},${BASE} Z`;
+    h+=`<path class="sh" d="${d}"/>`;
+    if(a>MIN) h+=`<line class="bd" x1="${px(a)}" y1="${BASE}" x2="${px(a)}" y2="${py(a)}"/>`;
+    if(b<MAX) h+=`<line class="bd" x1="${px(b)}" y1="${BASE}" x2="${px(b)}" y2="${py(b)}"/>`;
+  }
+  let d='';
+  for(let v=MIN; v<=MAX; v+=0.5) d+=(d?' L':'M')+px(v).toFixed(1)+','+py(v).toFixed(1);
+  h+=`<path class="cv" d="${d}"/>`;
+  h+=`<line class="ax" x1="${X0}" y1="${BASE}" x2="${X1}" y2="${BASE}"/>`;
+  svg.innerHTML=h;
+}
+function lab(){
+  const mu=+$('mu').value, sg=+$('sg').value;
+  let a=+$('a').value, b=+$('b').value;
+  if(a>b){ [a,b]=[b,a]; }
+  $('muv').textContent=mu; $('sgv').textContent=sg;
+  const aInf=a<=MIN, bInf=b>=MAX;
+  $('av').textContent=aInf?'אין גבול':numTxt(a);
+  $('bv').textContent=bInf?'אין גבול':numTxt(b);
+  bell($('labG'),mu,sg,aInf?-Infinity:a,bInf?Infinity:b);
+  const za=aInf?-Infinity:(a-mu)/sg, zb=bInf?Infinity:(b-mu)/sg;
+  const P=(Phi(zb)-Phi(za))*100;
+  $('labP').innerHTML=`${E(`P = ${p1(P)}%`)}`;
+  let t='';
+  if(!aInf) t+=`<div>${E(`z = (${numTxt(a)} − ${mu}) ÷ ${sg} = ${zt(za)}`)}</div>`;
+  if(!bInf) t+=`<div>${E(`z = (${numTxt(b)} − ${mu}) ÷ ${sg} = ${zt(zb)}`)}</div>`;
+  if(aInf&&bInf) t+='<div>כל הפעמון צבוע: 100% מהנתונים.</div>';
+  else if(aInf) t+=`<div>כל מה ש<strong>מתחת</strong> ל-${numTxt(b)}: בערך ${p1(P)}%.</div>`;
+  else if(bInf) t+=`<div>כל מה ש<strong>מעל</strong> ${numTxt(a)}: בערך ${p1(P)}%.</div>`;
+  else t+=`<div>בין ${numTxt(a)} ל-${numTxt(b)}: בערך ${p1(P)}% מהנתונים.</div>`;
+  const isInt=z=>!isFinite(z)||Math.abs(z-Math.round(z))<1e-9;
+  if(isInt(za)&&isInt(zb)&&(Math.abs(za)<=3||!isFinite(za))&&(Math.abs(zb)<=3||!isFinite(zb))&&!(aInf&&bInf)){
+    t+=`<div>לפי הכלל: ${p1(ruleP(za,zb))}%. הכלל מעגל קצת, ולכן המספרים כמעט זהים.</div>`;
+  }
+  $('labCalc').innerHTML=t;
+}
+/* the 68, 95, 99.7 rule: percent between two whole z values (or ±Infinity) */
+const SEG=[34,13.5,2.35,0.15];
+function segOf(k){ /* area between z=k and z=k+1, k from -4..3, outside ±3 lumped */
+  const m=k>=0?k:-k-1; return SEG[Math.min(m,3)];
+}
+function ruleP(za,zb){
+  const lo=isFinite(za)?Math.round(za):-4, hi=isFinite(zb)?Math.round(zb):4;
+  let s=0; for(let k=lo;k<hi;k++) s+=segOf(k);
+  return Math.round(s*100)/100;
+}
+['mu','sg','a','b'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.onclick=()=>{
+  const [k1,k2]=btn.dataset.k.split(',').map(Number), mu=+$('mu').value, sg=+$('sg').value;
+  $('a').value=k1<=-9?MIN:Math.max(MIN,mu+k1*sg);
+  $('b').value=k2>=9?MAX:Math.min(MAX,mu+k2*sg);
+  lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>מה ידוע?</strong> ${E(`${MU} = 165`)}, ${E(`${SG} = 8`)}. מחפשים את אחוז התלמידים בין 157 ל-181.`,
+  `<strong>ציון תקן לגבול התחתון:</strong> ${E(`(157 − 165) ÷ 8 = −1`)}. כלומר סטיית תקן אחת מתחת לממוצע.`,
+  `<strong>ציון תקן לגבול העליון:</strong> ${E(`(181 − 165) ÷ 8 = 2`)}. שתי סטיות תקן מעל הממוצע.`,
+  `<strong>מחלקים לחלקים:</strong> מ-${E('z = −1')} עד הממוצע יש 34%. מהממוצע עד ${E('z = 1')} עוד 34%. מ-${E('z = 1')} עד ${E('z = 2')} עוד 13.5%.`,
+  `<strong>מחברים:</strong> ${E('34 + 34 + 13.5 = 81.5')}. בערך 81.5% מהתלמידים.`,
+  `<strong>בדיקה בציור:</strong> התחום כולל את רוב הפעמון, וחסרים רק הזנב השמאלי (16%) וקצה קטן מימין (2.5%). ${E('100 − 16 − 2.5 = 81.5')}. אותה תשובה.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const SC=[
+  {what:'הציונים במבחן ארצי', unit:'נקודות', who:'מהתלמידים', mus:[60,65,70,75,80], sgs:[5,8,10,12]},
+  {what:'הגובה של בני נוער בשכבה', unit:'ס״מ', who:'מבני הנוער', mus:[160,165,170], sgs:[5,6,8]},
+  {what:'המשקל של תפוחים במטע', unit:'גרם', who:'מהתפוחים', mus:[150,180,200], sgs:[10,15,20]},
+  {what:'זמן הנסיעה לבית הספר', unit:'דקות', who:'מהנסיעות', mus:[30,40,45], sgs:[4,5,6]}
+];
+let mode='mix', pr=null, solved=0, streak=0;
+const near=(x,v,tol)=>Math.abs(x-v)<=tol;
+function newPr(){
+  const type=mode==='mix'?pick(['z','pct','pct','val']):mode;
+  const sc=pick(SC), mu=pick(sc.mus), sg=pick(sc.sgs);
+  pr={type,sc,mu,sg,tries:0,hint:0};
+  const intro=`${sc.what} מתפלגים נורמלית, עם ממוצע ${mu} ${sc.unit} וסטיית תקן ${sg} ${sc.unit}.`;
+  if(type==='z'){
+    let z; do{ z=pick([-2.5,-2,-1.5,-1,-0.5,0.5,1,1.5,2,2.5]); }while(mu+z*sg<=0);
+    pr.z=z; pr.x=mu+z*sg; pr.ans=z;
+    $('prQ').innerHTML=`${intro} מה ציון התקן של ${numTxt(pr.x)} ${sc.unit}?`;
+    $('prL').innerHTML=E('<i>z</i> =');
+  }else if(type==='val'){
+    const z=pick([-2,-1.5,-1,1,1.5,2,2.5,3]);
+    pr.z=z; pr.ans=mu+z*sg;
+    $('prQ').innerHTML=`${intro} איזה ערך נמצא ${Math.abs(z)===1?'סטיית תקן אחת':numTxt(Math.abs(z))+' סטיות תקן'} ${z>0?'מעל הממוצע':'מתחת לממוצע'}?`;
+    $('prL').innerHTML=E('<i>x</i> =');
+  }else{
+    const kind=pick(['between','between','above','below']);
+    let za,zb;
+    if(kind==='between'){ do{ za=rnd(-3,2); zb=rnd(za+1,3); }while(za===-3&&zb===3); }
+    else if(kind==='above'){ za=pick([-2,-1,0,1,2]); zb=Infinity; }
+    else { za=-Infinity; zb=pick([-2,-1,0,1,2]); }
+    pr.kind=kind; pr.za=za; pr.zb=zb; pr.ans=ruleP(za,zb); pr.exact=(Phi(zb)-Phi(za))*100;
+    const A=isFinite(za)?mu+za*sg:null, B=isFinite(zb)?mu+zb*sg:null;
+    pr.A=A; pr.B=B;
+    const q=kind==='between'?`בין ${numTxt(A)} ל-${numTxt(B)} ${sc.unit}`:kind==='above'?`יותר מ-${numTxt(A)} ${sc.unit}`:`פחות מ-${numTxt(B)} ${sc.unit}`;
+    $('prQ').innerHTML=`${intro} כמה אחוזים ${sc.who} הם ${q}?`;
+    $('prL').innerHTML='אחוז';
+  }
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const zName=z=>z===0?'הממוצע':E(`z = ${numTxt(z)}`);
+function partsTxt(za,zb){
+  const lo=isFinite(za)?Math.round(za):-4, hi=isFinite(zb)?Math.round(zb):4, out=[];
+  for(let k=lo;k<hi;k++) out.push(numTxt(segOf(k)));
+  return out;
+}
+function solution(){
+  const {type,mu,sg}=pr;
+  if(type==='z') return `${E(`z = (${numTxt(pr.x)} − ${mu}) ÷ ${sg}`)} ${E(`= ${numTxt(pr.x-mu)} ÷ ${sg} = ${numTxt(pr.z)}`)}.`;
+  if(type==='val') return `${E(`x = ${MU} + z · ${SG}`)} ${E(`= ${mu} + (${numTxt(pr.z)}) · ${sg} = ${numTxt(pr.ans)}`)}.`;
+  const parts=partsTxt(pr.za,pr.zb);
+  const zs=[isFinite(pr.za)?`הגבול ${numTxt(pr.A)} הוא ${zName(pr.za)}`:'',isFinite(pr.zb)?`הגבול ${numTxt(pr.B)} הוא ${zName(pr.zb)}`:''].filter(Boolean).join(', ');
+  return `${zs}. מחברים את החלקים של הכלל: ${E(parts.join(' + ')+' = '+numTxt(pr.ans))}. בערך ${numTxt(pr.ans)}%.`;
+}
+function diagnose(x){
+  const {type,mu,sg}=pr;
+  if(type==='z'){
+    if(near(x,pr.x-mu,1e-6)) return `זה המרחק ב${pr.sc.unit}. ציון תקן סופר סטיות תקן: חלקו ב-${sg}.`;
+    if(near(x,-pr.z,1e-6)) return `הסימן הפוך. ${numTxt(pr.x)} ${pr.x>mu?'מעל הממוצע':'מתחת לממוצע'}, אז ציון התקן ${pr.x>mu?'חיובי':'שלילי'}.`;
+    if(near(x,pr.x/sg,1e-6)) return 'קודם מחסרים את הממוצע, ורק אז מחלקים בסטיית התקן.';
+    return 'לא בדיוק. חשבו כמה הערך רחוק מהממוצע, ואז כמה סטיות תקן זה.';
+  }
+  if(type==='val'){
+    if(near(x,mu+Math.sign(pr.z)*sg,1e-6)&&Math.abs(pr.z)!==1) return `הוספתם סטיית תקן אחת. כאן צריך ${numTxt(Math.abs(pr.z))} סטיות תקן: כפלו ${numTxt(Math.abs(pr.z))} ב-${sg}.`;
+    if(near(x,mu+pr.z,1e-6)) return `${E('z')} הוא מספר סטיות התקן, לא מספר ה${pr.sc.unit}. כפלו אותו ב-${sg}.`;
+    if(near(x,mu-pr.z*sg,1e-6)) return `הכיוון הפוך. ${pr.z>0?'מעל הממוצע':'מתחת לממוצע'} אומר ${pr.z>0?'להוסיף':'להוריד'}.`;
+    if(near(x,pr.z*sg,1e-6)) return 'זה רק המרחק מהממוצע. הוסיפו אותו לממוצע.';
+    return `לא בדיוק. התחילו מהממוצע ${mu}, וזוזו ${numTxt(Math.abs(pr.z))} פעמים ${sg}.`;
+  }
+  if(x>100||x<0) return 'אחוז הוא מספר בין 0 ל-100.';
+  if(near(x,100-pr.ans,0.3)) return 'חישבתם את הצד השני של הפעמון. ציירו את התחום: האם הוא החלק הגדול או הקטן?';
+  if(pr.kind!=='between'&&near(x,2*pr.ans,0.3)) return 'זה שני הזנבות ביחד. השאלה על צד אחד בלבד, אז רק חצי.';
+  if(pr.kind==='between'&&near(x,pr.ans/2,0.3)) return 'לקחתם רק צד אחד של הממוצע. התחום עובר משני הצדדים שלו.';
+  const sym={1:68,2:95,3:99.7};
+  if(pr.kind==='between'&&Math.abs(pr.za)!==Math.abs(pr.zb)&&Object.values(sym).some(v=>near(x,v,0.3))) return 'זה המספר לתחום סימטרי סביב הממוצע. כאן התחום לא סימטרי: חלקו אותו לחלקים וחברו.';
+  return 'לא בדיוק. מצאו את ציון התקן של כל גבול, וחברו את החלקים של 34, 13.5, 2.35 ו-0.15.';
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const x=parseNum($('prA').value.trim().replace('%',''));
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 1.5 או 47.5.</div>'; return; }
+  const ok=pr.type==='pct'?(near(x,pr.ans,0.3)||near(x,pr.exact,0.3)):near(x,pr.ans,1e-6);
+  if(ok){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2); const {type,mu,sg}=pr; let h;
+  if(type==='z') h=pr.hint===1?`כמה ${pr.sc.unit} ${numTxt(pr.x)} רחוק מהממוצע ${mu}? שימו לב לכיוון.`:`${E(`${numTxt(pr.x)} − ${mu} = ${numTxt(pr.x-mu)}`)}. עכשיו חלקו ב-${sg}.`;
+  else if(type==='val') h=pr.hint===1?`סטיית תקן אחת היא ${sg} ${pr.sc.unit}. כמה זה ${numTxt(Math.abs(pr.z))} סטיות תקן?`:`${E(`${numTxt(Math.abs(pr.z))} · ${sg} = ${numTxt(Math.abs(pr.z)*sg)}`)}. ${pr.z>0?'הוסיפו לממוצע':'הורידו מהממוצע'}.`;
+  else h=pr.hint===1?'מצאו את ציון התקן של כל גבול, וציירו פעמון קטן עם התחום.':`החלקים שבתחום: ${E(partsTxt(pr.za,pr.zb).join(' + '))}. חברו אותם.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>משוואת המשיק לגרף · כיתה יא · מירי</title>
+<meta name="description" content="מוצאים את המשיק לגרף בנקודה: שיפוע מהנגזרת, נקודה מהפונקציה, ומשם משוואת ישר. גם משיק מקביל לישר נתון. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/tangent-line/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משוואת המשיק לגרף · כיתה יא · מירי">
+<meta property="og:description" content="מוצאים את המשיק לגרף בנקודה: שיפוע מהנגזרת, נקודה מהפונקציה, ומשם משוואת ישר. גם משיק מקביל לישר נתון. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/tangent-line/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"נגזרות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#derivatives-11"},{"@type":"ListItem","position":5,"name":"משוואת המשיק לגרף","item":"https://shohamtal.github.io/homework-site/math/tangent-line/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים משוואת משיק לגרף?","acceptedAnswer":{"@type":"Answer","text":"מציבים את x₀ בפונקציה ומקבלים את נקודת ההשקה. מציבים אותו בנגזרת ומקבלים את השיפוע. ואז כותבים y − y₀ = m(x − x₀) ומסדרים. ראו דוגמה פתורה."}},{"@type":"Question","name":"איך מוצאים משיק שמקביל לישר נתון?","acceptedAnswer":{"@type":"Answer","text":"ישרים מקבילים הם ישרים עם אותו שיפוע. לוקחים את השיפוע של הישר הנתון, משווים אליו את הנגזרת, ופותרים. כך מקבלים את ה-x של נקודת ההשקה, ומשם ממשיכים כרגיל."}},{"@type":"Question","name":"מה המשמעות של משיק אופקי?","acceptedAnswer":{"@type":"Answer","text":"משיק אופקי הוא משיק עם שיפוע 0, כלומר f′(x₀) = 0. המשוואה שלו היא y = y₀. בנקודות כאלה הגרף מפסיק לעלות או לרדת, ולכן הן חשובות מאוד בחקירת פונקציות."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"משוואת המשיק לגרף","description":"מוצאים את המשיק לגרף בנקודה: שיפוע מהנגזרת, נקודה מהפונקציה, ומשם משוואת ישר. גם משיק מקביל לישר נתון. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/tangent-line/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"נגזרות","teaches":"משוואת המשיק לגרף","keywords":"משיק, שיפוע, משוואת ישר","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .tan{stroke:var(--blue); stroke-width:2.4; fill:none}
+  .g .given{stroke:var(--muted); stroke-width:1.8; fill:none; stroke-dasharray:6 4}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .seg{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .nums{display:grid; gap:4px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="tangent-line">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#derivatives-11">נגזרות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">משוואת המשיק לגרף</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · נגזרות</div>
+  <h1>משוואת המשיק לגרף <span class="slogan">שיפוע, נקודה, וישר</span></h1>
+  <p class="lead">המשיק הוא ישר שנוגע בגרף בנקודה אחת ויש לו בדיוק את אותו שיפוע כמו הגרף שם. כדי לכתוב את המשוואה שלו צריך שני דברים: את <strong>השיפוע</strong>, שמקבלים מה<a href="../derivative-intro/">נגזרת</a>, ואת <strong>הנקודה</strong>, שמקבלים מהפונקציה.
+  משם זו בדיוק <a href="../equation-from-points/">משוואת ישר לפי שיפוע ונקודה</a>. נלמד גם למצוא משיק שמקביל לישר נתון. החומר מתאים ל-4 ול-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שלושה צעדים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>משיק בנקודה <span class="eq"><i>x</i>₀</span></h3>
+      <ol class="text">
+        <li><strong>הנקודה:</strong> <span class="eq"><i>y</i>₀ = <i>f</i>(<i>x</i>₀)</span>.</li>
+        <li><strong>השיפוע:</strong> <span class="eq"><i>m</i> = <i>f</i>′(<i>x</i>₀)</span>.</li>
+        <li><strong>המשוואה:</strong> <span class="eq"><i>y</i> − <i>y</i>₀ = <i>m</i>(<i>x</i> − <i>x</i>₀)</span>, ואז מסדרים ל-<span class="eq"><i>y</i> = <i>m</i><i>x</i> + <i>b</i></span>.</li>
+      </ol>
+      <svg class="g" id="introG" viewBox="0 0 240 240" role="img" aria-label="פרבולה עם משיק כחול בנקודה אחת"></svg>
+    </div>
+    <div class="mini">
+      <h3>משיק מקביל לישר</h3>
+      <p>ישרים מקבילים הם ישרים עם <strong>אותו שיפוע</strong>. אם מבקשים משיק שמקביל ל-<span class="eq"><i>y</i> = 3<i>x</i> + 1</span>, מחפשים נקודה שבה <span class="eq"><i>f</i>′(<i>x</i>) = 3</span>.</p>
+      <p>פותרים את המשוואה הזאת ומקבלים את <span class="eq"><i>x</i>₀</span>. משם ממשיכים בשלושת הצעדים הרגילים.</p>
+      <svg class="g" id="introP" viewBox="0 0 240 240" role="img" aria-label="פרבולה, ישר נתון אפור ומשיק כחול מקביל לו"></svg>
+    </div>
+  </div>
+  <div class="callout"><strong>חשוב לזכור:</strong> השיפוע בא מ-<span class="eq"><i>f</i>′</span>, והגובה בא מ-<span class="eq"><i>f</i></span>. מציבים את אותו <span class="eq"><i>x</i>₀</span> בשתיהן.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מזיזים את נקודת ההשקה</h2></div>
+  <p class="text">בחרו פונקציה ומצב. במצב "בנקודה" הזיזו את <span class="eq"><i>x</i>₀</span> וראו את משוואת המשיק משתנה. במצב "מקביל לישר" בחרו שיפוע <span class="eq"><i>k</i></span>, והמעבדה תמצא איפה המשיק מקביל לישר האפור.</p>
+  <div class="seg" id="fnPick" role="group" aria-label="בחירת פונקציה"></div>
+  <div class="seg" id="modePick" role="group" aria-label="בחירת מצב">
+    <button data-m="pt" aria-pressed="true">בנקודה</button><button data-m="par" aria-pressed="false">מקביל לישר</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <div id="ptCtl">
+        <label class="slider" for="xRange"><span>נקודת ההשקה <span class="eq"><i>x</i>₀</span></span><span class="eq" id="xVal"></span></label>
+        <input type="range" id="xRange" min="-3" max="3" step="0.5" value="1">
+      </div>
+      <div id="parCtl" hidden>
+        <label class="slider" for="kRange"><span>השיפוע של הישר האפור <span class="eq"><i>k</i></span></span><span class="eq" id="kVal"></span></label>
+        <input type="range" id="kRange" class="hl" min="-4" max="4" step="0.5" value="2">
+      </div>
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="0,pt,0">משיק בקודקוד</button>
+          <button data-p="0,pt,-2" dir="ltr">x₀ = −2</button>
+          <button data-p="1,par,0">מקביל לציר x</button>
+          <button data-p="1,par,-3">אין משיק כזה</button>
+          <button data-p="2,par,-1" dir="ltr">k = −1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>שיפוע מהפונקציה במקום מהנגזרת.</strong> <span class="eq"><i>f</i>(<i>x</i>₀)</span> הוא הגובה של הנקודה, לא השיפוע. את השיפוע מקבלים רק מ-<span class="eq"><i>f</i>′(<i>x</i>₀)</span>.</div></li>
+    <li><div><strong>b הוא לא <span class="eq"><i>y</i>₀</span>.</strong> אחרי שמציבים בנוסחה צריך לסדר: <span class="eq"><i>b</i> = <i>y</i>₀ − <i>m</i><i>x</i>₀</span>. רק כש-<span class="eq"><i>x</i>₀ = 0</span> יוצא <span class="eq"><i>b</i> = <i>y</i>₀</span>.</div></li>
+    <li><div><strong>מקביל זה לא "אותה נקודה".</strong> במשיק מקביל משווים את <strong>הנגזרת</strong> לשיפוע הנתון, <span class="eq"><i>f</i>′(<i>x</i>) = <i>k</i></span>. לא משווים את <span class="eq"><i>f</i>(<i>x</i>)</span> לישר.</div></li>
+    <li><div><strong>מינוס כפול מינוס.</strong> כש-<span class="eq"><i>x</i>₀</span> שלילי: <span class="eq"><i>y</i> − 4 = −4(<i>x</i> + 2)</span>. פותחים סוגריים בזהירות.</div></li>
+  </ol>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">משיק בנקודה</button>
+    <button id="exB" role="tab" aria-selected="false">משיק מקביל</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: כתבו את המשיק</h2></div>
+  <p class="text">כל פעם תופיע פונקציה חדשה ושאלה. אפשר לכתוב שבר עם קו נטוי (<span class="eq">1/2</span>) או מספר עשרוני.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs" dir="ltr"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים משוואת משיק לגרף?</h3>
+    <p>מציבים את <span class="eq"><i>x</i>₀</span> בפונקציה ומקבלים את נקודת ההשקה. מציבים אותו בנגזרת ומקבלים את השיפוע. ואז כותבים <span class="eq"><i>y</i> − <i>y</i>₀ = <i>m</i>(<i>x</i> − <i>x</i>₀)</span> ומסדרים. <a href="#example">ראו דוגמה פתורה</a>.</p>
+    <h3>איך מוצאים משיק שמקביל לישר נתון?</h3>
+    <p>ישרים מקבילים הם ישרים עם אותו שיפוע. לוקחים את השיפוע של הישר הנתון, משווים אליו את הנגזרת, ופותרים. כך מקבלים את ה-x של נקודת ההשקה, ומשם ממשיכים כרגיל.</p>
+    <h3>מה המשמעות של משיק אופקי?</h3>
+    <p>משיק אופקי הוא משיק עם שיפוע 0, כלומר <span class="eq"><i>f</i>′(<i>x</i>₀) = 0</span>. המשוואה שלו היא <span class="eq"><i>y</i> = <i>y</i>₀</span>. בנקודות כאלה הגרף מפסיק לעלות או לרדת, ולכן הן חשובות מאוד בחקירת פונקציות.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/derivative-intro/">נגזרת: שיפוע המשיק וכללי גזירה</a> · <a href="../../math/equation-from-points/">משוואת ישר לפי שיפוע ונקודה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/derivative-rules/"><small>→ הנושא הקודם</small>כללי גזירה: מכפלה, מנה ושרשרת</a><a class="next" href="../../math/polynomial-analysis/"><small>הנושא הבא ←</small>חקירת פולינום</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const nt=v=>numTxt(r2(v));
+const near=(a,b)=>Math.abs(a-b)<0.011;
+const SUP=['','','²','³'];
+const X='<i>x</i>';
+let pid=0;
+
+const ev=(c,x)=>c.reduce((s,k,i)=>s+k*Math.pow(x,i),0);
+const der=c=>c.slice(1).map((k,i)=>k*(i+1));
+function polyHTML(c,name){
+  const parts=[];
+  for(let i=c.length-1;i>=0;i--){
+    const k=c[i]; if(!k) continue;
+    const mag=(Math.abs(k)===1&&i>0)?'':fracHTML(Math.abs(k));
+    parts.push({neg:k<0,h:mag+(i===0?'':i===1?X:X+SUP[i])});
+  }
+  if(!parts.length) parts.push({neg:false,h:'0'});
+  let s=`<span class="eq">${name} = `;
+  parts.forEach((p,i)=>{ s+= i===0?(p.neg?MINUS:'')+p.h : ` ${p.neg?MINUS:'+'} ${p.h}`; });
+  return s+'</span>';
+}
+/* y = mx + b, with nice signs */
+function lineHTML(m,b){
+  m=r2(m); b=r2(b);
+  let s='<span class="eq"><i>y</i> = ';
+  if(m===0) return s+numTxt(b)+'</span>';
+  s+=(m===1?'':m===-1?MINUS:numTxt(m))+X;
+  if(b) s+=` ${b<0?MINUS:'+'} ${numTxt(Math.abs(b))}`;
+  return s+'</span>';
+}
+function curvePath(c){
+  let d='', pen=false;
+  for(let x=-6;x<=6.001;x+=0.05){ const y=ev(c,x); if(Math.abs(y)>40){ pen=false; continue; } d+=(pen?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); pen=true; }
+  return d;
+}
+const lineSVG=(m,b,cls)=>`<line class="${cls}" x1="${sx(-6)}" y1="${sy(m*-6+b)}" x2="${sx(6)}" y2="${sy(m*6+b)}"/>`;
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+/* opt: tans:[x0...], given:{m,b}, curve:false */
+function plot(svg,c,opt={}){
+  const id='tc'+(++pid);
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  if(opt.given) h+=lineSVG(opt.given.m,opt.given.b,'given');
+  if(opt.curve!==false) h+=`<path class="ln" d="${curvePath(c)}"/>`;
+  (opt.tans||[]).forEach(x0=>{ const m=ev(der(c),x0), y0=ev(c,x0); h+=lineSVG(m,y0-m*x0,'tan'); });
+  h+='</g>';
+  (opt.tans||[]).concat(opt.pts||[]).forEach(x0=>{ const y0=ev(c,x0); if(inG(x0,y0)) h+=`<circle class="cur" cx="${sx(x0)}" cy="${sy(y0)}" r="4.5"/>`; });
+  draw(svg,null,0,{extra:h});
+}
+/* x values where f'(x) = k, for quadratic or cubic c */
+function solveSlope(c,k){
+  const d=der(c);
+  if(d.length===2){ return d[1]?[(k-d[0])/d[1]]:[]; }
+  const A=d[2], B=d[1], C=d[0]-k, D=B*B-4*A*C;
+  if(D<-1e-9) return [];
+  if(Math.abs(D)<1e-9) return [-B/(2*A)];
+  const s=Math.sqrt(D); return [(-B-s)/(2*A),(-B+s)/(2*A)].sort((p,q)=>p-q);
+}
+
+/* intro */
+plot($('introG'),[-2,0,0.5],{tans:[2]});
+plot($('introP'),[-2,0,0.5],{given:{m:1,b:-3.5},tans:[1]});
+
+/* lab */
+const FNS=[
+  {c:[-2,0,0.5],t:'½x² − 2'},
+  {c:[0,-2,0,0.5],t:'½x³ − 2x'},
+  {c:[2,1,-0.5],t:'−½x² + x + 2'}
+];
+let fi=0, mode='pt';
+const xR=$('xRange'), kR=$('kRange');
+$('fnPick').innerHTML=FNS.map((F,i)=>`<button data-i="${i}" dir="ltr" aria-pressed="${i===0}">f(x) = ${F.t}</button>`).join('');
+function setPicks(){
+  $('fnPick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===fi));
+  $('modePick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===mode));
+  $('ptCtl').hidden=mode!=='pt'; $('parCtl').hidden=mode!=='par';
+}
+$('fnPick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ fi=+b.dataset.i; setPicks(); lab(); }));
+$('modePick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ mode=b.dataset.m; setPicks(); lab(); }));
+function tanText(c,x0){
+  const y0=ev(c,x0), m=ev(der(c),x0), b=y0-m*x0;
+  return `<div class="nums"><div><strong>הנקודה:</strong> <span class="eq"><i>f</i>(${numTxt(x0)}) = ${nt(y0)}</span>, כלומר <span class="eq">(${numTxt(x0)}, ${nt(y0)})</span></div>`
+    +`<div><strong>השיפוע:</strong> <span class="eq"><i>f</i>′(${numTxt(x0)}) = ${nt(m)}</span></div>`
+    +`<div><strong>המשוואה:</strong> <span class="eq"><i>b</i> = ${nt(y0)} − ${nt(m)}·${x0<0?'('+numTxt(x0)+')':numTxt(x0)} = ${nt(b)}</span>, ולכן ${lineHTML(m,b)}</div></div>`;
+}
+function lab(){
+  const F=FNS[fi], c=F.c;
+  $('labEq').innerHTML='<div>'+polyHTML(c,'<i>f</i>(<i>x</i>)')+'</div><div style="font-size:.8em">'+polyHTML(der(c),'<i>f</i>′(<i>x</i>)')+'</div>';
+  if(mode==='pt'){
+    const x0=+xR.value; $('xVal').textContent=numTxt(x0);
+    plot($('labG'),c,{tans:[x0]});
+    let t=tanText(c,x0);
+    if(Math.abs(ev(der(c),x0))<1e-9) t+='<div>השיפוע 0, ולכן המשיק <strong>אופקי</strong>.</div>';
+    $('labExplain').innerHTML=t;
+  }else{
+    const k=+kR.value; $('kVal').textContent=numTxt(k);
+    const xs=solveSlope(c,k), given={m:k,b:k===0?4.5:-4};
+    plot($('labG'),c,{given,tans:xs});
+    let t=`<div>מחפשים נקודה שבה השיפוע שווה ל-<span class="eq">${numTxt(k)}</span>: פותרים <span class="eq"><i>f</i>′(<i>x</i>) = ${numTxt(k)}</span>.</div>`;
+    if(!xs.length) t+=`<div><strong>אין פתרון.</strong> השיפוע של הגרף אף פעם לא יורד מתחת ל-<span class="eq">${nt(ev(der(c),0))}</span>, אז אין משיק עם שיפוע כזה.</div>`;
+    else{
+      t+=`<div>${xs.length===1?'יש נקודה אחת:':'יש שתי נקודות:'} ${xs.map(x=>`<span class="eq"><i>x</i> = ${nt(x)}</span>`).join(' ו-')}.</div>`;
+      t+=xs.map(x=>`<div>המשיק שם: ${lineHTML(k,ev(c,x)-k*x)}</div>`).join('');
+    }
+    $('labExplain').innerHTML=t;
+  }
+}
+[xR,kR].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [f,m,v]=btn.dataset.p.split(','); fi=+f; mode=m; if(m==='pt') xR.value=v; else kR.value=v; setPicks(); lab(); }));
+setPicks(); lab();
+
+/* worked examples */
+const EX={
+  A:{c:[1,-4,1],steps:[
+    [{},`נמצא את המשיק לגרף של <span class="eq"><i>f</i>(${X}) = ${X}² − 4${X} + 1</span> בנקודה שבה <span class="eq">${X} = 1</span>.`],
+    [{pts:[1]},`<strong>צעד 1, הנקודה:</strong> <span class="eq"><i>f</i>(1) = 1 − 4 + 1 = −2</span>. נקודת ההשקה היא <span class="eq">(1, −2)</span>.`],
+    [{pts:[1]},`<strong>צעד 2, הנגזרת:</strong> <span class="eq"><i>f</i>′(${X}) = 2${X} − 4</span>, ולכן <span class="eq"><i>m</i> = <i>f</i>′(1) = −2</span>.`],
+    [{tans:[1]},`<strong>צעד 3, המשוואה:</strong> <span class="eq"><i>y</i> − (−2) = −2(${X} − 1)</span>, כלומר <span class="eq"><i>y</i> + 2 = −2${X} + 2</span>.`],
+    [{tans:[1]},`<strong>צעד 4, מסדרים:</strong> <span class="eq"><i>y</i> = −2${X}</span>. בדיקה: הנקודה <span class="eq">(1, −2)</span> באמת על הישר, כי <span class="eq">−2 · 1 = −2</span>.`]
+  ]},
+  B:{c:[1,-4,1],steps:[
+    [{},`נמצא משיק לגרף של <span class="eq"><i>f</i>(${X}) = ${X}² − 4${X} + 1</span> שמקביל לישר <span class="eq"><i>y</i> = 2${X} + 3</span>.`],
+    [{given:{m:2,b:3}},`<strong>צעד 1, השיפוע:</strong> הישר הנתון (האפור) עם שיפוע 2. משיק מקביל צריך את אותו שיפוע, <span class="eq"><i>m</i> = 2</span>.`],
+    [{given:{m:2,b:3},pts:[3]},`<strong>צעד 2, משווים את הנגזרת:</strong> <span class="eq">2${X} − 4 = 2</span>, ולכן <span class="eq">${X} = 3</span>.`],
+    [{given:{m:2,b:3},pts:[3]},`<strong>צעד 3, הנקודה:</strong> <span class="eq"><i>f</i>(3) = 9 − 12 + 1 = −2</span>. נקודת ההשקה <span class="eq">(3, −2)</span>.`],
+    [{given:{m:2,b:3},tans:[3]},`<strong>צעד 4, המשוואה:</strong> <span class="eq"><i>y</i> + 2 = 2(${X} − 3)</span>, ולכן <span class="eq"><i>y</i> = 2${X} − 8</span>. הוא מקביל לישר האפור, ונוגע בפרבולה.`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [opt,txt]=e.steps[exI];
+  plot($('exG'),e.c,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].steps.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+['A','B'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice: eq = tangent y = mx + b at x0; par = x0 where the tangent is parallel to y = kx + q */
+let pr=null, streak=0, solved=0;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function newPr(){
+  const kind=Math.random()<0.6?'eq':'par';
+  let c;
+  if(kind==='eq'&&Math.random()<0.3) c=[rnd(-2,2),pick([-3,-2,-1,1,2]),0,1];
+  else c=[rnd(-3,3),rnd(-4,4),pick([1,-1,2,-2])];
+  const x0=pick([-2,-1,0,1,2]);
+  const m=ev(der(c),x0), y0=ev(c,x0);
+  pr={kind,c,x0,m,y0,b:y0-m*x0,tries:0,hint:0};
+  $('prEq').innerHTML=polyHTML(c,'<i>f</i>(<i>x</i>)');
+  if(kind==='eq'){
+    $('prQ').innerHTML=`כתבו את משוואת המשיק לגרף בנקודה שבה <span class="eq"><i>x</i> = ${numTxt(x0)}</span>.`;
+    $('prInputs').innerHTML=`<span class="eq"><i>y</i> =</span> <label for="prM"><input id="prM" size="4" inputmode="text" autocomplete="off" aria-label="השיפוע m"><span class="eq"><i>x</i> +</span></label> <label for="prB"><input id="prB" size="4" inputmode="text" autocomplete="off" aria-label="b"></label>`;
+    plot($('prG'),c,{pts:[x0]});
+  }else{
+    const q=pick([-3,-1,2,4,5].filter(v=>!near(v,y0-m*x0)));
+    pr.k=m; pr.q=q;
+    $('prQ').innerHTML=`באיזה <span class="eq"><i>x</i></span> המשיק לגרף מקביל לישר <span class="eq">${lineHTML(m,q).replace('<span class="eq">','').replace(/<\/span>$/,'')}</span>?`;
+    $('prInputs').innerHTML=`<label for="prX"><span class="eq"><i>x</i> =</span><input id="prX" size="4" inputmode="text" autocomplete="off"></label>`;
+    plot($('prG'),c,{given:{m,b:q}});
+  }
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {x0,m,y0,b,c}=pr, X0=x0<0?'('+numTxt(x0)+')':numTxt(x0);
+  const d=polyHTML(der(c),'<i>f</i>′(<i>x</i>)');
+  if(pr.kind==='eq') return `${d}. <span class="eq"><i>m</i> = <i>f</i>′(${numTxt(x0)}) = ${nt(m)}</span>, <span class="eq"><i>y</i>₀ = <i>f</i>(${numTxt(x0)}) = ${nt(y0)}</span>. <span class="eq"><i>b</i> = ${nt(y0)} − ${nt(m)}·${X0} = ${nt(b)}</span>. המשיק: ${lineHTML(m,b)}`;
+  return `${d}. משווים לשיפוע של הישר: <span class="eq"><i>f</i>′(<i>x</i>) = ${nt(m)}</span>, ומקבלים <span class="eq"><i>x</i> = ${numTxt(x0)}</span>`;
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const fb=$('prFb'), msgs=[], {x0,m,y0,b,c}=pr;
+  if(pr.kind==='eq'){
+    const M=parseNum($('prM').value), B=parseNum($('prB').value);
+    if(isNaN(M)||isNaN(B)){ fb.innerHTML='<div class="fb err">מלאו מספר גם לשיפוע וגם ל-b. אם b הוא 0, כתבו 0.</div>'; return; }
+    if(near(M,m)&&near(B,b)){ streak++; solved++; score(); plot($('prG'),c,{tans:[x0]}); fb.innerHTML=`<div class="fb ok">נכון! המשיק הוא ${lineHTML(m,b)}. הוא נוגע בגרף בנקודה <span class="eq">(${numTxt(x0)}, ${nt(y0)})</span>.</div>`; return; }
+    if(!near(M,m)){
+      if(near(M,y0)) msgs.push('בתור שיפוע כתבתם את <span class="eq"><i>f</i>(<i>x</i>₀)</span>, הגובה. את השיפוע מקבלים מהנגזרת.');
+      else msgs.push('השיפוע לא נכון. גזרו את הפונקציה, והציבו את <span class="eq"><i>x</i>₀</span> בנגזרת.');
+    }else{
+      msgs.push('השיפוע נכון!');
+      if(near(B,y0)) msgs.push('b הוא לא הגובה של הנקודה. צריך לסדר: <span class="eq"><i>b</i> = <i>y</i>₀ − <i>m</i><i>x</i>₀</span>.');
+      else if(near(B,y0+m*x0)) msgs.push('יש טעות בסימן. <span class="eq"><i>b</i> = <i>y</i>₀ − <i>m</i><i>x</i>₀</span>, עם מינוס.');
+      else msgs.push('בדקו את b. הציבו את הנקודה בישר: <span class="eq"><i>y</i>₀ = <i>m</i><i>x</i>₀ + <i>b</i></span>, ובודדו את b.');
+    }
+  }else{
+    const x=parseNum($('prX').value);
+    if(isNaN(x)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    if(near(x,x0)){ streak++; solved++; score(); plot($('prG'),c,{given:{m,b:pr.q},tans:[x0]}); fb.innerHTML=`<div class="fb ok">נכון! ב-<span class="eq"><i>x</i> = ${numTxt(x0)}</span> השיפוע הוא <span class="eq">${nt(m)}</span>, בדיוק כמו לישר. המשיק: ${lineHTML(m,b)}.</div>`; return; }
+    const d=der(c);
+    if(d.length===2&&near(x,(d[0]-m)/d[1])) msgs.push('יש טעות בסימן כשהעברתם אגף. בדקו את הפתרון של <span class="eq"><i>f</i>′(<i>x</i>) = <i>k</i></span>.');
+    else if(near(ev(c,x),m)) msgs.push('השוויתם את הפונקציה עצמה לשיפוע. צריך להשוות את <strong>הנגזרת</strong> לשיפוע של הישר.');
+    else msgs.push('לא בדיוק. גזרו, השוו את הנגזרת לשיפוע של הישר, ופתרו.');
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(t=>'<li>'+t+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  const d=polyHTML(der(pr.c),'<i>f</i>′(<i>x</i>)'); let t;
+  if(pr.kind==='eq') t=pr.hint===1?`קודם הנקודה: <span class="eq"><i>f</i>(${numTxt(pr.x0)}) = ${nt(pr.y0)}</span>. עכשיו גזרו כדי למצוא את השיפוע.`:`${d}, ולכן <span class="eq"><i>m</i> = ${nt(pr.m)}</span>. הציבו את הנקודה ב-<span class="eq"><i>y</i> = <i>m</i><i>x</i> + <i>b</i></span> ומצאו את b.`;
+  else t=pr.hint===1?`לישר יש שיפוע <span class="eq">${nt(pr.m)}</span>. מקביל אומר אותו שיפוע.`:`${d}. פתרו את המשוואה <span class="eq">${polyHTML(der(pr.c),'').replace('<span class="eq"> = ','').replace(/<\/span>$/,'')} = ${nt(pr.m)}</span>.`;
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  if(!pr) return;
+  plot($('prG'),pr.c,pr.kind==='eq'?{tans:[pr.x0]}:{given:{m:pr.m,b:pr.q},tans:[pr.x0]});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

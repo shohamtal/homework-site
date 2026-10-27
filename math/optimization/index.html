@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>בעיות קיצון · כיתה יא · מירי</title>
+<meta name="description" content="מוצאים את השטח הכי גדול או המחיר הכי קטן: בונים פונקציה מהסיפור, גוזרים ומשווים לאפס. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/optimization/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="בעיות קיצון · כיתה יא · מירי">
+<meta property="og:description" content="מוצאים את השטח הכי גדול או המחיר הכי קטן: בונים פונקציה מהסיפור, גוזרים ומשווים לאפס. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/optimization/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"חקירת פונקציות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#analysis-11"},{"@type":"ListItem","position":5,"name":"בעיות קיצון","item":"https://shohamtal.github.io/homework-site/math/optimization/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך פותרים בעיית קיצון שלב אחרי שלב?","acceptedAnswer":{"@type":"Answer","text":"מסמנים ב-x את מה שמשתנה, כותבים את מה שרוצים להגדיל או להקטין כפונקציה של x בלבד, מוצאים תחום, גוזרים ומשווים ל-0. בסוף בודקים בטבלת סימנים שזה מקסימום או מינימום, ועונים על מה ששאלו. ראו דוגמה מלאה."}},{"@type":"Question","name":"איך יודעים אם מצאתי מקסימום או מינימום?","acceptedAnswer":{"@type":"Answer","text":"בודקים את סימן הנגזרת משני הצדדים. אם היא עוברת מחיובית לשלילית, זה מקסימום. משלילית לחיובית, זה מינימום. אפשר גם להציב x קצת לפני וקצת אחרי ולהשוות את הערכים."}},{"@type":"Question","name":"מה עושים כשהנגזרת נותנת שני פתרונות?","acceptedAnswer":{"@type":"Answer","text":"בודקים מי מהם בתוך התחום של הסיפור. פתרון שנותן אורך שלילי או נפח 0 נפסל. אם שניהם בתחום, בודקים כל אחד בטבלת סימנים, ובוחרים את מה שמתאים לשאלה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"בעיות קיצון","description":"מוצאים את השטח הכי גדול או המחיר הכי קטן: בונים פונקציה מהסיפור, גוזרים ומשווים לאפס. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/optimization/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"חקירת פונקציות","teaches":"בעיות קיצון","keywords":"מקסימום, מינימום, בעיה מילולית","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .pics{display:flex; flex-direction:column; gap:12px; min-width:0}
+  .g .wall{stroke:var(--ink); stroke-width:3}
+  .g .hatch{stroke:var(--muted); stroke-width:1}
+  .g .shape{fill:var(--ok-bg); stroke:var(--ink); stroke-width:2}
+  .g .fence{stroke:var(--line); stroke-width:3.5; fill:none; stroke-linecap:round}
+  .g .cut{fill:var(--err-bg); stroke:var(--err); stroke-width:1.2; stroke-dasharray:3 2}
+  .g .fold{stroke:var(--blue); stroke-width:1.2; stroke-dasharray:4 3}
+  .g .sheet{fill:var(--card); stroke:var(--ink); stroke-width:2}
+  .g .boxf{fill:var(--ok-bg); stroke:var(--ink); stroke-width:1.5}
+  .g .boxt{fill:var(--hint-bg); stroke:var(--ink); stroke-width:1.5}
+  .g .dim{fill:var(--ink); font:700 9px var(--f-math)}
+  .g .lbl{fill:var(--muted); font:8px var(--f-body)}
+  .g .vline{stroke:var(--muted); stroke-width:1; stroke-dasharray:3 3}
+  .g .maxpt{fill:var(--line); stroke:var(--ink); stroke-width:1.4}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .g .tan{stroke:var(--blue); stroke-width:2; stroke-dasharray:5 3}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .props{margin:0; padding:0; list-style:none; display:grid; gap:4px}
+  .sgn{border-collapse:collapse; margin:4px auto; font-size:.95rem}
+  .sgn td,.sgn th{border:1.5px solid var(--soft); padding:4px 8px; text-align:center}
+  .plan{counter-reset:p; list-style:none; padding:0; margin:0; display:grid; gap:6px}
+  .plan li{counter-increment:p; display:flex; gap:8px; align-items:baseline}
+  .plan li::before{content:counter(p); flex:0 0 auto; width:1.6em; height:1.6em; border-radius:50%; background:var(--hl); border:1.5px solid var(--ink); display:inline-grid; place-items:center; font-weight:800; font-size:.85rem}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="optimization">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#analysis-11">חקירת פונקציות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">בעיות קיצון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · חקירת פונקציות</div>
+  <h1>בעיות קיצון <span class="slogan">הכי גדול, הכי קטן</span></h1>
+  <p class="lead">מה השטח הכי גדול שאפשר לגדר? באיזה גודל לחתוך כדי לקבל קופסה עם הכי הרבה נפח?
+  בבעיית קיצון הופכים סיפור לפונקציה, גוזרים ומשווים לאפס. זה בדיוק מה שעשיתם ב<a href="../polynomial-analysis/">חקירת פולינום</a>, רק שהפונקציה באה מהסיפור. מתאים ל-4 ו-5 יח״ל.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: חמישה צעדים קבועים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>המתכון</h3>
+      <ol class="plan">
+        <li><span>מסמנים ב-<i>x</i> את מה שאפשר לשנות.</span></li>
+        <li><span>כותבים את מה שרוצים להגדיל או להקטין כ<strong>פונקציה של x בלבד</strong>.</span></li>
+        <li><span>מוצאים את התחום: אילו x הגיוניים בסיפור (אורך לא שלילי, למשל).</span></li>
+        <li><span>גוזרים ומשווים ל-0.</span></li>
+        <li><span>בודקים בטבלת סימנים שזה באמת מקסימום או מינימום, ועונים על השאלה.</span></li>
+      </ol>
+    </div>
+    <div class="mini">
+      <h3>למה הנגזרת?</h3>
+      <p>כל עוד הנגזרת חיובית, הפונקציה עולה, ושווה להמשיך להגדיל את x. כשהנגזרת נעשית שלילית, כבר עברנו את השיא. בשיא עצמו המשיק <strong>אופקי</strong>, והנגזרת שווה 0.</p>
+      <p>רוצים להיזכר מה זה נגזרת? ב<a href="../derivative-intro/">נגזרת: שיפוע המשיק</a>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>שימו לב:</strong> קשר בין שני משתנים (למשל "סך הגדר הוא 20 מטר") משמש כדי <strong>להיפטר</strong> ממשתנה אחד. בסוף צריכה להישאר פונקציה עם x בלבד.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מחפשים את השיא</h2></div>
+  <p class="text">בחרו סיפור, ואז הזיזו את x. למעלה רואים את הצורה, ולמטה את הגרף של מה שרוצים להגדיל. הנקודה הצהובה זזה על הגרף, והקו הכחול הוא המשיק.</p>
+  <div class="lab">
+    <div class="pics">
+      <svg class="g" id="labShape" viewBox="0 0 240 150" role="img" aria-label="ציור הסיפור"></svg>
+      <svg class="g" id="labFn" viewBox="0 0 240 150" role="img" aria-label="גרף הפונקציה"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="seg" id="labStory" role="group" aria-label="בחירת סיפור">
+        <button data-s="fence" aria-pressed="true">גדר ליד קיר</button>
+        <button data-s="box" aria-pressed="false">קופסה מדף</button>
+      </div>
+      <p class="text" id="labStoryText"></p>
+      <div class="big-eq" id="labEq" dir="ltr" style="font-size:clamp(1.3rem,4.5vw,1.9rem)"></div>
+      <label class="slider" for="LR"><span id="LLbl"></span><span class="eq" id="LV"></span></label>
+      <input type="range" id="LR" min="8" max="24" step="2" value="20">
+      <label class="slider" for="xR"><span><i>x</i> =</span><span class="eq" id="xV"></span></label>
+      <input type="range" id="xR" class="hl" min="0" max="10" step="0.1" value="2">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="labTries">
+          <button id="goMax">קפצו לשיא</button>
+          <button id="goSmall">x קטן מאוד</button>
+          <button id="goBig">x גדול מאוד</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>פונקציה עם שני משתנים.</strong> <span class="eq"><i>S</i> = <i>x</i> · <i>y</i></span> עוד לא מוכנה לגזירה. קודם מבטאים את y בעזרת x מהנתון, ורק אז גוזרים.</div></li>
+    <li><div><strong>לוקחים את הפתרון הלא נכון של הנגזרת.</strong> בקופסה מקבלים <span class="eq"><i>x</i> = 2</span> או <span class="eq"><i>x</i> = 6</span>. אבל ב-<span class="eq"><i>x</i> = 6</span> חותכים את כל הדף, והנפח 0. תמיד בודקים שהפתרון בתוך התחום.</div></li>
+    <li><div><strong>מניחים שהתשובה היא ריבוע.</strong> בלי קיר, גדר סביב מלבן נותנת ריבוע. עם קיר בצד אחד, התשובה <strong>לא</strong> ריבוע. רק החישוב יגיד.</div></li>
+    <li><div><strong>עונים על שאלה אחרת.</strong> השאלה הייתה "מה השטח הכי גדול"? אז x הוא לא התשובה. מציבים את x בפונקציה ועונים במילים.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> נסו x קצת יותר קטן וקצת יותר גדול מהתשובה. שני הערכים צריכים לצאת קטנים יותר (במקסימום) או גדולים יותר (במינימום).</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: הקופסה הכי גדולה</h2></div>
+  <p class="text">יש דף ריבועי, 12 על 12 ס״מ. חותכים ריבוע שצלעו x בכל פינה, ומקפלים את השוליים לקופסה פתוחה. איזה x נותן את הנפח הכי גדול? לחצו "הצעד הבא".</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 150" role="img" aria-label="ציור או גרף של הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: סיפור, פונקציה, שיא</h2></div>
+  <p class="text">בכל פעם סיפור אחר. כתבו את x ואת הערך הכי גדול (או הכי קטן). הגרף מופיע ברמז השני.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 150" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך פותרים בעיית קיצון שלב אחרי שלב?</h3>
+    <p>מסמנים ב-x את מה שמשתנה, כותבים את מה שרוצים להגדיל או להקטין כפונקציה של x בלבד, מוצאים תחום, גוזרים ומשווים ל-0. בסוף בודקים בטבלת סימנים שזה מקסימום או מינימום, ועונים על מה ששאלו. <a href="#example">ראו דוגמה מלאה</a>.</p>
+    <h3>איך יודעים אם מצאתי מקסימום או מינימום?</h3>
+    <p>בודקים את סימן הנגזרת משני הצדדים. אם היא עוברת מחיובית לשלילית, זה מקסימום. משלילית לחיובית, זה מינימום. אפשר גם להציב x קצת לפני וקצת אחרי ולהשוות את הערכים.</p>
+    <h3>מה עושים כשהנגזרת נותנת שני פתרונות?</h3>
+    <p>בודקים מי מהם בתוך התחום של הסיפור. פתרון שנותן אורך שלילי או נפח 0 נפסל. אם שניהם בתחום, בודקים כל אחד בטבלת סימנים, ובוחרים את מה שמתאים לשאלה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/polynomial-analysis/">חקירת פולינום</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/root-analysis/"><small>→ הנושא הקודם</small>חקירת פונקציית שורש</a><a class="next" href="../../math/geometric-sequences/"><small>הנושא הבא ←</small>סדרה הנדסית: איבר כללי וסכום</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`;
+const r1=v=>Math.round(v*10)/10, r2=v=>Math.round(v*100)/100, nt=v=>numTxt(r2(v));
+const near=(a,b,t)=>Math.abs(a-b)<=(t===undefined?Math.max(0.011,Math.abs(b)*0.005):t);
+
+/* function graph: f on [0, xmax], y from 0 to ymax (or ymin..ymax). opt: {cur, max:{x,y}, tan:true, lbl} */
+function plotXY(svg,f,xmax,ymin,ymax,opt={}){
+  const L=34, R=228, T=12, B=128;
+  const px=x=>L+(R-L)*x/xmax, py=y=>B-(B-T)*(y-ymin)/(ymax-ymin);
+  let h=`<rect class="bg" x="0" y="0" width="240" height="150"/>`;
+  for(let i=0;i<=4;i++){ const y=ymin+(ymax-ymin)*i/4; h+=`<line class="grid" x1="${L}" y1="${py(y)}" x2="${R}" y2="${py(y)}"/><text class="tick" x="${L-3}" y="${py(y)+2.5}" text-anchor="end">${numTxt(r1(y))}</text>`; }
+  for(let i=0;i<=4;i++){ const x=xmax*i/4; h+=`<text class="tick" x="${px(x)}" y="${B+9}" text-anchor="middle">${numTxt(r1(x))}</text>`; }
+  h+=`<line class="axis" x1="${L}" y1="${py(Math.max(ymin,0))}" x2="${R+4}" y2="${py(Math.max(ymin,0))}"/><line class="axis" x1="${L}" y1="${B}" x2="${L}" y2="${T-4}"/>`;
+  h+=`<text class="tick" x="${R+6}" y="${py(Math.max(ymin,0))+3}">x</text><text class="lbl" x="${L+4}" y="${T}">${opt.lbl||''}</text>`;
+  if(opt.curve!==false){
+    let d=''; const n=160;
+    for(let i=0;i<=n;i++){ const x=xmax*i/n, y=f(x); if(!isFinite(y)) continue; const Y=Math.max(T-6,Math.min(B+6,py(y))); d+=(d?'L':'M')+px(x).toFixed(1)+' '+Y.toFixed(1); }
+    h+=`<path class="ln" d="${d}"/>`;
+  }
+  if(opt.max){ const m=opt.max; h+=`<line class="vline" x1="${px(m.x)}" y1="${py(m.y)}" x2="${px(m.x)}" y2="${B}"/><circle class="maxpt" cx="${px(m.x)}" cy="${py(m.y)}" r="4.5"/>`; if(m.label) h+=`<text class="ptlbl" x="${px(m.x)+6}" y="${py(m.y)-6}">${m.label}</text>`; }
+  if(opt.cur!==undefined){
+    const x=opt.cur, y=f(x);
+    if(opt.slope!==undefined){ const dx=xmax*0.14, s=opt.slope; h+=`<line class="tan" x1="${px(x-dx)}" y1="${py(y-s*dx)}" x2="${px(x+dx)}" y2="${py(y+s*dx)}"/>`; }
+    h+=`<circle class="cur" cx="${px(x)}" cy="${py(y)}" r="5"/>`;
+  }
+  svg.innerHTML=h;
+}
+
+/* fence picture: wall on top, rectangle hanging from it. L total fence, x depth */
+function fencePic(svg,L,x){
+  const sc=200/L, w=(L-2*x)*sc, d=x*sc, x0=120-w/2, y0=22;
+  let h=`<rect class="bg" x="0" y="0" width="240" height="150"/><line class="wall" x1="10" y1="${y0}" x2="230" y2="${y0}"/>`;
+  for(let i=14;i<230;i+=10) h+=`<line class="hatch" x1="${i}" y1="${y0}" x2="${i+6}" y2="${y0-7}"/>`;
+  h+=`<text class="lbl" x="120" y="11" text-anchor="middle">קיר (לא צריך גדר)</text>`;
+  if(w>0.5&&d>0.5){
+    h+=`<rect class="shape" x="${x0}" y="${y0}" width="${w}" height="${d}"/>`;
+    h+=`<path class="fence" d="M${x0} ${y0} V${y0+d} H${x0+w} V${y0}"/>`;
+    h+=`<text class="dim" x="${x0-4}" y="${y0+d/2+3}" text-anchor="end">x</text><text class="dim" x="${x0+w+4}" y="${y0+d/2+3}">x</text>`;
+    h+=`<text class="dim" x="120" y="${Math.min(y0+d+12,146)}" text-anchor="middle" direction="ltr">${numTxt(r1(L-2*x))}</text>`;
+    if(d>16&&w>40) h+=`<text class="dim" x="120" y="${y0+d/2+3}" text-anchor="middle" direction="ltr">S = ${numTxt(r1(x*(L-2*x)))}</text>`;
+  }else h+=`<text class="lbl" x="120" y="80" text-anchor="middle">אין מלבן, השטח 0</text>`;
+  svg.innerHTML=h;
+}
+/* box picture: the sheet with corner cuts, and the folded box */
+function boxPic(svg,s,x,opt={}){
+  const sc=124/s, X0=12, Y0=13, c=x*sc, S=s*sc;
+  let h=`<rect class="bg" x="0" y="0" width="240" height="150"/><rect class="sheet" x="${X0}" y="${Y0}" width="${S}" height="${S}"/>`;
+  if(c>0.3){
+    [[0,0],[S-c,0],[0,S-c],[S-c,S-c]].forEach(([a,b])=>{ h+=`<rect class="cut" x="${X0+a}" y="${Y0+b}" width="${c}" height="${c}"/>`; });
+    h+=`<path class="fold" d="M${X0+c} ${Y0+c} H${X0+S-c} V${Y0+S-c} H${X0+c} Z"/>`;
+    h+=`<text class="dim" x="${X0+c/2}" y="${Y0+c+10}" text-anchor="middle">x</text>`;
+  }
+  h+=`<text class="dim" x="${X0+S/2}" y="${Y0+S+11}" text-anchor="middle" direction="ltr">${numTxt(s)}</text>`;
+  if(opt.sheetOnly){ svg.innerHTML=h; return; }
+  const k=60/s, w=(s-2*x)*k, hh=x*k, dx=w*0.45, dy=w*0.3, bx=142, by=118;
+  if(w>0.5&&hh>0.3){
+    h+=`<path class="boxt" d="M${bx} ${by-hh} l${dx} ${-dy} h${w} l${-dx} ${dy} Z"/>`;
+    h+=`<path class="boxf" d="M${bx+w} ${by} l${dx} ${-dy} v${-hh} l${-dx} ${dy} Z"/>`;
+    h+=`<rect class="boxf" x="${bx}" y="${by-hh}" width="${w}" height="${hh}"/>`;
+    h+=`<text class="dim" x="${bx+w/2}" y="${by+11}" text-anchor="middle" direction="ltr">${numTxt(r1(s-2*x))}</text>`;
+    h+=`<text class="dim" x="${bx-4}" y="${by-hh/2+3}" text-anchor="end">x</text>`;
+  }else h+=`<text class="lbl" x="188" y="90" text-anchor="middle">אין קופסה, הנפח 0</text>`;
+  svg.innerHTML=h;
+}
+
+/* lab */
+const ST={
+  fence:{text:'יש לכם L מטר של גדר. מגדרים מלבן ליד קיר, אז צריך גדר רק לשלוש צלעות. x הוא הצלע שמאונכת לקיר.',
+    lbl:'אורך הגדר, <i>L</i>',min:8,max:24,step:2,val:20,
+    f:(L,x)=>x*(L-2*x), d:(L,x)=>L-4*x, xmax:L=>L/2, best:L=>L/4, ymax:L=>L*L/8,
+    eq:L=>`<i>S</i>(${X}) = ${X}(${numTxt(L)} − 2${X})`, deq:L=>`<i>S</i>′(${X}) = ${numTxt(L)} − 4${X}`, unit:'מ״ר', name:'השטח', fl:'S'},
+  box:{text:'דף ריבועי שצלעו a. חותכים ריבוע שצלעו x בכל פינה ומקפלים לקופסה פתוחה. הבסיס הוא a − 2x והגובה x.',
+    lbl:'צלע הדף, <i>a</i>',min:6,max:18,step:1,val:12,
+    f:(a,x)=>x*(a-2*x)**2, d:(a,x)=>(a-2*x)*(a-6*x), xmax:a=>a/2, best:a=>a/6, ymax:a=>2*a*a*a/27,
+    eq:a=>`<i>V</i>(${X}) = ${X}(${numTxt(a)} − 2${X})²`, deq:a=>`<i>V</i>′(${X}) = (${numTxt(a)} − 2${X})(${numTxt(a)} − 6${X})`, unit:'סמ״ק', name:'הנפח', fl:'V'}
+};
+let story='fence';
+const LR=$('LR'), xR=$('xR');
+function setStory(s){
+  story=s; const T=ST[s];
+  $('labStory').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s===s));
+  LR.min=T.min; LR.max=T.max; LR.step=T.step; LR.value=T.val;
+  xR.value=T.best(T.val)/2;
+  lab();
+}
+$('labStory').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setStory(b.dataset.s)));
+[LR,xR].forEach(r=>r.addEventListener('input',lab));
+$('goMax').onclick=()=>{ const T=ST[story]; xR.value=T.best(+LR.value); lab(); };
+$('goSmall').onclick=()=>{ xR.value=+xR.min+0.2; lab(); };
+$('goBig').onclick=()=>{ xR.value=+xR.max-0.2; lab(); };
+function lab(){
+  const T=ST[story], L=+LR.value, xm=T.xmax(L);
+  xR.max=xm; xR.min=0;
+  let x=Math.min(+xR.value,xm); if(x<0) x=0;
+  const best=T.best(L), y=T.f(L,x), dv=T.d(L,x), ymax=T.ymax(L);
+  $('labStoryText').textContent=T.text;
+  $('LLbl').innerHTML=T.lbl; $('LV').textContent=numTxt(L); $('xV').textContent=numTxt(r1(x));
+  $('labEq').innerHTML=eqs(T.eq(L));
+  if(story==='fence') fencePic($('labShape'),L,x); else boxPic($('labShape'),L,x);
+  const atMax=Math.abs(x-best)<0.051;
+  plotXY($('labFn'),u=>T.f(L,u),xm,0,ymax*1.15,{cur:x,slope:dv,lbl:`${T.fl}(x)`,max:atMax?{x:best,y:ymax}:null});
+  let msg;
+  if(atMax) msg=`<strong>הגעתם לשיא!</strong> הנגזרת כאן 0 והמשיק אופקי. ${T.name} הכי גדול הוא ${eqs(nt(ymax))} ${T.unit}, ב-${eqs(`${X} = ${nt(best)}`)}.`;
+  else if(x<=1e-9||x>=xm-1e-9) msg=`ב-${eqs(`${X} = ${nt(x)}`)} אין צורה בכלל, ${T.name} 0. זה קצה התחום, לא התשובה.`;
+  else if(dv>0) msg=`הנגזרת <strong>חיובית</strong> (${eqs(nt(dv))}). ${T.name} עדיין גדל, אז שווה להגדיל את x.`;
+  else msg=`הנגזרת <strong>שלילית</strong> (${eqs(nt(dv))}). כבר עברנו את השיא, ${T.name} קטן. הקטינו את x.`;
+  $('labExplain').innerHTML=`<div>${msg}</div><ul class="props">
+    <li>${T.name}: ${eqs(`${T.fl}(${nt(x)}) ≈ ${nt(y)}`)} ${T.unit}</li>
+    <li>הנגזרת: ${eqs(T.deq(L))}</li>
+    <li>התחום: ${eqs(`0 &lt; ${X} &lt; ${nt(xm)}`)}</li></ul>`;
+}
+setStory('fence');
+
+/* worked example: box from a 12 by 12 sheet */
+const EXV=x=>x*(12-2*x)**2;
+const EXS=[
+  [()=>boxPic($('exG'),12,2,{sheetOnly:true}),`<strong>צעד 1, מסמנים:</strong> x הוא צלע הריבוע שחותכים. אחרי הקיפול הבסיס הוא ${eqs(`12 − 2${X}`)} על ${eqs(`12 − 2${X}`)}, והגובה ${X}.`],
+  [()=>boxPic($('exG'),12,2),`<strong>צעד 2, פונקציה:</strong> נפח = בסיס כפול גובה. ${eqs(`<i>V</i>(${X}) = ${X}(12 − 2${X})²`)}.`],
+  [()=>boxPic($('exG'),12,5.6),`<strong>צעד 3, תחום:</strong> x חיובי, וגם ${eqs(`12 − 2${X} &gt; 0`)}. לכן ${eqs(`0 &lt; ${X} &lt; 6`)}. ב-x קרוב ל-6 כמעט לא נשאר בסיס.`],
+  [()=>plotXY($('exG'),EXV,6,0,150,{lbl:'V(x)'}),`<strong>צעד 4, גוזרים</strong> (כלל המכפלה): ${eqs(`<i>V</i>′ = (12 − 2${X})² − 4${X}(12 − 2${X})`)} ${eqs(`= (12 − 2${X})(12 − 6${X})`)}.`],
+  [()=>plotXY($('exG'),EXV,6,0,150,{lbl:'V(x)',max:{x:2,y:128,label:'(2, 128)'}}),`<strong>צעד 5, משווים ל-0:</strong> ${eqs(`${X} = 6`)} או ${eqs(`${X} = 2`)}. 6 לא בתחום (נפח 0). נשאר ${eqs(`${X} = 2`)}.<table class="sgn" dir="ltr"><tr><th>x</th><td>0 &lt; x &lt; 2</td><td>2</td><td>2 &lt; x &lt; 6</td></tr><tr><th>V′</th><td>+</td><td>0</td><td>−</td></tr><tr><th>V</th><td>↗</td><td>max</td><td>↘</td></tr></table>`],
+  [()=>boxPic($('exG'),12,2),`<strong>צעד 6, עונים:</strong> ${eqs('<i>V</i>(2) = 2 · 8² = 128')}. חותכים ריבועים של 2 ס״מ, ומקבלים קופסה של 128 סמ״ק, הכי גדולה שאפשר.`]
+];
+let exI=0;
+function ex(){
+  EXS[exI][0]();
+  $('exText').innerHTML=EXS[exI][1];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+let pr=null, streak=0, solved=0;
+function newPr(){
+  const kind=pick(['fence','square','box','nums','perim']);
+  let q;
+  if(kind==='fence'){
+    const L=pick([12,16,20,24,32,40]);
+    q={x:L/4,v:L*L/8,bad:{[L/3]:'third',[L/2]:'zero'},vLbl:'השטח הכי גדול =',
+      text:`יש ${L} מטר גדר. מגדרים מלבן ליד קיר ארוך, כך שצריך גדר רק לשלוש צלעות. מה אורך הצלע x שמאונכת לקיר, ומה השטח הכי גדול?`,
+      f:u=>u*(L-2*u),xmax:L/2,ymax:L*L/8,fl:'S(x)',
+      hint1:`הצלע שמקבילה לקיר היא ${eqs(`${L} − 2${X}`)}. כתבו את השטח כפונקציה של x.`,
+      hint2:`${eqs(`<i>S</i>(${X}) = ${X}(${L} − 2${X})`)}, ולכן ${eqs(`<i>S</i>′(${X}) = ${L} − 4${X}`)}. השוו ל-0. ציירנו את הגרף.`,
+      sol:`${eqs(`<i>S</i>′ = ${L} − 4${X} = 0`)}, אז ${eqs(`${X} = ${numTxt(L/4)}`)}. הצלע השנייה ${eqs(numTxt(L/2))}, והשטח ${eqs(`${numTxt(L/4)} · ${numTxt(L/2)} = ${numTxt(L*L/8)}`)} מ״ר.`};
+  }else if(kind==='square'){
+    const P=pick([12,16,20,24,28,36]);
+    q={x:P/4,v:P*P/16,bad:{[P/2]:'zero',[P/3]:'third'},vLbl:'השטח הכי גדול =',
+      text:`היקף של מלבן הוא ${P} ס״מ. אחת הצלעות היא x. מה x שנותן את השטח הכי גדול, ומה השטח?`,
+      f:u=>u*(P/2-u),xmax:P/2,ymax:P*P/16,fl:'S(x)',
+      hint1:`חצי היקף הוא ${numTxt(P/2)}, אז הצלע השנייה היא ${eqs(`${numTxt(P/2)} − ${X}`)}.`,
+      hint2:`${eqs(`<i>S</i>(${X}) = ${X}(${numTxt(P/2)} − ${X})`)}, ולכן ${eqs(`<i>S</i>′ = ${numTxt(P/2)} − 2${X}`)}. השוו ל-0. ציירנו את הגרף.`,
+      sol:`${eqs(`<i>S</i>′ = ${numTxt(P/2)} − 2${X} = 0`)}, אז ${eqs(`${X} = ${numTxt(P/4)}`)}. זה ריבוע, והשטח ${eqs(`${numTxt(P/4)}² = ${numTxt(P*P/16)}`)} סמ״ר.`};
+  }else if(kind==='box'){
+    const a=pick([6,12,18,24,30]);
+    q={x:a/6,v:2*a*a*a/27,bad:{[a/2]:'zero',[a/4]:'guess'},vLbl:'הנפח הכי גדול =',
+      text:`מדף ריבועי שצלעו ${a} ס״מ חותכים ריבוע שצלעו x בכל פינה, ומקפלים לקופסה פתוחה. מה x שנותן את הנפח הכי גדול, ומה הנפח?`,
+      f:u=>u*(a-2*u)**2,xmax:a/2,ymax:2*a*a*a/27,fl:'V(x)',
+      hint1:`הבסיס הוא ${eqs(`${a} − 2${X}`)} על ${eqs(`${a} − 2${X}`)}, והגובה x. כתבו את הנפח.`,
+      hint2:`${eqs(`<i>V</i>′ = (${a} − 2${X})(${a} − 6${X})`)}. יש שני פתרונות, ורק אחד בתחום ${eqs(`0 &lt; ${X} &lt; ${numTxt(a/2)}`)}. ציירנו את הגרף.`,
+      sol:`${eqs(`<i>V</i>′ = (${a} − 2${X})(${a} − 6${X}) = 0`)}. ${eqs(`${X} = ${numTxt(a/2)}`)} נותן נפח 0, אז ${eqs(`${X} = ${numTxt(a/6)}`)}. הנפח ${eqs(`${numTxt(a/6)} · ${numTxt(2*a/3)}² = ${numTxt(2*a*a*a/27)}`)} סמ״ק.`};
+  }else if(kind==='nums'){
+    const S=pick([6,9,12,15]);
+    q={x:S/3,v:4*S*S*S/27,bad:{[S/2]:'half',[S]:'zero',[2*S/3]:'swap'},vLbl:'המכפלה הכי גדולה =',
+      text:`סכום של שני מספרים חיוביים x ו-y הוא ${S}. מה x שנותן את הערך הכי גדול ל-${'x · y²'}, ומה הערך הזה?`,
+      f:u=>u*(S-u)**2,xmax:S,ymax:4*S*S*S/27,fl:'P(x)',
+      hint1:`מהנתון ${eqs(`<i>y</i> = ${S} − ${X}`)}. כתבו ${eqs(`<i>P</i>(${X}) = ${X}(${S} − ${X})²`)}.`,
+      hint2:`${eqs(`<i>P</i>′ = (${S} − ${X})(${S} − 3${X})`)}. מי מהפתרונות נותן מכפלה 0? ציירנו את הגרף.`,
+      sol:`${eqs(`<i>P</i>′ = (${S} − ${X})(${S} − 3${X}) = 0`)}. ${eqs(`${X} = ${S}`)} נותן ${eqs('<i>y</i> = 0')}, אז ${eqs(`${X} = ${numTxt(S/3)}`)} ו-${eqs(`<i>y</i> = ${numTxt(2*S/3)}`)}. הערך ${eqs(`${numTxt(S/3)} · ${numTxt(2*S/3)}² = ${numTxt(4*S*S*S/27)}`)}.`};
+  }else{
+    const k=pick([16,25,36,49,64,100]), r=Math.sqrt(k);
+    q={x:r,v:4*r,bad:{[k/4]:'k4',[k/2]:'k2',[k]:'nosqrt'},vLbl:'ההיקף הכי קטן =',min:true,
+      text:`שטח של מלבן הוא ${k} סמ״ר. אחת הצלעות היא x. מה x שנותן את ההיקף הכי קטן, ומה ההיקף?`,
+      f:u=>2*(u+k/u),xmax:2.5*r,ymax:5*r,fl:'P(x)',
+      hint1:`הצלע השנייה היא ${eqs(`${k} ÷ ${X}`)}. ההיקף ${eqs(`<i>P</i>(${X}) = 2(${X} + ${k} ÷ ${X})`)}.`,
+      hint2:`${eqs(`<i>P</i>′ = 2 − ${2*k} ÷ ${X}²`)}. השוו ל-0 וזכרו ש-x חיובי. ציירנו את הגרף.`,
+      sol:`${eqs(`<i>P</i>′ = 2 − ${2*k} ÷ ${X}² = 0`)}, אז ${eqs(`${X}² = ${k}`)} ו-${eqs(`${X} = ${r}`)}. זה ריבוע, וההיקף ${eqs(`4 · ${r} = ${4*r}`)} ס״מ.`};
+  }
+  pr={...q,kind,tries:0,hint:0};
+  $('prQ').textContent=q.text;
+  $('prInputs').innerHTML=`<label for="prX"><span dir="ltr">x =</span><input id="prX" inputmode="text" autocomplete="off"></label><label for="prV"><span>${q.vLbl}</span><input id="prV" inputmode="text" autocomplete="off"></label>`;
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  plotXY($('prG'),q.f,q.xmax,0,q.ymax*1.2,{curve:false,lbl:q.fl});
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function graph(withMax){ plotXY($('prG'),pr.f,pr.xmax,0,pr.ymax*1.2,{lbl:pr.fl,max:withMax?{x:pr.x,y:pr.v,label:`(${nt(pr.x)}, ${nt(pr.v)})`}:null}); }
+const MSG={
+  third:'חילקתם את הגדר שווה בשווה. זה לא בהכרח השיא. כתבו את הפונקציה, גזרו ובדקו.',
+  zero:'ב-x הזה הצורה נעלמת והערך 0. זה קצה התחום, לא השיא. חפשו את הפתרון השני של הנגזרת.',
+  guess:'זה לא השיא. גזרו את הנפח והשוו ל-0. יש שני פתרונות, ורק אחד בתחום.',
+  half:'שני מספרים שווים נותנים מכפלה הכי גדולה רק ב-x · y. כאן y בריבוע, אז כדאי ש-y יהיה גדול יותר. גזרו ובדקו.',
+  swap:'החלפתם בין x ל-y. כאן x הוא המספר <strong>בלי</strong> הריבוע.',
+  k4:'לא. נסו לכתוב את ההיקף כפונקציה של x, ולגזור.',
+  k2:'לא. נסו לכתוב את ההיקף כפונקציה של x, ולגזור.',
+  nosqrt:'יצא לכם x² = k? אז x הוא השורש של המספר, לא המספר עצמו.'
+};
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), x=parseNum($('prX').value), v=parseNum($('prV').value);
+  if(isNaN(x)){ fb.innerHTML='<div class="fb err">כתבו מספר ב-x.</div>'; return; }
+  const xOk=near(x,pr.x), vOk=!isNaN(v)&&near(v,pr.v);
+  if(xOk&&vOk){ streak++; solved++; score(); graph(true); fb.innerHTML=`<div class="fb ok">נכון! ב-${eqs(`${X} = ${nt(pr.x)}`)} מקבלים ${eqs(nt(pr.v))}, ${pr.min?'הכי קטן':'הכי גדול'} שאפשר. בגרף רואים שזה השיא.</div>`; return; }
+  let m;
+  if(xOk&&isNaN(v)) m='x נכון! עכשיו הציבו אותו בפונקציה וכתבו גם את הערך.';
+  else if(xOk) m='x נכון, אבל הערך לא. הציבו את x בפונקציה המקורית, לא בנגזרת.';
+  else if(near(x,pr.v)&&!near(pr.v,pr.x)) m='כתבתם את הערך במקום x. x הוא הגודל שבחרתם לשנות.';
+  else{
+    const key=Object.keys(pr.bad).find(b=>near(x,+b));
+    m=key?MSG[pr.bad[key]]:'x לא נכון. כתבו את הפונקציה עם x בלבד, גזרו והשוו ל-0.';
+  }
+  streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  if(pr.hint===2) graph(false);
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hint===1?pr.hint1:pr.hint2}</div>`;
+};
+$('prShow').onclick=()=>{ graph(true); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${pr.sol} אחר כך נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

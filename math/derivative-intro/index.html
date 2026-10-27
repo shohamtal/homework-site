@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>נגזרת: שיפוע המשיק וכללי גזירה · כיתה יא · מירי</title>
+<meta name="description" content="הנגזרת היא השיפוע של הגרף בכל נקודה. רואים את המשיק זז על הגרף, ולומדים לגזור xⁿ ופולינומים. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/derivative-intro/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="נגזרת: שיפוע המשיק וכללי גזירה · כיתה יא · מירי">
+<meta property="og:description" content="הנגזרת היא השיפוע של הגרף בכל נקודה. רואים את המשיק זז על הגרף, ולומדים לגזור xⁿ ופולינומים. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/derivative-intro/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"נגזרות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#derivatives-11"},{"@type":"ListItem","position":5,"name":"נגזרת: שיפוע המשיק וכללי גזירה","item":"https://shohamtal.github.io/homework-site/math/derivative-intro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה נגזרת במילים פשוטות?","acceptedAnswer":{"@type":"Answer","text":"נגזרת היא השיפוע של הגרף בכל נקודה. היא אומרת כמה מהר הפונקציה משתנה שם: מספר חיובי גדול אומר שהגרף עולה חזק, מספר שלילי אומר שהוא יורד, ו-0 אומר שהמשיק אופקי. ראו את זה במעבדה."}},{"@type":"Question","name":"איך גוזרים x בחזקה?","acceptedAnswer":{"@type":"Answer","text":"מורידים את החזקה לפנים, ומקטינים אותה ב-1. למשל (x⁴)′ = 4x³ ו-(3x²)′ = 6x. הנגזרת של x היא 1, והנגזרת של מספר לבד היא 0."}},{"@type":"Question","name":"מה ההבדל בין f(x) ל-f′(x)?","acceptedAnswer":{"@type":"Answer","text":"f(a) הוא הגובה של הגרף בנקודה, כלומר ערך ה-y. f′(a) הוא השיפוע של הגרף באותה נקודה. כדי למצוא שיפוע קודם גוזרים, ורק אחר כך מציבים. תרגלו את זה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"נגזרת: שיפוע המשיק וכללי גזירה","description":"הנגזרת היא השיפוע של הגרף בכל נקודה. רואים את המשיק זז על הגרף, ולומדים לגזור xⁿ ופולינומים. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/derivative-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"נגזרות","teaches":"נגזרת: שיפוע המשיק וכללי גזירה","keywords":"שיפוע המשיק, נגזרת של xⁿ, קצב שינוי","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .tan{stroke:var(--blue); stroke-width:2.2; fill:none; stroke-dasharray:6 4}
+  .g .sec{stroke:var(--ink); stroke-width:1.8; fill:none}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .g .drop{stroke:var(--ink); stroke-width:1.2; stroke-dasharray:3 3}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .dgraph{margin-top:8px}
+  .dgraph p{margin:0 0 4px; font-weight:700}
+  .nums{display:grid; gap:4px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="derivative-intro">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#derivatives-11">נגזרות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">נגזרת: שיפוע המשיק וכללי גזירה</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · נגזרות</div>
+  <h1>נגזרת: שיפוע המשיק וכללי גזירה <span class="slogan">כמה תלול הגרף כאן?</span></h1>
+  <p class="lead">בישר יש שיפוע אחד לכל אורכו. בגרף מעוקל השיפוע משתנה מנקודה לנקודה: פעם עולה חזק, פעם כמעט שטוח, פעם יורד.
+  <strong>הנגזרת</strong> היא מכונה שאומרת לנו מה השיפוע בכל נקודה. נבין מאיפה היא באה, ונלמד לגזור פולינומים. החומר מתאים ל-4 ול-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שיפוע של עקומה</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מיתר שהופך למשיק</h3>
+      <p>לוקחים שתי נקודות על הגרף ומחברים אותן בקו. זה <strong>מיתר</strong>, ואת השיפוע שלו כבר יודעים לחשב, כמו ב<a href="../slope-two-points/">שיפוע בין שתי נקודות</a>.</p>
+      <svg class="g" id="introS" viewBox="0 0 240 240" role="img" aria-label="פרבולה עם מיתר שחור וקו משיק כחול מקווקו בנקודה אחת"></svg>
+      <p>עכשיו מקרבים את הנקודה השנייה לראשונה. המיתר השחור מסתובב, ובסוף הוא נוגע בגרף רק בנקודה אחת. זה <strong>המשיק</strong>, הקו הכחול. השיפוע שלו הוא הנגזרת.</p>
+    </div>
+    <div class="mini">
+      <h3>הכלל של חזקה</h3>
+      <p>לא צריך לקרב נקודות כל פעם. לפולינומים יש כלל קצר: <strong>מורידים את החזקה לפנים, ומקטינים אותה ב-1</strong>.</p>
+      <ul class="text">
+        <li><span class="eq">(<i>x</i>³)′ = 3<i>x</i>²</span></li>
+        <li><span class="eq">(5<i>x</i>²)′ = 10<i>x</i></span></li>
+        <li><span class="eq">(4<i>x</i>)′ = 4</span></li>
+        <li><span class="eq">(7)′ = 0</span>, כי מספר לבד לא משתנה.</li>
+      </ul>
+      <p>בפולינום גוזרים כל איבר לבד ומחברים. אם <span class="eq"><i>f</i>(<i>x</i>) = <i>x</i>² + 3<i>x</i></span>, אז <span class="eq"><i>f</i>′(<i>x</i>) = 2<i>x</i> + 3</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>במילים:</strong> <span class="eq"><i>f</i>′(<i>a</i>)</span> הוא השיפוע של המשיק לגרף בנקודה שבה <span class="eq"><i>x</i> = <i>a</i></span>. אם הוא חיובי, הגרף עולה שם. אם הוא שלילי, הגרף יורד. ואם הוא 0, המשיק אופקי.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מקרבים את המיתר</h2></div>
+  <p class="text">בחרו פונקציה. הזיזו את <span class="eq"><i>x</i>₀</span> כדי לבחור נקודה, ואת <span class="eq"><i>h</i></span> כדי לקבוע כמה רחוקה הנקודה השנייה. הקטינו את <span class="eq"><i>h</i></span> וראו איך שיפוע המיתר מתקרב לשיפוע המשיק.</p>
+  <div class="seg" id="fnPick" role="group" aria-label="בחירת פונקציה"></div>
+  <div class="lab">
+    <div>
+      <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף הפונקציה עם מיתר ומשיק"></svg>
+      <div class="dgraph">
+        <p>הגרף של הנגזרת <span class="eq"><i>f</i>′(<i>x</i>)</span>:</p>
+        <svg class="g" id="labD" viewBox="0 0 240 240" role="img" aria-label="גרף הנגזרת עם הנקודה הנוכחית"></svg>
+      </div>
+    </div>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="xRange"><span>הנקודה <span class="eq"><i>x</i>₀</span></span><span class="eq" id="xVal"></span></label>
+      <input type="range" id="xRange" min="-3" max="3" step="0.5" value="1">
+      <label class="slider" for="hRange"><span>המרחק <span class="eq"><i>h</i></span></span><span class="eq" id="hVal"></span></label>
+      <input type="range" id="hRange" class="hl" min="0.1" max="2" step="0.1" value="1.5">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="0,1,0.1">h קטן מאוד</button>
+          <button data-p="0,0,1">משיק אופקי</button>
+          <button data-p="2,-2,0.5" dir="ltr">x₀ = −2</button>
+          <button data-p="3,1,1">ישר: השיפוע לא זז</button>
+          <button data-p="2,2,0.5">גרף שיורד</button>
+          <button data-p="1,-1,0.1" dir="ltr">y = ½x³ − 2x, x₀ = −1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב לגרף התחתון: איפה שהגרף העליון עולה, הנגזרת מעל ציר x. איפה שהוא יורד, הנגזרת מתחת. ואיפה שהמשיק אופקי, הנגזרת בדיוק 0.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>שוכחים להוריד את החזקה.</strong> <span class="eq">(<i>x</i>³)′ = 3<i>x</i>²</span>, ולא <span class="eq">3<i>x</i>³</span>. מורידים את 3 לפנים <strong>וגם</strong> מקטינים את החזקה ל-2.</div></li>
+    <li><div><strong>הנגזרת של מספר היא 0.</strong> ב-<span class="eq"><i>f</i>(<i>x</i>) = <i>x</i>² + 5</span> הנגזרת היא <span class="eq">2<i>x</i></span>. ה-5 נעלם, כי הוא רק מזיז את הגרף למעלה ולא משנה אותו.</div></li>
+    <li><div><strong>מציבים בפונקציה במקום בנגזרת.</strong> שואלים מה השיפוע ב-<span class="eq"><i>x</i> = 2</span>? קודם גוזרים, ורק אחר כך מציבים 2 ב-<span class="eq"><i>f</i>′</span>. <span class="eq"><i>f</i>(2)</span> הוא הגובה, לא השיפוע.</div></li>
+    <li><div><strong>המקדם נשאר.</strong> <span class="eq">(4<i>x</i>³)′ = 4 · 3<i>x</i>² = 12<i>x</i>²</span>. כופלים את המקדם במעריך, לא מחליפים אותו.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> חשבו את <span class="eq"><i>f</i>′(<i>a</i>)</span>, ואז הסתכלו על הגרף. אם יצא מספר חיובי, הגרף באמת עולה שם? אם יצא 0, המשיק באמת שטוח?</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">לחצו "הצעד הבא" ותראו איך מוצאים שיפוע של גרף בנקודה.</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: גוזרים ומציבים</h2></div>
+  <p class="text">כל פעם תופיע פונקציה חדשה ושאלה עליה. אפשר לכתוב שבר עם קו נטוי (<span class="eq">1/2</span>) או מספר עשרוני.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs" dir="ltr"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה נגזרת במילים פשוטות?</h3>
+    <p>נגזרת היא השיפוע של הגרף בכל נקודה. היא אומרת כמה מהר הפונקציה משתנה שם: מספר חיובי גדול אומר שהגרף עולה חזק, מספר שלילי אומר שהוא יורד, ו-0 אומר שהמשיק אופקי. <a href="#lab">ראו את זה במעבדה</a>.</p>
+    <h3>איך גוזרים x בחזקה?</h3>
+    <p>מורידים את החזקה לפנים, ומקטינים אותה ב-1. למשל <span class="eq">(<i>x</i>⁴)′ = 4<i>x</i>³</span> ו-<span class="eq">(3<i>x</i>²)′ = 6<i>x</i></span>. הנגזרת של <span class="eq"><i>x</i></span> היא 1, והנגזרת של מספר לבד היא 0.</p>
+    <h3>מה ההבדל בין f(x) ל-f′(x)?</h3>
+    <p><span class="eq"><i>f</i>(<i>a</i>)</span> הוא הגובה של הגרף בנקודה, כלומר ערך ה-y. <span class="eq"><i>f</i>′(<i>a</i>)</span> הוא השיפוע של הגרף באותה נקודה. כדי למצוא שיפוע קודם גוזרים, ורק אחר כך מציבים. <a href="#practice">תרגלו את זה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/slope-two-points/">שיפוע בין שתי נקודות</a> · <a href="../../math/parabola/">פונקציה ריבועית: הפרבולה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/multi-stage-probability/"><small>→ הנושא הקודם</small>הסתברות: עץ רב-שלבי ו"לפחות פעם אחת"</a><a class="next" href="../../math/derivative-rules/"><small>הנושא הבא ←</small>כללי גזירה: מכפלה, מנה ושרשרת</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const nt=v=>numTxt(r2(v));
+const near=(a,b)=>Math.abs(a-b)<0.011;
+const SUP=['','','²','³','⁴','⁵'];
+let pid=0;
+
+/* polynomial = coefficients [c0, c1, c2, c3] */
+const ev=(c,x)=>c.reduce((s,k,i)=>s+k*Math.pow(x,i),0);
+const der=c=>c.slice(1).map((k,i)=>k*(i+1));
+function polyHTML(c,name){
+  const parts=[];
+  for(let i=c.length-1;i>=0;i--){
+    const k=c[i]; if(!k) continue;
+    const mag=(Math.abs(k)===1&&i>0)?'':fracHTML(Math.abs(k));
+    const v=i===0?'':i===1?'<i>x</i>':`<i>x</i>${SUP[i]}`;
+    parts.push({neg:k<0,h:mag+v});
+  }
+  if(!parts.length) parts.push({neg:false,h:'0'});
+  let s=`<span class="eq">${name} = `;
+  parts.forEach((p,i)=>{ s+= i===0?(p.neg?MINUS:'')+p.h : ` ${p.neg?MINUS:'+'} ${p.h}`; });
+  return s+'</span>';
+}
+const xpow=i=>i===0?'':i===1?'<i>x</i>':'<i>x</i>'+SUP[i];
+const termHTML=(k,i)=>((Math.abs(k)===1&&i>0)?(k<0?MINUS:''):(k<0?MINUS:'')+fracHTML(Math.abs(k)))+xpow(i);
+function curvePath(fn){
+  let d='', pen=false;
+  for(let x=-6;x<=6.001;x+=0.05){
+    const y=fn(x);
+    if(!isFinite(y)||Math.abs(y)>40){ pen=false; continue; }
+    d+=(pen?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); pen=true;
+  }
+  return d;
+}
+const lineSVG=(m,b,cls)=>`<line class="${cls}" x1="${sx(-6)}" y1="${sy(m*-6+b)}" x2="${sx(6)}" y2="${sy(m*6+b)}"/>`;
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+/* opt: tan:x0, sec:[x0,x1], pts:[{x,y,cls}], curve:false */
+function plot(svg,fn,opt={}){
+  const id='dc'+(++pid);
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  if(opt.curve!==false) h+=`<path class="ln" d="${curvePath(fn.f)}"/>`;
+  if(opt.sec){ const [a,b]=opt.sec, m=(fn.f(b)-fn.f(a))/(b-a); h+=lineSVG(m,fn.f(a)-m*a,'sec'); }
+  if(typeof opt.tan==='number'){ const m=fn.d(opt.tan); h+=lineSVG(m,fn.f(opt.tan)-m*opt.tan,'tan'); }
+  h+='</g>';
+  (opt.pts||[]).forEach(p=>{ if(inG(p.x,p.y)) h+=`<circle class="${p.cls||'cur'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`; });
+  draw(svg,null,0,{extra:h});
+}
+const polyFn=c=>({c,f:x=>ev(c,x),d:x=>ev(der(c),x)});
+
+/* intro */
+{ const fn=polyFn([-1,0,0.5]); plot($('introS'),fn,{sec:[-1,2.5],tan:-1,pts:[{x:-1,y:fn.f(-1)},{x:2.5,y:fn.f(2.5),cls:'pt'}]}); }
+
+/* lab */
+const FNS=[
+  {c:[-1,0,0.5],name:'½x² − 1'},
+  {c:[0,-2,0,0.5],name:'½x³ − 2x'},
+  {c:[3,0,-1],name:'−x² + 3'},
+  {c:[-1,2],name:'2x − 1'}
+];
+let fi=0;
+$('fnPick').innerHTML=FNS.map((F,i)=>`<button data-i="${i}" dir="ltr" aria-pressed="${i===0}">y = ${F.name}</button>`).join('');
+$('fnPick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ fi=+b.dataset.i; setPick(); lab(); }));
+function setPick(){ $('fnPick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===fi)); }
+const xR=$('xRange'), hR=$('hRange');
+function lab(){
+  const F=FNS[fi], fn=polyFn(F.c), x0=+xR.value, h=+hR.value, x1=x0+h;
+  const y0=fn.f(x0), y1=fn.f(x1), ms=(y1-y0)/h, mt=fn.d(x0);
+  $('labEq').innerHTML='<div>'+polyHTML(F.c,'<i>f</i>(<i>x</i>)')+'</div><div style="font-size:.8em">'+polyHTML(der(F.c),'<i>f</i>′(<i>x</i>)')+'</div>';
+  $('xVal').textContent=numTxt(x0); $('hVal').textContent=numTxt(h);
+  plot($('labG'),fn,{sec:[x0,x1],tan:x0,pts:[{x:x0,y:y0},{x:x1,y:y1,cls:'pt'}]});
+  const dfn={f:fn.d,d:x=>ev(der(der(F.c)),x)};
+  plot($('labD'),dfn,{pts:[{x:x0,y:mt}]});
+  const diff=Math.abs(ms-mt);
+  let t=`<div class="nums"><div>שיפוע המיתר השחור: <span class="eq">(${nt(y1)} − ${nt(y0)}) ÷ ${numTxt(h)} ≈ ${nt(ms)}</span></div>`;
+  t+=`<div>שיפוע המשיק הכחול: <span class="eq"><i>f</i>′(${numTxt(x0)}) = ${nt(mt)}</span></div></div>`;
+  if(F.c.length===2) t+='<div>זה ישר, ולכן המיתר והמשיק הם אותו קו. השיפוע שווה בכל מקום, והנגזרת היא מספר קבוע.</div>';
+  else if(diff<0.15) t+='<div>המיתר כמעט נצמד למשיק, והשיפועים כמעט שווים. ככה מגיעים לנגזרת: מקרבים את h לאפס.</div>';
+  else t+=`<div>ההפרש בין השיפועים הוא בערך <span class="eq">${nt(diff)}</span>. הקטינו את <span class="eq"><i>h</i></span> וראו אותו מתכווץ.</div>`;
+  t+=`<div>${Math.abs(mt)<1e-9?'הנגזרת כאן <strong>0</strong>, המשיק אופקי.':mt>0?'הנגזרת <strong>חיובית</strong>, ולכן הגרף עולה בנקודה הזאת.':'הנגזרת <strong>שלילית</strong>, ולכן הגרף יורד בנקודה הזאת.'}</div>`;
+  $('labExplain').innerHTML=t;
+}
+[xR,hR].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [f,x,h]=btn.dataset.p.split(','); fi=+f; xR.value=x; hR.value=h; setPick(); lab(); }));
+lab();
+
+/* worked example: f(x) = x³ − 3x at x = 2 and where the tangent is flat */
+const exFn=polyFn([0,-3,0,1]);
+const EXS=[
+  [{},'נתונה <span class="eq"><i>f</i>(<i>x</i>) = <i>x</i>³ − 3<i>x</i></span>. נמצא את השיפוע של הגרף בנקודה <span class="eq"><i>x</i> = 2</span>, ונמצא איפה המשיק אופקי.'],
+  [{},'<strong>צעד 1, גוזרים כל איבר:</strong> <span class="eq">(<i>x</i>³)′ = 3<i>x</i>²</span> ו-<span class="eq">(3<i>x</i>)′ = 3</span>. לכן <span class="eq"><i>f</i>′(<i>x</i>) = 3<i>x</i>² − 3</span>.'],
+  [{pts:[{x:2,y:2}]},'<strong>צעד 2, הנקודה על הגרף:</strong> <span class="eq"><i>f</i>(2) = 8 − 6 = 2</span>. הנקודה הצהובה היא <span class="eq">(2, 2)</span>. זה הגובה, עוד לא השיפוע.'],
+  [{tan:2,pts:[{x:2,y:2}]},'<strong>צעד 3, השיפוע:</strong> מציבים בנגזרת: <span class="eq"><i>f</i>′(2) = 3 · 4 − 3 = 9</span>. המשיק הכחול תלול מאוד, ועולה 9 יחידות על כל צעד ימינה.'],
+  [{pts:[{x:1,y:-2,cls:'pt'},{x:-1,y:2,cls:'pt'}]},'<strong>צעד 4, משיק אופקי:</strong> משווים את הנגזרת ל-0: <span class="eq">3<i>x</i>² − 3 = 0</span>, <span class="eq"><i>x</i>² = 1</span>, ולכן <span class="eq"><i>x</i> = 1</span> או <span class="eq"><i>x</i> = −1</span>.'],
+  [{tan:1,pts:[{x:1,y:-2,cls:'pt'},{x:-1,y:2,cls:'pt'}]},'<strong>צעד 5, בודקים בגרף:</strong> ב-<span class="eq">(1, −2)</span> וב-<span class="eq">(−1, 2)</span> הגרף מפסיק לעלות או לרדת ומסתובב. שם המשיק שטוח. בחקירת פונקציות קוראים לנקודות האלה נקודות קיצון.']
+];
+let exI=0;
+function ex(){
+  const [opt,txt]=EXS[exI];
+  plot($('exG'),exFn,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice: coef = write f'(x) by its coefficients; value = slope f'(p) */
+let pr=null, streak=0, solved=0;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const nz=(a,b)=>{ let v=0; while(!v) v=rnd(a,b); return v; };
+function newPr(){
+  const deg=Math.random()<0.5?2:3;
+  const c=deg===2?[rnd(-4,4),rnd(-4,4),nz(-3,3)]:[rnd(-3,3),rnd(-4,4),rnd(-2,2),pick([1,-1,2])];
+  const kind=Math.random()<0.5?'coef':'value';
+  const p=pick([-2,-1,1,2,3]);
+  const dc=der(c);
+  pr={c,dc,kind,p,ans:ev(dc,p),tries:0,hint:0};
+  $('prEq').innerHTML=polyHTML(c,'<i>f</i>(<i>x</i>)');
+  const fn=polyFn(c);
+  if(kind==='coef'){
+    $('prQ').innerHTML='כתבו את הנגזרת <span class="eq"><i>f</i>′(<i>x</i>)</span>. מלאו את המקדמים (0 אם אין איבר כזה).';
+    let inp='<span class="eq"><i>f</i>′(<i>x</i>) =</span> ';
+    for(let i=dc.length-1;i>=0;i--){ inp+=`<label for="prC${i}"><input id="prC${i}" size="3" inputmode="text" autocomplete="off" aria-label="מקדם של x בחזקת ${i}"><span class="eq">${i===0?'':i===1?'<i>x</i>':'<i>x</i>'+SUP[i]}</span></label>${i>0?' <span class="eq">+</span> ':''}`; }
+    $('prInputs').innerHTML=inp;
+    plot($('prG'),fn,{});
+  }else{
+    $('prQ').innerHTML=`מה השיפוע של הגרף בנקודה <span class="eq"><i>x</i> = ${numTxt(p)}</span>? כלומר, כמה זה <span class="eq"><i>f</i>′(${numTxt(p)})</span>?`;
+    $('prInputs').innerHTML=`<label for="prV"><span class="eq"><i>f</i>′(${numTxt(p)}) =</span><input id="prV" inputmode="text" autocomplete="off"></label>`;
+    plot($('prG'),fn,{pts:[{x:p,y:fn.f(p)}]});
+  }
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const steps=[];
+  for(let i=pr.c.length-1;i>=1;i--){ const k=pr.c[i]; if(!k) continue; steps.push(`<span class="eq">(${termHTML(k,i)})′ = ${termHTML(k*i,i-1)}</span>`); }
+  let s=`גוזרים כל איבר: ${steps.join(', ')}${pr.c[0]?`, והמספר ${numTxt(pr.c[0])} נעלם`:''}. לכן ${polyHTML(pr.dc,'<i>f</i>′(<i>x</i>)')}`;
+  if(pr.kind==='value') s+=`. מציבים: <span class="eq"><i>f</i>′(${numTxt(pr.p)}) = ${numTxt(pr.ans)}</span>`;
+  return s;
+}
+function success(){
+  streak++; solved++; score();
+  const fn=polyFn(pr.c);
+  if(pr.kind==='value') plot($('prG'),fn,{tan:pr.p,pts:[{x:pr.p,y:fn.f(pr.p)}]});
+  $('prFb').innerHTML=pr.kind==='value'?`<div class="fb ok">נכון! השיפוע ב-<span class="eq"><i>x</i> = ${numTxt(pr.p)}</span> הוא <span class="eq">${numTxt(pr.ans)}</span>. זה המשיק הכחול.</div>`:`<div class="fb ok">נכון! ${polyHTML(pr.dc,'<i>f</i>′(<i>x</i>)')}</div>`;
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const fb=$('prFb'), msgs=[], {c,dc}=pr;
+  if(pr.kind==='coef'){
+    const v=dc.map((_,i)=>{ const el=$('prC'+i); return el?parseNum(el.value):NaN; });
+    if(v.some(isNaN)){ fb.innerHTML='<div class="fb err">מלאו מספר בכל משבצת. אם אין איבר כזה, כתבו 0.</div>'; return; }
+    if(v.every((x,i)=>near(x,dc[i]))){ success(); return; }
+    const top=dc.length-1;
+    if(v.every((x,i)=>near(x,c[i+1]))) msgs.push('השארתם את המקדמים כמו שהם. צריך גם <strong>לכפול במעריך</strong>: <span class="eq">(<i>a</i><i>x</i>ⁿ)′ = <i>n</i>·<i>a</i><i>x</i>ⁿ⁻¹</span>.');
+    else if(c[0]&&near(v[0],dc[0]+c[0])) msgs.push('המספר לבד (בלי x) נעלם בגזירה. הנגזרת שלו היא 0.');
+    else if(!near(v[top],dc[top])) msgs.push(`בדקו את האיבר עם החזקה הגבוהה: מורידים את המעריך ${top+1} לפנים, וכופלים במקדם ${numTxt(c[top+1])}.`);
+    else msgs.push('האיבר הראשון נכון! בדקו את שאר האיברים, כל אחד לבד.');
+  }else{
+    const y=parseNum($('prV').value);
+    if(isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    if(near(y,pr.ans)){ success(); return; }
+    if(near(y,ev(c,pr.p))) msgs.push('הצבתם בפונקציה עצמה וקיבלתם את הגובה. את השיפוע מקבלים מהנגזרת: קודם גוזרים, ואז מציבים.');
+    else if(near(y,ev(c.slice(1),pr.p))) msgs.push('נראה ששכחתם לכפול במעריך כשגזרתם. <span class="eq">(<i>x</i>³)′ = 3<i>x</i>²</span>, לא <span class="eq"><i>x</i>²</span>.');
+    else if(pr.p<0&&near(y,ev(dc,-pr.p))) msgs.push('בדקו את הסימנים כשמציבים מספר שלילי. כתבו אותו בסוגריים.');
+    else msgs.push('לא בדיוק. כתבו קודם את <span class="eq"><i>f</i>′(<i>x</i>)</span>, ואז הציבו את ה-x בסוגריים.');
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(m=>'<li>'+m+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  let t;
+  if(pr.hint===1) t='גוזרים כל איבר לבד: מורידים את החזקה לפנים, כופלים במקדם, ומקטינים את החזקה ב-1. מספר לבד נעלם.';
+  else t=pr.kind==='coef'?`האיבר הראשון של הנגזרת הוא <span class="eq">${termHTML(pr.dc[pr.dc.length-1],pr.dc.length-1)}</span>. המשיכו כך עם שאר האיברים.`:`הנגזרת היא ${polyHTML(pr.dc,'<i>f</i>′(<i>x</i>)')}. עכשיו הציבו <span class="eq"><i>x</i> = ${numTxt(pr.p)}</span>.`;
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  if(!pr) return;
+  const fn=polyFn(pr.c);
+  if(pr.kind==='value') plot($('prG'),fn,{tan:pr.p,pts:[{x:pr.p,y:fn.f(pr.p)}]});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

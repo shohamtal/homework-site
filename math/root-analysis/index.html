@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חקירת פונקציית שורש · כיתה יא · מירי</title>
+<meta name="description" content="חקירת פונקציית שורש: תחום הגדרה, נגזרת של שורש, קיצון בקצה התחום ושרטוט סקיצה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/root-analysis/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חקירת פונקציית שורש · כיתה יא · מירי">
+<meta property="og:description" content="חקירת פונקציית שורש: תחום הגדרה, נגזרת של שורש, קיצון בקצה התחום ושרטוט סקיצה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/root-analysis/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"חקירת פונקציות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#analysis-11"},{"@type":"ListItem","position":5,"name":"חקירת פונקציית שורש","item":"https://shohamtal.github.io/homework-site/math/root-analysis/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה הנגזרת של שורש x?","acceptedAnswer":{"@type":"Answer","text":"הנגזרת של √x היא 1 ÷ (2√x). אם בתוך השורש יש ביטוי u, הנגזרת היא u′ ÷ (2√u). למשל הנגזרת של √(3x + 1) היא 3 ÷ (2√(3x + 1)). תרגלו למטה."}},{"@type":"Question","name":"איך מוצאים תחום הגדרה של פונקציית שורש?","acceptedAnswer":{"@type":"Answer","text":"דורשים שמה שבתוך השורש יהיה גדול או שווה ל-0, ופותרים את אי-השוויון. ב-√(6 − 2x) מקבלים 6 − 2x ≥ 0, ולכן x ≤ 3. אם יש גם מכנה, מוציאים גם את מה שמאפס אותו."}},{"@type":"Question","name":"למה נקודת הקצה של התחום היא נקודת קיצון?","acceptedAnswer":{"@type":"Answer","text":"כי אין גרף לפניה. אם הגרף עולה ממנה, אין שום נקודה נמוכה ממנה בסביבה, ולכן היא מינימום. אם הוא יורד ממנה, היא מקסימום. הנגזרת שם לא מוגדרת, אז צריך לבדוק אותה בנפרד. כך עושים גם בחקירת פולינום כשהתחום מוגבל."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חקירת פונקציית שורש","description":"חקירת פונקציית שורש: תחום הגדרה, נגזרת של שורש, קיצון בקצה התחום ושרטוט סקיצה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/root-analysis/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"חקירת פונקציות","teaches":"חקירת פונקציית שורש","keywords":"פונקציית שורש, תחום הגדרה, נגזרת של שורש","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .up{stroke:var(--ok); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .down{stroke:var(--err); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .tan{stroke:var(--blue); stroke-width:2; stroke-dasharray:5 3; fill:none}
+  .g .band{stroke:var(--blue); stroke-width:7; stroke-opacity:.35}
+  .g .edge{fill:var(--line); stroke:var(--ink); stroke-width:1.4}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button[aria-pressed="true"], .choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+  .choices button{font-size:1rem}
+  .props{margin:0; padding:0; list-style:none; display:grid; gap:4px}
+  .key{display:inline-block; width:1.4em; height:.45em; border-radius:3px; vertical-align:middle}
+  .sgn{border-collapse:collapse; margin:4px auto; font-size:.95rem}
+  .sgn td,.sgn th{border:1.5px solid var(--soft); padding:4px 8px; text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="root-analysis">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#analysis-11">חקירת פונקציות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חקירת פונקציית שורש</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · חקירת פונקציות</div>
+  <h1>חקירת פונקציית שורש <span class="slogan">הגרף מתחיל בקצה</span></h1>
+  <p class="lead">לפונקציה עם √ יש נקודת התחלה. לפני הנקודה הזאת אין גרף בכלל, כי אסור שורש של מספר שלילי.
+  כאן לומדים למצוא את תחום ההגדרה, לגזור שורש, ולמצוא קיצון גם בתוך התחום וגם <strong>בקצה</strong> שלו. מתאים ל-4 ו-5 יח״ל.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שלושה דברים מיוחדים בשורש</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>1. תחום ההגדרה</h3>
+      <p>מה שבתוך השורש חייב להיות <strong>גדול או שווה ל-0</strong>. ב-<span class="eq"><i>f</i>(<i>x</i>) = √(<i>x</i> − 2)</span> צריך <span class="eq"><i>x</i> − 2 ≥ 0</span>, כלומר <span class="eq"><i>x</i> ≥ 2</span>.</p>
+      <h3>2. הנגזרת</h3>
+      <p>הנגזרת של √<i>x</i> היא <span class="eq">1 ÷ (2√<i>x</i>)</span>. ואם בתוך השורש יש ביטוי, כופלים גם בנגזרת שלו (כלל השרשרת):</p>
+      <p style="text-align:center; font-size:1.2rem"><span class="eq">(√<i>u</i>)′ = <i>u</i>′ ÷ (2√<i>u</i>)</span></p>
+    </div>
+    <div class="mini">
+      <h3>3. קיצון בקצה</h3>
+      <p>בנקודת ההתחלה הגרף לא יכול להמשיך אחורה. לכן היא תמיד נקודת קיצון: מינימום אם הגרף עולה ממנה, מקסימום אם הוא יורד ממנה. שם הנגזרת <strong>לא מוגדרת</strong> (מחלקים ב-0), ולכן משווים לאפס לא ימצא אותה.</p>
+      <svg class="g" id="introG" viewBox="0 0 240 240" role="img" aria-label="הגרף של שורש x ועוד 4 פחות 2, שמתחיל בנקודה מינוס 4 מינוס 2"></svg>
+    </div>
+  </div>
+  <div class="callout"><strong>זכרו:</strong> בחקירת פונקציית שורש בודקים <strong>שני</strong> מקומות: נקודות שבהן הנגזרת שווה 0, וגם קצה התחום. עוד על הנגזרת עצמה ב<a href="../derivative-intro/">נגזרת: שיפוע המשיק</a>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מזיזים את השורש</h2></div>
+  <p class="text">הפונקציה היא <span class="eq"><i>f</i>(<i>x</i>) = <i>a</i>√(<i>x</i> − <i>p</i>) + <i>k</i></span>, או הפוכה, עם <span class="eq">√(<i>p</i> − <i>x</i>)</span>. הזיזו את המחוונים, ואחר כך הזיזו את הנקודה הצהובה. הקו הכחול המקווקו הוא המשיק, והשיפוע שלו הוא הנגזרת.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <div class="seg" id="labDir" role="group" aria-label="כיוון השורש">
+        <button data-s="1" aria-pressed="true" dir="ltr">√(x − p)</button>
+        <button data-s="-1" aria-pressed="false" dir="ltr">√(p − x)</button>
+      </div>
+      <label class="slider" for="aR"><span><i>a</i>, המקדם לפני השורש</span><span class="eq" id="aV"></span></label>
+      <input type="range" id="aR" min="-2" max="2" step="0.5" value="1">
+      <label class="slider" for="pR"><span><i>p</i>, איפה הגרף מתחיל</span><span class="eq" id="pV"></span></label>
+      <input type="range" id="pR" min="-4" max="3" step="1" value="-4">
+      <label class="slider" for="kR"><span><i>k</i>, הזזה למעלה ולמטה</span><span class="eq" id="kV"></span></label>
+      <input type="range" id="kR" min="-3" max="3" step="1" value="-2">
+      <label class="slider" for="xR"><span>הנקודה הצהובה, <i>x</i> =</span><span class="eq" id="xV"></span></label>
+      <input type="range" id="xR" class="hl" min="-5" max="5" step="0.25" value="0">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="labTries"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>שוכחים את ה-2 במכנה.</strong> הנגזרת של <span class="eq">√<i>x</i></span> היא <span class="eq">1 ÷ (2√<i>x</i>)</span>, לא <span class="eq">1 ÷ √<i>x</i></span>. כי <span class="eq">√<i>x</i> = <i>x</i><sup>½</sup></span>, והחצי יורד למטה.</div></li>
+    <li><div><strong>שוכחים את הנגזרת הפנימית.</strong> ב-<span class="eq">√(3 − <i>x</i>)</span> הנגזרת של מה שבפנים היא <span class="eq">−1</span>. לכן <span class="eq"><i>f</i>′(<i>x</i>) = −1 ÷ (2√(3 − <i>x</i>))</span>, עם מינוס.</div></li>
+    <li><div><strong>מפספסים את הקיצון בקצה.</strong> משווים את הנגזרת ל-0 ולא מוצאים כלום? זה לא אומר שאין קיצון. נקודת ההתחלה של התחום היא קיצון, גם כשהנגזרת שם לא מוגדרת.</div></li>
+    <li><div><strong>אי-שוויון הפוך בתחום.</strong> ב-<span class="eq">√(4 − 2<i>x</i>)</span> פותרים <span class="eq">4 − 2<i>x</i> ≥ 0</span>. מחלקים ב-<span class="eq">−2</span>, אז הסימן מתהפך: <span class="eq"><i>x</i> ≤ 2</span>.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> מצאתם תחום? הציבו מספר מחוץ לתחום. בתוך השורש חייב לצאת מספר שלילי.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: חקירה מלאה</h2></div>
+  <p class="text">נחקור את <span class="eq"><i>f</i>(<i>x</i>) = <i>x</i> − 4√<i>x</i></span>. לחצו "הצעד הבא".</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: תחום, נגזרת וקיצון</h2></div>
+  <p class="text">בכל פעם שאלה אחת. הגרף מופיע ברמז השני, אז נסו קודם לבד.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="choices" id="prChoices"></div>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה הנגזרת של שורש x?</h3>
+    <p>הנגזרת של <span class="eq">√<i>x</i></span> היא <span class="eq">1 ÷ (2√<i>x</i>)</span>. אם בתוך השורש יש ביטוי <i>u</i>, הנגזרת היא <span class="eq"><i>u</i>′ ÷ (2√<i>u</i>)</span>. למשל הנגזרת של <span class="eq">√(3<i>x</i> + 1)</span> היא <span class="eq">3 ÷ (2√(3<i>x</i> + 1))</span>. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>איך מוצאים תחום הגדרה של פונקציית שורש?</h3>
+    <p>דורשים שמה שבתוך השורש יהיה גדול או שווה ל-0, ופותרים את אי-השוויון. ב-<span class="eq">√(6 − 2<i>x</i>)</span> מקבלים <span class="eq">6 − 2<i>x</i> ≥ 0</span>, ולכן <span class="eq"><i>x</i> ≤ 3</span>. אם יש גם מכנה, מוציאים גם את מה שמאפס אותו.</p>
+    <h3>למה נקודת הקצה של התחום היא נקודת קיצון?</h3>
+    <p>כי אין גרף לפניה. אם הגרף עולה ממנה, אין שום נקודה נמוכה ממנה בסביבה, ולכן היא מינימום. אם הוא יורד ממנה, היא מקסימום. הנגזרת שם לא מוגדרת, אז צריך לבדוק אותה בנפרד. כך עושים גם ב<a href="../polynomial-analysis/">חקירת פולינום</a> כשהתחום מוגבל.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/polynomial-analysis/">חקירת פולינום</a> · <a href="../../math/derivative-rules/">כללי גזירה: מכפלה, מנה ושרשרת</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/rational-analysis/"><small>→ הנושא הקודם</small>חקירת פונקציה רציונלית</a><a class="next" href="../../math/optimization/"><small>הנושא הבא ←</small>בעיות קיצון</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`;
+const r2=v=>Math.round(v*100)/100, nt=v=>numTxt(r2(v));
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+let pid=0;
+
+/* text helpers */
+const coef=a=>a===1?'':a===-1?MINUS:numTxt(a);
+const plusNum=v=>v===0?'':` ${v<0?MINUS:'+'} ${numTxt(Math.abs(v))}`;
+function inside(s,p){ /* x − p  or  p − x */
+  if(s===1) return p===0?X:`${X} ${p<0?'+':MINUS} ${numTxt(Math.abs(p))}`;
+  return p===0?`${MINUS}${X}`:`${numTxt(p)} ${MINUS} ${X}`;
+}
+function rootHTML(a,s,p,k){ return `<i>f</i>(${X}) = ${coef(a)}√(${inside(s,p)})${plusNum(k)}`; }
+function rootTxt(a,s,p,k){ return rootHTML(a,s,p,k).replace(/<[^>]+>/g,''); }
+
+/* plot a function on the −5..5 grid. F: {f, dom(x), start?} opt: {mode:'mono'|'plain', cur, tan, points, band, curve} */
+function plotF(svg,F,opt={}){
+  const id='rc'+(++pid), mode=opt.mode||'plain', clampY=v=>Math.max(-30,Math.min(30,v));
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  if(opt.band){ let from=null; for(let x=-6;x<=6.001;x+=0.02){ const ok=F.dom(x); if(ok&&from===null) from=x; if((!ok||x>5.99)&&from!==null){ h+=`<line class="band" x1="${sx(from)}" y1="${sy(0)}" x2="${sx(ok?6:x)}" y2="${sy(0)}"/>`; from=null; } } }
+  if(opt.curve!==false){
+    const xs=[]; for(let x=-6;x<=6.001;x+=0.02) xs.push(x);
+    if(F.start!==undefined) xs.push(F.start);
+    xs.sort((u,v)=>u-v);
+    let d='', last=null;
+    xs.forEach(x=>{
+      if(!F.dom(x)){ if(d) h+=`<path class="${last}" d="${d}"/>`; d=''; return; }
+      const y=F.f(x), dd=F.f(x+0.005)-F.f(x-0.005);
+      const c=mode==='mono'?(isNaN(dd)?(F.s===1?(F.a>0?'up':'down'):(F.a>0?'down':'up')):dd>0?'up':'down'):'ln';
+      const P=sx(x).toFixed(1)+' '+sy(clampY(y)).toFixed(1);
+      if(!d||c!==last){ if(d) h+=`<path class="${last}" d="${d}"/>`; d=(d?'M'+P:'M'+P); }
+      else d+='L'+P;
+      last=c;
+    });
+    if(d) h+=`<path class="${last}" d="${d}"/>`;
+  }
+  if(opt.tan){ const t=opt.tan; h+=`<line class="tan" x1="${sx(t.x-1.6)}" y1="${sy(t.y-1.6*t.m)}" x2="${sx(t.x+1.6)}" y2="${sy(t.y+1.6*t.m)}"/>`; }
+  h+='</g>';
+  if(F.start!==undefined&&opt.curve!==false){ const y0=F.f(F.start); if(Math.abs(y0)<=5.6) h+=`<circle class="edge" cx="${sx(F.start)}" cy="${sy(y0)}" r="4.5"/>`; }
+  (opt.points||[]).forEach(p=>{ if(Math.abs(p.x)<=5.6&&Math.abs(p.y)<=5.6){ h+=`<circle class="${p.cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`; if(p.label) h+=`<text class="ptlbl" x="${sx(p.x)+(p.lx||6)}" y="${sy(p.y)+(p.ly||-6)}" ${p.lx<0?'text-anchor="end"':''}>${p.label}</text>`; } });
+  if(opt.cur!==undefined&&F.dom(opt.cur)){ const y=F.f(opt.cur); if(Math.abs(y)<=5.6) h+=`<circle class="cur" cx="${sx(opt.cur)}" cy="${sy(y)}" r="5"/>`; }
+  draw(svg,null,0,{extra:h});
+}
+const rootF=(a,s,p,k)=>({a,s,start:p,f:x=>a*Math.sqrt(s*(x-p))+k,dom:x=>s*(x-p)>=-1e-9});
+
+/* intro */
+plotF($('introG'),rootF(1,1,-4,-2),{mode:'mono',points:[{x:-4,y:-2,cls:'edge',label:'(−4, −2)',ly:14}]});
+
+/* lab */
+const aR=$('aR'), pR=$('pR'), kR=$('kR'), xR=$('xR');
+let S=1;
+const TRIES=[[1,1,0,0],[1,1,-4,-2],[-1,1,-1,3],[2,-1,3,-4],[0.5,1,-3,0],[-2,-1,2,4]];
+$('labTries').innerHTML=TRIES.map((t,i)=>`<button data-i="${i}" dir="ltr">${rootTxt(...t).replace('f(x) = ','y = ')}</button>`).join('');
+$('labTries').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ const [a,s,p,k]=TRIES[+b.dataset.i]; aR.value=a; pR.value=p; kR.value=k; setDir(s); xR.value=s===1?Math.min(5,p+2):Math.max(-5,p-2); lab(); }));
+function setDir(s){ S=s; $('labDir').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.s===s)); }
+$('labDir').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ setDir(+b.dataset.s); lab(); }));
+[aR,pR,kR,xR].forEach(r=>r.addEventListener('input',lab));
+function lab(){
+  let a=+aR.value; if(a===0){ a=0.5; aR.value=0.5; }
+  const p=+pR.value, k=+kR.value, x=+xR.value, F=rootF(a,S,p,k);
+  $('aV').textContent=numTxt(a); $('pV').textContent=numTxt(p); $('kV').textContent=numTxt(k); $('xV').textContent=numTxt(x);
+  $('labEq').innerHTML=eqs(rootHTML(a,S,p,k));
+  const dom=S===1?`${X} ≥ ${numTxt(p)}`:`${X} ≤ ${numTxt(p)}`;
+  const inc=a*S>0, ext=a>0?'מינימום':'מקסימום';
+  const derH=`<i>f</i>′(${X}) = ${S*a<0?MINUS:''}${numTxt(Math.abs(a))} ÷ (2√(${inside(S,p)}))`;
+  let pt, tan=null;
+  if(!F.dom(x)) pt=`ב-${eqs(`${X} = ${numTxt(x)}`)} בתוך השורש יוצא מספר <strong>שלילי</strong>, ${eqs(numTxt(S*(x-p)))}. לכן אין שם גרף.`;
+  else if(Math.abs(x-p)<1e-9) pt=`זו <strong>נקודת הקצה</strong> ${eqs(`(${numTxt(p)}, ${numTxt(k)})`)}. בתוך השורש יוצא 0, ובנגזרת מחלקים ב-0: היא <strong>לא מוגדרת</strong>. המשיק כאן אנכי.`;
+  else{
+    const y=F.f(x), m=a*S/(2*Math.sqrt(S*(x-p)));
+    tan={x,y,m};
+    pt=`ב-${eqs(`${X} = ${numTxt(x)}`)}: ${eqs(`<i>f</i> ≈ ${nt(y)}`)} והנגזרת ${eqs(`<i>f</i>′ ≈ ${nt(m)}`)}. ${m>0?'הנגזרת חיובית, הגרף <strong>עולה</strong>.':'הנגזרת שלילית, הגרף <strong>יורד</strong>.'} ${Math.abs(m)>1.5?'קרוב לקצה המשיק נעשה תלול מאוד.':''}`;
+  }
+  const z=-k/a;
+  const zero=z<0?'אין. השורש לא שלילי, אז הגרף לא מגיע לציר x.':eqs(`${X} = ${nt(p+S*z*z)}`);
+  plotF($('labG'),F,{mode:'mono',cur:x,tan,band:true});
+  $('labExplain').innerHTML=`<div>${pt}</div><ul class="props">
+    <li>תחום הגדרה: ${eqs(dom)} <span class="key" style="background:var(--blue);opacity:.5"></span></li>
+    <li>נגזרת: ${eqs(derH)}</li>
+    <li>${inc?'עולה':'יורדת'} בכל התחום. הנגזרת אף פעם לא שווה 0.</li>
+    <li>קיצון בקצה: ${eqs(`(${numTxt(p)}, ${numTxt(k)})`)} הוא <strong>${ext}</strong>, כי ${a>0?'a חיובי והשורש רק מוסיף':'a שלילי והשורש רק מוריד'}.</li>
+    <li>חיתוך עם ציר x: ${zero}</li></ul>`;
+}
+lab();
+
+/* worked example: f(x) = x − 4√x */
+const EXF={start:0,f:x=>x-4*Math.sqrt(x),dom:x=>x>=-1e-9,s:1,a:-1};
+const EXS=[
+  [{band:true,curve:false},`<strong>צעד 1, תחום הגדרה:</strong> בתוך השורש יש ${X}, אז ${eqs(`${X} ≥ 0`)}. הגרף מתחיל ב-${eqs(`${X} = 0`)}.`],
+  [{curve:false,points:[{x:0,y:0,cls:'edge',label:'(0, 0)'}]},`<strong>צעד 2, נקודת הקצה:</strong> ${eqs(`<i>f</i>(0) = 0 − 0 = 0`)}. הנקודה ${eqs('(0, 0)')}. נבדוק אותה בסוף.`],
+  [{curve:false},`<strong>צעד 3, נגזרת:</strong> ${eqs(`<i>f</i>′(${X}) = 1 − 4 ÷ (2√${X})`)} ${eqs(`= 1 − 2 ÷ √${X}`)}. היא מוגדרת רק כש-${eqs(`${X} &gt; 0`)}.`],
+  [{curve:false,points:[{x:4,y:-4,cls:'dot',label:'(4, −4)',ly:14}]},`<strong>צעד 4, משווים ל-0:</strong> ${eqs(`2 ÷ √${X} = 1`)}, אז ${eqs(`√${X} = 2`)} ו-${eqs(`${X} = 4`)}. מציבים: ${eqs(`<i>f</i>(4) = 4 − 8 = −4`)}.`],
+  [{mode:'mono',points:[{x:4,y:-4,cls:'dot'}]},`<strong>צעד 5, טבלת סימנים:</strong> ב-${eqs(`${X} = 1`)} הנגזרת ${eqs('1 − 2 = −1')}, שלילית. ב-${eqs(`${X} = 9`)} היא ${eqs('1 − ⅔')}, חיובית. יורדת ב-${eqs(`0 &lt; ${X} &lt; 4`)}, עולה ב-${eqs(`${X} &gt; 4`)}.<table class="sgn" dir="ltr"><tr><th>x</th><td>0</td><td>0 &lt; x &lt; 4</td><td>4</td><td>x &gt; 4</td></tr><tr><th>f′</th><td>×</td><td>−</td><td>0</td><td>+</td></tr><tr><th>f</th><td>max</td><td>↘</td><td>min</td><td>↗</td></tr></table>`],
+  [{mode:'mono',points:[{x:0,y:0,cls:'edge',label:'(0, 0) max'},{x:4,y:-4,cls:'dot',label:'(4, −4) min',ly:14,lx:-6}]},`<strong>צעד 6, סיכום:</strong> ${eqs('(4, −4)')} מינימום. ו-${eqs('(0, 0)')}? הגרף יורד ממנה, אז היא <strong>מקסימום בקצה</strong>. שתי נקודות קיצון, ורק אחת מהן נמצאה בהשוואה ל-0.`]
+];
+let exI=0;
+function ex(){
+  const [opt,txt]=EXS[exI];
+  plotF($('exG'),EXF,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+let pr=null, sel=null, streak=0, solved=0;
+const lin=(a,b)=>`${coef(a)}${X}${plusNum(b)}`;
+function newPr(){
+  const kind=pick(['dom','der','der','edge','inner','inner']);
+  let q;
+  if(kind==='dom'){
+    const r=Math.floor(Math.random()*9)-4, a=pick([1,2,3,-1,-2,-3]), b=-a*r;
+    const F={start:r,f:x=>Math.sqrt(a*x+b),dom:x=>a*x+b>=-1e-9,s:a>0?1:-1,a:1};
+    const right=a>0?`${X} ≥ ${numTxt(r)}`:`${X} ≤ ${numTxt(r)}`, flip=a>0?`${X} ≤ ${numTxt(r)}`:`${X} ≥ ${numTxt(r)}`;
+    const ch=[{h:eqs(right),r:'ok'},{h:eqs(flip),r:'flip'},{h:eqs(right.replace('≥','&gt;').replace('≤','&lt;')),r:'strict'}];
+    if(r!==0) ch.push({h:eqs(a>0?`${X} ≥ ${numTxt(-r)}`:`${X} ≤ ${numTxt(-r)}`),r:'sign'});
+    q={kind,F,eq:`<i>f</i>(${X}) = √(${lin(a,b)})`,text:'מה תחום ההגדרה של הפונקציה?',ch,
+      sol:`צריך ${eqs(`${lin(a,b)} ≥ 0`)}. ${a<0?`מחלקים ב-${eqs(numTxt(a))}, מספר שלילי, ולכן הסימן מתהפך: `:'מבודדים את x: '}${eqs(right)}.`,
+      hint1:'מה שבתוך השורש חייב להיות גדול או שווה ל-0. כתבו את אי-השוויון.',
+      hint2:`פתרו ${eqs(`${lin(a,b)} ≥ 0`)}${a<0?'. זהירות: מחלקים במספר שלילי':''}. ציירנו את הגרף, איפה הוא מתחיל?`};
+  }else if(kind==='der'){
+    const m=pick([1,2,2]), c=pick([1,2,3,4,6]), qq=Math.floor(Math.random()*5)-2, x0=m*m-qq;
+    const F={start:-qq,f:x=>c*Math.sqrt(x+qq),dom:x=>x+qq>=-1e-9,s:1,a:c};
+    q={kind,F,x0,m,c,ans:c/(2*m),eq:`<i>f</i>(${X}) = ${coef(c)}√(${lin(1,qq)})`,text:`מה הערך של הנגזרת ב-${'x = '+numTxt(x0)}?`,inputs:[['prA',`<i>f</i>′(${numTxt(x0)}) =`]],
+      sol:`${eqs(`<i>f</i>′(${X}) = ${numTxt(c)} ÷ (2√(${lin(1,qq)}))`)}. מציבים: ${eqs(`√(${numTxt(x0+qq)}) = ${m}`)}, ולכן ${eqs(`<i>f</i>′(${numTxt(x0)}) = ${numTxt(c)} ÷ ${2*m}`)} ${eqs(`= ${fracHTML(c/(2*m))}`)}.`,
+      hint1:`הנגזרת של ${eqs('√<i>u</i>')} היא ${eqs('<i>u</i>′ ÷ (2√<i>u</i>)')}. כאן ${eqs('<i>u</i>′ = 1')}, והמספר ${numTxt(c)} שלפני השורש נשאר.`,
+      hint2:`${eqs(`<i>f</i>′(${X}) = ${numTxt(c)} ÷ (2√(${lin(1,qq)}))`)}. עכשיו הציבו ${eqs(`${X} = ${numTxt(x0)}`)}. השיפוע של המשיק בגרף הוא התשובה.`};
+    q.tan=true;
+  }else if(kind==='edge'){
+    const s=pick([1,-1]), a=pick([1,2,-1,-2]), p=s===1?pick([-4,-3,-2,-1,0]):pick([0,1,2,3,4]), k=Math.floor(Math.random()*7)-3;
+    const F=rootF(a,s,p,k);
+    q={kind,F,p,k,a,eq:rootHTML(a,s,p,k),text:'לפונקציה יש נקודת קיצון בקצה התחום. מה הנקודה, והאם היא מינימום או מקסימום?',
+      inputs:[['prX','x ='],['prY','y =']],ch:[{h:'מינימום',r:a>0?'ok':'type'},{h:'מקסימום',r:a<0?'ok':'type'}],both:true,
+      sol:`הקצה הוא כש-${eqs(`${inside(s,p)} = 0`)}, כלומר ${eqs(`${X} = ${numTxt(p)}`)}. שם השורש 0 ו-${eqs(`<i>f</i> = ${numTxt(k)}`)}. ${a>0?'a חיובי, השורש רק מוסיף, ולכן זה מינימום':'a שלילי, השורש רק מוריד, ולכן זה מקסימום'}: ${eqs(`(${numTxt(p)}, ${numTxt(k)})`)}.`,
+      hint1:'הקצה הוא ה-x שבו מה שבתוך השורש שווה 0. מצאו אותו והציבו.',
+      hint2:`בקצה השורש שווה 0, אז נשאר רק ${eqs(numTxt(k))}. ואם a ${a>0?'חיובי':'שלילי'}, האם הערכים האחרים גבוהים או נמוכים מזה? ציירנו את הגרף.`};
+  }else{
+    const v=pick(['min','max']);
+    if(v==='min'){ const c=pick([1,2]);
+      q={kind,v,F:{start:0,f:x=>x-2*c*Math.sqrt(x),dom:x=>x>=-1e-9,s:1,a:-1},px:c*c,py:-c*c,bad1:c,bad2:4*c*c,eq:`<i>f</i>(${X}) = ${X} − ${numTxt(2*c)}√${X}`,
+        sol:`${eqs(`<i>f</i>′(${X}) = 1 − ${numTxt(2*c)} ÷ (2√${X})`)} ${eqs(`= 1 − ${c===1?'1':numTxt(c)} ÷ √${X}`)}. משווים ל-0: ${eqs(`√${X} = ${c}`)}, אז ${eqs(`${X} = ${c*c}`)}. מציבים: ${eqs(`<i>f</i> = ${c*c} − ${2*c*c} = ${numTxt(-c*c)}`)}.`};
+    }else{ const c=pick([2,4]);
+      q={kind,v,F:{start:0,f:x=>c*Math.sqrt(x)-x,dom:x=>x>=-1e-9,s:1,a:1},px:c*c/4,py:c*c/4,bad1:c/2,bad2:c*c,eq:`<i>f</i>(${X}) = ${numTxt(c)}√${X} − ${X}`,
+        sol:`${eqs(`<i>f</i>′(${X}) = ${numTxt(c)} ÷ (2√${X}) − 1`)}. משווים ל-0: ${eqs(`√${X} = ${numTxt(c/2)}`)}, אז ${eqs(`${X} = ${numTxt(c*c/4)}`)}. מציבים: ${eqs(`<i>f</i> = ${numTxt(c*c/2)} − ${numTxt(c*c/4)} = ${numTxt(c*c/4)}`)}.`};
+    }
+    q.text=`מצאו את נקודת ה${q.v==='min'?'מינימום':'מקסימום'} שבתוך התחום (שם הנגזרת שווה 0).`;
+    q.inputs=[['prX','x ='],['prY','y =']];
+    q.hint1=`גזרו: הנגזרת של ${eqs(`√${X}`)} היא ${eqs(`1 ÷ (2√${X})`)}, והנגזרת של ${X} היא 1. אחר כך השוו ל-0.`;
+    q.hint2=`מהמשוואה תקבלו ${eqs(`√${X} = ...`)}. אל תשכחו להעלות בריבוע כדי לקבל את x. ציירנו את הגרף.`;
+  }
+  if(q.ch&&!q.both) shuffle(q.ch);
+  pr={...q,tries:0,hint:0}; sel=null;
+  $('prEq').innerHTML=eqs(q.eq);
+  $('prQ').textContent=q.text;
+  $('prChoices').innerHTML=q.ch?q.ch.map((c,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${c.h}</button>`).join(''):'';
+  $('prChoices').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{ sel=+btn.dataset.i; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===btn)); }));
+  $('prInputs').innerHTML=(q.inputs||[]).map(([id,l])=>`<label for="${id}"><span dir="ltr">${l}</span><input id="${id}" inputmode="text" autocomplete="off"></label>`).join('');
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  plotF($('prG'),q.F,{curve:false});
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function showGraph(){
+  const o={mode:'mono'};
+  if(pr.kind==='der'){ const y=pr.F.f(pr.x0); o.tan={x:pr.x0,y,m:pr.ans}; o.points=[{x:pr.x0,y,cls:'dot'}]; }
+  if(pr.kind==='inner') o.points=[{x:pr.px,y:pr.py,cls:'dot'}];
+  if(pr.kind==='dom') o.band=true;
+  plotF($('prG'),pr.F,o);
+}
+const MSG={
+  flip:'הכיוון הפוך. הציבו מספר מתוך התשובה שלכם: האם בתוך השורש יוצא מספר חיובי?',
+  strict:'כמעט. גם 0 מותר בתוך שורש, כי √0 = 0. לכן "גדול <strong>או שווה</strong>".',
+  sign:'הסימן של המספר הפוך. פתרו את אי-השוויון בזהירות, והעבירו אגף עם שינוי סימן.'
+};
+function ok(msg){ streak++; solved++; score(); showGraph(); $('prFb').innerHTML=`<div class="fb ok">נכון! ${msg}</div>`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let m=null;
+  if(pr.kind==='dom'){
+    if(sel===null||!pr.ch[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם אחת מהתשובות.</div>'; return; }
+    const c=pr.ch[sel]; if(c.r==='ok') return ok(`${c.h} הוא תחום ההגדרה. בכחול על הגרף.`);
+    m=MSG[c.r];
+  }else if(pr.kind==='der'){
+    const v=parseNum($('prA').value);
+    if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, אפשר גם שבר כמו 3/4.</div>'; return; }
+    if(eqv(v,pr.ans)) return ok(`${eqs(`<i>f</i>′(${numTxt(pr.x0)}) = ${fracHTML(pr.ans)}`)}. זה השיפוע של המשיק הכחול.`);
+    if(eqv(v,pr.c/pr.m)) m='שכחתם את ה-2 במכנה. הנגזרת של √u היא u′ חלקי <strong>2</strong>√u.';
+    else if(eqv(v,pr.c*pr.m)) m='זה הערך של הפונקציה, לא של הנגזרת. קודם גזרו, ורק אחר כך הציבו.';
+    else if(eqv(v,pr.c/(2*pr.m*pr.m))) m='הצבתם בלי השורש. במכנה יש <strong>√</strong> של מה שבפנים, לא המספר עצמו.';
+    else m='לא מדויק. כתבו קודם את הנגזרת כנוסחה, ורק אחר כך הציבו את x.';
+  }else{
+    const x=parseNum($('prX').value), y=parseNum($('prY').value);
+    if(isNaN(x)||isNaN(y)){ fb.innerHTML='<div class="fb err">מלאו מספר גם ב-x וגם ב-y.</div>'; return; }
+    if(pr.kind==='edge'){
+      const ptOk=eqv(x,pr.p)&&eqv(y,pr.k);
+      if(sel===null||!pr.ch[sel]){ fb.innerHTML=`<div class="fb err">${ptOk?'הנקודה נכונה! עכשיו בחרו: מינימום או מקסימום?':'בחרו גם אם זה מינימום או מקסימום.'}</div>`; return; }
+      const typeOk=pr.ch[sel].r==='ok';
+      if(ptOk&&typeOk) return ok(`${eqs(`(${numTxt(pr.p)}, ${numTxt(pr.k)})`)} היא נקודת ${pr.a>0?'מינימום':'מקסימום'} בקצה.`);
+      if(ptOk) m=`הנקודה נכונה, אבל הסוג לא. a ${pr.a>0?'חיובי':'שלילי'}: השורש תמיד ${pr.a>0?'מוסיף':'מוריד'}, אז כל שאר הערכים ${pr.a>0?'גבוהים':'נמוכים'} יותר.`;
+      else if(eqv(x,-pr.p)&&pr.p!==0) m='הסימן של x הפוך. בדקו: בקצה, מה שבתוך השורש שווה 0.';
+      else if(eqv(x,pr.p)) m='ה-x נכון! בקצה השורש שווה 0, אז מה נשאר מהפונקציה?';
+      else if(eqv(x,pr.k)&&eqv(y,pr.p)) m='החלפתם בין x ל-y.';
+      else m='לא בקצה. הקצה הוא ה-x שבו מה שבתוך השורש שווה 0.';
+    }else{
+      if(eqv(x,pr.px)&&eqv(y,pr.py)) return ok(`${eqs(`(${numTxt(pr.px)}, ${numTxt(pr.py)})`)} היא נקודת ה${pr.v==='min'?'מינימום':'מקסימום'}.`);
+      if(eqv(x,pr.bad1)&&!eqv(pr.bad1,pr.px)) m='מצאתם את √x, לא את x. העלו בריבוע.';
+      else if(eqv(x,pr.bad2)) m='שכחתם את ה-2 בנגזרת של √x. היא 1 חלקי <strong>2</strong>√x.';
+      else if(eqv(x,0)) m='x = 0 הוא קצה התחום, שם הנגזרת לא מוגדרת. מחפשים את הנקודה שבה הנגזרת <strong>שווה</strong> 0.';
+      else if(eqv(x,pr.px)) m='ה-x נכון! עכשיו הציבו אותו בפונקציה המקורית, לא בנגזרת.';
+      else m='ה-x לא נכון. גזרו, השוו ל-0 ופתרו בזהירות.';
+    }
+  }
+  streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  if(pr.hint===2) plotF($('prG'),pr.F,{mode:'mono',band:pr.kind==='dom'});
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hint===1?pr.hint1:pr.hint2}</div>`;
+};
+$('prShow').onclick=()=>{
+  showGraph();
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${pr.sol} אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

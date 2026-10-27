@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חקירת פונקציה רציונלית · כיתה יא · מירי</title>
+<meta name="description" content="פונקציה עם x במכנה: אסימפטוטות אנכיות ואופקיות, תחום הגדרה, קיצון ושרטוט. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/rational-analysis/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חקירת פונקציה רציונלית · כיתה יא · מירי">
+<meta property="og:description" content="פונקציה עם x במכנה: אסימפטוטות אנכיות ואופקיות, תחום הגדרה, קיצון ושרטוט. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/rational-analysis/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"חקירת פונקציות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#analysis-11"},{"@type":"ListItem","position":5,"name":"חקירת פונקציה רציונלית","item":"https://shohamtal.github.io/homework-site/math/rational-analysis/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים אסימפטוטה אנכית?","acceptedAnswer":{"@type":"Answer","text":"מוצאים את ה-x שמאפס את המכנה, ובודקים שהמונה לא 0 באותו x. אם המונה לא 0, יש שם אסימפטוטה אנכית. למשל ב-3x − 2 המכנה מתאפס ב-x = 2, אז האסימפטוטה היא x = 2. נסו במעבדה."}},{"@type":"Question","name":"איך מוצאים אסימפטוטה אופקית?","acceptedAnswer":{"@type":"Answer","text":"משווים את המעלות של המונה והמכנה. אם הן שוות, האסימפטוטה היא היחס בין המקדמים המובילים, למשל 2x + 1x − 1 מתקרבת ל-y = 2. אם המעלה של המכנה גדולה יותר, האסימפטוטה היא y = 0."}},{"@type":"Question","name":"מה ההבדל בין אסימפטוטה ל\"חור\" בגרף?","acceptedAnswer":{"@type":"Answer","text":"בשני המקרים המכנה 0 והנקודה מחוץ לתחום. אם גם המונה 0 באותו x, אפשר לצמצם, והגרף נראה רגיל עם נקודה אחת חסרה. אם המונה לא 0, הגרף בורח לאינסוף ויש אסימפטוטה. עוד על צמצום בשברים אלגבריים."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חקירת פונקציה רציונלית","description":"פונקציה עם x במכנה: אסימפטוטות אנכיות ואופקיות, תחום הגדרה, קיצון ושרטוט. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/rational-analysis/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"חקירת פונקציות","teaches":"חקירת פונקציה רציונלית","keywords":"אסימפטוטה, תחום הגדרה, פונקציה רציונלית","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .up{stroke:var(--ok); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .down{stroke:var(--err); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .flat{stroke:var(--ink); stroke-width:3; fill:none; stroke-linecap:round}
+  .g .asy{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:6 4}
+  .g .hole{fill:var(--card); stroke:var(--ink); stroke-width:1.6}
+  .signt{border-collapse:collapse; margin:4px auto; font-family:var(--f-math); font-size:1rem}
+  .signt th,.signt td{border:1.5px solid var(--soft); padding:4px 8px; text-align:center; white-space:nowrap}
+  .signt th{background:var(--paper); font-weight:600}
+  .signt .p{color:var(--ok); font-weight:700} .signt .n{color:var(--err); font-weight:700}
+  .signt .ext{font-size:.85rem; font-weight:700}
+  .choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+  .choices button{font-size:1rem}
+  .choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .key{display:inline-block; width:1.4em; height:.45em; border-radius:3px; vertical-align:middle}
+  .key.dash{height:0; border-top:2px dashed var(--blue); border-radius:0}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="rational-analysis">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#analysis-11">חקירת פונקציות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חקירת פונקציה רציונלית</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · חקירת פונקציות</div>
+  <h1>חקירת פונקציה רציונלית <span class="slogan">כשיש x במכנה</span></h1>
+  <p class="lead">פונקציה רציונלית היא שבר שיש בו x במכנה. יש לה תכונות שלפולינום אין: מקומות שאסור להציב בהם, ואסימפטוטות, קווים שהגרף מתקרב אליהם ולא נוגע בהם.
+  החקירה עצמה כמו בפולינום, עם נגזרת וטבלת סימנים, רק שמוסיפים לה את תחום ההגדרה ואת האסימפטוטות. לרמת 4 ו-5 יח״ל.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: איפה המכנה מתאפס, ולאן הגרף בורח</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אסימפטוטה אנכית</h3>
+      <p>אסור לחלק ב-0. לכן מוציאים מהתחום כל x שמאפס את המכנה.</p>
+      <p>אם במקום הזה <strong>המונה לא 0</strong>, הגרף בורח למעלה או למטה, ויש שם <strong>אסימפטוטה אנכית</strong>. אם גם המונה 0, יש רק "חור" בגרף.</p>
+      <p>למשל ב-<span class="eq"><i>f</i>(<i>x</i>) = <span class="frac"><span>2<i>x</i> + 1</span><span><i>x</i> − 1</span></span></span> האסימפטוטה היא <span class="eq"><i>x</i> = 1</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>אסימפטוטה אופקית</h3>
+      <p>מה קורה כש-x גדול מאוד? אם המעלה של המונה והמכנה <strong>שווה</strong>, הגרף מתקרב ליחס בין המקדמים המובילים. ב-<span class="eq"><span class="frac"><span>2<i>x</i> + 1</span><span><i>x</i> − 1</span></span></span> זה <span class="eq"><i>y</i> = 2</span>.</p>
+      <p>אם המעלה של המכנה <strong>גדולה יותר</strong>, הגרף מתקרב ל-<span class="eq"><i>y</i> = 0</span>.</p>
+      <svg class="g" id="introG" viewBox="0 0 240 240" role="img" aria-label="גרף של פונקציה רציונלית עם אסימפטוטה אנכית ואסימפטוטה אופקית מקווקוות"></svg>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מזיזים את האסימפטוטות</h2></div>
+  <p class="text">הפונקציה היא <span class="eq"><i>f</i>(<i>x</i>) = <span class="frac"><span><i>a</i><i>x</i> + <i>b</i></span><span><i>x</i> − <i>c</i></span></span></span>. הקווים הכחולים המקווקווים הם האסימפטוטות. נסו למצוא מצב שבו האסימפטוטה האנכית נעלמת.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="sa"><span><i>a</i> (המקדם של x במונה)</span><span class="eq" id="va"></span></label>
+      <input type="range" id="sa" min="-3" max="3" step="0.5" value="2">
+      <label class="slider" for="sb"><span><i>b</i> (המספר במונה)</span><span class="eq" id="vb"></span></label>
+      <input type="range" id="sb" min="-6" max="6" step="1" value="1">
+      <label class="slider" for="sc"><span><i>c</i> (המכנה מתאפס ב-x = c)</span><span class="eq" id="vc"></span></label>
+      <input type="range" id="sc" class="hl" min="-4" max="4" step="0.5" value="1">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="labTries"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>אסימפטוטה אנכית באה מהמכנה, לא מהמונה.</strong> ב-<span class="eq"><span class="frac"><span><i>x</i> + 3</span><span><i>x</i> − 2</span></span></span> האסימפטוטה היא <span class="eq"><i>x</i> = 2</span>. ה-<span class="eq"><i>x</i> = −3</span> הוא נקודת חיתוך עם ציר x.</div></li>
+    <li><div><strong>הסימן מתהפך.</strong> המכנה <span class="eq"><i>x</i> + 1</span> מתאפס ב-<span class="eq"><i>x</i> = −1</span>, לא ב-<span class="eq"><i>x</i> = 1</span>.</div></li>
+    <li><div><strong>אסימפטוטה אנכית היא <i>x</i> = מספר, ואופקית היא <i>y</i> = מספר.</strong> מי שכותב <span class="eq"><i>y</i> = 2</span> במקום <span class="eq"><i>x</i> = 2</span> מתאר קו אחר לגמרי.</div></li>
+    <li><div><strong>שוכחים את תחום ההגדרה בטבלת הסימנים.</strong> הנגזרת יכולה להחליף סימן גם באסימפטוטה. לכן שמים בטבלה גם את ה-x שמחוץ לתחום, אבל שם אין נקודת קיצון.</div></li>
+  </ol>
+  <div class="callout"><strong>נגזרת של מנה:</strong> <span class="eq">(<span class="frac"><span><i>u</i></span><span><i>v</i></span></span>)′ = <span class="frac"><span><i>u</i>′<i>v</i> − <i>u</i><i>v</i>′</span><span><i>v</i>²</span></span></span>. המכנה בריבוע תמיד חיובי, אז את הסימן קובע רק המונה. עוד ב<a href="../derivative-intro/">נגזרת: שיפוע המשיק</a>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: חקירה מלאה</h2></div>
+  <p class="text">נחקור את <span class="eq"><i>f</i>(<i>x</i>) = <span class="frac"><span><i>x</i>²</span><span><i>x</i>² − 4</span></span></span>. לחצו "הצעד הבא".</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חלק אחד מהחקירה בכל פעם</h2></div>
+  <p class="text">בכל תרגיל יש פונקציה ושאלה אחת. הגרף מופיע רק ברמז השני, אז נסו קודם מהנוסחה.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="choices" id="prChoices"></div>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים אסימפטוטה אנכית?</h3>
+    <p>מוצאים את ה-x שמאפס את המכנה, ובודקים שהמונה לא 0 באותו x. אם המונה לא 0, יש שם אסימפטוטה אנכית. למשל ב-<span class="eq"><span class="frac"><span>3</span><span><i>x</i> − 2</span></span></span> המכנה מתאפס ב-<span class="eq"><i>x</i> = 2</span>, אז האסימפטוטה היא <span class="eq"><i>x</i> = 2</span>. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך מוצאים אסימפטוטה אופקית?</h3>
+    <p>משווים את המעלות של המונה והמכנה. אם הן שוות, האסימפטוטה היא היחס בין המקדמים המובילים, למשל <span class="eq"><span class="frac"><span>2<i>x</i> + 1</span><span><i>x</i> − 1</span></span></span> מתקרבת ל-<span class="eq"><i>y</i> = 2</span>. אם המעלה של המכנה גדולה יותר, האסימפטוטה היא <span class="eq"><i>y</i> = 0</span>.</p>
+    <h3>מה ההבדל בין אסימפטוטה ל"חור" בגרף?</h3>
+    <p>בשני המקרים המכנה 0 והנקודה מחוץ לתחום. אם גם המונה 0 באותו x, אפשר לצמצם, והגרף נראה רגיל עם נקודה אחת חסרה. אם המונה לא 0, הגרף בורח לאינסוף ויש אסימפטוטה. עוד על צמצום ב<a href="../algebraic-fractions/">שברים אלגבריים</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/polynomial-analysis/">חקירת פולינום</a> · <a href="../../math/algebraic-fractions/">שברים אלגבריים: צמצום, כפל וחיבור</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/polynomial-analysis/"><small>→ הנושא הקודם</small>חקירת פולינום</a><a class="next" href="../../math/root-analysis/"><small>הנושא הבא ←</small>חקירת פונקציית שורש</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`;
+const r2=v=>Math.round(v*100)/100, nt=v=>numTxt(r2(v));
+const fr=(n,d)=>`<span class="frac"><span>${n}</span><span>${d}</span></span>`;
+const FX='<i>f</i>(<i>x</i>)', DER='<i>f</i>′(<i>x</i>)';
+let pid=0;
+
+/* ax + b as HTML */
+function lin(a,b){
+  if(Math.abs(a)<1e-9) return nt(b);
+  const co=Math.abs(a)===1?'':nt(Math.abs(a));
+  let s=(a<0?MINUS:'')+co+X;
+  if(b) s+=` ${b<0?MINUS:'+'} ${nt(Math.abs(b))}`;
+  return s;
+}
+const xm=c=>Math.abs(c)<1e-9?X:`${X} ${c<0?'+':MINUS} ${nt(Math.abs(c))}`;
+const fHTML=(a,b,c)=>`${FX} = ${fr(lin(a,b),xm(c))}`;
+
+/* draw a function with breaks at excluded x, dashed asymptotes, holes, points; colored by slope */
+function plotR(svg,f,opt={}){
+  const id='rc'+(++pid), excl=opt.excl||[], cl=v=>Math.max(-30,Math.min(30,v));
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  (opt.va||[]).forEach(x=>{ h+=`<line class="asy" x1="${sx(x)}" y1="${sy(-6)}" x2="${sx(x)}" y2="${sy(6)}"/>`; });
+  (opt.ha||[]).forEach(y=>{ h+=`<line class="asy" x1="${sx(-6)}" y1="${sy(y)}" x2="${sx(6)}" y2="${sy(y)}"/>`; });
+  if(opt.curve!==false){
+    let path='', last=null, prevX=null;
+    const flush=()=>{ if(path&&path.includes('L')) h+=`<path class="${last}" d="${path}"/>`; path=''; };
+    for(let x=-6;x<=6.001;x+=0.01){
+      if(excl.some(e=>Math.abs(x-e)<0.012)){ flush(); prevX=null; continue; }
+      if(prevX!==null&&excl.some(e=>(prevX-e)*(x-e)<0)){ flush(); }
+      const y=f(x);
+      if(!isFinite(y)||Math.abs(y)>30){ flush(); prevX=x; continue; }
+      const sl=f(x+1e-4)-f(x-1e-4), c=opt.mono===false?'flat':Math.abs(sl)<1e-9?'flat':sl>0?'up':'down';
+      const P=sx(x).toFixed(1)+' '+sy(cl(y)).toFixed(1);
+      if(!path){ path='M'+P; last=c; }
+      else if(c!==last){ path+='L'+P; flush(); path='M'+P; last=c; }
+      else path+='L'+P;
+      prevX=x;
+    }
+    flush();
+  }
+  h+='</g>';
+  (opt.holes||[]).forEach(p=>{ if(Math.abs(p.x)<=5.5&&Math.abs(p.y)<=5.5) h+=`<circle class="hole" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4"/>`; });
+  (opt.points||[]).forEach(p=>{ if(Math.abs(p.x)<=5.5&&Math.abs(p.y)<=5.5){ h+=`<circle class="${p.cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`; if(p.label) h+=`<text class="ptlbl" x="${sx(p.x)+6}" y="${sy(p.y)-6}">${p.label}</text>`; } });
+  draw(svg,null,0,{extra:h});
+}
+
+/* the (ax + b)/(x − c) family */
+function fam(a,b,c){
+  const N=a*c+b, K=-N;
+  const r={a,b,c,f:x=>(a*x+b)/(x-c),hole:Math.abs(N)<1e-9,K};
+  r.x0=Math.abs(a)>1e-9?-b/a:null; if(r.x0!==null&&Math.abs(r.x0-c)<1e-9) r.x0=null;
+  r.y0=Math.abs(c)>1e-9?-b/c:null;
+  return r;
+}
+function plotFam(svg,F,opt={}){
+  const pts=[];
+  if(opt.pts!==false){ if(F.y0!==null&&!F.hole) pts.push({x:0,y:F.y0,cls:'pt'}); if(F.x0!==null) pts.push({x:F.x0,y:0,cls:'pt'}); }
+  plotR(svg,F.f,{excl:[F.c],va:F.hole?[]:[F.c],ha:opt.noHa?[]:[F.a],holes:F.hole?[{x:F.c,y:F.a}]:[],points:pts,curve:opt.curve,mono:opt.mono});
+}
+
+/* intro */
+plotFam($('introG'),fam(2,1,1),{pts:false});
+
+/* lab */
+const S={a:$('sa'),b:$('sb'),c:$('sc')};
+const TRIES=[
+  {l:'(2x + 1) ÷ (x − 1)',v:[2,1,1]},
+  {l:'(x + 3) ÷ (x + 1)',v:[1,3,-1]},
+  {l:'3 ÷ (x − 2)',v:[0,3,2]},
+  {l:'(−x + 4) ÷ (x − 2)',v:[-1,4,2]},
+  {l:'(2x − 4) ÷ (x − 2)',v:[2,-4,2]},
+  {l:'x ÷ (x + 2)',v:[1,0,-2]}
+];
+$('labTries').innerHTML=TRIES.map((t,i)=>`<button data-i="${i}" dir="ltr">${t.l}</button>`).join('');
+$('labTries').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ const v=TRIES[+b.dataset.i].v; S.a.value=v[0]; S.b.value=v[1]; S.c.value=v[2]; lab(); }));
+Object.values(S).forEach(el=>el.addEventListener('input',lab));
+function lab(){
+  const a=+S.a.value, b=+S.b.value, c=+S.c.value, F=fam(a,b,c);
+  $('va').textContent=numTxt(a); $('vb').textContent=numTxt(b); $('vc').textContent=numTxt(c);
+  $('labEq').innerHTML=eqs(fHTML(a,b,c));
+  plotFam($('labG'),F);
+  let t=`<div><strong>תחום הגדרה:</strong> ${eqs(`${X} ≠ ${nt(c)}`)}, כי שם המכנה 0.</div>`;
+  if(F.hole){
+    t+=`<div><strong>אין אסימפטוטה אנכית!</strong> ב-${eqs(`${X} = ${nt(c)}`)} גם המונה 0. אפשר לצמצם ולקבל ${eqs(`<i>y</i> = ${nt(a)}`)}, ישר עם <strong>חור</strong> אחד ב-${eqs(`(${nt(c)}, ${nt(a)})`)}.</div>`;
+  }else{
+    t+=`<div><strong>אסימפטוטה אנכית:</strong> ${eqs(`${X} = ${nt(c)}`)}. שם המכנה 0 והמונה ${nt(a*c+b)}, לא 0.</div>`;
+    t+=`<div><strong>אסימפטוטה אופקית:</strong> ${eqs(`<i>y</i> = ${nt(a)}`)}. ${Math.abs(a)<1e-9?'במונה אין x, אז כש-x גדול מאוד השבר מתקרב ל-0.':`כש-x גדול מאוד, השבר מתקרב ליחס בין המקדמים של x: ${eqs(`${nt(a)} ÷ 1`)}.`}</div>`;
+    t+=`<div><strong>חיתוך עם הצירים:</strong> ${F.y0!==null?`ציר y ב-${eqs(`(0, ${nt(F.y0)})`)}`:'אין חיתוך עם ציר y, כי אסור להציב 0'}. ${F.x0!==null?`ציר x ב-${eqs(`(${nt(F.x0)}, 0)`)}`:'אין חיתוך עם ציר x, כי המונה אף פעם לא 0'}.</div>`;
+    t+=`<div><strong>נגזרת:</strong> ${eqs(`${DER} = ${fr(nt(F.K),`(${xm(c)})²`)}`)}. המונה ${F.K>0?'חיובי':'שלילי'} והמכנה תמיד חיובי, אז הפונקציה <strong>${F.K>0?'עולה':'יורדת'}</strong> בכל תחום ההגדרה, ואין לה נקודות קיצון.</div>`;
+  }
+  t+=`<div><span class="key dash"></span> אסימפטוטה · <span class="key" style="background:var(--ok)"></span> עולה · <span class="key" style="background:var(--err)"></span> יורדת</div>`;
+  $('labExplain').innerHTML=t;
+}
+lab();
+
+/* worked example: f(x) = x² / (x² − 4) */
+const EXF=x=>x*x/(x*x-4);
+const TBL=`<div class="scroll-x"><table class="signt" dir="ltr"><tr><th><i>x</i></th><th><i>x</i> &lt; −2</th><th>−2</th><th>−2 &lt; <i>x</i> &lt; 0</th><th>0</th><th>0 &lt; <i>x</i> &lt; 2</th><th>2</th><th><i>x</i> &gt; 2</th></tr>
+<tr><th>${DER}</th><td class="p">+</td><td>אין</td><td class="p">+</td><td>0</td><td class="n">${MINUS}</td><td>אין</td><td class="n">${MINUS}</td></tr>
+<tr><th>${FX}</th><td>↗</td><td>אין</td><td>↗</td><td class="ext">מקסימום</td><td>↘</td><td>אין</td><td>↘</td></tr></table></div>`;
+const EXS=[
+  [{mono:false,va:[],ha:[]},`<strong>צעד 1, תחום הגדרה:</strong> המכנה ${eqs(`${X}² − 4`)} מתאפס ב-${eqs(`${X} = 2`)} וב-${eqs(`${X} = −2`)}. התחום: ${eqs(`${X} ≠ ±2`)}.`],
+  [{mono:false,va:[-2,2],ha:[]},`<strong>צעד 2, אסימפטוטות אנכיות:</strong> ב-${eqs(`${X} = ±2`)} המונה הוא 4, לא 0. לכן ${eqs(`${X} = 2`)} ו-${eqs(`${X} = −2`)} הן אסימפטוטות אנכיות.`],
+  [{mono:false,va:[-2,2],ha:[1]},`<strong>צעד 3, אסימפטוטה אופקית:</strong> במונה ובמכנה המעלה היא 2. היחס בין המקדמים המובילים הוא ${eqs('1 ÷ 1')}, אז ${eqs('<i>y</i> = 1')}.`],
+  [{mono:false,va:[-2,2],ha:[1]},`<strong>צעד 4, נגזרת של מנה:</strong> ${eqs(`${DER} = ${fr(`2${X}(${X}² − 4) − ${X}² · 2${X}`,`(${X}² − 4)²`)}`)} ${eqs(`= ${fr(`−8${X}`,`(${X}² − 4)²`)}`)}.`],
+  [{va:[-2,2],ha:[1]},`<strong>צעד 5, טבלת סימנים:</strong> המכנה בריבוע תמיד חיובי, אז הסימן הוא של ${eqs(`−8${X}`)}. הנגזרת 0 רק ב-${eqs(`${X} = 0`)}. ב-${eqs('±2')} הפונקציה לא מוגדרת.${TBL}`],
+  [{va:[-2,2],ha:[1],points:[{x:0,y:0,cls:'dot',label:'(0, 0)'}]},`<strong>צעד 6, קיצון וחיתוכים:</strong> ב-${eqs(`${X} = 0`)} הנגזרת עוברת מ-+ ל-−, אז ${eqs('(0, 0)')} היא <strong>מקסימום</strong>. זו גם נקודת החיתוך היחידה עם הצירים, כי המונה ${eqs(`${X}²`)} מתאפס רק ב-0.`],
+  [{va:[-2,2],ha:[1],points:[{x:0,y:0,cls:'dot'}]},`<strong>צעד 7, סיכום:</strong> עולה ב-${eqs(`${X} &lt; −2`)} או ${eqs(`−2 &lt; ${X} &lt; 0`)}. יורדת ב-${eqs(`0 &lt; ${X} &lt; 2`)} או ${eqs(`${X} &gt; 2`)}. מקסימום ${eqs('(0, 0)')}. סיימנו!`]
+];
+let exI=0;
+function ex(){
+  const [opt,txt]=EXS[exI];
+  plotR($('exG'),EXF,{excl:[-2,2],...opt});
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice: f(x) = (ax + at)/(x − c), zero at x = −t, t ≠ −c */
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+let pr=null, sel=null, streak=0, solved=0;
+function newPr(){
+  const a=pick([-2,-1,1,2,3]), c=pick([-3,-2,-1,1,2,3]);
+  let t; do{ t=Math.floor(Math.random()*9)-4; }while(t===-c);
+  const b=a*t, F=fam(a,b,c), z=-t;
+  const kind=pick(['va','ha','dom','mono','mono','xint']);
+  const q={kind,F,a,b,c,z,eq:fHTML(a,b,c)};
+  const H1={
+    va:'אסימפטוטה אנכית יש איפה שה<strong>מכנה</strong> מתאפס (והמונה לא). פתרו: מכנה = 0.',
+    ha:'במונה ובמכנה יש x בחזקה 1. מה היחס בין המקדמים של x?',
+    dom:'אסור לחלק ב-0. איזה x מאפס את המכנה?',
+    mono:'גזרו לפי נגזרת של מנה. המכנה בריבוע תמיד חיובי, אז בדקו רק את הסימן של המונה של הנגזרת.',
+    xint:'חיתוך עם ציר x קורה כש-y = 0. שבר שווה 0 כשה<strong>מונה</strong> שווה 0.'
+  };
+  q.hint1=H1[kind];
+  q.hint2=`האסימפטוטות: ${eqs(`${X} = ${numTxt(c)}`)} ו-${eqs(`<i>y</i> = ${numTxt(a)}`)}. הנגזרת: ${eqs(`${DER} = ${fr(numTxt(F.K),`(${xm(c)})²`)}`)}. ציירנו את הגרף.`;
+  if(kind==='va'){
+    q.text='מה האסימפטוטה האנכית של הפונקציה?';
+    q.ch=[{h:eqs(`${X} = ${numTxt(c)}`),r:'ok'},{h:eqs(`${X} = ${numTxt(-c)}`),r:'sign'},{h:eqs(`<i>y</i> = ${numTxt(c)}`),r:'axis'},{h:eqs(`${X} = ${numTxt(z)}`),r:'zero'}];
+    q.sol=`המכנה ${eqs(xm(c))} מתאפס ב-${eqs(`${X} = ${numTxt(c)}`)}, והמונה שם הוא ${numTxt(a*c+b)}, לא 0. לכן ${eqs(`${X} = ${numTxt(c)}`)}.`;
+  }else if(kind==='ha'){
+    q.text='מה האסימפטוטה האופקית של הפונקציה?';
+    q.ch=[{h:eqs(`<i>y</i> = ${numTxt(a)}`),r:'ok'},{h:eqs(`<i>y</i> = ${numTxt(b)}`),r:'num'},{h:eqs('<i>y</i> = 0'),r:'zero0'},{h:eqs(`${X} = ${numTxt(c)}`),r:'va'}];
+    q.sol=`המעלות שוות (1 ו-1), אז האסימפטוטה היא היחס בין המקדמים של x: ${eqs(`<i>y</i> = ${numTxt(a)} ÷ 1 = ${numTxt(a)}`)}.`;
+  }else if(kind==='dom'){
+    q.text='מה תחום ההגדרה של הפונקציה?';
+    q.ch=[{h:eqs(`${X} ≠ ${numTxt(c)}`),r:'ok'},{h:eqs(`${X} ≠ ${numTxt(-c)}`),r:'sign'},{h:eqs(`${X} ≠ ${numTxt(z)}`),r:'zero'},{h:'כל x',r:'all'}];
+    q.sol=`אסור שהמכנה יהיה 0: ${eqs(`${xm(c)} ≠ 0`)}, ולכן ${eqs(`${X} ≠ ${numTxt(c)}`)}.`;
+  }else if(kind==='mono'){
+    q.text='מה נכון לגבי הפונקציה?';
+    const up=F.K>0;
+    q.ch=[{h:'עולה בכל תחום ההגדרה',r:up?'ok':'dir'},{h:'יורדת בכל תחום ההגדרה',r:up?'dir':'ok'},{h:'יש לה נקודת קיצון',r:'ext'}];
+    q.keep=true;
+    q.sol=`${eqs(`${DER} = ${fr(numTxt(F.K),`(${xm(c)})²`)}`)}. המונה ${up?'חיובי':'שלילי'} והמכנה תמיד חיובי, אז הנגזרת תמיד ${up?'חיובית':'שלילית'}: הפונקציה ${up?'עולה':'יורדת'} בכל תחום ההגדרה, בלי קיצון.`;
+  }else{
+    q.text='באיזה x הגרף חותך את ציר x?';
+    q.inputs=true;
+    q.sol=`שבר שווה 0 כשהמונה 0: ${eqs(`${lin(a,b)} = 0`)}, ולכן ${eqs(`${X} = ${numTxt(z)}`)}. ב-x הזה המכנה לא 0, אז זו באמת נקודה על הגרף.`;
+  }
+  if(q.ch){ const seen=new Set(); q.ch=q.ch.filter(x=>!seen.has(x.h)&&seen.add(x.h)); if(!q.keep) shuffle(q.ch); }
+  pr={...q,tries:0,hint:0}; sel=null;
+  $('prEq').innerHTML=eqs(q.eq);
+  $('prQ').textContent=q.text;
+  $('prChoices').innerHTML=q.ch?q.ch.map((c,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${c.h}</button>`).join(''):'';
+  $('prChoices').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{ sel=+btn.dataset.i; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===btn)); }));
+  $('prInputs').innerHTML=q.inputs?'<label for="prX">x =<input id="prX" inputmode="text" autocomplete="off"></label>':'';
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  plotFam($('prG'),F,{curve:false,noHa:true,pts:false});
+  $('prG').querySelectorAll('.asy').forEach(e=>e.remove());
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const MSG={
+  sign:()=>`הסימן הפוך. ${eqs(xm(pr.c))} מתאפס כשמציבים ${eqs(numTxt(pr.c))}, לא ${eqs(numTxt(-pr.c))}. בדקו בהצבה.`,
+  axis:()=>'קו אנכי כותבים <span class="eq"><i>x</i> = מספר</span>. <span class="eq"><i>y</i> = מספר</span> הוא קו אופקי.',
+  zero:()=>'זה ה-x שמאפס את ה<strong>מונה</strong>. שם הגרף חותך את ציר x. האסימפטוטה ותחום ההגדרה באים מה<strong>מכנה</strong>.',
+  num:()=>'לקחתם את המספר החופשי של המונה. כש-x גדול מאוד, המספרים החופשיים כמעט לא משנים. מה שקובע הוא המקדמים של x.',
+  zero0:()=>'<span class="eq"><i>y</i> = 0</span> מתאים רק כשהמעלה של המכנה גדולה יותר. כאן יש x גם במונה וגם במכנה.',
+  va:()=>'זו האסימפטוטה ה<strong>אנכית</strong>. האופקית נכתבת <span class="eq"><i>y</i> = מספר</span>.',
+  all:()=>'לא כל x מותר. יש x אחד שמאפס את המכנה, ושם אסור להציב.',
+  dir:()=>'הכיוון הפוך. חשבו את המונה של הנגזרת: <span class="eq"><i>u</i>′<i>v</i> − <i>u</i><i>v</i>′</span>. מה הסימן שלו?',
+  ext:()=>'כדי שיהיה קיצון, הנגזרת צריכה להתאפס. כאן במונה של הנגזרת יש מספר קבוע שאינו 0, אז היא אף פעם לא 0.'
+};
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(pr.inputs){
+    const x=parseNum($('prX').value);
+    if(isNaN(x)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    if(eqv(x,pr.z)){ streak++; solved++; score(); plotFam($('prG'),pr.F); fb.innerHTML=`<div class="fb ok">נכון! הגרף חותך את ציר x ב-${eqs(`(${numTxt(pr.z)}, 0)`)}.</div>`; return; }
+    let m;
+    if(eqv(x,pr.c)) m='ב-x הזה המכנה 0, אז הפונקציה בכלל לא מוגדרת שם. חפשו איפה ה<strong>מונה</strong> 0.';
+    else if(eqv(x,-pr.z)) m='הסימן הפוך. פתרו שוב את המשוואה מונה = 0 ובדקו בהצבה.';
+    else if(eqv(x,0)) m='ב-x = 0 מוצאים את החיתוך עם ציר <strong>y</strong>. כאן מחפשים איפה y = 0.';
+    else m='לא נכון. הציבו את המספר במונה: הוא צריך לצאת 0.';
+    streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${m}</div>`;
+  }else{
+    if(sel===null||!pr.ch[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם אחת מהתשובות.</div>'; return; }
+    const c=pr.ch[sel];
+    if(c.r==='ok'){ streak++; solved++; score(); plotFam($('prG'),pr.F); fb.innerHTML=`<div class="fb ok">נכון! ${pr.sol}</div>`; return; }
+    streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${MSG[c.r]()}</div>`;
+  }
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  if(pr.hint===2) plotFam($('prG'),pr.F);
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hint===1?pr.hint1:pr.hint2}</div>`;
+};
+$('prShow').onclick=()=>{
+  plotFam($('prG'),pr.F);
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${pr.sol} אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

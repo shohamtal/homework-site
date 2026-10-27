@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>סדרה הנדסית: איבר כללי וסכום · כיתה יא · מירי</title>
+<meta name="description" content="בכל צעד כופלים באותו מספר q. איבר כללי, סכום n איברים, וסכום של סדרה הנדסית אינסופית יורדת. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/geometric-sequences/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="סדרה הנדסית: איבר כללי וסכום · כיתה יא · מירי">
+<meta property="og:description" content="בכל צעד כופלים באותו מספר q. איבר כללי, סכום n איברים, וסכום של סדרה הנדסית אינסופית יורדת. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/geometric-sequences/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"סדרות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#sequences-11"},{"@type":"ListItem","position":5,"name":"סדרה הנדסית: איבר כללי וסכום","item":"https://shohamtal.github.io/homework-site/math/geometric-sequences/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין סדרה חשבונית לסדרה הנדסית?","acceptedAnswer":{"@type":"Answer","text":"בסדרה חשבונית מוסיפים כל פעם אותו מספר (ההפרש d). בסדרה הנדסית כופלים כל פעם באותו מספר (המנה q). כדי לבדוק: אם ההפרשים בין איברים שכנים שווים, היא חשבונית. אם המנות שוות, היא הנדסית. ראו גם את הסדרה החשבונית."}},{"@type":"Question","name":"איך מחשבים סכום של סדרה הנדסית?","acceptedAnswer":{"@type":"Answer","text":"משתמשים בנוסחה Sn = a1(qn − 1) ÷ (q − 1). למשל ב-5, 15, 45, … הסכום של 6 איברים הוא 5(36 − 1) ÷ 2 = 1820. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"מתי יש לסדרה הנדסית סכום אינסופי?","acceptedAnswer":{"@type":"Answer","text":"רק כשהמנה בין −1 ל-1. אז האיברים קטנים ומתקרבים ל-0, והסכום מתקרב ל-a1 ÷ (1 − q). למשל 18 + 6 + 2 + … מתקרב ל-27. נסו במעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סדרה הנדסית: איבר כללי וסכום","description":"בכל צעד כופלים באותו מספר q. איבר כללי, סכום n איברים, וסכום של סדרה הנדסית אינסופית יורדת. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/geometric-sequences/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"סדרות","teaches":"סדרה הנדסית: איבר כללי וסכום","keywords":"מנה, סכום סדרה, סדרה אינסופית","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.seq{display:flex; flex-wrap:wrap; gap:4px 2px; direction:ltr; justify-content:center; align-items:center}
+.seq .chip{font-family:var(--f-math); font-size:1.15rem; min-width:2.2em; text-align:center}
+.seq .op{font-family:var(--f-math); color:var(--muted); padding:0 2px; font-size:.85rem}
+.seq .dots{font-family:var(--f-math); color:var(--muted); padding:0 4px}
+svg.gs{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.gs .bar{fill:var(--blue); stroke:var(--ink); stroke-width:1}
+.gs .bar.neg{fill:var(--line)}
+.gs .base{stroke:var(--ink); stroke-width:1.5}
+.gs .lim{stroke:var(--line); stroke-width:2; stroke-dasharray:6 4}
+.gs .ps{fill:var(--hl); stroke:var(--ink); stroke-width:1.5}
+.gs .psl{stroke:var(--ink); stroke-width:1.2; fill:none}
+.gs .lbl{fill:var(--ink); font:700 10px var(--f-math); text-anchor:middle}
+.gs .lbl.p{fill:var(--line)}
+.gs .cap{fill:var(--muted); font:10px var(--f-body); text-anchor:middle}
+.ctrl .chk{display:flex; gap:8px; align-items:center; font-weight:700}
+.ctrl .chk input{width:20px; height:20px; accent-color:var(--line)}
+.calc .eq{white-space:normal}
+.big-s{font-family:var(--f-math); font-size:1.4rem; text-align:center; direction:ltr}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="geometric-sequences">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#sequences-11">סדרות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">סדרה הנדסית: איבר כללי וסכום</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · סדרות</div>
+  <h1>סדרה הנדסית: איבר כללי וסכום <span class="slogan">כל פעם כופלים</span></h1>
+  <p class="lead">בסדרה חשבונית מוסיפים כל פעם אותו מספר. בסדרה הנדסית <strong>כופלים</strong> כל פעם באותו מספר. כך גדל חשבון בבנק, כך מתפשטת שמועה, וכך מתקצר כדור קופץ. בעמוד הזה לומדים את האיבר הכללי, את נוסחת הסכום ואת הסכום של סדרה אינסופית, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>אותו כופל בכל צעד</h2></div>
+  <div class="seq"><span class="chip">3</span><span class="op">·2</span><span class="chip">6</span><span class="op">·2</span><span class="chip">12</span><span class="op">·2</span><span class="chip">24</span><span class="op">·2</span><span class="chip">48</span><span class="dots">…</span></div>
+  <div class="two">
+    <div class="mini">
+      <h3>המנה <i>q</i></h3>
+      <p>המספר שכופלים בו נקרא <strong>המנה</strong>. מוצאים אותו בחילוק של איבר באיבר שלפניו: <span class="eq">6 ÷ 3 = 2</span>.</p>
+      <p>בסדרה חשבונית מחסרים, בהנדסית מחלקים.</p>
+    </div>
+    <div class="mini">
+      <h3>האיבר הכללי</h3>
+      <p>כדי להגיע לאיבר ה-<i>n</i> כופלים ב-<i>q</i> בדיוק <span class="eq"><i>n</i> − 1</span> פעמים:</p>
+      <p><span class="eq"><i>a</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub> · <i>q</i><sup><i>n</i> − 1</sup></span></p>
+    </div>
+    <div class="mini">
+      <h3>הסכום</h3>
+      <p>הסכום של <i>n</i> האיברים הראשונים:</p>
+      <p><span class="eq"><i>S</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub>(<i>q</i><sup><i>n</i></sup> − 1)</span> <span class="eq">÷ (<i>q</i> − 1)</span></p>
+      <p>הנוסחה עובדת לכל <span class="eq"><i>q</i> ≠ 1</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>סדרה אינסופית יורדת:</strong> כש-<span class="eq">−1 &lt; <i>q</i> &lt; 1</span> האיברים הולכים וקטנים, והסכום מתקרב למספר קבוע: <span class="eq"><i>S</i> = <i>a</i><sub>1</sub> ÷ (1 − <i>q</i>)</span>. למשל <span class="eq">1 + ½ + ¼ + …</span> מתקרב ל-2 ולא עובר אותו.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מגדלים שגדלים מהר</h2></div>
+  <p class="text">כל עמודה היא איבר. הזיזו את <i>q</i> ותראו כמה מהר העמודות גדלות. כש-<i>q</i> שלילי הסימנים מתחלפים. בחרו <i>q</i> בין <span class="eq">−1</span> ל-1 והדליקו את "הסכום האינסופי".</p>
+  <div class="lab">
+    <div>
+      <div class="seq" id="labSeq"></div>
+      <svg class="gs" id="labG" viewBox="0 0 360 250" role="img" aria-label="עמודות של איברי הסדרה ההנדסית"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="big-s" id="labS"></div>
+      <div><label class="slider" for="a1"><span>האיבר הראשון <span class="eq"><i>a</i><sub>1</sub></span></span><span class="eq" id="a1v"></span></label>
+        <input type="range" id="a1" min="1" max="8" step="1" value="3"></div>
+      <div><label class="slider" for="q"><span>המנה <span class="eq"><i>q</i></span></span><span class="eq" id="qv"></span></label>
+        <input type="range" id="q" class="hl" min="0" max="8" step="1" value="7"></div>
+      <div><label class="slider" for="n"><span>מספר האיברים <span class="eq"><i>n</i></span></span><span class="eq" id="nv"></span></label>
+        <input type="range" id="n" class="blue" min="2" max="10" step="1" value="5"></div>
+      <label class="chk"><input type="checkbox" id="inf"> הסכום האינסופי</label>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-a="1" data-q="7" data-n="10" data-i="0">1, 2, 4, 8…</button>
+          <button dir="ltr" data-a="2" data-q="8" data-n="6" data-i="0">q = 3</button>
+          <button dir="ltr" data-a="8" data-q="4" data-n="8" data-i="1">q = 0.5</button>
+          <button dir="ltr" data-a="4" data-q="2" data-n="8" data-i="1">q = −0.5</button>
+          <button dir="ltr" data-a="1" data-q="0" data-n="7" data-i="0">q = −2</button>
+          <button dir="ltr" data-a="5" data-q="5" data-n="6" data-i="0">q = 1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">גלו משהו: עם <span class="eq"><i>q</i> = 0.5</span> כל איבר הוא חצי מהקודם, והסכום מתקרב לכפול מהאיבר הראשון. עם <span class="eq"><i>q</i> = 2</span> כל איבר גדול מסכום כל האיברים שלפניו.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חזקה <i>n</i> במקום <i>n</i> − 1</h3>
+      <p>באיבר הראשון עוד לא כפלנו אף פעם. לכן באיבר ה-5 כופלים רק 4 פעמים.</p>
+      <p><span class="eq"><i>a</i><sub>5</sub> = 3 · 2<sup>4</sup> = 48</span>, לא <span class="eq">3 · 2<sup>5</sup></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>כופלים במקום להעלות בחזקה</h3>
+      <p><span class="eq"><i>q</i><sup><i>n</i> − 1</sup></span> זו חזקה, לא כפל.</p>
+      <p><span class="eq">2<sup>4</sup> = 16</span>, ולא <span class="eq">2 · 4 = 8</span>. וגם קודם מעלים בחזקה ורק אחר כך כופלים ב-<i>a</i><sub>1</sub>.</p>
+    </div>
+    <div class="mini">
+      <h3>סכום אינסופי כש-|<i>q</i>| ≥ 1</h3>
+      <p>הנוסחה <span class="eq"><i>a</i><sub>1</sub> ÷ (1 − <i>q</i>)</span> עובדת רק כש-<i>q</i> בין <span class="eq">−1</span> ל-1.</p>
+      <p>עם <span class="eq"><i>q</i> = 2</span> הסכום רק גדל ואין לו גבול. אל תציבו בנוסחה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>מנה שלילית:</strong> כש-<i>q</i> שלילי, חזקה זוגית נותנת חיובי ואי-זוגית נותנת שלילי. שימו סוגריים: <span class="eq">(−2)<sup>4</sup> = 16</span>, אבל <span class="eq">(−2)<sup>3</sup> = −8</span>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">חלק א: בסדרה <span class="eq">5, 15, 45, …</span> מצאו את <span class="eq"><i>a</i><sub>6</sub></span> ואת <span class="eq"><i>S</i><sub>6</sub></span>. חלק ב: מצאו את הסכום האינסופי של <span class="eq">18, 6, 2, …</span></p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">כל פעם תקבלו סדרה חדשה ושאלה אחת. אפשר לכתוב שבר, למשל <span class="eq">3/2</span>, ומספר שלילי עם מינוס, למשל <span class="eq">-96</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="term" aria-pressed="false">איבר</button>
+    <button data-t="q" aria-pressed="false">מנה</button>
+    <button data-t="sum" aria-pressed="false">סכום</button>
+    <button data-t="inf" aria-pressed="false">סכום אינסופי</button>
+  </div>
+  <div class="seq" id="prSeq"></div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prLbl">התשובה</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">סדרה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין סדרה חשבונית לסדרה הנדסית?</h3>
+    <p>בסדרה חשבונית מוסיפים כל פעם אותו מספר (ההפרש <i>d</i>). בסדרה הנדסית כופלים כל פעם באותו מספר (המנה <i>q</i>). כדי לבדוק: אם ההפרשים בין איברים שכנים שווים, היא חשבונית. אם המנות שוות, היא הנדסית. ראו גם את <a href="../arithmetic-series/">הסדרה החשבונית</a>.</p>
+    <h3>איך מחשבים סכום של סדרה הנדסית?</h3>
+    <p>משתמשים בנוסחה <span class="eq"><i>S</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub>(<i>q</i><sup><i>n</i></sup> − 1) ÷ (<i>q</i> − 1)</span>. למשל ב-<span class="eq">5, 15, 45, …</span> הסכום של 6 איברים הוא <span class="eq">5(3<sup>6</sup> − 1) ÷ 2 = 1820</span>. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>מתי יש לסדרה הנדסית סכום אינסופי?</h3>
+    <p>רק כשהמנה בין <span class="eq">−1</span> ל-1. אז האיברים קטנים ומתקרבים ל-0, והסכום מתקרב ל-<span class="eq"><i>a</i><sub>1</sub> ÷ (1 − <i>q</i>)</span>. למשל <span class="eq">18 + 6 + 2 + …</span> מתקרב ל-27. <a href="#lab">נסו במעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/arithmetic-series/">סדרה חשבונית: איבר כללי וסכום</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/optimization/"><small>→ הנושא הקודם</small>בעיות קיצון</a><a class="next" href="../../math/trig-graphs/"><small>הנושא הבא ←</small>גרפים של sin ו-cos</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const close=(a,b)=>Math.abs(a-b)<=Math.max(1e-6,Math.abs(b)*1e-6);
+const A=k=>`<i>a</i><sub>${k}</sub>`, S=k=>`<i>S</i><sub>${k}</sub>`, N='<i>n</i>', Qi='<i>q</i>';
+const term=(a1,q,n)=>a1*Math.pow(q,n-1);
+const sum=(a1,q,n)=>q===1?a1*n:a1*(Math.pow(q,n)-1)/(q-1);
+const par=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+/* fractions for the halves and thirds that show up in the infinite sums */
+function nice(v){
+  const r=Math.round(v*1000)/1000;
+  if(Math.abs(r-Math.round(r))<1e-9) return numTxt(r);
+  for(const d of [2,3,4,6,8,9,16,27]){ const k=v*d; if(Math.abs(k-Math.round(k))<1e-6) return numTxt(Math.round(k))+'/'+d; }
+  return numTxt(r);
+}
+function seqHTML(a1,q,n){
+  return Array.from({length:n},(x,i)=>`<span class="chip">${nice(term(a1,q,i+1))}</span>`).join('<span class="op">,</span>');
+}
+
+/* ---------- lab ---------- */
+const QORDER=[-2,-1,-0.5,0.25,0.5,1,1.5,2,3];
+function qOf(i){ return QORDER[i]; }
+function drawLab(svg,a1,q,n,inf){
+  const x0=30, W=310, top=20, bot=215;
+  const ts=Array.from({length:n},(x,i)=>term(a1,q,i+1));
+  const ps=ts.map((t,i)=>sum(a1,q,i+1));
+  const lim=Math.abs(q)<1?a1/(1-q):null;
+  const vals=inf?ps.concat(lim==null?[]:[lim]):ts;
+  const mx=Math.max(...vals,0), mn=Math.min(...vals,0);
+  const span=(mx-mn)||1, u=(bot-top)/span, y0=top+mx*u;
+  const bw=W/n;
+  let h=`<line class="base" x1="${x0}" y1="${y0}" x2="${x0+W}" y2="${y0}"/>`;
+  if(!inf){
+    ts.forEach((v,i)=>{
+      const x=x0+i*bw+bw*.12, w=bw*.76, hh=Math.max(Math.abs(v)*u,1);
+      h+=`<rect class="bar${v<0?' neg':''}" x="${x}" y="${v>=0?y0-hh:y0}" width="${w}" height="${hh}"/>`;
+      if(bw>=26) h+=`<text class="lbl" x="${x+w/2}" y="${v>=0?y0-hh-4:y0+hh+11}">${nice(v)}</text>`;
+    });
+    h+=`<text class="cap" x="${x0+W/2}" y="242">כל עמודה היא איבר</text>`;
+  }else{
+    if(lim!=null){
+      const yl=y0-lim*u;
+      h+=`<line class="lim" x1="${x0}" y1="${yl}" x2="${x0+W}" y2="${yl}"/><text class="lbl p" x="${x0+W-14}" y="${yl-5}">S = ${nice(lim)}</text>`;
+    }
+    const pts=ps.map((v,i)=>[x0+i*bw+bw/2, y0-v*u]);
+    h+=`<polyline class="psl" points="${pts.map(p=>p.join(',')).join(' ')}"/>`;
+    pts.forEach((p,i)=>{ h+=`<circle class="ps" cx="${p[0]}" cy="${p[1]}" r="5"/>`; if(bw>=30) h+=`<text class="lbl" x="${p[0]}" y="${p[1]+(ps[i]>=(lim??0)?-9:16)}">${nice(ps[i])}</text>`; });
+    h+=`<text class="cap" x="${x0+W/2}" y="242">הנקודות הן הסכומים S₁, S₂, S₃, …</text>`;
+  }
+  svg.innerHTML=h;
+}
+function lab(){
+  const a1=+$('a1').value, q=qOf(+$('q').value), n=+$('n').value;
+  const canInf=Math.abs(q)<1, inf=$('inf').checked;
+  $('a1v').textContent=numTxt(a1); $('qv').textContent=numTxt(q); $('nv').textContent=n;
+  $('labSeq').innerHTML=seqHTML(a1,q,Math.min(n,6))+(n>6?'<span class="dots">…</span>':'');
+  const s=sum(a1,q,n), an=term(a1,q,n);
+  $('labS').innerHTML=`${S(N)} = ${nice(s)}`;
+  drawLab($('labG'),a1,q,n,inf&&canInf);
+  let t=`<div><strong>האיבר האחרון:</strong> ${E(`${A(n)} = ${numTxt(a1)} · ${par(q)}<sup>${n-1}</sup> = ${nice(an)}`)}.</div>`;
+  if(q===1) t+=`<div><strong>המנה 1:</strong> כל האיברים שווים, והנוסחה לא עובדת (מחלקים ב-0). הסכום פשוט ${E(`${n} · ${numTxt(a1)} = ${numTxt(s)}`)}.</div>`;
+  else t+=`<div><strong>הסכום:</strong> ${E(`${S(n)} = ${numTxt(a1)}(${par(q)}<sup>${n}</sup> − 1)`)} ${E(`÷ (${numTxt(q)} − 1) = ${nice(s)}`)}.</div>`;
+  if(q<0) t+=`<div>המנה שלילית, אז הסימנים מתחלפים: חיובי, שלילי, חיובי…</div>`;
+  if(inf&&!canInf) t+=`<div><strong>אין סכום אינסופי:</strong> ${E(`|${Qi}| ≥ 1`)}, אז האיברים לא קטנים והסכום לא מתקרב למספר. בחרו ${Qi} בין ${E('−1')} ל-1.</div>`;
+  if(inf&&canInf){ const L=a1/(1-q); t+=`<div><strong>הסכום האינסופי:</strong> ${E(`<i>S</i> = ${numTxt(a1)} ÷ (1 − ${par(q)}) = ${nice(L)}`)}. הנקודות מתקרבות לקו המקווקו ולא עוברות אותו לתמיד.</div>`; }
+  $('labCalc').innerHTML=t;
+}
+['a1','q','n'].forEach(id=>$(id).addEventListener('input',lab));
+$('inf').addEventListener('change',lab);
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  $('a1').value=b.dataset.a; $('q').value=b.dataset.q; $('n').value=b.dataset.n; $('inf').checked=b.dataset.i==='1'; lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>המנה:</strong> ${E('15 ÷ 5 = 3')}, וגם ${E('45 ÷ 15 = 3')}. אז ${E(`${Qi} = 3`)} ו-${E(`${A(1)} = 5`)}.`,
+  `<strong>האיבר השישי:</strong> כופלים 5 פעמים: ${E(`${A(6)} = 5 · 3<sup>5</sup>`)}.`,
+  `<strong>מחשבים:</strong> ${E('3<sup>5</sup> = 243')}, ולכן ${E(`${A(6)} = 5 · 243 = 1215`)}.`,
+  `<strong>הסכום:</strong> ${E(`${S(6)} = 5(3<sup>6</sup> − 1) ÷ (3 − 1)`)}.`,
+  `<strong>מחשבים:</strong> ${E('3<sup>6</sup> = 729')}, ואז ${E('5 · 728 ÷ 2 = 1820')}.`,
+  `<strong>חלק ב, המנה:</strong> ${E('6 ÷ 18 = 1/3')}. היא בין ${E('−1')} ל-1, אז יש סכום אינסופי.`,
+  `<strong>הנוסחה:</strong> ${E('<i>S</i> = 18 ÷ (1 − 1/3) = 18 ÷ 2/3')} ${E('= 27')}. בדיקה: ${E('18 + 6 + 2 = 26')}, כבר קרוב מאוד ל-27.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, solved=0, streak=0;
+function newPr(){
+  const type=mode==='mix'?pick(['term','q','sum','inf']):mode;
+  const p={type,tries:0,hint:0};
+  if(type==='inf'){
+    const opt=pick([[0.5,[2,4,6,8,10,12]],[1/3,[6,12,18,24]],[-0.5,[3,6,9,12]],[0.25,[3,6,12]],[2/3,[3,6,9]]]);
+    p.q=opt[0]; p.a1=pick(opt[1]); p.n=3; p.ans=p.a1/(1-p.q);
+  }else{
+    p.q=pick(type==='q'?[2,3,-2,-3,4]:[2,3,-2,-3]); p.a1=rnd(1,5)*(Math.random()<.2?-1:1);
+    p.n=type==='term'?rnd(5,7):type==='sum'?rnd(4,6):4;
+    if(Math.abs(p.q)>=3) p.n=Math.min(p.n,5);
+    p.ans=type==='term'?term(p.a1,p.q,p.n):type==='sum'?sum(p.a1,p.q,p.n):p.q;
+  }
+  pr=p;
+  const {a1,q,n}=p;
+  if(type==='q'){
+    $('prSeq').innerHTML=`<span class="chip">${E(`${A(1)} = ${numTxt(a1)}`)}</span><span class="op">,</span><span class="chip">${E(`${A(4)} = ${numTxt(term(a1,q,4))}`)}</span>`;
+    $('prQ').innerHTML=`בסדרה הנדסית ${E(`${A(1)} = ${numTxt(a1)}`)} ו-${E(`${A(4)} = ${numTxt(term(a1,q,4))}`)}. מה המנה ${Qi}?`;
+    $('prLbl').innerHTML=`${Qi} =`;
+  }else if(type==='inf'){
+    $('prSeq').innerHTML=seqHTML(a1,q,3)+'<span class="dots">…</span>';
+    $('prQ').innerHTML=`מה הסכום האינסופי של הסדרה?`;
+    $('prLbl').innerHTML='<i>S</i> =';
+  }else{
+    $('prSeq').innerHTML=seqHTML(a1,q,3)+'<span class="dots">…</span>';
+    $('prQ').innerHTML=type==='term'?`מה האיבר ה-${n}? כלומר, כמה זה ${E(A(n))}?`:`מה הסכום של ${n} האיברים הראשונים? כלומר, כמה זה ${E(S(n))}?`;
+    $('prLbl').innerHTML=type==='term'?`${A(n)} =`:`${S(n)} =`;
+  }
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {type,a1,q,n}=pr;
+  if(type==='term') return `המנה ${E(numTxt(q))}. ${E(`${A(n)} = ${par(a1)} · ${par(q)}<sup>${n-1}</sup> = ${numTxt(term(a1,q,n))}`)}.`;
+  if(type==='sum') return `המנה ${E(numTxt(q))}. ${E(`${S(n)} = ${par(a1)}(${par(q)}<sup>${n}</sup> − 1)`)} ${E(`÷ (${numTxt(q)} − 1) = ${numTxt(sum(a1,q,n))}`)}.`;
+  if(type==='q') return `${E(`${A(4)} = ${A(1)} · ${Qi}<sup>3</sup>`)}, ולכן ${E(`${Qi}<sup>3</sup> = ${numTxt(term(a1,q,4))} ÷ ${par(a1)} = ${numTxt(q*q*q)}`)}, ו-${E(`${Qi} = ${numTxt(q)}`)}.`;
+  const qt=q<0?`(${nice(q)})`:nice(q);
+  return `המנה ${E(nice(q))}, בין ${E('−1')} ל-1. ${E(`<i>S</i> = ${numTxt(a1)} ÷ (1 − ${qt})`)} ${E(`= ${nice(pr.ans)}`)}.`;
+}
+function diagnose(x){
+  const {type,a1,q,n}=pr;
+  if(type==='term'){
+    if(close(x,term(a1,q,n+1))) return `כפלתם ${n} פעמים. באיבר ה-${n} כופלים רק ${n-1} פעמים, כי באיבר הראשון עוד לא כפלנו.`;
+    if(close(x,a1*q*(n-1))) return 'כפלתם במעריך במקום להעלות בחזקה. החזקה היא כפל חוזר של q בעצמו.';
+    if(close(x,a1+(n-1)*q)) return 'זו נוסחה של סדרה חשבונית. כאן כופלים ב-q, לא מוסיפים.';
+    if(close(x,-term(a1,q,n))) return 'המספר נכון, הסימן לא. בדקו אם החזקה זוגית או אי-זוגית, ושימו סוגריים סביב q השלילי.';
+    if(close(x,Math.pow(a1*q,n-1))) return 'העליתם בחזקה גם את a₁. קודם מחשבים את החזקה של q, ורק אחר כך כופלים ב-a₁.';
+    return 'לא בדיוק. מצאו את המנה, והציבו באיבר הכללי.';
+  }
+  if(type==='sum'){
+    const s=sum(a1,q,n);
+    if(close(x,sum(a1,q,n-1))) return `חיברתם רק ${n-1} איברים. בנוסחת הסכום המעריך הוא ${n} בדיוק.`;
+    if(close(x,sum(a1,q,n+1))) return `חיברתם ${n+1} איברים. בנוסחת הסכום המעריך הוא n, לא n + 1.`;
+    if(close(x,term(a1,q,n))) return 'זה האיבר האחרון, לא הסכום. הציבו בנוסחת הסכום.';
+    if(close(x,-s)) return 'המספר נכון, הסימן לא. בדקו את הסימן של qⁿ ושל q − 1.';
+    if(close(x,a1*(Math.pow(q,n)-1)/(1-q))) return 'הפכתם את המכנה. במכנה יש q − 1, ובמונה qⁿ − 1, באותו סדר.';
+    if(close(x,a1*Math.pow(q,n)/(q-1))) return 'שכחתם את המינוס 1 במונה: qⁿ − 1.';
+    return 'לא בדיוק. מצאו את המנה והציבו בנוסחה. אפשר גם לבדוק בחיבור ישיר של האיברים.';
+  }
+  if(type==='q'){
+    if(close(x,q*q*q)) return 'זה q³. עכשיו מוציאים שורש שלישי כדי לקבל את q.';
+    if(close(x,-q)) return 'בדקו את הסימן. שורש שלישי של מספר שלילי הוא שלילי, ושל חיובי חיובי.';
+    if(close(x,(term(a1,q,4)-a1)/3)) return 'זו דרך של סדרה חשבונית. בסדרה הנדסית מחלקים: a₄ ÷ a₁ = q³.';
+    return 'לא בדיוק. כתבו a₄ = a₁ · q³ ופתרו בשביל q.';
+  }
+  const L=pr.ans;
+  if(close(x,a1/(1+q))) return 'במכנה יש 1 פחות q. הציבו את q עם הסימן שלו.';
+  if(close(x,a1*(1-q))) return 'מחלקים ב-(1 − q), לא כופלים.';
+  if(close(x,sum(a1,q,3))) return 'זה הסכום של שלושת האיברים הראשונים בלבד. הסכום האינסופי מתקרב למספר מעט גדול יותר.';
+  return `לא בדיוק. הנוסחה היא ${E('<i>S</i> = <i>a</i><sub>1</sub> ÷ (1 − <i>q</i>)')}.`;
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim());
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר או שבר, למשל 27 או 3/2.</div>'; return; }
+  if(close(x,pr.ans)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,a1,q,n}=pr; let h;
+  if(type==='term') h=pr.hint===1?'קודם מצאו את המנה: חלקו איבר באיבר שלפניו.':`המנה ${E(numTxt(q))}. הציבו ב-${E(`${A(n)} = ${par(a1)} · ${par(q)}<sup>${n-1}</sup>`)}.`;
+  else if(type==='sum') h=pr.hint===1?'מצאו את המנה, ואז הציבו בנוסחת הסכום.':`המנה ${E(numTxt(q))}. חשבו ${E(`${par(a1)}(${par(q)}<sup>${n}</sup> − 1)`)} ${E(`÷ (${numTxt(q)} − 1)`)}.`;
+  else if(type==='q') h=pr.hint===1?`מ-${E(A(1))} ל-${E(A(4))} כופלים ב-q שלוש פעמים.`:`${E(`${Qi}<sup>3</sup> = ${numTxt(term(a1,q,4))} ÷ ${par(a1)} = ${numTxt(q*q*q)}`)}. איזה מספר בחזקת 3 נותן את זה?`;
+  else h=pr.hint===1?'מצאו את המנה: חלקו את האיבר השני בראשון.':`המנה ${E(nice(q))}. הציבו ב-${E('<i>S</i> = <i>a</i><sub>1</sub> ÷ (1 − <i>q</i>)')}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו סדרה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

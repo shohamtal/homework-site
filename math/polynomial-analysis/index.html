@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חקירת פולינום · כיתה יא · מירי</title>
+<meta name="description" content="חקירה מלאה: תחום, חיתוך עם הצירים, נקודות קיצון, תחומי עלייה וירידה, ושרטוט סקיצה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/polynomial-analysis/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חקירת פולינום · כיתה יא · מירי">
+<meta property="og:description" content="חקירה מלאה: תחום, חיתוך עם הצירים, נקודות קיצון, תחומי עלייה וירידה, ושרטוט סקיצה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/polynomial-analysis/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"חקירת פונקציות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#analysis-11"},{"@type":"ListItem","position":5,"name":"חקירת פולינום","item":"https://shohamtal.github.io/homework-site/math/polynomial-analysis/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים נקודות קיצון של פולינום?","acceptedAnswer":{"@type":"Answer","text":"גוזרים, משווים את הנגזרת ל-0 ופותרים. אחר כך בונים טבלת סימנים: אם הנגזרת עוברת מ-+ ל-− יש מקסימום, ואם מ-− ל-+ יש מינימום. בסוף מציבים את ה-x בפונקציה המקורית כדי למצוא את ה-y. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"למה צריך טבלת סימנים אם כבר מצאתי איפה הנגזרת 0?","acceptedAnswer":{"@type":"Answer","text":"כי לא כל נקודה שבה הנגזרת 0 היא קיצון. ב-f(x) = x³ הנגזרת 0 ב-x = 0, אבל הגרף עולה משני הצדדים. הטבלה גם נותנת לכם מיד את תחומי העלייה והירידה. נסו את x³ במעבדה."}},{"@type":"Question","name":"כמה נקודות קיצון יכולות להיות לפולינום ממעלה שלישית?","acceptedAnswer":{"@type":"Answer","text":"שתיים, אחת, או אף אחת. הנגזרת היא ביטוי ריבועי, ולכן יש לה עד שני שורשים. אם יש שני שורשים שונים, יש מקסימום אחד ומינימום אחד. אם אין שורשים, או שיש שורש כפול, הגרף רק עולה או רק יורד. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חקירת פולינום","description":"חקירה מלאה: תחום, חיתוך עם הצירים, נקודות קיצון, תחומי עלייה וירידה, ושרטוט סקיצה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/polynomial-analysis/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"חקירת פונקציות","teaches":"חקירת פולינום","keywords":"נקודות קיצון, עלייה וירידה, סקיצה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .up{stroke:var(--ok); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .down{stroke:var(--err); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .flat{stroke:var(--ink); stroke-width:3; fill:none; stroke-linecap:round}
+  .g .dv{stroke:var(--blue); stroke-width:1.8; fill:none; stroke-dasharray:5 4}
+  .g .vline{stroke:var(--ink); stroke-width:1; stroke-dasharray:2 3; opacity:.6}
+  .signt{border-collapse:collapse; margin:4px auto; font-family:var(--f-math); font-size:1rem}
+  .signt th,.signt td{border:1.5px solid var(--soft); padding:4px 8px; text-align:center; white-space:nowrap}
+  .signt th{background:var(--paper); font-weight:600}
+  .signt .p{color:var(--ok); font-weight:700} .signt .n{color:var(--err); font-weight:700}
+  .signt .ext{font-family:var(--f-body,inherit); font-size:.85rem; font-weight:700}
+  .choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+  .choices button{font-size:1rem}
+  .choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .key{display:inline-block; width:1.4em; height:.45em; border-radius:3px; vertical-align:middle}
+  .key.dash{height:0; border-top:2px dashed var(--blue); border-radius:0}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="polynomial-analysis">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#analysis-11">חקירת פונקציות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חקירת פולינום</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · חקירת פונקציות</div>
+  <h1>חקירת פולינום <span class="slogan">הנגזרת מספרת לאן הגרף הולך</span></h1>
+  <p class="lead">חקירת פונקציה היא רשימת שאלות קבועה: תחום, חיתוכים, קיצון, עלייה וירידה, ובסוף סקיצה. בפולינום הכול קורה בעזרת הנגזרת.
+  איפה שהנגזרת חיובית הגרף עולה, איפה שהיא שלילית הוא יורד, ואיפה שהיא מחליפה סימן יש נקודת קיצון. לרמת 4 ו-5 יח״ל.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: הסימן של הנגזרת</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הנגזרת היא השיפוע</h3>
+      <p>הנגזרת <span class="eq"><i>f</i>′(<i>x</i>)</span> אומרת מה השיפוע של הגרף בכל נקודה. עוד על זה ב<a href="../derivative-intro/">נגזרת: שיפוע המשיק</a>.</p>
+      <p><span class="eq"><i>f</i>′(<i>x</i>) &gt; 0</span>: הגרף <strong>עולה</strong>. <span class="eq"><i>f</i>′(<i>x</i>) &lt; 0</span>: הגרף <strong>יורד</strong>.</p>
+      <p>בנקודת קיצון השיפוע הוא 0, והנגזרת <strong>מחליפה סימן</strong>: מ-+ ל-− זה מקסימום, ומ-− ל-+ זה מינימום.</p>
+    </div>
+    <div class="mini">
+      <h3>סדר החקירה</h3>
+      <ol class="text" style="margin:0; padding-inline-start:1.2em">
+        <li>תחום הגדרה (בפולינום: כל x).</li>
+        <li>גוזרים ומשווים לאפס: <span class="eq"><i>f</i>′(<i>x</i>) = 0</span>.</li>
+        <li>טבלת סימנים של <span class="eq"><i>f</i>′</span>.</li>
+        <li>נקודות קיצון ותחומי עלייה וירידה.</li>
+        <li>חיתוך עם הצירים, ואז סקיצה.</li>
+      </ol>
+      <svg class="g" id="introG" viewBox="0 0 240 240" role="img" aria-label="גרף של פולינום ממעלה שלישית, ירוק במקום שהוא עולה ואדום במקום שהוא יורד"></svg>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים פולינום וחוקרים אותו</h2></div>
+  <p class="text">הזיזו את המקדמים של <span class="eq"><i>f</i>(<i>x</i>) = <i>a</i><i>x</i>³ + <i>b</i><i>x</i>² + <i>c</i><i>x</i> + <i>d</i></span>. הקו המקווקו הכחול הוא הנגזרת. שימו לב: בכל מקום שהיא חוצה את ציר x, הגרף מחליף כיוון.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: הפולינום והנגזרת שלו"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="sa"><span><i>a</i> (מקדם של <span class="eq"><i>x</i>³</span>)</span><span class="eq" id="va"></span></label>
+      <input type="range" id="sa" min="-1" max="1" step="0.05" value="0.25">
+      <label class="slider" for="sb"><span><i>b</i> (מקדם של <span class="eq"><i>x</i>²</span>)</span><span class="eq" id="vb"></span></label>
+      <input type="range" id="sb" min="-3" max="3" step="0.25" value="0">
+      <label class="slider" for="sc"><span><i>c</i> (מקדם של <i>x</i>)</span><span class="eq" id="vc"></span></label>
+      <input type="range" id="sc" min="-6" max="6" step="0.25" value="-3">
+      <label class="slider" for="sd"><span><i>d</i> (המספר החופשי)</span><span class="eq" id="vd"></span></label>
+      <input type="range" id="sd" class="hl" min="-4" max="4" step="0.5" value="0">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="labTries"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>נגזרת 0 זה לא תמיד קיצון.</strong> ב-<span class="eq"><i>f</i>(<i>x</i>) = <i>x</i>³</span> הנגזרת <span class="eq">3<i>x</i>²</span> מתאפסת ב-0, אבל לא מחליפה סימן. הגרף עולה לפני ואחרי, ואין שם קיצון. לכן תמיד בונים טבלת סימנים.</div></li>
+    <li><div><strong>שוכחים להוריד את החזקה.</strong> הנגזרת של <span class="eq">2<i>x</i>³</span> היא <span class="eq">6<i>x</i>²</span>, לא <span class="eq">2<i>x</i>²</span>. כופלים במעריך ומורידים אותו ב-1.</div></li>
+    <li><div><strong>המספר החופשי נעלם.</strong> הנגזרת של מספר קבוע היא 0. ב-<span class="eq"><i>x</i>³ − 3<i>x</i> + 5</span> הנגזרת היא <span class="eq">3<i>x</i>² − 3</span>, בלי ה-5.</div></li>
+    <li><div><strong>נקודת קיצון צריכה גם y.</strong> מצאתם <span class="eq"><i>x</i> = 2</span>? הציבו אותו ב<strong>פונקציה המקורית</strong>, לא בנגזרת. בנגזרת תמיד יוצא 0.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה לטבלת הסימנים:</strong> בחרו מספר אחד מכל תחום, הציבו אותו בנגזרת, ובדקו רק את הסימן של התוצאה.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: חקירה מלאה</h2></div>
+  <p class="text">נחקור את <span class="eq"><i>f</i>(<i>x</i>) = <i>x</i>³ − 3<i>x</i>²</span>. לחצו "הצעד הבא".</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חלק אחד מהחקירה בכל פעם</h2></div>
+  <p class="text">בכל תרגיל יש פולינום ושאלה אחת. הגרף מופיע רק ברמז השני, אז נסו קודם לבד עם הנגזרת.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="choices" id="prChoices"></div>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים נקודות קיצון של פולינום?</h3>
+    <p>גוזרים, משווים את הנגזרת ל-0 ופותרים. אחר כך בונים טבלת סימנים: אם הנגזרת עוברת מ-+ ל-− יש מקסימום, ואם מ-− ל-+ יש מינימום. בסוף מציבים את ה-x בפונקציה המקורית כדי למצוא את ה-y. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>למה צריך טבלת סימנים אם כבר מצאתי איפה הנגזרת 0?</h3>
+    <p>כי לא כל נקודה שבה הנגזרת 0 היא קיצון. ב-<span class="eq"><i>f</i>(<i>x</i>) = <i>x</i>³</span> הנגזרת 0 ב-<span class="eq"><i>x</i> = 0</span>, אבל הגרף עולה משני הצדדים. הטבלה גם נותנת לכם מיד את תחומי העלייה והירידה. <a href="#lab">נסו את x³ במעבדה</a>.</p>
+    <h3>כמה נקודות קיצון יכולות להיות לפולינום ממעלה שלישית?</h3>
+    <p>שתיים, אחת, או אף אחת. הנגזרת היא ביטוי ריבועי, ולכן יש לה עד שני שורשים. אם יש שני שורשים שונים, יש מקסימום אחד ומינימום אחד. אם אין שורשים, או שיש שורש כפול, הגרף רק עולה או רק יורד. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/derivative-intro/">נגזרת: שיפוע המשיק וכללי גזירה</a> · <a href="../../math/function-properties/">פונקציות ותכונותיהן</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/tangent-line/"><small>→ הנושא הקודם</small>משוואת המשיק לגרף</a><a class="next" href="../../math/rational-analysis/"><small>הנושא הבא ←</small>חקירת פונקציה רציונלית</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`;
+const r2=v=>Math.round(v*100)/100, nt=v=>numTxt(r2(v));
+const near=v=>Math.abs(v-r2(v))<1e-9?'=':'≈';
+const SUP=['','','²','³'];
+let pid=0;
+
+/* polynomial as HTML from coefficients, highest power first: [c3,c2,c1,c0] */
+function poly(cs,name){
+  const deg=cs.length-1, parts=[];
+  cs.forEach((c,i)=>{
+    const p=deg-i; if(Math.abs(c)<1e-9) return;
+    const m=Math.abs(c), co=(Math.abs(m-1)<1e-9&&p>0)?'':nt(m);
+    parts.push({neg:c<0,h:co+(p===0?'':p===1?X:X+SUP[p])});
+  });
+  const body=parts.length?parts.map((t,i)=>i===0?(t.neg?MINUS:'')+t.h:` ${t.neg?MINUS:'+'} ${t.h}`).join(''):'0';
+  return (name||'<i>f</i>(<i>x</i>)')+' = '+body;
+}
+const DER='<i>f</i>′(<i>x</i>)';
+const ev=(cs,x)=>cs.reduce((s,c)=>s*x+c,0);
+const der=cs=>{ const d=cs.length-1; return cs.slice(0,-1).map((c,i)=>c*(d-i)); };
+
+/* real roots of the derivative (degree ≤ 2), with whether f′ changes sign there */
+function crit(cs){
+  const d=der(cs);
+  while(d.length>1&&Math.abs(d[0])<1e-9) d.shift();
+  if(d.length===3){
+    const [A,B,C]=d, D=B*B-4*A*C;
+    if(D<-1e-9) return [];
+    if(Math.abs(D)<1e-9) return [{x:-B/(2*A),change:false}];
+    const s=Math.sqrt(D), x1=(-B-s)/(2*A), x2=(-B+s)/(2*A);
+    return [x1,x2].sort((p,q)=>p-q).map(x=>({x,change:true}));
+  }
+  if(d.length===2) return [{x:-d[1]/d[0],change:true}];
+  return [];
+}
+function analyze(cs){
+  const cr=crit(cs), d=der(cs), bps=cr.map(c=>c.x);
+  const cuts=[-Infinity,...bps,Infinity], ints=[];
+  for(let i=0;i<cuts.length-1;i++){
+    const lo=cuts[i], hi=cuts[i+1];
+    const t=lo===-Infinity?(hi===Infinity?0:hi-1):hi===Infinity?lo+1:(lo+hi)/2;
+    const v=ev(d,t); ints.push({lo,hi,s:Math.abs(v)<1e-9?0:v>0?1:-1});
+  }
+  const ext=cr.map((c,i)=>{
+    const L=ints[i].s, R=ints[i+1].s;
+    return {x:c.x,y:ev(cs,c.x),type:L>0&&R<0?'max':L<0&&R>0?'min':'none'};
+  });
+  return {d,cr,ints,ext};
+}
+const ivTxt=(lo,hi)=>lo===-Infinity&&hi===Infinity?'כל x':lo===-Infinity?eqs(`${X} &lt; ${nt(hi)}`):hi===Infinity?eqs(`${X} &gt; ${nt(lo)}`):eqs(`${nt(lo)} &lt; ${X} &lt; ${nt(hi)}`);
+function signTable(A){
+  const head=['<th><i>x</i></th>'], rd=[`<th>${DER}</th>`], rf=['<th><i>f</i>(<i>x</i>)</th>'];
+  A.ints.forEach((it,i)=>{
+    const lbl=it.lo===-Infinity&&it.hi===Infinity?'כל x':it.lo===-Infinity?`<i>x</i> &lt; ${nt(it.hi)}`:it.hi===Infinity?`<i>x</i> &gt; ${nt(it.lo)}`:`${nt(it.lo)} &lt; <i>x</i> &lt; ${nt(it.hi)}`;
+    head.push(`<th>${lbl}</th>`);
+    rd.push(`<td class="${it.s>0?'p':it.s<0?'n':''}">${it.s>0?'+':it.s<0?MINUS:'0'}</td>`);
+    rf.push(`<td>${it.s>0?'↗':it.s<0?'↘':'→'}</td>`);
+    if(i<A.ext.length){
+      const e=A.ext[i];
+      head.push(`<th>${nt(e.x)}</th>`); rd.push('<td>0</td>');
+      rf.push(`<td class="ext">${e.type==='max'?'מקסימום':e.type==='min'?'מינימום':'אין קיצון'}</td>`);
+    }
+  });
+  return `<div class="scroll-x"><table class="signt" dir="ltr"><tr>${head.join('')}</tr><tr>${rd.join('')}</tr><tr>${rf.join('')}</tr></table></div>`;
+}
+
+/* draw f colored by the sign of f′, optionally f′ dashed and points */
+function plotP(svg,cs,opt={}){
+  const id='pc'+(++pid), d=der(cs), cl=v=>Math.max(-30,Math.min(30,v));
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  (opt.vlines||[]).forEach(x=>{ h+=`<line class="vline" x1="${sx(x)}" y1="${sy(-6)}" x2="${sx(x)}" y2="${sy(6)}"/>`; });
+  if(opt.deriv){
+    let p=''; for(let x=-6;x<=6.001;x+=0.05) p+=(p?'L':'M')+sx(x).toFixed(1)+' '+sy(cl(ev(d,x))).toFixed(1);
+    h+=`<path class="dv" d="${p}"/>`;
+  }
+  if(opt.curve!==false){
+    let path='', last=null;
+    for(let x=-6;x<=6.001;x+=0.02){
+      const s=ev(d,x), c=opt.mono===false?'flat':Math.abs(s)<1e-9?'flat':s>0?'up':'down';
+      const P=sx(x).toFixed(1)+' '+sy(cl(ev(cs,x))).toFixed(1);
+      if(c!==last){ if(path) h+=`<path class="${last}" d="${path}L${P}"/>`; path='M'+P; } else path+='L'+P;
+      last=c;
+    }
+    if(path) h+=`<path class="${last}" d="${path}"/>`;
+  }
+  h+='</g>';
+  (opt.points||[]).forEach(p=>{ if(Math.abs(p.x)<=5.5&&Math.abs(p.y)<=5.5){ h+=`<circle class="${p.cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`; if(p.label) h+=`<text class="ptlbl" x="${sx(p.x)+(p.x>3?-40:6)}" y="${sy(p.y)+(p.y>4?14:-6)}">${p.label}</text>`; } });
+  draw(svg,null,0,{extra:h});
+}
+
+/* intro */
+plotP($('introG'),[0.25,0,-3,0],{points:[{x:-2,y:4,cls:'dot'},{x:2,y:-4,cls:'dot'}]});
+
+/* lab */
+const S={a:$('sa'),b:$('sb'),c:$('sc'),d:$('sd')};
+const TRIES=[
+  {l:'x³ − 3x',v:[1,0,-3,0]},
+  {l:'−x³ + 3x²',v:[-1,3,0,0]},
+  {l:'0.25x³ − 3x',v:[0.25,0,-3,0]},
+  {l:'x³',v:[1,0,0,0]},
+  {l:'x³ + x',v:[1,0,1,0]},
+  {l:'x² − 2x − 3',v:[0,1,-2,-3]}
+];
+$('labTries').innerHTML=TRIES.map((t,i)=>`<button data-i="${i}" dir="ltr">${t.l}</button>`).join('');
+$('labTries').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ const v=TRIES[+b.dataset.i].v; S.a.value=v[0]; S.b.value=v[1]; S.c.value=v[2]; S.d.value=v[3]; lab(); }));
+Object.values(S).forEach(el=>el.addEventListener('input',lab));
+function lab(){
+  const cs=[+S.a.value,+S.b.value,+S.c.value,+S.d.value];
+  ['a','b','c','d'].forEach((k,i)=>{ $('v'+k).textContent=numTxt(cs[i]); });
+  $('labEq').innerHTML=eqs(poly(cs));
+  const A=analyze(cs);
+  plotP($('labG'),cs,{deriv:true,vlines:A.cr.map(c=>c.x),points:A.ext.filter(e=>e.type!=='none').map(e=>({x:e.x,y:e.y,cls:'dot'}))});
+  let t=`<div>${eqs(poly(A.d,DER))}</div>`;
+  if(Math.abs(cs[0])<1e-9&&Math.abs(cs[1])<1e-9) t+='<div>אין כאן <span class="eq"><i>x</i>³</span> ולא <span class="eq"><i>x</i>²</span>, אז זה ישר. השיפוע קבוע, ואין קיצון.</div>';
+  else if(!A.cr.length) t+='<div>הנגזרת <strong>אף פעם לא 0</strong>, ולכן הגרף רק '+(A.ints[0].s>0?'עולה':'יורד')+'. אין נקודות קיצון.</div>';
+  else{
+    t+=`<div>${eqs(`${DER} = 0`)} ב-${A.cr.map(c=>eqs(`${X} ${near(c.x)} ${nt(c.x)}`)).join(' וב-')}.</div>`;
+    A.ext.forEach(e=>{
+      t+=e.type==='none'
+        ?`<div>ב-${eqs(`${X} = ${nt(e.x)}`)} הנגזרת 0 אבל <strong>לא מחליפה סימן</strong>, אז אין שם קיצון.</div>`
+        :`<div><strong>${e.type==='max'?'מקסימום':'מינימום'}</strong> ב-${eqs(`(${nt(e.x)}, ${nt(e.y)})`)}: הנגזרת עוברת מ-${e.type==='max'?'+ ל-−':'− ל-+'}.</div>`;
+    });
+  }
+  t+=signTable(A);
+  const up=A.ints.filter(i=>i.s>0).map(i=>ivTxt(i.lo,i.hi)), dn=A.ints.filter(i=>i.s<0).map(i=>ivTxt(i.lo,i.hi));
+  t+=`<div><span class="key" style="background:var(--ok)"></span> עולה: ${up.length?up.join(' או '):'אין'}</div><div><span class="key" style="background:var(--err)"></span> יורדת: ${dn.length?dn.join(' או '):'אין'}</div><div><span class="key dash"></span> הנגזרת ${DER}</div>`;
+  $('labExplain').innerHTML=t;
+}
+lab();
+
+/* worked example: f(x) = x³ − 3x² */
+const EXC=[1,-3,0,0];
+const EXA=analyze(EXC);
+const EXS=[
+  [{mono:false},`<strong>צעד 1, תחום הגדרה:</strong> זה פולינום. אין מכנה ואין שורש, אז התחום הוא <strong>כל x</strong>.`],
+  [{mono:false,deriv:true},`<strong>צעד 2, גוזרים:</strong> ${eqs(`${DER} = 3${X}² − 6${X}`)}. כל חזקה יורדת ב-1, והמעריך נכפל במקדם. הנגזרת מצוירת בכחול מקווקו.`],
+  [{mono:false,deriv:true,vlines:[0,2]},`<strong>צעד 3, משווים לאפס:</strong> ${eqs(`3${X}² − 6${X} = 0`)}, מוציאים גורם משותף: ${eqs(`3${X}(${X} − 2) = 0`)}. ולכן ${eqs(`${X} = 0`)} או ${eqs(`${X} = 2`)}.`],
+  [{deriv:true,vlines:[0,2]},`<strong>צעד 4, טבלת סימנים:</strong> מציבים מספר מכל תחום בנגזרת. ${eqs(`${DER.replace('(<i>x</i>)','(−1)')} = 9 &gt; 0`)}, ${eqs(`${DER.replace('(<i>x</i>)','(1)')} = −3 &lt; 0`)}, ${eqs(`${DER.replace('(<i>x</i>)','(3)')} = 9 &gt; 0`)}.${signTable(EXA)}`],
+  [{points:[{x:0,y:0,cls:'dot',label:'(0, 0)'},{x:2,y:-4,cls:'dot',label:'(2, −4)'}]},`<strong>צעד 5, נקודות קיצון:</strong> ב-${eqs(`${X} = 0`)} הנגזרת עוברת מ-+ ל-−, אז זה <strong>מקסימום</strong>. מציבים: ${eqs('<i>f</i>(0) = 0')}. ב-${eqs(`${X} = 2`)} היא עוברת מ-− ל-+, <strong>מינימום</strong>: ${eqs('<i>f</i>(2) = 8 − 12 = −4')}.`],
+  [{points:[{x:0,y:0,cls:'pt'},{x:3,y:0,cls:'pt',label:'(3, 0)'}]},`<strong>צעד 6, חיתוך עם הצירים:</strong> עם ציר y: ${eqs('<i>f</i>(0) = 0')}. עם ציר x: ${eqs(`${X}²(${X} − 3) = 0`)}, ולכן ${eqs(`${X} = 0`)} או ${eqs(`${X} = 3`)}.`],
+  [{points:[{x:0,y:0,cls:'dot'},{x:2,y:-4,cls:'dot'},{x:3,y:0,cls:'pt'}]},`<strong>צעד 7, סקיצה וסיכום:</strong> עולה ב-${eqs(`${X} &lt; 0`)} או ${eqs(`${X} &gt; 2`)}, יורדת ב-${eqs(`0 &lt; ${X} &lt; 2`)}. מקסימום ${eqs('(0, 0)')}, מינימום ${eqs('(2, −4)')}. סיימנו!`]
+];
+let exI=0;
+function ex(){
+  const [opt,txt]=EXS[exI];
+  plotP($('exG'),EXC,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice: f′(x) = 3a(x − p)(x − p − 2), so f = a x³ − 3a(p+1)x² + 3a p(p+2)x + d */
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+let pr=null, sel=null, streak=0, solved=0;
+function newPr(){
+  const a=pick([1,-1]), p=pick([-3,-2,-1,0,1]), q=p+2;
+  const base=[a,-3*a*(p+1),3*a*p*(q),0];
+  const d=pick([-2,-1,0,1,2])-ev(base,p+1);
+  const cs=[base[0],base[1],base[2],d], A=analyze(cs), dc=der(cs);
+  const maxX=a>0?p:q, minX=a>0?q:p;
+  const kind=pick(['der','type','type','up','max','max']);
+  const q0={kind,cs,A,p,q,a,maxX,minX,eq:poly(cs)};
+  const hint1={
+    der:'גוזרים כל איבר לבד: הנגזרת של <span class="eq"><i>x</i><sup><i>n</i></sup></span> היא <span class="eq"><i>n</i><i>x</i><sup><i>n</i>−1</sup></span>, ומספר קבוע נעלם.',
+    type:'גזרו, מצאו איפה הנגזרת 0, ובנו טבלת סימנים. מה הסימן של הנגזרת לפני הנקודה ואחריה?',
+    up:'הפונקציה עולה איפה שהנגזרת חיובית. מצאו את שורשי הנגזרת ובדקו סימן בכל תחום.',
+    max:'גזרו והשוו ל-0. בנקודת מקסימום הנגזרת עוברת מ-+ ל-−. אחר כך הציבו את ה-x בפונקציה המקורית.'
+  }[kind];
+  const fac=r=>r===0?X:`(${X} ${r<0?'+':MINUS} ${Math.abs(r)})`;
+  const hint2=`${eqs(poly(dc,DER))}, כלומר ${eqs(`${DER} = ${numTxt(3*a)}${fac(p)}${fac(q)}`)}. השורשים: ${eqs(`${X} = ${numTxt(p)}`)} ו-${eqs(`${X} = ${numTxt(q)}`)}. ציירנו את הגרף.`;
+  if(kind==='der'){
+    q0.text='מה הנגזרת של הפונקציה?';
+    q0.ch=[{h:eqs(poly(dc,DER)),r:'ok'},{h:eqs(poly([cs[0],cs[1],cs[2]],DER)),r:'mult'},{h:eqs(poly(dc.map((c,i)=>i===0?c/3*1:c),DER)),r:'mult3'}];
+    if(d!==0) q0.ch.push({h:eqs(poly([...dc.slice(0,2),dc[2]+d],DER)),r:'const'});
+    q0.ch.push({h:eqs(poly([...dc,0],DER)),r:'pow'});
+    q0.sol=`גוזרים איבר איבר: ${eqs(poly(dc,DER))}. המספר החופשי נעלם.`;
+  }else if(kind==='type'){
+    const which=pick(['max','min','none']), x=which==='max'?maxX:which==='min'?minX:p+1;
+    q0.x=x; q0.text=`מה יש לפונקציה בנקודה ${'x = '+numTxt(x)}?`;
+    q0.textH=`מה יש לפונקציה בנקודה ${eqs(`${X} = ${numTxt(x)}`)}?`;
+    q0.ch=[{h:'נקודת מקסימום',r:which==='max'?'ok':which==='none'?'nz':'type'},{h:'נקודת מינימום',r:which==='min'?'ok':which==='none'?'nz':'type'},{h:'אין שם נקודת קיצון',r:which==='none'?'ok':'isz'}];
+    q0.keep=true;
+    q0.sol=which==='none'?`${eqs(`${DER.replace('(<i>x</i>)',`(${numTxt(x)})`)} = ${numTxt(ev(dc,x))}`)}, וזה לא 0. נקודת קיצון יכולה להיות רק איפה שהנגזרת 0, כלומר ב-${eqs(`${X} = ${numTxt(p)}`)} או ב-${eqs(`${X} = ${numTxt(q)}`)}.`
+      :`הנגזרת מתאפסת ב-${eqs(`${X} = ${numTxt(x)}`)} ועוברת שם מ-${which==='max'?'+ ל-−':'− ל-+'}. לכן זו נקודת ${which==='max'?'מקסימום':'מינימום'}.`;
+  }else if(kind==='up'){
+    q0.text='באיזה תחום הפונקציה עולה?';
+    const out=`${eqs(`${X} &lt; ${numTxt(p)}`)} או ${eqs(`${X} &gt; ${numTxt(q)}`)}`, inn=eqs(`${numTxt(p)} &lt; ${X} &lt; ${numTxt(q)}`);
+    q0.ch=[{h:a>0?out:inn,r:'ok'},{h:a>0?inn:out,r:'dir'},{h:a>0?eqs(`${X} &gt; ${numTxt(q)}`):eqs(`${X} &gt; ${numTxt(p)}`),r:'half'}];
+    const yv=[ev(cs,p),ev(cs,q)].sort((u,v)=>u-v);
+    if(!eqv(yv[0],p)||!eqv(yv[1],q)) q0.ch.push({h:a>0?`${eqs(`${X} &lt; ${nt(yv[0])}`)} או ${eqs(`${X} &gt; ${nt(yv[1])}`)}`:eqs(`${nt(yv[0])} &lt; ${X} &lt; ${nt(yv[1])}`),r:'yval'});
+    q0.sol=`שורשי הנגזרת: ${eqs(`${X} = ${numTxt(p)}`)} ו-${eqs(`${X} = ${numTxt(q)}`)}. המקדם של ${eqs(`${X}²`)} בנגזרת ${a>0?'חיובי, אז היא חיובית מחוץ לשורשים':'שלילי, אז היא חיובית בין השורשים'}. עולה ב-${a>0?out:inn}.`;
+  }else{
+    q0.text='מצאו את נקודת המקסימום של הפונקציה.';
+    q0.inputs=true; q0.ans={x:maxX,y:ev(cs,maxX)};
+    q0.sol=`${eqs(`${DER} = 0`)} ב-${eqs(`${X} = ${numTxt(p)}`)} ו-${eqs(`${X} = ${numTxt(q)}`)}. הנגזרת עוברת מ-+ ל-− ב-${eqs(`${X} = ${numTxt(maxX)}`)}. מציבים בפונקציה: ${eqs(`<i>f</i>(${numTxt(maxX)}) = ${nt(q0.ans.y)}`)}. המקסימום: ${eqs(`(${numTxt(maxX)}, ${nt(q0.ans.y)})`)}.`;
+  }
+  q0.hint1=hint1; q0.hint2=hint2;
+  if(q0.ch){ const seen=new Set(); q0.ch=q0.ch.filter(x=>!seen.has(x.h)&&seen.add(x.h)); if(!q0.keep) shuffle(q0.ch); }
+  pr={...q0,tries:0,hint:0}; sel=null;
+  $('prEq').innerHTML=eqs(q0.eq);
+  if(q0.textH) $('prQ').innerHTML=q0.textH; else $('prQ').textContent=q0.text;
+  $('prChoices').innerHTML=q0.ch?q0.ch.map((c,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${c.h}</button>`).join(''):'';
+  $('prChoices').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{ sel=+btn.dataset.i; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===btn)); }));
+  $('prInputs').innerHTML=q0.inputs?'<label for="prX">x =<input id="prX" inputmode="text" autocomplete="off"></label><label for="prY">y =<input id="prY" inputmode="text" autocomplete="off"></label>':'';
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  plotP($('prG'),cs,{curve:false});
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solvedPlot(){ plotP($('prG'),pr.cs,{deriv:true,points:pr.A.ext.map(e=>({x:e.x,y:e.y,cls:'dot'}))}); }
+const MSG={
+  mult:()=>'שכחתם לכפול במעריך. הנגזרת של <span class="eq"><i>x</i>³</span> היא <span class="eq">3<i>x</i>²</span>, ושל <span class="eq"><i>x</i>²</span> היא <span class="eq">2<i>x</i></span>.',
+  mult3:()=>'האיבר הראשון לא נכון. כשגוזרים <span class="eq"><i>a</i><i>x</i>³</span> מקבלים <span class="eq">3<i>a</i><i>x</i>²</span>: כופלים ב-3.',
+  const:()=>'המספר החופשי לא נשאר. הנגזרת של מספר קבוע היא 0, כי הוא לא משנה את השיפוע.',
+  pow:()=>'שכחתם להוריד את החזקה. אחרי הגזירה <span class="eq"><i>x</i>³</span> הופך ל-<span class="eq"><i>x</i>²</span>, כלומר המעלה יורדת ב-1.',
+  type:()=>'הסוג הפוך. בדקו את סימן הנגזרת: מ-+ ל-− (עולה ואז יורדת) זה מקסימום, ומ-− ל-+ זה מינימום.',
+  nz:()=>`הציבו ${eqs(numTxt(pr.x))} בנגזרת. יוצא ${numTxt(ev(der(pr.cs),pr.x))}, לא 0. קיצון יכול להיות רק איפה שהנגזרת מתאפסת.`,
+  isz:()=>'דווקא כן. הנגזרת מתאפסת כאן ומחליפה סימן. בנו טבלת סימנים ובדקו לפני ואחרי.',
+  dir:()=>'הכיוון הפוך. "עולה" זה איפה שהנגזרת <strong>חיובית</strong>. בדקו את הסימן שלה בתחום שבחרתם.',
+  half:()=>'זה רק חלק מהתשובה. בדקו גם את התחום בצד השני של שורשי הנגזרת.',
+  yval:()=>'השתמשתם בערכי y של נקודות הקיצון. תחומי עלייה כותבים לפי <strong>x</strong>, לפי שורשי הנגזרת.'
+};
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(pr.inputs){
+    const x=parseNum($('prX').value), y=parseNum($('prY').value);
+    if(isNaN(x)||isNaN(y)){ fb.innerHTML='<div class="fb err">מלאו מספר גם ב-x וגם ב-y.</div>'; return; }
+    if(eqv(x,pr.ans.x)&&eqv(y,pr.ans.y)){ streak++; solved++; score(); solvedPlot(); fb.innerHTML=`<div class="fb ok">נכון! ${eqs(`(${numTxt(pr.ans.x)}, ${nt(pr.ans.y)})`)} היא נקודת המקסימום.</div>`; return; }
+    let m;
+    if(eqv(x,pr.minX)) m='זו נקודת ה<strong>מינימום</strong>. בדקו בטבלת הסימנים: במקסימום הנגזרת עוברת מ-+ ל-−.';
+    else if(eqv(x,pr.ans.x)&&eqv(y,0)) m='ה-x נכון, אבל הצבתם אותו בנגזרת. הציבו אותו בפונקציה <strong>המקורית</strong>.';
+    else if(eqv(x,pr.ans.x)) m='ה-x נכון! עכשיו הציבו אותו בפונקציה המקורית וחשבו את y בזהירות.';
+    else if(eqv(x,-pr.ans.x)) m='הסימן של x הפוך. פתרו שוב את <span class="eq"><i>f</i>′(<i>x</i>) = 0</span>.';
+    else m='ה-x לא נכון. גזרו, השוו ל-0 ופתרו את המשוואה הריבועית.';
+    streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${m}</div>`;
+  }else{
+    if(sel===null||!pr.ch[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם אחת מהתשובות.</div>'; return; }
+    const c=pr.ch[sel];
+    if(c.r==='ok'){ streak++; solved++; score(); solvedPlot(); fb.innerHTML=`<div class="fb ok">נכון! ${pr.sol}</div>`; return; }
+    streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${MSG[c.r]()}</div>`;
+  }
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  if(pr.hint===2) plotP($('prG'),pr.cs,{deriv:true});
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hint===1?pr.hint1:pr.hint2}</div>`;
+};
+$('prShow').onclick=()=>{
+  solvedPlot();
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${pr.sol} אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

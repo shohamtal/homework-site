@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>טריגונומטריה במרחב · כיתה יא · מירי</title>
+<meta name="description" content="טריגונומטריה במרחב (4 ו-5 יח״ל): אורכים וזוויות בתיבה ובפירמידה, זווית בין ישר למישור ובין מישורים. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/trig-3d/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="טריגונומטריה במרחב · כיתה יא · מירי">
+<meta property="og:description" content="טריגונומטריה במרחב (4 ו-5 יח״ל): אורכים וזוויות בתיבה ובפירמידה, זווית בין ישר למישור ובין מישורים. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/trig-3d/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"טריגונומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-11/#trig-11"},{"@type":"ListItem","position":5,"name":"טריגונומטריה במרחב","item":"https://shohamtal.github.io/homework-site/math/trig-3d/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים את האלכסון של תיבה?","acceptedAnswer":{"@type":"Answer","text":"מחשבים קודם את אלכסון הבסיס, √(a² + b²), ואז משתמשים בפיתגורס שוב עם הגובה. בקיצור: √(a² + b² + c²). בתיבה 3 × 4 × 12 האלכסון הוא √169 = 13."}},{"@type":"Question","name":"איך מוצאים זווית בין ישר למישור?","acceptedAnswer":{"@type":"Answer","text":"מורידים אנך מנקודה על הישר אל המישור, ומחברים את נקודת הפגישה לנקודה שבה הישר חותך את המישור. זה ההיטל. הזווית בין הישר להיטל שלו היא הזווית בין הישר למישור. ראו את זה במעבדה."}},{"@type":"Question","name":"מה ההבדל בין זווית של מקצוע צדדי לזווית של פאה צדדית בפירמידה?","acceptedAnswer":{"@type":"Answer","text":"בשתיהן הגובה הוא אותו ניצב. במקצוע הצדדי הניצב השני הוא חצי אלכסון הבסיס, s√2 ÷ 2. בפאה הצדדית הוא חצי צלע, s ÷ 2. לכן הזווית של הפאה תמיד גדולה יותר."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"טריגונומטריה במרחב","description":"טריגונומטריה במרחב (4 ו-5 יח״ל): אורכים וזוויות בתיבה ובפירמידה, זווית בין ישר למישור ובין מישורים. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/trig-3d/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"טריגונומטריה","teaches":"טריגונומטריה במרחב","keywords":"תיבה, פירמידה, זווית בין ישר למישור","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.s3{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.s3 .ed{stroke:var(--ink); stroke-width:2; stroke-linejoin:round; fill:none}
+.s3 .hid{stroke:var(--muted); stroke-width:1.4; stroke-dasharray:5 4; fill:none}
+.s3 .tri{fill:var(--hl); fill-opacity:.55; stroke:none}
+.s3 .bd{stroke:var(--blue); stroke-width:3.5; stroke-linecap:round}
+.s3 .sd{stroke:var(--line); stroke-width:3.5; stroke-linecap:round}
+.s3 .ht{stroke:var(--ink); stroke-width:3.5; stroke-linecap:round}
+.s3 .ang{fill:var(--line); fill-opacity:.25; stroke:var(--line); stroke-width:1.4}
+.s3 .ra{fill:none; stroke:var(--ink); stroke-width:1.3}
+.s3 .pt{fill:var(--ink)}
+.s3 .vx{font:700 12px var(--f-math); fill:var(--ink); text-anchor:middle; dominant-baseline:middle; paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.s3 .lbl{font:700 12px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.s3 .lbl.b{fill:var(--blue)} .s3 .lbl.p{fill:var(--line)}
+.seg{display:flex; gap:6px; flex-wrap:wrap}
+.calc .eq{white-space:normal}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="trig-3d">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#trig-11">טריגונומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">טריגונומטריה במרחב</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · טריגונומטריה</div>
+  <h1>טריגונומטריה במרחב <span class="slogan">מוצאים את המשולש</span></h1>
+  <p class="lead">בתיבה ובפירמידה כל שאלה על אורך או על זווית חוזרת לאותו דבר: מוצאים <strong>משולש ישר זווית</strong> שמסתתר בתוך הגוף, ופותרים אותו עם <a href="../pythagoras/">פיתגורס</a> ועם <a href="../trigonometry/">sin, cos ו-tan</a>. בעמוד הזה לומדים לראות את המשולש הזה, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>משולש ישר זווית בתוך הגוף</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אלכסון הבסיס</h3>
+      <p>בבסיס של תיבה, שהוא מלבן, האלכסון <span class="eq">AC</span> הוא יתר במשולש ישר זווית:</p>
+      <p><span class="eq">AC = √(<i>a</i>² + <i>b</i>²)</span></p>
+    </div>
+    <div class="mini">
+      <h3>האלכסון של התיבה</h3>
+      <p>המקצוע <span class="eq">CG</span> עומד ישר מעל <span class="eq">C</span>, ולכן <span class="eq">ACG</span> הוא משולש ישר זווית:</p>
+      <p><span class="eq">AG = √(<i>a</i>² + <i>b</i>² + <i>c</i>²)</span></p>
+    </div>
+    <div class="mini">
+      <h3>זווית בין ישר למישור</h3>
+      <p>הזווית בין <span class="eq">AG</span> לבסיס היא הזווית בין <span class="eq">AG</span> לבין ה<strong>היטל</strong> שלו על הבסיס, <span class="eq">AC</span>.</p>
+      <p><span class="eq">tan α = <i>c</i> ÷ AC</span></p>
+    </div>
+  </div>
+  <div class="callout"><strong>השיטה בשלושה צעדים:</strong> 1. מוצאים את הנקודה שעליה "נופל" הקו כשמורידים אנך לבסיס. 2. מסמנים את המשולש הישר זווית. 3. מחשבים צלע אחת שחסרה בו, ואז את הזווית.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים גוף ומוצאים את המשולש</h2></div>
+  <p class="text">בחרו תיבה או פירמידה ושנו את המידות. המשולש הצהוב הוא המשולש הישר זווית שבו פותרים. הקו הכחול שוכב על הבסיס, והקו הוורוד הוא הקו שאת הזווית שלו מחפשים.</p>
+  <div class="lab">
+    <svg class="s3" id="labG" viewBox="0 0 360 290" role="img" aria-label="שרטוט של הגוף במעבדה עם המשולש הישר זווית"></svg>
+    <div class="ctrl">
+      <div class="seg" role="group" aria-label="סוג הגוף"><button id="tBox" class="primary" aria-pressed="true">תיבה</button><button id="tPyr" aria-pressed="false">פירמידה ריבועית</button></div>
+      <div id="boxCtl">
+        <div><label class="slider" for="ba"><span>אורך <span class="eq"><i>a</i></span></span><span class="eq" id="bav"></span></label><input type="range" id="ba" min="1" max="12" step="1" value="6"></div>
+        <div><label class="slider" for="bb"><span>רוחב <span class="eq"><i>b</i></span></span><span class="eq" id="bbv"></span></label><input type="range" id="bb" class="hl" min="1" max="12" step="1" value="8"></div>
+        <div><label class="slider" for="bc"><span>גובה <span class="eq"><i>c</i></span></span><span class="eq" id="bcv"></span></label><input type="range" id="bc" class="blue" min="1" max="12" step="1" value="10"></div>
+      </div>
+      <div id="pyrCtl" hidden>
+        <div class="seg" role="group" aria-label="איזו זווית"><button id="mEdge" class="primary" aria-pressed="true">מקצוע צדדי ובסיס</button><button id="mFace" aria-pressed="false">פאה צדדית ובסיס</button></div>
+        <div><label class="slider" for="ps"><span>צלע הבסיס <span class="eq"><i>s</i></span></span><span class="eq" id="psv"></span></label><input type="range" id="ps" min="2" max="12" step="1" value="6"></div>
+        <div><label class="slider" for="ph"><span>גובה <span class="eq"><i>h</i></span></span><span class="eq" id="phv"></span></label><input type="range" id="ph" class="blue" min="1" max="12" step="1" value="4"></div>
+      </div>
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-k="box" data-v="3,4,12">3 × 4 × 12</button>
+          <button dir="ltr" data-k="box" data-v="6,8,10">6 × 8 × 10</button>
+          <button data-k="box" data-v="5,5,5">קובייה</button>
+          <button data-k="box" data-v="10,10,2">תיבה שטוחה</button>
+          <button dir="ltr" data-k="face" data-v="6,4">s = 6, h = 4</button>
+          <button dir="ltr" data-k="edge" data-v="8,8">s = 8, h = 8</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">גלו משהו: בקובייה הזווית בין האלכסון לבסיס היא תמיד בערך <span class="eq">35.3°</span>, בלי קשר לגודל הקובייה. נסו כמה גדלים.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>משתמשים במקצוע במקום בהיטל</h3>
+      <p>הזווית של <span class="eq">AG</span> עם הבסיס היא מול <span class="eq">AC</span>, האלכסון של הבסיס.</p>
+      <p>לא <span class="eq">tan α = <i>c</i> ÷ <i>a</i></span>. זו הזווית של קו אחר.</p>
+    </div>
+    <div class="mini">
+      <h3>חצי צלע או חצי אלכסון?</h3>
+      <p>בפירמידה, מהמרכז <span class="eq">O</span> לאמצע צלע יש <span class="eq"><i>s</i> ÷ 2</span>.</p>
+      <p>מהמרכז לקודקוד יש חצי אלכסון: <span class="eq"><i>s</i>√2 ÷ 2</span>. הפאה משתמשת בראשון, המקצוע בשני.</p>
+    </div>
+    <div class="mini">
+      <h3>הזווית המשלימה</h3>
+      <p>במשולש הישר זווית יש שתי זוויות חדות. בדקו שהזווית שחישבתם היא זו שליד הבסיס.</p>
+      <p>אם קיבלתם <span class="eq">90° − α</span>, בחרתם את הזווית שלמעלה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> גוף גבוה וצר נותן זווית גדולה (קרובה ל-90°). גוף נמוך ורחב נותן זווית קטנה. אם יצא הפוך, החלפתם בין הניצבים.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">חלק א: בתיבה <span class="eq">6 × 8 × 10</span> מצאו את האלכסון ואת הזווית שלו עם הבסיס. חלק ב: בפירמידה ריבועית שצלע הבסיס שלה 8 והגובה 3, מצאו את הזווית בין פאה צדדית לבסיס.</p>
+  <div class="lab">
+    <svg class="s3" id="exG" viewBox="0 0 360 290" role="img" aria-label="שרטוט הדוגמה הפתורה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מצאו את המשולש</h2></div>
+  <p class="text">עגלו אורכים לשתי ספרות אחרי הנקודה, וזוויות לספרה אחת. כתבו מספר בלבד, בלי סימן מעלות.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="diag" aria-pressed="false">אלכסון תיבה</button>
+    <button data-t="angle" aria-pressed="false">זווית בתיבה</button>
+    <button data-t="pyrH" aria-pressed="false">גובה פירמידה</button>
+    <button data-t="pyrAng" aria-pressed="false">זווית בפירמידה</button>
+  </div>
+  <svg class="s3" id="prG" viewBox="0 0 360 290" role="img" aria-label="שרטוט התרגיל"></svg>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prLbl">התשובה</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים את האלכסון של תיבה?</h3>
+    <p>מחשבים קודם את אלכסון הבסיס, <span class="eq">√(<i>a</i>² + <i>b</i>²)</span>, ואז משתמשים בפיתגורס שוב עם הגובה. בקיצור: <span class="eq">√(<i>a</i>² + <i>b</i>² + <i>c</i>²)</span>. בתיבה <span class="eq">3 × 4 × 12</span> האלכסון הוא <span class="eq">√169 = 13</span>.</p>
+    <h3>איך מוצאים זווית בין ישר למישור?</h3>
+    <p>מורידים אנך מנקודה על הישר אל המישור, ומחברים את נקודת הפגישה לנקודה שבה הישר חותך את המישור. זה ההיטל. הזווית בין הישר להיטל שלו היא הזווית בין הישר למישור. <a href="#lab">ראו את זה במעבדה</a>.</p>
+    <h3>מה ההבדל בין זווית של מקצוע צדדי לזווית של פאה צדדית בפירמידה?</h3>
+    <p>בשתיהן הגובה הוא אותו ניצב. במקצוע הצדדי הניצב השני הוא חצי אלכסון הבסיס, <span class="eq"><i>s</i>√2 ÷ 2</span>. בפאה הצדדית הוא חצי צלע, <span class="eq"><i>s</i> ÷ 2</span>. לכן הזווית של הפאה תמיד גדולה יותר.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/trigonometry/">טריגונומטריה: סינוס, קוסינוס וטנגנס</a> · <a href="../../math/pythagoras/">משפט פיתגורס</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/trig-graphs/"><small>→ הנושא הקודם</small>גרפים של sin ו-cos</a><a class="next" href="../../math/conditional-probability/"><small>הנושא הבא ←</small>הסתברות מותנית</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const R=Math.PI/180, deg=r=>r/R;
+const r2=v=>numTxt(Math.round(v*100)/100), r1=v=>numTxt(Math.round(v*10)/10);
+const hyp=(p,q)=>Math.sqrt(p*p+q*q);
+/* "√100 = 10" for perfect squares, "√65 ≈ 8.06" otherwise */
+const root=n=>{const k=Math.round(Math.sqrt(n)); return k*k===n?`√${n} = ${k}`:`√${n} ≈ ${r2(Math.sqrt(n))}`;};
+const COS=Math.cos(38*R)*0.55, SIN=Math.sin(38*R)*0.55;
+
+/* oblique projection of a solid into the svg, scaled to fit */
+function projector(wx,dy,hz){
+  const W=360, H=290, k=Math.min((W-70)/(wx+dy*COS),(H-60)/(hz+dy*SIN));
+  const ox=(W-k*(wx+dy*COS))/2, oy=H-28-(H-56-k*(hz+dy*SIN))/2;
+  return ([x,y,z])=>[ox+k*(x+y*COS), oy-k*(z+y*SIN)];
+}
+const L=(P,Q,c)=>`<line class="${c}" x1="${P[0].toFixed(1)}" y1="${P[1].toFixed(1)}" x2="${Q[0].toFixed(1)}" y2="${Q[1].toFixed(1)}"/>`;
+const T=(P,txt,c,dx=0,dy=0)=>`<text class="${c}" x="${(P[0]+dx).toFixed(1)}" y="${(P[1]+dy).toFixed(1)}">${txt}</text>`;
+const mid=(P,Q)=>[(P[0]+Q[0])/2,(P[1]+Q[1])/2];
+const poly=(pts,c)=>`<polygon class="${c}" points="${pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')}"/>`;
+/* angle arc at P between directions to Q1 and Q2, in screen space */
+function arc(P,Q1,Q2,r=22){
+  const a1=Math.atan2(Q1[1]-P[1],Q1[0]-P[0]), a2=Math.atan2(Q2[1]-P[1],Q2[0]-P[0]);
+  let d=a2-a1; while(d>Math.PI) d-=2*Math.PI; while(d<-Math.PI) d+=2*Math.PI;
+  const e=[P[0]+r*Math.cos(a1),P[1]+r*Math.sin(a1)], f=[P[0]+r*Math.cos(a1+d),P[1]+r*Math.sin(a1+d)];
+  return `<path class="ang" d="M${P[0].toFixed(1)},${P[1].toFixed(1)}L${e[0].toFixed(1)},${e[1].toFixed(1)}A${r},${r} 0 0 ${d>0?1:0} ${f[0].toFixed(1)},${f[1].toFixed(1)}Z"/>`;
+}
+/* small right-angle mark at P between directions to Q1 and Q2 */
+function rmark(P,Q1,Q2,s=9){
+  const u=(Q)=>{const dx=Q[0]-P[0],dy=Q[1]-P[1],n=Math.hypot(dx,dy)||1;return [dx/n*s,dy/n*s];};
+  const a=u(Q1), b=u(Q2);
+  return `<path class="ra" d="M${P[0]+a[0]},${P[1]+a[1]}L${P[0]+a[0]+b[0]},${P[1]+a[1]+b[1]}L${P[0]+b[0]},${P[1]+b[1]}"/>`;
+}
+
+/* box a × b × c: labels {a,b,c,ac,ag} are strings or null; show = which triangle parts */
+function drawBox(svg,a,b,c,lab={},show={tri:true}){
+  const p=projector(a,b,c);
+  const A=p([0,0,0]),B=p([a,0,0]),C=p([a,b,0]),D=p([0,b,0]),Ee=p([0,0,c]),F=p([a,0,c]),Gg=p([a,b,c]),H=p([0,b,c]);
+  let h='';
+  if(show.tri) h+=poly([A,C,Gg],'tri');
+  h+=L(A,D,'hid')+L(D,C,'hid')+L(D,H,'hid');
+  h+=`<path class="ed" d="M${A}L${B}L${F}L${Ee}Z M${Ee}L${H}L${Gg}L${F} M${B}L${C}L${Gg}"/>`.replace(/(\d+\.\d{2})\d+/g,'$1');
+  if(show.tri){
+    h+=L(A,C,'bd')+L(C,Gg,'ht')+(show.diag!==false?L(A,Gg,'sd'):'');
+    h+=rmark(C,A,Gg);
+    if(show.diag!==false) h+=arc(A,C,Gg,24);
+  }
+  h+=T(A,'A','vx',-10,8)+T(B,'B','vx',8,8)+T(C,'C','vx',10,6)+T(D,'D','vx',-6,-8)+T(Ee,'E','vx',-10,-6)+T(F,'F','vx',8,-8)+T(Gg,'G','vx',8,-8)+T(H,'H','vx',-8,-8);
+  if(lab.a!=null) h+=T(mid(A,B),lab.a,'lbl',0,13);
+  if(lab.b!=null) h+=T(mid(B,C),lab.b,'lbl',14,6);
+  if(lab.c!=null) h+=T(mid(B,F),lab.c,'lbl',-12,0);
+  if(lab.ac!=null) h+=T(mid(A,C),lab.ac,'lbl b',0,12);
+  if(lab.ag!=null) h+=T(mid(A,Gg),lab.ag,'lbl p',-10,-10);
+  if(lab.al!=null) h+=T(A,lab.al,'lbl p',36,-6);
+  svg.innerHTML=h;
+}
+/* square pyramid: side s, height ht; mode 'edge' (triangle TOB) or 'face' (triangle TOM) */
+function drawPyr(svg,s,ht,mode,lab={}){
+  const p=projector(s,s,ht);
+  const A=p([0,0,0]),B=p([s,0,0]),C=p([s,s,0]),D=p([0,s,0]),O=p([s/2,s/2,0]),Tp=p([s/2,s/2,ht]),M=p([s/2,0,0]);
+  const foot=mode==='face'?M:B;
+  let h=poly([Tp,O,foot],'tri');
+  h+=L(A,D,'hid')+L(D,C,'hid')+L(Tp,D,'hid')+L(A,C,'hid')+L(B,D,'hid');
+  h+=`<path class="ed" d="M${A}L${B}L${C} M${Tp}L${A} M${Tp}L${B} M${Tp}L${C}"/>`;
+  h+=L(O,foot,'bd')+L(O,Tp,'ht')+L(foot,Tp,'sd')+rmark(O,foot,Tp)+arc(foot,O,Tp,20);
+  h+=T(A,'A','vx',-10,8)+T(B,'B','vx',10,8)+T(C,'C','vx',10,4)+T(D,'D','vx',-8,-8)+T(Tp,'T','vx',0,-12)+T(O,'O','vx',-6,10);
+  if(mode==='face') h+=T(M,'M','vx',0,13);
+  if(lab.s!=null) h+=T(mid(B,C),lab.s,'lbl',14,6);
+  if(lab.h!=null) h+=T(mid(O,Tp),lab.h,'lbl',mode==='face'?13:-12,0);
+  if(lab.base!=null) h+=T(mid(O,foot),lab.base,'lbl b',mode==='face'?10:-8,mode==='face'?12:16);
+  if(lab.slant!=null) h+=T(mid(foot,Tp),lab.slant,'lbl p',mode==='face'?-14:14,-4);
+  if(lab.al!=null) h+=T(foot,lab.al,'lbl p',mode==='face'?22:-30,mode==='face'?-30:-26);
+  svg.innerHTML=h;
+}
+
+/* ---------- lab ---------- */
+let kind='box', pmode='edge';
+function setKind(k){
+  kind=k; $('tBox').classList.toggle('primary',k==='box'); $('tPyr').classList.toggle('primary',k==='pyr');
+  $('tBox').setAttribute('aria-pressed',k==='box'); $('tPyr').setAttribute('aria-pressed',k==='pyr');
+  $('boxCtl').hidden=k!=='box'; $('pyrCtl').hidden=k!=='pyr';
+}
+function setMode(m){
+  pmode=m; $('mEdge').classList.toggle('primary',m==='edge'); $('mFace').classList.toggle('primary',m==='face');
+  $('mEdge').setAttribute('aria-pressed',m==='edge'); $('mFace').setAttribute('aria-pressed',m==='face');
+}
+function lab(){
+  let t='';
+  if(kind==='box'){
+    const a=+$('ba').value, b=+$('bb').value, c=+$('bc').value;
+    $('bav').textContent=a; $('bbv').textContent=b; $('bcv').textContent=c;
+    const ac=hyp(a,b), ag=hyp(ac,c), al=deg(Math.atan(c/ac));
+    drawBox($('labG'),a,b,c,{a,b,c,ac:r2(ac),ag:r2(ag),al:'α'});
+    t+=`<div><strong>אלכסון הבסיס:</strong> ${E(`AC = √(${a}² + ${b}²) = ${root(a*a+b*b)}`)}.</div>`;
+    t+=`<div><strong>אלכסון התיבה:</strong> ${E(`AG = √(${a*a+b*b} + ${c}²) = ${root(a*a+b*b+c*c)}`)}.</div>`;
+    t+=`<div><strong>הזווית עם הבסיס:</strong> ${E(`tan α = ${c} ÷ ${r2(ac)}`)}, ולכן ${E(`α ≈ ${r1(al)}°`)}.</div>`;
+  }else{
+    const s=+$('ps').value, ht=+$('ph').value;
+    $('psv').textContent=s; $('phv').textContent=ht;
+    const base=pmode==='face'?s/2:s*Math.SQRT2/2, sl=hyp(base,ht), al=deg(Math.atan(ht/base));
+    drawPyr($('labG'),s,ht,pmode,{s,h:ht,base:r2(base),slant:r2(sl),al:'α'});
+    if(pmode==='face'){
+      t+=`<div><strong>מהמרכז לאמצע הצלע:</strong> ${E(`OM = ${s} ÷ 2 = ${r2(base)}`)}.</div>`;
+      t+=`<div><strong>גובה הפאה:</strong> ${E(`TM = √(${r2(base)}² + ${ht}²) ≈ ${r2(sl)}`)}.</div>`;
+      t+=`<div><strong>הזווית בין הפאה לבסיס:</strong> ${E(`tan α = ${ht} ÷ ${r2(base)}`)}, ולכן ${E(`α ≈ ${r1(al)}°`)}.</div>`;
+    }else{
+      t+=`<div><strong>חצי אלכסון הבסיס:</strong> ${E(`OB = ${s}√2 ÷ 2 ≈ ${r2(base)}`)}.</div>`;
+      t+=`<div><strong>המקצוע הצדדי:</strong> ${E(`TB = √(${r2(base)}² + ${ht}²) ≈ ${r2(sl)}`)}.</div>`;
+      t+=`<div><strong>הזווית בין המקצוע לבסיס:</strong> ${E(`tan α = ${ht} ÷ ${r2(base)}`)}, ולכן ${E(`α ≈ ${r1(al)}°`)}.</div>`;
+    }
+  }
+  $('labTxt').innerHTML=t;
+}
+['ba','bb','bc','ps','ph'].forEach(id=>$(id).addEventListener('input',lab));
+$('tBox').onclick=()=>{setKind('box');lab();}; $('tPyr').onclick=()=>{setKind('pyr');lab();};
+$('mEdge').onclick=()=>{setMode('edge');lab();}; $('mFace').onclick=()=>{setMode('face');lab();};
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  const v=b.dataset.v.split(',');
+  if(b.dataset.k==='box'){ setKind('box'); $('ba').value=v[0]; $('bb').value=v[1]; $('bc').value=v[2]; }
+  else{ setKind('pyr'); setMode(b.dataset.k); $('ps').value=v[0]; $('ph').value=v[1]; }
+  lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EX=[
+  {t:`<strong>מוצאים את המשולש:</strong> ${E('G')} נמצא בדיוק מעל ${E('C')}, אז ${E('ACG')} ישר זווית ב-${E('C')}.`, f:s=>drawBox(s,6,8,10,{a:6,b:8,c:10})},
+  {t:`<strong>אלכסון הבסיס:</strong> ${E('AC = √(6² + 8²) = √100 = 10')}.`, f:s=>drawBox(s,6,8,10,{a:6,b:8,c:10,ac:'10'},{tri:true,diag:false})},
+  {t:`<strong>אלכסון התיבה:</strong> ${E('AG = √(10² + 10²) = √200 ≈ 14.14')}.`, f:s=>drawBox(s,6,8,10,{a:6,b:8,c:10,ac:'10',ag:'14.14'})},
+  {t:`<strong>הזווית:</strong> ${E('tan α = 10 ÷ 10 = 1')}, ולכן ${E('α = 45°')}. הגובה שווה לאלכסון הבסיס, אז המשולש שווה שוקיים.`, f:s=>drawBox(s,6,8,10,{a:6,b:8,c:10,ac:'10',ag:'14.14',al:'45°'})},
+  {t:`<strong>חלק ב, המשולש:</strong> הזווית בין פאה לבסיס נמצאת במשולש ${E('TOM')}. ${E('M')} הוא אמצע הצלע, ו-${E('TO')} הוא הגובה.`, f:s=>drawPyr(s,8,3,'face',{s:8,h:3})},
+  {t:`<strong>הניצב על הבסיס:</strong> ${E('OM = 8 ÷ 2 = 4')}, חצי צלע ולא חצי אלכסון.`, f:s=>drawPyr(s,8,3,'face',{s:8,h:3,base:'4'})},
+  {t:`<strong>הזווית:</strong> ${E('tan α = 3 ÷ 4 = 0.75')}, ולכן ${E('α ≈ 36.9°')}. בונוס: גובה הפאה ${E('TM = √(4² + 3²) = 5')}.`, f:s=>drawPyr(s,8,3,'face',{s:8,h:3,base:'4',slant:'5',al:'36.9°'})}
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EX.slice(0,exI+1).map(s=>`<div>${s.t}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+  EX[exI].f($('exG'));
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, solved=0, streak=0;
+function newPr(){
+  const type=mode==='mix'?pick(['diag','angle','pyrH','pyrAng']):mode;
+  const p={type,tries:0,hint:0};
+  if(type==='diag'||type==='angle'){
+    p.a=rnd(2,12); p.b=rnd(2,12); p.c=rnd(2,12);
+    p.ac=hyp(p.a,p.b); p.ag=hyp(p.ac,p.c);
+    p.ans=type==='diag'?p.ag:deg(Math.atan(p.c/p.ac)); p.tol=type==='diag'?0.06:0.6;
+  }else{
+    p.s=pick([4,6,8,10,12]);
+    if(type==='pyrH'){ const ob=p.s*Math.SQRT2/2; p.L=Math.ceil(ob)+rnd(1,6); p.ans=Math.sqrt(p.L*p.L-ob*ob); p.tol=0.06; }
+    else{ p.h=rnd(2,10); p.ans=deg(Math.atan(p.h/(p.s/2))); p.tol=0.6; }
+  }
+  pr=p;
+  const {a,b,c,s}=p;
+  if(type==='diag'){ drawBox($('prG'),a,b,c,{a,b,c,ag:'?'}); $('prQ').innerHTML=`בתיבה ${E(`${a} × ${b} × ${c}`)}, מה האורך של האלכסון ${E('AG')}?`; $('prLbl').innerHTML='AG ='; }
+  else if(type==='angle'){ drawBox($('prG'),a,b,c,{a,b,c,al:'?'}); $('prQ').innerHTML=`בתיבה ${E(`${a} × ${b} × ${c}`)}, מה הזווית בין האלכסון ${E('AG')} לבסיס ${E('ABCD')}? (במעלות)`; $('prLbl').innerHTML='α ='; }
+  else if(type==='pyrH'){ drawPyr($('prG'),s,Math.max(p.ans,1),'edge',{s,slant:p.L,h:'?'}); $('prQ').innerHTML=`בפירמידה ריבועית צלע הבסיס ${E(s)} והמקצוע הצדדי ${E(`TB = ${p.L}`)}. מה הגובה ${E('TO')}?`; $('prLbl').innerHTML='TO ='; }
+  else{ drawPyr($('prG'),s,p.h,'face',{s,h:p.h,al:'?'}); $('prQ').innerHTML=`בפירמידה ריבועית צלע הבסיס ${E(s)} והגובה ${E(p.h)}. מה הזווית בין פאה צדדית לבסיס? (במעלות)`; $('prLbl').innerHTML='α ='; }
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {type,a,b,c,s}=pr;
+  if(type==='diag') return `${E(`AC² = ${a}² + ${b}² = ${a*a+b*b}`)}, ואז ${E(`AG = √(${a*a+b*b} + ${c}²) = ${root(a*a+b*b+c*c)}`)}.`;
+  if(type==='angle') return `${E(`AC = √(${a}² + ${b}²) ≈ ${r2(pr.ac)}`)}. ${E(`tan α = ${c} ÷ ${r2(pr.ac)}`)}, ולכן ${E(`α ≈ ${r1(pr.ans)}°`)}.`;
+  if(type==='pyrH'){ const ob=s*Math.SQRT2/2; return `${E(`OB = ${s}√2 ÷ 2 ≈ ${r2(ob)}`)}. במשולש ${E('TOB')}: ${E(`TO = √(${pr.L}² − ${r2(ob)}²)`)} ${E(`≈ ${r2(pr.ans)}`)}.`; }
+  return `${E(`OM = ${s} ÷ 2 = ${s/2}`)}. ${E(`tan α = ${pr.h} ÷ ${s/2}`)}, ולכן ${E(`α ≈ ${r1(pr.ans)}°`)}.`;
+}
+function diagnose(x){
+  const {type,a,b,c,s,tol}=pr, near=v=>Math.abs(x-v)<=tol;
+  if(type==='diag'){
+    if(near(a+b+c)) return 'חיברתם את המידות. האלכסון מחושב בפיתגורס: מעלים בריבוע, מחברים ומוציאים שורש.';
+    if(near(pr.ac)) return 'זה אלכסון הבסיס בלבד. עכשיו השתמשו בו ובגובה בפיתגורס נוסף.';
+    if(near(hyp(a,c))||near(hyp(b,c))) return 'זה אלכסון של פאה צדדית. אלכסון התיבה משתמש בשלוש המידות.';
+    if(near(a*a+b*b+c*c)) return 'שכחתם להוציא שורש.';
+    return 'לא בדיוק. מצאו קודם את אלכסון הבסיס, ואז את האלכסון של התיבה.';
+  }
+  if(type==='angle'){
+    const al=pr.ans;
+    if(near(90-al)) return 'זו הזווית השנייה במשולש, זו שליד G. הזווית עם הבסיס נמצאת ליד A.';
+    if(near(deg(Math.atan(c/a)))||near(deg(Math.atan(c/b)))) return 'השתמשתם במקצוע של הבסיס. הניצב שעל הבסיס הוא האלכסון AC, ההיטל של AG.';
+    if(Math.abs(x-Math.atan(c/pr.ac))<0.02) return 'זו התשובה ברדיאנים. העבירו את המחשבון למעלות (DEG).';
+    if(near(deg(Math.atan(pr.ac/c)))) return 'הפכתם את היחס. tan α = הניצב שמול α חלקי הניצב שליד α: c ÷ AC.';
+    return 'לא בדיוק. מצאו את AC, ואז השתמשו ב-tan במשולש ACG.';
+  }
+  if(type==='pyrH'){
+    const L=pr.L, ob=s*Math.SQRT2/2;
+    if(near(Math.sqrt(L*L-(s/2)**2))) return 'השתמשתם בחצי צלע. המקצוע הצדדי יורד לקודקוד, אז הניצב על הבסיס הוא חצי אלכסון: s√2 ÷ 2.';
+    if(L>s&&near(Math.sqrt(L*L-s*s))) return 'הניצב על הבסיס הוא מהמרכז O לקודקוד, כלומר חצי אלכסון, לא צלע שלמה.';
+    if(near(hyp(L,ob))) return 'TB הוא היתר, אז מחסרים בתוך השורש, לא מחברים.';
+    if(near(L*L-ob*ob)) return 'שכחתם להוציא שורש.';
+    return 'לא בדיוק. מצאו את OB, ואז השתמשו בפיתגורס במשולש TOB.';
+  }
+  const h=pr.h, al=pr.ans;
+  if(near(deg(Math.atan(h/(s*Math.SQRT2/2))))) return 'זו הזווית של המקצוע הצדדי. לפאה הצדדית משתמשים בחצי צלע: s ÷ 2.';
+  if(near(deg(Math.atan(h/s)))) return 'השתמשתם בצלע שלמה. מהמרכז לאמצע הצלע יש חצי צלע.';
+  if(near(90-al)) return 'זו הזווית ליד הקודקוד T. הזווית עם הבסיס נמצאת ליד M.';
+  if(Math.abs(x-Math.atan(h/(s/2)))<0.02) return 'זו התשובה ברדיאנים. העבירו את המחשבון למעלות (DEG).';
+  return 'לא בדיוק. מצאו את OM, ואז השתמשו ב-tan במשולש TOM.';
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim().replace('°',''));
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 14.14 או 36.9.</div>'; return; }
+  if(Math.abs(x-pr.ans)<=pr.tol){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,a,b,s}=pr; let h;
+  if(type==='diag') h=pr.hint===1?'יש כאן שני משולשים ישרי זווית: אחד בבסיס ואחד שעומד עליו.':`${E(`AC² = ${a}² + ${b}² = ${a*a+b*b}`)}. עכשיו ${E('AG² = AC² + <i>c</i>²')}.`;
+  else if(type==='angle') h=pr.hint===1?'ההיטל של AG על הבסיס הוא AC. הזווית נמצאת במשולש ACG.':`${E(`AC ≈ ${r2(pr.ac)}`)}. הניצב שמול הזווית הוא הגובה, אז השתמשו ב-tan.`;
+  else if(type==='pyrH') h=pr.hint===1?'המשולש הוא TOB: הגובה, חצי אלכסון הבסיס והמקצוע הצדדי.':`${E(`OB = ${s}√2 ÷ 2 ≈ ${r2(s*Math.SQRT2/2)}`)}. TB הוא היתר, אז ${E('TO² = TB² − OB²')}.`;
+  else h=pr.hint===1?'המשולש הוא TOM: הגובה, ומהמרכז לאמצע הצלע.':`${E(`OM = ${s} ÷ 2 = ${s/2}`)}. השתמשו ב-${E('tan α = TO ÷ OM')}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

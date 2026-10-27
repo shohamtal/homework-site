@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>כללי גזירה: מכפלה, מנה ושרשרת · כיתה יא · מירי</title>
+<meta name="description" content="גוזרים מכפלה של פונקציות, מנה, ופונקציה בתוך פונקציה. כל כלל עם דוגמה ועם הטעות הנפוצה שלו. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/derivative-rules/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="כללי גזירה: מכפלה, מנה ושרשרת · כיתה יא · מירי">
+<meta property="og:description" content="גוזרים מכפלה של פונקציות, מנה, ופונקציה בתוך פונקציה. כל כלל עם דוגמה ועם הטעות הנפוצה שלו. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/derivative-rules/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"נגזרות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#derivatives-11"},{"@type":"ListItem","position":5,"name":"כללי גזירה: מכפלה, מנה ושרשרת","item":"https://shohamtal.github.io/homework-site/math/derivative-rules/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה כלל השרשרת?","acceptedAnswer":{"@type":"Answer","text":"כלל השרשרת גוזר פונקציה שיש בתוכה פונקציה אחרת, כמו סוגריים בחזקה. גוזרים את החלק החיצוני ומשאירים את הפנימי כמו שהוא, ואז כופלים בנגזרת של הפנימי. למשל ((x² + 1)³)′ = 3(x² + 1)² · 2x."}},{"@type":"Question","name":"איך גוזרים שבר עם x במכנה?","acceptedAnswer":{"@type":"Answer","text":"משתמשים בכלל המנה: (u ÷ v)′ = (u′v − uv′) ÷ v². מתחילים תמיד מהנגזרת של המונה, שמים מינוס באמצע, ומחלקים במכנה בריבוע. ראו דוגמה פתורה."}},{"@type":"Question","name":"למה הנגזרת של מכפלה היא לא מכפלת הנגזרות?","acceptedAnswer":{"@type":"Answer","text":"כי כששני החלקים משתנים ביחד, כל אחד מהם תורם לשינוי. לכן גוזרים כל פעם חלק אחד ומחברים: u′v + uv′. דוגמה קצרה: x · x = x², והנגזרת היא 2x, ולא 1 · 1 = 1."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"כללי גזירה: מכפלה, מנה ושרשרת","description":"גוזרים מכפלה של פונקציות, מנה, ופונקציה בתוך פונקציה. כל כלל עם דוגמה ועם הטעות הנפוצה שלו. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/derivative-rules/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"נגזרות","teaches":"כללי גזירה: מכפלה, מנה ושרשרת","keywords":"כלל המכפלה, כלל המנה, כלל השרשרת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .tan{stroke:var(--blue); stroke-width:2.2; fill:none; stroke-dasharray:6 4}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .seg{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .u{color:var(--line); font-weight:700}
+  .v{color:var(--blue); font-weight:700}
+  .rule{font-size:1.05rem; line-height:2}
+  .nums{display:grid; gap:4px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="derivative-rules">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#derivatives-11">נגזרות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">כללי גזירה: מכפלה, מנה ושרשרת</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · נגזרות</div>
+  <h1>כללי גזירה: מכפלה, מנה ושרשרת <span class="slogan">שלושה כלים לכל פונקציה</span></h1>
+  <p class="lead">את <span class="eq"><i>x</i>³ + 2<i>x</i></span> כבר יודעים לגזור. אבל מה עושים עם <span class="eq">(<i>x</i> + 2)(<i>x</i>² − 3)</span>, עם שבר כמו <span class="eq">4<i>x</i> ÷ (<i>x</i>² + 1)</span>, או עם <span class="eq">(<i>x</i>² − 2)⁵</span>?
+  לכל מקרה יש כלל משלו: <strong>כלל המכפלה</strong>, <strong>כלל המנה</strong> ו<strong>כלל השרשרת</strong>. נלמד מתי משתמשים בכל אחד, ונבדוק במעבדה שהם באמת נותנים את השיפוע. החומר מתאים ל-4 ול-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שלושה כללים</h2></div>
+  <p class="text">בכל כלל קוראים לחלקים בשם: <span class="u">u</span> הוא החלק הראשון, ו-<span class="v">v</span> הוא החלק השני. הגרש (′) אומר "הנגזרת של".</p>
+  <div class="two">
+    <div class="mini">
+      <h3>מכפלה: שני חלקים כפולים</h3>
+      <p class="rule"><span class="eq">(<span class="u">u</span>·<span class="v">v</span>)′ = <span class="u">u</span>′·<span class="v">v</span> + <span class="u">u</span>·<span class="v">v</span>′</span></p>
+      <p>גוזרים כל פעם רק חלק אחד ומשאירים את השני כמו שהוא. ואז מחברים. <strong>לא</strong> כופלים את שתי הנגזרות.</p>
+    </div>
+    <div class="mini">
+      <h3>מנה: שבר</h3>
+      <p class="rule"><span class="eq">(<span class="u">u</span> ÷ <span class="v">v</span>)′ =</span> <span class="eq">(<span class="u">u</span>′·<span class="v">v</span> − <span class="u">u</span>·<span class="v">v</span>′) ÷ <span class="v">v</span>²</span></p>
+      <p>כמו מכפלה, אבל עם <strong>מינוס</strong> באמצע, והכול מחולק במכנה בריבוע. הסדר חשוב: מתחילים מהנגזרת של המונה.</p>
+    </div>
+  </div>
+  <div class="mini" style="margin-top:12px">
+    <h3>שרשרת: פונקציה בתוך פונקציה</h3>
+    <p class="rule"><span class="eq">(<i>g</i>(<span class="v">h</span>(<i>x</i>)))′ = <i>g</i>′(<span class="v">h</span>(<i>x</i>)) · <span class="v">h</span>′(<i>x</i>)</span></p>
+    <p>ב-<span class="eq">(<span class="v"><i>x</i>² − 2</span>)⁵</span> יש "חלק פנימי" בתוך הסוגריים. גוזרים את החיצוני כאילו הפנימי הוא x רגיל: <span class="eq">5(<span class="v"><i>x</i>² − 2</span>)⁴</span>. ואז <strong>כופלים בנגזרת של הפנימי</strong>: <span class="eq">· 2<i>x</i></span>.</p>
+  </div>
+  <div class="callout"><strong>איך בוחרים כלל?</strong> שני חלקים עם x שכפולים זה בזה: מכפלה. שבר עם x במכנה: מנה. סוגריים בחזקה, או שורש של ביטוי: שרשרת.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הכלל מול השיפוע האמיתי</h2></div>
+  <p class="text">בחרו כלל ופונקציה. הזיזו את <span class="eq"><i>x</i>₀</span>. המעבדה מציבה בכלל, ובודקת שהתוצאה שווה לשיפוע של המשיק שמודדים על הגרף.</p>
+  <div class="seg" id="rulePick" role="group" aria-label="בחירת כלל">
+    <button data-r="P" aria-pressed="true">מכפלה</button><button data-r="Q" aria-pressed="false">מנה</button><button data-r="C" aria-pressed="false">שרשרת</button>
+  </div>
+  <div class="seg" id="fnPick" role="group" aria-label="בחירת פונקציה"></div>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף הפונקציה עם המשיק בנקודה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="xRange"><span>הנקודה <span class="eq"><i>x</i>₀</span></span><span class="eq" id="xVal"></span></label>
+      <input type="range" id="xRange" min="-3" max="3" step="0.5" value="1">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="P,0,0">מכפלה ב-0</button>
+          <button data-p="Q,0,1">מנה: איפה המשיק אופקי?</button>
+          <button data-p="Q,1,2">מכנה שמתאפס</button>
+          <button data-p="C,0,0">שרשרת ב-0</button>
+          <button data-p="C,2,1.5">שורש, לרמת 5 יח״ל</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>כופלים את הנגזרות.</strong> <span class="eq">(<span class="u">u</span>·<span class="v">v</span>)′</span> הוא <strong>לא</strong> <span class="eq"><span class="u">u</span>′·<span class="v">v</span>′</span>. ב-<span class="eq"><i>x</i> · <i>x</i></span> זה היה נותן 1, אבל <span class="eq">(<i>x</i>²)′ = 2<i>x</i></span>.</div></li>
+    <li><div><strong>מחליפים סדר במנה.</strong> במונה כותבים <span class="eq"><span class="u">u</span>′<span class="v">v</span> − <span class="u">u</span><span class="v">v</span>′</span>, ולא להפך. הפוך יוצא אותו מספר עם סימן הפוך.</div></li>
+    <li><div><strong>שוכחים את הריבוע במכנה.</strong> במנה מחלקים ב-<span class="eq"><span class="v">v</span>²</span>, לא ב-<span class="v">v</span>.</div></li>
+    <li><div><strong>שוכחים לכפול בנגזרת הפנימית.</strong> <span class="eq">((2<i>x</i> + 1)³)′ = 3(2<i>x</i> + 1)² · 2</span>. בלי ה-2 בסוף התשובה קטנה פי 2.</div></li>
+  </ol>
+  <div class="callout"><strong>טיפ:</strong> במכפלה של פולינומים אפשר גם לפתוח סוגריים ולגזור רגיל. זו דרך טובה לבדוק את עצמכם.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exP" class="primary" role="tab" aria-selected="true">מכפלה</button>
+    <button id="exQ" role="tab" aria-selected="false">מנה</button>
+    <button id="exC" role="tab" aria-selected="false">שרשרת</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מה השיפוע בנקודה?</h2></div>
+  <p class="text">בכל תרגיל בחרו את הכלל המתאים, גזרו, והציבו את הנקודה. אפשר לכתוב שבר עם קו נטוי (<span class="eq">3/4</span>) או מספר עשרוני.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה כלל השרשרת?</h3>
+    <p>כלל השרשרת גוזר פונקציה שיש בתוכה פונקציה אחרת, כמו סוגריים בחזקה. גוזרים את החלק החיצוני ומשאירים את הפנימי כמו שהוא, ואז כופלים בנגזרת של הפנימי. למשל <span class="eq">((<i>x</i>² + 1)³)′ = 3(<i>x</i>² + 1)² · 2<i>x</i></span>.</p>
+    <h3>איך גוזרים שבר עם x במכנה?</h3>
+    <p>משתמשים בכלל המנה: <span class="eq">(<i>u</i> ÷ <i>v</i>)′ =</span> <span class="eq">(<i>u</i>′<i>v</i> − <i>u</i><i>v</i>′) ÷ <i>v</i>²</span>. מתחילים תמיד מהנגזרת של המונה, שמים מינוס באמצע, ומחלקים במכנה בריבוע. <a href="#example">ראו דוגמה פתורה</a>.</p>
+    <h3>למה הנגזרת של מכפלה היא לא מכפלת הנגזרות?</h3>
+    <p>כי כששני החלקים משתנים ביחד, כל אחד מהם תורם לשינוי. לכן גוזרים כל פעם חלק אחד ומחברים: <span class="eq"><i>u</i>′<i>v</i> + <i>u</i><i>v</i>′</span>. דוגמה קצרה: <span class="eq"><i>x</i> · <i>x</i> = <i>x</i>²</span>, והנגזרת היא <span class="eq">2<i>x</i></span>, ולא <span class="eq">1 · 1 = 1</span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/derivative-intro/">נגזרת: שיפוע המשיק וכללי גזירה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/derivative-intro/"><small>→ הנושא הקודם</small>נגזרת: שיפוע המשיק וכללי גזירה</a><a class="next" href="../../math/tangent-line/"><small>הנושא הבא ←</small>משוואת המשיק לגרף</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,parseNum,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const nt=v=>numTxt(r2(v));
+const near=(a,b)=>Math.abs(a-b)<0.006+Math.abs(b)*0.002;
+const X='<i>x</i>';
+let pid=0;
+
+function curvePath(f){
+  let d='', pen=false, prev=null;
+  for(let x=-6;x<=6.001;x+=0.04){
+    const y=f(x);
+    if(!isFinite(y)||Math.abs(y)>40||(prev!==null&&Math.abs(y-prev)>15)){ pen=false; prev=isFinite(y)?y:null; continue; }
+    d+=(pen?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); pen=true; prev=y;
+  }
+  return d;
+}
+const lineSVG=(m,b,cls)=>`<line class="${cls}" x1="${sx(-6)}" y1="${sy(m*-6+b)}" x2="${sx(6)}" y2="${sy(m*6+b)}"/>`;
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+function plot(svg,F,x0){
+  const id='rc'+(++pid);
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  h+=`<path class="ln" d="${curvePath(F.f)}"/>`;
+  if(typeof x0==='number'&&F.ok(x0)){ const m=F.d(x0), y=F.f(x0); h+=lineSVG(m,y-m*x0,'tan'); }
+  h+='</g>';
+  if(typeof x0==='number'&&F.ok(x0)&&inG(x0,F.f(x0))) h+=`<circle class="cur" cx="${sx(x0)}" cy="${sy(F.f(x0))}" r="4.5"/>`;
+  draw(svg,null,0,{extra:h});
+}
+const U=s=>`<span class="u">${s}</span>`, V=s=>`<span class="v">${s}</span>`;
+/* linear a·x + b as HTML */
+function lin(a,b){
+  let s=a===1?X:a===-1?MINUS+X:(a<0?MINUS:'')+Math.abs(a)+X;
+  if(b) s+=` ${b<0?MINUS:'+'} ${Math.abs(b)}`;
+  return s;
+}
+const sq=c=>`${X}²${c?` ${c<0?MINUS:'+'} ${Math.abs(c)}`:''}`;
+
+/* lab presets: u, v (or outer g and inner h for chain) with values and derivatives */
+const mk=(u,du,v,dv,uh,vh)=>({u,du,v,dv,uh,vh});
+const PRE={
+  P:[
+    {t:'x²(x − 1)',...mk(x=>x*x,x=>2*x,x=>x-1,()=>1,`${X}²`,`${X} − 1`)},
+    {t:'(x + 2)(x² − 3)',...mk(x=>x+2,()=>1,x=>x*x-3,x=>2*x,`${X} + 2`,`${X}² − 3`)},
+    {t:'2x(x² + 1)',...mk(x=>2*x,()=>2,x=>x*x+1,x=>2*x,`2${X}`,`${X}² + 1`)}
+  ],
+  Q:[
+    {t:'4x ÷ (x² + 1)',...mk(x=>4*x,()=>4,x=>x*x+1,x=>2*x,`4${X}`,`${X}² + 1`)},
+    {t:'(x + 1) ÷ (x − 2)',...mk(x=>x+1,()=>1,x=>x-2,()=>1,`${X} + 1`,`${X} − 2`)},
+    {t:'x² ÷ (x² + 1)',...mk(x=>x*x,x=>2*x,x=>x*x+1,x=>2*x,`${X}²`,`${X}² + 1`)}
+  ],
+  C:[
+    {t:'(x² − 2)²',g:t=>t*t,dg:t=>2*t,h:x=>x*x-2,dh:x=>2*x,gh:'( )²',hh:`${X}² − 2`,dgh:h=>`2(${h})`},
+    {t:'(½x − 1)³',g:t=>t*t*t,dg:t=>3*t*t,h:x=>x/2-1,dh:()=>0.5,gh:'( )³',hh:`½${X} − 1`,dgh:h=>`3(${h})²`},
+    {t:'√(x² + 4)',g:t=>Math.sqrt(t),dg:t=>1/(2*Math.sqrt(t)),h:x=>x*x+4,dh:x=>2*x,gh:'√( )',hh:`${X}² + 4`,dgh:h=>`1 ÷ (2√(${h}))`}
+  ]
+};
+function fnOf(r,p){
+  if(r==='P') return {f:x=>p.u(x)*p.v(x),d:x=>p.du(x)*p.v(x)+p.u(x)*p.dv(x),ok:()=>true};
+  if(r==='Q') return {f:x=>p.u(x)/p.v(x),d:x=>(p.du(x)*p.v(x)-p.u(x)*p.dv(x))/(p.v(x)**2),ok:x=>Math.abs(p.v(x))>1e-9};
+  return {f:x=>p.g(p.h(x)),d:x=>p.dg(p.h(x))*p.dh(x),ok:x=>p.h(x)>=0||p.gh!=='√( )'};
+}
+let rule='P', fi=0;
+const xR=$('xRange');
+function setPicks(){
+  $('rulePick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===rule));
+  $('fnPick').innerHTML=PRE[rule].map((p,i)=>`<button data-i="${i}" dir="ltr" aria-pressed="${i===fi}">f(x) = ${p.t}</button>`).join('');
+  $('fnPick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ fi=+b.dataset.i; setPicks(); lab(); }));
+}
+$('rulePick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ rule=b.dataset.r; fi=0; setPicks(); lab(); }));
+function lab(){
+  const p=PRE[rule][fi], F=fnOf(rule,p), x0=+xR.value;
+  $('xVal').textContent=numTxt(x0);
+  $('labEq').innerHTML=`<span class="eq"><i>f</i>(${X}) = ${p.t.replace(/x/g,X)}</span>`;
+  plot($('labG'),F,x0);
+  let t='';
+  if(!F.ok(x0)){
+    $('labExplain').innerHTML=`<div>ב-<span class="eq">${X} = ${numTxt(x0)}</span> המכנה ${V('v')} שווה 0. אי אפשר לחלק ב-0, ולכן הפונקציה לא מוגדרת כאן ואין גם שיפוע. בגרף רואים שהעקומה נקרעת לשני חלקים בדיוק במקום הזה. הזיזו את הנקודה.</div>`;
+    return;
+  }
+  const num=(F.f(x0+1e-4)-F.f(x0-1e-4))/2e-4, res=F.d(x0);
+  if(rule==='P'){
+    t+=`<div>${U('u')} = <span class="eq">${U(p.uh)}</span>, ${V('v')} = <span class="eq">${V(p.vh)}</span></div>`;
+    t+=`<div>ב-<span class="eq">${X} = ${numTxt(x0)}</span>: <span class="eq">${U('u')} = ${nt(p.u(x0))}</span>, <span class="eq">${U('u')}′ = ${nt(p.du(x0))}</span>, <span class="eq">${V('v')} = ${nt(p.v(x0))}</span>, <span class="eq">${V('v')}′ = ${nt(p.dv(x0))}</span></div>`;
+    t+=`<div><span class="eq"><i>f</i>′ = ${U('u')}′·${V('v')} + ${U('u')}·${V('v')}′</span> <span class="eq">= ${nt(p.du(x0))}·${nt(p.v(x0))} + ${nt(p.u(x0))}·${nt(p.dv(x0))}</span> <span class="eq">= ${nt(res)}</span></div>`;
+  }else if(rule==='Q'){
+    t+=`<div>${U('u')} = <span class="eq">${U(p.uh)}</span> (מונה), ${V('v')} = <span class="eq">${V(p.vh)}</span> (מכנה)</div>`;
+    t+=`<div>ב-<span class="eq">${X} = ${numTxt(x0)}</span>: <span class="eq">${U('u')} = ${nt(p.u(x0))}</span>, <span class="eq">${U('u')}′ = ${nt(p.du(x0))}</span>, <span class="eq">${V('v')} = ${nt(p.v(x0))}</span>, <span class="eq">${V('v')}′ = ${nt(p.dv(x0))}</span></div>`;
+    t+=`<div><span class="eq"><i>f</i>′ = (${nt(p.du(x0))}·${nt(p.v(x0))} − ${nt(p.u(x0))}·${nt(p.dv(x0))})</span> <span class="eq">÷ ${nt(p.v(x0))}² = ${nt(res)}</span></div>`;
+  }else{
+    const hv=p.h(x0);
+    t+=`<div>החלק הפנימי <span class="eq">${V('h')} = ${V(p.hh)}</span>, והחיצוני <span class="eq">${p.gh}</span>.</div>`;
+    t+=`<div>ב-<span class="eq">${X} = ${numTxt(x0)}</span>: <span class="eq">${V('h')} = ${nt(hv)}</span>, <span class="eq">${V('h')}′ = ${nt(p.dh(x0))}</span></div>`;
+    t+=`<div><span class="eq"><i>f</i>′ = ${p.dgh(nt(hv))} · ${nt(p.dh(x0))}</span> <span class="eq">= ${nt(res)}</span></div>`;
+  }
+  t+=`<div>השיפוע שנמדד על הגרף: <span class="eq">≈ ${nt(num)}</span>. ${Math.abs(num-res)<0.01?'<strong>יוצא אותו דבר!</strong> הכלל עובד.':''}</div>`;
+  if(Math.abs(res)<1e-9) t+='<div>השיפוע 0, ולכן המשיק הכחול אופקי.</div>';
+  $('labExplain').innerHTML=t;
+}
+xR.addEventListener('input',lab);
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [r,i,x]=btn.dataset.p.split(','); rule=r; fi=+i; xR.value=x; setPicks(); lab(); }));
+setPicks(); lab();
+
+/* worked examples */
+const EX={
+  P:{F:fnOf('P',PRE.P[1]),x0:1,steps:[
+    `נמצא את השיפוע של <span class="eq"><i>f</i>(${X}) = (${X} + 2)(${X}² − 3)</span> ב-<span class="eq">${X} = 1</span>.`,
+    `<strong>צעד 1, מזהים מכפלה:</strong> <span class="eq">${U('u')} = ${U(X+' + 2')}</span> ו-<span class="eq">${V('v')} = ${V(X+'² − 3')}</span>.`,
+    `<strong>צעד 2, גוזרים כל חלק:</strong> <span class="eq">${U('u')}′ = 1</span>, <span class="eq">${V('v')}′ = 2${X}</span>.`,
+    `<strong>צעד 3, מציבים בכלל:</strong> <span class="eq"><i>f</i>′(${X}) = 1·(${X}² − 3) + (${X} + 2)·2${X}</span>.`,
+    `<strong>צעד 4, מסדרים:</strong> <span class="eq">${X}² − 3 + 2${X}² + 4${X}</span> <span class="eq">= 3${X}² + 4${X} − 3</span>.`,
+    `<strong>צעד 5, מציבים 1:</strong> <span class="eq"><i>f</i>′(1) = 3 + 4 − 3 = 4</span>. זה השיפוע של המשיק הכחול. בדיקה: פותחים סוגריים <span class="eq">${X}³ + 2${X}² − 3${X} − 6</span>, גוזרים, ויוצא אותו דבר.`
+  ]},
+  Q:{F:fnOf('Q',PRE.Q[0]),x0:0,steps:[
+    `נגזור את <span class="eq"><i>f</i>(${X}) = 4${X} ÷ (${X}² + 1)</span> ונמצא את השיפוע ב-<span class="eq">${X} = 0</span>.`,
+    `<strong>צעד 1, מזהים מנה:</strong> מונה <span class="eq">${U('u')} = ${U('4'+X)}</span>, מכנה <span class="eq">${V('v')} = ${V(X+'² + 1')}</span>.`,
+    `<strong>צעד 2, גוזרים:</strong> <span class="eq">${U('u')}′ = 4</span>, <span class="eq">${V('v')}′ = 2${X}</span>.`,
+    `<strong>צעד 3, הכלל:</strong> <span class="eq"><i>f</i>′(${X}) = (4(${X}² + 1) − 4${X}·2${X})</span> <span class="eq">÷ (${X}² + 1)²</span>.`,
+    `<strong>צעד 4, מסדרים את המונה:</strong> <span class="eq">4${X}² + 4 − 8${X}² = 4 − 4${X}²</span>. לכן <span class="eq"><i>f</i>′(${X}) = (4 − 4${X}²) ÷ (${X}² + 1)²</span>.`,
+    `<strong>צעד 5, מציבים 0:</strong> <span class="eq"><i>f</i>′(0) = 4 ÷ 1 = 4</span>. ומתי המשיק אופקי? כשהמונה 0: <span class="eq">4 − 4${X}² = 0</span>, כלומר <span class="eq">${X} = ±1</span>.`
+  ]},
+  C:{F:fnOf('C',PRE.C[0]),x0:1.5,steps:[
+    `נגזור את <span class="eq"><i>f</i>(${X}) = (${X}² − 2)²</span> ונמצא את השיפוע ב-<span class="eq">${X} = 1.5</span>.`,
+    `<strong>צעד 1, פנימי וחיצוני:</strong> הפנימי <span class="eq">${V(X+'² − 2')}</span>, והחיצוני "משהו בריבוע".`,
+    `<strong>צעד 2, גוזרים את החיצוני:</strong> כמו <span class="eq">(<i>t</i>²)′ = 2<i>t</i></span>, ומשאירים את הפנימי: <span class="eq">2(${V(X+'² − 2')})</span>.`,
+    `<strong>צעד 3, כופלים בנגזרת הפנימי:</strong> <span class="eq">(${X}² − 2)′ = 2${X}</span>. לכן <span class="eq"><i>f</i>′(${X}) = 2(${X}² − 2) · 2${X}</span> <span class="eq">= 4${X}(${X}² − 2)</span>.`,
+    `<strong>צעד 4, מציבים 1.5:</strong> <span class="eq">${X}² − 2 = 0.25</span>, ולכן <span class="eq"><i>f</i>′(1.5) = 4 · 1.5 · 0.25 = 1.5</span>.`
+  ]}
+};
+let exKey='P', exI=0;
+function ex(){
+  const e=EX[exKey];
+  plot($('exG'),e.F,exI>=e.steps.length-1?e.x0:undefined);
+  $('exText').innerHTML=e.steps[exI];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].steps.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+['P','Q','C'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['P','Q','C'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice: f'(x0) for a product, a quotient or a chain */
+let pr=null, streak=0, solved=0;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function newPr(){
+  const kind=pick(['P','Q','C']);
+  let F,html,ans,w,g=0;
+  const a=pick([1,2,3,-1]), b=rnd(-3,3), x0=pick([-2,-1,0,1,2]);
+  if(kind==='P'){
+    const c=pick([-3,-2,-1,1,2,3]);
+    const u=x=>a*x+b, v=x=>x*x+c;
+    F={f:x=>u(x)*v(x),d:x=>a*v(x)+u(x)*2*x,ok:()=>true};
+    html=`(${lin(a,b)})(${sq(c)})`;
+    ans=F.d(x0);
+    w={both:a*2*x0, onlyFirst:a*v(x0), onlySecond:u(x0)*2*x0, parts:{u:u(x0),du:a,v:v(x0),dv:2*x0}};
+  }else if(kind==='Q'){
+    let c; do{ c=pick([-3,-2,-1,1,2,3]); g++; }while((x0+c===0||a*c-b===0)&&g<20);
+    if(x0+c===0||a*c-b===0){ return newPr(); }
+    const u=x=>a*x+b, v=x=>x+c;
+    F={f:x=>u(x)/v(x),d:x=>(a*v(x)-u(x))/(v(x)**2),ok:x=>v(x)!==0};
+    html=`(${lin(a,b)}) ÷ (${lin(1,c)})`;
+    ans=F.d(x0);
+    w={flip:-ans, noSq:(a*v(x0)-u(x0))/v(x0), ratio:a, parts:{u:u(x0),du:a,v:v(x0),dv:1}};
+  }else{
+    const n=pick([2,3]), bb=b||1;
+    const h=x=>a*x+bb;
+    F={f:x=>Math.pow(h(x),n),d:x=>n*Math.pow(h(x),n-1)*a,ok:()=>true};
+    html=`(${lin(a,bb)})${n===2?'²':'³'}`;
+    ans=F.d(x0);
+    w={noInner:n*Math.pow(h(x0),n-1), noLower:n*Math.pow(h(x0),n)*a, n, parts:{h:h(x0),dh:a}};
+  }
+  pr={kind,F,html,ans,w,x0,tries:0,hint:0};
+  $('prEq').innerHTML=`<span class="eq"><i>f</i>(${X}) = ${html}</span>`;
+  $('prQ').innerHTML=`מה השיפוע של הגרף ב-<span class="eq">${X} = ${numTxt(x0)}</span>? כלומר <span class="eq"><i>f</i>′(${numTxt(x0)})</span>.`;
+  $('prInputs').innerHTML=`<label for="prV"><span class="eq"><i>f</i>′(${numTxt(x0)}) =</span><input id="prV" inputmode="text" autocomplete="off"></label>`;
+  $('prV').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  plot($('prG'),F);
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const NAME={P:'כלל המכפלה',Q:'כלל המנה',C:'כלל השרשרת'};
+function solution(){
+  const p=pr.w.parts, x=numTxt(pr.x0);
+  if(pr.kind==='P') return `${NAME.P}: <span class="eq">${U('u')}′·${V('v')} + ${U('u')}·${V('v')}′</span> <span class="eq">= ${numTxt(p.du)}·${numTxt(p.v)} + ${numTxt(p.u)}·${numTxt(p.dv)}</span> <span class="eq">= ${nt(pr.ans)}</span> (ב-<span class="eq">${X} = ${x}</span>)`;
+  if(pr.kind==='Q') return `${NAME.Q}: <span class="eq">(${numTxt(p.du)}·${numTxt(p.v)} − ${numTxt(p.u)}·${numTxt(p.dv)})</span> <span class="eq">÷ ${numTxt(p.v)}² = ${nt(pr.ans)}</span> (ב-<span class="eq">${X} = ${x}</span>)`;
+  return `${NAME.C}: <span class="eq">${pr.w.n}·(${numTxt(p.h)})${pr.w.n===3?'²':''} · ${numTxt(p.dh)}</span> <span class="eq">= ${nt(pr.ans)}</span> (ב-<span class="eq">${X} = ${x}</span>, החלק הפנימי שווה ${numTxt(p.h)})`;
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const fb=$('prFb'), y=parseNum($('prV').value), w=pr.w, msgs=[];
+  if(isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+  if(near(y,pr.ans)){ streak++; solved++; score(); plot($('prG'),pr.F,pr.x0); fb.innerHTML=`<div class="fb ok">נכון! <span class="eq"><i>f</i>′(${numTxt(pr.x0)}) = ${nt(pr.ans)}</span>. זה השיפוע של המשיק הכחול.</div>`; return; }
+  if(pr.kind==='P'){
+    if(near(y,w.both)) msgs.push('כפלתם את שתי הנגזרות. בכלל המכפלה גוזרים כל פעם חלק אחד ומחברים: <span class="eq"><i>u</i>′<i>v</i> + <i>u</i><i>v</i>′</span>.');
+    else if(near(y,w.onlyFirst)||near(y,w.onlySecond)) msgs.push('יש לכם רק חצי מהכלל. צריך שני מחוברים: <span class="eq"><i>u</i>′<i>v</i></span> <strong>ועוד</strong> <span class="eq"><i>u</i><i>v</i>′</span>.');
+    else msgs.push('לא בדיוק. חשבו בנפרד את u, u′, v, v′ בנקודה, ורק אז הציבו בכלל.');
+  }else if(pr.kind==='Q'){
+    if(near(y,w.flip)) msgs.push('יצא לכם הסימן ההפוך. במונה הסדר הוא <span class="eq"><i>u</i>′<i>v</i> − <i>u</i><i>v</i>′</span>: מתחילים מהנגזרת של המונה.');
+    else if(near(y,w.noSq)) msgs.push('שכחתם את הריבוע. מחלקים ב-<span class="eq"><i>v</i>²</span>, המכנה בריבוע.');
+    else if(near(y,w.ratio)) msgs.push('חילקתם נגזרת בנגזרת. במנה צריך את הכלל המלא: <span class="eq">(<i>u</i>′<i>v</i> − <i>u</i><i>v</i>′) ÷ <i>v</i>²</span>.');
+    else msgs.push('לא בדיוק. חשבו u, u′, v, v′ בנקודה, ואז הציבו בכלל המנה.');
+  }else{
+    if(near(y,w.noInner)) msgs.push('גזרתם את החיצוני, אבל שכחתם לכפול בנגזרת של החלק הפנימי.');
+    else if(near(y,w.noLower)) msgs.push('הורדתם את החזקה לפנים, אבל לא הקטנתם אותה ב-1.');
+    else msgs.push('לא בדיוק. גזרו את החיצוני (החזקה), השאירו את הסוגריים, וכפלו בנגזרת של מה שבפנים.');
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(m=>'<li>'+m+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  const p=pr.w.parts; let t;
+  if(pr.hint===1) t=pr.kind==='P'?`זו מכפלה, אז משתמשים ב${NAME.P}: <span class="eq"><i>u</i>′<i>v</i> + <i>u</i><i>v</i>′</span>.`:pr.kind==='Q'?`זה שבר, אז משתמשים ב${NAME.Q}: <span class="eq">(<i>u</i>′<i>v</i> − <i>u</i><i>v</i>′) ÷ <i>v</i>²</span>.`:`אלה סוגריים בחזקה, אז משתמשים ב${NAME.C}: גוזרים את החזקה וכופלים בנגזרת של מה שבפנים.`;
+  else t=pr.kind==='C'?`בנקודה: החלק הפנימי שווה <span class="eq">${numTxt(p.h)}</span>, והנגזרת שלו <span class="eq">${numTxt(p.dh)}</span>.`:`בנקודה: <span class="eq"><i>u</i> = ${numTxt(p.u)}</span>, <span class="eq"><i>u</i>′ = ${numTxt(p.du)}</span>, <span class="eq"><i>v</i> = ${numTxt(p.v)}</span>, <span class="eq"><i>v</i>′ = ${numTxt(p.dv)}</span>. הציבו בכלל.`;
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  if(!pr) return;
+  plot($('prG'),pr.F,pr.x0);
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הסתברות מותנית · כיתה יא · מירי</title>
+<meta name="description" content="מה הסיכוי ל-A אם ידוע ש-B קרה? טבלה דו-ממדית, הנוסחה P(A|B) ומאורעות בלתי תלויים. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/conditional-probability/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הסתברות מותנית · כיתה יא · מירי">
+<meta property="og:description" content="מה הסיכוי ל-A אם ידוע ש-B קרה? טבלה דו-ממדית, הנוסחה P(A|B) ומאורעות בלתי תלויים. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/conditional-probability/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"הסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#probability-11"},{"@type":"ListItem","position":5,"name":"הסתברות מותנית","item":"https://shohamtal.github.io/homework-site/math/conditional-probability/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה הסתברות מותנית?","acceptedAnswer":{"@type":"Answer","text":"זה הסיכוי שמאורע A יקרה, כשכבר ידוע שמאורע B קרה. כותבים P(A | B) ומחשבים P(A ∩ B) ÷ P(B). בטבלה: סופרים רק בתוך הקבוצה של B. נסו במעבדה."}},{"@type":"Question","name":"איך יודעים אם שני מאורעות בלתי תלויים?","acceptedAnswer":{"@type":"Answer","text":"בודקים אם P(A | B) = P(A), או אם P(A ∩ B) = P(A) · P(B). אם השוויון מתקיים, המידע על B לא משנה כלום, והם בלתי תלויים."}},{"@type":"Question","name":"מה ההבדל בין P(A|B) לבין P(B|A)?","acceptedAnswer":{"@type":"Answer","text":"שניהם מתחילים מאותו \"גם וגם\", אבל מחלקים בקבוצה אחרת. ב-P(A | B) מחלקים ב-P(B), וב-P(B | A) מחלקים ב-P(A). ראו במלכודות."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הסתברות מותנית","description":"מה הסיכוי ל-A אם ידוע ש-B קרה? טבלה דו-ממדית, הנוסחה P(A|B) ומאורעות בלתי תלויים. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/conditional-probability/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"הסתברות","teaches":"הסתברות מותנית","keywords":"טבלה דו-ממדית, P(A|B), אי-תלות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc .eq{white-space:normal}
+.vt.ct{direction:rtl}
+.vt.ct th{font-style:normal; font-family:var(--f-body); font-size:.85rem; white-space:normal; max-width:8em}
+.vt.ct td{min-width:3em; padding:5px 10px; transition:opacity .2s, background .2s}
+.vt.ct td.dim, .vt.ct th.dim{opacity:.25}
+.vt.ct td.hit{background:var(--hint-bg); font-weight:700; outline:2px solid var(--line); outline-offset:-2px}
+.vt.ct td.cond{background:#EAF1FE}
+.vt.ct tr.tot td, .vt.ct td.tot{font-weight:700; color:var(--muted)}
+.vt.ct tr.tot td{border-top:2px solid var(--border)}
+.sliders{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px 14px}
+@media (max-width:420px){.sliders{grid-template-columns:minmax(0,1fr)}}
+.big-p{font-family:var(--f-math); font-size:1.3rem; text-align:center; direction:ltr}
+.verdict{font-weight:700}
+.verdict.yes{color:var(--ok)} .verdict.no{color:var(--err)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="conditional-probability">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-11/#probability-11">הסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הסתברות מותנית</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · הסתברות</div>
+  <h1>הסתברות מותנית <span class="slogan">כשכבר יודעים משהו</span></h1>
+  <p class="lead">בוחרים תלמיד אקראי. מה הסיכוי שהוא מתאמן בספורט? ומה הסיכוי, אם כבר ידוע לנו שהוא מנגן? המידע הנוסף משנה את התשובה. בעמוד הזה, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>העולם מצטמצם</h2></div>
+  <p class="text">ב<a href="../multi-stage-probability/">עץ רב-שלבי</a> כבר ראינו שהסתברות של שלב יכולה להיות תלויה במה שקרה קודם. עכשיו נותנים לזה שם ונוסחה.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>"בתנאי ש..."</h3>
+      <p>הסימן <span class="eq"><i>P</i>(<i>A</i> | <i>B</i>)</span> קוראים: הסיכוי ל-A בתנאי ש-B קרה.</p>
+      <p>מה שאחרי הקו הוא מה שכבר ידוע.</p>
+    </div>
+    <div class="mini">
+      <h3>סופרים רק בתוך B</h3>
+      <p>אם ידוע ש-B קרה, כל מי שלא ב-B יוצא מהמשחק. סופרים מתוך B כמה הם גם A.</p>
+      <p><span class="eq"><i>P</i>(<i>A</i> | <i>B</i>) = </span><span class="eq"><span class="frac"><span><i>P</i>(<i>A</i> ∩ <i>B</i>)</span><span><i>P</i>(<i>B</i>)</span></span></span></p>
+    </div>
+    <div class="mini">
+      <h3>בלתי תלויים</h3>
+      <p>אם המידע על B לא משנה את הסיכוי ל-A, המאורעות <strong>בלתי תלויים</strong>.</p>
+      <p><span class="eq"><i>P</i>(<i>A</i> | <i>B</i>) = <i>P</i>(<i>A</i>)</span>, ואז גם <span class="eq"><i>P</i>(<i>A</i> ∩ <i>B</i>) = <i>P</i>(<i>A</i>) · <i>P</i>(<i>B</i>)</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>טבלה דו-ממדית</strong> היא הכלי הכי נוח: שורה לכל אפשרות של מאורע אחד, עמודה לכל אפשרות של השני. "בתנאי ש" אומר באיזו שורה או עמודה מסתכלים.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בוחרים תנאי</h2></div>
+  <p class="text">בשכבה יש תלמידים. A: מתאמנים בספורט. B: מנגנים על כלי. שנו את המספרים בטבלה, ובחרו מה ידוע. מה שמחוץ לתנאי מחוויר.</p>
+  <div class="lab">
+    <div>
+      <div class="scroll-x"><table class="vt ct" id="labT" aria-label="טבלה דו-ממדית של המעבדה"></table></div>
+      <div class="big-p" id="labP" style="margin-top:14px"></div>
+    </div>
+    <div class="ctrl">
+      <div class="row" role="group" aria-label="מה ידוע">
+        <button data-c="none" aria-pressed="true" class="primary">בלי תנאי</button>
+        <button data-c="B" aria-pressed="false">ידוע: מנגנים</button>
+        <button data-c="nB" aria-pressed="false">ידוע: לא מנגנים</button>
+        <button data-c="A" aria-pressed="false">ידוע: מתאמנים</button>
+      </div>
+      <div class="sliders" id="sliders"></div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-v="10,20,15,30">טבלה בלתי תלויה</button>
+          <button data-v="30,5,6,25">קשר חזק</button>
+          <button data-v="0,25,20,15">אף אחד לא גם וגם</button>
+          <button data-v="12,28,18,42">עוד בלתי תלויה</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: <span class="eq"><i>P</i>(<i>A</i> | <i>B</i>)</span> ו-<span class="eq"><i>P</i>(<i>B</i> | <i>A</i>)</span> סופרים את אותו תא למעלה, אבל מחלקים בקבוצה אחרת. לכן הם בדרך כלל שונים.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מחלקים בכולם</h3>
+      <p>"מתוך המנגנים, כמה מתאמנים?" מחלקים במספר <strong>המנגנים</strong>, לא במספר כל התלמידים.</p>
+      <p>חלוקה בכולם נותנת <span class="eq"><i>P</i>(<i>A</i> ∩ <i>B</i>)</span>, שאלה אחרת.</p>
+    </div>
+    <div class="mini">
+      <h3>הופכים את הכיוון</h3>
+      <p><span class="eq"><i>P</i>(<i>A</i> | <i>B</i>) ≠ <i>P</i>(<i>B</i> | <i>A</i>)</span>.</p>
+      <p>הסיכוי שמי שמנגן גם מתאמן, הוא לא הסיכוי שמי שמתאמן גם מנגן. בדקו מה אחרי הקו: זה מה שמחלקים בו.</p>
+    </div>
+    <div class="mini">
+      <h3>זרים זה לא בלתי תלויים</h3>
+      <p>מאורעות <strong>זרים</strong> לא יכולים לקרות ביחד. אז אם B קרה, הסיכוי ל-A הוא 0.</p>
+      <p>זה מידע חזק מאוד, ולכן זרים (עם סיכוי חיובי) הם דווקא <strong>תלויים</strong>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> הסיכוי המותנה תמיד בין 0 ל-1, והמונה (התא של "גם וגם") אף פעם לא גדול מהמכנה (הקבוצה של התנאי).</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">בסקר השתתפו 200 תלמידים. 80 מהם קוראים ספרים, ו-50 מהקוראים גם כותבים יומן. בסך הכול 70 תלמידים כותבים יומן. בוחרים תלמיד אקראי.</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">כתבו את התשובה כשבר, למשל <span class="eq">3/8</span>, או כמספר עשרוני עם שתי ספרות אחרי הנקודה לפחות, למשל <span class="eq">0.38</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="table" aria-pressed="false">מטבלה</button>
+    <button data-t="formula" aria-pressed="false">מהנוסחה</button>
+  </div>
+  <div class="scroll-x"><table class="vt ct" id="prT" aria-label="טבלת התרגיל"></table></div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prLbl"><i>P</i> =</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה הסתברות מותנית?</h3>
+    <p>זה הסיכוי שמאורע A יקרה, כשכבר ידוע שמאורע B קרה. כותבים <span class="eq"><i>P</i>(<i>A</i> | <i>B</i>)</span> ומחשבים <span class="eq"><i>P</i>(<i>A</i> ∩ <i>B</i>) ÷ <i>P</i>(<i>B</i>)</span>. בטבלה: סופרים רק בתוך הקבוצה של B. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך יודעים אם שני מאורעות בלתי תלויים?</h3>
+    <p>בודקים אם <span class="eq"><i>P</i>(<i>A</i> | <i>B</i>) = <i>P</i>(<i>A</i>)</span>, או אם <span class="eq"><i>P</i>(<i>A</i> ∩ <i>B</i>) = <i>P</i>(<i>A</i>) · <i>P</i>(<i>B</i>)</span>. אם השוויון מתקיים, המידע על B לא משנה כלום, והם בלתי תלויים.</p>
+    <h3>מה ההבדל בין P(A|B) לבין P(B|A)?</h3>
+    <p>שניהם מתחילים מאותו "גם וגם", אבל מחלקים בקבוצה אחרת. ב-<span class="eq"><i>P</i>(<i>A</i> | <i>B</i>)</span> מחלקים ב-<span class="eq"><i>P</i>(<i>B</i>)</span>, וב-<span class="eq"><i>P</i>(<i>B</i> | <i>A</i>)</span> מחלקים ב-<span class="eq"><i>P</i>(<i>A</i>)</span>. <a href="#traps">ראו במלכודות</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/multi-stage-probability/">הסתברות: עץ רב-שלבי ו"לפחות פעם אחת"</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/trig-3d/"><small>→ הנושא הקודם</small>טריגונומטריה במרחב</a><a class="next" href="../../math/binomial-distribution/"><small>הנושא הבא ←</small>התפלגות בינומית (ברנולי)</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+const red=(a,b)=>{const g=gcd(a,b)||1; return [a/g,b/g];};
+const fr=(a,b)=>{ if(b===0) return '?'; const [x,y]=red(a,b); return y===1?String(x):`<span class="frac"><span>${x}</span><span>${y}</span></span>`; };
+const frRaw=(a,b)=>b===1?String(a):`<span class="frac"><span>${a}</span><span>${b}</span></span>`;
+const r3=v=>numTxt(Math.round(v*1000)/1000);
+const PA='<i>P</i>', A='<i>A</i>', B='<i>B</i>';
+const nA='לא '+A, nB='לא '+B;
+
+/* ---------- lab ---------- */
+/* cells: a = A and B, b = A and not B, c = not A and B, d = not A and not B */
+const LBL={a:'מתאמנים ומנגנים',b:'מתאמנים ולא מנגנים',c:'לא מתאמנים ומנגנים',d:'לא מתאמנים ולא מנגנים'};
+const cells={a:10,b:20,c:15,d:30};
+let cond='none';
+$('sliders').innerHTML=['a','b','c','d'].map(k=>`<div><label class="slider" for="s${k}"><span style="font-size:.85rem">${LBL[k]}</span><span class="eq" id="v${k}"></span></label><input type="range" id="s${k}" min="0" max="40" step="1" value="${cells[k]}" class="${k==='a'?'':'blue'}"></div>`).join('');
+function table(el,c,opt){
+  const {a,b,c:cc,d}=c, hl=opt.hl||[], dim=opt.dim||[], cn=opt.cond||[], L=opt.labels;
+  const td=(k,v)=>`<td class="${hl.includes(k)?'hit':''} ${dim.includes(k)?'dim':''} ${cn.includes(k)&&!hl.includes(k)?'cond':''}">${v}</td>`;
+  const th=(k,t)=>`<th class="${dim.includes(k)?'dim':''}">${t}</th>`;
+  el.innerHTML=`<tr><th></th>${th('cB',L.B)}${th('cnB',L.nB)}<th>סך הכול</th></tr>`
+    +`<tr>${th('rA',L.A)}${td('a',a)}${td('b',b)}<td class="tot ${dim.includes('tA')?'dim':''}">${a+b}</td></tr>`
+    +`<tr>${th('rnA',L.nA)}${td('c',cc)}${td('d',d)}<td class="tot ${dim.includes('tnA')?'dim':''}">${cc+d}</td></tr>`
+    +`<tr class="tot"><td>סך הכול</td><td class="${dim.includes('tB')?'dim':''}">${a+cc}</td><td class="${dim.includes('tnB')?'dim':''}">${b+d}</td><td>${a+b+cc+d}</td></tr>`;
+}
+const LAB_L={A:'מתאמנים (A)',nA:'לא מתאמנים',B:'מנגנים (B)',nB:'לא מנגנים'};
+function lab(){
+  ['a','b','c','d'].forEach(k=>{cells[k]=+$('s'+k).value; $('v'+k).textContent=cells[k];});
+  const {a,b,c,d}=cells, N=a+b+c+d, nAtot=a+b, nBtot=a+c, nnB=b+d;
+  let opt={labels:LAB_L}, big='', t='';
+  if(N===0){ table($('labT'),cells,opt); $('labP').innerHTML=''; $('labCalc').innerHTML='אין אף תלמיד בטבלה. הזיזו מחוון.'; return; }
+  const pA=nAtot/N;
+  if(cond==='none'){
+    opt.hl=['a','b'];
+    big=`${PA}(${A}) = ${r3(pA)}`;
+    t=`<div>בלי תנאי סופרים מתוך <strong>כל</strong> ${N} התלמידים.</div><div>מתאמנים: ${E(`${PA}(${A}) = ${frRaw(nAtot,N)} ≈ ${r3(pA)}`)}.</div>`;
+  }else if(cond==='B'){
+    opt.hl=['a']; opt.cond=['c']; opt.dim=['b','d','cnB','tnB','tA','tnA'];
+    if(nBtot===0){ big=''; t='<div>אין אף מנגן, אז אי אפשר להתנות על B. הסיכוי המותנה לא מוגדר.</div>'; }
+    else{
+      const v=a/nBtot;
+      big=`${PA}(${A} | ${B}) = ${r3(v)}`;
+      t=`<div><strong>ידוע שמנגנים:</strong> נשארים רק ${nBtot} המנגנים.</div><div>מתוכם מתאמנים ${a}: ${E(`${PA}(${A} | ${B}) = ${frRaw(a,nBtot)} ≈ ${r3(v)}`)}.</div>`;
+      t+=`<div>בנוסחה: ${E(`${frRaw(a,N)} ÷ ${frRaw(nBtot,N)} = ${frRaw(a,nBtot)}`)}. ה-${N} מצטמצם.</div>`;
+      t+=indep(v,pA);
+    }
+  }else if(cond==='nB'){
+    opt.hl=['b']; opt.cond=['d']; opt.dim=['a','c','cB','tB','tA','tnA'];
+    if(nnB===0){ t='<div>אין אף תלמיד שלא מנגן, אז התנאי ריק.</div>'; }
+    else{
+      const v=b/nnB;
+      big=`${PA}(${A} | ${nB}) = ${r3(v)}`;
+      t=`<div><strong>ידוע שלא מנגנים:</strong> נשארים ${nnB} תלמידים.</div><div>מתוכם מתאמנים ${b}: ${E(`${frRaw(b,nnB)} ≈ ${r3(v)}`)}.</div>`;
+      t+=indep(v,pA);
+    }
+  }else{
+    opt.hl=['a']; opt.cond=['b']; opt.dim=['c','d','rnA','tnA','tB','tnB'];
+    if(nAtot===0){ t='<div>אין אף מתאמן, אז התנאי ריק.</div>'; }
+    else{
+      const v=a/nAtot, pB=nBtot/N;
+      big=`${PA}(${B} | ${A}) = ${r3(v)}`;
+      t=`<div><strong>ידוע שמתאמנים:</strong> נשארים ${nAtot} המתאמנים.</div><div>מתוכם מנגנים ${a}: ${E(`${PA}(${B} | ${A}) = ${frRaw(a,nAtot)} ≈ ${r3(v)}`)}.</div>`;
+      if(nBtot) t+=`<div>השוו ל-${E(`${PA}(${A} | ${B}) ≈ ${r3(a/nBtot)}`)}: אותו מונה, מכנה אחר.</div>`;
+      t+=indep(v,pB,true);
+    }
+  }
+  table($('labT'),cells,opt);
+  $('labP').innerHTML=big;
+  $('labCalc').innerHTML=t;
+}
+function indep(v,base,rev){
+  const same=Math.abs(v-base)<1e-9;
+  const what=rev?`${PA}(${B}) = ${r3(base)}`:`${PA}(${A}) = ${r3(base)}`;
+  return `<div>בלי התנאי: ${E(what)}. <span class="verdict ${same?'yes':'no'}">${same?'אותו דבר: המאורעות בלתי תלויים.':'שונה: המידע משנה את הסיכוי, המאורעות תלויים.'}</span></div>`;
+}
+['a','b','c','d'].forEach(k=>$('s'+k).addEventListener('input',lab));
+document.querySelectorAll('#lab [data-c]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#lab [data-c]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  cond=b.dataset.c; lab();
+});
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  const v=b.dataset.v.split(',');
+  ['a','b','c','d'].forEach((k,i)=>$('s'+k).value=v[i]);
+  lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>ממלאים טבלה.</strong> A: קוראים ספרים. B: כותבים יומן. ידוע: ${E('200')} בסך הכול, ${E('80')} קוראים, ${E('70')} כותבים, ${E('50')} גם וגם.`,
+  `<strong>משלימים תאים.</strong> קוראים ולא כותבים: ${E('80 − 50 = 30')}. כותבים ולא קוראים: ${E('70 − 50 = 20')}. אף אחד מהשניים: ${E('200 − 50 − 30 − 20 = 100')}.`,
+  `<strong>הסיכוי שתלמיד כותב יומן, אם ידוע שהוא קורא:</strong> סופרים רק בתוך ${E('80')} הקוראים. ${E(`${PA}(${B} | ${A}) = ${frRaw(50,80)} = ${fr(50,80)}`)}.`,
+  `<strong>ולהפך: הסיכוי שהוא קורא, אם ידוע שהוא כותב:</strong> עכשיו בתוך ${E('70')} הכותבים. ${E(`${PA}(${A} | ${B}) = ${frRaw(50,70)} = ${fr(50,70)}`)}. אותו מונה, מכנה אחר.`,
+  `<strong>אותו דבר בנוסחה:</strong> ${E(`${PA}(${A} ∩ ${B}) = ${fr(50,200)}`)} ו-${E(`${PA}(${B}) = ${fr(70,200)}`)}. ${E(`${fr(50,200)} ÷ ${fr(70,200)} = ${fr(50,70)}`)}.`,
+  `<strong>תלויים או לא?</strong> ${E(`${PA}(${A}) = ${fr(80,200)} = 0.4`)}, אבל ${E(`${PA}(${A} | ${B}) ≈ 0.71`)}. כותבי יומן קוראים הרבה יותר מהממוצע, אז המאורעות <strong>תלויים</strong>.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const STORIES=[
+  {who:'ילדים',one:'ילד',A:'אוהבים שוקולד',nA:'לא אוהבים שוקולד',B:'אוהבים גלידה',nB:'לא אוהבים גלידה',gA:'אוהבים שוקולד',gB:'אוהבים גלידה',gnB:'לא אוהבים גלידה',a:'הוא אוהב שוקולד',b:'הוא אוהב גלידה'},
+  {who:'תלמידים',one:'תלמיד',A:'מגיעים באופניים',nA:'לא באופניים',B:'גרים קרוב',nB:'גרים רחוק',gA:'מגיעים באופניים',gB:'גרים קרוב',gnB:'גרים רחוק',a:'הוא מגיע באופניים',b:'הוא גר קרוב'},
+  {who:'משפחות',one:'משפחה',A:'יש כלב',nA:'אין כלב',B:'יש חתול',nB:'אין חתול',gA:'יש להן כלב',gB:'יש להן חתול',gnB:'אין להן חתול',a:'יש לה כלב',b:'יש לה חתול'},
+  {who:'תלמידים',one:'תלמיד',A:'צופים בכדורגל',nA:'לא צופים',B:'משחקים כדורגל',nB:'לא משחקים',gA:'צופים בכדורגל',gB:'משחקים כדורגל',gnB:'לא משחקים כדורגל',a:'הוא צופה בכדורגל',b:'הוא משחק כדורגל'}
+];
+let mode='mix', pr=null, solved=0, streak=0, last='';
+const close=(x,v)=>Math.abs(x-v)<=Math.max(1e-6,Math.min(0.0051,v*0.05));
+function newPr(){
+  const type=mode==='mix'?pick(['table','table','formula']):mode;
+  let p;
+  for(let tries=0;tries<20;tries++){
+    if(type==='table'){
+      const s=pick(STORIES), t={a:rnd(3,25),b:rnd(3,25),c:rnd(3,25),d:rnd(3,25)};
+      const q=pick(['AgB','BgA','AgnB','AandB','A']);
+      const N=t.a+t.b+t.c+t.d;
+      const num={AgB:t.a,BgA:t.a,AgnB:t.b,AandB:t.a,A:t.a+t.b}[q];
+      const den={AgB:t.a+t.c,BgA:t.a+t.b,AgnB:t.b+t.d,AandB:N,A:N}[q];
+      p={type,s,t,q,N,num,den,ans:num/den};
+    }else{
+      const q=pick(['cond','and','cond']);
+      const pB=pick([0.2,0.25,0.4,0.5,0.6,0.8]), pAB=pick([0.1,0.12,0.15,0.2,0.3].filter(v=>v<pB));
+      if(q==='cond') p={type,q,pB,pAB,ans:pAB/pB};
+      else{ const pAgB=pick([0.25,0.3,0.5,0.6,0.75]); p={type,q,pB,pAgB,ans:pB*pAgB}; }
+    }
+    const key=JSON.stringify(p); if(key!==last){ last=key; break; }
+  }
+  pr={...p,tries:0,hint:0};
+  if(type==='table'){
+    table($('prT'),{a:pr.t.a,b:pr.t.b,c:pr.t.c,d:pr.t.d},{labels:{A:pr.s.A,nA:pr.s.nA,B:pr.s.B,nB:pr.s.nB}});
+    $('prT').style.display='';
+    const s=pr.s;
+    const pre=g=>`בוחרים ${s.one} באקראי מתוך ה${s.who} ש${g}.`, all=`בוחרים ${s.one} באקראי מכל ה${s.who}.`;
+    $('prQ').innerHTML={
+      AgB:`${pre(s.gB)} מה הסיכוי ש${s.a}?`,
+      BgA:`${pre(s.gA)} מה הסיכוי ש${s.b}?`,
+      AgnB:`${pre(s.gnB)} מה הסיכוי ש${s.a}?`,
+      AandB:`${all} מה הסיכוי ש${s.a} וגם ${s.b}?`,
+      A:`${all} מה הסיכוי ש${s.a}?`
+    }[pr.q];
+  }else{
+    $('prT').style.display='none'; $('prT').innerHTML='';
+    $('prQ').innerHTML=pr.q==='cond'
+      ?`נתון: ${E(`${PA}(${B}) = ${numTxt(pr.pB)}`)} ו-${E(`${PA}(${A} ∩ ${B}) = ${numTxt(pr.pAB)}`)}. מצאו את ${E(`${PA}(${A} | ${B})`)}.`
+      :`נתון: ${E(`${PA}(${B}) = ${numTxt(pr.pB)}`)} ו-${E(`${PA}(${A} | ${B}) = ${numTxt(pr.pAgB)}`)}. מצאו את ${E(`${PA}(${A} ∩ ${B})`)}.`;
+  }
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  if(pr.type==='formula'){
+    if(pr.q==='cond') return `${E(`${PA}(${A} | ${B}) = ${PA}(${A} ∩ ${B}) ÷ ${PA}(${B})`)} ${E(`= ${numTxt(pr.pAB)} ÷ ${numTxt(pr.pB)} = ${r3(pr.ans)}`)}.`;
+    return `מהנוסחה, ${E(`${PA}(${A} ∩ ${B}) = ${PA}(${B}) · ${PA}(${A} | ${B})`)} ${E(`= ${numTxt(pr.pB)} · ${numTxt(pr.pAgB)} = ${r3(pr.ans)}`)}.`;
+  }
+  const grp={AgB:`ה${pr.s.who} ש${pr.s.gB}`,BgA:`ה${pr.s.who} ש${pr.s.gA}`,AgnB:`ה${pr.s.who} ש${pr.s.gnB}`,AandB:`כל ה${pr.s.who}`,A:`כל ה${pr.s.who}`}[pr.q];
+  return `סופרים מתוך ${grp}: יש ${E(pr.den)}. מתוכם מתאימים ${E(pr.num)}. ${E(`${frRaw(pr.num,pr.den)}${red(pr.num,pr.den)[1]!==pr.den?' = '+fr(pr.num,pr.den):''} ≈ ${r3(pr.ans)}`)}.`;
+}
+function diagnose(x){
+  const c=v=>close(x,v);
+  if(x>1) return 'הסתברות לא יכולה להיות יותר מ-1. אולי חילקתם הפוך?';
+  if(pr.type==='formula'){
+    if(pr.q==='cond'){
+      if(c(pr.pAB*pr.pB)) return 'כפלתם. בהסתברות מותנית <strong>מחלקים</strong> ב-P(B).';
+      if(c(pr.pAB)) return 'זה P(A ∩ B), בלי התנאי. עכשיו חלקו ב-P(B).';
+      if(c(pr.pB/pr.pAB)) return 'חילקתם הפוך. ה"גם וגם" למעלה, והתנאי למטה.';
+    }else{
+      if(c(pr.pAgB/pr.pB)||c(pr.pB/pr.pAgB)) return 'כאן לא מחלקים. מהנוסחה של הסתברות מותנית, P(A ∩ B) הוא P(B) <strong>כפול</strong> P(A|B).';
+      if(c(pr.pAgB)) return 'זה הסיכוי המותנה, שכבר נתון. צריך את "גם A וגם B".';
+    }
+    return 'כתבו את הנוסחה P(A|B) = P(A ∩ B) ÷ P(B), והציבו את מה שנתון.';
+  }
+  const {a,b,c:cc,d}=pr.t, N=pr.N;
+  if(pr.q!=='AandB'&&pr.q!=='A'&&c(pr.num/N)) return `חילקתם בכל ה-${N}. אבל ידוע משהו: סופרים רק בתוך הקבוצה של התנאי.`;
+  if(pr.q==='AgB'&&c(a/(a+b))) return 'הפכתם את הכיוון. התנאי הוא העמודה, אז מחלקים בסך העמודה, לא בסך השורה.';
+  if(pr.q==='BgA'&&c(a/(a+cc))) return 'הפכתם את הכיוון. התנאי הוא השורה, אז מחלקים בסך השורה, לא בסך העמודה.';
+  if(pr.q==='AgnB'&&c(a/(a+cc))) return 'לקחתם את העמודה הלא נכונה. התנאי הוא העמודה השנייה.';
+  if(pr.q==='AandB'&&(c(a/(a+cc))||c(a/(a+b)))) return 'אין כאן "בתנאי ש". בוחרים מכולם, אז מחלקים בסך הכול.';
+  if(c(1-pr.ans)) return 'זה הסיכוי ההפוך. בדקו שספרתם את התא הנכון למעלה.';
+  return 'לא בדיוק. שאלו: מתוך מי בוחרים? זה המכנה. וכמה מהם מתאימים? זה המונה.';
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim());
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו שבר, למשל 3/8, או מספר עשרוני, למשל 0.38.</div>'; return; }
+  if(close(x,pr.ans)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.type==='formula'){
+    h=pr.hint===1?`הנוסחה: ${E(`${PA}(${A} | ${B}) = ${PA}(${A} ∩ ${B}) ÷ ${PA}(${B})`)}. מה מהשלושה נתון?`
+      :(pr.q==='cond'?`חלקו ${E(numTxt(pr.pAB))} ב-${E(numTxt(pr.pB))}.`:`כפלו ${E(numTxt(pr.pB))} ב-${E(numTxt(pr.pAgB))}.`);
+  }else{
+    const cond=pr.q==='AandB'||pr.q==='A'?'אין תנאי, אז בוחרים מכולם.':'יש תנאי. מצאו בטבלה את השורה או העמודה שלו.';
+    h=pr.hint===1?cond:`המכנה הוא ${E(pr.den)}. עכשיו מצאו בתוך הקבוצה הזאת את המונה.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>
