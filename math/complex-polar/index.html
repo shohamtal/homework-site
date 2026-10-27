@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הצגה קוטבית ומשפט דה-מואבר · כיתה יב · מירי</title>
+<meta name="description" content="הצגה קוטבית של מספר מרוכב ומשפט דה-מואבר (5 יח״ל): כפל כסיבוב, חזקות ושורשים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/complex-polar/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הצגה קוטבית ומשפט דה-מואבר · כיתה יב · מירי">
+<meta property="og:description" content="הצגה קוטבית של מספר מרוכב ומשפט דה-מואבר (5 יח״ל): כפל כסיבוב, חזקות ושורשים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/complex-polar/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"מספרים מרוכבים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#complex-12"},{"@type":"ListItem","position":5,"name":"הצגה קוטבית ומשפט דה-מואבר","item":"https://shohamtal.github.io/homework-site/math/complex-polar/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה cis במספרים מרוכבים?","acceptedAnswer":{"@type":"Answer","text":"cis θ הוא קיצור של cos θ + i sin θ. זו נקודה על מעגל היחידה בזווית θ. המספר r cis θ נמצא באותו כיוון, במרחק r מהראשית."}},{"@type":"Question","name":"מה אומר משפט דה-מואבר?","acceptedAnswer":{"@type":"Answer","text":"שכדי להעלות מספר מרוכב בחזקה, מעלים את האורך בחזקה וכופלים את הזווית: (r cis θ)n = rn cis (nθ). למשל (2 cis 30°)3 = 8 cis 90° = 8i."}},{"@type":"Question","name":"כמה פתרונות יש למשוואה z בחזקת n?","acceptedAnswer":{"@type":"Answer","text":"למשוואה zn = w (כש-w ≠ 0) יש בדיוק n פתרונות. לכולם אותו אורך, n√R, והם מפוזרים במרחקים שווים על מעגל: קודקודים של מצולע משוכלל."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הצגה קוטבית ומשפט דה-מואבר","description":"הצגה קוטבית של מספר מרוכב ומשפט דה-מואבר (5 יח״ל): כפל כסיבוב, חזקות ושורשים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/complex-polar/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מספרים מרוכבים","teaches":"הצגה קוטבית ומשפט דה-מואבר","keywords":"הצגה קוטבית, דה-מואבר, שורשי יחידה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.gp{width:100%; max-width:330px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.gp .ax{stroke:var(--ink); stroke-width:1.4}
+.gp .unit{fill:none; stroke:var(--muted); stroke-width:1.2; stroke-dasharray:4 4}
+.gp .ring{fill:none; stroke:var(--green); stroke-width:1.2; stroke-dasharray:3 4}
+.gp .tk{font:10px var(--f-math); fill:var(--muted); text-anchor:middle; dominant-baseline:middle}
+.gp .axl{font:700 11px var(--f-body); fill:var(--muted)}
+.gp .vec{stroke-width:2.6; stroke-linecap:round}
+.gp .vz{stroke:var(--line)} .gp .vw{stroke:var(--blue)} .gp .vr{stroke:var(--green)} .gp .vm{stroke:var(--muted)}
+.gp .poly{fill:var(--green); fill-opacity:.08; stroke:var(--green); stroke-width:1.4; stroke-dasharray:5 4}
+.gp .path{fill:none; stroke:var(--muted); stroke-width:1.3; stroke-dasharray:4 4}
+.gp .az{fill:var(--line); fill-opacity:.16; stroke:var(--line); stroke-width:1.2}
+.gp .aw{fill:var(--blue); fill-opacity:.14; stroke:var(--blue); stroke-width:1.2}
+.gp .ar{fill:none; stroke:var(--green); stroke-width:2}
+.gp circle.p{stroke:var(--card); stroke-width:2}
+.gp .pz{fill:var(--line)} .gp .pw{fill:var(--blue)} .gp .pr{fill:var(--green)} .gp .pm{fill:var(--card); stroke:var(--muted)!important}
+.gp .pl{font:700 12px var(--f-math); paint-order:stroke; stroke:var(--card); stroke-width:3px; dominant-baseline:middle}
+.gp .pl.z{fill:var(--line)} .gp .pl.w{fill:var(--blue)} .gp .pl.r{fill:var(--green)} .gp .pl.m{fill:var(--muted)}
+.modes{display:flex; flex-wrap:wrap; gap:8px}
+.modes button[aria-pressed="true"]{background:var(--hl)}
+.zlab{color:var(--line); font-weight:700} .wlab{color:var(--blue); font-weight:700} .rlab{color:var(--green); font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="complex-polar">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#complex-12">מספרים מרוכבים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הצגה קוטבית ומשפט דה-מואבר</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · מספרים מרוכבים · 5 יח״ל</div>
+  <h1>הצגה קוטבית ומשפט דה-מואבר <span class="slogan">כפל הוא סיבוב</span></h1>
+  <p class="lead">במקום <span class="eq"><i>a</i> + <i>b</i><i>i</i></span> אפשר לתאר מספר מרוכב לפי שני דברים: כמה הוא רחוק מהראשית, ובאיזו זווית. בצורה הזאת כפל, חזקות ושורשים נעשים קלים מאוד. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>אורך וזווית</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הצגה קוטבית</h3>
+      <p><span class="eq"><i>z</i> = <i>r</i> cis <i>θ</i></span>, כאשר <span class="eq">cis <i>θ</i> = cos <i>θ</i> + <i>i</i> sin <i>θ</i></span>.</p>
+      <p><span class="eq"><i>r</i></span> הוא <strong>האורך</strong> (המרחק מהראשית), ו-<span class="eq"><i>θ</i></span> היא <strong>הזווית</strong> מהציר הממשי החיובי, נגד כיוון השעון.</p>
+    </div>
+    <div class="mini">
+      <h3>מעבר מ-<span class="eq"><i>a</i> + <i>b</i><i>i</i></span></h3>
+      <p><span class="eq"><i>r</i> = √(<i>a</i>² + <i>b</i>²)</span></p>
+      <p><span class="eq">tan <i>θ</i> = <i>b</i> : <i>a</i></span>, ואז בודקים באיזה רביע הנקודה. זה בדיוק <a href="../unit-circle/">מעגל היחידה</a>, רק עם רדיוס <span class="eq"><i>r</i></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>כפל ודה-מואבר</h3>
+      <p>בכפל <strong>כופלים אורכים ומחברים זוויות</strong>:</p>
+      <p><span class="eq"><i>r</i> cis <i>α</i> · <i>s</i> cis <i>β</i></span> <span class="eq">= <i>r</i><i>s</i> cis (<i>α</i> + <i>β</i>)</span></p>
+      <p>ומכאן משפט דה-מואבר: <span class="eq">(<i>r</i> cis <i>θ</i>)<sup><i>n</i></sup></span> <span class="eq">= <i>r</i><sup><i>n</i></sup> cis (<i>n</i><i>θ</i>)</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מסובבים ומותחים</h2></div>
+  <p class="text">בחרו מצב והזיזו את המחוונים. האורך משנה את המרחק מהראשית, והזווית מסובבת. העיגול המקווקו האפור הוא מעגל היחידה.</p>
+  <div class="lab">
+    <svg class="gp" id="labG" viewBox="0 0 300 300" role="img" aria-label="מישור גאוס עם מספרים בהצגה קוטבית"></svg>
+    <div class="ctrl">
+      <div class="modes" id="modes" role="group" aria-label="מצב">
+        <button data-m="mul" aria-pressed="true">כפל</button>
+        <button data-m="pow" aria-pressed="false">חזקה</button>
+        <button data-m="root" aria-pressed="false">שורשים</button>
+      </div>
+      <div class="big-eq" id="labEq" dir="ltr" style="font-size:clamp(1.15rem,4.4vw,1.6rem)"></div>
+      <label class="slider" for="lr"><span id="lrL"></span><span class="eq" id="lrv"></span></label>
+      <input type="range" id="lr" min="0.5" max="2" step="0.1" value="1.5">
+      <label class="slider" for="lt"><span id="ltL"></span><span class="eq" id="ltv"></span></label>
+      <input type="range" id="lt" min="0" max="345" step="15" value="30">
+      <div id="wCtrls" class="ctrl">
+        <label class="slider" for="ls"><span>האורך של <span class="wlab">w</span></span><span class="eq" id="lsv"></span></label>
+        <input type="range" id="ls" min="0.5" max="2" step="0.1" value="1.2">
+        <label class="slider" for="lf"><span>הזווית של <span class="wlab">w</span></span><span class="eq" id="lfv"></span></label>
+        <input type="range" id="lf" min="0" max="345" step="15" value="60">
+      </div>
+      <div id="nCtrls" class="ctrl">
+        <label class="slider" for="ln"><span id="lnL"></span><span class="eq" id="lnv"></span></label>
+        <input type="range" id="ln" min="2" max="8" step="1" value="3">
+      </div>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="mul,1,90,1.5,30" dir="ltr">i · w</button>
+          <button data-p="mul,2,45,0.5,315" dir="ltr">2 cis 45° · 0.5 cis 315°</button>
+          <button data-p="pow,1,45,0,0,8" dir="ltr">(cis 45°)⁸</button>
+          <button data-p="pow,1.2,30,0,0,6" dir="ltr">(1.2 cis 30°)⁶</button>
+          <button data-p="root,1,0,0,0,6" dir="ltr">z⁶ = 1</button>
+          <button data-p="root,1.5,90,0,0,3" dir="ltr">z³ = 1.5 cis 90°</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הרביע של הזווית</h3>
+      <p>ל-<span class="eq">−2 + 2<i>i</i></span> המחשבון נותן <span class="eq">tan⁻¹(−1) = −45°</span>. אבל הנקודה ברביע II.</p>
+      <p>הזווית הנכונה היא <span class="eq">135°</span>. תמיד מציירים את הנקודה לפני שמחליטים.</p>
+    </div>
+    <div class="mini">
+      <h3>אורכים כופלים</h3>
+      <p>בכפל <span class="eq">2 cis 30° · 3 cis 50°</span> האורך הוא <span class="eq">6</span>, לא <span class="eq">5</span>.</p>
+      <p>ובחזקה: <span class="eq">(2 cis 20°)<sup>4</sup></span> נותן אורך <span class="eq">2<sup>4</sup> = 16</span>, לא <span class="eq">8</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>יש <span class="eq"><i>n</i></span> שורשים</h3>
+      <p>למשוואה <span class="eq"><i>z</i><sup>3</sup> = 8</span> יש שלושה פתרונות, לא רק <span class="eq">2</span>.</p>
+      <p>הזוויות שלהם: <span class="eq">(<i>Φ</i> + 360°·<i>k</i>) : <i>n</i></span>, עבור <span class="eq"><i>k</i> = 0, 1, …, <i>n</i> − 1</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>זוויות חוזרות:</strong> <span class="eq">cis 400° = cis 40°</span>, כי סיבוב שלם של 360° מחזיר לאותו מקום. מקובל לכתוב את הזווית בין <span class="eq">0°</span> ל-<span class="eq">360°</span>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: הצגה קוטבית וחזקה</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: שורשים</button>
+  </div>
+  <div class="lab">
+    <svg class="gp" id="exG" viewBox="0 0 300 300" role="img" aria-label="מישור גאוס של הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">כתבו את התשובה בצורה <span class="eq"><i>r</i> cis <i>θ</i></span>: את האורך בתיבה אחת ואת הזווית במעלות בשנייה. אורך לא שלם מעגלו לשתי ספרות אחרי הנקודה.</p>
+  <div class="lab">
+    <svg class="gp" id="prG" viewBox="0 0 300 300" role="img" aria-label="מישור גאוס לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs">
+        <label for="prR"><span><i>r</i> =</span><input id="prR" inputmode="decimal" autocomplete="off"></label>
+        <label for="prT"><span><i>θ</i> =</span><input id="prT" inputmode="decimal" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה cis במספרים מרוכבים?</h3>
+    <p><span class="eq">cis <i>θ</i></span> הוא קיצור של <span class="eq">cos <i>θ</i> + <i>i</i> sin <i>θ</i></span>. זו נקודה על מעגל היחידה בזווית <span class="eq"><i>θ</i></span>. המספר <span class="eq"><i>r</i> cis <i>θ</i></span> נמצא באותו כיוון, במרחק <span class="eq"><i>r</i></span> מהראשית.</p>
+    <h3>מה אומר משפט דה-מואבר?</h3>
+    <p>שכדי להעלות מספר מרוכב בחזקה, מעלים את האורך בחזקה וכופלים את הזווית: <span class="eq">(<i>r</i> cis <i>θ</i>)<sup><i>n</i></sup> = <i>r</i><sup><i>n</i></sup> cis (<i>n</i><i>θ</i>)</span>. למשל <span class="eq">(2 cis 30°)<sup>3</sup> = 8 cis 90° = 8<i>i</i></span>.</p>
+    <h3>כמה פתרונות יש למשוואה z בחזקת n?</h3>
+    <p>למשוואה <span class="eq"><i>z</i><sup><i>n</i></sup> = <i>w</i></span> (כש-<span class="eq"><i>w</i> ≠ 0</span>) יש בדיוק <span class="eq"><i>n</i></span> פתרונות. לכולם אותו אורך, <span class="eq"><sup><i>n</i></sup>√<i>R</i></span>, והם מפוזרים במרחקים שווים על מעגל: קודקודים של מצולע משוכלל.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/complex-numbers/">מספרים מרוכבים: i וההצגה האלגברית</a> · <a href="../../math/unit-circle/">מעגל היחידה: סינוס וקוסינוס של כל זווית</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/complex-numbers/"><small>→ הנושא הקודם</small>מספרים מרוכבים: i וההצגה האלגברית</a><a class="next" href="../../math/induction/"><small>הנושא הבא ←</small>אינדוקציה מתמטית</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const M='−', D=Math.PI/180;
+const r2=v=>{ const x=Math.round(v*100)/100; return Object.is(x,-0)?0:x; };
+const num=v=>{ const x=r2(v); return (x<0?M:'')+Math.abs(x); };
+const near=(a,b,t)=>Math.abs(a-b)<=t;
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const norm=a=>((a%360)+360)%360;
+const angNear=(a,b,t)=>{ const d=Math.abs(norm(a)-norm(b)); return Math.min(d,360-d)<=t; };
+const SUP={1:'',2:'²',3:'³',4:'⁴',5:'⁵',6:'⁶',7:'⁷',8:'⁸'};
+const SUB=['₀','₁','₂','₃','₄','₅','₆','₇'];
+const cis=(r,t)=>`${num(r)} cis ${num(norm(t))}°`;
+const cx=(a,b)=>{ a=r2(a); b=r2(b); const im=Math.abs(b)===1?'i':Math.abs(b)+'i';
+  if(b===0) return num(a); if(a===0) return (b<0?M:'')+im; return `${num(a)} ${b<0?M:'+'} ${im}`; };
+const FR=(n,d)=>`<span class="frac"><span>${n}</span><span>${d}</span></span>`;
+
+/* ---------- plane with automatic scale ---------- */
+const C=150;
+function plane(svg,items,o={}){
+  const rs=[1].concat(items.map(p=>p.r),o.rings||[]);
+  const U=Math.min(60,122/Math.max(...rs));
+  const P=(r,t)=>[C+U*r*Math.cos(t*D), C-U*r*Math.sin(t*D)];
+  const f=v=>v.toFixed(1);
+  let s=`<line class="ax" x1="12" y1="${C}" x2="288" y2="${C}"/><line class="ax" x1="${C}" y1="288" x2="${C}" y2="12"/>`;
+  s+=`<text class="axl" x="288" y="${C-9}" text-anchor="end">ממשי</text><text class="axl" x="${C+6}" y="16" text-anchor="start">מדומה</text>`;
+  s+=`<circle class="unit" cx="${C}" cy="${C}" r="${f(U)}"/><text class="tk" x="${f(C+U+7)}" y="${C+10}">1</text>`;
+  (o.rings||[]).forEach(r=>{ s+=`<circle class="ring" cx="${C}" cy="${C}" r="${f(U*r)}"/>`; });
+  if(o.poly&&o.poly.length>1){ s+=`<polygon class="poly" points="${o.poly.map(([r,t])=>P(r,t).map(f).join(',')).join(' ')}"/>`; }
+  if(o.path&&o.path.length>1){ s+=`<polyline class="path" points="${o.path.map(([r,t])=>P(r,t).map(f).join(',')).join(' ')}"/>`; }
+  let k=0;
+  items.forEach(p=>{
+    if(!p.arc) return;
+    const t=norm(p.t); if(t===0) return;
+    const ar=16+8*(k++), e=[C+ar*Math.cos(t*D), C-ar*Math.sin(t*D)];
+    s+= p.c==='r'
+      ? `<path class="ar" d="M${C+ar},${C} A${ar},${ar} 0 ${t>180?1:0} 0 ${f(e[0])},${f(e[1])}"/>`
+      : `<path class="a${p.c}" d="M${C},${C} L${C+ar},${C} A${ar},${ar} 0 ${t>180?1:0} 0 ${f(e[0])},${f(e[1])} Z"/>`;
+  });
+  items.forEach(p=>{ if(p.vec){ const q=P(p.r,p.t); s+=`<line class="vec v${p.c}" x1="${C}" y1="${C}" x2="${f(q[0])}" y2="${f(q[1])}"/>`; } });
+  items.forEach(p=>{
+    const q=P(p.r,p.t);
+    s+=`<circle class="p p${p.c}" cx="${f(q[0])}" cy="${f(q[1])}" r="${p.small?4:5.5}"/>`;
+    if(p.label){
+      const c=Math.cos(p.t*D), sn=Math.sin(p.t*D), L=[q[0]+13*c, q[1]-13*sn];
+      const anc=c>0.35?'start':c<-0.35?'end':'middle';
+      s+=`<text class="pl ${p.c}" x="${f(Math.min(292,Math.max(8,L[0])))}" y="${f(Math.min(292,Math.max(8,L[1])))}" text-anchor="${anc}">${p.label}</text>`;
+    }
+  });
+  svg.innerHTML=s;
+}
+
+/* ---------- lab ---------- */
+let mode='mul';
+const S={r:$('lr'),t:$('lt'),s:$('ls'),f:$('lf'),n:$('ln')};
+function lab(){
+  const r=Math.round(S.r.value*10)/10, t=Math.round(S.t.value/15)*15, s=Math.round(S.s.value*10)/10, fi=Math.round(S.f.value/15)*15, n=Math.round(+S.n.value);
+  $('lrv').textContent=num(r); $('ltv').textContent=t+'°'; $('lsv').textContent=num(s); $('lfv').textContent=fi+'°'; $('lnv').textContent=n;
+  $('wCtrls').style.display=mode==='mul'?'':'none';
+  $('nCtrls').style.display=mode==='mul'?'none':'';
+  let x='', eq, items, o={};
+  if(mode==='mul'){
+    $('lrL').innerHTML='האורך של <span class="zlab">z</span>'; $('ltL').innerHTML='הזווית של <span class="zlab">z</span>';
+    const R=r*s, T=t+fi;
+    items=[{r,t,c:'z',vec:true,arc:true,label:'z'},{r:s,t:fi,c:'w',vec:true,arc:true,label:'w'},{r:R,t:T,c:'r',vec:true,arc:true,label:'z · w'}];
+    eq=[`(${cis(r,t)})(${cis(s,fi)})`,`= ${cis(R,T)}`];
+    x+=`<div>אורכים כופלים: ${E(`${num(r)} · ${num(s)} = ${num(R)}`)}.</div>`;
+    x+=`<div>זוויות מחברים: ${E(`${t}° + ${fi}° = ${T}°`)}${T>=360?`, וזה כמו ${E(norm(T)+'°')}`:''}.</div>`;
+    x+=`<div>${s>1?'האורך של w גדול מ-1, אז z נמתח':s<1?'האורך של w קטן מ-1, אז z מתכווץ':'האורך של w הוא 1, אז z רק מסתובב'}, ומסתובב ב-${E(fi+'°')}.</div>`;
+    if(s===1&&fi===90) x+=`<div>${E('cis 90° = i')}: כפל ב-${E('i')} הוא סיבוב ב-90°.</div>`;
+  } else if(mode==='pow'){
+    $('lrL').innerHTML='האורך של <span class="zlab">z</span>'; $('ltL').innerHTML='הזווית של <span class="zlab">z</span>'; $('lnL').textContent='החזקה n';
+    items=[]; o.path=[[0,0]];
+    for(let k=1;k<=n;k++){ items.push({r:Math.pow(r,k),t:k*t,c:k===1?'z':k===n?'r':'m',vec:k===1||k===n,small:k>1&&k<n,arc:k===1||k===n,label:k===1?'z':k===n?'z'+SUP[n]:''}); o.path.push([Math.pow(r,k),k*t]); }
+    o.path.shift();
+    const R=Math.pow(r,n), T=n*t;
+    eq=[`(${cis(r,t)})${SUP[n]}`,`= ${cis(R,T)}`];
+    x+=`<div>דה-מואבר: האורך בחזקה ${E(`${num(r)}${SUP[n]} ≈ ${num(R)}`)}, והזווית כפול ${n}: ${E(`${n} · ${t}° = ${T}°`)}${T>=360?`, וזה כמו ${E(norm(T)+'°')}`:''}.</div>`;
+    x+=`<div>${r>1?'האורך גדול מ-1, אז כל חזקה מתרחקת: ספירלה החוצה.':r<1?'האורך קטן מ-1, אז כל חזקה מתקרבת לראשית: ספירלה פנימה.':'האורך 1, אז כל החזקות נשארות על מעגל היחידה.'}</div>`;
+    x+=`<div>הנקודות האפורות הן ${E('z²')}, ${E('z³')} וכן הלאה: כל אחת מסובבת ב-${E(t+'°')} מהקודמת.</div>`;
+  } else {
+    $('lrL').innerHTML='האורך <span class="eq">R</span> של <span class="wlab">w</span>'; $('ltL').innerHTML='הזווית <span class="eq">Φ</span> של <span class="wlab">w</span>'; $('lnL').textContent='כמה שורשים: n';
+    const rho=Math.pow(r,1/n);
+    items=[{r,t,c:'w',vec:true,arc:true,label:'w'}]; o.poly=[]; o.rings=[rho];
+    const angs=[];
+    for(let k=0;k<n;k++){ const a=(t+360*k)/n; angs.push(a); items.push({r:rho,t:a,c:k===0?'r':'m',vec:k===0,label:'z'+SUB[k]}); o.poly.push([rho,a]); }
+    eq=[`z${SUP[n]} = ${cis(r,t)}`];
+    x+=`<div>לכל השורשים אותו אורך: ${E(`${SUP[n]==='²'?'':SUP[n]}√${num(r)} ≈ ${num(rho)}`)}.</div>`;
+    x+=`<div>הזוויות: ${E(`(${t}° + 360°·k) : ${n}`)}, כלומר ${angs.map(a=>E(num(a)+'°')).join(', ')}.</div>`;
+    x+=`<div>${n} שורשים, במרחק ${E(num(360/n)+'°')} זה מזה: קודקודים של מצולע משוכלל.</div>`;
+  }
+  plane($('labG'),items,o);
+  $('labEq').innerHTML=eq.map(E).join(' ');
+  $('labTxt').innerHTML=x;
+}
+function setMode(m){ mode=m; document.querySelectorAll('#modes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m)); lab(); }
+document.querySelectorAll('#modes button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
+Object.values(S).forEach(el=>el.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{
+  const [m,r,t,s,fi,n]=b.dataset.p.split(',');
+  S.r.value=r; S.t.value=t; if(m==='mul'){ S.s.value=s; S.f.value=fi; } if(n) S.n.value=n; setMode(m);
+}));
+lab();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{steps:[
+    [[{r:2,t:120,c:'z',vec:true,label:'z'}],{},`כתבו את ${E('z = −1 + i√3')} בהצגה קוטבית, ואז חשבו את ${E('z⁶')}.`],
+    [[{r:2,t:120,c:'z',vec:true,label:'z'}],{},`האורך: ${E('r = √((−1)² + (√3)²)')} ${E('= √(1 + 3) = 2')}.`],
+    [[{r:2,t:120,c:'z',vec:true,arc:true,label:'z'}],{},`הנקודה ברביע II (שמאלה ולמעלה). ${E('tan⁻¹(√3 : 1) = 60°')} היא הזווית מהציר, ולכן ${E('θ = 180° − 60° = 120°')}. כלומר ${E('z = 2 cis 120°')}.`],
+    [[{r:64,t:720,c:'r',vec:true,label:'z⁶'}],{},`דה-מואבר: ${E('z⁶ = 2⁶ cis (6 · 120°)')} ${E('= 64 cis 720°')}.`],
+    [[{r:64,t:0,c:'r',vec:true,label:'64'}],{},`${E('720° = 2 · 360°')}, שני סיבובים שלמים, אז ${E('cis 720° = cis 0° = 1')}. התשובה: ${E('z⁶ = 64')}, מספר ממשי!`]
+  ]},
+  B:{steps:[
+    [[{r:8,t:90,c:'w',vec:true,label:'8i'}],{},`פתרו ${E('z³ = 8i')}. קודם כותבים את ${E('8i')} בהצגה קוטבית: הוא על הציר המדומה, ולכן ${E('8i = 8 cis 90°')}.`],
+    [[{r:8,t:90,c:'w',vec:true,label:'8i'}],{rings:[2]},`האורך של כל שורש: ${E('∛8 = 2')}. כל הפתרונות על המעגל הירוק, ברדיוס 2.`],
+    [[{r:8,t:90,c:'w',vec:true,label:'8i'},{r:2,t:30,c:'r',vec:true,label:'z₀'}],{rings:[2]},`הזווית: ${E('(90° + 360°·k) : 3')}. עבור ${E('k = 0')}: ${E('30°')}. השורש הראשון ${E('z₀ = 2 cis 30°')}.`],
+    [[{r:8,t:90,c:'w',vec:true,label:'8i'},{r:2,t:30,c:'r',label:'z₀'},{r:2,t:150,c:'r',label:'z₁'},{r:2,t:270,c:'r',label:'z₂'}],{rings:[2],poly:[[2,30],[2,150],[2,270]]},`עבור ${E('k = 1')}: ${E('150°')}, ועבור ${E('k = 2')}: ${E('270°')}. שלושה שורשים במרחק ${E('120°')} זה מזה: משולש שווה צלעות.`],
+    [[{r:8,t:90,c:'w',vec:true,label:'8i'},{r:2,t:270,c:'r',vec:true,label:'−2i'}],{rings:[2]},`בדיקה לשורש ${E('z₂ = 2 cis 270° = −2i')}: ${E('(−2i)³ = −8i³')} ${E('= −8 · (−i) = 8i')}. נכון!`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [items,o,txt]=e.steps[exI];
+  plane($('exG'),items,o);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k; exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+/* a + bi with exact text: k = integer multiplier, root = times √3 */
+const reTxt=(k,root)=>k===0?'':(k<0?M:'')+(root&&Math.abs(k)===1?'':Math.abs(k))+(root?'√3':'');
+const imTxt=(k,root)=>(Math.abs(k)===1?'':Math.abs(k))+'i'+(root?'√3':'');
+function zText(ka,ra,kb,rb){
+  const A=reTxt(ka,ra);
+  if(kb===0) return A;
+  if(!A) return (kb<0?M:'')+imTxt(kb,rb);
+  return `${A} ${kb<0?M:'+'} ${imTxt(kb,rb)}`;
+}
+const cT=(k,root)=>k===0?'0':reTxt(k,root);
+const QN=t=>{ t=Math.round(norm(t)*1e6)/1e6; return t%90===0?'על ציר':t<90?'I':t<180?'II':t<270?'III':'IV'; };
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let t; do{ t=pick(['polar','polar','mul','pow','root']); }while(t===pr.t&&Math.random()<.6);
+  const p={t,tries:0,hint:0};
+  if(t==='polar'){
+    const fam=pick(['45','45','60','axis']);
+    if(fam==='45'){ const k=ri(1,3), sx=pick([1,-1]), sy=pick([1,-1]); p.a=sx*k; p.b=sy*k; p.txt=zText(sx*k,false,sy*k,false); p.aT=cT(sx*k,false); p.bT=cT(sy*k,false); }
+    else if(fam==='60'){ const k=ri(1,2), sx=pick([1,-1]), sy=pick([1,-1]), big=pick(['re','im']);
+      if(big==='re'){ p.a=sx*k*Math.sqrt(3); p.b=sy*k; p.txt=zText(sx*k,true,sy*k,false); p.aT=cT(sx*k,true); p.bT=cT(sy*k,false); }
+      else { p.a=sx*k; p.b=sy*k*Math.sqrt(3); p.txt=zText(sx*k,false,sy*k,true); p.aT=cT(sx*k,false); p.bT=cT(sy*k,true); } }
+    else { const k=ri(1,4), dir=pick([0,1,2,3]); p.a=[k,0,-k,0][dir]; p.b=[0,k,0,-k][dir]; p.txt=zText(p.a,false,p.b,false); p.aT=cT(p.a,false); p.bT=cT(p.b,false); }
+    p.ans=[Math.hypot(p.a,p.b), r2(norm(Math.atan2(p.b,p.a)/D))%360];
+    p.q=`כתבו את ${E('z = '+p.txt)} בהצגה קוטבית.`;
+    p.pts=[{r:p.ans[0],t:p.ans[1],c:'z',vec:true,label:'z'}]; p.ptsQ=[{r:p.ans[0],t:p.ans[1],c:'z',label:'z'}];
+  } else if(t==='mul'){
+    p.op=Math.random()<.35?'div':'mul';
+    p.a1=ri(1,23)*15; p.a2=ri(1,23)*15;
+    if(p.op==='mul'){ p.r1=ri(1,4); p.r2=ri(1,4); p.ans=[p.r1*p.r2, norm(p.a1+p.a2)]; }
+    else { p.r2=ri(1,2); p.r1=p.r2*ri(1,4); p.ans=[p.r1/p.r2, norm(p.a1-p.a2)]; }
+    const z1=`z₁ = ${cis(p.r1,p.a1)}`, z2=`z₂ = ${cis(p.r2,p.a2)}`;
+    p.q=`נתון ${E(z1)} ו-${E(z2)}. חשבו ${p.op==='mul'?E('z₁ · z₂'):E(FR('z₁','z₂'))}.`;
+    p.ptsQ=[{r:p.r1,t:p.a1,c:'z',vec:true,label:'z₁'},{r:p.r2,t:p.a2,c:'w',vec:true,label:'z₂'}];
+    p.pts=p.ptsQ.concat([{r:p.ans[0],t:p.ans[1],c:'r',vec:true,label:p.op==='mul'?'z₁z₂':'z₁ : z₂'}]);
+  } else if(t==='pow'){
+    p.r=pick([1,1,2,2,0.5,3]); p.n=p.r===3?ri(2,3):p.r===2?ri(2,5):p.r===0.5?ri(2,4):ri(2,6); p.th=ri(1,23)*15;
+    p.ans=[Math.pow(p.r,p.n), norm(p.n*p.th)];
+    p.q=`חשבו ${E(`(${cis(p.r,p.th)})${SUP[p.n]}`)}.`;
+    p.ptsQ=[{r:p.r,t:p.th,c:'z',vec:true,arc:true,label:'z'}];
+    p.pts=p.ptsQ.concat([{r:p.ans[0],t:p.ans[1],c:'r',vec:true,label:'z'+SUP[p.n]}]);
+  } else {
+    p.n=ri(2,4); p.rho=ri(1,3); p.f0=ri(0,Math.floor(360/p.n/15)-1)*15;
+    p.R=Math.pow(p.rho,p.n); p.Phi=p.n*p.f0;
+    p.ans=[p.rho,p.f0];
+    p.q=`פתרו ${E(`z${SUP[p.n]} = ${cis(p.R,p.Phi)}`)}. כתבו את הפתרון שהזווית שלו <strong>הכי קטנה</strong> (בין ${E('0°')} ל-${E('360°')}).`;
+    p.ptsQ=[{r:p.R,t:p.Phi,c:'w',vec:true,label:'w'}];
+    const all=[]; for(let k=0;k<p.n;k++) all.push({r:p.rho,t:p.f0+360*k/p.n,c:k===0?'r':'m',vec:k===0,label:'z'+SUB[k]});
+    p.pts=p.ptsQ.concat(all); p.poly=all.map(q=>[q.r,q.t]);
+  }
+  pr=p;
+  $('prQ').innerHTML=p.q;
+  plane($('prG'),p.t==='polar'?[]:p.ptsQ);
+  $('prR').value=''; $('prT').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr, A=p.ans;
+  if(p.t==='polar'){
+    const ra=Math.atan2(Math.abs(p.b),Math.abs(p.a))/D;
+    const a2=Math.round(p.a*p.a), b2=Math.round(p.b*p.b), rr=a2+b2;
+    let s=`${E(`r = √(${a2} + ${b2}) = √${rr}`)}${Number.isInteger(Math.sqrt(rr))?` ${E('= '+Math.sqrt(rr))}`:` ${E('≈ '+num(A[0]))}`}. `;
+    if(QN(A[1])==='על ציר') s+=`הנקודה על ציר, ולכן הזווית ${E(num(A[1])+'°')}.`;
+    else s+=`הנקודה ברביע ${QN(A[1])}, והזווית מהציר ${E(`tan⁻¹(${p.bT.replace(M,'')} : ${p.aT.replace(M,'')}) = ${num(ra)}°`)}, ולכן ${E(`θ = ${num(A[1])}°`)}.`;
+    return s+` כלומר ${E('z = '+cis(A[0],A[1]))}.`;
+  }
+  if(p.t==='mul'){
+    return p.op==='mul'
+      ? `כופלים אורכים: ${E(`${p.r1} · ${p.r2} = ${A[0]}`)}. מחברים זוויות: ${E(`${p.a1}° + ${p.a2}° = ${p.a1+p.a2}°`)}${p.a1+p.a2>=360?`, כלומר ${E(A[1]+'°')}`:''}. התשובה ${E(cis(A[0],A[1]))}.`
+      : `מחלקים אורכים: ${E(`${p.r1} : ${p.r2} = ${A[0]}`)}. מחסרים זוויות: ${E(`${p.a1}° ${M} ${p.a2}° = ${num(p.a1-p.a2)}°`)}${p.a1-p.a2<0?`, כלומר ${E(A[1]+'°')}`:''}. התשובה ${E(cis(A[0],A[1]))}.`;
+  }
+  if(p.t==='pow'){
+    return `דה-מואבר: ${E(`${num(p.r)}${SUP[p.n]} = ${num(A[0])}`)}, ${E(`${p.n} · ${p.th}° = ${p.n*p.th}°`)}${p.n*p.th>=360?`, כלומר ${E(A[1]+'°')}`:''}. התשובה ${E(cis(A[0],A[1]))}.`;
+  }
+  return `האורך: ${E(`${SUP[p.n]==='²'?'':SUP[p.n]}√${p.R} = ${p.rho}`)}. הזווית הכי קטנה: ${E(`${p.Phi}° : ${p.n} = ${p.f0}°`)}. התשובה ${E(cis(p.rho,p.f0))}, ושאר השורשים מסובבים ב-${E(num(360/p.n)+'°')} כל פעם.`;
+}
+function showRes(){ const p=pr; plane($('prG'),p.pts,{poly:p.poly}); }
+$('prCheck').onclick=()=>{
+  const r=parseNum($('prR').value), th=parseNum($('prT').value.replace('°','')), fb=$('prFb'), p=pr, A=p.ans;
+  if(isNaN(r)||isNaN(th)){ fb.innerHTML='<div class="fb err">כתבו מספר בשתי התיבות: האורך והזווית במעלות.</div>'; return; }
+  const rOK=near(r,A[0],Math.max(.02,A[0]*.01)), tOK=angNear(th,A[1],1);
+  if(rOK&&tOK){ streak++; solved++; streakTxt(); showRes(); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  let m;
+  const rn=v=>near(r,v,Math.max(.02,Math.abs(v)*.01));
+  if(p.t==='polar'){
+    if(rOK&&angNear(th,A[1]+180,1)) m='האורך נכון. הזווית הפוכה ב-180°: בדקו באיזה רביע הנקודה. המחשבון נותן tan⁻¹ רק ברביע I או IV.';
+    else if(rOK&&angNear(th,-A[1],1)) m='האורך נכון. הזווית נמדדת מהציר הממשי החיובי <strong>נגד</strong> כיוון השעון.';
+    else if(rOK&&near(th,A[1]*D,.03)) m='נראה שהזווית ברדיאנים. כתבו אותה במעלות.';
+    else if(rn(A[0]*A[0])&&!rOK) m='שכחתם להוציא שורש: r הוא השורש של a² + b².';
+    else if(rn(Math.abs(p.a)+Math.abs(p.b))&&!rOK) m=`${E('r = √(a² + b²)')}, לא ${E('a + b')}.`;
+    else if(rOK) m='האורך נכון. עכשיו הזווית: ציירו את הנקודה, מצאו את הזווית מהציר ותקנו לפי הרביע.';
+    else if(tOK) m=`הזווית נכונה. האורך הוא ${E('√(a² + b²)')}.`;
+    else m='עוד לא. התחילו מהאורך, ואז מצאו את הרביע.';
+  } else if(p.t==='mul'){
+    const mul=p.op==='mul';
+    if(mul&&rn(p.r1+p.r2)) m='בכפל <strong>כופלים</strong> את האורכים, לא מחברים.';
+    else if(!mul&&rn(p.r1*p.r2)) m='בחילוק <strong>מחלקים</strong> את האורכים.';
+    else if(!mul&&rn(p.r1-p.r2)&&!rOK) m='בחילוק מחלקים את האורכים, לא מחסרים.';
+    else if(rOK&&mul&&angNear(th,p.a1-p.a2,1)) m='האורך נכון. בכפל <strong>מחברים</strong> את הזוויות. מחסרים רק בחילוק.';
+    else if(rOK&&!mul&&angNear(th,p.a1+p.a2,1)) m='האורך נכון. בחילוק <strong>מחסרים</strong> את הזוויות.';
+    else if(rOK&&angNear(th,p.a1*p.a2,1)) m='את הזוויות לא כופלים. בכפל מחברים, בחילוק מחסרים.';
+    else if(rOK) m='האורך נכון. בדקו שוב את הזווית.';
+    else if(tOK) m='הזווית נכונה. בדקו שוב את האורך.';
+    else m=mul?'עוד לא. בכפל: כופלים אורכים ומחברים זוויות.':'עוד לא. בחילוק: מחלקים אורכים ומחסרים זוויות.';
+  } else if(p.t==='pow'){
+    if(rn(p.r*p.n)&&!rOK) m=`האורך הוא ${E(`${num(p.r)}${SUP[p.n]}`)}, בחזקה, לא כפול ${p.n}.`;
+    else if(rOK&&angNear(th,p.th,1)&&!tOK) m=`האורך נכון. גם הזווית משתנה: כופלים אותה ב-${p.n}.`;
+    else if(rOK&&angNear(th,p.th+p.n,1)) m=`האורך נכון. את הזווית <strong>כופלים</strong> ב-${p.n}, לא מוסיפים.`;
+    else if(rOK) m=`האורך נכון. הזווית: ${E(`${p.n} · ${p.th}°`)}, ואם יצא יותר מ-360°, מורידים סיבובים שלמים.`;
+    else if(tOK) m=`הזווית נכונה. האורך: ${E(`${num(p.r)}${SUP[p.n]}`)}.`;
+    else m=`עוד לא. דה-מואבר: ${E('(r cis θ)ⁿ = rⁿ cis (nθ)')}.`;
+  } else {
+    const other=[]; for(let k=1;k<p.n;k++) other.push(p.f0+360*k/p.n);
+    if(rn(p.R/p.n)&&!rOK) m=`את האורך לא מחלקים ב-${p.n}. לוקחים שורש מסדר ${p.n}: איזה מספר בחזקת ${p.n} נותן ${p.R}?`;
+    else if(rn(p.R)&&!rOK&&p.R!==p.rho) m=`זה האורך של ${E('w')}. לכל שורש האורך הוא ${E(`${SUP[p.n]==='²'?'':SUP[p.n]}√${p.R}`)}.`;
+    else if(rOK&&other.some(a=>angNear(th,a,1))) m='זה באמת אחד השורשים! אבל ביקשנו את השורש עם הזווית הכי קטנה.';
+    else if(rOK&&angNear(th,p.Phi,1)&&p.Phi!==p.f0) m=`האורך נכון. את הזווית צריך <strong>לחלק</strong> ב-${p.n}.`;
+    else if(rOK&&angNear(th,p.Phi*p.n,1)) m=`האורך נכון. את הזווית מחלקים ב-${p.n}, לא כופלים.`;
+    else if(rOK) m=`האורך נכון. הזווית הכי קטנה היא ${E(`Φ : ${p.n}`)}.`;
+    else if(tOK) m=`הזווית נכונה. האורך: ${E(`${SUP[p.n]==='²'?'':SUP[p.n]}√${p.R}`)}.`;
+    else m='עוד לא. לכל השורשים אותו אורך, השורש מסדר n של R. הזווית הראשונה: Φ חלקי n.';
+  }
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2);
+  let h;
+  if(p.t==='polar'){
+    if(p.hint===2) plane($('prG'),p.ptsQ);
+    h=p.hint===1?`האורך הוא המרחק מהראשית: ${E('r = √(a² + b²)')}. כאן ${E(`a = ${p.aT}`)} ו-${E(`b = ${p.bT}`)}.`
+      :`${E(`r ≈ ${num(p.ans[0])}`)}. הנקודה ${QN(p.ans[1])==='על ציר'?'על ציר':'ברביע '+QN(p.ans[1])} (ראו בגרף). מצאו את הזווית מהציר ב-${E('tan⁻¹(|b| : |a|)')} ותקנו לפי הרביע.`;
+  } else if(p.t==='mul'){
+    h=p.hint===1?(p.op==='mul'?'בכפל: כופלים את האורכים ומחברים את הזוויות.':'בחילוק: מחלקים את האורכים ומחסרים את הזוויות.')
+      :(p.op==='mul'?`האורך ${E(`${p.r1} · ${p.r2}`)}, הזווית ${E(`${p.a1}° + ${p.a2}°`)}. אם יצא מעל 360°, הורידו 360°.`
+        :`האורך ${E(`${p.r1} : ${p.r2}`)}, הזווית ${E(`${p.a1}° ${M} ${p.a2}°`)}. אם יצא שלילי, הוסיפו 360°.`);
+  } else if(p.t==='pow'){
+    h=p.hint===1?`משפט דה-מואבר: ${E('(r cis θ)ⁿ = rⁿ cis (nθ)')}.`
+      :`האורך ${E(`${num(p.r)}${SUP[p.n]}`)}, הזווית ${E(`${p.n} · ${p.th}° = ${p.n*p.th}°`)}${p.n*p.th>=360?'. הורידו סיבובים שלמים של 360°.':'.'}`;
+  } else {
+    h=p.hint===1?`כתבו ${E(`z = r cis θ`)}. אז ${E(`z${SUP[p.n]} = r${SUP[p.n]} cis (${p.n}θ)`)}, וזה צריך להיות ${E(cis(p.R,p.Phi))}.`
+      :`${E(`r${SUP[p.n]} = ${p.R}`)}, ולכן ${E(`r = ${SUP[p.n]==='²'?'':SUP[p.n]}√${p.R}`)}. הזווית הכי קטנה: ${E(`θ = ${p.Phi}° : ${p.n}`)}.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ showRes(); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+['prR','prT'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

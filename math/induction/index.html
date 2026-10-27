@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>אינדוקציה מתמטית · כיתה יב · מירי</title>
+<meta name="description" content="מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/induction/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אינדוקציה מתמטית · כיתה יב · מירי">
+<meta property="og:description" content="מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/induction/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"אינדוקציה","item":"https://shohamtal.github.io/homework-site/math/grade-12/#proof-12"},{"@type":"ListItem","position":5,"name":"אינדוקציה מתמטית","item":"https://shohamtal.github.io/homework-site/math/induction/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה אינדוקציה מתמטית?","acceptedAnswer":{"@type":"Answer","text":"שיטה להוכיח שטענה נכונה לכל מספר טבעי. בודקים את המקרה הראשון (בסיס), מניחים שהטענה נכונה עבור n (הנחה), ומוכיחים שהיא נכונה גם עבור n + 1 (צעד). כמו שורת דומינו: הראשון נופל, וכל אחד מפיל את הבא. ראו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין הנחת האינדוקציה לצעד האינדוקציה?","acceptedAnswer":{"@type":"Answer","text":"בהנחה לא מוכיחים כלום: רק כותבים את הטענה עבור n ומניחים שהיא נכונה. בצעד מוכיחים את הטענה עבור n + 1, ומשתמשים בהנחה באמצע הדרך. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"למה לא מספיק לבדוק הרבה מקרים?","acceptedAnswer":{"@type":"Answer","text":"כי טענה יכולה להיות נכונה במקרים הראשונים ולהישבר אחר כך. למשל n² − n + 41 ראשוני עד 41, אבל ב-42 יוצא 41 · 43. רק הצעד מבטיח שהטענה ממשיכה לכל n."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אינדוקציה מתמטית","description":"מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/induction/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"אינדוקציה","teaches":"אינדוקציה מתמטית","keywords":"בסיס האינדוקציה, צעד האינדוקציה, הוכחה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.dom{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.dom .bg{fill:var(--card)}
+.dom .floor{stroke:var(--ink); stroke-width:1.5}
+.dom .up{fill:var(--card); stroke:var(--ink); stroke-width:1.5}
+.dom .down{fill:var(--line); stroke:var(--ink); stroke-width:1.5}
+.dom .next{fill:var(--hl); stroke:var(--ink); stroke-width:2}
+.dom .num{fill:var(--ink); font:700 9px var(--f-math); text-anchor:middle}
+.dom .cap{fill:var(--muted); font:10px var(--f-body); text-anchor:middle}
+.claim{font-family:var(--f-math); font-size:1.2rem; text-align:center; direction:ltr; line-height:1.6}
+table.chk{border-collapse:collapse; margin-inline:auto; font-family:var(--f-math); direction:ltr}
+table.chk th, table.chk td{border:1px solid var(--soft); padding:3px 10px; text-align:center}
+table.chk th{font-family:var(--f-body); font-size:.85rem; background:var(--paper)}
+table.chk tr.cur td{background:var(--hl)}
+.stage[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.choices button{font:1.05rem var(--f-math); direction:ltr}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.calc .eq, .claim .eq{white-space:normal}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="induction">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#proof-12">אינדוקציה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">אינדוקציה מתמטית</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · אינדוקציה</div>
+  <h1>אינדוקציה מתמטית <span class="slogan">שורת דומינו שלא נגמרת</span></h1>
+  <p class="lead">איך מוכיחים שטענה נכונה לכל מספר טבעי, בלי לבדוק אינסוף מקרים? מראים שהדומינו הראשון נופל, ושכל דומינו שנופל מפיל את הבא אחריו. זאת אינדוקציה מתמטית, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שלושה שלבים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>1. בסיס</h3>
+      <p>בודקים שהטענה נכונה עבור <span class="eq"><i>n</i> = 1</span>. הדומינו הראשון נופל.</p>
+    </div>
+    <div class="mini">
+      <h3>2. הנחה</h3>
+      <p>מניחים שהטענה נכונה עבור <span class="eq"><i>n</i></span> כלשהו. הדומינו ה-n נפל.</p>
+    </div>
+    <div class="mini">
+      <h3>3. צעד</h3>
+      <p>מוכיחים, בעזרת ההנחה, שהיא נכונה גם עבור <span class="eq"><i>n</i> + 1</span>. כל דומינו מפיל את הבא.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>למה זה עובד?</strong> הבסיס מפיל את 1. הצעד אומר ש-1 מפיל את 2, ש-2 מפיל את 3, וכך הלאה. אף דומינו לא נשאר עומד. הנוסחאות של <a href="../arithmetic-series/">סכום סדרה חשבונית</a> הן דוגמה טובה לטענות שמוכיחים כך.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מפילים דומינו</h2></div>
+  <p class="text">בחרו טענה והזיזו את <i>n</i>. הטבלה בודקת את שני האגפים לכל מספר עד <i>n</i>, והדומינו הצהוב הוא הבא בתור. לחצו על "בסיס", "הנחה" ו"צעד" כדי לראות את ההוכחה של הטענה.</p>
+  <div class="lab">
+    <div>
+      <div class="claim" id="labClaim"></div>
+      <svg class="dom" id="labG" viewBox="0 0 320 110" role="img" aria-label="שורת דומינו שנופלים אחד אחרי השני"></svg>
+      <div class="scroll-x"><table class="chk" id="labT"></table></div>
+    </div>
+    <div class="ctrl">
+      <div><label class="slider" for="n"><span>עד איזה <span class="eq"><i>n</i></span> בודקים</span><span class="eq" id="nv"></span></label>
+        <input type="range" id="n" min="1" max="10" step="1" value="4"></div>
+      <div class="row" role="group" aria-label="שלב בהוכחה">
+        <button class="stage" data-s="base" aria-pressed="true">בסיס</button>
+        <button class="stage" data-s="hyp" aria-pressed="false">הנחה</button>
+        <button class="stage" data-s="step" aria-pressed="false">צעד</button>
+      </div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="claims">
+          <button dir="ltr" data-c="odd">1 + 3 + 5 + …</button>
+          <button dir="ltr" data-c="nat">1 + 2 + 3 + …</button>
+          <button dir="ltr" data-c="sq">1² + 2² + 3² + …</button>
+          <button dir="ltr" data-c="pow">1 + 2 + 4 + …</button>
+          <button dir="ltr" data-c="div">7ⁿ − 1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>בדיקה של כמה מקרים זאת לא הוכחה</h3>
+      <p>הביטוי <span class="eq"><i>n</i>² − <i>n</i> + 41</span> נותן מספר ראשוני לכל n מ-1 עד 41.</p>
+      <p>אבל ב-<span class="eq"><i>n</i> = 42</span> יוצא <span class="eq">1763 = 41 · 43</span>. רק הצעד מבטיח שזה ממשיך לנצח.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את הבסיס</h3>
+      <p>"<span class="eq"><i>n</i> = <i>n</i> + 1</span>" עובר את הצעד: אם זה נכון, מוסיפים 1 לשני הצדדים ומקבלים את הטענה ל-n + 1.</p>
+      <p>אבל עבור <span class="eq"><i>n</i> = 1</span> יוצא <span class="eq">1 = 2</span>. בלי בסיס, אף דומינו לא נופל.</p>
+    </div>
+    <div class="mini">
+      <h3>מציבים n + 1 רק בחלק מהמקומות</h3>
+      <p>בטענה עבור n + 1 מחליפים <strong>כל</strong> n ב-(n + 1).</p>
+      <p><span class="eq"><i>n</i>(<i>n</i> + 1)/2</span> הופך ל-<span class="eq">(<i>n</i> + 1)(<i>n</i> + 2)/2</span>, ולא ל-<span class="eq">(<i>n</i> + 1)(<i>n</i> + 1)/2</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הטריק של הצעד:</strong> מחפשים את אגף שמאל של ההנחה בתוך אגף שמאל של הטענה עבור n + 1. מחליפים אותו באגף ימין של ההנחה, ומסדרים.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">הוכיחו שלכל n טבעי:</p>
+  <div class="claim"><span class="eq">1 + 3 + 5 + … + (2<i>n</i> − 1) = <i>n</i>²</span></div>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חלקי ההוכחה</h2></div>
+  <p class="text">כל פעם תקבלו טענה ושאלה על אחד השלבים של ההוכחה: איזה איבר מוסיפים בצעד, מה צריך לצאת בצעד, או בדיקה של מקרה אחד.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="next" aria-pressed="false">האיבר הבא</button>
+    <button data-t="goal" aria-pressed="false">מה מוכיחים בצעד</button>
+    <button data-t="value" aria-pressed="false">בדיקת מקרה</button>
+  </div>
+  <div class="claim" id="prClaim"></div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="choices" id="prChoices"></div>
+  <div class="inputs" id="prInWrap">
+    <label for="prA"><span>התשובה</span><input id="prA" inputmode="text" autocomplete="off"></label>
+  </div>
+  <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה אינדוקציה מתמטית?</h3>
+    <p>שיטה להוכיח שטענה נכונה לכל מספר טבעי. בודקים את המקרה הראשון (בסיס), מניחים שהטענה נכונה עבור n (הנחה), ומוכיחים שהיא נכונה גם עבור n + 1 (צעד). כמו שורת דומינו: הראשון נופל, וכל אחד מפיל את הבא. <a href="#lab">ראו במעבדה</a>.</p>
+    <h3>מה ההבדל בין הנחת האינדוקציה לצעד האינדוקציה?</h3>
+    <p>בהנחה לא מוכיחים כלום: רק כותבים את הטענה עבור n ומניחים שהיא נכונה. בצעד מוכיחים את הטענה עבור n + 1, ומשתמשים בהנחה באמצע הדרך. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>למה לא מספיק לבדוק הרבה מקרים?</h3>
+    <p>כי טענה יכולה להיות נכונה במקרים הראשונים ולהישבר אחר כך. למשל <span class="eq"><i>n</i>² − <i>n</i> + 41</span> ראשוני עד 41, אבל ב-42 יוצא <span class="eq">41 · 43</span>. רק הצעד מבטיח שהטענה ממשיכה לכל n.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/arithmetic-series/">סדרה חשבונית: איבר כללי וסכום</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/complex-polar/"><small>→ הנושא הקודם</small>הצגה קוטבית ומשפט דה-מואבר</a><a class="next" href="../../math/"><small>סיימתם את הפרק ←</small>לכל הנושאים במתמטיקה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const N='<i>n</i>';
+const SUP={0:'⁰',1:'¹',2:'²',3:'³',4:'⁴',5:'⁵',6:'⁶',7:'⁷',8:'⁸',9:'⁹'};
+const sup=k=>String(k).split('').map(c=>SUP[c]).join('');
+
+/* ---------- claims ---------- */
+const C={
+  odd:{claim:`1 + 3 + 5 + … + (2${N} − 1) = ${N}²`, term:k=>2*k-1, L:k=>k*k, R:k=>k*k,
+    termTxt:k=>String(2*k-1), lhsName:'הסכום', rhsName:`${N}²`,
+    base:`${E('1 = 1²')}. נכון.`,
+    hyp:`${E(`1 + 3 + … + (2${N} − 1) = ${N}²`)}`,
+    step:[`צריך להוכיח: ${E(`1 + 3 + … + (2${N} − 1) + (2${N} + 1) = (${N} + 1)²`)}.`,
+          `לפי ההנחה, כל מה שלפני האיבר האחרון שווה ${E(`${N}²`)}.`,
+          `אז אגף שמאל הוא ${E(`${N}² + 2${N} + 1 = (${N} + 1)²`)}. הוכחנו.`],
+    next:{ok:`2${N} + 1`, bad:{[`2${N} − 1`]:`זה האיבר ה-n, והוא כבר בסכום. הציבו ${N} + 1 באיבר הכללי: 2(${N} + 1) − 1.`, [`2${N}`]:'בסכום יש רק מספרים אי-זוגיים. הציבו n + 1 בתוך (2n − 1).', [`${N} + 1`]:'זה מספר האיברים, לא האיבר עצמו. הציבו n + 1 באיבר הכללי (2n − 1).'},
+      gen:`האיבר הכללי הוא ${E(`2${N} − 1`)}. מציבים ${E(`${N} + 1`)}: ${E(`2(${N} + 1) − 1 = 2${N} + 1`)}.`},
+    goal:{ok:`(${N} + 1)²`, bad:{[`${N}² + 1`]:'מציבים n + 1 במקום n, והריבוע הוא על כל הסוגריים: (n + 1)².', [`${N}²`]:'זאת ההנחה, עבור n. בצעד מוכיחים את הטענה עבור n + 1.', [`${N}² + 2${N}`]:'קרוב! (n + 1)² = n² + 2n + 1. חסר ה-1.'},
+      gen:`מחליפים את ${E(N)} ב-${E(`(${N} + 1)`)} באגף ימין: ${E(`${N}²`)} הופך ל-${E(`(${N} + 1)²`)}.`}},
+  nat:{claim:`1 + 2 + 3 + … + ${N} = ${N}(${N} + 1)/2`, term:k=>k, L:k=>k*(k+1)/2, R:k=>k*(k+1)/2,
+    termTxt:k=>String(k), lhsName:'הסכום', rhsName:`${N}(${N} + 1)/2`,
+    base:`${E('1 = 1 · 2 / 2')}. נכון.`,
+    hyp:`${E(`1 + 2 + … + ${N} = ${N}(${N} + 1)/2`)}`,
+    step:[`צריך להוכיח: ${E(`1 + 2 + … + ${N} + (${N} + 1)`)} ${E(`= (${N} + 1)(${N} + 2)/2`)}.`,
+          `לפי ההנחה: ${E(`${N}(${N} + 1)/2 + (${N} + 1)`)}.`,
+          `מוציאים ${E(`(${N} + 1)`)} כגורם משותף: ${E(`(${N} + 1)(${N}/2 + 1)`)} ${E(`= (${N} + 1)(${N} + 2)/2`)}. הוכחנו.`],
+    next:{ok:`${N} + 1`, bad:{[N]:'n כבר נמצא בסכום. האיבר הבא גדול ממנו ב-1.', [`2${N}`]:'כל איבר גדול ב-1 מהקודם, לא פי 2.', [`${N} + 2`]:'קפצתם איבר אחד. אחרי n בא n + 1.'},
+      gen:`האיבר ה-k הוא פשוט ${E('<i>k</i>')}. אחרי ${E(N)} בא ${E(`${N} + 1`)}.`},
+    goal:{ok:`(${N} + 1)(${N} + 2)/2`, bad:{[`${N}(${N} + 1)/2 + 1`]:'לא מוסיפים 1 לתוצאה. מציבים n + 1 בכל מקום שיש n.', [`(${N} + 1)(${N} + 1)/2`]:'גם בסוגריים השניים מציבים: (n + 1) + 1 = n + 2.', [`${N}(${N} + 1)/2`]:'זאת ההנחה, עבור n. בצעד צריך את הטענה עבור n + 1.'},
+      gen:`מציבים ${E(`${N} + 1`)} בכל מקום: ${E(`${N}(${N} + 1)/2`)} הופך ל-${E(`(${N} + 1)((${N} + 1) + 1)/2`)}.`}},
+  sq:{claim:`1² + 2² + … + ${N}² = ${N}(${N} + 1)(2${N} + 1)/6`, term:k=>k*k, L:k=>k*(k+1)*(2*k+1)/6, R:k=>k*(k+1)*(2*k+1)/6,
+    termTxt:k=>`${k}²`, lhsName:'הסכום', rhsName:`${N}(${N} + 1)(2${N} + 1)/6`,
+    base:`${E('1² = 1 · 2 · 3 / 6 = 1')}. נכון.`,
+    hyp:`${E(`1² + … + ${N}² = ${N}(${N} + 1)(2${N} + 1)/6`)}`,
+    step:[`צריך להוכיח שהסכום עד ${E(`(${N} + 1)²`)} שווה ${E(`(${N} + 1)(${N} + 2)(2${N} + 3)/6`)}.`,
+          `לפי ההנחה: ${E(`${N}(${N} + 1)(2${N} + 1)/6 + (${N} + 1)²`)}.`,
+          `מוציאים ${E(`(${N} + 1)/6`)}: ${E(`(${N} + 1)[${N}(2${N} + 1) + 6(${N} + 1)]/6`)}.`,
+          `בסוגריים המרובעים: ${E(`2${N}² + 7${N} + 6 = (${N} + 2)(2${N} + 3)`)}. הוכחנו.`],
+    next:{ok:`(${N} + 1)²`, bad:{[`${N}²`]:'n² כבר בסכום. האיבר הבא הוא הריבוע של המספר הבא.', [`${N}² + 1`]:'מעלים בריבוע את n + 1 כולו, לא מוסיפים 1 לריבוע.', [`2${N} + 1`]:'זה ההפרש בין שני ריבועים, לא האיבר עצמו. האיבר הבא הוא (n + 1)².'},
+      gen:`האיבר ה-k הוא ${E('<i>k</i>²')}. האיבר ה-(n + 1) הוא ${E(`(${N} + 1)²`)}.`},
+    goal:{ok:`(${N} + 1)(${N} + 2)(2${N} + 3)/6`, bad:{[`(${N} + 1)(${N} + 2)(2${N} + 1)/6`]:'גם 2n + 1 משתנה: 2(n + 1) + 1 = 2n + 3.', [`(${N} + 1)(${N} + 1)(2${N} + 2)/6`]:'הציבו בזהירות: n + 1, ואז (n + 1) + 1 = n + 2, ואז 2(n + 1) + 1 = 2n + 3.', [`${N}(${N} + 1)(2${N} + 1)/6`]:'זאת ההנחה, עבור n. בצעד צריך את הטענה עבור n + 1.'},
+      gen:`מציבים ${E(`${N} + 1`)} בשלושת המקומות: ${E(`${N} + 1`)}, ${E(`${N} + 2`)} ו-${E(`2(${N} + 1) + 1 = 2${N} + 3`)}.`}},
+  pow:{claim:'1 + 2 + 4 + … + 2ⁿ⁻¹ = 2ⁿ − 1', term:k=>Math.pow(2,k-1), L:k=>Math.pow(2,k)-1, R:k=>Math.pow(2,k)-1,
+    termTxt:k=>String(Math.pow(2,k-1)), lhsName:'הסכום', rhsName:'2ⁿ − 1',
+    base:`${E('1 = 2¹ − 1')}. נכון.`,
+    hyp:`${E('1 + 2 + … + 2ⁿ⁻¹ = 2ⁿ − 1')}`,
+    step:[`צריך להוכיח: ${E('1 + 2 + … + 2ⁿ⁻¹ + 2ⁿ = 2ⁿ⁺¹ − 1')}.`,
+          `לפי ההנחה: ${E('2ⁿ − 1 + 2ⁿ')}.`,
+          `${E('2ⁿ + 2ⁿ = 2 · 2ⁿ = 2ⁿ⁺¹')}, ולכן יוצא ${E('2ⁿ⁺¹ − 1')}. הוכחנו.`],
+    next:{ok:'2ⁿ', bad:{'2ⁿ⁻¹':'2ⁿ⁻¹ הוא האיבר ה-n, והוא כבר בסכום.', '2ⁿ⁺¹':'המעריך תמיד קטן ב-1 מהמקום: האיבר ה-(n + 1) הוא 2ⁿ.', [`2${N}`]:'זה כפל ב-n, לא חזקה. האיברים הם חזקות של 2.'},
+      gen:`האיבר ה-k הוא ${E('2<sup><i>k</i> − 1</sup>')}. מציבים ${E(`${N} + 1`)}: ${E('2ⁿ')}.`},
+    goal:{ok:'2ⁿ⁺¹ − 1', bad:{'2ⁿ − 1':'זאת ההנחה, עבור n. בצעד צריך את הטענה עבור n + 1.', '2ⁿ':'שכחתם את ה-1 שמחסירים בסוף.', '2ⁿ − 1 + 1':'לא מוסיפים 1. מציבים n + 1 במעריך: 2ⁿ⁺¹ − 1.'},
+      gen:`מציבים ${E(`${N} + 1`)} במעריך: ${E('2ⁿ − 1')} הופך ל-${E('2ⁿ⁺¹ − 1')}.`}},
+  div:{claim:'7ⁿ − 1 מתחלק ב-6', div:true, L:k=>Math.pow(7,k)-1, R:k=>(Math.pow(7,k)-1)/6,
+    base:`${E('7¹ − 1 = 6')}, ו-6 מתחלק ב-6. נכון.`,
+    hyp:`${E('7ⁿ − 1 = 6<i>m</i>')} עבור מספר שלם ${E('<i>m</i>')}.`,
+    step:[`צריך להוכיח ש-${E('7ⁿ⁺¹ − 1')} מתחלק ב-6.`,
+          `${E('7ⁿ⁺¹ − 1 = 7 · 7ⁿ − 7 + 6')} ${E('= 7(7ⁿ − 1) + 6')}.`,
+          `לפי ההנחה ${E('7ⁿ − 1 = 6<i>m</i>')}, אז יוצא ${E('7 · 6<i>m</i> + 6 = 6(7<i>m</i> + 1)')}. מתחלק ב-6. הוכחנו.`],
+    next:{q:`בצעד כותבים ${E('7ⁿ⁺¹ − 1 = 7(7ⁿ − 1) + ?')} מה המספר החסר?`, ok:'6', bad:{'1':'בדקו: 7(7ⁿ − 1) = 7ⁿ⁺¹ − 7. כדי להגיע ל-7ⁿ⁺¹ − 1 צריך להוסיף 6.', '7':'פתחו סוגריים: 7(7ⁿ − 1) = 7ⁿ⁺¹ − 7. מה חסר כדי לקבל 7ⁿ⁺¹ − 1?', '0':'אז היה יוצא 7ⁿ⁺¹ − 7, לא 7ⁿ⁺¹ − 1.'},
+      gen:`פתחו: ${E('7(7ⁿ − 1) = 7ⁿ⁺¹ − 7')}. כדי לקבל ${E('7ⁿ⁺¹ − 1')} מוסיפים ${E('6')}.`},
+    goal:{q:'מה צריך להוכיח בצעד?', ok:'7ⁿ⁺¹ − 1 מתחלק ב-6', bad:{'7ⁿ − 1 מתחלק ב-6':'זאת ההנחה. בצעד מוכיחים עבור n + 1.', '7ⁿ⁺¹ מתחלק ב-6':'שכחתם את ה-1. מציבים n + 1 בכל הטענה: 7ⁿ⁺¹ − 1.', '7ⁿ⁺¹ − 1 מתחלק ב-7':'המחלק לא משתנה. רק n מוחלף ב-(n + 1).'},
+      gen:`מחליפים ${E(N)} ב-${E(`${N} + 1`)} בטענה: ${E('7ⁿ⁺¹ − 1')} מתחלק ב-6.`}}
+};
+
+/* ---------- lab ---------- */
+let cur='odd', stage='base';
+function dominoes(n){
+  let h=`<rect class="bg" x="0" y="0" width="320" height="110"/><line class="floor" x1="6" y1="86" x2="314" y2="86"/>`;
+  for(let k=1;k<=10;k++){
+    const x=14+(k-1)*30, cls=k<=n?'down':k===n+1?'next':'up';
+    const rot=k<=n?` transform="rotate(${k===10?60:24} ${x+12} 86)"`:'';
+    h+=`<rect class="${cls}" x="${x}" y="36" width="12" height="50" rx="2"${rot}/>`;
+    h+=`<text class="num" x="${x+6}" y="100">${k}</text>`;
+  }
+  h+=`<text class="cap" x="160" y="18">${n>=10?'כל הדומינו נפלו, וכך הלאה לנצח':`נפלו ${n}, הבא בתור: ${n+1}`}</text>`;
+  $('labG').innerHTML=h;
+}
+function table(n){
+  const c=C[cur];
+  let h=c.div?'<tr><th>n</th><th>7ⁿ − 1</th><th>חלקי 6</th><th></th></tr>':`<tr><th>n</th><th>${c.lhsName}</th><th>${c.rhsName}</th><th></th></tr>`;
+  for(let k=1;k<=n;k++){
+    const l=c.L(k), r=c.R(k), ok=c.div?Number.isInteger(r):eqv(l,r);
+    h+=`<tr class="${k===n?'cur':''}"><td>${k}</td><td>${numTxt(l)}</td><td>${numTxt(r)}</td><td>${ok?'✓':'✗'}</td></tr>`;
+  }
+  $('labT').innerHTML=h;
+}
+function lab(){
+  const n=+$('n').value, c=C[cur];
+  $('nv').textContent=n;
+  $('labClaim').innerHTML=E(c.claim);
+  dominoes(n); table(n);
+  let t;
+  if(stage==='base') t=`<div><strong>בסיס, ${E(`${N} = 1`)}:</strong> ${c.base}</div><div>הדומינו הראשון נופל.</div>`;
+  else if(stage==='hyp') t=`<div><strong>הנחה:</strong> מניחים ש-${c.hyp}</div><div>לא מוכיחים כאן כלום. רק אומרים: נניח שהדומינו ה-n נפל.</div>`;
+  else t=`<div><strong>צעד:</strong></div>`+c.step.map(s=>`<div>${s}</div>`).join('')+`<div>כל דומינו מפיל את הבא, ולכן הטענה נכונה לכל ${E(N)}.</div>`;
+  if(n>=2) t+=`<div>בטבלה: גם ${E(`${N} = ${n}`)} עובד. אבל רק הצעד מבטיח שזה ממשיך אחרי 10.</div>`;
+  $('labCalc').innerHTML=t;
+}
+$('n').addEventListener('input',lab);
+document.querySelectorAll('#lab .stage').forEach(b=>b.onclick=()=>{
+  stage=b.dataset.s;
+  document.querySelectorAll('#lab .stage').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  lab();
+});
+document.querySelectorAll('#claims button').forEach(b=>b.onclick=()=>{ cur=b.dataset.c; if(cur==='div'&&+$('n').value>6) $('n').value=6; lab(); });
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>בסיס:</strong> עבור ${E(`${N} = 1`)} אגף שמאל הוא רק ${E('1')}, ואגף ימין ${E('1² = 1')}. נכון.`,
+  `<strong>הנחה:</strong> נניח שעבור ${E(N)} כלשהו ${E(`1 + 3 + … + (2${N} − 1) = ${N}²`)}.`,
+  `<strong>מה צריך להוכיח:</strong> את הטענה עבור ${E(`${N} + 1`)}. האיבר הבא הוא ${E(`2(${N} + 1) − 1 = 2${N} + 1`)}, אז צריך ${E(`1 + 3 + … + (2${N} − 1) + (2${N} + 1)`)} ${E(`= (${N} + 1)²`)}.`,
+  `<strong>משתמשים בהנחה:</strong> כל מה שלפני ${E(`(2${N} + 1)`)} שווה ${E(`${N}²`)}. אז אגף שמאל הוא ${E(`${N}² + 2${N} + 1`)}.`,
+  `<strong>מסדרים:</strong> ${E(`${N}² + 2${N} + 1 = (${N} + 1)²`)}, לפי נוסחת הכפל המקוצר. זה בדיוק אגף ימין.`,
+  `<strong>מסקנה:</strong> הבסיס נכון, והצעד עובד לכל ${E(N)}. לכן הטענה נכונה לכל ${E(N)} טבעי.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, sel=null, solved=0, streak=0;
+function newPr(){
+  const type=mode==='mix'?pick(['next','goal','value']):mode;
+  const key=pick(Object.keys(C)), c=C[key];
+  pr={type,key,tries:0,hint:0};
+  sel=null;
+  $('prClaim').innerHTML=E(c.claim);
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  if(type==='value'){
+    const k=c.div?rnd(2,3):rnd(3,6); pr.k=k;
+    pr.ans=c.div?c.R(k):c.L(k);
+    $('prQ').innerHTML=c.div?`בדקו עבור ${E(`${N} = ${k}`)}: כמה זה ${E(`(7${sup(k)} − 1) ÷ 6`)}?`
+      :`בדקו עבור ${E(`${N} = ${k}`)}: כמה יוצא ${c.lhsName} באגף שמאל?`;
+    $('prChoices').innerHTML=''; $('prInWrap').hidden=false;
+    return;
+  }
+  const part=c[type];
+  pr.ok=part.ok;
+  $('prQ').innerHTML=part.q||(type==='next'?'בצעד האינדוקציה מוסיפים לאגף שמאל איבר אחד. איזה איבר?':`בצעד האינדוקציה, מה צריך לצאת באגף ימין?`);
+  pr.ch=shuffle([part.ok,...Object.keys(part.bad)]);
+  $('prChoices').innerHTML=pr.ch.map((t,i)=>`<button data-i="${i}" aria-pressed="false">${t}</button>`).join('');
+  $('prChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    sel=+b.dataset.i;
+    $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  });
+  $('prInWrap').hidden=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const c=C[pr.key];
+  if(pr.type==='value'){
+    if(c.div) return `${E(`7${sup(pr.k)} − 1 = ${numTxt(c.L(pr.k))}`)}, וחלקי 6 זה ${E(numTxt(pr.ans))}.`;
+    const terms=Array.from({length:pr.k},(x,i)=>c.termTxt(i+1)).join(' + ');
+    return `${E(`${terms} = ${numTxt(pr.ans)}`)}. וגם באגף ימין יוצא ${E(numTxt(c.R(pr.k)))}.`;
+  }
+  return `התשובה: ${E(pr.ok)}. ${c[pr.type].gen}`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), c=C[pr.key];
+  let right, msg;
+  if(pr.type==='value'){
+    const x=parseNum($('prA').value.trim());
+    if(isNaN(x)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    right=eqv(x,pr.ans);
+    if(!right){
+      if(c.div&&eqv(x,c.L(pr.k))) msg='זה המספר עצמו. עכשיו חלקו אותו ב-6.';
+      else if(!c.div&&eqv(x,c.term(pr.k))) msg='זה רק האיבר האחרון. אגף שמאל הוא הסכום של כל האיברים עד אליו.';
+      else if(!c.div&&eqv(x,c.L(pr.k-1))) msg=`חיברתם רק ${pr.k-1} איברים. צריך ${pr.k}.`;
+      else msg=c.div?'לא בדיוק. חשבו את החזקה, החסירו 1 וחלקו ב-6.':'לא בדיוק. כתבו את כל האיברים מ-1 עד n וחברו אותם.';
+    }
+  }else{
+    if(sel===null||!pr.ch[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם אחת מהתשובות.</div>'; return; }
+    const t=pr.ch[sel]; right=t===pr.ok;
+    if(!right) msg=c[pr.type].bad[t];
+  }
+  if(right){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const c=C[pr.key]; let h;
+  if(pr.type==='value'){
+    if(c.div) h=pr.hint===1?`חשבו קודם את ${E(`7${sup(pr.k)}`)}.`:`${E(`7${sup(pr.k)} = ${numTxt(c.L(pr.k)+1)}`)}. החסירו 1 וחלקו ב-6.`;
+    else h=pr.hint===1?`כתבו את כל האיברים מ-1 עד ${pr.k} וחברו.`:`האיברים: ${E(Array.from({length:pr.k},(x,i)=>c.termTxt(i+1)).join(', '))}.`;
+  }else if(pr.type==='next') h=pr.hint===1?'כתבו את האיבר הכללי של אגף שמאל, והציבו בו n + 1.':c.next.gen;
+  else h=pr.hint===1?'בצעד מוכיחים את הטענה עבור n + 1. מחליפים כל n ב-(n + 1).':c.goal.gen;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

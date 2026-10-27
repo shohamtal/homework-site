@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>וקטורים: חיבור, חיסור וכפל בסקלר · כיתה יב · מירי</title>
+<meta name="description" content="וקטור הוא חץ עם גודל וכיוון. מחברים וקטורים בציור ובשיעורים, ומשתמשים בהם בהוכחות גאומטריות. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/vectors/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="וקטורים: חיבור, חיסור וכפל בסקלר · כיתה יב · מירי">
+<meta property="og:description" content="וקטור הוא חץ עם גודל וכיוון. מחברים וקטורים בציור ובשיעורים, ומשתמשים בהם בהוכחות גאומטריות. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/vectors/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"וקטורים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#vectors-12"},{"@type":"ListItem","position":5,"name":"וקטורים: חיבור, חיסור וכפל בסקלר","item":"https://shohamtal.github.io/homework-site/math/vectors/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה וקטור במתמטיקה?","acceptedAnswer":{"@type":"Answer","text":"וקטור הוא גודל שיש לו גם אורך וגם כיוון, ומציירים אותו כחץ. במישור כותבים אותו כזוג רכיבים, למשל (3, 1): שלושה צעדים בכיוון x וצעד אחד בכיוון y."}},{"@type":"Question","name":"איך מחברים שני וקטורים?","acceptedAnswer":{"@type":"Answer","text":"מחברים רכיב x עם רכיב x, ורכיב y עם רכיב y: (3, 1) + (1, 2) = (4, 3). בציור שמים את החץ השני בקצה של הראשון, והסכום הוא החץ מההתחלה עד הסוף. נסו במעבדה."}},{"@type":"Question","name":"איך מוצאים וקטור בין שתי נקודות?","acceptedAnswer":{"@type":"Answer","text":"מחסרים: נקודת הסוף פחות נקודת ההתחלה. מ-A(1, 2) ל-B(4, 6) מקבלים (4 − 1, 6 − 2) = (3, 4), והאורך שלו √(9 + 16) = 5."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"וקטורים: חיבור, חיסור וכפל בסקלר","description":"וקטור הוא חץ עם גודל וכיוון. מחברים וקטורים בציור ובשיעורים, ומשתמשים בהם בהוכחות גאומטריות. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/vectors/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"וקטורים","teaches":"וקטורים: חיבור, חיסור וכפל בסקלר","keywords":"חיבור וקטורים, כפל בסקלר, שיעורים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.vec{position:relative; display:inline-block; font-style:italic; font-weight:600; padding-top:.32em; line-height:1}
+.vec::before{content:'→'; position:absolute; top:-.28em; left:50%; transform:translateX(-50%); font-size:.72em; font-style:normal; font-weight:400}
+.calc{display:flex; flex-direction:column; gap:4px}
+.calc .ln-row{display:flex; flex-wrap:wrap; gap:6px; align-items:baseline}
+.g .vu{stroke:var(--line); stroke-width:3; stroke-linecap:round}
+.g .vv{stroke:var(--blue); stroke-width:3; stroke-linecap:round}
+.g .vr{stroke:var(--green); stroke-width:3.4; stroke-linecap:round}
+.g .vg{stroke:var(--muted); stroke-width:1.8; stroke-dasharray:5 4; stroke-linecap:round}
+.g .vk{stroke:var(--ink); stroke-width:2.4; stroke-linecap:round}
+.g .pfill{fill:var(--hl); fill-opacity:.28; stroke:none}
+.g .vlbl{font:italic 600 11px var(--f-math); direction:ltr; unicode-bidi:isolate}
+.g .vlbl.u{fill:var(--line)} .g .vlbl.v{fill:var(--blue)} .g .vlbl.r{fill:var(--green)} .g .vlbl.k{fill:var(--ink)}
+.modes{display:flex; flex-wrap:wrap; gap:6px}
+.u-c{color:var(--line)} .v-c{color:var(--blue)} .r-c{color:var(--green)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="vectors">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#vectors-12">וקטורים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">וקטורים: חיבור, חיסור וכפל בסקלר</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · וקטורים</div>
+  <h1>וקטורים: חיבור, חיסור וכפל בסקלר <span class="slogan">חצים שיודעים לאן הם הולכים</span></h1>
+  <p class="lead">וקטור הוא חץ: יש לו אורך ויש לו כיוון. אפשר לחבר וקטורים, לחסר אותם ולמתוח אותם, גם בציור וגם בשיעורים. בעזרתם מוכיחים טענות בגאומטריה בכמה שורות. לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מה זה וקטור?</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חץ עם גודל וכיוון</h3>
+      <p>וקטור אומר "כמה" ו"לאן". למשל: 3 צעדים ימינה ו-1 למעלה. לא משנה מאיפה מתחילים, זה אותו וקטור.</p>
+      <p>כותבים <span class="eq"><span class="vec">u</span> = (3, 1)</span>: הרכיב הראשון הוא ההזזה ב-x, השני ב-y.</p>
+    </div>
+    <div class="mini">
+      <h3>האורך של וקטור</h3>
+      <p>האורך (הגודל) מחושב לפי פיתגורס, בדיוק כמו מרחק בין נקודות.</p>
+      <div class="big-eq" style="font-size:1.3rem"><span class="eq">|<span class="vec">u</span>| = √(<i>x</i>² + <i>y</i>²)</span></div>
+    </div>
+    <div class="mini">
+      <h3>חיבור וחיסור</h3>
+      <p>מחברים רכיב עם רכיב. בציור: שמים את <span class="eq"><span class="vec">v</span></span> בקצה של <span class="eq"><span class="vec">u</span></span>, והסכום הוא החץ מההתחלה לסוף. זה האלכסון של המקבילית.</p>
+      <p><span class="eq">(3, 1) + (1, 2) = (4, 3)</span></p>
+    </div>
+    <div class="mini">
+      <h3>כפל בסקלר</h3>
+      <p>סקלר הוא פשוט מספר. כופלים בו כל רכיב. מספר גדול מ-1 מאריך, בין 0 ל-1 מקצר, ומספר שלילי הופך את הכיוון.</p>
+      <p><span class="eq">2 · (3, 1) = (6, 2)</span> · <span class="eq">−1 · (3, 1) = (−3, −1)</span></p>
+    </div>
+  </div>
+  <div class="callout"><strong>וקטור בין שתי נקודות:</strong> <span class="eq"><span class="vec">AB</span> = B − A</span>. סוף פחות התחלה. מ-<span class="eq">A(1, 2)</span> ל-<span class="eq">B(4, 6)</span> הווקטור הוא <span class="eq">(3, 4)</span>, והאורך שלו 5.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: חיבור, חיסור ומתיחה</h2></div>
+  <p class="text">הזיזו את הרכיבים של <span class="eq u-c"><span class="vec">u</span></span> (ורוד) ושל <span class="eq v-c"><span class="vec">v</span></span> (כחול), ובחרו פעולה. התוצאה מופיעה בירוק.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: וקטורים במישור"></svg>
+    <div class="ctrl">
+      <div class="modes" role="tablist">
+        <button data-m="add" class="primary" dir="ltr">u + v</button>
+        <button data-m="sub" dir="ltr">u − v</button>
+        <button data-m="k" dir="ltr">k · u</button>
+      </div>
+      <label class="slider" for="ux"><span>הרכיב x של <span class="eq"><span class="vec">u</span></span></span><span class="eq" id="uxv"></span></label>
+      <input type="range" id="ux" min="-3" max="3" step="1" value="3">
+      <label class="slider" for="uy"><span>הרכיב y של <span class="eq"><span class="vec">u</span></span></span><span class="eq" id="uyv"></span></label>
+      <input type="range" id="uy" min="-3" max="3" step="1" value="1">
+      <div id="vWrap">
+        <label class="slider" for="vx"><span>הרכיב x של <span class="eq"><span class="vec">v</span></span></span><span class="eq" id="vxv"></span></label>
+        <input type="range" class="blue" id="vx" min="-3" max="3" step="1" value="1">
+        <label class="slider" for="vy"><span>הרכיב y של <span class="eq"><span class="vec">v</span></span></span><span class="eq" id="vyv"></span></label>
+        <input type="range" class="blue" id="vy" min="-3" max="3" step="1" value="2">
+      </div>
+      <div id="kWrap" hidden>
+        <label class="slider" for="kk"><span>הסקלר k</span><span class="eq" id="kkv"></span></label>
+        <input type="range" class="hl" id="kk" min="-2" max="2" step="0.5" value="1.5">
+      </div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="add,2,1,-2,-1" dir="ltr">u + (−u)</button>
+          <button data-p="add,3,0,0,2" dir="ltr">(3, 0) + (0, 2)</button>
+          <button data-p="sub,2,2,2,2" dir="ltr">u − u</button>
+          <button data-p="sub,3,1,1,2" dir="ltr">(3, 1) − (1, 2)</button>
+          <button data-p="k,2,1,0,0,-1" dir="ltr">−1 · u</button>
+          <button data-p="k,2,2,0,0,0.5" dir="ltr">½ · u</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: ב-<span class="eq">u − v</span> התוצאה היא החץ מהקצה של <span class="eq"><span class="vec">v</span></span> אל הקצה של <span class="eq"><span class="vec">u</span></span>. זה האלכסון השני של המקבילית.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>ארבע מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>סוף פחות התחלה</h3>
+      <p><span class="eq"><span class="vec">AB</span> = B − A</span>, לא <span class="eq">A − B</span>. ההפוך נותן את <span class="eq"><span class="vec">BA</span></span>, אותו אורך אבל כיוון הפוך.</p>
+    </div>
+    <div class="mini">
+      <h3>אורך: עם ריבועים ושורש</h3>
+      <p>האורך של <span class="eq">(3, −4)</span> הוא <span class="eq">√(9 + 16) = 5</span>. לא <span class="eq">3 + 4 = 7</span>, ולא <span class="eq">25</span> בלי השורש.</p>
+    </div>
+    <div class="mini">
+      <h3>הסקלר כופל את שני הרכיבים</h3>
+      <p><span class="eq">3 · (2, −1) = (6, −3)</span>. טעות נפוצה היא לכפול רק את הרכיב הראשון.</p>
+    </div>
+    <div class="mini">
+      <h3>וקטור הוא לא נקודה</h3>
+      <p>הנקודה <span class="eq">(3, 1)</span> נמצאת במקום אחד. הווקטור <span class="eq">(3, 1)</span> הוא הזזה, ואפשר לצייר אותו מכל נקודה.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: חישוב בשיעורים</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: הוכחה עם אמצע קטע</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">כל פעם תופיע שאלה מסוג אחר: צירוף של וקטורים, וקטור בין שתי נקודות, אורך של וקטור, או מציאת k. שורש אפשר לכתוב כ-<span class="eq">√20</span> או כמספר עשרוני, ושבר עם קו נטוי, למשל <span class="eq">-1/2</span>.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs" id="prIn"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה וקטור במתמטיקה?</h3>
+    <p>וקטור הוא גודל שיש לו גם אורך וגם כיוון, ומציירים אותו כחץ. במישור כותבים אותו כזוג רכיבים, למשל <span class="eq">(3, 1)</span>: שלושה צעדים בכיוון x וצעד אחד בכיוון y.</p>
+    <h3>איך מחברים שני וקטורים?</h3>
+    <p>מחברים רכיב x עם רכיב x, ורכיב y עם רכיב y: <span class="eq">(3, 1) + (1, 2) = (4, 3)</span>. בציור שמים את החץ השני בקצה של הראשון, והסכום הוא החץ מההתחלה עד הסוף. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך מוצאים וקטור בין שתי נקודות?</h3>
+    <p>מחסרים: נקודת הסוף פחות נקודת ההתחלה. מ-<span class="eq">A(1, 2)</span> ל-<span class="eq">B(4, 6)</span> מקבלים <span class="eq">(4 − 1, 6 − 2) = (3, 4)</span>, והאורך שלו <span class="eq">√(9 + 16) = 5</span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/coordinate-plane/">מערכת צירים: נקודות ורביעים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/growth-decay/"><small>→ הנושא הקודם</small>גדילה ודעיכה</a><a class="next" href="../../math/dot-product/"><small>הנושא הבא ←</small>מכפלה סקלרית וזווית בין וקטורים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,sx,sy,numTxt,signedFracHTML,eqv,parseNum,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const V=n=>`<span class="vec">${n}</span>`;
+const C=(x,y)=>`(${numTxt(x)}, ${numTxt(y)})`;
+const paren=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+
+/* √n as text: perfect squares become whole numbers, otherwise k√r when possible */
+function rootTxt(n){
+  n=Math.round(n*1000)/1000;
+  const r=Math.round(Math.sqrt(n)); if(r*r===n) return String(r);
+  if(Number.isInteger(n)) for(let k=Math.floor(Math.sqrt(n));k>1;k--) if(n%(k*k)===0) return `${k}√${n/(k*k)}`;
+  return `√${numTxt(n)}`;
+}
+/* reads "5", "√20", "2√5", "4.47" */
+function readLen(s){
+  s=String(s).replace(/\s/g,'').replace(/sqrt/gi,'√');
+  const m=s.match(/^(\d*\.?\d*)√(\d*\.?\d+)$/);
+  if(m){ const k=m[1]===''?1:parseFloat(m[1]); return k*Math.sqrt(parseFloat(m[2])); }
+  return parseNum(s);
+}
+const lenTxt=(x,y)=>{ const n=x*x+y*y, r=rootTxt(n); return r+(Number.isInteger(Math.sqrt(n))?'':` ≈ ${Math.sqrt(n).toFixed(2)}`); };
+
+/* each svg gets its own arrowhead markers */
+const MK={vu:'var(--line)',vv:'var(--blue)',vr:'var(--green)',vk:'var(--ink)',vg:'var(--muted)'};
+function defs(id){
+  return '<defs>'+Object.entries(MK).map(([c,col])=>`<marker id="${id}-${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:${col}"/></marker>`).join('')+'</defs>';
+}
+/* arrow from (x1,y1) to (x2,y2); zero vectors get a dot */
+function arrow(id,x1,y1,x2,y2,cls,label,lcls){
+  if(eqv(x1,x2)&&eqv(y1,y2)) return `<circle cx="${sx(x1)}" cy="${sy(y1)}" r="3.5" style="fill:${MK[cls]}"/>`;
+  let s=`<line class="${cls}" x1="${sx(x1)}" y1="${sy(y1)}" x2="${sx(x2)}" y2="${sy(y2)}" marker-end="url(#${id}-${cls})"/>`;
+  if(label){ const mx=(sx(x1)+sx(x2))/2, my=(sy(y1)+sy(y2))/2, dx=sx(x2)-sx(x1), dy=sy(y2)-sy(y1), L=Math.hypot(dx,dy)||1;
+    s+=`<text class="vlbl ${lcls}" x="${mx-dy/L*9}" y="${my+dx/L*9+4}" text-anchor="middle">${label}</text>`; }
+  return s;
+}
+function scene(svg,parts){ draw(svg,null,0,{extra:defs(svg.id)+parts.join('')}); }
+
+/* ---------- lab ---------- */
+let mode='add';
+const IN=['ux','uy','vx','vy','kk'].map($);
+function lab(){
+  const [ux,uy,vx,vy,k]=IN.map(r=>+r.value), id='labG';
+  ['ux','uy','vx','vy'].forEach(n=>$(n+'v').textContent=numTxt(+$(n).value));
+  $('kkv').textContent=numTxt(k);
+  $('vWrap').hidden=mode==='k'; $('kWrap').hidden=mode!=='k';
+  const parts=[]; let t='';
+  if(mode==='add'){
+    const rx=ux+vx, ry=uy+vy;
+    parts.push(`<path class="pfill" d="M${sx(0)} ${sy(0)} L${sx(ux)} ${sy(uy)} L${sx(rx)} ${sy(ry)} L${sx(vx)} ${sy(vy)} Z"/>`);
+    parts.push(arrow(id,vx,vy,rx,ry,'vg'), arrow(id,ux,uy,rx,ry,'vg'));
+    parts.push(arrow(id,0,0,ux,uy,'vu','u','u'), arrow(id,0,0,vx,vy,'vv','v','v'), arrow(id,0,0,rx,ry,'vr','u+v','r'));
+    t+=`<div class="ln-row">${E(`${V('u')} + ${V('v')} = ${C(ux,uy)} + ${C(vx,vy)}`)}</div>`;
+    t+=`<div class="ln-row">${E(`= (${numTxt(ux)} + ${paren(vx)}, ${numTxt(uy)} + ${paren(vy)})`)} ${E(`= ${C(rx,ry)}`)}</div>`;
+    t+=`<div class="ln-row"><strong>אורך הסכום:</strong> ${E(`√(${paren(rx)}² + ${paren(ry)}²) = ${lenTxt(rx,ry)}`)}</div>`;
+    t+= rx===0&&ry===0 ? '<div>הסכום הוא וקטור האפס: <span class="eq"><span class="vec">v</span></span> הוא הנגדי של <span class="eq"><span class="vec">u</span></span>.</div>'
+      : '<div>הקווים המקווקווים משלימים מקבילית. הסכום הוא האלכסון שיוצא מהראשית.</div>';
+  }
+  if(mode==='sub'){
+    const rx=ux-vx, ry=uy-vy;
+    parts.push(arrow(id,0,0,rx,ry,'vg'));
+    parts.push(arrow(id,0,0,ux,uy,'vu','u','u'), arrow(id,0,0,vx,vy,'vv','v','v'), arrow(id,vx,vy,ux,uy,'vr','u−v','r'));
+    t+=`<div class="ln-row">${E(`${V('u')} − ${V('v')} = ${C(ux,uy)} − ${C(vx,vy)}`)}</div>`;
+    t+=`<div class="ln-row">${E(`= (${numTxt(ux)} − ${paren(vx)}, ${numTxt(uy)} − ${paren(vy)})`)} ${E(`= ${C(rx,ry)}`)}</div>`;
+    t+=`<div class="ln-row"><strong>אורך ההפרש:</strong> ${E(`√(${paren(rx)}² + ${paren(ry)}²) = ${lenTxt(rx,ry)}`)}</div>`;
+    t+= rx===0&&ry===0 ? '<div>וקטור פחות עצמו נותן את וקטור האפס.</div>'
+      : '<div>החץ הירוק הולך מהקצה של <span class="eq"><span class="vec">v</span></span> לקצה של <span class="eq"><span class="vec">u</span></span>. המקווקו הוא אותו וקטור, מצויר מהראשית.</div>';
+  }
+  if(mode==='k'){
+    const rx=k*ux, ry=k*uy;
+    parts.push(arrow(id,0,0,rx,ry,'vr','k·u','r'), arrow(id,0,0,ux,uy,'vu','u','u'));
+    t+=`<div class="ln-row">${E(`${numTxt(k)} · ${C(ux,uy)} =`)} ${E(`(${numTxt(k)} · ${paren(ux)}, ${numTxt(k)} · ${paren(uy)})`)}</div>`;
+    t+=`<div class="ln-row">${E(`= ${C(rx,ry)}`)}</div>`;
+    t+=`<div class="ln-row"><strong>אורך:</strong> ${E(`|${V('u')}| = ${lenTxt(ux,uy)}`)} ${E(`|k·${V('u')}| = ${lenTxt(rx,ry)}`)}</div>`;
+    t+= k===0 ? '<div>כפל ב-0 נותן את וקטור האפס.</div>'
+      : k<0 ? `<div>k שלילי: החץ <strong>מתהפך</strong> לכיוון ההפוך, והאורך גדל פי ${E(numTxt(Math.abs(k)))}.</div>`
+      : `<div>k חיובי: אותו כיוון, והאורך גדל פי ${E(numTxt(k))}.</div>`;
+  }
+  if(ux===0&&uy===0) t+='<div>שימו לב: <span class="eq"><span class="vec">u</span></span> הוא עכשיו וקטור האפס.</div>';
+  scene($('labG'),parts); $('labCalc').innerHTML=t;
+}
+function setMode(m){ mode=m; document.querySelectorAll('#lab .modes button').forEach(b=>b.classList.toggle('primary',b.dataset.m===m)); lab(); }
+IN.forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .modes button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{
+  const p=b.dataset.p.split(','); p.slice(1).forEach((v,i)=>IN[i].value=v); setMode(p[0]);
+}));
+lab();
+
+/* ---------- worked examples ---------- */
+const A2={x:-2,y:-1}, B2={x:4,y:3}, M2={x:1,y:1};
+const pt=(p,l,cls)=>`<circle class="${cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4"/><text class="ptlbl" x="${sx(p.x)+6}" y="${sy(p.y)-6}">${l}</text>`;
+const EX={
+  A:[
+    [g=>scene(g,[arrow(g.id,0,0,3,1,'vu','u','u'),arrow(g.id,0,0,1,-2,'vv','v','v')]),
+      `נתונים ${E(`${V('u')} = (3, 1)`)} ו-${E(`${V('v')} = (1, −2)`)}. מצאו את ${E(`${V('w')} = 2${V('u')} − ${V('v')}`)} ואת האורך שלו.`],
+    [g=>scene(g,[arrow(g.id,0,0,6,2,'vk','2u','k'),arrow(g.id,0,0,3,1,'vu','u','u'),arrow(g.id,0,0,1,-2,'vv','v','v')]),
+      `<strong>כופלים בסקלר:</strong> ${E(`2${V('u')} = (2 · 3, 2 · 1) = (6, 2)`)}. כל רכיב כפול 2.`],
+    [g=>scene(g,[arrow(g.id,0,0,6,2,'vk','2u','k'),arrow(g.id,0,0,-1,2,'vv','−v','v')]),
+      `<strong>הנגדי של <span class="eq"><span class="vec">v</span></span>:</strong> ${E(`−${V('v')} = (−1, 2)`)}. חיסור הוא חיבור של הנגדי.`],
+    [g=>scene(g,[arrow(g.id,0,0,6,2,'vk','2u','k'),arrow(g.id,6,2,5,4,'vv','−v','v'),arrow(g.id,0,0,5,4,'vr','w','r')]),
+      `<strong>מחברים רכיב עם רכיב:</strong> ${E(`${V('w')} = (6 + (−1), 2 + 2)`)} ${E(`= (5, 4)`)}.`],
+    [g=>scene(g,[arrow(g.id,0,0,5,4,'vr','w','r'),`<path class="tri" d="M${sx(0)} ${sy(0)} H${sx(5)} V${sy(4)}"/>`]),
+      `<strong>האורך:</strong> ${E(`|${V('w')}| = √(5² + 4²)`)} ${E(`= √41 ≈ 6.4`)}. זה פיתגורס על המשולש המקווקו.`]
+  ],
+  B:[
+    [g=>scene(g,[pt(A2,'A'),pt(B2,'B'),`<line class="vg" x1="${sx(A2.x)}" y1="${sy(A2.y)}" x2="${sx(B2.x)}" y2="${sy(B2.y)}"/>`,pt(M2,'M','dot')]),
+      `M היא אמצע הקטע AB, ו-O היא הראשית. הוכיחו: ${E(`${V('OM')} = ½(${V('OA')} + ${V('OB')})`)}.`],
+    [g=>scene(g,[arrow(g.id,0,0,A2.x,A2.y,'vu','OA','u'),arrow(g.id,0,0,B2.x,B2.y,'vv','OB','v'),pt(M2,'M','dot')]),
+      `<strong>מה ידוע:</strong> M באמצע, ולכן ${E(`${V('AM')} = ½${V('AB')}`)}. החצי הראשון של הדרך מ-A ל-B.`],
+    [g=>scene(g,[arrow(g.id,0,0,A2.x,A2.y,'vu','OA','u'),arrow(g.id,0,0,B2.x,B2.y,'vv','OB','v'),arrow(g.id,A2.x,A2.y,B2.x,B2.y,'vk','AB','k')]),
+      `<strong>כותבים את <span class="eq"><span class="vec">AB</span></span>:</strong> סוף פחות התחלה, ${E(`${V('AB')} = ${V('OB')} − ${V('OA')}`)}.`],
+    [g=>scene(g,[arrow(g.id,0,0,A2.x,A2.y,'vu','OA','u'),arrow(g.id,A2.x,A2.y,M2.x,M2.y,'vk','AM','k'),arrow(g.id,0,0,M2.x,M2.y,'vr','OM','r')]),
+      `<strong>הולכים מ-O ל-M דרך A:</strong> ${E(`${V('OM')} = ${V('OA')} + ${V('AM')}`)} ${E(`= ${V('OA')} + ½(${V('OB')} − ${V('OA')})`)}.`],
+    [g=>scene(g,[arrow(g.id,0,0,A2.x,A2.y,'vu','OA','u'),arrow(g.id,0,0,B2.x,B2.y,'vv','OB','v'),arrow(g.id,0,0,M2.x,M2.y,'vr','OM','r')]),
+      `<strong>מכנסים:</strong> ${E(`${V('OA')} − ½${V('OA')} = ½${V('OA')}`)}, ולכן ${E(`${V('OM')} = ½${V('OA')} + ½${V('OB')}`)}. הוכחנו. בדיקה בשיעורים: ${E(`½((−2, −1) + (4, 3))`)} ${E(`= (1, 1)`)}, וזו באמת M.`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const [fn,txt]=EX[exKey][exI];
+  fn($('exG')); $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].length-1){exI++;ex();} };
+$('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+let pr={}, streak=0, solved=0;
+const nz=(a,b)=>{ let v; do{ v=ri(a,b); }while(v===0); return v; };
+function inputs(list){
+  $('prIn').innerHTML=list.map(([id,lab])=>`<label for="${id}">${lab}<input id="${id}" inputmode="text" autocomplete="off"></label>`).join('');
+  $('prIn').querySelectorAll('input').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+}
+const coefTxt=(a,n)=>a===1?V(n):a===-1?`−${V(n)}`:`${numTxt(a)}${V(n)}`;
+function comboTxt(a,b){ return `${coefTxt(a,'u')} ${b<0?'−':'+'} ${coefTxt(Math.abs(b),'v')}`; }
+function newPr(){
+  let kind; do{ kind=pick(['comb','ab','len','k']); } while(kind===pr.kind&&Math.random()<.6);
+  const o={kind,tries:0,hint:0};
+  if(kind==='comb'){
+    let ux,uy,vx,vy,a,b,rx,ry;
+    do{ ux=ri(-3,3); uy=ri(-3,3); vx=ri(-3,3); vy=ri(-3,3); a=pick([1,2,3,-1,-2]); b=pick([1,2,-1,-2,-3]);
+      rx=a*ux+b*vx; ry=a*uy+b*vy; } while((ux===0&&uy===0)||(vx===0&&vy===0)||Math.abs(rx)>5||Math.abs(ry)>5||(a===1&&b===1));
+    Object.assign(o,{ux,uy,vx,vy,a,b,ax:rx,ay:ry});
+    o.q=`נתונים ${E(`${V('u')} = ${C(ux,uy)}`)} ו-${E(`${V('v')} = ${C(vx,vy)}`)}. מצאו את ${E(comboTxt(a,b))}.`;
+    inputs([['pa','רכיב x'],['pb','רכיב y']]);
+    scene($('prG'),[arrow('prG',0,0,ux,uy,'vu','u','u'),arrow('prG',0,0,vx,vy,'vv','v','v')]);
+  }
+  if(kind==='ab'){
+    let x1,y1,x2,y2; do{ x1=ri(-4,4); y1=ri(-4,4); x2=ri(-4,4); y2=ri(-4,4); } while(x1===x2&&y1===y2||(x1===0&&y1===0));
+    Object.assign(o,{x1,y1,x2,y2,ax:x2-x1,ay:y2-y1});
+    o.q=`נתונות הנקודות ${E(`A${C(x1,y1)}`)} ו-${E(`B${C(x2,y2)}`)}. מצאו את הווקטור ${E(V('AB'))}.`;
+    inputs([['pa','רכיב x'],['pb','רכיב y']]);
+    scene($('prG'),[pt({x:x1,y:y1},'A'),pt({x:x2,y:y2},'B')]);
+  }
+  if(kind==='len'){
+    const T=pick([[3,4],[4,3],[0,5],[5,0],[1,1],[2,1],[1,3],[2,2],[4,2],[3,3],[1,4]]);
+    let x=T[0]*pick([1,-1]), y=T[1]*pick([1,-1]); if(Math.random()<.5){ const t=x; x=y; y=t; }
+    Object.assign(o,{x,y,n:x*x+y*y,ans:Math.hypot(x,y)});
+    o.q=`מה האורך של הווקטור ${E(`${V('u')} = ${C(x,y)}`)}?`;
+    inputs([['pa',`|u| =`]]);
+    scene($('prG'),[arrow('prG',0,0,x,y,'vu','u','u')]);
+  }
+  if(kind==='k'){
+    let ux,uy,k; do{ ux=ri(-3,3); uy=ri(-3,3); k=pick([2,3,-1,-2,0.5,-0.5,1.5]); } while((ux===0&&uy===0)||Math.abs(k*ux)>5||Math.abs(k*uy)>5||!Number.isInteger(k*ux)||!Number.isInteger(k*uy));
+    Object.assign(o,{ux,uy,k,ans:k,wx:k*ux,wy:k*uy});
+    o.q=`נתון ${E(`${V('u')} = ${C(ux,uy)}`)}. מצאו את המספר k שעבורו ${E(`k · ${V('u')} = ${C(k*ux,k*uy)}`)}.`;
+    inputs([['pa','k =']]);
+    scene($('prG'),[arrow('prG',0,0,ux,uy,'vu','u','u'),arrow('prG',0,0,k*ux,k*uy,'vk','?','k')]);
+  }
+  pr=o; $('prQ').innerHTML=o.q; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr;
+  if(p.kind==='comb') return `${E(`${coefTxt(p.a,'u')} = ${C(p.a*p.ux,p.a*p.uy)}`)}, ${E(`${p.b<0?'−':''}${coefTxt(Math.abs(p.b),'v')} = ${C(p.b*p.vx,p.b*p.vy)}`)}. מחברים: ${E(`${C(p.ax,p.ay)}`)}.`;
+  if(p.kind==='ab') return `סוף פחות התחלה: ${E(`(${numTxt(p.x2)} − ${paren(p.x1)}, ${numTxt(p.y2)} − ${paren(p.y1)})`)} ${E(`= ${C(p.ax,p.ay)}`)}.`;
+  if(p.kind==='len') return `${E(`√(${paren(p.x)}² + ${paren(p.y)}²) = √${p.n}`)}${rootTxt(p.n)!==`√${p.n}`?' '+E(`= ${rootTxt(p.n)}`):''}${Number.isInteger(p.ans)?'':' '+E(`≈ ${p.ans.toFixed(2)}`)}.`;
+  const i=p.ux!==0?'x':'y', a=i==='x'?p.ux:p.uy, w=i==='x'?p.wx:p.wy;
+  return `משווים רכיב ${i}: ${E(`k · ${paren(a)} = ${numTxt(w)}`)}, אז ${E(`k = ${signedFracHTML(p.k)}`)}. בדקו שגם הרכיב השני מתאים.`;
+}
+function solvedDraw(){
+  const p=pr;
+  if(p.kind==='comb'){ const A=[p.a*p.ux,p.a*p.uy];
+    scene($('prG'),[arrow('prG',0,0,A[0],A[1],'vu','','u'),arrow('prG',A[0],A[1],p.ax,p.ay,'vv','','v'),arrow('prG',0,0,p.ax,p.ay,'vr','','r')]); }
+  if(p.kind==='ab') scene($('prG'),[pt({x:p.x1,y:p.y1},'A'),pt({x:p.x2,y:p.y2},'B'),arrow('prG',p.x1,p.y1,p.x2,p.y2,'vr','AB','r')]);
+  if(p.kind==='len') scene($('prG'),[arrow('prG',0,0,p.x,p.y,'vu','u','u'),`<path class="tri" d="M${sx(0)} ${sy(0)} H${sx(p.x)} V${sy(p.y)}"/>`]);
+  if(p.kind==='k') scene($('prG'),[arrow('prG',0,0,p.ux,p.uy,'vu','u','u'),arrow('prG',0,0,p.wx,p.wy,'vr','k·u','r')]);
+}
+$('prCheck').onclick=()=>{
+  const p=pr, fb=$('prFb'), a=$('pa')?$('pa').value:'', b=$('pb')?$('pb').value:'';
+  let ok=false, msg='';
+  if(p.kind==='comb'||p.kind==='ab'){
+    const u=parseNum(a), w=parseNum(b);
+    if(isNaN(u)||isNaN(w)){ fb.innerHTML='<div class="fb err">כתבו מספר בכל אחת מהתיבות.</div>'; return; }
+    ok=eqv(u,p.ax)&&eqv(w,p.ay);
+    if(!ok){
+      if(p.kind==='ab'){
+        if(eqv(u,-p.ax)&&eqv(w,-p.ay)) msg='יצא לכם הכיוון ההפוך, זה <span class="eq"><span class="vec">BA</span></span>. מחסרים סוף פחות התחלה: B פחות A.';
+        else if(eqv(u,p.x1+p.x2)&&eqv(w,p.y1+p.y2)) msg='חיברתם את הנקודות. וקטור בין נקודות מחשבים בחיסור.';
+        else if(eqv(u,p.ax)) msg='רכיב ה-x נכון. בדקו שוב את ה-y, ושימו לב לסימנים.';
+        else if(eqv(w,p.ay)) msg='רכיב ה-y נכון. בדקו שוב את ה-x, ושימו לב לסימנים.';
+        else msg='עוד לא. כמה צריך לזוז ב-x כדי להגיע מ-A ל-B? וכמה ב-y?';
+      } else {
+        const sx2=p.a*p.ux-p.b*p.vx, sy2=p.a*p.uy-p.b*p.vy;
+        if(eqv(u,sx2)&&eqv(w,sy2)) msg='בדקו את הסימן שלפני <span class="eq"><span class="vec">v</span></span>. נראה שחיברתם במקום לחסר, או להפך.';
+        else if(eqv(u,p.ux+p.b*p.vx)&&eqv(w,p.uy+p.b*p.vy)&&p.a!==1) msg=`שכחתם לכפול את <span class="eq"><span class="vec">u</span></span> ב-${E(numTxt(p.a))}.`;
+        else if(eqv(u,p.a*p.ux+p.vx*Math.sign(p.b))&&eqv(w,p.a*p.uy+p.vy*Math.sign(p.b))&&Math.abs(p.b)!==1) msg=`שכחתם לכפול את <span class="eq"><span class="vec">v</span></span> ב-${E(numTxt(Math.abs(p.b)))}.`;
+        else if(eqv(u,p.ax)) msg='רכיב ה-x נכון. בדקו שוב את ה-y.';
+        else if(eqv(w,p.ay)) msg='רכיב ה-y נכון. בדקו שוב את ה-x.';
+        else msg='עוד לא. קודם כפלו כל וקטור במספר שלו, ורק אחר כך חברו רכיב עם רכיב.';
+      }
+    }
+  }
+  if(p.kind==='len'){
+    const v=readLen(a); if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 5, או שורש כמו √20.</div>'; return; }
+    ok=Math.abs(v-p.ans)<0.02;
+    if(!ok){
+      if(eqv(v,p.n)) msg='זה סכום הריבועים. חסר עוד צעד: השורש.';
+      else if(eqv(v,Math.abs(p.x)+Math.abs(p.y))) msg='חיברתם את הרכיבים. באורך מעלים כל רכיב בריבוע, מחברים ומוציאים שורש.';
+      else if(eqv(v,Math.sqrt(Math.abs(p.x*p.x-p.y*p.y)))) msg='בין הריבועים מחברים, לא מחסרים. גם רכיב שלילי בריבוע יוצא חיובי.';
+      else msg='עוד לא. העלו כל רכיב בריבוע, חברו, ואז הוציאו שורש.';
+    }
+  }
+  if(p.kind==='k'){
+    const v=parseNum(a); if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר או שבר, למשל -1/2.</div>'; return; }
+    ok=eqv(v,p.ans);
+    if(!ok){
+      if(eqv(v,1/p.k)) msg='הפכתם את היחס. מחלקים את הרכיב של התוצאה ברכיב של <span class="eq"><span class="vec">u</span></span>, לא להפך.';
+      else if(eqv(v,-p.k)) msg='הגודל נכון, אבל הסימן לא. האם החץ החדש באותו כיוון כמו <span class="eq"><span class="vec">u</span></span>, או הפוך?';
+      else msg='עוד לא. בכמה צריך לכפול את רכיב ה-x של <span class="eq"><span class="vec">u</span></span> כדי לקבל את רכיב ה-x של התוצאה?';
+    }
+  }
+  if(ok){ streak++; solved++; streakTxt(); solvedDraw(); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2); let h;
+  if(p.kind==='comb') h=p.hint===1?'שני שלבים: קודם כופלים כל וקטור במספר שלפניו, ואז מחברים רכיב x עם רכיב x ורכיב y עם רכיב y.'
+    :`${E(`${coefTxt(p.a,'u')} = ${C(p.a*p.ux,p.a*p.uy)}`)} ו-${E(`${p.b<0?'−':''}${coefTxt(Math.abs(p.b),'v')} = ${C(p.b*p.vx,p.b*p.vy)}`)}. עכשיו חברו.`;
+  else if(p.kind==='ab') h=p.hint===1?'וקטור מ-A ל-B: סוף פחות התחלה, כלומר B פחות A.'
+    :`רכיב x: ${E(`${numTxt(p.x2)} − ${paren(p.x1)}`)}. עשו אותו דבר עם ה-y.`;
+  else if(p.kind==='len') h=p.hint===1?'האורך הוא היתר של משולש ישר זווית שהניצבים שלו הם הרכיבים.'
+    :`${E(`|${V('u')}| = √(${paren(p.x)}² + ${paren(p.y)}²)`)}. חשבו כל ריבוע וחברו.`;
+  else { const i=p.ux!==0?'x':'y', a=i==='x'?p.ux:p.uy, w=i==='x'?p.wx:p.wy;
+    h=p.hint===1?'כפל בסקלר כופל כל רכיב באותו מספר. השוו רכיב אחד.'
+      :`רכיב ${i}: ${E(`k · ${paren(a)} = ${numTxt(w)}`)}. חלקו.`; }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ solvedDraw(); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פונקציה קדומה ואינטגרל לא מסוים · כיתה יב · מירי</title>
+<meta name="description" content="הפעולה ההפוכה לגזירה: מוצאים פונקציה שהנגזרת שלה נתונה, ומבינים למה תמיד מוסיפים C. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/antiderivative/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פונקציה קדומה ואינטגרל לא מסוים · כיתה יב · מירי">
+<meta property="og:description" content="הפעולה ההפוכה לגזירה: מוצאים פונקציה שהנגזרת שלה נתונה, ומבינים למה תמיד מוסיפים C. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/antiderivative/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"אינטגרלים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#integrals-12"},{"@type":"ListItem","position":5,"name":"פונקציה קדומה ואינטגרל לא מסוים","item":"https://shohamtal.github.io/homework-site/math/antiderivative/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה פונקציה קדומה?","acceptedAnswer":{"@type":"Answer","text":"פונקציה קדומה של f היא פונקציה F שהנגזרת שלה היא f. למשל x³ היא פונקציה קדומה של 3x², כי (x³)′ = 3x². זו גזירה בכיוון ההפוך. ראו את זה במעבדה."}},{"@type":"Question","name":"למה מוסיפים C באינטגרל?","acceptedAnswer":{"@type":"Answer","text":"כי הנגזרת של מספר היא 0. לכן x² + 1, x² ו-x² − 7 נגזרות כולן ל-2x. האות C מייצגת את כל המספרים האלה. אם נותנים נקודה שהגרף עובר בה, מציבים אותה ומוצאים את C."}},{"@type":"Question","name":"איך עושים אינטגרל של x בחזקה?","acceptedAnswer":{"@type":"Answer","text":"מעלים את החזקה ב-1 ומחלקים בחזקה החדשה: ∫xⁿ dx = xⁿ⁺¹ ÷ (n + 1) + C. למשל ∫x³ dx = x⁴ ÷ 4 + C. מקדם שלפני ה-x נשאר ומתחלק גם הוא. תרגלו את זה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"פונקציה קדומה ואינטגרל לא מסוים","description":"הפעולה ההפוכה לגזירה: מוצאים פונקציה שהנגזרת שלה נתונה, ומבינים למה תמיד מוסיפים C. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/antiderivative/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"אינטגרלים","teaches":"פונקציה קדומה ואינטגרל לא מסוים","keywords":"פונקציה קדומה, קבוע C, אינטגרל לא מסוים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .tan{stroke:var(--blue); stroke-width:2.2; fill:none; stroke-dasharray:6 4}
+  .g .fam{stroke:var(--muted); stroke-opacity:.35; stroke-width:1.5; fill:none}
+  .g .fam.c0{stroke:var(--muted); stroke-dasharray:3 3}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .g .ptlbl.sm{font-size:7px}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .dgraph{margin-top:8px}
+  .dgraph p{margin:0 0 4px; font-weight:700}
+  .nums{display:grid; gap:4px}
+  .inputs.coefs input{width:4.2em}
+  .rule{font-size:clamp(1.2rem,4.5vw,1.6rem); text-align:center; margin:4px 0}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="antiderivative">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#integrals-12">אינטגרלים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">פונקציה קדומה ואינטגרל לא מסוים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · אינטגרלים</div>
+  <h1>פונקציה קדומה ואינטגרל לא מסוים <span class="slogan">גוזרים אחורה</span></h1>
+  <p class="lead">עד עכשיו קיבלנו פונקציה ומצאנו את הנגזרת שלה. עכשיו הולכים בכיוון ההפוך: נותנים לנו את הנגזרת, ואנחנו מחפשים את הפונקציה שממנה היא באה.
+  פונקציה כזאת נקראת <strong>פונקציה קדומה</strong>. נבין למה תמיד יש הרבה כאלה, ולמה מוסיפים <span class="eq"><i>C</i></span>. החומר מתאים ל-4 ול-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: מה גזרו כדי לקבל את זה?</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הפוך מגזירה</h3>
+      <p><span class="eq"><i>F</i></span> היא פונקציה קדומה של <span class="eq"><i>f</i></span> אם <span class="eq"><i>F</i>′(<i>x</i>) = <i>f</i>(<i>x</i>)</span>.</p>
+      <p>למשל, הנגזרת של <span class="eq"><i>x</i>²</span> היא <span class="eq">2<i>x</i></span>. לכן <span class="eq"><i>x</i>²</span> היא פונקציה קדומה של <span class="eq">2<i>x</i></span>.</p>
+      <p>הבדיקה תמיד קלה: גוזרים את מה שמצאתם, וצריך לחזור בדיוק ל-<span class="eq"><i>f</i></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>למה יש <span class="eq"><i>C</i></span>?</h3>
+      <p>גם <span class="eq"><i>x</i>² + 5</span> וגם <span class="eq"><i>x</i>² − 3</span> נגזרות ל-<span class="eq">2<i>x</i></span>, כי הנגזרת של מספר היא 0.</p>
+      <svg class="g" id="introS" viewBox="0 0 240 240" role="img" aria-label="כמה פרבולות זו מעל זו, לכולן אותו שיפוע באותו x"></svg>
+      <p>כל העקומות האלה הן אותה צורה, רק מוזזת למעלה או למטה. לכן כותבים <span class="eq"><i>x</i>² + <i>C</i></span>, כש-<span class="eq"><i>C</i></span> הוא מספר כלשהו.</p>
+    </div>
+  </div>
+  <div class="mini" style="margin-top:16px">
+    <h3>הכלל לחזקה</h3>
+    <p class="rule"><span class="eq">∫<i>x</i>ⁿ <i>dx</i> =</span> <span class="eq"><span class="frac"><span><i>x</i>ⁿ⁺¹</span><span><i>n</i> + 1</span></span> + <i>C</i></span></p>
+    <p>מעלים את החזקה ב-1, ומחלקים בחזקה החדשה. זה בדיוק הפוך מגזירה, שבה מורידים את החזקה לפנים ומקטינים אותה.</p>
+    <ul class="text">
+      <li><span class="eq">∫<i>x</i>² <i>dx</i> =</span> <span class="eq"><span class="frac"><span><i>x</i>³</span><span>3</span></span> + <i>C</i></span></li>
+      <li><span class="eq">∫6<i>x</i> <i>dx</i> = 3<i>x</i>² + <i>C</i></span>, כי <span class="eq">6 ÷ 2 = 3</span>.</li>
+      <li><span class="eq">∫5 <i>dx</i> = 5<i>x</i> + <i>C</i></span>. מספר לבד מקבל <span class="eq"><i>x</i></span>.</li>
+    </ul>
+  </div>
+  <div class="callout"><strong>במילים:</strong> הסימן <span class="eq">∫ … <i>dx</i></span> נקרא <strong>אינטגרל לא מסוים</strong>. הוא אומר: "מצאו את כל הפונקציות הקדומות". לכן התשובה תמיד מסתיימת ב-<span class="eq">+ <i>C</i></span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: משפחה של פונקציות קדומות</h2></div>
+  <p class="text">בחרו <span class="eq"><i>f</i></span>. הגרף הוורוד הוא פונקציה קדומה <span class="eq"><i>F</i></span>, והאפורים הם עוד פונקציות קדומות עם <span class="eq"><i>C</i></span> אחר. הזיזו את <span class="eq"><i>C</i></span> ואת הנקודה <span class="eq"><i>x</i>₀</span>, והשוו את שיפוע המשיק לגובה של <span class="eq"><i>f</i></span> בגרף התחתון.</p>
+  <div class="seg" id="fnPick" role="group" aria-label="בחירת הפונקציה f"></div>
+  <div class="lab">
+    <div>
+      <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="משפחה של פונקציות קדומות, אחת מודגשת עם משיק"></svg>
+      <div class="dgraph">
+        <p>הגרף של <span class="eq"><i>f</i>(<i>x</i>)</span>, הנגזרת של כולן:</p>
+        <svg class="g" id="labD" viewBox="0 0 240 240" role="img" aria-label="גרף הפונקציה f עם הנקודה הנוכחית"></svg>
+      </div>
+    </div>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr" style="font-size:clamp(1.2rem,5vw,1.9rem)"></div>
+      <label class="slider" for="cRange"><span>הקבוע <span class="eq"><i>C</i></span></span><span class="eq" id="cVal"></span></label>
+      <input type="range" id="cRange" min="-3" max="3" step="0.5" value="0">
+      <label class="slider" for="xRange"><span>הנקודה <span class="eq"><i>x</i>₀</span></span><span class="eq" id="xVal"></span></label>
+      <input type="range" id="xRange" class="blue" min="-3" max="3" step="0.5" value="1">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="0,0,1" dir="ltr">C = 0</button>
+          <button data-p="0,3,1" dir="ltr">C = 3</button>
+          <button data-p="3,0,1">משיק אופקי</button>
+          <button data-p="4,0,0">f שלילי: F יורד</button>
+          <button data-p="5,1,2" dir="ltr">f = 1</button>
+          <button data-p="1,-2,-1" dir="ltr">f = 3x²</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כשמזיזים את <span class="eq"><i>C</i></span>, הגרף הוורוד עולה ויורד, אבל המשיק נשאר מקביל לעצמו. השיפוע ב-<span class="eq"><i>x</i>₀</span> תמיד שווה ל-<span class="eq"><i>f</i>(<i>x</i>₀)</span>, לכל <span class="eq"><i>C</i></span>.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>שוכחים את <span class="eq">+ <i>C</i></span>.</strong> באינטגרל לא מסוים התשובה היא משפחה שלמה. בלי <span class="eq"><i>C</i></span> כתבתם רק אחת מהן.</div></li>
+    <li><div><strong>לא מחלקים בחזקה החדשה.</strong> <span class="eq">∫<i>x</i>² <i>dx</i></span> הוא לא <span class="eq"><i>x</i>³</span>. אם גוזרים <span class="eq"><i>x</i>³</span> מקבלים <span class="eq">3<i>x</i>²</span>, יותר מדי. צריך <span class="eq"><span class="frac"><span><i>x</i>³</span><span>3</span></span></span>.</div></li>
+    <li><div><strong>גוזרים במקום לעשות אינטגרל.</strong> <span class="eq">∫4<i>x</i>³ <i>dx</i> = <i>x</i>⁴ + <i>C</i></span>. מי שכתב <span class="eq">12<i>x</i>²</span> גזר בטעות.</div></li>
+    <li><div><strong>מספר לבד נעלם.</strong> לא! בגזירה מספר נעלם, אבל באינטגרל הוא מקבל <span class="eq"><i>x</i></span>: <span class="eq">∫3 <i>dx</i> = 3<i>x</i> + <i>C</i></span>.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> גזרו את התשובה שלכם. אם חזרתם בדיוק לפונקציה שבתוך האינטגרל, הצלחתם.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">לחצו "הצעד הבא" ותראו איך מוצאים פונקציה קדומה שעוברת בנקודה נתונה.</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מוצאים את <span class="eq"><i>F</i></span></h2></div>
+  <p class="text">כל פעם תופיע פונקציה ונקודה שהפונקציה הקדומה עוברת בה. אפשר לכתוב שבר עם קו נטוי (<span class="eq">1/2</span>) או מספר עשרוני.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr" style="font-size:clamp(1.3rem,5.5vw,2rem)"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs" dir="ltr"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה פונקציה קדומה?</h3>
+    <p>פונקציה קדומה של <span class="eq"><i>f</i></span> היא פונקציה <span class="eq"><i>F</i></span> שהנגזרת שלה היא <span class="eq"><i>f</i></span>. למשל <span class="eq"><i>x</i>³</span> היא פונקציה קדומה של <span class="eq">3<i>x</i>²</span>, כי <span class="eq">(<i>x</i>³)′ = 3<i>x</i>²</span>. זו גזירה בכיוון ההפוך. <a href="#lab">ראו את זה במעבדה</a>.</p>
+    <h3>למה מוסיפים C באינטגרל?</h3>
+    <p>כי הנגזרת של מספר היא 0. לכן <span class="eq"><i>x</i>² + 1</span>, <span class="eq"><i>x</i>²</span> ו-<span class="eq"><i>x</i>² − 7</span> נגזרות כולן ל-<span class="eq">2<i>x</i></span>. האות <span class="eq"><i>C</i></span> מייצגת את כל המספרים האלה. אם נותנים נקודה שהגרף עובר בה, מציבים אותה ומוצאים את <span class="eq"><i>C</i></span>.</p>
+    <h3>איך עושים אינטגרל של x בחזקה?</h3>
+    <p>מעלים את החזקה ב-1 ומחלקים בחזקה החדשה: <span class="eq">∫<i>x</i>ⁿ <i>dx</i> =</span> <span class="eq"><i>x</i>ⁿ⁺¹ ÷ (<i>n</i> + 1) + <i>C</i></span>. למשל <span class="eq">∫<i>x</i>³ <i>dx</i> = <i>x</i>⁴ ÷ 4 + <i>C</i></span>. מקדם שלפני ה-x נשאר ומתחלק גם הוא. <a href="#practice">תרגלו את זה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/derivative-intro/">נגזרת: שיפוע המשיק וכללי גזירה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/normal-distribution/"><small>→ הנושא הקודם</small>התפלגות נורמלית</a><a class="next" href="../../math/definite-integral/"><small>הנושא הבא ←</small>אינטגרל מסוים ושטח בין עקומות</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const nt=v=>numTxt(r2(v));
+const near=(a,b)=>Math.abs(a-b)<0.011;
+const SUP=['','','²','³','⁴','⁵'];
+let pid=0;
+
+/* polynomial = coefficients [c0, c1, c2, c3] */
+const ev=(c,x)=>c.reduce((s,k,i)=>s+k*Math.pow(x,i),0);
+const der=c=>c.slice(1).map((k,i)=>k*(i+1));
+const anti=(c,C)=>[C].concat(c.map((k,i)=>k/(i+1)));
+const xpow=i=>i===0?'':i===1?'<i>x</i>':'<i>x</i>'+SUP[i];
+function polyBody(c,skip0){
+  const parts=[];
+  for(let i=c.length-1;i>=0;i--){
+    const k=c[i]; if(!k||(i===0&&skip0)) continue;
+    const mag=(Math.abs(k)===1&&i>0)?'':fracHTML(Math.abs(k));
+    parts.push({neg:k<0,h:mag+xpow(i)});
+  }
+  if(!parts.length) return '0';
+  let s='';
+  parts.forEach((p,i)=>{ s+= i===0?(p.neg?MINUS:'')+p.h : ` ${p.neg?MINUS:'+'} ${p.h}`; });
+  return s;
+}
+const polyHTML=(c,name)=>`<span class="eq">${name} = ${polyBody(c)}</span>`;
+/* F(x) = body + C, for display of the whole family */
+const famHTML=(c,name)=>`<span class="eq">${name} = ${polyBody(anti(c,0),true)} + <i>C</i></span>`;
+const termHTML=(k,i)=>((Math.abs(k)===1&&i>0)?(k<0?MINUS:''):(k<0?MINUS:'')+fracHTML(Math.abs(k)))+xpow(i);
+function curvePath(fn){
+  let d='', pen=false;
+  for(let x=-6;x<=6.001;x+=0.05){
+    const y=fn(x);
+    if(!isFinite(y)||Math.abs(y)>40){ pen=false; continue; }
+    d+=(pen?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); pen=true;
+  }
+  return d;
+}
+const lineSVG=(m,b,cls)=>`<line class="${cls}" x1="${sx(-6)}" y1="${sy(m*-6+b)}" x2="${sx(6)}" y2="${sy(m*6+b)}"/>`;
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+/* opt: fam:[c...] grey curves, cls, tan:{x,m}, pts:[{x,y,cls,label}] */
+function plot(svg,f,opt={}){
+  const id='ac'+(++pid);
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  (opt.fam||[]).forEach(F=>{ h+=`<path class="fam${F.c0?' c0':''}" d="${curvePath(F.f)}"/>`; });
+  if(f) h+=`<path class="${opt.cls||'ln'}" d="${curvePath(f)}"/>`;
+  if(opt.tan){ const t=opt.tan; h+=lineSVG(t.m,t.y-t.m*t.x,'tan'); }
+  h+='</g>';
+  (opt.pts||[]).forEach(p=>{
+    if(!inG(p.x,p.y)) return;
+    h+=`<circle class="${p.cls||'cur'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`;
+    if(p.label) h+=`<text class="ptlbl" x="${sx(p.x)+6}" y="${sy(p.y)-6}">${p.label}</text>`;
+  });
+  draw(svg,null,0,{extra:h});
+}
+
+/* intro: x² + C for a few C */
+{ const fam=[-3,-1,1,3].map(C=>({f:x=>x*x+C})); plot($('introS'),x=>x*x,{fam,tan:{x:1,y:1,m:2},pts:[{x:1,y:1}]}); }
+
+/* lab */
+const FNS=[
+  {c:[0,2],name:'2x'},
+  {c:[0,0,3],name:'3x²'},
+  {c:[0,1],name:'x'},
+  {c:[-2,2],name:'2x − 2'},
+  {c:[-1,0,1],name:'x² − 1'},
+  {c:[1],name:'1'}
+];
+let fi=0;
+$('fnPick').innerHTML=FNS.map((F,i)=>`<button data-i="${i}" dir="ltr" aria-pressed="${i===0}">f(x) = ${F.name}</button>`).join('');
+$('fnPick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ fi=+b.dataset.i; setPick(); lab(); }));
+function setPick(){ $('fnPick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===fi)); }
+const cR=$('cRange'), xR=$('xRange');
+function lab(){
+  const F=FNS[fi], C=+cR.value, x0=+xR.value;
+  const A=anti(F.c,C), Fx=x=>ev(A,x), y0=Fx(x0), m=ev(F.c,x0);
+  const fam=[-3,-2,-1,0,1,2,3].filter(k=>k!==C).map(k=>{ const B=anti(F.c,k); return {f:x=>ev(B,x),c0:k===0}; });
+  $('labEq').innerHTML='<div>'+polyHTML(F.c,'<i>f</i>(<i>x</i>)')+'</div><div>'+famHTML(F.c,'<i>F</i>(<i>x</i>)')+'</div>';
+  $('cVal').textContent=numTxt(C); $('xVal').textContent=numTxt(x0);
+  plot($('labG'),Fx,{fam,tan:{x:x0,y:y0,m},pts:[{x:x0,y:y0}]});
+  plot($('labD'),x=>ev(F.c,x),{cls:'ln2',pts:[{x:x0,y:m}]});
+  let t=`<div class="nums"><div>עם <span class="eq"><i>C</i> = ${numTxt(C)}</span>: ${polyHTML(A,'<i>F</i>(<i>x</i>)')}</div>`;
+  t+=`<div>שיפוע המשיק הכחול: <span class="eq"><i>F</i>′(${numTxt(x0)}) = <i>f</i>(${numTxt(x0)}) = ${nt(m)}</span></div></div>`;
+  t+=`<div>בדיקה: גוזרים את <span class="eq">${polyBody(anti(F.c,0),true)}</span> ומקבלים בחזרה <span class="eq">${polyBody(F.c)}</span>. ה-<span class="eq"><i>C</i></span> נעלם בגזירה.</div>`;
+  if(Math.abs(m)<1e-9) t+='<div>כאן <span class="eq"><i>f</i> = 0</span>, ולכן המשיק אופקי. זו נקודת קיצון של <span class="eq"><i>F</i></span>.</div>';
+  else t+=`<div><span class="eq"><i>f</i>(${numTxt(x0)})</span> ${m>0?'<strong>חיובי</strong>, ולכן <span class="eq"><i>F</i></span> עולה':'<strong>שלילי</strong>, ולכן <span class="eq"><i>F</i></span> יורדת'} בנקודה הזאת, בכל <span class="eq"><i>C</i></span>.</div>`;
+  if(F.c.length===1) t+='<div><span class="eq"><i>f</i></span> קבועה, ולכן כל הפונקציות הקדומות הן ישרים מקבילים עם אותו שיפוע.</div>';
+  $('labExplain').innerHTML=t;
+}
+[cR,xR].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [f,c,x]=btn.dataset.p.split(','); fi=+f; cR.value=c; xR.value=x; setPick(); lab(); }));
+lab();
+
+/* worked example: f(x) = 3x² − 4x + 1, F(1) = 3 */
+const exC=[1,-4,3], exA=anti(exC,3), exF=x=>ev(exA,x);
+const exFam=[-2,0,1,5].map(k=>{ const B=anti(exC,k); return {f:x=>ev(B,x)}; });
+const EXS=[
+  [{},'נתונה <span class="eq"><i>f</i>(<i>x</i>) = 3<i>x</i>² − 4<i>x</i> + 1</span>. נמצא את הפונקציה הקדומה <span class="eq"><i>F</i></span> שהגרף שלה עובר בנקודה <span class="eq">(1, 3)</span>.'],
+  [{},'<strong>צעד 1, אינטגרל לכל איבר:</strong> <span class="eq">∫3<i>x</i>² <i>dx</i> = <i>x</i>³</span>, <span class="eq">∫4<i>x</i> <i>dx</i> = 2<i>x</i>²</span>, ו-<span class="eq">∫1 <i>dx</i> = <i>x</i></span>. מעלים חזקה ומחלקים בחזקה החדשה.'],
+  [{fam:true},'<strong>צעד 2, מוסיפים <span class="eq"><i>C</i></span>:</strong> <span class="eq"><i>F</i>(<i>x</i>) = <i>x</i>³ − 2<i>x</i>² + <i>x</i> + <i>C</i></span>. זו משפחה שלמה של עקומות, האפורות בגרף. עכשיו צריך לבחור את האחת שעוברת ב-<span class="eq">(1, 3)</span>.'],
+  [{fam:true,curve:true,pt:true},'<strong>צעד 3, מציבים את הנקודה:</strong> <span class="eq"><i>F</i>(1) = 1 − 2 + 1 + <i>C</i> = <i>C</i></span>. צריך שזה יהיה 3, ולכן <span class="eq"><i>C</i> = 3</span>.'],
+  [{curve:true,pt:true,tan:true},'<strong>צעד 4, התשובה ובדיקה:</strong> <span class="eq"><i>F</i>(<i>x</i>) = <i>x</i>³ − 2<i>x</i>² + <i>x</i> + 3</span>. גוזרים: <span class="eq">3<i>x</i>² − 4<i>x</i> + 1</span>, בדיוק <span class="eq"><i>f</i></span>. ובנקודה עצמה <span class="eq"><i>f</i>(1) = 0</span>, ולכן המשיק שם אופקי.']
+];
+let exI=0;
+function ex(){
+  const [o,txt]=EXS[exI];
+  plot($('exG'),o.curve?exF:null,{fam:o.fam?exFam.concat(o.curve?[]:[{f:exF}]):[],tan:o.tan?{x:1,y:3,m:0}:null,pts:o.pt?[{x:1,y:3,label:'(1, 3)'}]:[]});
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice: coef = write F(x) by coefficients; value = F(p) */
+let pr=null, streak=0, solved=0;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function newPr(){
+  const deg=Math.random()<0.45?1:2;
+  const c=deg===1?[rnd(-4,4),pick([-4,-2,2,4])]:[rnd(-3,3),pick([-4,-2,0,2,4]),pick([-3,3,6])];
+  const x0=pick([0,0,1]), y0=rnd(-3,3);
+  const A0=anti(c,0), C=y0-ev(A0,x0), A=anti(c,C);
+  const kind=Math.random()<0.55?'coef':'value';
+  const p=pick([-1,2]);
+  pr={c,A,A0,C,x0,y0,kind,p,ans:ev(A,p),tries:0,hint:0};
+  $('prEq').innerHTML=polyHTML(c,'<i>f</i>(<i>x</i>)');
+  const cond=`<span class="eq"><i>F</i>(${numTxt(x0)}) = ${numTxt(y0)}</span>`;
+  if(kind==='coef'){
+    $('prQ').innerHTML=`מצאו את הפונקציה הקדומה <span class="eq"><i>F</i></span> של <span class="eq"><i>f</i></span> שמקיימת ${cond}. מלאו את המקדמים (0 אם אין איבר כזה).`;
+    let inp='<span class="eq"><i>F</i>(<i>x</i>) =</span> ';
+    for(let i=A.length-1;i>=0;i--){ inp+=`<label for="prC${i}"><input id="prC${i}" inputmode="text" autocomplete="off" aria-label="מקדם של x בחזקת ${i}"><span class="eq">${xpow(i)||'&nbsp;'}</span></label>${i>0?' <span class="eq">+</span> ':''}`; }
+    $('prInputs').className='inputs coefs';
+    $('prInputs').innerHTML=inp;
+  }else{
+    $('prQ').innerHTML=`<span class="eq"><i>F</i></span> היא פונקציה קדומה של <span class="eq"><i>f</i></span>, ו-${cond}. כמה זה <span class="eq"><i>F</i>(${numTxt(p)})</span>?`;
+    $('prInputs').className='inputs';
+    $('prInputs').innerHTML=`<label for="prV"><span class="eq"><i>F</i>(${numTxt(p)}) =</span><input id="prV" inputmode="text" autocomplete="off"></label>`;
+  }
+  plot($('prG'),x=>ev(c,x),{cls:'ln2'});
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const steps=[];
+  for(let i=pr.c.length-1;i>=0;i--){ const k=pr.c[i]; if(!k) continue; steps.push(`<span class="eq">∫${termHTML(k,i)||numTxt(k)} <i>dx</i> = ${termHTML(k/(i+1),i+1)}</span>`); }
+  let s=`אינטגרל לכל איבר: ${steps.join(', ')}. לכן ${famHTML(pr.c,'<i>F</i>(<i>x</i>)')}. `;
+  s+=`מציבים <span class="eq"><i>x</i> = ${numTxt(pr.x0)}</span>: <span class="eq">${nt(ev(pr.A0,pr.x0))} + <i>C</i> = ${numTxt(pr.y0)}</span>, ולכן <span class="eq"><i>C</i> = ${nt(pr.C)}</span>. `;
+  s+=`יוצא ${polyHTML(pr.A,'<i>F</i>(<i>x</i>)')}`;
+  if(pr.kind==='value') s+=`, ו-<span class="eq"><i>F</i>(${numTxt(pr.p)}) = ${nt(pr.ans)}</span>`;
+  return s;
+}
+function success(){
+  streak++; solved++; score();
+  const Fx=x=>ev(pr.A,x);
+  plot($('prG'),Fx,{fam:[{f:x=>ev(pr.c,x)}],pts:[{x:pr.x0,y:pr.y0}]});
+  $('prFb').innerHTML=`<div class="fb ok">נכון! ${polyHTML(pr.A,'<i>F</i>(<i>x</i>)')}${pr.kind==='value'?`, ולכן <span class="eq"><i>F</i>(${numTxt(pr.p)}) = ${nt(pr.ans)}</span>`:''}. בגרף: <span class="eq"><i>F</i></span> בוורוד, ו-<span class="eq"><i>f</i></span> באפור.</div>`;
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const fb=$('prFb'), msgs=[], {c,A,A0}=pr;
+  if(pr.kind==='coef'){
+    const v=A.map((_,i)=>{ const el=$('prC'+i); return el?parseNum(el.value):NaN; });
+    if(v.some(isNaN)){ fb.innerHTML='<div class="fb err">מלאו מספר בכל משבצת. אם אין איבר כזה, כתבו 0.</div>'; return; }
+    if(v.every((x,i)=>near(x,A[i]))){ success(); return; }
+    const top=A.length-1;
+    const restOk=v.every((x,i)=>i===0||near(x,A[i]));
+    const dc=der(c);
+    if(restOk&&near(v[0],0)&&!near(pr.C,0)) msgs.push(`החלק עם x נכון! אבל שכחתם את <span class="eq"><i>C</i></span>. הציבו <span class="eq"><i>x</i> = ${numTxt(pr.x0)}</span> ודרשו שיצא ${numTxt(pr.y0)}.`);
+    else if(restOk) msgs.push(`החלק עם x נכון! בדקו את המספר הקבוע: הציבו <span class="eq"><i>x</i> = ${numTxt(pr.x0)}</span> ב-<span class="eq"><i>F</i></span>, וצריך לקבל ${numTxt(pr.y0)}.`);
+    else if(c.every((k,i)=>!k||near(v[i+1],k))) msgs.push('העליתם את החזקה, אבל לא חילקתם בחזקה החדשה. <span class="eq">∫<i>a</i><i>x</i>ⁿ <i>dx</i> = <i>a</i><i>x</i>ⁿ⁺¹ ÷ (<i>n</i> + 1)</span>.');
+    else if(dc.length&&dc.every((k,i)=>near(v[i],k))&&v.slice(dc.length).every(x=>near(x,0))) msgs.push('זה נראה כמו הנגזרת של <span class="eq"><i>f</i></span>. כאן הולכים בכיוון ההפוך: מעלים את החזקה, לא מורידים.');
+    else if(!near(v[top],A[top])) msgs.push(`בדקו את האיבר עם החזקה הגבוהה: <span class="eq">${termHTML(c[top-1],top-1)}</span> הופך ל-<span class="eq"><i>x</i>${SUP[top]||''}</span> חלקי ${top}, כפול המקדם.`);
+    else msgs.push('האיבר העליון נכון! בדקו את שאר האיברים, כל אחד לבד. זכרו שמספר לבד מקבל x.');
+  }else{
+    const y=parseNum($('prV').value);
+    if(isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    if(near(y,pr.ans)){ success(); return; }
+    if(near(y,ev(c,pr.p))) msgs.push('הצבתם ב-<span class="eq"><i>f</i></span>. צריך קודם למצוא את <span class="eq"><i>F</i></span>, ורק אז להציב בה.');
+    else if(near(y,ev(A0,pr.p))&&!near(pr.C,0)) msgs.push('כמעט! שכחתם את <span class="eq"><i>C</i></span>. מצאו אותו מהנקודה הנתונה, ואז הציבו שוב.');
+    else if(near(y,ev(der(c),pr.p))) msgs.push('גזרתם את <span class="eq"><i>f</i></span> במקום לעשות אינטגרל. מעלים את החזקה ומחלקים בחזקה החדשה.');
+    else msgs.push(`לא בדיוק. כתבו קודם את <span class="eq"><i>F</i>(<i>x</i>)</span> עם <span class="eq"><i>C</i></span>, מצאו את <span class="eq"><i>C</i></span> מהנקודה, ואז הציבו <span class="eq">${numTxt(pr.p)}</span> בסוגריים.`);
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(m=>'<li>'+m+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  let t;
+  if(pr.hint===1) t='אינטגרל לכל איבר לבד: מעלים את החזקה ב-1 ומחלקים בחזקה החדשה. מספר לבד מקבל x. בסוף מוסיפים <span class="eq"><i>C</i></span>.';
+  else t=`${famHTML(pr.c,'<i>F</i>(<i>x</i>)')}. עכשיו הציבו <span class="eq"><i>x</i> = ${numTxt(pr.x0)}</span> ודרשו שיצא ${numTxt(pr.y0)}, כדי למצוא את <span class="eq"><i>C</i></span>.`;
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  if(!pr) return;
+  plot($('prG'),x=>ev(pr.A,x),{fam:[{f:x=>ev(pr.c,x)}],pts:[{x:pr.x0,y:pr.y0}]});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

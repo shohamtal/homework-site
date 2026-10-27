@@ -46,5 +46,18 @@ if(typeof document!=='undefined') (function(){
       box.insertAdjacentHTML('afterbegin',`<span class="miri-tip"><img src="${root}assets/miri/hint-96.webp" width="40" height="40" loading="lazy" alt="">רמז ממירי</span>`);
     }));
   },true);
+  /* a long equation split into neighbouring .eq spans (so it can wrap) must still read left to right:
+     wrap each run of adjacent .eq spans in one LTR isolate, also inside lab output rendered later */
+  const group=el=>el.querySelectorAll('.eq').forEach(e=>{
+    if(e.parentElement.closest('.eq-run, .eq')) return;
+    const run=[e]; let n=e.nextSibling;
+    while(n){ if(n.nodeType===3 && !n.textContent.trim()){ n=n.nextSibling; continue; }
+      if(n.nodeType===1 && n.classList.contains('eq')){ run.push(n); n=n.nextSibling; continue; } break; }
+    if(run.length<2) return;
+    const w=document.createElement('span'); w.className='eq-run'; w.dir='ltr'; e.before(w);
+    for(let x=e, last=run[run.length-1];;){ const nx=x.nextSibling; w.appendChild(x); if(x===last) break; x=nx; }
+  });
+  group(b);
+  new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.length && m.target.nodeType===1 && group(m.target))).observe(b,{childList:true,subtree:true});
   if(nav && !nav.children.length){ const h=NAV.topicNav(root,b.dataset.subject,b.dataset.topic); if(h){ nav.className='topic-nav'; nav.setAttribute('aria-label','נושא קודם ונושא הבא'); nav.innerHTML=h; } }
 })();

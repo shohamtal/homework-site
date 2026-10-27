@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>אינטגרל מסוים ושטח בין עקומות · כיתה יב · מירי</title>
+<meta name="description" content="מחשבים שטח מתחת לגרף ובין שני גרפים. רואים מלבנים שממלאים את השטח ומתקרבים לתשובה. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/definite-integral/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אינטגרל מסוים ושטח בין עקומות · כיתה יב · מירי">
+<meta property="og:description" content="מחשבים שטח מתחת לגרף ובין שני גרפים. רואים מלבנים שממלאים את השטח ומתקרבים לתשובה. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/definite-integral/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"אינטגרלים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#integrals-12"},{"@type":"ListItem","position":5,"name":"אינטגרל מסוים ושטח בין עקומות","item":"https://shohamtal.github.io/homework-site/math/definite-integral/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין אינטגרל מסוים לאינטגרל לא מסוים?","acceptedAnswer":{"@type":"Answer","text":"אינטגרל לא מסוים הוא משפחה של פונקציות, ולכן יש בו + C. אינטגרל מסוים, עם גבולות a ו-b, הוא מספר אחד: F(b) − F(a). כשהפונקציה חיובית, המספר הזה הוא השטח מתחת לגרף. ראו את זה במעבדה."}},{"@type":"Question","name":"איך מחשבים שטח בין שני גרפים?","acceptedAnswer":{"@type":"Answer","text":"מוצאים את נקודות החיתוך, ובודקים איזה גרף עליון. אחר כך מחשבים אינטגרל של העליון פחות התחתון, בין נקודות החיתוך. למשל השטח בין 4 − x² ל-x + 2 הוא 4.5. ראו את הדוגמה הפתורה."}},{"@type":"Question","name":"למה יצא לי אינטגרל שלילי?","acceptedAnswer":{"@type":"Answer","text":"כי הגרף נמצא מתחת לציר x בחלק מהתחום, ושם האינטגרל נספר במינוס. אם השאלה מבקשת שטח, חלקו את התחום בנקודות שבהן הגרף חוצה את הציר, חשבו כל חלק לבד, וחברו את הערכים המוחלטים."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אינטגרל מסוים ושטח בין עקומות","description":"מחשבים שטח מתחת לגרף ובין שני גרפים. רואים מלבנים שממלאים את השטח ומתקרבים לתשובה. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/definite-integral/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"אינטגרלים","teaches":"אינטגרל מסוים ושטח בין עקומות","keywords":"שטח מתחת לגרף, שטח בין עקומות, אינטגרל מסוים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .area{fill:var(--line); fill-opacity:.16; stroke:none}
+  .g .rp{fill:var(--hl); fill-opacity:.75; stroke:var(--ink); stroke-width:.7}
+  .g .rn{fill:var(--blue); fill-opacity:.35; stroke:var(--ink); stroke-width:.7}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .g .bnd{stroke:var(--ink); stroke-width:1.1; stroke-dasharray:3 3}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .nums{display:grid; gap:4px}
+  .int{display:inline-flex; align-items:center}
+  .int .lim{display:inline-flex; flex-direction:column; font-size:.55em; line-height:1.15; margin-inline-start:.05em; text-align:left}
+  .rule{font-size:clamp(1.2rem,4.5vw,1.6rem); text-align:center; margin:4px 0}
+  .warn{color:var(--err); font-weight:600}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="definite-integral">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#integrals-12">אינטגרלים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">אינטגרל מסוים ושטח בין עקומות</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · אינטגרלים</div>
+  <h1>אינטגרל מסוים ושטח בין עקומות <span class="slogan">כמה צבע צריך כדי למלא את זה?</span></h1>
+  <p class="lead">אינטגרל מסוים הוא מספר, לא פונקציה. הוא מודד את השטח שבין הגרף לציר x, בין שני גבולות.
+  נראה איך מלבנים צרים ממלאים את השטח, איך הפונקציה הקדומה נותנת את התשובה המדויקת, ואיך מחשבים שטח בין שני גרפים. החומר מתאים ל-4 ול-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שטח מתחת לגרף</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>ממלאים במלבנים</h3>
+      <p>קשה למדוד שטח עם צד עקום. אבל שטח של מלבן קל: רוחב כפול גובה. מחלקים את השטח להרבה מלבנים צרים ומחברים.</p>
+      <svg class="g" id="introS" viewBox="0 0 240 240" role="img" aria-label="שטח מתחת לפרבולה ממולא במלבנים צהובים"></svg>
+      <p>ככל שהמלבנים צרים יותר, הסכום קרוב יותר לשטח האמיתי. הגבול של הסכום הזה הוא <strong>האינטגרל המסוים</strong>.</p>
+    </div>
+    <div class="mini">
+      <h3>הקיצור: פונקציה קדומה</h3>
+      <p>לא צריך לחבר מלבנים בכל פעם. אם <span class="eq"><i>F</i></span> היא <a href="../antiderivative/">פונקציה קדומה</a> של <span class="eq"><i>f</i></span>, אז:</p>
+      <p class="rule"><span class="eq"><span class="int">∫<span class="lim"><span><i>b</i></span><span><i>a</i></span></span></span> <i>f</i>(<i>x</i>) <i>dx</i> =</span> <span class="eq"><i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)</span></p>
+      <p>מציבים את הגבול העליון, מחסירים את התחתון. ה-<span class="eq"><i>C</i></span> מתבטל, ולכן לא כותבים אותו.</p>
+      <p>דוגמה: <span class="eq"><span class="int">∫<span class="lim"><span>3</span><span>0</span></span></span> <i>x</i>² <i>dx</i></span> <span class="eq">= 9 − 0 = 9</span>, כי <span class="eq"><i>F</i>(<i>x</i>) = <i>x</i>³ ÷ 3</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>שטח בין שני גרפים:</strong> מוצאים איפה הם נחתכים, ומחשבים אינטגרל של <strong>העליון פחות התחתון</strong>: <span class="eq"><span class="int">∫<span class="lim"><span><i>b</i></span><span><i>a</i></span></span></span> (<i>f</i>(<i>x</i>) − <i>g</i>(<i>x</i>)) <i>dx</i></span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מלבנים שמתקרבים לתשובה</h2></div>
+  <p class="text">בחרו מצב ופונקציה. הזיזו את הגבולות <span class="eq"><i>a</i></span> ו-<span class="eq"><i>b</i></span>, ואת מספר המלבנים <span class="eq"><i>n</i></span>. ראו איך סכום המלבנים מתקרב לאינטגרל.</p>
+  <div class="seg" id="modePick" role="group" aria-label="בחירת מצב">
+    <button data-m="under" aria-pressed="true">שטח מתחת לגרף</button>
+    <button data-m="between" aria-pressed="false">שטח בין שני גרפים</button>
+  </div>
+  <div class="seg" id="fnPick" role="group" aria-label="בחירת פונקציה" style="margin-top:8px"></div>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף עם שטח מוצלל ומלבנים"></svg>
+    <div class="ctrl">
+      <div id="bounds">
+        <label class="slider" for="aRange"><span>הגבול התחתון <span class="eq"><i>a</i></span></span><span class="eq" id="aVal"></span></label>
+        <input type="range" id="aRange" min="-4" max="4" step="0.5" value="0">
+        <label class="slider" for="bRange"><span>הגבול העליון <span class="eq"><i>b</i></span></span><span class="eq" id="bVal"></span></label>
+        <input type="range" id="bRange" class="blue" min="-4" max="4" step="0.5" value="2">
+      </div>
+      <label class="slider" for="nRange"><span>מספר המלבנים <span class="eq"><i>n</i></span></span><span class="eq" id="nVal"></span></label>
+      <input type="range" id="nRange" class="hl" min="1" max="40" step="1" value="4">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="under,0,0,2,1" dir="ltr">n = 1</button>
+          <button data-p="under,0,0,2,40" dir="ltr">n = 40</button>
+          <button data-p="under,3,-2,2,20">שטח מתחת לציר</button>
+          <button data-p="under,2,-3,2,10">הגרף חוצה את הציר</button>
+          <button data-p="between,0,0,0,12">בין פרבולה לישר</button>
+          <button data-p="between,2,0,0,16" dir="ltr">2x ו-x²</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">מלבן צהוב נספר בפלוס, מלבן כחול (מתחת לציר) נספר במינוס. לכן אינטגרל יכול לצאת שלילי, או אפילו 0, גם כשיש שטח צבוע.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>הסדר הפוך.</strong> תמיד <span class="eq"><i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)</span>: העליון פחות התחתון. אם הופכים, התשובה יוצאת עם סימן הפוך.</div></li>
+    <li><div><strong>שטח מתחת לציר יוצא שלילי.</strong> אינטגרל של פונקציה שלילית הוא מספר שלילי, אבל שטח הוא תמיד חיובי. כשהגרף חוצה את הציר, מחלקים לחלקים בנקודות החיתוך, ולוקחים ערך מוחלט לכל חלק.</div></li>
+    <li><div><strong>בין שני גרפים: מי למעלה?</strong> מחסירים את התחתון מהעליון. כדי לדעת מי למעלה, הציבו נקודה אחת בין נקודות החיתוך בשתי הפונקציות.</div></li>
+    <li><div><strong>שוכחים למצוא את הגבולות.</strong> בשטח בין גרפים, הגבולות הם נקודות החיתוך. פותרים <span class="eq"><i>f</i>(<i>x</i>) = <i>g</i>(<i>x</i>)</span> לפני שעושים אינטגרל.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> הסתכלו על הגרף והעריכו את השטח בעזרת המשבצות. אם יצא לכם 40 ועל הגרף יש בערך 4 משבצות צבועות, משהו השתבש.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">לחצו "הצעד הבא" ותראו איך מחשבים שטח בין פרבולה לישר.</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: אינטגרלים ושטחים</h2></div>
+  <p class="text">כל פעם יופיע אינטגרל לחשב או שטח למצוא. אפשר לכתוב שבר עם קו נטוי (<span class="eq">32/3</span>) או מספר עשרוני עם שתי ספרות אחרי הנקודה.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr" style="font-size:clamp(1.2rem,5vw,1.8rem)"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs" dir="ltr"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין אינטגרל מסוים לאינטגרל לא מסוים?</h3>
+    <p>אינטגרל לא מסוים הוא משפחה של פונקציות, ולכן יש בו <span class="eq">+ <i>C</i></span>. אינטגרל מסוים, עם גבולות <span class="eq"><i>a</i></span> ו-<span class="eq"><i>b</i></span>, הוא מספר אחד: <span class="eq"><i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)</span>. כשהפונקציה חיובית, המספר הזה הוא השטח מתחת לגרף. <a href="#lab">ראו את זה במעבדה</a>.</p>
+    <h3>איך מחשבים שטח בין שני גרפים?</h3>
+    <p>מוצאים את נקודות החיתוך, ובודקים איזה גרף עליון. אחר כך מחשבים אינטגרל של העליון פחות התחתון, בין נקודות החיתוך. למשל השטח בין <span class="eq">4 − <i>x</i>²</span> ל-<span class="eq"><i>x</i> + 2</span> הוא 4.5. <a href="#example">ראו את הדוגמה הפתורה</a>.</p>
+    <h3>למה יצא לי אינטגרל שלילי?</h3>
+    <p>כי הגרף נמצא מתחת לציר x בחלק מהתחום, ושם האינטגרל נספר במינוס. אם השאלה מבקשת שטח, חלקו את התחום בנקודות שבהן הגרף חוצה את הציר, חשבו כל חלק לבד, וחברו את הערכים המוחלטים.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/antiderivative/">פונקציה קדומה ואינטגרל לא מסוים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/antiderivative/"><small>→ הנושא הקודם</small>פונקציה קדומה ואינטגרל לא מסוים</a><a class="next" href="../../math/volume-of-revolution/"><small>הנושא הבא ←</small>נפח גוף סיבוב</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,sx,sy,pick,MINUS,toFrac}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const nt=v=>numTxt(r2(v));
+const near=(a,b)=>Math.abs(a-b)<0.011;
+const SUP=['','','²','³','⁴','⁵'];
+let pid=0;
+
+/* polynomial = coefficients [c0, c1, c2, c3] */
+const ev=(c,x)=>c.reduce((s,k,i)=>s+k*Math.pow(x,i),0);
+const anti=c=>[0].concat(c.map((k,i)=>k/(i+1)));
+const sub=(f,g)=>{ const n=Math.max(f.length,g.length), r=[]; for(let i=0;i<n;i++) r.push((f[i]||0)-(g[i]||0)); while(r.length>1&&!r[r.length-1]) r.pop(); return r; };
+const xpow=i=>i===0?'':i===1?'<i>x</i>':'<i>x</i>'+SUP[i];
+function polyBody(c){
+  const parts=[];
+  for(let i=c.length-1;i>=0;i--){
+    const k=c[i]; if(!k) continue;
+    const mag=(Math.abs(k)===1&&i>0)?'':fracHTML(Math.abs(k));
+    parts.push({neg:k<0,h:mag+xpow(i)});
+  }
+  if(!parts.length) return '0';
+  let s='';
+  parts.forEach((p,i)=>{ s+= i===0?(p.neg?MINUS:'')+p.h : ` ${p.neg?MINUS:'+'} ${p.h}`; });
+  return s;
+}
+/* a value as a fraction when it is one (4/3 → ⁴⁄₃ style), else rounded */
+function valHTML(v){
+  const [n,d]=toFrac(Math.abs(v));
+  if(Math.abs(n/d-Math.abs(v))<1e-9&&d>1) return (v<0?MINUS:'')+fracHTML(Math.abs(v));
+  return nt(v);
+}
+const intHTML=(a,b,body)=>`<span class="eq"><span class="int">∫<span class="lim"><span>${b}</span><span>${a}</span></span></span> ${body} <i>dx</i></span>`;
+function curvePath(fn,x0=-6,x1=6){
+  let d='', pen=false;
+  for(let x=x0;x<=x1+1e-9;x+=0.05){
+    const y=fn(x);
+    if(!isFinite(y)||Math.abs(y)>40){ pen=false; continue; }
+    d+=(pen?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); pen=true;
+  }
+  return d;
+}
+/* region between top(x) and bot(x) for a ≤ x ≤ b */
+function regionPath(top,bot,a,b){
+  const N=80, pts=[];
+  for(let i=0;i<=N;i++){ const x=a+(b-a)*i/N; pts.push(sx(x).toFixed(1)+' '+sy(top(x)).toFixed(1)); }
+  for(let i=N;i>=0;i--){ const x=a+(b-a)*i/N; pts.push(sx(x).toFixed(1)+' '+sy(bot(x)).toFixed(1)); }
+  return 'M'+pts.join('L')+'Z';
+}
+/* midpoint rectangles from bot to top */
+function rectsSVG(top,bot,a,b,n){
+  let h=''; const dx=(b-a)/n;
+  for(let i=0;i<n;i++){
+    const m=a+dx*(i+.5), t=top(m), u=bot(m), y1=Math.max(t,u), y0=Math.min(t,u);
+    h+=`<rect class="${t>=u?'rp':'rn'}" x="${sx(a+dx*i).toFixed(2)}" y="${sy(y1).toFixed(2)}" width="${(dx*20).toFixed(2)}" height="${((y1-y0)*20).toFixed(2)}"/>`;
+  }
+  return h;
+}
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+/* opt: curves:[{f,cls}], region:{top,bot,a,b}, rects:{top,bot,a,b,n}, bnds:[x], pts */
+function plot(svg,opt={}){
+  const id='dc'+(++pid);
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  if(opt.region){ const r=opt.region; h+=`<path class="area" d="${regionPath(r.top,r.bot,r.a,r.b)}"/>`; }
+  if(opt.rects){ const r=opt.rects; h+=rectsSVG(r.top,r.bot,r.a,r.b,r.n); }
+  (opt.bnds||[]).forEach(x=>{ h+=`<line class="bnd" x1="${sx(x)}" y1="${sy(-6)}" x2="${sx(x)}" y2="${sy(6)}"/>`; });
+  (opt.curves||[]).forEach(C=>{ h+=`<path class="${C.cls||'ln'}" d="${curvePath(C.f)}"/>`; });
+  h+='</g>';
+  (opt.pts||[]).forEach(p=>{
+    if(!inG(p.x,p.y)) return;
+    h+=`<circle class="${p.cls||'cur'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4"/>`;
+    if(p.label) h+=`<text class="ptlbl" x="${sx(p.x)+5}" y="${sy(p.y)-6}">${p.label}</text>`;
+  });
+  draw(svg,null,0,{extra:h});
+}
+const zero=()=>0;
+/* area |f| on [a,b]: midpoint sum on a fine grid (shown rounded to 2 decimals) */
+function absArea(c,a,b){
+  const N=4000, dx=(b-a)/N; let s=0;
+  for(let i=0;i<N;i++) s+=Math.abs(ev(c,a+dx*(i+.5)))*dx;
+  return s;
+}
+
+/* intro */
+{ const f=x=>0.25*x*x+1; plot($('introS'),{rects:{top:f,bot:zero,a:0,b:4,n:6},curves:[{f}],bnds:[0,4]}); }
+
+/* lab */
+const UNDER=[
+  {c:[1,0,0.5],name:'½x² + 1'},
+  {c:[4,0,-1],name:'4 − x²'},
+  {c:[1,1],name:'x + 1'},
+  {c:[0,-1,0,0.25],name:'¼x³ − x'}
+];
+const PAIRS=[
+  {f:[4,0,-1],g:[2,1],names:['4 − x²','x + 2'],a:-2,b:1},
+  {f:[3],g:[-1,0,1],names:['3','x² − 1'],a:-2,b:2},
+  {f:[0,2],g:[0,0,1],names:['2x','x²'],a:0,b:2}
+];
+let mode='under', fi=0;
+const aR=$('aRange'), bR=$('bRange'), nR=$('nRange');
+function pickers(){
+  const L=mode==='under'?UNDER.map(F=>'f(x) = '+F.name):PAIRS.map(P=>P.names[0]+' , '+P.names[1]);
+  $('fnPick').innerHTML=L.map((t,i)=>`<button data-i="${i}" dir="ltr" aria-pressed="${i===fi}">${t}</button>`).join('');
+  $('fnPick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ fi=Math.min(+b.dataset.i,(mode==='under'?UNDER:PAIRS).length-1); setPress(); lab(); }));
+  $('modePick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===mode));
+  $('bounds').hidden=mode!=='under';
+}
+function setPress(){ $('fnPick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===fi)); }
+$('modePick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ mode=b.dataset.m; fi=0; pickers(); lab(); }));
+aR.addEventListener('input',()=>{ if(+aR.value>=+bR.value) bR.value=Math.min(4,+aR.value+0.5); if(+aR.value>=+bR.value) aR.value=+bR.value-0.5; lab(); });
+bR.addEventListener('input',()=>{ if(+bR.value<=+aR.value) aR.value=Math.max(-4,+bR.value-0.5); if(+bR.value<=+aR.value) bR.value=+aR.value+0.5; lab(); });
+nR.addEventListener('input',lab);
+function lab(){
+  const n=+nR.value; $('nVal').textContent=n;
+  let t, c, a, b, top, bot, curves;
+  if(mode==='under'){
+    const F=UNDER[fi]; c=F.c; a=+aR.value; b=+bR.value;
+    top=x=>ev(c,x); bot=zero; curves=[{f:top}];
+    $('aVal').textContent=numTxt(a); $('bVal').textContent=numTxt(b);
+  }else{
+    const P=PAIRS[fi]; c=sub(P.f,P.g); a=P.a; b=P.b;
+    top=x=>ev(P.f,x); bot=x=>ev(P.g,x); curves=[{f:top},{f:bot,cls:'ln2'}];
+  }
+  const A=anti(c), Fa=ev(A,a), Fb=ev(A,b), I=Fb-Fa;
+  const dx=(b-a)/n; let R=0; for(let i=0;i<n;i++) R+=ev(c,a+dx*(i+.5))*dx;
+  plot($('labG'),{region:{top,bot,a,b},rects:{top,bot,a,b,n},curves,bnds:[a,b]});
+  const body=mode==='under'?`(${polyBody(c)})`:`((${polyBody(PAIRS[fi].f)}) − (${polyBody(PAIRS[fi].g)}))`;
+  t=`<div class="nums">`;
+  if(mode==='between') t+=`<div>הגרפים נחתכים ב-<span class="eq"><i>x</i> = ${numTxt(a)}</span> וב-<span class="eq"><i>x</i> = ${numTxt(b)}</span>. הוורוד למעלה, הכחול למטה.</div><div>מחסירים: <span class="eq">${polyBody(PAIRS[fi].f)} − (${polyBody(PAIRS[fi].g)})</span> <span class="eq">= ${polyBody(c)}</span></div>`;
+  t+=`<div>${n===1?'שטח המלבן היחיד':`סכום ${n} המלבנים`}: <span class="eq">≈ ${nt(R)}</span></div>`;
+  t+=`<div>${intHTML(numTxt(a),numTxt(b),mode==='under'?body:`(${polyBody(c)})`)} <span class="eq">= <i>F</i>(${numTxt(b)}) − <i>F</i>(${numTxt(a)})</span></div>`;
+  t+=`<div><span class="eq">= ${valHTML(Fb)} − (${valHTML(Fa)}) = ${valHTML(I)}</span></div></div>`;
+  const diff=Math.abs(R-I);
+  t+= diff<0.01?'<div>הסכום כמעט שווה לאינטגרל. עם עוד מלבנים ההפרש נעלם לגמרי.</div>':`<div>ההפרש בין הסכום לאינטגרל: <span class="eq">≈ ${nt(diff)}</span>. הגדילו את <span class="eq"><i>n</i></span> וראו אותו קטן.</div>`;
+  if(mode==='under'){
+    const S=absArea(c,a,b);
+    if(Math.abs(S-Math.abs(I))>0.005){
+      t+=`<div class="warn">שימו לב: חלק מהשטח מתחת לציר x, ושם האינטגרל נספר במינוס. האינטגרל הוא ${valHTML(I)}, אבל השטח הצבוע כולו הוא בערך ${nt(S)}.</div>`;
+      if(Math.abs(I)<0.005) t+='<div>החלק שמעל הציר והחלק שמתחתיו שווים בגודלם, ולכן הם מבטלים זה את זה והאינטגרל יוצא 0.</div>';
+    }else if(I<0) t+=`<div class="warn">כל השטח מתחת לציר, ולכן האינטגרל שלילי. השטח עצמו הוא ${valHTML(-I)}.</div>`;
+    else t+='<div>כל הגרף מעל הציר בתחום הזה, ולכן האינטגרל הוא בדיוק השטח הצבוע.</div>';
+  }else t+=`<div>השטח בין הגרפים הוא <strong>${valHTML(I)}</strong>.</div>`;
+  $('labExplain').innerHTML=t;
+}
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [m,f,a,b,n]=btn.dataset.p.split(','); mode=m; fi=+f; if(m==='under'){ aR.value=a; bR.value=b; } nR.value=n; pickers(); lab(); }));
+pickers(); lab();
+
+/* worked example: area between 4 − x² and x + 2 */
+const P0=PAIRS[0], exTop=x=>ev(P0.f,x), exBot=x=>ev(P0.g,x);
+const EXS=[
+  [{},'נמצא את השטח הכלוא בין הפרבולה <span class="eq"><i>f</i>(<i>x</i>) = 4 − <i>x</i>²</span> לבין הישר <span class="eq"><i>g</i>(<i>x</i>) = <i>x</i> + 2</span>.'],
+  [{pts:true},'<strong>צעד 1, נקודות החיתוך:</strong> <span class="eq">4 − <i>x</i>² = <i>x</i> + 2</span>, כלומר <span class="eq"><i>x</i>² + <i>x</i> − 2 = 0</span>. מפרקים: <span class="eq">(<i>x</i> + 2)(<i>x</i> − 1) = 0</span>, ולכן <span class="eq"><i>x</i> = −2</span> ו-<span class="eq"><i>x</i> = 1</span>.'],
+  [{pts:true,region:true},'<strong>צעד 2, מי למעלה?</strong> מציבים <span class="eq"><i>x</i> = 0</span>: <span class="eq"><i>f</i>(0) = 4</span> ו-<span class="eq"><i>g</i>(0) = 2</span>. הפרבולה מעל הישר בכל התחום.'],
+  [{pts:true,region:true},'<strong>צעד 3, העליון פחות התחתון:</strong> <span class="eq">(4 − <i>x</i>²) − (<i>x</i> + 2) = 2 − <i>x</i> − <i>x</i>²</span>. את זה נכניס לאינטגרל בין −2 ל-1.'],
+  [{pts:true,region:true,rects:true},'<strong>צעד 4, פונקציה קדומה:</strong> <span class="eq"><i>F</i>(<i>x</i>) = 2<i>x</i> − <i>x</i>² ÷ 2 − <i>x</i>³ ÷ 3</span>. המלבנים מראים את מה שנחשב עכשיו.'],
+  [{pts:true,region:true},'<strong>צעד 5, מציבים:</strong> <span class="eq"><i>F</i>(1) = 2 − ½ − ⅓ = 7/6</span>, ו-<span class="eq"><i>F</i>(−2) = −4 − 2 + 8/3 = −10/3</span>. השטח: <span class="eq">7/6 + 10/3 = 27/6 = 4.5</span>.']
+];
+let exI=0;
+function ex(){
+  const [o,txt]=EXS[exI];
+  plot($('exG'),{region:o.region?{top:exTop,bot:exBot,a:-2,b:1}:null,rects:o.rects?{top:exTop,bot:exBot,a:-2,b:1,n:12}:null,curves:[{f:exTop},{f:exBot,cls:'ln2'}],pts:o.pts?[{x:-2,y:0,label:'(−2, 0)'},{x:1,y:3,label:'(1, 3)'}]:[]});
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice: def = ∫ₐᵇ of a polynomial; band = area between p − x² and y = q; below = area between x² − k² and the x-axis */
+let pr=null, streak=0, solved=0;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function newPr(){
+  const r=Math.random(), kind=r<0.45?'def':r<0.78?'band':'below';
+  let o={kind,tries:0,hint:0};
+  if(kind==='def'){
+    let c; do{ c=[rnd(-3,3),pick([-4,-2,0,2,4]),pick([-3,0,0,3])]; }while(!c[1]&&!c[2]);
+    while(c.length>1&&!c[c.length-1]) c.pop();
+    const a=pick([-1,0,0,1]), b=a+pick([1,2,3]);
+    const A=anti(c);
+    Object.assign(o,{c,a,b,A,ans:ev(A,b)-ev(A,a)});
+    $('prEq').innerHTML=intHTML(numTxt(a),numTxt(b),`(${polyBody(c)})`);
+    $('prQ').innerHTML='חשבו את האינטגרל המסוים.';
+    const f=x=>ev(c,x);
+    o.draw=done=>plot($('prG'),{region:done?{top:f,bot:zero,a,b}:null,curves:[{f}],bnds:[a,b]});
+  }else if(kind==='band'){
+    const k=pick([1,2,2,3]), p=k===3?pick([4,5]):pick(k===1?[1,2,3,4]:[2,3,4]), q=p-k*k;
+    const c=[p-q,0,-1];
+    Object.assign(o,{k,p,q,c,a:-k,b:k,A:anti(c),ans:4/3*k*k*k});
+    $('prEq').innerHTML=`<span class="eq"><i>y</i> = ${polyBody([p,0,-1])}</span><br><span class="eq"><i>y</i> = ${numTxt(q)}</span>`;
+    $('prQ').innerHTML=q===0?'מצאו את השטח הכלוא בין הפרבולה לציר x.':'מצאו את השטח הכלוא בין הפרבולה לישר.';
+    const f=x=>p-x*x, g=()=>q;
+    o.draw=done=>plot($('prG'),{region:done?{top:f,bot:g,a:-k,b:k}:null,curves:[{f},{f:g,cls:'ln2'}]});
+  }else{
+    const k=pick([1,2]), c=[-k*k,0,1];
+    Object.assign(o,{k,c,a:-k,b:k,A:anti(c),ans:4/3*k*k*k});
+    $('prEq').innerHTML=`<span class="eq"><i>y</i> = ${polyBody(c)}</span>`;
+    $('prQ').innerHTML='מצאו את השטח הכלוא בין הפרבולה לציר x. שימו לב איפה הפרבולה נמצאת.';
+    const f=x=>ev(c,x);
+    o.draw=done=>plot($('prG'),{region:done?{top:zero,bot:f,a:-k,b:k}:null,curves:[{f}]});
+  }
+  pr=o; pr.draw(false);
+  $('prInputs').innerHTML=`<label for="prV"><span class="eq">${kind==='def'?'האינטגרל =':'השטח ='}</span><input id="prV" inputmode="text" autocomplete="off"></label>`;
+  $('prV').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {kind,c,a,b,A}=pr, Fa=ev(A,a), Fb=ev(A,b);
+  let s='';
+  if(kind==='band') s+=`נקודות החיתוך: <span class="eq">${polyBody([pr.p,0,-1])} = ${numTxt(pr.q)}</span>, כלומר <span class="eq"><i>x</i>² = ${pr.k*pr.k}</span>, ולכן <span class="eq"><i>x</i> = ±${pr.k}</span>. הפרבולה למעלה, אז מחשבים את העליון פחות התחתון: <span class="eq">${polyBody(c)}</span>. `;
+  if(kind==='below') s+=`הפרבולה חותכת את ציר x ב-<span class="eq"><i>x</i> = ±${pr.k}</span>, וביניהן היא <strong>מתחת</strong> לציר. לכן העליון הוא הציר (0) והתחתון הוא הפרבולה: מחשבים <span class="eq">0 − (${polyBody(c)}) = ${polyBody(c.map(v=>-v))}</span>. `;
+  const cc=kind==='below'?c.map(v=>-v):c, AA=anti(cc);
+  s+=`פונקציה קדומה: <span class="eq"><i>F</i>(<i>x</i>) = ${polyBody(AA)}</span>. `;
+  s+=`<span class="eq"><i>F</i>(${numTxt(b)}) − <i>F</i>(${numTxt(a)}) = ${valHTML(ev(AA,b))} − (${valHTML(ev(AA,a))}) = ${valHTML(pr.ans)}</span>`;
+  if(kind!=='def') s+=`, בערך <span class="eq">${nt(pr.ans)}</span>`;
+  return s;
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const fb=$('prFb'), y=parseNum($('prV').value), msgs=[];
+  if(isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר, שבר כמו 32/3 או מספר עשרוני.</div>'; return; }
+  if(near(y,pr.ans)){ streak++; solved++; score(); pr.draw(true); fb.innerHTML=`<div class="fb ok">נכון! ${pr.kind==='def'?'האינטגרל':'השטח'} הוא ${valHTML(pr.ans)}${pr.kind==='def'?'':` (בערך ${nt(pr.ans)})`}.</div>`; return; }
+  const {kind,c,a,b,A}=pr;
+  if(near(y,-pr.ans)) msgs.push(kind==='def'?'יצא לכם עם סימן הפוך. האם חישבתם <span class="eq"><i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)</span>, העליון פחות התחתון?':'שטח לא יכול להיות שלילי. מחסירים את הגרף <strong>התחתון</strong> מהגרף <strong>העליון</strong>.');
+  else if(kind==='def'&&near(y,ev(A,b))&&!near(ev(A,a),0)) msgs.push(`הצבתם רק את הגבול העליון. צריך גם להחסיר את <span class="eq"><i>F</i>(${numTxt(a)})</span>.`);
+  else if(kind==='def'&&near(y,c.reduce((s,k,i)=>s+k*(Math.pow(b,i+1)-Math.pow(a,i+1)),0))) msgs.push('העליתם את החזקה, אבל שכחתם לחלק בחזקה החדשה כשמצאתם את <span class="eq"><i>F</i></span>.');
+  else if(kind==='def'&&near(y,ev(c,b)-ev(c,a))) msgs.push('הצבתם בפונקציה עצמה. קודם מוצאים פונקציה קדומה <span class="eq"><i>F</i></span>, ורק אז מציבים את הגבולות.');
+  else if(kind==='band'&&pr.q!==0&&near(y,ev(anti([pr.p,0,-1]),pr.k)-ev(anti([pr.p,0,-1]),-pr.k))) msgs.push(`חישבתם את השטח מתחת לפרבולה עד ציר x. כאן הגבול התחתון הוא הישר <span class="eq"><i>y</i> = ${numTxt(pr.q)}</span>, אז מחסירים אותו מהפרבולה.`);
+  else if(kind!=='def'&&near(y,pr.ans/2)) msgs.push('יצא בדיוק חצי. בדקו את הגבולות: יש שתי נקודות חיתוך, אחת שלילית ואחת חיובית.');
+  else if(kind!=='def'&&near(y,4*pr.k)) msgs.push('נראה שחישבתם מלבן. השטח כאן עקום, צריך אינטגרל.');
+  else msgs.push(kind==='def'?'לא בדיוק. מצאו את <span class="eq"><i>F</i></span>, הציבו את שני הגבולות בסוגריים, והחסירו.':'לא בדיוק. מצאו קודם את נקודות החיתוך, ואז חשבו אינטגרל של העליון פחות התחתון ביניהן.');
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(m=>'<li>'+m+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  const {kind,c}=pr; let t;
+  if(pr.hint===1) t=kind==='def'?'מוצאים פונקציה קדומה <span class="eq"><i>F</i></span>: מעלים חזקה ומחלקים בחזקה החדשה. אחר כך <span class="eq"><i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)</span>.':kind==='band'?'מתחילים בנקודות החיתוך: משווים את הפרבולה לישר ופותרים.':'מתחילים בנקודות החיתוך עם ציר x: פותרים <span class="eq"><i>y</i> = 0</span>. ואז בודקים: הפרבולה מעל הציר או מתחתיו?';
+  else if(kind==='def') t=`<span class="eq"><i>F</i>(<i>x</i>) = ${polyBody(pr.A)}</span>. עכשיו הציבו <span class="eq">${numTxt(pr.b)}</span> ו-<span class="eq">${numTxt(pr.a)}</span> והחסירו.`;
+  else if(kind==='band') t=`החיתוך ב-<span class="eq"><i>x</i> = ±${pr.k}</span>. מחשבים ${intHTML('−'+pr.k,String(pr.k),`(${polyBody(c)})`)}.`;
+  else t=`החיתוך ב-<span class="eq"><i>x</i> = ±${pr.k}</span>, והפרבולה מתחת לציר. מחשבים ${intHTML('−'+pr.k,String(pr.k),`(${polyBody(c.map(v=>-v))})`)}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  if(!pr) return;
+  pr.draw(true);
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מספרים מרוכבים: i וההצגה האלגברית · כיתה יב · מירי</title>
+<meta name="description" content="מספרים מרוכבים לכיתה יב (5 יח״ל): מה זה i, חיבור, כפל וחילוק, המספר הצמוד ומישור גאוס. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/complex-numbers/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מספרים מרוכבים: i וההצגה האלגברית · כיתה יב · מירי">
+<meta property="og:description" content="מספרים מרוכבים לכיתה יב (5 יח״ל): מה זה i, חיבור, כפל וחילוק, המספר הצמוד ומישור גאוס. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/complex-numbers/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"מספרים מרוכבים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#complex-12"},{"@type":"ListItem","position":5,"name":"מספרים מרוכבים: i וההצגה האלגברית","item":"https://shohamtal.github.io/homework-site/math/complex-numbers/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה i במתמטיקה?","acceptedAnswer":{"@type":"Answer","text":"i הוא המספר שהריבוע שלו הוא −1. בעזרתו מוציאים שורש ממספר שלילי: √−16 = 4i. כל מספר מרוכב נכתב בצורה a + bi, עם חלק ממשי וחלק מדומה."}},{"@type":"Question","name":"איך מחלקים מספרים מרוכבים?","acceptedAnswer":{"@type":"Answer","text":"כופלים את המונה ואת המכנה בצמוד של המכנה. המכנה הופך למספר ממשי, c² + d², ואז מחלקים כל חלק בנפרד. למשל (3 + 4i) : (1 − 2i) = −1 + 2i."}},{"@type":"Question","name":"מה זה המספר הצמוד?","acceptedAnswer":{"@type":"Answer","text":"הצמוד של a + bi הוא a − bi: אותו חלק ממשי, חלק מדומה עם סימן הפוך. במישור גאוס זה שיקוף בציר הממשי, ומספר כפול הצמוד שלו תמיד נותן מספר ממשי חיובי."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מספרים מרוכבים: i וההצגה האלגברית","description":"מספרים מרוכבים לכיתה יב (5 יח״ל): מה זה i, חיבור, כפל וחילוק, המספר הצמוד ומישור גאוס. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/complex-numbers/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מספרים מרוכבים","teaches":"מספרים מרוכבים: i וההצגה האלגברית","keywords":"i, מישור גאוס, צמוד","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.gp{width:100%; max-width:330px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.gp .gl{stroke:var(--grid); stroke-width:1}
+.gp .ax{stroke:var(--ink); stroke-width:1.4}
+.gp .tk{font:9px var(--f-body); fill:var(--muted); text-anchor:middle; dominant-baseline:middle}
+.gp .axl{font:700 11px var(--f-body); fill:var(--muted)}
+.gp .vec{stroke-width:2.6; stroke-linecap:round}
+.gp .vz{stroke:var(--line)} .gp .vw{stroke:var(--blue)} .gp .vr{stroke:var(--green)} .gp .vm{stroke:var(--muted)}
+.gp .dash{stroke:var(--muted); stroke-width:1.4; stroke-dasharray:5 4; fill:none}
+.gp .pz{fill:var(--line)} .gp .pw{fill:var(--blue)} .gp .pr{fill:var(--green)} .gp .pm{fill:var(--card); stroke:var(--muted); stroke-width:2}
+.gp circle{stroke:var(--card); stroke-width:2}
+.gp .pl{font:700 12px var(--f-math); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.gp .pl.z{fill:var(--line)} .gp .pl.w{fill:var(--blue)} .gp .pl.r{fill:var(--green)} .gp .pl.m{fill:var(--muted)}
+.modes{display:flex; flex-wrap:wrap; gap:8px}
+.modes button[aria-pressed="true"]{background:var(--hl)}
+.zlab{color:var(--line); font-weight:700} .wlab{color:var(--blue); font-weight:700} .rlab{color:var(--green); font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="complex-numbers">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#complex-12">מספרים מרוכבים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מספרים מרוכבים: i וההצגה האלגברית</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · מספרים מרוכבים · 5 יח״ל</div>
+  <h1>מספרים מרוכבים: i וההצגה האלגברית <span class="slogan">שורש של מספר שלילי</span></h1>
+  <p class="lead">למשוואה <span class="eq"><i>x</i>² = −1</span> אין פתרון בין המספרים שהכרתם. אז ממציאים מספר חדש, <span class="eq"><i>i</i></span>, שהריבוע שלו הוא <span class="eq">−1</span>. בעזרתו כל משוואה ריבועית נפתרת. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מספר עם שני חלקים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>המספר i</h3>
+      <p><span class="eq"><i>i</i>² = −1</span>. זה כל מה שצריך לזכור.</p>
+      <p>ומכאן: <span class="eq">√−9 = 3<i>i</i></span>, כי <span class="eq">(3<i>i</i>)² = 9<i>i</i>² = −9</span>.</p>
+      <p>החזקות של <span class="eq"><i>i</i></span> חוזרות במחזור של 4: <span class="eq"><i>i</i>, −1, −<i>i</i>, 1</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>הצגה אלגברית</h3>
+      <p>כל מספר מרוכב נכתב כך: <span class="eq"><i>z</i> = <i>a</i> + <i>b</i><i>i</i></span>.</p>
+      <p><span class="eq"><i>a</i></span> הוא <strong>החלק הממשי</strong> ו-<span class="eq"><i>b</i></span> הוא <strong>החלק המדומה</strong>.</p>
+      <p>במישור גאוס המספר הוא הנקודה <span class="eq">(<i>a</i>, <i>b</i>)</span>: ממשי על הציר האופקי, מדומה על האנכי.</p>
+    </div>
+    <div class="mini">
+      <h3>הצמוד</h3>
+      <p>הצמוד של <span class="eq"><i>a</i> + <i>b</i><i>i</i></span> הוא <span class="eq"><i>a</i> − <i>b</i><i>i</i></span>. במישור זה שיקוף בציר הממשי.</p>
+      <p>מספר כפול הצמוד שלו יוצא ממשי: <span class="eq">(<i>a</i> + <i>b</i><i>i</i>)(<i>a</i> − <i>b</i><i>i</i>) = <i>a</i>² + <i>b</i>²</span>.</p>
+      <p>בזה משתמשים כדי לחלק.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מספרים במישור גאוס</h2></div>
+  <p class="text">בחרו פעולה והזיזו את המחוונים של <span class="zlab">z</span> ושל <span class="wlab">w</span>. התוצאה מופיעה <span class="rlab">בירוק</span>, ובתיבה רואים איך מחשבים אותה.</p>
+  <div class="lab">
+    <svg class="gp" id="labG" viewBox="0 0 300 300" role="img" aria-label="מישור גאוס עם המספרים z, w והתוצאה"></svg>
+    <div class="ctrl">
+      <div class="modes" id="modes" role="group" aria-label="פעולה">
+        <button data-m="add" aria-pressed="true">חיבור</button>
+        <button data-m="sub" aria-pressed="false">חיסור</button>
+        <button data-m="mul" aria-pressed="false">כפל</button>
+        <button data-m="conj" aria-pressed="false">צמוד</button>
+      </div>
+      <div class="big-eq" id="labEq" dir="ltr" style="font-size:clamp(1.2rem,4.6vw,1.7rem)"></div>
+      <label class="slider" for="za"><span><span class="zlab">z</span>: החלק הממשי</span><span class="eq" id="zav"></span></label>
+      <input type="range" id="za" min="-4" max="4" step="1" value="2">
+      <label class="slider" for="zb"><span><span class="zlab">z</span>: החלק המדומה</span><span class="eq" id="zbv"></span></label>
+      <input type="range" id="zb" min="-4" max="4" step="1" value="3">
+      <div id="wCtrls" class="ctrl">
+        <label class="slider" for="wa"><span><span class="wlab">w</span>: החלק הממשי</span><span class="eq" id="wav"></span></label>
+        <input type="range" id="wa" min="-4" max="4" step="1" value="1">
+        <label class="slider" for="wb"><span><span class="wlab">w</span>: החלק המדומה</span><span class="eq" id="wbv"></span></label>
+        <input type="range" id="wb" min="-4" max="4" step="1" value="-1">
+      </div>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="mul,0,1,0,1" dir="ltr">i · i</button>
+          <button data-p="mul,2,3,1,-1" dir="ltr">(2 + 3i)(1 − i)</button>
+          <button data-p="mul,3,1,0,1" dir="ltr">(3 + i) · i</button>
+          <button data-p="add,3,1,1,2" dir="ltr">(3 + i) + (1 + 2i)</button>
+          <button data-p="conj,3,4,0,0" dir="ltr">3 + 4i וצמוד</button>
+          <button data-p="mul,2,1,2,-1" dir="ltr">(2 + i)(2 − i)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב לכפל ב-<span class="eq"><i>i</i></span>: הנקודה מסתובבת ב-90° נגד כיוון השעון. על הסיבוב הזה בונים את <a href="../complex-polar/">ההצגה הקוטבית</a>.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3><span class="eq"><i>i</i>²</span> הוא מינוס</h3>
+      <p>בכפל <span class="eq">(2 + 3<i>i</i>)(1 + 4<i>i</i>)</span> יוצא האיבר <span class="eq">12<i>i</i>²</span>.</p>
+      <p>הוא שווה <span class="eq">−12</span>, לא <span class="eq">+12</span>. זו הטעות הנפוצה ביותר.</p>
+    </div>
+    <div class="mini">
+      <h3>כל איבר בכל איבר</h3>
+      <p>לא כופלים רק ממשי בממשי ומדומה במדומה.</p>
+      <p><span class="eq">(<i>a</i> + <i>b</i><i>i</i>)(<i>c</i> + <i>d</i><i>i</i>)</span> נותן ארבעה איברים, כמו בכפל של שני סוגריים רגילים.</p>
+    </div>
+    <div class="mini">
+      <h3>חילוק בעזרת הצמוד</h3>
+      <p>כופלים <strong>גם</strong> את המונה <strong>וגם</strong> את המכנה בצמוד של המכנה. אחרת השבר משתנה.</p>
+      <p>המכנה הופך ל-<span class="eq"><i>c</i>² + <i>d</i>²</span>, עם פלוס.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> אחרי חילוק כפלו את התוצאה במכנה. אם קיבלתם את המונה, החילוק נכון.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: חילוק</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: משוואה ריבועית</button>
+  </div>
+  <div class="lab">
+    <svg class="gp" id="exG" viewBox="0 0 300 300" role="img" aria-label="מישור גאוס של הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">כתבו את התשובה בצורה <span class="eq"><i>a</i> + <i>b</i><i>i</i></span>: את החלק הממשי בתיבה אחת ואת החלק המדומה בשנייה (בלי ה-<span class="eq"><i>i</i></span>). אם חלק הוא 0, כתבו 0.</p>
+  <div class="lab">
+    <svg class="gp" id="prG" viewBox="0 0 300 300" role="img" aria-label="מישור גאוס לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs">
+        <label for="prRe">החלק הממשי<input id="prRe" inputmode="text" autocomplete="off"></label>
+        <label for="prIm">החלק המדומה<input id="prIm" inputmode="text" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה i במתמטיקה?</h3>
+    <p><span class="eq"><i>i</i></span> הוא המספר שהריבוע שלו הוא <span class="eq">−1</span>. בעזרתו מוציאים שורש ממספר שלילי: <span class="eq">√−16 = 4<i>i</i></span>. כל מספר מרוכב נכתב בצורה <span class="eq"><i>a</i> + <i>b</i><i>i</i></span>, עם חלק ממשי וחלק מדומה.</p>
+    <h3>איך מחלקים מספרים מרוכבים?</h3>
+    <p>כופלים את המונה ואת המכנה בצמוד של המכנה. המכנה הופך למספר ממשי, <span class="eq"><i>c</i>² + <i>d</i>²</span>, ואז מחלקים כל חלק בנפרד. למשל <span class="eq">(3 + 4<i>i</i>) : (1 − 2<i>i</i>) = −1 + 2<i>i</i></span>.</p>
+    <h3>מה זה המספר הצמוד?</h3>
+    <p>הצמוד של <span class="eq"><i>a</i> + <i>b</i><i>i</i></span> הוא <span class="eq"><i>a</i> − <i>b</i><i>i</i></span>: אותו חלק ממשי, חלק מדומה עם סימן הפוך. במישור גאוס זה שיקוף בציר הממשי, ומספר כפול הצמוד שלו תמיד נותן מספר ממשי חיובי.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/quadratic-equation/">משוואה ריבועית ונוסחת השורשים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/lines-planes-space/"><small>→ הנושא הקודם</small>ישרים ומישורים במרחב</a><a class="next" href="../../math/complex-polar/"><small>הנושא הבא ←</small>הצגה קוטבית ומשפט דה-מואבר</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const M='−';
+const r2=v=>{ const x=Math.round(v*100)/100; return Object.is(x,-0)?0:x; };
+const num=v=>{ const x=r2(v); return (x<0?M:'')+Math.abs(x); };
+const near=(a,b,t)=>Math.abs(a-b)<=t;
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+/* a + bi as text */
+function cx(a,b){
+  a=r2(a); b=r2(b);
+  const im=Math.abs(b)===1?'i':Math.abs(b)+'i';
+  if(b===0) return num(a);
+  if(a===0) return (b<0?M:'')+im;
+  return `${num(a)} ${b<0?M:'+'} ${im}`;
+}
+/* terms [[coef,suffix],...] → "3 + 2i − 4i²" (zero terms dropped) */
+function terms(list){
+  let s='';
+  list.filter(t=>r2(t[0])!==0).forEach(([c,suf],k)=>{
+    const ac=Math.abs(r2(c)), body=(ac===1&&suf?'':ac)+suf;
+    s+= k===0 ? (c<0?M:'')+body : ` ${c<0?M:'+'} ${body}`;
+  });
+  return s||'0';
+}
+const mul=(a,b,c,d)=>[a*c-b*d, a*d+b*c];
+const sq=v=>v<0?`(${num(v)})²`:`${num(v)}²`;
+const pz=t=>t.startsWith(M)?`(${t})`:t;
+
+/* ---------- Gauss plane: unit 20px, −7..7 ---------- */
+const C=150, U=20;
+const X=v=>C+U*v, Y=v=>C-U*v;
+const inside=(x,y)=>Math.abs(x)<=7.2&&Math.abs(y)<=7.2;
+function plane(svg,items,extra){
+  let s='';
+  for(let k=-7;k<=7;k++){ s+=`<line class="gl" x1="${X(k)}" y1="${Y(-7.4)}" x2="${X(k)}" y2="${Y(7.4)}"/><line class="gl" x1="${X(-7.4)}" y1="${Y(k)}" x2="${X(7.4)}" y2="${Y(k)}"/>`; }
+  s+=`<line class="ax" x1="${X(-7.4)}" y1="${C}" x2="${X(7.4)}" y2="${C}"/><line class="ax" x1="${C}" y1="${Y(-7.4)}" x2="${C}" y2="${Y(7.4)}"/>`;
+  [-6,-4,-2,2,4,6].forEach(k=>{ s+=`<text class="tk" x="${X(k)}" y="${C+9}">${num(k)}</text><text class="tk" x="${C-11}" y="${Y(k)}">${num(k)}</text>`; });
+  s+=`<text class="axl" x="${X(7.3)}" y="${C-7}" text-anchor="end">ממשי</text><text class="axl" x="${C+6}" y="${Y(7.1)}" text-anchor="start">מדומה</text>`;
+  if(extra) s+=extra;
+  (items||[]).forEach(p=>{
+    if(!inside(p.x,p.y)) return;
+    if(p.vec) s+=`<line class="vec v${p.c}" x1="${C}" y1="${C}" x2="${X(p.x)}" y2="${Y(p.y)}"/>`;
+  });
+  (items||[]).forEach(p=>{
+    if(!inside(p.x,p.y)) return;
+    s+=`<circle class="${p.c==='m'?'pm':'p'+p.c}" cx="${X(p.x)}" cy="${Y(p.y)}" r="5.5"/>`;
+    if(p.label){
+      const right=p.x>=0?p.x<=3.5:p.x<-3.5, dx=right?8:-8, anc=right?'start':'end', dy=p.y>=0?(p.y>6?14:-9):(p.y<-6?-9:15);
+      s+=`<text class="pl ${p.c}" x="${X(p.x)+dx}" y="${Y(p.y)+dy}" text-anchor="${anc}">${p.label}</text>`;
+    }
+  });
+  svg.innerHTML=s;
+}
+const dashLine=(x1,y1,x2,y2)=>(inside(x1,y1)&&inside(x2,y2))?`<line class="dash" x1="${X(x1)}" y1="${Y(y1)}" x2="${X(x2)}" y2="${Y(y2)}"/>`:'';
+
+/* ---------- lab ---------- */
+let mode='add';
+const R={za:$('za'),zb:$('zb'),wa:$('wa'),wb:$('wb')};
+function lab(){
+  const a=Math.round(R.za.value), b=Math.round(R.zb.value), c=Math.round(R.wa.value), d=Math.round(R.wb.value);
+  $('zav').textContent=num(a); $('zbv').textContent=num(b); $('wav').textContent=num(c); $('wbv').textContent=num(d);
+  $('wCtrls').style.display=mode==='conj'?'none':'';
+  const z={x:a,y:b,c:'z',vec:true,label:'z'}, w={x:c,y:d,c:'w',vec:true,label:'w'};
+  let res, items, extra='', eq, x='';
+  if(mode==='add'||mode==='sub'){
+    const s=mode==='add'?1:-1, rr=[a+s*c, b+s*d];
+    res={x:rr[0],y:rr[1],c:'r',vec:true,label:mode==='add'?'z + w':'z − w'};
+    items=[z,w,res];
+    if(mode==='add') extra=dashLine(a,b,rr[0],rr[1])+dashLine(c,d,rr[0],rr[1]);
+    else { items.push({x:-c,y:-d,c:'m',vec:false,label:'−w'}); extra=dashLine(0,0,-c,-d)+dashLine(-c,-d,rr[0],rr[1])+dashLine(a,b,rr[0],rr[1]); }
+    eq=[`(${cx(a,b)}) ${mode==='add'?'+':M} (${cx(c,d)})`,`= ${cx(rr[0],rr[1])}`];
+    x+=`<div>${mode==='add'?'מחברים':'מחסרים'} ממשי עם ממשי ומדומה עם מדומה:</div>`;
+    x+=`<div>${E(`ממשי: ${num(a)} ${mode==='add'?'+':M} ${c<0?'('+num(c)+')':num(c)} = ${num(rr[0])}`)}</div>`;
+    x+=`<div>${E(`מדומה: ${num(b)} ${mode==='add'?'+':M} ${d<0?'('+num(d)+')':num(d)} = ${num(rr[1])}`)}</div>`;
+    x+= mode==='add'?'<div>במישור זה כמו חיבור חצים: מקבילית, והתוצאה בפינה הרחוקה.</div>':`<div>חיסור הוא חיבור של ${E('−w')}, החץ ההפוך ל-${E('w')}.</div>`;
+  } else if(mode==='mul'){
+    const rr=mul(a,b,c,d);
+    res={x:rr[0],y:rr[1],c:'r',vec:true,label:'z · w'};
+    items=[z,w,res];
+    eq=[`(${cx(a,b)})(${cx(c,d)})`,`= ${cx(rr[0],rr[1])}`];
+    x+=`<div>פותחים סוגריים, כל איבר בכל איבר:</div>`;
+    x+=`<div>${E(terms([[a*c,''],[a*d,'i'],[b*c,'i'],[b*d,'i²']]))}</div>`;
+    if(b*d!==0) x+=`<div>${E(`i² = −1`)}, ולכן ${E(terms([[b*d,'i²']]))} הופך ל-${E(num(-b*d))}:</div>`;
+    x+=`<div>${E(`= ${cx(rr[0],rr[1])}`)}</div>`;
+    if(c===0&&d===1) x+='<div>כפל ב-<span class="eq">i</span> מסובב את הנקודה ב-90° נגד כיוון השעון.</div>';
+    if(c===a&&d===-b&&(a||b)) x+='<div>זה מספר כפול הצמוד שלו, ולכן יצא ממשי: <span class="eq">a² + b²</span>.</div>';
+    if(!inside(rr[0],rr[1])) x+='<div>התוצאה מחוץ לגרף, אבל החישוב נכון.</div>';
+  } else {
+    res={x:a,y:-b,c:'r',vec:true,label:'z̄'};
+    items=[z,res];
+    extra=dashLine(a,b,a,-b);
+    const pr=a*a+b*b;
+    eq=[`z = ${cx(a,b)}`,`z̄ = ${cx(a,-b)}`];
+    x+=`<div>הצמוד הופך את הסימן של החלק המדומה בלבד. במישור זה שיקוף בציר הממשי.</div>`;
+    x+=`<div>${E(`z · z̄ = ${sq(a)} + ${sq(b)} = ${pr}`)}: מספר ממשי.</div>`;
+    x+=`<div>${E(`z + z̄ = ${num(2*a)}`)}: גם הוא ממשי.</div>`;
+  }
+  plane($('labG'),items,extra);
+  $('labEq').innerHTML=eq.map(E).join(' ');
+  $('labTxt').innerHTML=x;
+}
+function setMode(m){ mode=m; document.querySelectorAll('#modes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m)); lab(); }
+document.querySelectorAll('#modes button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
+Object.values(R).forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{
+  const [m,a,bb,c,d]=b.dataset.p.split(',');
+  R.za.value=a; R.zb.value=bb; R.wa.value=c; R.wb.value=d; setMode(m);
+}));
+lab();
+
+/* ---------- worked examples ---------- */
+const FR=(n,d)=>`<span class="frac"><span>${n}</span><span>${d}</span></span>`;
+const EX={
+  A:{steps:[
+    [[{x:3,y:4,c:'z',vec:true,label:'3 + 4i'},{x:1,y:-2,c:'w',vec:true,label:'1 − 2i'}],
+      `חשבו ${E(FR('3 + 4i','1 − 2i'))}. אי אפשר לחלק ישר, כי במכנה יש ${E('i')}.`],
+    [[{x:3,y:4,c:'z',vec:true,label:'3 + 4i'},{x:1,y:-2,c:'w',vec:true,label:'1 − 2i'},{x:1,y:2,c:'m',label:'1 + 2i'}],
+      `כופלים את המונה ואת המכנה בצמוד של המכנה, ${E('1 + 2i')}. כפל בשבר ששווה 1 לא משנה את התוצאה.`],
+    [[{x:3,y:4,c:'z',vec:true,label:'3 + 4i'},{x:1,y:-2,c:'w',vec:true,label:'1 − 2i'}],
+      `המונה: ${E('(3 + 4i)(1 + 2i)')} ${E('= 3 + 6i + 4i + 8i²')} ${E('= 3 + 10i − 8')} ${E('= −5 + 10i')}.`],
+    [[{x:3,y:4,c:'z',vec:true,label:'3 + 4i'},{x:1,y:-2,c:'w',vec:true,label:'1 − 2i'}],
+      `המכנה: ${E('(1 − 2i)(1 + 2i) = 1 − 4i²')} ${E('= 1 + 4 = 5')}. יצא מספר ממשי, בדיוק כמו שרצינו.`],
+    [[{x:3,y:4,c:'z',vec:true,label:'3 + 4i'},{x:1,y:-2,c:'w',vec:true,label:'1 − 2i'},{x:-1,y:2,c:'r',vec:true,label:'−1 + 2i'}],
+      `${E(FR('−5 + 10i','5'))} ${E('= −1 + 2i')}. בדיקה: ${E('(−1 + 2i)(1 − 2i)')} ${E('= −1 + 2i + 2i − 4i²')} ${E('= 3 + 4i')}. נכון!`]
+  ]},
+  B:{steps:[
+    [[],`פתרו ${E('x² − 4x + 13 = 0')}. משתמשים ב<a href="../quadratic-equation/">נוסחת השורשים</a> כרגיל.`],
+    [[],`${E('Δ = b² − 4ac')} ${E('= 16 − 52 = −36')}. הדיסקרימיננטה שלילית, ולכן אין פתרון ממשי. אבל יש פתרון מרוכב.`],
+    [[],`${E('√−36 = √36 · √−1 = 6i')}.`],
+    [[{x:2,y:3,c:'z',vec:true,label:'2 + 3i'},{x:2,y:-3,c:'w',vec:true,label:'2 − 3i'}],
+      `${E('x = ' )}${E(FR('4 ± 6i','2'))}${E(' = 2 ± 3i')}. שני הפתרונות הם ${E('2 + 3i')} ו-${E('2 − 3i')}.`],
+    [[{x:2,y:3,c:'z',vec:true,label:'2 + 3i'},{x:2,y:-3,c:'w',vec:true,label:'2 − 3i'}],
+      'שימו לב: שני הפתרונות צמודים זה לזה, שיקוף בציר הממשי. כך זה תמיד במשוואה ריבועית עם מקדמים ממשיים.']
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [items,txt]=e.steps[exI];
+  plane($('exG'),items,exKey==='B'&&exI>=3?dashLine(2,3,2,-3):'');
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k; exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+let pr={}, streak=0, solved=0;
+const nz=(a,b)=>{ let v; do{ v=ri(a,b); }while(v===0); return v; };
+function newPr(){
+  let t; do{ t=pick(['add','sub','mul','mul','div','quad']); }while(t===pr.t&&Math.random()<.6);
+  let p={t,tries:0,hint:0};
+  if(t==='add'||t==='sub'){
+    p.a=nz(-6,6); p.b=nz(-6,6); p.c=nz(-6,6); p.d=nz(-6,6);
+    const s=t==='add'?1:-1; p.ans=[p.a+s*p.c, p.b+s*p.d];
+    p.q=`חשבו ${E(`(${cx(p.a,p.b)}) ${t==='add'?'+':M} (${cx(p.c,p.d)})`)}.`;
+    p.pts=[{x:p.a,y:p.b,c:'z',vec:true,label:'z'},{x:p.c,y:p.d,c:'w',vec:true,label:'w'}];
+  } else if(t==='mul'){
+    p.a=nz(-4,4); p.b=nz(-4,4); p.c=nz(-4,4); p.d=nz(-4,4);
+    p.ans=mul(p.a,p.b,p.c,p.d);
+    p.q=`חשבו ${E(`(${cx(p.a,p.b)})(${cx(p.c,p.d)})`)}.`;
+    p.pts=[{x:p.a,y:p.b,c:'z',vec:true,label:'z'},{x:p.c,y:p.d,c:'w',vec:true,label:'w'}];
+  } else if(t==='div'){
+    const qa=nz(-3,3), qb=ri(-3,3); p.c=nz(-3,3); p.d=nz(-3,3);
+    const z=mul(qa,qb,p.c,p.d); p.a=z[0]; p.b=z[1]; p.ans=[qa,qb];
+    p.q=`חשבו ${E(FR(cx(p.a,p.b),cx(p.c,p.d)))}.`;
+    p.pts=[{x:p.a,y:p.b,c:'z',vec:true,label:'z'},{x:p.c,y:p.d,c:'w',vec:true,label:'w'}];
+  } else {
+    p.p=ri(-4,4); p.qq=ri(1,5);
+    p.B=-2*p.p; p.C=p.p*p.p+p.qq*p.qq; p.ans=[p.p,p.qq];
+    p.q=`פתרו ${E(terms([[1,'x²'],[p.B,'x'],[p.C,'']])+' = 0')}. כתבו את הפתרון שהחלק המדומה שלו <strong>חיובי</strong>.`;
+    p.pts=[];
+  }
+  pr=p;
+  $('prQ').innerHTML=p.q;
+  plane($('prG'),p.pts);
+  $('prRe').value=''; $('prIm').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr, A=p.ans;
+  if(p.t==='add'||p.t==='sub'){
+    const op=p.t==='add'?'+':M;
+    return `ממשי: ${E(`${num(p.a)} ${op} ${p.c<0?'('+num(p.c)+')':num(p.c)} = ${num(A[0])}`)}, מדומה: ${E(`${num(p.b)} ${op} ${p.d<0?'('+num(p.d)+')':num(p.d)} = ${num(A[1])}`)}. התשובה ${E(cx(A[0],A[1]))}.`;
+  }
+  if(p.t==='mul'){
+    return `${E(terms([[p.a*p.c,''],[p.a*p.d,'i'],[p.b*p.c,'i'],[p.b*p.d,'i²']]))} ${E('= '+terms([[p.a*p.c,''],[p.a*p.d,'i'],[p.b*p.c,'i'],[-p.b*p.d,'']]))} ${E(`= ${cx(A[0],A[1])}`)}.`;
+  }
+  if(p.t==='div'){
+    const N=mul(p.a,p.b,p.c,-p.d), D=p.c*p.c+p.d*p.d;
+    return `כופלים מונה ומכנה ב-${E(pz(cx(p.c,-p.d)))}. המונה: ${E(cx(N[0],N[1]))}. המכנה: ${E(`${sq(p.c)} + ${sq(p.d)} = ${D}`)}. מחלקים כל חלק ב-${D}: ${E(cx(A[0],A[1]))}.`;
+  }
+  const D=p.B*p.B-4*p.C;
+  return `${E(`Δ = ${p.B*p.B} − ${4*p.C} = ${num(D)}`)}, ${E(`√Δ = ${2*p.qq}i`)}. ${E(`x = (${num(-p.B)} ± ${2*p.qq}i) : 2 = ${cx(p.p,p.qq)}`)} או ${E(cx(p.p,-p.qq))}.`;
+}
+function showRes(){
+  const p=pr, A=p.ans;
+  const pts=p.t==='quad'?[{x:A[0],y:A[1],c:'r',vec:true,label:cx(A[0],A[1])},{x:A[0],y:-A[1],c:'m',label:cx(A[0],-A[1])}]
+    : p.pts.concat([{x:A[0],y:A[1],c:'r',vec:true,label:cx(A[0],A[1])}]);
+  plane($('prG'),pts);
+}
+const rd=id=>parseNum($(id).value.replace(/i/g,'').replace(/^\+/,''));
+$('prCheck').onclick=()=>{
+  const re=rd('prRe'), im=rd('prIm'), fb=$('prFb'), p=pr, A=p.ans;
+  if(isNaN(re)||isNaN(im)){ fb.innerHTML='<div class="fb err">כתבו מספר בשתי התיבות. אם חלק הוא 0, כתבו 0.</div>'; return; }
+  const eq=(u,v)=>near(re,u,.01)&&near(im,v,.01);
+  if(eq(A[0],A[1])){ streak++; solved++; streakTxt(); showRes(); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  let m;
+  if(eq(A[1],A[0])&&A[0]!==A[1]) m='המספרים נכונים, אבל התחלפו. החלק הממשי הוא בלי i, והמדומה הוא המקדם של i.';
+  else if(p.t==='add'||p.t==='sub'){
+    if(p.t==='sub'&&eq(p.a+p.c,p.b+p.d)) m='חיברתם במקום לחסר.';
+    else if(p.t==='sub'&&(eq(p.a-p.c,p.b+p.d)||eq(p.a+p.c,p.b-p.d))) m='המינוס לפני הסוגריים נכנס לשני החלקים: גם לממשי וגם למדומה.';
+    else if(near(re,A[0],.01)) m='החלק הממשי נכון. בדקו שוב את החלק המדומה, שימו לב לסימנים.';
+    else if(near(im,A[1],.01)) m='החלק המדומה נכון. בדקו שוב את החלק הממשי, שימו לב לסימנים.';
+    else m='עוד לא. מחברים (או מחסרים) ממשי עם ממשי ומדומה עם מדומה, בנפרד.';
+  } else if(p.t==='mul'){
+    if(eq(p.a*p.c+p.b*p.d,p.a*p.d+p.b*p.c)) m=`החלק המדומה נכון, אבל ${E('i² = −1')}. האיבר ${E(terms([[p.b*p.d,'i²']]))} הוא ${E(num(-p.b*p.d))}, לא ${E(num(p.b*p.d))}.`;
+    else if(eq(p.a*p.c,p.b*p.d)) m='כפלתם רק ממשי בממשי ומדומה במדומה. כופלים כל איבר בכל איבר: יש ארבעה איברים.';
+    else if(near(re,A[0],.01)) m='החלק הממשי נכון. החלק המדומה בא משני האיברים האמצעיים: ad ו-bc.';
+    else if(near(im,A[1],.01)) m=`החלק המדומה נכון. החלק הממשי הוא ${E('ac − bd')}: בדקו את המינוס.`;
+    else m='עוד לא. פתחו סוגריים, כל איבר בכל איבר, ואז החליפו את i² ב-(−1).';
+  } else if(p.t==='div'){
+    const N=mul(p.a,p.b,p.c,-p.d), D=p.c*p.c+p.d*p.d, D2=p.c*p.c-p.d*p.d, Z=mul(p.a,p.b,p.c,p.d);
+    if(eq(N[0],N[1])) m=`חישבתם את המונה נכון, אבל שכחתם לחלק במכנה, ${E(String(D))}.`;
+    else if(D2!==0&&eq(N[0]/D2,N[1]/D2)) m=`המכנה הוא ${E(`${sq(p.c)} + ${sq(p.d)}`)}, עם פלוס, כי ${E('−d²i² = +d²')}.`;
+    else if(eq(Z[0],Z[1])) m='כפלתם את שני המספרים. כאן צריך לחלק.';
+    else if(eq(A[0],-A[1])) m='כמעט. בדקו את הסימן של החלק המדומה: כופלים בצמוד, שבו הסימן של המדומה הפוך.';
+    else m=`עוד לא. כפלו מונה ומכנה ב-${E(pz(cx(p.c,-p.d)))} ואז חלקו כל חלק במכנה.`;
+  } else {
+    if(eq(-A[0],A[1])) m=`החלק המדומה נכון. החלק הממשי הוא ${E('−b : 2a')}: שימו לב לסימן של b.`;
+    else if(eq(A[0],2*A[1])) m=`כמעט. ${E('√Δ')} צריך לחלק ב-${E('2a = 2')}, גם בחלק המדומה.`;
+    else if(eq(A[0],-A[1])) m='זה הפתרון השני. ביקשנו את זה שהחלק המדומה שלו חיובי.';
+    else if(near(re,A[0],.01)) m=`החלק הממשי נכון. החלק המדומה הוא ${E('√|Δ| : 2')}.`;
+    else m=`עוד לא. התחילו מ-${E('Δ = b² − 4ac')}. הוא שלילי, אז השורש שלו מדומה.`;
+  }
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2);
+  let h;
+  if(p.t==='add'||p.t==='sub'){
+    const op=p.t==='add'?'+':M;
+    h=p.hint===1?'מחברים או מחסרים ממשי עם ממשי, ומדומה עם מדומה. כל חלק בנפרד.'
+      :`ממשי: ${E(`${num(p.a)} ${op} ${p.c<0?'('+num(p.c)+')':num(p.c)}`)}. מדומה: ${E(`${num(p.b)} ${op} ${p.d<0?'('+num(p.d)+')':num(p.d)}`)}.`;
+  } else if(p.t==='mul'){
+    h=p.hint===1?`פותחים סוגריים: כל איבר בכל איבר, ארבעה איברים. אחר כך ${E('i² = −1')}.`
+      :`הפתיחה: ${E(terms([[p.a*p.c,''],[p.a*p.d,'i'],[p.b*p.c,'i'],[p.b*p.d,'i²']]))}. עכשיו החליפו את ${E('i²')} ב-${E('−1')} ואספו.`;
+  } else if(p.t==='div'){
+    const D=p.c*p.c+p.d*p.d;
+    h=p.hint===1?`כופלים את המונה ואת המכנה בצמוד של המכנה: ${E(cx(p.c,-p.d))}.`
+      :`המכנה יוצא ${E(String(D))}. המונה: ${E(`(${cx(p.a,p.b)})(${cx(p.c,-p.d)})`)}. חשבו אותו וחלקו ב-${D}.`;
+  } else {
+    const D=p.B*p.B-4*p.C;
+    h=p.hint===1?`חשבו ${E('Δ = b² − 4ac')}. יוצא שלילי, ולכן ${E('√Δ')} הוא מספר מדומה.`
+      :`${E(`Δ = ${num(D)}`)}, אז ${E(`√Δ = ${2*p.qq}i`)}. הציבו ב-${E('x = (−b ± √Δ) : 2a')}.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ showRes(); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+['prRe','prIm'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

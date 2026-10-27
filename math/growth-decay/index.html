@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>גדילה ודעיכה · כיתה יב · מירי</title>
+<meta name="description" content="ריבית דריבית, אוכלוסייה שגדלה ותרופה שמתפרקת בגוף: הנוסחה M = M₀·qᵗ וזמן מחצית חיים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/growth-decay/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="גדילה ודעיכה · כיתה יב · מירי">
+<meta property="og:description" content="ריבית דריבית, אוכלוסייה שגדלה ותרופה שמתפרקת בגוף: הנוסחה M = M₀·qᵗ וזמן מחצית חיים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/growth-decay/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"מעריכיות ולוגריתמים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#exp-log-12"},{"@type":"ListItem","position":5,"name":"גדילה ודעיכה","item":"https://shohamtal.github.io/homework-site/math/growth-decay/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין ריבית פשוטה לריבית דריבית?","acceptedAnswer":{"@type":"Answer","text":"בריבית פשוטה מקבלים כל שנה את אותו סכום, מחושב רק על הכסף של ההתחלה. בריבית דריבית הריבית מחושבת כל שנה על הסכום החדש, כולל הריבית שכבר נצברה. לכן כופלים: M = M₀ · qt. 1000 ש״ח ב-10% לשלוש שנים נותנים 1300 בריבית פשוטה, ו-1331 בריבית דריבית."}},{"@type":"Question","name":"איך מחשבים זמן מחצית חיים?","acceptedAnswer":{"@type":"Answer","text":"פותרים qt = 0.5. מוציאים log משני הצדדים ומקבלים t = log 0.5 ÷ log q. למשל כשנשאר 80% בכל שעה: t = log 0.5 ÷ log 0.8 ≈ 3.11 שעות. ראו דוגמה פתורה."}},{"@type":"Question","name":"איך מוצאים את q מתוך אחוזים?","acceptedAnswer":{"@type":"Answer","text":"בגדילה מוסיפים את האחוז ל-1: גדילה של 3% היא q = 1.03. בדעיכה מורידים אותו מ-1: ירידה של 15% היא q = 0.85. אם יודעים את הכמות לפני ואחרי תקופה אחת, מחלקים: q = M₁ ÷ M₀."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"גדילה ודעיכה","description":"ריבית דריבית, אוכלוסייה שגדלה ותרופה שמתפרקת בגוף: הנוסחה M = M₀·qᵗ וזמן מחצית חיים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/growth-decay/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מעריכיות ולוגריתמים","teaches":"גדילה ודעיכה","keywords":"ריבית דריבית, מחצית חיים, גדילה מעריכית","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  svg.gc{width:100%; max-width:420px; height:auto; display:block; margin-inline:auto; direction:ltr}
+  .gc .bg{fill:var(--card)}
+  .gc .grid{stroke:var(--grid); stroke-width:1}
+  .gc .axis{stroke:var(--ink); stroke-width:1.3}
+  .gc .tick{fill:var(--muted); font:8px var(--f-body)}
+  .gc .ax{fill:var(--ink); font:italic 700 10px var(--f-math)}
+  .gc .ln{stroke:var(--line); stroke-width:3; fill:none; stroke-linecap:round}
+  .gc .lin{stroke:var(--muted); stroke-width:1.8; fill:none; stroke-dasharray:5 4}
+  .gc .mark{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:4 3; fill:none}
+  .gc .dot{fill:var(--line)}
+  .gc .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .gc .mk{fill:var(--blue); stroke:var(--card); stroke-width:1.2}
+  .gc .lbl{font:700 9px var(--f-body); paint-order:stroke; stroke:var(--card); stroke-width:2.5px}
+  .gc .lbl.bl{fill:var(--blue)} .gc .lbl.mu{fill:var(--muted)}
+  .seg{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .rule{font-size:1.15rem; line-height:2}
+  .vt td.now{background:var(--hint-bg); font-weight:700}
+  .legend{display:flex; flex-wrap:wrap; gap:6px 14px; justify-content:center; font-size:.9rem; color:var(--muted); margin-top:6px}
+  .legend i{display:inline-block; width:22px; height:0; border-top:3px solid var(--line); vertical-align:middle; margin-inline-end:4px}
+  .legend i.lin{border-top:2px dashed var(--muted)} .legend i.mark{border-top:2px dashed var(--blue)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="growth-decay">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#exp-log-12">מעריכיות ולוגריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">גדילה ודעיכה</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · מעריכיות ולוגריתמים</div>
+  <h1>גדילה ודעיכה <span class="slogan">כל פעם כופלים באותו מספר</span></h1>
+  <p class="lead">כסף בחיסכון עם ריבית דריבית, עיר שמספר התושבים בה גדל כל שנה, ותרופה שהולכת ומתפרקת בגוף. בכל המקרים האלה, בכל תקופה הכמות <strong>מוכפלת באותו מספר</strong>. זה נותן נוסחה אחת: <span class="eq"><i>M</i> = <i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span>.
+  נלמד מה כל אות אומרת, איך מוצאים את q מתוך אחוזים, ומה זה זמן מחצית חיים. זו <a href="../exponential-functions/">פונקציה מעריכית</a>, וכדי למצוא זמן משתמשים ב<a href="../logarithms/">לוגריתמים</a>. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: הנוסחה M = M₀ · qᵗ</h2></div>
+  <p class="rule" style="text-align:center"><span class="eq"><i>M</i> = <i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span></p>
+  <div class="two">
+    <div class="mini">
+      <h3>מה כל אות אומרת</h3>
+      <p><span class="eq"><i>M</i>₀</span>: הכמות בהתחלה.</p>
+      <p><span class="eq"><i>q</i></span>: במה כופלים בכל תקופה (מקדם הגדילה או הדעיכה).</p>
+      <p><span class="eq"><i>t</i></span>: מספר התקופות שעברו (שנים, שעות, חודשים).</p>
+      <p><span class="eq"><i>M</i></span>: הכמות אחרי t תקופות.</p>
+    </div>
+    <div class="mini">
+      <h3>מאחוזים ל-q</h3>
+      <p><strong>גדילה</strong> של p אחוזים: <span class="eq"><i>q</i> = 1 + <i>p</i> ÷ 100</span>. למשל 5% נותן <span class="eq"><i>q</i> = 1.05</span>.</p>
+      <p><strong>דעיכה</strong> של p אחוזים: <span class="eq"><i>q</i> = 1 − <i>p</i> ÷ 100</span>. למשל ירידה של 20% נותנת <span class="eq"><i>q</i> = 0.8</span>.</p>
+      <p>אם <span class="eq"><i>q</i> &gt; 1</span> יש גדילה. אם <span class="eq">0 &lt; <i>q</i> &lt; 1</span> יש דעיכה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>זמן מחצית חיים</strong> הוא הזמן שאחריו נשארת בדיוק חצי מהכמות. אחרי עוד מחצית חיים נשאר רבע, ואחרי עוד אחת שמינית. הכמות לא נגמרת אף פעם, היא רק הולכת וקטנה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מה קורה עם הזמן?</h2></div>
+  <p class="text">בחרו גדילה או דעיכה, וקבעו את הכמות בהתחלה, את האחוז בכל תקופה ואת מספר התקופות. הקו הוורוד הוא <span class="eq"><i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span>. הקו האפור המקווקו מראה מה היה קורה אם היו מוסיפים (או מורידים) כל פעם את אותו סכום, בלי "ריבית על ריבית".</p>
+  <div class="seg" id="modePick" role="group" aria-label="גדילה או דעיכה">
+    <button data-m="up" aria-pressed="true">גדילה (ריבית דריבית)</button><button data-m="down" aria-pressed="false">דעיכה (מחצית חיים)</button>
+  </div>
+  <div class="lab">
+    <div>
+      <svg class="gc" id="labG" viewBox="0 0 300 222" role="img" aria-label="גרף הכמות לפי הזמן"></svg>
+      <div class="legend"><span><i></i><span class="eq"><i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span></span><span><i class="lin"></i>אותו סכום כל פעם</span><span><i class="mark"></i><span id="markLbl">זמן הכפלה</span></span></div>
+    </div>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="m0"><span>הכמות בהתחלה <span class="eq"><i>M</i>₀</span></span><span class="eq" id="m0v"></span></label>
+      <input type="range" id="m0" min="100" max="2000" step="100" value="1000">
+      <label class="slider" for="pp"><span id="ppName">אחוז הגדילה בכל תקופה</span><span class="eq" id="ppv"></span></label>
+      <input type="range" class="hl" id="pp" min="1" max="50" step="1" value="10">
+      <label class="slider" for="tt"><span>מספר התקופות <span class="eq"><i>t</i></span></span><span class="eq" id="ttv"></span></label>
+      <input type="range" class="blue" id="tt" min="0" max="20" step="1" value="5">
+    </div>
+  </div>
+  <div class="explain fb hint" id="labExplain" aria-live="polite" style="margin-top:12px"></div>
+  <div class="scroll-x" style="margin-top:10px"><table class="vt" id="labT" aria-label="טבלת ערכים של המעבדה"></table></div>
+  <div style="margin-top:12px">
+    <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+    <div class="tries">
+      <button data-p="up,1000,5,10">חיסכון: 5% בשנה, 10 שנים</button>
+      <button data-p="up,500,50,6">גדילה של 50% בכל תקופה</button>
+      <button data-p="up,2000,2,20">עיר שגדלה ב-2% בשנה</button>
+      <button data-p="down,200,20,5">תרופה: יורדת 20% בכל שעה</button>
+      <button data-p="down,800,50,3">ירידה של 50%: מחצית חיים</button>
+      <button data-p="down,1000,10,20">מכונית שמאבדת 10% מערכה בשנה</button>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>q הוא לא האחוז.</strong> גדילה של 5% היא <span class="eq"><i>q</i> = 1.05</span>, לא 5 ולא 0.05. עם 0.05 הכמות הייתה כמעט נעלמת.</div></li>
+    <li><div><strong>בדעיכה מורידים מ-1.</strong> ירידה של 20% היא <span class="eq"><i>q</i> = 0.8</span>, לא 0.2. כי נשאר 80% מהכמות.</div></li>
+    <li><div><strong>מחברים אחוזים.</strong> 10% בשנה במשך 3 שנים זה <strong>לא</strong> 30%. זה <span class="eq">1.1³ = 1.331</span>, כלומר 33.1%. כל שנה הריבית מחושבת על הסכום החדש.</div></li>
+    <li><div><strong>מחצית חיים היא לא "חצי ועוד חצי".</strong> אחרי שתי תקופות של מחצית חיים לא נשאר 0. נשאר רבע: <span class="eq">½ · ½ = ¼</span>.</div></li>
+    <li><div><strong>t בתקופות הלא נכונות.</strong> אם הריבית היא לשנה ונותנים זמן בחודשים, צריך קודם להפוך לשנים.</div></li>
+  </ol>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">ריבית דריבית</button>
+    <button id="exB" role="tab" aria-selected="false">תרופה ומחצית חיים</button>
+  </div>
+  <div class="lab">
+    <svg class="gc" id="exG" viewBox="0 0 300 222" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: בונים את הנוסחה</h2></div>
+  <p class="text">בכל שאלה כתבו את הנוסחה <span class="eq"><i>M</i> = <i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span> עם המספרים, ואז חשבו במחשבון. עגלו לשתי ספרות אחרי הנקודה.</p>
+  <div class="ctrl">
+    <p class="text" id="prQ" style="font-weight:700"></p>
+    <div class="inputs" id="prInputs"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין ריבית פשוטה לריבית דריבית?</h3>
+    <p>בריבית פשוטה מקבלים כל שנה את אותו סכום, מחושב רק על הכסף של ההתחלה. בריבית דריבית הריבית מחושבת כל שנה על הסכום החדש, כולל הריבית שכבר נצברה. לכן כופלים: <span class="eq"><i>M</i> = <i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span>. 1000 ש״ח ב-10% לשלוש שנים נותנים 1300 בריבית פשוטה, ו-1331 בריבית דריבית.</p>
+    <h3>איך מחשבים זמן מחצית חיים?</h3>
+    <p>פותרים <span class="eq"><i>q</i><sup><i>t</i></sup> = 0.5</span>. מוציאים log משני הצדדים ומקבלים <span class="eq"><i>t</i> = log 0.5 ÷ log <i>q</i></span>. למשל כשנשאר 80% בכל שעה: <span class="eq"><i>t</i> = log 0.5 ÷ log 0.8 ≈ 3.11</span> שעות. <a href="#example">ראו דוגמה פתורה</a>.</p>
+    <h3>איך מוצאים את q מתוך אחוזים?</h3>
+    <p>בגדילה מוסיפים את האחוז ל-1: גדילה של 3% היא <span class="eq"><i>q</i> = 1.03</span>. בדעיכה מורידים אותו מ-1: ירידה של 15% היא <span class="eq"><i>q</i> = 0.85</span>. אם יודעים את הכמות לפני ואחרי תקופה אחת, מחלקים: <span class="eq"><i>q</i> = <i>M</i>₁ ÷ <i>M</i>₀</span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/exponential-functions/">פונקציה מעריכית</a> · <a href="../../math/percent/">אחוזים: הנחה, התייקרות ואחוז מתוך</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/exp-log-derivatives/"><small>→ הנושא הקודם</small>נגזרות של eˣ ו-ln x</a><a class="next" href="../../math/vectors/"><small>הנושא הבא ←</small>וקטורים: חיבור, חיסור וכפל בסקלר</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const fmt=v=>(v<0?MINUS:'')+Math.abs(r2(v)).toLocaleString('en-US',{maximumFractionDigits:2});
+const fq=q=>String(Math.round(q*10000)/10000);
+const near=(a,b,rel=0.003,abs=0.6)=>Math.abs(a-b)<=abs+Math.abs(b)*rel;
+const T='<i>t</i>', Mo='<i>M</i>₀', M='<i>M</i>', Q='<i>q</i>';
+const pw=(b,e)=>`${b}<sup>${e}</sup>`;
+
+/* chart: M(t) = M0·q^t on t in [0, tMax] */
+const L=42,R=292,TOP=14,BOT=192;
+function niceCeil(v){ const p=Math.pow(10,Math.floor(Math.log10(v))); for(const m of [1,1.2,1.5,2,2.5,3,4,5,6,8,10]) if(m*p>=v-1e-9) return m*p; return 10*p; }
+let cid=0;
+function chart(svg,o){
+  const {M0,q,t}=o, tMax=o.tMax||20;
+  const f=x=>M0*Math.pow(q,x);
+  const yMax=niceCeil(q>1?Math.max(M0*2.2,f(t)*1.08):M0*1.1);
+  const xs=x=>L+(R-L)*x/tMax, ys=y=>BOT-(BOT-TOP)*y/yMax;
+  const id='gcc'+(++cid);
+  let h=`<defs><clipPath id="${id}"><rect x="${L}" y="${TOP-2}" width="${R-L+2}" height="${BOT-TOP+2}"/></clipPath></defs>`;
+  h+=`<rect class="bg" x="0" y="0" width="300" height="222"/>`;
+  for(let i=0;i<=4;i++){ const v=yMax*i/4, y=ys(v);
+    h+=`<line class="grid" x1="${L}" y1="${y}" x2="${R}" y2="${y}"/><text class="tick" x="${L-4}" y="${y+3}" text-anchor="end">${fmt(v)}</text>`; }
+  const step=tMax<=10?1:5;
+  for(let x=0;x<=tMax;x+=step){ h+=`<line class="grid" x1="${xs(x)}" y1="${TOP}" x2="${xs(x)}" y2="${BOT}"/><text class="tick" x="${xs(x)}" y="${BOT+11}" text-anchor="middle">${x}</text>`; }
+  h+=`<line class="axis" x1="${L}" y1="${BOT}" x2="${R+4}" y2="${BOT}"/><line class="axis" x1="${L}" y1="${BOT}" x2="${L}" y2="${TOP-6}"/>`;
+  h+=`<text class="ax" x="${R+2}" y="${BOT+20}" text-anchor="end">t</text><text class="ax" x="${L+4}" y="${TOP-2}">M</text>`;
+  h+=`<g clip-path="url(#${id})">`;
+  if(o.linear){ const d=M0*(q-1); let p=''; for(let x=0;x<=tMax+1e-9;x+=0.5){ const y=Math.max(0,M0+d*x); p+=(p?'L':'M')+xs(x).toFixed(1)+' '+ys(y).toFixed(1); } h+=`<path class="lin" d="${p}"/>`; }
+  /* doubling time or half-life */
+  const target=q>1?2*M0:M0/2, tm=Math.log(target/M0)/Math.log(q);
+  if(o.mark!==false&&q!==1&&tm<=tMax){
+    h+=`<path class="mark" d="M${L} ${ys(target)} H${xs(tm)} V${BOT}"/>`;
+  }
+  let p=''; for(let x=0;x<=tMax+1e-9;x+=0.1){ p+=(p?'L':'M')+xs(x).toFixed(1)+' '+ys(f(x)).toFixed(1); }
+  h+=`<path class="ln" d="${p}"/>`;
+  for(let x=0;x<=Math.min(t,tMax);x++) if(f(x)<=yMax) h+=`<circle class="dot" cx="${xs(x)}" cy="${ys(f(x))}" r="2.4"/>`;
+  h+='</g>';
+  if(o.mark!==false&&q!==1&&tm<=tMax){
+    h+=`<circle class="mk" cx="${xs(tm)}" cy="${ys(target)}" r="3.6"/>`;
+    h+=`<text class="lbl bl" x="${xs(tm)+5}" y="${BOT-5}">${numTxt(r2(tm))}</text>`;
+  }
+  if(t<=tMax&&f(t)<=yMax) h+=`<circle class="cur" cx="${xs(t)}" cy="${ys(f(t))}" r="5"/>`;
+  svg.innerHTML=h;
+  return tm;
+}
+
+/* lab */
+let mode='up';
+const m0=$('m0'), pp=$('pp'), tt=$('tt');
+function setMode(){
+  $('modePick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===mode));
+  $('ppName').textContent=mode==='up'?'אחוז הגדילה בכל תקופה':'אחוז הירידה בכל תקופה';
+  $('markLbl').textContent=mode==='up'?'זמן הכפלה':'זמן מחצית חיים';
+  pp.max=mode==='up'?50:60;
+}
+function lab(){
+  const M0=+m0.value, p=+pp.value, t=+tt.value, q=mode==='up'?1+p/100:1-p/100, Mt=M0*Math.pow(q,t);
+  $('m0v').textContent=fmt(M0); $('ppv').textContent=(mode==='up'?'+':MINUS)+p+'%'; $('ttv').textContent=t;
+  $('labEq').innerHTML=`<span class="eq">${M} = ${fmt(M0)} · ${pw(fq(q),t)} ≈ ${fmt(Mt)}</span>`;
+  const tm=chart($('labG'),{M0,q,t,linear:true});
+  const lin=Math.max(0,M0+M0*(q-1)*t);
+  let x=`<div><span class="eq">${Q} = 1 ${mode==='up'?'+':MINUS} ${p} ÷ 100 = ${fq(q)}</span>. בכל תקופה הכמות מוכפלת ב-<span class="eq">${fq(q)}</span>${mode==='up'?'':', כלומר נשאר '+(100-p)+'% ממנה'}.</div>`;
+  x+=`<div>אחרי <span class="eq">${t}</span> תקופות: <span class="eq">${fmt(M0)} · ${pw(fq(q),t)} ≈ ${fmt(Mt)}</span>.</div>`;
+  if(t>0) x+=`<div>עם אותו סכום כל פעם (הקו האפור) היה יוצא <span class="eq">${fmt(lin)}</span>. ${mode==='up'?(Mt>lin+0.005?'הריבית דריבית נותנת <strong>יותר</strong>, והפער גדל עם הזמן.':''):(Mt>lin+0.005?'בדעיכה הכמות לא מגיעה לאפס: כל פעם יורד אחוז מכמות קטנה יותר.':'')}</div>`;
+  x+=`<div>${mode==='up'?'זמן הכפלה':'זמן מחצית חיים'}: <span class="eq">${pw(fq(q),T)} = ${mode==='up'?'2':'0.5'}</span>, ולכן <span class="eq">${T} = log ${mode==='up'?'2':'0.5'} ÷ log ${fq(q)} ≈ ${numTxt(r2(tm))}</span> תקופות ${tm<=20?'(הקו הכחול)':'(יותר מ-20, ולכן מחוץ לגרף)'}.</div>`;
+  $('labExplain').innerHTML=x;
+  /* table: t = 0..5, plus the chosen t */
+  const cols=[0,1,2,3,4,5]; if(t>5) cols.push(t);
+  $('labT').innerHTML=`<tr><th>t</th>${cols.map(c=>`<td class="${c===t?'now':''}">${c}</td>`).join('')}</tr><tr><th>M</th>${cols.map(c=>`<td class="${c===t?'now':''}">${fmt(M0*Math.pow(q,c))}</td>`).join('')}</tr>`;
+}
+$('modePick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ mode=b.dataset.m; setMode(); lab(); }));
+[m0,pp,tt].forEach(el=>el.addEventListener('input',lab));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [m,a,p,t]=btn.dataset.p.split(','); mode=m; setMode(); m0.value=a; pp.value=p; tt.value=t; lab(); }));
+setMode(); lab();
+
+/* worked examples */
+const EXS={
+  A:{c:{M0:2000,q:1.04,t:5,tMax:10,linear:true},cut:3,steps:[
+    `הפקידו 2000 ש״ח בחיסכון עם ריבית דריבית של 4% בשנה. כמה כסף יהיה אחרי 5 שנים?`,
+    `<strong>צעד 1, מזהים:</strong> <span class="eq">${Mo} = 2000</span>, גדילה של 4%, <span class="eq">${T} = 5</span>.`,
+    `<strong>צעד 2, מוצאים את q:</strong> <span class="eq">${Q} = 1 + 4 ÷ 100 = 1.04</span>.`,
+    `<strong>צעד 3, מציבים בנוסחה:</strong> <span class="eq">${M} = 2000 · ${pw('1.04','5')}</span>.`,
+    `<strong>צעד 4, מחשבים:</strong> <span class="eq">${pw('1.04','5')} ≈ 1.21665</span>, ולכן <span class="eq">${M} ≈ 2433.31</span> ש״ח.`,
+    `<strong>צעד 5, משווים:</strong> בריבית פשוטה היה יוצא <span class="eq">2000 + 5 · 80 = 2400</span>. הריבית דריבית נתנה 33.31 ש״ח יותר. בגרף רואים את הפער בין הקו הוורוד לקו האפור.`
+  ]},
+  B:{c:{M0:200,q:0.75,t:3,tMax:10},cut:2,steps:[
+    `חולה קיבל 200 מ״ג של תרופה. בכל שעה הגוף מפרק 25% מהכמות שנשארה. כמה נשאר אחרי 3 שעות, ומה זמן מחצית החיים?`,
+    `<strong>צעד 1, מוצאים את q:</strong> ירידה של 25%, לכן <span class="eq">${Q} = 1 − 0.25 = 0.75</span>.`,
+    `<strong>צעד 2, אחרי 3 שעות:</strong> <span class="eq">${M} = 200 · ${pw('0.75','3')}</span> <span class="eq">= 200 · 0.421875 ≈ 84.38</span> מ״ג.`,
+    `<strong>צעד 3, מחצית חיים:</strong> מחפשים מתי נשאר חצי: <span class="eq">${pw('0.75',T)} = 0.5</span>.`,
+    `<strong>צעד 4, מוציאים log:</strong> <span class="eq">${T} · log 0.75 = log 0.5</span>, ולכן <span class="eq">${T} = log 0.5 ÷ log 0.75</span>.`,
+    `<strong>צעד 5, מחשבים:</strong> <span class="eq">${T} ≈ 2.41</span> שעות. כלומר בערך כל שעתיים וחצי הכמות יורדת לחצי. הקו הכחול בגרף מסמן את זה.`
+  ]}
+};
+let exKey='A', exI=0;
+function showEx(){
+  const e=EXS[exKey], last=exI===e.steps.length-1;
+  chart($('exG'),Object.assign({},e.c,{mark:exKey==='A'?false:exI>=3,linear:exKey==='A'&&exI>=e.steps.length-1,t:exI>=e.cut?e.c.t:0}));
+  $('exText').innerHTML=e.steps[exI];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=last;
+}
+$('exNext').onclick=()=>{ if(exI<EXS[exKey].steps.length-1){ exI++; showEx(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; showEx(); } };
+['A','B'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); showEx(); }; });
+showEx();
+
+/* practice */
+let pr=null, streak=0, solved=0;
+const STORY={
+  grow:[
+    (a,p,t)=>`הפקידו ${fmt(a)} ש״ח בחיסכון עם ריבית דריבית של ${p}% בשנה. כמה כסף יהיה בחיסכון אחרי ${t} שנים?`,
+    (a,p,t)=>`בכפר גרים ${fmt(a)} תושבים, ומספר התושבים גדל ב-${p}% בכל שנה. כמה תושבים יהיו בעוד ${t} שנים? (אל תעגלו למספר שלם.)`,
+    (a,p,t)=>`במעבדה יש ${fmt(a)} חיידקים, וכל שעה מספרם גדל ב-${p}%. כמה חיידקים יהיו אחרי ${t} שעות?`
+  ],
+  decay:[
+    (a,p,t)=>`בבריכה יש ${fmt(a)} גרם כלור. בכל יום מתפרקים ${p}% מהכלור שנשאר. כמה גרם כלור נשארים אחרי ${t} ימים?`,
+    (a,p,t)=>`בגוף יש ${fmt(a)} מ״ג של תרופה, ובכל שעה מתפרקים ${p}% מהכמות שנשארה. כמה מ״ג נשארים אחרי ${t} שעות?`,
+    (a,p,t)=>`בכוס יש ${fmt(a)} מ״ל מים. בכל יום מתאדים ${p}% מהמים שנשארו. כמה מ״ל נשארים אחרי ${t} ימים?`
+  ]
+};
+function newPr(){
+  const kind=pick(['grow','decay','rate','half','double']);
+  let q,ans,w={},parts,unit='',label=`${M} =`;
+  if(kind==='grow'){
+    let a,p,t,g=0;
+    do{ a=pick([500,1000,1200,2000,4000]); p=pick([2,3,4,5,8,10,20]); t=pick([2,3,4,5,10]); g++; }
+    while(Math.abs(a*Math.pow(1+p/100,t)-a*(1+p*t/100))<4*(0.05+0.0005*a*Math.pow(1+p/100,t))&&g<50);
+    q=pick(STORY.grow)(a,p,t); ans=a*Math.pow(1+p/100,t);
+    w={simple:a*(1+p*t/100), small:a*Math.pow(p/100,t), tm1:a*Math.pow(1+p/100,t-1), gain:ans-a, big:a*Math.pow(p,t)};
+    parts={a,p,t,qq:1+p/100};
+  }else if(kind==='decay'){
+    const a=pick([100,200,400,800,1000]), p=pick([10,20,25,50]), t=pick([2,3,4]);
+    q=pick(STORY.decay)(a,p,t); ans=a*Math.pow(1-p/100,t);
+    w={wrongQ:a*Math.pow(p/100,t), simple:a*(1-p*t/100), grew:a*Math.pow(1+p/100,t), lost:a-ans};
+    parts={a,p,t,qq:1-p/100};
+  }else if(kind==='rate'){
+    const a=pick([1000,2000,500]), p=pick([5,10,20,25,50]), t=pick([2,3]);
+    const b=a*Math.pow(1+p/100,t);
+    q=`סכום של ${fmt(a)} ש״ח גדל בריבית דריבית, ואחרי ${t} שנים הוא הפך ל-${fmt(b)} ש״ח. מה אחוז הריבית בכל שנה?`;
+    ans=p; label='אחוז הריבית ='; unit='%';
+    w={linear:(b/a-1)/t*100, total:(b/a-1)*100, q:1+p/100, qp:(1+p/100)*100};
+    parts={a,b,t,p,qq:1+p/100};
+  }else if(kind==='half'){
+    const a=pick([80,160,320,640]), T=pick([2,3,5,8]), n=pick([2,3,4]), tt=n*T;
+    const u=pick(['שנים','שעות','ימים']);
+    q=`זמן מחצית החיים של חומר הוא ${T} ${u}. בהתחלה יש ${a} גרם. כמה גרם נשארים אחרי ${tt} ${u}?`;
+    ans=a/Math.pow(2,n); label='נשארים (גרם) =';
+    w={linear:a-n*a/2, div2n:a/(2*n), tExp:a/Math.pow(2,tt), half:a/2};
+    parts={a,T,n,tt,u};
+  }else{
+    const p=pick([5,10,20,25,50]);
+    q=`כמות גדלה ב-${p}% בכל שנה. אחרי כמה שנים היא תוכפל (תגיע לפי 2 מההתחלה)?`;
+    ans=Math.log(2)/Math.log(1+p/100); label=`${T} =`;
+    w={linear:100/p, qq:2/(1+p/100), ratio:Math.log(1+p/100)/Math.log(2)};
+    parts={p,qq:1+p/100};
+  }
+  pr={kind,q,ans,w,parts,tries:0,hint:0,unit};
+  $('prQ').innerHTML=q;
+  $('prInputs').innerHTML=`<label for="prV"><span>${label}</span><input id="prV" inputmode="decimal" autocomplete="off"></label>${unit?'<span class="eq">'+unit+'</span>':''}`;
+  $('prV').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const p=pr.parts;
+  switch(pr.kind){
+    case 'grow': return `<span class="eq">${Q} = 1 + ${p.p} ÷ 100 = ${fq(p.qq)}</span>, ולכן <span class="eq">${M} = ${fmt(p.a)} · ${pw(fq(p.qq),p.t)} ≈ ${fmt(pr.ans)}</span>`;
+    case 'decay': return `<span class="eq">${Q} = 1 − ${p.p} ÷ 100 = ${fq(p.qq)}</span>, ולכן <span class="eq">${M} = ${fmt(p.a)} · ${pw(fq(p.qq),p.t)} ≈ ${fmt(pr.ans)}</span>`;
+    case 'rate': return `<span class="eq">${pw(Q,p.t)} = ${fmt(p.b)} ÷ ${fmt(p.a)}</span> <span class="eq">= ${fq(p.b/p.a)}</span>. מוציאים שורש: <span class="eq">${Q} = ${fq(p.qq)}</span>, כלומר ריבית של <span class="eq">${p.p}%</span>`;
+    case 'half': return `עברו <span class="eq">${p.tt} ÷ ${p.T} = ${p.n}</span> תקופות של מחצית חיים. כל אחת מחלקת ב-2: <span class="eq">${p.a} · ${pw('0.5',p.n)} = ${fmt(pr.ans)}</span> גרם`;
+    default: return `<span class="eq">${pw(fq(p.qq),T)} = 2</span>, ולכן <span class="eq">${T} = log 2 ÷ log ${fq(p.qq)} ≈ ${fmt(pr.ans)}</span> שנים`;
+  }
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const fb=$('prFb'), y=parseNum($('prV').value.replace(/,/g,'').replace('%','')), w=pr.w, p=pr.parts;
+  if(isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר (אפשר עם נקודה עשרונית).</div>'; return; }
+  const tight=pr.kind==='double'?[0.01,0.02]:pr.kind==='rate'?[0.002,0.06]:[0.0005,0.05];
+  if(near(y,pr.ans,tight[0],tight[1])){ streak++; solved++; score(); fb.innerHTML=`<div class="fb ok">נכון! ${solution()}.</div>`; return; }
+  let m;
+  const is=v=>isFinite(v)&&near(y,v,tight[0],tight[1]);
+  switch(pr.kind){
+    case 'grow':
+      if(is(w.simple)) m='חישבתם ריבית פשוטה: אותו סכום כל שנה. בריבית דריבית כופלים ב-q בכל שנה: <span class="eq"><i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span>.';
+      else if(is(w.small)) m=`השתמשתם ב-<span class="eq"><i>q</i> = ${p.p/100}</span>. זה רק החלק שנוסף. בגדילה <span class="eq"><i>q</i> = 1 + ${p.p} ÷ 100</span>.`;
+      else if(is(w.tm1)) m='החזקה לא נכונה. אחרי t שנים כופלים ב-q בדיוק t פעמים.';
+      else if(is(w.gain)) m='זה רק הסכום שנוסף. השאלה היא כמה יש בסך הכול.';
+      else m='לא בדיוק. מצאו את q, הציבו ב-<span class="eq"><i>M</i>₀ · <i>q</i><sup><i>t</i></sup></span> וחשבו שוב.';
+      break;
+    case 'decay':
+      if(is(w.wrongQ)) m=`השתמשתם ב-<span class="eq"><i>q</i> = ${p.p/100}</span>, אבל זה החלק שנעלם. נשאר <span class="eq">${100-p.p}%</span>, ולכן <span class="eq"><i>q</i> = ${fq(p.qq)}</span>.`;
+      else if(is(w.grew)) m='יצאה לכם גדילה. בדעיכה מורידים את האחוז מ-1, ולכן q קטן מ-1.';
+      else if(is(w.simple)) m='הורדתם כל פעם את אותה כמות. אבל האחוז יורד מהכמות <strong>שנשארה</strong>, ולכן כופלים ב-q כל פעם.';
+      else if(is(w.lost)) m='זו הכמות שנעלמה. השאלה היא כמה נשאר.';
+      else m='לא בדיוק. בדעיכה <span class="eq"><i>q</i> = 1 − <i>p</i> ÷ 100</span>. הציבו בנוסחה.';
+      break;
+    case 'rate':
+      if(is(w.linear)) m='חילקתם את כל הגדילה למספר השנים. אבל הגדילה היא כפל, לא חיבור. פתרו <span class="eq"><i>q</i><sup><i>t</i></sup> = <i>M</i> ÷ <i>M</i>₀</span>.';
+      else if(is(w.total)) m='זו הגדילה בכל התקופה ביחד. השאלה היא על כל שנה.';
+      else if(is(w.q)) m=`זה q. האחוז הוא כמה q גדול מ-1, כפול 100.`;
+      else if(is(w.qp)) m='כמעט! זה q כפול 100. צריך להוריד את ה-100% של ההתחלה.';
+      else m='לא בדיוק. חלקו את הסכום הסופי בהתחלתי, והוציאו שורש מסדר t.';
+      break;
+    case 'half':
+      if(is(w.linear)) m='הורדתם כל פעם חצי מהכמות של <strong>ההתחלה</strong>. אבל בכל תקופה נשאר חצי ממה שנשאר.';
+      else if(is(w.div2n)) m=`חילקתם ב-<span class="eq">2 · ${p.n}</span>. צריך לחלק ב-2, ${p.n} פעמים: <span class="eq">2<sup>${p.n}</sup></span>.`;
+      else if(is(w.tExp)) m=`השתמשתם ב-${p.tt} כמעריך. אבל ספרו כמה <strong>תקופות של מחצית חיים</strong> עברו.`;
+      else if(is(w.half)) m='זה אחרי מחצית חיים אחת בלבד. כמה עברו?';
+      else m='לא בדיוק. כמה פעמים מחצית החיים נכנסת בזמן? כל פעם מחלקים ב-2.';
+      break;
+    default:
+      if(is(w.linear)) m=`חילקתם 100 ב-${p.p}. זה מתאים רק לגדילה בסכום קבוע. כאן פותרים <span class="eq"><i>q</i><sup><i>t</i></sup> = 2</span> בעזרת log.`;
+      else if(is(w.ratio)) m='הפכתם את השבר. <span class="eq"><i>t</i> = log 2 ÷ log <i>q</i></span>.';
+      else m='לא בדיוק. פתרו <span class="eq"><i>q</i><sup><i>t</i></sup> = 2</span>: <span class="eq"><i>t</i> = log 2 ÷ log <i>q</i></span>.';
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  const p=pr.parts; let t;
+  if(pr.hint===1){
+    t={grow:'מה זה q? בגדילה של p אחוזים, <span class="eq"><i>q</i> = 1 + <i>p</i> ÷ 100</span>.',
+       decay:'מה זה q? בדעיכה של p אחוזים, <span class="eq"><i>q</i> = 1 − <i>p</i> ÷ 100</span>.',
+       rate:'כתבו <span class="eq"><i>M</i>₀ · <i>q</i><sup><i>t</i></sup> = <i>M</i></span> עם המספרים, ובודדו את <span class="eq"><i>q</i><sup><i>t</i></sup></span>.',
+       half:'כמה תקופות של מחצית חיים עברו? חלקו את הזמן במחצית החיים.',
+       double:'הכמות מוכפלת כש-<span class="eq"><i>q</i><sup><i>t</i></sup> = 2</span>. מה q?'}[pr.kind];
+  }else switch(pr.kind){
+    case 'grow': case 'decay': t=`<span class="eq"><i>q</i> = ${fq(p.qq)}</span>. עכשיו חשבו <span class="eq">${fmt(p.a)} · ${pw(fq(p.qq),p.t)}</span>.`; break;
+    case 'rate': t=`<span class="eq"><i>q</i><sup>${p.t}</sup> = ${fq(p.b/p.a)}</span>. איזה מספר בחזקת ${p.t} נותן את זה? (שורש מסדר ${p.t}.)`; break;
+    case 'half': t=`עברו ${p.n} תקופות. חשבו <span class="eq">${p.a} ÷ 2<sup>${p.n}</sup></span>.`; break;
+    default: t=`<span class="eq"><i>q</i> = ${fq(p.qq)}</span>. חשבו <span class="eq">log 2 ÷ log ${fq(p.qq)}</span> במחשבון.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{ if(pr) $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

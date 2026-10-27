@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>נפח גוף סיבוב · כיתה יב · מירי</title>
+<meta name="description" content="נפח גוף סיבוב באינטגרל, לרמת 5 יח״ל: מסובבים שטח סביב ציר x ומחשבים את הנפח. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/volume-of-revolution/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="נפח גוף סיבוב · כיתה יב · מירי">
+<meta property="og:description" content="נפח גוף סיבוב באינטגרל, לרמת 5 יח״ל: מסובבים שטח סביב ציר x ומחשבים את הנפח. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/volume-of-revolution/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"אינטגרלים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#integrals-12"},{"@type":"ListItem","position":5,"name":"נפח גוף סיבוב","item":"https://shohamtal.github.io/homework-site/math/volume-of-revolution/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה הנוסחה לנפח גוף סיבוב?","acceptedAnswer":{"@type":"Answer","text":"כשמסובבים סביב ציר x את השטח שמתחת לגרף של f, בין x = a ל-x = b, הנפח הוא V = π∫f(x)²dx מ-a עד b. מעלים בריבוע, מוצאים פונקציה קדומה, מציבים גבולות וכופלים ב-π. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"למה מעלים את הפונקציה בריבוע?","acceptedAnswer":{"@type":"Answer","text":"כי הגוף בנוי ממטבעות דקים. הרדיוס של כל מטבע הוא הגובה של הגרף, ושטח עיגול הוא π כפול הרדיוס בריבוע. לכן כל מטבע תורם בערך πf²Δx. ראו את המטבעות במעבדה."}},{"@type":"Question","name":"איך מחשבים נפח גוף סיבוב בין שני גרפים?","acceptedAnswer":{"@type":"Answer","text":"מחסרים את הנפח של הגוף הפנימי מהנפח של הגוף החיצוני: V = π∫(f² − g²)dx, כאשר f הוא הגרף העליון. שימו לב: מעלים כל פונקציה בריבוע לחוד, ולא את ההפרש."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"נפח גוף סיבוב","description":"נפח גוף סיבוב באינטגרל, לרמת 5 יח״ל: מסובבים שטח סביב ציר x ומחשבים את הנפח. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/volume-of-revolution/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"אינטגרלים","teaches":"נפח גוף סיבוב","keywords":"גוף סיבוב, נפח, 5 יח״ל","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.rev{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.rev .bg{fill:var(--card)}
+.rev .axis{stroke:var(--ink); stroke-width:1.3}
+.rev .tick{fill:var(--muted); font:8px var(--f-body); text-anchor:middle}
+.rev .curve{stroke:var(--line); stroke-width:2.6; fill:none; stroke-linecap:round}
+.rev .mirror{stroke:var(--line); stroke-width:1.6; fill:none; stroke-dasharray:4 3; opacity:.7}
+.rev .region{fill:var(--line); opacity:.14}
+.rev .disk{fill:var(--blue); opacity:.22; stroke:var(--blue); stroke-width:1}
+.rev .face{fill:var(--blue); opacity:.35; stroke:var(--ink); stroke-width:.8}
+.rev .bound{stroke:var(--ink); stroke-width:1.2; stroke-dasharray:3 3}
+.rev .lbl{fill:var(--ink); font:700 9px var(--f-math); text-anchor:middle; paint-order:stroke; stroke:var(--card); stroke-width:2.5px}
+.big-v{font-family:var(--f-math); font-size:1.35rem; text-align:center; direction:ltr}
+.ctrl select{font:1rem var(--f-math); padding:6px 10px; border-radius:8px; border:1px solid var(--border); background:var(--paper); color:var(--ink); direction:ltr}
+.calc .eq{white-space:normal}
+.meter{height:10px; border:1.5px solid var(--ink); border-radius:6px; overflow:hidden; background:var(--paper)}
+.meter>div{height:100%; background:var(--blue)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="volume-of-revolution">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#integrals-12">אינטגרלים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">נפח גוף סיבוב</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · אינטגרלים · 5 יח״ל</div>
+  <h1>נפח גוף סיבוב <span class="slogan">שטח שמסתובב הופך לגוף</span></h1>
+  <p class="lead">לוקחים את השטח שמתחת לגרף ומסובבים אותו סביב ציר x, כמו בכד שמסתובב על אובניים. יוצא גוף עגול, ואת הנפח שלו מחשבים באינטגרל. זה נושא של 5 יח״ל, והוא נבנה על <a href="../definite-integral/">האינטגרל המסוים</a>. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הגוף בנוי מהמון מטבעות דקים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חותכים לפרוסות</h3>
+      <p>חותכים את הגוף לפרוסות דקות, כמו נקניק. כל פרוסה היא כמעט גליל נמוך, כמו מטבע.</p>
+    </div>
+    <div class="mini">
+      <h3>נפח של מטבע אחד</h3>
+      <p>הרדיוס של המטבע הוא הגובה של הגרף, <span class="eq"><i>f</i>(<i>x</i>)</span>. העובי הוא <span class="eq">Δ<i>x</i></span>.</p>
+      <p><span class="eq">π · <i>f</i>(<i>x</i>)² · Δ<i>x</i></span></p>
+    </div>
+    <div class="mini">
+      <h3>מחברים את כולם</h3>
+      <p>כשהפרוסות נעשות דקות מאוד, הסכום הופך לאינטגרל:</p>
+      <p><span class="eq"><i>V</i> = π ∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>)² <i>dx</i></span></p>
+    </div>
+  </div>
+  <div class="callout"><strong>במילים:</strong> מעלים את הפונקציה בריבוע, מוצאים פונקציה קדומה, מציבים את הגבולות, ובסוף כופלים ב-π.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים את הגוף ממטבעות</h2></div>
+  <p class="text">בחרו פונקציה וגבולות. הקו הוורוד הוא הגרף, והקו המקווקו הוא אותו גרף אחרי חצי סיבוב. המטבעות הכחולים ממלאים את הגוף. הגדילו את מספר המטבעות וראו איך הסכום שלהם מתקרב לנפח המדויק.</p>
+  <div class="lab">
+    <div>
+      <svg class="rev" id="labG" viewBox="0 0 320 240" role="img" aria-label="גוף סיבוב שבנוי ממטבעות"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="big-v" id="labV"></div>
+      <label class="slider" for="fn"><span>הפונקציה</span>
+        <select id="fn">
+          <option value="lin">y = x/2</option>
+          <option value="sqrt" selected>y = √x</option>
+          <option value="const">y = 2</option>
+          <option value="sph">y = √(9 − x²)</option>
+        </select></label>
+      <div><label class="slider" for="a"><span>הגבול השמאלי <span class="eq"><i>a</i></span></span><span class="eq" id="av"></span></label>
+        <input type="range" id="a" min="0" max="4" step="0.5" value="0"></div>
+      <div><label class="slider" for="b"><span>הגבול הימני <span class="eq"><i>b</i></span></span><span class="eq" id="bv"></span></label>
+        <input type="range" id="b" class="hl" min="0" max="4" step="0.5" value="4"></div>
+      <div><label class="slider" for="n"><span>מספר המטבעות</span><span class="eq" id="nv"></span></label>
+        <input type="range" id="n" class="blue" min="1" max="40" step="1" value="4"></div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-f="const" data-a="0" data-b="3" data-n="1">גליל</button>
+          <button dir="ltr" data-f="lin" data-a="0" data-b="4" data-n="6">חרוט</button>
+          <button dir="ltr" data-f="sph" data-a="-3" data-b="3" data-n="12">כדור</button>
+          <button dir="ltr" data-f="sqrt" data-a="0" data-b="4" data-n="40">40 מטבעות</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">גלו משהו: סובבו את <span class="eq"><i>y</i> = 2</span> מ-0 עד 3 עם מטבע אחד. יוצא בדיוק הנפח של גליל, <span class="eq">π<i>r</i>²<i>h</i></span>, כי הגרף ישר ואין מה לתקן.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים להעלות בריבוע</h3>
+      <p>הנפח הוא <span class="eq">π∫<i>f</i>²</span>, לא <span class="eq">π∫<i>f</i></span>.</p>
+      <p>הרדיוס של המטבע הוא <span class="eq"><i>f</i>(<i>x</i>)</span>, ושטח עיגול הוא <span class="eq">π<i>r</i>²</span>. מכאן הריבוע.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את π</h3>
+      <p>האינטגרל לבד נותן רק את החלק שבלי π. בסוף תמיד כופלים ב-π.</p>
+      <p>אם יצא <span class="eq">8</span>, הנפח הוא <span class="eq">8π ≈ 25.13</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שטח בין שני גרפים</h3>
+      <p>כשמסובבים שטח בין <span class="eq"><i>f</i></span> (למעלה) ל-<span class="eq"><i>g</i></span> (למטה), יוצא גוף עם חור.</p>
+      <p><span class="eq"><i>V</i> = π∫(<i>f</i>² − <i>g</i>²)<i>dx</i></span>, ולא <span class="eq">π∫(<i>f</i> − <i>g</i>)²<i>dx</i></span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> הגוף חייב להיות קטן מגליל שהרדיוס שלו הוא הגובה הכי גדול של הגרף. אם יצא נפח גדול יותר, משהו השתבש.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">מסובבים סביב ציר x את השטח שבין הגרף של <span class="eq"><i>y</i> = √<i>x</i></span>, ציר x והישר <span class="eq"><i>x</i> = 4</span>. מה הנפח?</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">בכל שאלה מסובבים סביב ציר x את השטח שבין הגרף, ציר x והגבולות. כתבו את המספר שמוכפל ב-π. למשל, אם הנפח הוא <span class="eq">8π</span>, כתבו <span class="eq">8</span>. אפשר לכתוב שבר, כמו <span class="eq">32/5</span>.</p>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span><span class="eq"><i>V</i> = π ·</span></span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה הנוסחה לנפח גוף סיבוב?</h3>
+    <p>כשמסובבים סביב ציר x את השטח שמתחת לגרף של f, בין x = a ל-x = b, הנפח הוא <span class="eq"><i>V</i> = π∫<i>f</i>(<i>x</i>)²<i>dx</i></span> מ-a עד b. מעלים בריבוע, מוצאים פונקציה קדומה, מציבים גבולות וכופלים ב-π. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>למה מעלים את הפונקציה בריבוע?</h3>
+    <p>כי הגוף בנוי ממטבעות דקים. הרדיוס של כל מטבע הוא הגובה של הגרף, ושטח עיגול הוא π כפול הרדיוס בריבוע. לכן כל מטבע תורם בערך <span class="eq">π<i>f</i>²Δ<i>x</i></span>. <a href="#lab">ראו את המטבעות במעבדה</a>.</p>
+    <h3>איך מחשבים נפח גוף סיבוב בין שני גרפים?</h3>
+    <p>מחסרים את הנפח של הגוף הפנימי מהנפח של הגוף החיצוני: <span class="eq"><i>V</i> = π∫(<i>f</i>² − <i>g</i>²)<i>dx</i></span>, כאשר f הוא הגרף העליון. שימו לב: מעלים כל פונקציה בריבוע לחוד, ולא את ההפרש.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/definite-integral/">אינטגרל מסוים ושטח בין עקומות</a> · <a href="../../math/solids/">נפח ושטח פנים של גופים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/definite-integral/"><small>→ הנושא הקודם</small>אינטגרל מסוים ושטח בין עקומות</a><a class="next" href="../../math/exponential-functions/"><small>הנושא הבא ←</small>פונקציה מעריכית</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const r2=v=>Math.round(v*100)/100;
+const X='<i>x</i>', PI='π';
+
+/* ---------- functions for the lab: f, f² antiderivative, domain ---------- */
+const FN={
+  lin:{f:x=>x/2, F:x=>x*x*x/12, lo:0, hi:4, html:`${X}/2`, sq:`${X}²/4`, prim:`${X}³/12`},
+  sqrt:{f:x=>Math.sqrt(Math.max(x,0)), F:x=>x*x/2, lo:0, hi:4, html:`√${X}`, sq:X, prim:`${X}²/2`},
+  const:{f:()=>2, F:x=>4*x, lo:-3, hi:4, html:'2', sq:'4', prim:`4${X}`},
+  sph:{f:x=>Math.sqrt(Math.max(9-x*x,0)), F:x=>9*x-x*x*x/3, lo:-3, hi:3, html:`√(9 − ${X}²)`, sq:`9 − ${X}²`, prim:`9${X} − ${X}³/3`}
+};
+const U=33, sx=x=>30+(x+3.4)*U, sy=y=>120-U*y;
+
+function drawLab(k,a,b,n){
+  const F=FN[k];
+  let h=`<rect class="bg" x="0" y="0" width="320" height="240"/>`;
+  h+=`<line class="axis" x1="10" y1="${sy(0)}" x2="312" y2="${sy(0)}"/><line class="axis" x1="${sx(0)}" y1="12" x2="${sx(0)}" y2="228"/>`;
+  for(let i=-3;i<=4;i++) if(i) h+=`<text class="tick" x="${sx(i)}" y="${sy(0)+11}">${numTxt(i)}</text>`;
+  h+=`<text class="tick" x="314" y="${sy(0)-4}">x</text>`;
+  if(b>a){
+    /* region under the curve */
+    let p=`M${sx(a)} ${sy(0)}`;
+    for(let i=0;i<=60;i++){ const x=a+(b-a)*i/60; p+=` L${sx(x)} ${sy(F.f(x))}`; }
+    h+=`<path class="region" d="${p} L${sx(b)} ${sy(0)} Z"/>`;
+    /* coins: side rectangle from -r to r plus an ellipse face at the right edge */
+    const dx=(b-a)/n;
+    for(let i=0;i<n;i++){
+      const x0=a+i*dx, xm=x0+dx/2, r=F.f(xm);
+      if(r<=0) continue;
+      h+=`<rect class="disk" x="${sx(x0)}" y="${sy(r)}" width="${dx*U}" height="${2*r*U}"/>`;
+      h+=`<ellipse class="face" cx="${sx(x0+dx)}" cy="${sy(0)}" rx="${Math.max(1.5,r*U*0.22)}" ry="${r*U}"/>`;
+    }
+  }
+  /* curve and its mirror over the whole domain */
+  let c='', m='';
+  for(let i=0;i<=80;i++){ const x=F.lo+(F.hi-F.lo)*i/80, y=F.f(x); c+=(i?' L':'M')+sx(x)+' '+sy(y); m+=(i?' L':'M')+sx(x)+' '+sy(-y); }
+  h+=`<path class="mirror" d="${m}"/><path class="curve" d="${c}"/>`;
+  [a,b].forEach((v,i)=>{ h+=`<line class="bound" x1="${sx(v)}" y1="20" x2="${sx(v)}" y2="220"/><text class="lbl" x="${sx(v)}" y="16">${i?'b':'a'}</text>`; });
+  $('labG').innerHTML=h;
+}
+function lab(){
+  const k=$('fn').value, F=FN[k];
+  ['a','b'].forEach(id=>{ $(id).min=F.lo; $(id).max=F.hi; });
+  let a=+$('a').value, b=+$('b').value; const n=+$('n').value;
+  $('av').textContent=numTxt(a); $('bv').textContent=numTxt(b); $('nv').textContent=n;
+  drawLab(k,a,b,n);
+  if(b<=a){
+    $('labV').innerHTML='';
+    $('labCalc').innerHTML='הגבול הימני צריך להיות גדול מהשמאלי. הזיזו את <i>b</i> ימינה.';
+    return;
+  }
+  const dx=(b-a)/n; let sum=0;
+  for(let i=0;i<n;i++){ const r=F.f(a+i*dx+dx/2); sum+=Math.PI*r*r*dx; }
+  const ex=F.F(b)-F.F(a), V=Math.PI*ex;
+  $('labV').innerHTML=`<i>V</i> = ${numTxt(r2(ex))}π ≈ ${numTxt(r2(V))}`;
+  let t=`<div><strong>סכום ${n} המטבעות:</strong> ${E(`≈ ${numTxt(r2(sum))}`)}.</div>`;
+  t+=`<div><strong>הנפח המדויק:</strong> ${E(`π∫${F.sq} ${'<i>dx</i>'}`)} ${E(`= π[${F.prim}]`)} ${E(`= ${numTxt(r2(ex))}π ≈ ${numTxt(r2(V))}`)}.</div>`;
+  const pct=Math.min(100,Math.round(sum/V*1000)/10);
+  t+=`<div>המטבעות נותנים ${E(numTxt(pct)+'%')} מהנפח. ${Math.abs(sum-V)/V<0.005?'כמעט מדויק!':'הוסיפו מטבעות כדי להתקרב.'}</div><div class="meter"><div style="width:${Math.min(100,pct)}%"></div></div>`;
+  if(k==='const') t+=`<div>זה גליל: ${E(`π · 2² · ${numTxt(b-a)} = ${numTxt(4*(b-a))}π`)}. מטבע אחד כבר מדויק.</div>`;
+  if(k==='sph'&&a===-3&&b===3) t+=`<div>זה כדור ברדיוס 3: ${E('4/3 · π · 3³ = 36π')}. בדיוק מה שיצא באינטגרל.</div>`;
+  if(k==='lin'&&a===0) t+=`<div>זה חרוט: ${E(`1/3 · π · ${numTxt(b/2)}² · ${numTxt(b)}`)} ${E(`= ${numTxt(r2(ex))}π`)}.</div>`;
+  $('labCalc').innerHTML=t;
+}
+$('fn').addEventListener('change',()=>{ const F=FN[$('fn').value]; $('a').value=Math.max(F.lo,0); $('b').value=F.hi; lab(); });
+['a','b','n'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(btn=>btn.onclick=()=>{
+  $('fn').value=btn.dataset.f; const F=FN[btn.dataset.f];
+  ['a','b'].forEach(id=>{ $(id).min=F.lo; $(id).max=F.hi; });
+  $('a').value=btn.dataset.a; $('b').value=btn.dataset.b; $('n').value=btn.dataset.n; lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>הנוסחה:</strong> ${E(`<i>V</i> = π∫<sub>0</sub><sup>4</sup> <i>f</i>(${X})² <i>dx</i>`)}. הגבולות הם 0 (איפה ש-√x מתחיל) ו-4.`,
+  `<strong>מעלים בריבוע:</strong> ${E(`(√${X})² = ${X}`)}. האינטגרל נעשה פשוט: ${E(`π∫<sub>0</sub><sup>4</sup> ${X} <i>dx</i>`)}.`,
+  `<strong>פונקציה קדומה:</strong> של ${E(X)} היא ${E(`${X}²/2`)}.`,
+  `<strong>מציבים גבולות:</strong> ${E('4²/2 − 0²/2 = 8')}.`,
+  `<strong>כופלים ב-π:</strong> ${E('<i>V</i> = 8π ≈ 25.13')}.`,
+  `<strong>בודקים:</strong> גליל ברדיוס 2 (הגובה הכי גדול) ובאורך 4 הוא ${E('π · 2² · 4 = 16π')}. הגוף שלנו קטן ממנו, בדיוק חצי. הגיוני.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+/* each task: f as html, f² as html, antiderivative of f² as html, a, b, I = ∫f² (answer), A = ∫f (area, for diagnosis) */
+function makeTask(){
+  const t=pick(['lin','sqrt','const','sq','affine']);
+  if(t==='lin'){ const k=pick([1,2,3]), b=pick([3,6]);
+    return {f:k===1?X:`${k}${X}`, sq:`${k*k===1?'':k*k}${X}²`, prim:`${k*k===1?'':k*k}${X}³/3`, a:0, b, I:k*k*b*b*b/3, A:k*b*b/2}; }
+  if(t==='sqrt'){ const k=pick([1,2]), b=pick([2,4,6]);
+    return {f:k===1?`√${X}`:`√(${k}${X})`, sq:k===1?X:`${k}${X}`, prim:`${k===1?'':k}${X}²/2`, a:0, b, I:k*b*b/2, A:2/3*Math.sqrt(k)*Math.pow(b,1.5)}; }
+  if(t==='const'){ const c=pick([2,3,5]), a=rnd(0,2), b=a+rnd(2,5);
+    return {f:String(c), sq:String(c*c), prim:`${c*c}${X}`, a, b, I:c*c*(b-a), A:c*(b-a)}; }
+  if(t==='sq'){ const b=pick([1,2]);
+    return {f:`${X}²`, sq:`${X}⁴`, prim:`${X}⁵/5`, a:0, b, I:Math.pow(b,5)/5, A:b*b*b/3}; }
+  const q=pick([1,2]), b=pick([1,2,3]);   /* f = x + q */
+  return {f:`${X} + ${q}`, sq:`${X}² + ${2*q}${X} + ${q*q}`, prim:`${X}³/3 + ${q}${X}² + ${q*q}${X}`, a:0, b,
+    I:b*b*b/3+q*b*b+q*q*b, A:b*b/2+q*b, cross:b*b*b/3+q*q*b};
+}
+let pr=null, solved=0, streak=0;
+const fracOut=v=>{ const [n,d]=G.toFrac(v); return d===1?numTxt(v):`${n}/${d}`; };
+function newPr(){
+  pr=makeTask(); pr.tries=0; pr.hint=0;
+  $('prQ').innerHTML=`הגרף: ${E(`<i>f</i>(${X}) = ${pr.f}`)}, מ-${E(`${X} = ${pr.a}`)} עד ${E(`${X} = ${pr.b}`)}. מה הנפח?`;
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const near=(x,v)=>Math.abs(x-v)<0.011+Math.abs(v)*0.002;
+function solution(){
+  const {f,sq,prim,a,b,I}=pr;
+  return `${E(`<i>V</i> = π∫(${f})² <i>dx</i>`)} ${E(`= π∫${sq} <i>dx</i>`)}. הפונקציה הקדומה: ${E(prim)}. מציבים ${E(String(b))} ו-${E(String(a))} ומקבלים ${E(fracOut(I))}, ולכן ${E(`<i>V</i> = ${fracOut(I)}π ≈ ${numTxt(r2(I*Math.PI))}`)}.`;
+}
+function diagnose(x){
+  const {I,A}=pr;
+  if(near(x,I*Math.PI)) return `כמעט! כתבתם את הנפח עם π בפנים. כאן כותבים רק את המספר שמוכפל ב-π, כלומר חלקו ב-π.`;
+  if(near(x,A)||near(x,A*Math.PI)) return 'זה השטח שמתחת לגרף, לא הנפח. שכחתם להעלות את הפונקציה בריבוע.';
+  if(near(x,2*I)) return 'יצא פי 2. בנוסחה יש π אחד, לא 2π. בדקו גם שלא כפלתם ב-2 בטעות.';
+  if(pr.cross!==undefined && near(x,pr.cross)) return `שכחתם את האיבר האמצעי. ${E(`(${pr.f})²`)} הוא ${E(pr.sq)}: פתחו לפי ${E('(<i>a</i> + <i>b</i>)² = <i>a</i>² + 2<i>ab</i> + <i>b</i>²')}.`;
+  return 'לא בדיוק. העלו את f בריבוע, מצאו פונקציה קדומה והציבו את הגבול העליון פחות התחתון.';
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim().replace('π',''));
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר או שבר, למשל 8 או 32/5.</div>'; return; }
+  if(near(x,pr.I)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const h=pr.hint===1
+    ?`הנוסחה: ${E(`<i>V</i> = π∫<i>f</i>(${X})² <i>dx</i>`)}. קודם העלו את ${E(pr.f)} בריבוע.`
+    :`${E(`(${pr.f})² = ${pr.sq}`)}, והפונקציה הקדומה היא ${E(pr.prim)}. הציבו ${E(String(pr.b))} ופחות ${E(String(pr.a))}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

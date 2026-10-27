@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פונקציה מעריכית · כיתה יב · מירי</title>
+<meta name="description" content="הגרף של aˣ ושל eˣ: מתי הוא עולה ומתי יורד, אסימפטוטה, ומשוואות מעריכיות פשוטות. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/exponential-functions/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פונקציה מעריכית · כיתה יב · מירי">
+<meta property="og:description" content="הגרף של aˣ ושל eˣ: מתי הוא עולה ומתי יורד, אסימפטוטה, ומשוואות מעריכיות פשוטות. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/exponential-functions/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"מעריכיות ולוגריתמים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#exp-log-12"},{"@type":"ListItem","position":5,"name":"פונקציה מעריכית","item":"https://shohamtal.github.io/homework-site/math/exponential-functions/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זו פונקציה מעריכית?","acceptedAnswer":{"@type":"Answer","text":"פונקציה שבה המשתנה x נמצא במעריך, כמו y = 2x. כל צעד של 1 ימינה כופל את y באותו מספר, הבסיס. אם הבסיס גדול מ-1 הפונקציה עולה, ואם הוא בין 0 ל-1 היא יורדת. נסו במעבדה."}},{"@type":"Question","name":"איך פותרים משוואה מעריכית?","acceptedAnswer":{"@type":"Answer","text":"כותבים את שני האגפים כחזקה של אותו בסיס ומשווים את המעריכים. למשל 9x = 27: 32x = 33, אז 2x = 3 ו-x = 1.5. כשאין בסיס משותף, משתמשים בלוגריתם."}},{"@type":"Question","name":"מה זה המספר e?","acceptedAnswer":{"@type":"Answer","text":"מספר קבוע, בערך 2.718, כמו ש-π הוא מספר קבוע. הגרף של ex מיוחד: השיפוע שלו בכל נקודה שווה לגובה שלו. לכן ex והלוגריתם הטבעי ln x מופיעים בנגזרות ובגדילה ודעיכה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"פונקציה מעריכית","description":"הגרף של aˣ ושל eˣ: מתי הוא עולה ומתי יורד, אסימפטוטה, ומשוואות מעריכיות פשוטות. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/exponential-functions/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מעריכיות ולוגריתמים","teaches":"פונקציה מעריכית","keywords":"פונקציה מעריכית, המספר e, אסימפטוטה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .orig{stroke:var(--muted); stroke-width:2; stroke-dasharray:5 4; fill:none}
+  .g .asy{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:5 4}
+  .g .asylbl{fill:var(--blue); font:700 8px var(--f-body); paint-order:stroke; stroke:var(--card); stroke-width:2.5px}
+  .vals{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:4px; text-align:center; font-family:var(--f-math)}
+  .vals div{border:2px solid var(--soft); border-radius:8px; padding:4px 2px}
+  .vals b{display:block; color:var(--muted); font-family:var(--f-body); font-size:.8rem}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="exponential-functions">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#exp-log-12">מעריכיות ולוגריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">פונקציה מעריכית</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · מעריכיות ולוגריתמים</div>
+  <h1>פונקציה מעריכית <span class="slogan">כל צעד כופל באותו מספר</span></h1>
+  <p class="lead">ב-<span class="eq"><i>y</i> = 2<sup><i>x</i></sup></span> ה-x נמצא <strong>במעריך</strong>, למעלה. כל צעד ימינה כופל את y ב-2, ולכן הגרף מתחיל לאט ואז עף למעלה.
+  לומדים מתי הגרף עולה ומתי יורד, מה זו האסימפטוטה, מה זה המספר <i>e</i>, ואיך פותרים משוואה מעריכית. נושא של כיתה יב, לרמת 4 ו-5 יח״ל.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: <span class="eq"><i>y</i> = <i>a</i><sup><i>x</i></sup></span></h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>בסיס גדול מ-1: גדילה</h3>
+      <p>ב-<span class="eq">2<sup><i>x</i></sup></span> כל צעד ימינה <strong>מכפיל</strong> את y. שמאלה הוא מתחלק ב-2, מתקרב ל-0 ואף פעם לא מגיע.</p>
+      <div class="vals" dir="ltr"><div><b>x = −1</b>½</div><div><b>x = 0</b>1</div><div><b>x = 1</b>2</div><div><b>x = 2</b>4</div><div><b>x = 3</b>8</div></div>
+      <svg class="g" id="introUp" viewBox="0 0 240 240" role="img" aria-label="הגרף של 2 בחזקת x, עולה"></svg>
+    </div>
+    <div class="mini">
+      <h3>בסיס בין 0 ל-1: דעיכה</h3>
+      <p>ב-<span class="eq">(½)<sup><i>x</i></sup></span> כל צעד ימינה <strong>מחלק</strong> את y ב-2. הגרף יורד ומתקרב ל-0 מימין.</p>
+      <div class="vals" dir="ltr"><div><b>x = −1</b>2</div><div><b>x = 0</b>1</div><div><b>x = 1</b>½</div><div><b>x = 2</b>¼</div><div><b>x = 3</b>⅛</div></div>
+      <svg class="g" id="introDown" viewBox="0 0 240 240" role="img" aria-label="הגרף של חצי בחזקת x, יורד"></svg>
+    </div>
+  </div>
+  <div class="callout"><strong>שלושה דברים שתמיד נכונים</strong> ב-<span class="eq"><i>y</i> = <i>a</i><sup><i>x</i></sup></span> (כש-<span class="eq"><i>a</i> &gt; 0</span> ו-<span class="eq"><i>a</i> ≠ 1</span>): הגרף עובר ב-<span class="eq">(0, 1)</span>, כי <span class="eq"><i>a</i><sup>0</sup> = 1</span>. הוא תמיד מעל ציר x, כלומר <span class="eq"><i>y</i> &gt; 0</span>. וציר x, <span class="eq"><i>y</i> = 0</span>, הוא <strong>אסימפטוטה</strong>: הגרף מתקרב אליו ולא נוגע.
+  <br><strong>המספר <i>e</i></strong> הוא בסיס מיוחד, <span class="eq"><i>e</i> ≈ 2.718</span>. בגרף של <span class="eq"><i>e</i><sup><i>x</i></sup></span> השיפוע בכל נקודה שווה לגובה שלה, ולכן הוא מופיע בכל מקום בכיתה יב.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: שנו את הבסיס</h2></div>
+  <p class="text">הזיזו את הבסיס ותראו מתי הגרף עולה ומתי יורד. אחר כך הזיזו אותו ימינה, שמאלה, למעלה ולמטה. הקו הכחול המקווקו הוא האסימפטוטה.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה של הפונקציה המעריכית"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="bRange"><span>הבסיס <span class="m">a</span></span><span class="eq" id="bVal"></span></label>
+      <input type="range" id="bRange" min="0.2" max="4" step="0.1" value="2">
+      <label class="slider" for="hRange"><span><i>h</i> (ימינה ושמאלה)</span><span class="eq" id="hVal"></span></label>
+      <input type="range" id="hRange" min="-3" max="3" step="1" value="0">
+      <label class="slider" for="kRange"><span><span class="b">k</span> (למעלה ולמטה)</span><span class="eq" id="kVal"></span></label>
+      <input type="range" id="kRange" class="hl" min="-3" max="3" step="1" value="0">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="2,0,0" dir="ltr">y = 2ˣ</button>
+          <button data-p="0.5,0,0" dir="ltr">y = (0.5)ˣ</button>
+          <button data-p="e,0,0" dir="ltr">y = eˣ</button>
+          <button data-p="3,0,-2" dir="ltr">y = 3ˣ − 2</button>
+          <button data-p="2,-1,0" dir="ltr">y = 2ˣ⁺¹</button>
+          <button data-p="0.5,1,1" dir="ltr">y = (0.5)ˣ⁻¹ + 1</button>
+          <button data-p="1,0,0" dir="ltr">y = 1ˣ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>במעריך או בחוץ?</strong> <span class="eq">2<sup><i>x</i></sup> + 3</span> זה הגרף של <span class="eq">2<sup><i>x</i></sup></span> מוזז 3 למעלה. <span class="eq">2<sup><i>x</i> + 3</sup></span> זה אותו גרף מוזז 3 שמאלה. בדקו איפה כתוב ה-3.</div></li>
+    <li><div><strong><span class="eq">2·3<sup><i>x</i></sup></span> הוא לא <span class="eq">6<sup><i>x</i></sup></span>.</strong> קודם מחשבים את החזקה, ורק אחר כך כופלים. ב-<span class="eq"><i>x</i> = 2</span>: <span class="eq">2·3² = 18</span>, אבל <span class="eq">6² = 36</span>.</div></li>
+    <li><div><strong>הבסיס חייב להיות חיובי.</strong> <span class="eq">(−2)<sup><i>x</i></sup></span> לא פונקציה מעריכית: ב-<span class="eq"><i>x</i> = ½</span> צריך שורש של מספר שלילי. ובסיס 1 נותן תמיד 1, קו ישר.</div></li>
+    <li><div><strong>אין פתרון ל-<span class="eq">2<sup><i>x</i></sup> = 0</span></strong> או ל-<span class="eq">2<sup><i>x</i></sup> = −4</span>. הגרף תמיד מעל ציר x, אז חזקה של מספר חיובי אף פעם לא אפס ולא שלילית.</div></li>
+  </ol>
+  <div class="callout"><strong>איך פותרים משוואה מעריכית?</strong> כותבים את שני האגפים כחזקה של <strong>אותו בסיס</strong>, ואז משווים מעריכים. למשל <span class="eq">8<sup><i>x</i></sup> = 4</span>: <span class="eq">2<sup>3<i>x</i></sup> = 2<sup>2</sup></span>, אז <span class="eq">3<i>x</i> = 2</span> ו-<span class="eq"><i>x</i> = ⅔</span>. כשאי אפשר להגיע לאותו בסיס, משתמשים ב<a href="../logarithms/">לוגריתמים</a>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (גרף)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (משוואה)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: משוואות, אסימפטוטות וחיתוכים</h2></div>
+  <p class="text">יש שלושה סוגי שאלות: לפתור משוואה מעריכית, למצוא את האסימפטוטה, ולמצוא איפה הגרף חותך את ציר y.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs"><label for="prIn" id="prLbl">x =<input id="prIn" inputmode="text" autocomplete="off"></label></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זו פונקציה מעריכית?</h3>
+    <p>פונקציה שבה המשתנה x נמצא במעריך, כמו <span class="eq"><i>y</i> = 2<sup><i>x</i></sup></span>. כל צעד של 1 ימינה כופל את y באותו מספר, הבסיס. אם הבסיס גדול מ-1 הפונקציה עולה, ואם הוא בין 0 ל-1 היא יורדת. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך פותרים משוואה מעריכית?</h3>
+    <p>כותבים את שני האגפים כחזקה של אותו בסיס ומשווים את המעריכים. למשל <span class="eq">9<sup><i>x</i></sup> = 27</span>: <span class="eq">3<sup>2<i>x</i></sup> = 3<sup>3</sup></span>, אז <span class="eq">2<i>x</i> = 3</span> ו-<span class="eq"><i>x</i> = 1.5</span>. כשאין בסיס משותף, משתמשים בלוגריתם.</p>
+    <h3>מה זה המספר e?</h3>
+    <p>מספר קבוע, בערך 2.718, כמו ש-π הוא מספר קבוע. הגרף של <span class="eq"><i>e</i><sup><i>x</i></sup></span> מיוחד: השיפוע שלו בכל נקודה שווה לגובה שלו. לכן <span class="eq"><i>e</i><sup><i>x</i></sup></span> והלוגריתם הטבעי <span class="eq">ln <i>x</i></span> מופיעים בנגזרות ובגדילה ודעיכה.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/powers-roots/">חוקי חזקות ושורשים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/volume-of-revolution/"><small>→ הנושא הקודם</small>נפח גוף סיבוב</a><a class="next" href="../../math/logarithms/"><small>הנושא הבא ←</small>לוגריתמים וחוקי הלוג</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,signedFracHTML,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`, E=Math.E;
+const r2=v=>Math.round(v*100)/100;
+const rnd=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+let pid=0;
+
+/* base as HTML: e, integers plain, decimals in parentheses */
+function bTxt(b){
+  if(Math.abs(b-E)<1e-9) return '<i>e</i>';
+  const v=r2(b);
+  if(Number.isInteger(v)) return String(v);
+  if(eqv(v,0.5)||eqv(v,0.25)) return `(${fracHTML(v)})`;
+  return `(${numTxt(v)})`;
+}
+const expT=h=>h===0?X:`${X} ${h>0?MINUS:'+'} ${Math.abs(h)}`;
+function eqT(b,h,k){
+  let s=`<i>y</i> = <span class="m">${bTxt(b)}</span><sup>${expT(h)}</sup>`;
+  if(k) s+=` ${k<0?MINUS:'+'} <span class="b">${Math.abs(k)}</span>`;
+  return s;
+}
+function curve(f){
+  let d='', on=false;
+  for(let x=-6;x<=6.001;x+=0.02){
+    const y=f(x);
+    if(!isFinite(y)||y>40||y<-40){ on=false; continue; }
+    d+=(on?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); on=true;
+  }
+  return d;
+}
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+/* y = b^(x−h) + k with its asymptote; opt: ghosts [[b,h,k]], lines [y], points [{x,y,label,cls}], asym, curve */
+function plot(svg,b,h,k,opt={}){
+  const id='ec'+(++pid);
+  let s=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  (opt.ghosts||[]).forEach(g=>{ s+=`<path class="orig" d="${curve(x=>Math.pow(g[0],x-g[1])+g[2])}"/>`; });
+  if(opt.asym!==false) s+=`<line class="asy" x1="${sx(-6)}" y1="${sy(k)}" x2="${sx(6)}" y2="${sy(k)}"/>`;
+  (opt.lines||[]).forEach(L=>{ s+=`<line class="ln2" x1="${sx(-6)}" y1="${sy(L)}" x2="${sx(6)}" y2="${sy(L)}"/>`; });
+  if(opt.curve!==false) s+=`<path class="ln" d="${curve(x=>Math.pow(b,x-h)+k)}"/>`;
+  s+='</g>';
+  if(opt.asym!==false&&Math.abs(k)<=5) s+=`<text class="asylbl" x="${sx(-5.4)}" y="${sy(k)-4}">y = ${numTxt(k)}</text>`;
+  (opt.points||[]).forEach(p=>{
+    if(!inG(p.x,p.y)) return;
+    s+=`<circle class="${p.cls||'dot'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`;
+    if(p.label) s+=`<text class="ptlbl" x="${sx(p.x)+7}" y="${sy(p.y)-7}">${p.label}</text>`;
+  });
+  draw(svg,null,0,{extra:s});
+}
+
+/* intro */
+plot($('introUp'),2,0,0,{points:[{x:0,y:1,label:'(0, 1)'},{x:1,y:2,cls:'pt'},{x:2,y:4,cls:'pt'}]});
+plot($('introDown'),0.5,0,0,{points:[{x:0,y:1,label:'(0, 1)'},{x:-1,y:2,cls:'pt'},{x:-2,y:4,cls:'pt'}]});
+
+/* lab */
+const bR=$('bRange'), hR=$('hRange'), kR=$('kRange');
+let useE=false;
+const getB=()=>useE?E:r2(+bR.value);
+function lab(){
+  const b=getB(), h=+hR.value, k=+kR.value;
+  $('bVal').innerHTML=useE?'<i>e</i> ≈ 2.718':numTxt(b);
+  $('hVal').textContent=numTxt(h); $('kVal').textContent=numTxt(k);
+  $('labEq').innerHTML=eqs(eqT(b,h,k));
+  const y0=Math.pow(b,-h)+k;
+  const pts=[{x:h,y:1+k,label:`(${numTxt(h)}, ${numTxt(1+k)})`}];
+  if(h!==0&&inG(0,y0)) pts.push({x:0,y:y0,cls:'pt'});
+  if(eqv(b,1)){
+    plot($('labG'),b,h,k,{asym:false,points:[]});
+    $('labExplain').innerHTML=`<div>בסיס 1 הוא מקרה מיוחד: <span class="eq">1<sup><i>x</i></sup> = 1</span> לכל x. יוצא קו ישר אופקי, ${eqs(`<i>y</i> = ${numTxt(1+k)}`)}, ולא פונקציה מעריכית. לכן דורשים <span class="eq"><i>a</i> ≠ 1</span>. הזיזו את הבסיס.</div>`;
+    return;
+  }
+  plot($('labG'),b,h,k,{points:pts});
+  const bH=useE?'<i>e</i>':numTxt(b);
+  let t='';
+  t+=b>1
+    ?`<div><strong>הבסיס ${bH} גדול מ-1:</strong> הפונקציה <strong>עולה</strong>. כל צעד ימינה כופל את המרחק מהאסימפטוטה ב-${bH}.</div>`
+    :`<div><strong>הבסיס ${bH} בין 0 ל-1:</strong> הפונקציה <strong>יורדת</strong>. כל צעד ימינה כופל את המרחק מהאסימפטוטה ב-${bH}, והוא קטן.</div>`;
+  t+=`<div><strong>אסימפטוטה:</strong> ${eqs(`<i>y</i> = ${numTxt(k)}`)}. הגרף מתקרב אליה ${b>1?'משמאל':'מימין'} ולא נוגע בה. ${k===0?'זה ציר x.':`היא זזה עם <span class="b">k</span>.`}</div>`;
+  t+=`<div><strong>הנקודה המיוחדת:</strong> כשהמעריך הוא 0 מקבלים 1, אז הגרף עובר ב-${eqs(`(${numTxt(h)}, ${numTxt(1+k)})`)}.</div>`;
+  if(h!==0) t+=`<div><strong>חיתוך עם ציר y:</strong> מציבים ${eqs(`${X} = 0`)} ומקבלים ${eqs(`${bTxt(b)}<sup>${numTxt(-h)}</sup>${k?` ${k<0?MINUS:'+'} ${Math.abs(k)}`:''} ≈ ${numTxt(r2(y0))}`)}.</div>`;
+  t+=`<div><strong>טווח:</strong> ${eqs(`<i>y</i> &gt; ${numTxt(k)}`)}. הגרף כולו מעל האסימפטוטה.</div>`;
+  $('labExplain').innerHTML=t;
+}
+bR.addEventListener('input',()=>{ useE=false; lab(); });
+[hR,kR].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [b,h,k]=btn.dataset.p.split(',');
+  if(b==='e'){ useE=true; bR.value=2.7; } else { useE=false; bR.value=b; }
+  hR.value=h; kR.value=k; lab();
+}));
+lab();
+
+/* worked examples: [b, h, k, opt, text] */
+const EX={
+  A:[
+    [2,0,0,{points:[{x:0,y:1,label:'(0, 1)'},{x:1,y:2,cls:'pt'}]},`נשרטט את ${eqs(`<i>y</i> = 2<sup>${X} − 1</sup> − 2`)}. מתחילים מ-${eqs(`<i>y</i> = 2<sup>${X}</sup>`)}: עובר ב-${eqs('(0, 1)')} וב-${eqs('(1, 2)')}, והאסימפטוטה ${eqs('<i>y</i> = 0')}.`],
+    [2,1,0,{ghosts:[[2,0,0]],points:[{x:1,y:1,label:'(1, 1)'}]},`<strong>צעד 1, ימינה:</strong> במעריך כתוב ${eqs(`${X} − 1`)}, אז הגרף זז 1 <strong>ימינה</strong>. הנקודה המיוחדת עוברת ל-${eqs('(1, 1)')}. האסימפטוטה לא זזה.`],
+    [2,1,-2,{ghosts:[[2,1,0]],points:[{x:1,y:-1,label:'(1, −1)'}]},`<strong>צעד 2, למטה:</strong> ${eqs('− 2')} בחוץ, אז כל הגרף יורד 2. גם האסימפטוטה יורדת: עכשיו היא ${eqs('<i>y</i> = −2')}. הנקודה המיוחדת ב-${eqs('(1, −1)')}.`],
+    [2,1,-2,{points:[{x:1,y:-1,cls:'pt'},{x:0,y:-1.5,label:'(0, −1.5)'}]},`<strong>צעד 3, חיתוך עם ציר y:</strong> מציבים ${eqs(`${X} = 0`)}: ${eqs('2<sup>−1</sup> − 2 = ½ − 2 = −1.5')}. חיתוך עם ציר x? פותרים ${eqs(`2<sup>${X} − 1</sup> = 2`)}, אז ${eqs(`${X} − 1 = 1`)} ו-${eqs(`${X} = 2`)}.`],
+    [2,1,-2,{points:[{x:0,y:-1.5,cls:'pt'},{x:2,y:0,label:'(2, 0)'}]},`<strong>סיכום:</strong> הפונקציה עולה (בסיס 2), האסימפטוטה ${eqs('<i>y</i> = −2')}, והטווח ${eqs('<i>y</i> &gt; −2')}. בדיקה: ב-${eqs(`${X} = 3`)} מקבלים ${eqs('2² − 2 = 2')}, וזה מתאים לגרף.`]
+  ],
+  B:[
+    [0.5,0,0,{asym:false,lines:[4]},`נפתור ${eqs(`(½)<sup>${X}</sup> = 4`)}. בגרף רואים את הגרף היורד של ${eqs(`(½)<sup>${X}</sup>`)} ואת הקו הכחול ${eqs('<i>y</i> = 4')}. הפתרון הוא ה-x של נקודת המפגש.`],
+    [0.5,0,0,{asym:false,lines:[4]},`<strong>צעד 1, אותו בסיס:</strong> ${eqs('½ = 2<sup>−1</sup>')} ו-${eqs('4 = 2<sup>2</sup>')}. אז המשוואה היא ${eqs(`(2<sup>−1</sup>)<sup>${X}</sup> = 2<sup>2</sup>`)}, כלומר ${eqs(`2<sup>−${X}</sup> = 2<sup>2</sup>`)}.`],
+    [0.5,0,0,{asym:false,lines:[4],points:[{x:-2,y:4,label:'(−2, 4)'}]},`<strong>צעד 2, משווים מעריכים:</strong> הבסיסים שווים, אז גם המעריכים: ${eqs(`−${X} = 2`)}, ולכן ${eqs(`${X} = −2`)}. זו נקודת המפגש בגרף.`],
+    [0.5,0,0,{asym:false,lines:[4],points:[{x:-2,y:4,label:'(−2, 4)'}]},`<strong>בדיקה:</strong> ${eqs('(½)<sup>−2</sup> = 2<sup>2</sup> = 4')}. מתאים! מעריך שלילי הופך את השבר.`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const s=EX[exKey][exI];
+  plot($('exG'),s[0],s[1],s[2],s[3]);
+  $('exText').innerHTML=s[4];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+['A','B'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice */
+let pr=null, streak=0, solved=0;
+function genEq(){
+  const t=pick(['plain','shift','recip','sq']);
+  if(t==='plain'){ const c=pick([2,3,5]), n=c===2?rnd(2,6):c===3?rnd(2,4):rnd(2,3);
+    return {t,c,n,ans:n,lhs:`${c}<sup>${X}</sup>`,rhs:c**n,fn:[c,0]}; }
+  if(t==='shift'){ const c=pick([2,3]), n=c===2?rnd(2,5):rnd(2,3), m=pick([-2,-1,1,2,3]);
+    return {t,c,n,m,ans:n+m,lhs:`${c}<sup>${expT(m)}</sup>`,rhs:c**n,fn:[c,m]}; }
+  if(t==='recip'){ const c=pick([2,3]), n=c===2?rnd(1,4):rnd(1,3);
+    return {t,c,n,ans:-n,lhs:`(${fracHTML(1/c)})<sup>${X}</sup>`,rhs:c**n,fn:[1/c,0]}; }
+  const c=pick([2,3]), n=c===2?pick([1,3,5]):pick([1,3]);
+  return {t,c,n,ans:n/2,lhs:`${c*c}<sup>${X}</sup>`,rhs:c**n,fn:[c*c,0]};
+}
+function newPr(){
+  const kind=pick(['eq','eq','asym','yint']);
+  let p;
+  if(kind==='eq'){
+    let guard=0;
+    do{ p=genEq(); guard++; }while(pr&&pr.kind==='eq'&&pr.lhs===p.lhs&&pr.rhs===p.rhs&&guard<20);
+    p.kind='eq';
+    $('prEq').innerHTML=eqs(`${p.lhs} = ${p.rhs}`);
+    $('prQ').textContent='פתרו את המשוואה. מה x?';
+    $('prLbl').firstChild.textContent='x =';
+    plot($('prG'),p.fn[0],p.fn[1],0,{asym:false,lines:p.rhs<=5?[p.rhs]:[]});
+  }else{
+    const b=pick([2,3,0.5]);
+    let h,k;
+    if(kind==='asym'){ h=rnd(-2,2); k=pick([-3,-2,-1,1,2,3]); }
+    else { h=pick([0,0,1,-1]); k=rnd(-3,3); }
+    p={kind,b,h,k,ans:kind==='asym'?k:Math.pow(b,-h)+k};
+    $('prEq').innerHTML=eqs(eqT(b,h,k));
+    $('prQ').textContent=kind==='asym'?'מה משוואת האסימפטוטה של הגרף? כתבו את המספר שאחרי y =':'באיזה y הגרף חותך את ציר y?';
+    $('prLbl').firstChild.textContent='y =';
+    plot($('prG'),b,h,k,{asym:kind!=='asym'});
+  }
+  p.tries=0; p.hint=0; pr=p;
+  $('prIn').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const p=pr;
+  if(p.kind==='eq'){
+    const c=p.c, n=p.n;
+    if(p.t==='plain') return `${eqs(`${p.rhs} = ${c}<sup>${n}</sup>`)}, אז ${eqs(`${c}<sup>${X}</sup> = ${c}<sup>${n}</sup>`)} ו-${eqs(`${X} = ${n}`)}.`;
+    if(p.t==='shift') return `${eqs(`${p.rhs} = ${c}<sup>${n}</sup>`)}, אז ${eqs(`${expT(p.m)} = ${n}`)} ולכן ${eqs(`${X} = ${numTxt(p.ans)}`)}.`;
+    if(p.t==='recip') return `${eqs(`${fracHTML(1/c)} = ${c}<sup>−1</sup>`)}, אז אגף שמאל הוא ${eqs(`${c}<sup>−${X}</sup>`)}. ${eqs(`${p.rhs} = ${c}<sup>${n}</sup>`)}, אז ${eqs(`−${X} = ${n}`)} ו-${eqs(`${X} = ${numTxt(p.ans)}`)}.`;
+    return `${eqs(`${c*c} = ${c}<sup>2</sup>`)}, אז אגף שמאל הוא ${eqs(`${c}<sup>2${X}</sup>`)}. ${eqs(`${p.rhs} = ${c}<sup>${n}</sup>`)}, אז ${eqs(`2${X} = ${n}`)} ו-${eqs(`${X} = ${numTxt(p.ans)}`)}.`;
+  }
+  if(p.kind==='asym') return `האסימפטוטה של ${eqs(`${bTxt(p.b)}<sup>${X}</sup>`)} היא ${eqs('<i>y</i> = 0')}. הזזה במעריך לא מזיזה אותה, והמספר בחוץ מזיז אותה ל-${eqs(`<i>y</i> = ${numTxt(p.k)}`)}.`;
+  return `מציבים ${eqs(`${X} = 0`)}: ${eqs(`${bTxt(p.b)}<sup>${numTxt(-p.h)}</sup>${p.k?` ${p.k<0?MINUS:'+'} ${Math.abs(p.k)}`:''} = ${signedFracHTML(p.ans)}`)}.`;
+}
+function wrongMsg(v){
+  const p=pr;
+  if(p.kind==='eq'){
+    const {c,n,rhs,t}=p;
+    if(eqv(v,rhs)||eqv(v,rhs/c)) return `לא מחלקים ב-${c}. כותבים את ${rhs} כחזקה של ${c}, ואז משווים את המעריכים.`;
+    if(eqv(v,-p.ans)) return 'כמעט! בדקו את הסימן של התשובה.';
+    if(t==='shift'&&eqv(v,n)) return `${n} הוא המעריך באגף ימין. אבל משמאל המעריך הוא ${eqs(expT(p.m))}, לא x. השוו אותם.`;
+    if(t==='shift'&&eqv(v,n-p.m)) return `הסימן של ההזזה התהפך. ${eqs(`${expT(p.m)} = ${n}`)}: מעבירים אגף ובודקים שוב.`;
+    if(t==='recip'&&eqv(v,n)) return `${eqs(`(${fracHTML(1/c)})<sup>${X}</sup>`)} הוא ${eqs(`${c}<sup>−${X}</sup>`)}. יש מינוס במעריך.`;
+    if(t==='sq'&&eqv(v,n)) return `${c*c} הוא ${eqs(`${c}<sup>2</sup>`)}, אז ${eqs(`${c*c}<sup>${X}</sup> = ${c}<sup>2${X}</sup>`)}. המעריך הוא ${eqs(`2${X}`)}, לא x.`;
+    if(t==='sq'&&eqv(v,2*n)) return `${eqs(`2${X} = ${n}`)}: מחלקים ב-2, לא כופלים.`;
+    return `בדקו בהצבה: מה יוצא באגף שמאל עם התשובה שלכם? צריך לצאת ${rhs}.`;
+  }
+  if(p.kind==='asym'){
+    if(eqv(v,p.k+1)) return `זה ה-y של הנקודה המיוחדת, לא האסימפטוטה. האסימפטוטה היא הקו שהגרף מתקרב אליו ולא נוגע.`;
+    if(eqv(v,-p.k)) return 'הסימן הפוך. בחוץ הכול כמו שזה נראה: פלוס זה למעלה, מינוס זה למטה.';
+    if(eqv(v,0)) return `האסימפטוטה של ${eqs(`${bTxt(p.b)}<sup>${X}</sup>`)} היא ${eqs('<i>y</i> = 0')}, אבל כאן הגרף זז למעלה או למטה. מה המספר שבחוץ?`;
+    if(eqv(v,p.h)||eqv(v,-p.h)) return 'הזזה במעריך מזיזה ימינה ושמאלה, והאסימפטוטה אופקית. היא זזה רק עם המספר שבחוץ.';
+    return 'האסימפטוטה זזה למעלה ולמטה בדיוק כמו הגרף. מה המספר שמוסיפים בחוץ?';
+  }
+  if(eqv(v,p.k)&&!eqv(p.ans,p.k)) return 'זו האסימפטוטה. בחיתוך עם ציר y מציבים x = 0 ומחשבים.';
+  if(eqv(v,1)&&p.k!==0) return 'חישבתם את החזקה, אבל שכחתם להוסיף את המספר שבחוץ.';
+  if(eqv(v,Math.pow(p.b,1-p.h)+p.k)) return 'הצבתם x = 1. בחיתוך עם ציר y מציבים x = 0.';
+  if(p.h!==0&&eqv(v,Math.pow(p.b,p.h)+p.k)) return 'הסימן של המעריך התהפך. אם במעריך כתוב x − h, אז ב-x = 0 המעריך הוא −h.';
+  return 'הציבו x = 0 בנוסחה וחשבו בזהירות: קודם החזקה, ואחר כך המספר שבחוץ.';
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), v=parseNum($('prIn').value);
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר. אפשר גם שבר, למשל 3/2.</div>'; return; }
+  if(eqv(v,pr.ans)){
+    streak++; solved++; score();
+    if(pr.kind==='eq'){ plot($('prG'),pr.fn[0],pr.fn[1],0,{asym:false,lines:pr.rhs<=5?[pr.rhs]:[],points:[{x:pr.ans,y:pr.rhs,label:`(${numTxt(pr.ans)}, ${pr.rhs})`}]}); }
+    else if(pr.kind==='asym') plot($('prG'),pr.b,pr.h,pr.k,{});
+    else plot($('prG'),pr.b,pr.h,pr.k,{points:[{x:0,y:pr.ans,label:`(0, ${numTxt(r2(pr.ans))})`}]});
+    fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`; return;
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err">${wrongMsg(v)}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prIn').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const p=pr; let t;
+  if(p.kind==='eq'){
+    if(p.hint===1) t=`כתבו את שני האגפים כחזקה של אותו בסיס. כאן הבסיס הנוח הוא ${p.c}. למשל ${eqs(`${p.c}<sup>2</sup> = ${p.c**2}`)}.`;
+    else t=`${eqs(`${p.rhs} = ${p.c}<sup>${p.n}</sup>`)}. ${p.t==='recip'?`ובאגף שמאל ${eqs(`(${fracHTML(1/p.c)})<sup>${X}</sup> = ${p.c}<sup>−${X}</sup>`)}.`:p.t==='sq'?`ובאגף שמאל ${eqs(`${p.c*p.c}<sup>${X}</sup> = ${p.c}<sup>2${X}</sup>`)}.`:''} עכשיו השוו את המעריכים.`;
+  }else if(p.kind==='asym'){
+    if(p.hint===1) t=`האסימפטוטה של ${eqs(`${bTxt(p.b)}<sup>${X}</sup>`)} היא ציר x, ${eqs('<i>y</i> = 0')}. מה קורה לה כשכל הגרף זז?`;
+    else t='הזזה במעריך (ימינה ושמאלה) לא מזיזה קו אופקי. רק המספר שבחוץ מזיז אותה למעלה או למטה.';
+  }else{
+    if(p.hint===1) t=`חיתוך עם ציר y: מציבים ${eqs(`${X} = 0`)}.`;
+    else t=`ב-${eqs(`${X} = 0`)} המעריך הוא ${eqs(numTxt(-p.h))}, אז החזקה היא ${eqs(`${bTxt(p.b)}<sup>${numTxt(-p.h)}</sup> = ${signedFracHTML(Math.pow(p.b,-p.h))}`)}. עכשיו הוסיפו את המספר שבחוץ.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} אחר כך נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

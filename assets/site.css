@@ -48,6 +48,7 @@ section.card{background:var(--card); border:2px solid var(--border); border-radi
 .text{max-width:66ch}
 .eq{font-family:var(--f-math); direction:ltr; unicode-bidi:isolate; white-space:nowrap; font-size:1.12em}
 .eq i{font-style:italic}
+.eq-run{unicode-bidi:isolate}
 .big-eq{font-size:clamp(1.8rem,6vw,2.8rem); text-align:center}
 .frac{display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; font-size:.72em; line-height:1.05; margin:0 .1em}
 .frac>span:first-child{border-bottom:1px solid currentColor; padding:0 .15em}

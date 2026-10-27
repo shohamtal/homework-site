@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>ישרים ומישורים במרחב · כיתה יב · מירי</title>
+<meta name="description" content="וקטורים במרחב (5 יח״ל): הצגה פרמטרית של ישר, משוואת מישור ומצבים הדדיים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/lines-planes-space/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="ישרים ומישורים במרחב · כיתה יב · מירי">
+<meta property="og:description" content="וקטורים במרחב (5 יח״ל): הצגה פרמטרית של ישר, משוואת מישור ומצבים הדדיים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/lines-planes-space/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"וקטורים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#vectors-12"},{"@type":"ListItem","position":5,"name":"ישרים ומישורים במרחב","item":"https://shohamtal.github.io/homework-site/math/lines-planes-space/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה ישרים מצטלבים?","acceptedAnswer":{"@type":"Answer","text":"שני ישרים במרחב שהכיוונים שלהם שונים, ובכל זאת אין להם נקודה משותפת. הם לא מקבילים ולא נחתכים, אלא עוברים אחד מעל השני. למשל קו על הרצפה וקו על התקרה שהולך לכיוון אחר. במישור זה לא יכול לקרות."}},{"@type":"Question","name":"איך בודקים אם שני ישרים במרחב נחתכים?","acceptedAnswer":{"@type":"Answer","text":"קודם בודקים שהכיוונים לא פרופורציונליים. אחר כך משווים A + t·u = B + s·v, פותרים את t ו-s משתי קואורדינטות, ומציבים בשלישית. אם היא מתקיימת, הישרים נחתכים. אם לא, הם מצטלבים."}},{"@type":"Question","name":"איך מוצאים נקודת חיתוך של ישר ומישור?","acceptedAnswer":{"@type":"Answer","text":"כותבים את x, y ו-z של הישר בעזרת t, ומציבים במשוואת המישור. מקבלים משוואה עם נעלם אחד, t. מציבים את t שמצאתם בחזרה בישר, ומקבלים את הנקודה. אם t נעלם מהמשוואה, הישר מקביל למישור או מוכל בו."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"ישרים ומישורים במרחב","description":"וקטורים במרחב (5 יח״ל): הצגה פרמטרית של ישר, משוואת מישור ומצבים הדדיים. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/lines-planes-space/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"וקטורים","teaches":"ישרים ומישורים במרחב","keywords":"ישר במרחב, משוואת מישור, מצב הדדי","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.s3{width:100%; max-width:380px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.s3 .ax{stroke:var(--muted); stroke-width:1.4}
+.s3 .axn{stroke:var(--muted); stroke-width:1.2; stroke-dasharray:4 4}
+.s3 .tk{fill:var(--muted)}
+.s3 .axl{font:italic 600 13px var(--f-math); fill:var(--muted); text-anchor:middle; dominant-baseline:middle}
+.s3 .pl{fill:var(--hl); fill-opacity:.45; stroke:var(--ink); stroke-opacity:.45; stroke-width:1.2; stroke-linejoin:round}
+.s3 .l1{stroke:var(--line); stroke-width:3.2; stroke-linecap:round}
+.s3 .l2{stroke:var(--blue); stroke-width:3.2; stroke-linecap:round}
+.s3 .vc{stroke:var(--ink); stroke-width:2.4}
+.s3 .arh{fill:var(--ink)}
+.s3 .drop{stroke:var(--muted); stroke-width:1.2; stroke-dasharray:3 3}
+.s3 .pt{fill:var(--ink); stroke:var(--card); stroke-width:1.5}
+.s3 .pto{fill:var(--card); stroke:var(--ink); stroke-width:2}
+.s3 .gp{fill:var(--muted)}
+.s3 .lbl{font:700 13px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.s3 .lbl.p{fill:var(--line)} .s3 .lbl.b{fill:var(--blue)}
+.seg{display:flex; gap:6px; flex-wrap:wrap}
+.calc .eq{white-space:normal}
+.choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+#prThree input{width:4.5em}
+.key{display:inline-block; width:14px; height:4px; border-radius:2px; vertical-align:middle; margin-inline:2px}
+.key.p{background:var(--line)} .key.b{background:var(--blue)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="lines-planes-space">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#vectors-12">וקטורים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">ישרים ומישורים במרחב</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · וקטורים · 5 יח״ל</div>
+  <h1>ישרים ומישורים במרחב <span class="slogan">נפגשים, מקבילים או מצטלבים?</span></h1>
+  <p class="lead">במישור שני ישרים או שנפגשים או שהם מקבילים. במרחב יש אפשרות שלישית: הם עוברים אחד ליד השני ולא נפגשים לעולם. בעמוד הזה כותבים ישר בעזרת נקודה ו<a href="../vectors/">וקטור כיוון</a>, כותבים מישור בעזרת וקטור נורמל (כאן עוזרת <a href="../dot-product/">המכפלה הסקלרית</a>), ובודקים איך ישרים ומישורים נפגשים. לרמת 5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>נקודה, כיוון ונורמל</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>ישר: נקודה ועוד כיוון</h3>
+      <p>מתחילים בנקודה <span class="eq">A</span> וזזים בכיוון של וקטור <span class="eq"><i>u</i></span>. כל מספר <span class="eq"><i>t</i></span> נותן נקודה אחרת על הישר:</p>
+      <p><span class="eq">ℓ: A + <i>t</i>·<i>u</i></span></p>
+      <p>למשל <span class="eq">(1, 2, 0)</span> <span class="eq">+ <i>t</i>(2, 1, 3)</span>. ב-<span class="eq"><i>t</i> = 0</span> מקבלים את <span class="eq">A</span> עצמה.</p>
+    </div>
+    <div class="mini">
+      <h3>מישור: וקטור שמאונך לו</h3>
+      <p>וקטור הנורמל <span class="eq"><i>n</i> = (<i>a</i>, <i>b</i>, <i>c</i>)</span> מאונך לכל המישור. ממנו מקבלים את המשוואה:</p>
+      <p><span class="eq"><i>ax</i> + <i>by</i> + <i>cz</i> = <i>d</i></span></p>
+      <p>את <span class="eq"><i>d</i></span> מוצאים בהצבה של נקודה אחת שעל המישור.</p>
+    </div>
+    <div class="mini">
+      <h3>ארבעה מצבים לשני ישרים</h3>
+      <p><strong>נחתכים:</strong> יש נקודה אחת משותפת.</p>
+      <p><strong>מקבילים:</strong> אותו כיוון, בלי נקודה משותפת.</p>
+      <p><strong>מתלכדים:</strong> זה בעצם אותו ישר.</p>
+      <p><strong>מצטלבים:</strong> כיוונים שונים, ובכל זאת לא נפגשים. זה קורה רק במרחב.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>שאלה אחת לכל מצב:</strong> קודם בודקים את הכיוונים. כיוונים פרופורציונליים? הישרים מקבילים או מתלכדים. לא פרופורציונליים? פותרים מערכת ובודקים אם יש נקודה משותפת.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: ישרים ומישורים בתלת ממד</h2></div>
+  <p class="text">בחרו מה לראות. המחוון <span class="eq"><i>t</i></span> מזיז את הנקודה <span class="eq">P</span> על הישר הוורוד. הקווים המקווקווים יורדים מ-<span class="eq">P</span> אל הרצפה, כדי שיהיה קל לראות איפה היא במרחב.</p>
+  <div class="lab">
+    <svg class="s3" id="labG" viewBox="0 0 360 300" role="img" aria-label="מערכת צירים תלת ממדית עם ישרים ומישור"></svg>
+    <div class="ctrl">
+      <div class="seg" id="modeSeg" role="group" aria-label="מה לראות">
+        <button id="mLine" class="primary" aria-pressed="true">ישר אחד</button>
+        <button id="mTwo" aria-pressed="false">שני ישרים</button>
+        <button id="mPlane" aria-pressed="false">ישר ומישור</button>
+      </div>
+      <div id="lineCtl">
+        <p class="muted" style="margin:0">וקטור הכיוון <span class="eq"><i>u</i></span>, מהנקודה <span class="eq">A = (1, 2, 1)</span>:</p>
+        <div><label class="slider" for="u1"><span><span class="eq"><i>u</i>₁</span> (בכיוון x)</span><span class="eq" id="u1v"></span></label><input type="range" id="u1" min="-3" max="3" step="1" value="2"></div>
+        <div><label class="slider" for="u2"><span><span class="eq"><i>u</i>₂</span> (בכיוון y)</span><span class="eq" id="u2v"></span></label><input type="range" id="u2" class="hl" min="-3" max="3" step="1" value="1"></div>
+        <div><label class="slider" for="u3"><span><span class="eq"><i>u</i>₃</span> (בכיוון z)</span><span class="eq" id="u3v"></span></label><input type="range" id="u3" class="blue" min="-3" max="3" step="1" value="1"></div>
+      </div>
+      <div id="twoCtl" hidden>
+        <div class="seg" role="group" aria-label="איזה מצב">
+          <button data-r="meet" class="primary" aria-pressed="true">נחתכים</button>
+          <button data-r="par" aria-pressed="false">מקבילים</button>
+          <button data-r="skew" aria-pressed="false">מצטלבים</button>
+          <button data-r="same" aria-pressed="false">מתלכדים</button>
+        </div>
+      </div>
+      <div id="planeCtl" hidden>
+        <div class="seg" role="group" aria-label="איזה מקרה">
+          <button data-p="cut" class="primary" aria-pressed="true">חותך</button>
+          <button data-p="cut2" aria-pressed="false">חותך שוב</button>
+          <button data-p="par" aria-pressed="false">מקביל</button>
+          <button data-p="in" aria-pressed="false">מוכל</button>
+        </div>
+      </div>
+      <div><label class="slider" for="lt"><span>הפרמטר <span class="eq"><i>t</i></span></span><span class="eq" id="ltv"></span></label><input type="range" id="lt" min="-2" max="3" step="0.25" value="1"></div>
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-k="line" data-v="0,0,1">u = (0, 0, 1)</button>
+          <button dir="ltr" data-k="line" data-v="1,0,0">u = (1, 0, 0)</button>
+          <button dir="ltr" data-k="line" data-v="0,0,0">u = (0, 0, 0)</button>
+          <button data-k="two" data-v="skew">מצטלבים שנראים נחתכים</button>
+          <button data-k="two" data-v="same">ישר אחד בשני שמות</button>
+          <button dir="ltr" data-k="plane" data-v="cut">x + y + z = 6</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">גלו משהו: במצב "מצטלבים" הישרים נראים בציור כאילו הם נפגשים. הזיזו את <span class="eq"><i>t</i></span> ותראו שהנקודה הוורודה עוברת מעל הישר הכחול, לא דרכו. ציור לבד לא מספיק, צריך חשבון.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אותו פרמטר לשני הישרים</h3>
+      <p>כשמשווים שני ישרים, לכל אחד יש פרמטר משלו: <span class="eq"><i>t</i></span> לראשון ו-<span class="eq"><i>s</i></span> לשני.</p>
+      <p>אם כותבים <span class="eq"><i>t</i></span> בשניהם, מחפשים נקודה שמגיעים אליה באותו "זמן", ומפספסים חיתוך שקיים.</p>
+    </div>
+    <div class="mini">
+      <h3>בודקים רק שתי קואורדינטות</h3>
+      <p>משתי משוואות מוצאים <span class="eq"><i>t</i></span> ו-<span class="eq"><i>s</i></span>. זה עוד לא חיתוך.</p>
+      <p>חייבים להציב בקואורדינטה השלישית. אם היא לא מתקיימת, הישרים מצטלבים.</p>
+    </div>
+    <div class="mini">
+      <h3>מקבילים או מתלכדים?</h3>
+      <p>כיוונים פרופורציונליים לא מספיקים כדי להחליט.</p>
+      <p>בודקים אם נקודה של ישר אחד יושבת על השני. אם כן, זה אותו ישר. אם לא, הם מקבילים.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ישר ומישור:</strong> אם <span class="eq"><i>n</i> · <i>u</i> = 0</span>, הכיוון של הישר מאונך לנורמל. אז הישר מקביל למישור, או שהוא מוכל בו כולו. כדי לדעת, מציבים את נקודת המוצא <span class="eq">A</span> במשוואת המישור.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">חלק א: מה המצב ההדדי של <span class="eq">ℓ₁: (1, 0, 0)</span> <span class="eq">+ <i>t</i>(1, 1, 1)</span> ו-<span class="eq">ℓ₂: (3, 0, 4)</span> <span class="eq">+ <i>s</i>(0, 1, −1)</span>? חלק ב: איפה הישר <span class="eq"><i>t</i>(1, 2, 1)</span> חותך את המישור <span class="eq"><i>x</i> + <i>y</i> + <i>z</i> = 6</span>?</p>
+  <div class="lab">
+    <svg class="s3" id="exG" viewBox="0 0 360 300" role="img" aria-label="שרטוט הדוגמה הפתורה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: ישרים ומישורים</h2></div>
+  <p class="text">כל התשובות הן מספרים שלמים. מספר שלילי כותבים עם מינוס, למשל <span class="eq">−2</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="onLine" aria-pressed="false">נקודה על ישר</button>
+    <button data-t="rel" aria-pressed="false">מצב הדדי</button>
+    <button data-t="meet" aria-pressed="false">ישר חותך מישור</button>
+    <button data-t="plane" aria-pressed="false">משוואת מישור</button>
+  </div>
+  <svg class="s3" id="prG" viewBox="0 0 360 300" role="img" aria-label="שרטוט התרגיל"></svg>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs" id="prOne">
+    <label for="prA"><span id="prLbl" class="eq">t =</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+  </div>
+  <div class="inputs" id="prThree" hidden>
+    <label for="prX"><span class="eq"><i>x</i> =</span><input id="prX" inputmode="decimal" autocomplete="off"></label>
+    <label for="prY"><span class="eq"><i>y</i> =</span><input id="prY" inputmode="decimal" autocomplete="off"></label>
+    <label for="prZ"><span class="eq"><i>z</i> =</span><input id="prZ" inputmode="decimal" autocomplete="off"></label>
+  </div>
+  <div class="choices" id="prChoices" hidden></div>
+  <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה ישרים מצטלבים?</h3>
+    <p>שני ישרים במרחב שהכיוונים שלהם שונים, ובכל זאת אין להם נקודה משותפת. הם לא מקבילים ולא נחתכים, אלא עוברים אחד מעל השני. למשל קו על הרצפה וקו על התקרה שהולך לכיוון אחר. במישור זה לא יכול לקרות.</p>
+    <h3>איך בודקים אם שני ישרים במרחב נחתכים?</h3>
+    <p>קודם בודקים שהכיוונים לא פרופורציונליים. אחר כך משווים <span class="eq">A + <i>t</i>·<i>u</i> = B + <i>s</i>·<i>v</i></span>, פותרים את <span class="eq"><i>t</i></span> ו-<span class="eq"><i>s</i></span> משתי קואורדינטות, ומציבים בשלישית. אם היא מתקיימת, הישרים נחתכים. אם לא, הם מצטלבים.</p>
+    <h3>איך מוצאים נקודת חיתוך של ישר ומישור?</h3>
+    <p>כותבים את <span class="eq"><i>x</i></span>, <span class="eq"><i>y</i></span> ו-<span class="eq"><i>z</i></span> של הישר בעזרת <span class="eq"><i>t</i></span>, ומציבים במשוואת המישור. מקבלים משוואה עם נעלם אחד, <span class="eq"><i>t</i></span>. מציבים את <span class="eq"><i>t</i></span> שמצאתם בחזרה בישר, ומקבלים את הנקודה. אם <span class="eq"><i>t</i></span> נעלם מהמשוואה, הישר מקביל למישור או מוכל בו.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/dot-product/">מכפלה סקלרית וזווית בין וקטורים</a> · <a href="../../math/trig-3d/">טריגונומטריה במרחב</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/dot-product/"><small>→ הנושא הקודם</small>מכפלה סקלרית וזווית בין וקטורים</a><a class="next" href="../../math/complex-numbers/"><small>הנושא הבא ←</small>מספרים מרוכבים: i וההצגה האלגברית</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const r2=v=>numTxt(Math.round(v*100)/100);
+const XYZ=['x','y','z'];
+
+/* ---------- vector helpers ---------- */
+const add=(p,q)=>p.map((v,i)=>v+q[i]), sub=(p,q)=>p.map((v,i)=>v-q[i]), mul=(p,k)=>p.map(v=>v*k);
+const dot=(p,q)=>p[0]*q[0]+p[1]*q[1]+p[2]*q[2];
+const cross=(p,q)=>[p[1]*q[2]-p[2]*q[1], p[2]*q[0]-p[0]*q[2], p[0]*q[1]-p[1]*q[0]];
+const isZero=p=>p.every(v=>Math.abs(v)<1e-9);
+const par=(p,q)=>isZero(cross(p,q));
+const vec=p=>`(${p.map(v=>r2(v)).join(', ')})`;
+/* "−3" in brackets when negative, for products like t·(−3) */
+const br=v=>v<0?`(${r2(v)})`:r2(v);
+/* "a + c·t" written nicely: "1 + 2t", "3 − t", "2t", "4" */
+function lin(a,c,v){
+  if(c===0) return numTxt(a);
+  const k=Math.abs(c)===1?'':numTxt(Math.abs(c));
+  if(a===0) return `${c<0?'−':''}${k}<i>${v}</i>`;
+  return `${numTxt(a)} ${c<0?'−':'+'} ${k}<i>${v}</i>`;
+}
+/* plane "2x + y − z = 6"; planeLhs gives only "2x + y − z" */
+function planeTxt(n,d){ return `${planeLhs(n)} = ${typeof d==='number'?numTxt(d):d}`; }
+function planeLhs(n){
+  let s='';
+  n.forEach((c,i)=>{
+    if(!c) return;
+    const k=Math.abs(c)===1?'':numTxt(Math.abs(c));
+    s+=s?` ${c<0?'−':'+'} ${k}<i>${XYZ[i]}</i>`:`${c<0?'−':''}${k}<i>${XYZ[i]}</i>`;
+  });
+  return s;
+}
+/* line "ℓ: (1, 2, 0)" "+ t(2, 1, 3)" as two short pieces, so they can wrap */
+const lineTxt=(name,A,u,p='t')=>`${E(`${name}: ${vec(A)}`)} ${E(`+ <i>${p}</i>${vec(u)}`)}`;
+
+/* ---------- 3D drawing (oblique projection) ---------- */
+const K=25, OX=145, OY=200, CX=0.433, CY=0.25;
+const P2=p=>[OX+K*(p[1]-p[0]*CX), OY-K*(p[2]-p[0]*CY)];
+const f1=v=>v.toFixed(1);
+const L=(p,q,c,extra='')=>{const a=P2(p),b=P2(q);return `<line class="${c}" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}"${extra}/>`;};
+const T=(p,txt,c,dx=0,dy=0)=>{const a=P2(p);return `<text class="${c}" x="${f1(a[0]+dx)}" y="${f1(a[1]+dy)}">${txt}</text>`;};
+const DOT=(p,c='pt',r=4.5)=>{const a=P2(p);return `<circle class="${c}" cx="${f1(a[0])}" cy="${f1(a[1])}" r="${r}"/>`;};
+/* part of the line A + t·u inside the cube [lo, hi]³, as a t interval */
+function clip(A,u,lo=-1.5,hi=7){
+  let a=-Infinity,b=Infinity;
+  for(let i=0;i<3;i++){
+    if(u[i]===0){ if(A[i]<lo||A[i]>hi) return null; continue; }
+    const t1=(lo-A[i])/u[i], t2=(hi-A[i])/u[i];
+    a=Math.max(a,Math.min(t1,t2)); b=Math.min(b,Math.max(t1,t2));
+  }
+  return a<b?[a,b]:null;
+}
+/* the plane n·X = d cut by the cube [lo, hi]³: a convex polygon in 3D */
+function planePoly(n,d,lo=-1,hi=6){
+  const C=[];
+  for(const x of [lo,hi]) for(const y of [lo,hi]) for(const z of [lo,hi]) C.push([x,y,z]);
+  const pts=[];
+  for(let i=0;i<8;i++) for(let j=i+1;j<8;j++){
+    const diff=C[i].reduce((s,v,k)=>s+(v!==C[j][k]?1:0),0);
+    if(diff!==1) continue;
+    const fa=dot(n,C[i])-d, fb=dot(n,C[j])-d;
+    if(fa===0) pts.push(C[i]);
+    if(fa*fb<0){ const r=fa/(fa-fb); pts.push(add(C[i],mul(sub(C[j],C[i]),r))); }
+  }
+  const uniq=[]; pts.forEach(p=>{ if(!uniq.some(q=>isZero(sub(p,q)))) uniq.push(p); });
+  if(uniq.length<3) return [];
+  const c=mul(uniq.reduce((s,p)=>add(s,p),[0,0,0]),1/uniq.length);
+  let e1=cross(n,[1,0,0]); if(isZero(e1)) e1=cross(n,[0,1,0]);
+  const e2=cross(n,e1);
+  return uniq.sort((p,q)=>Math.atan2(dot(sub(p,c),e2),dot(sub(p,c),e1))-Math.atan2(dot(sub(q,c),e2),dot(sub(q,c),e1)));
+}
+/* scene: {lines:[{A,u,c,name}], plane:{n,d}, pts:[{p,lbl,c,drop,open}], vec:{A,u}} */
+function draw(svg,sc){
+  const id=svg.id+'Ar';
+  let h=`<defs><marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arh" d="M0,0L10,5L0,10Z"/></marker></defs>`;
+  const O=[0,0,0];
+  [[6.3,0,0],[0,6.3,0],[0,0,6.3]].forEach((e,i)=>{
+    h+=L(O,e,'ax',` marker-end="url(#${id})"`)+L(O,mul(e,-1.2/6.3),'axn');
+    for(let k=1;k<=5;k++) h+=DOT(mul(e,k/6.3),'tk',1.6);
+    h+=T(mul(e,6.9/6.3),XYZ[i],'axl');
+  });
+  h+=T(O,'O','axl',8,9);
+  if(sc.plane){
+    const poly=planePoly(sc.plane.n,sc.plane.d);
+    if(poly.length) h+=`<polygon class="pl" points="${poly.map(p=>P2(p).map(f1).join(',')).join(' ')}"/>`;
+  }
+  (sc.lines||[]).forEach(l=>{
+    const r=clip(l.A,l.u); if(!r) return;
+    const a=add(l.A,mul(l.u,r[0])), b=add(l.A,mul(l.u,r[1]));
+    h+=L(a,b,l.c);
+    if(l.name) h+=T(add(l.A,mul(l.u,r[1]-0.08*(r[1]-r[0]))),l.name,'lbl '+(l.c==='l1'?'p':'b'),14,-8);
+  });
+  if(sc.vec&&!isZero(sc.vec.u)) h+=L(sc.vec.A,add(sc.vec.A,sc.vec.u),'vc',` marker-end="url(#${id})"`)+T(add(sc.vec.A,mul(sc.vec.u,0.55)),sc.vec.name||'u','lbl',-10,-10);
+  (sc.pts||[]).forEach(q=>{
+    if(q.drop){ const g=[q.p[0],q.p[1],0]; h+=L(q.p,g,'drop')+L(g,[q.p[0],0,0],'drop')+L(g,[0,q.p[1],0],'drop')+DOT(g,'gp',2.5); }
+    h+=DOT(q.p,q.open?'pto':'pt');
+    if(q.lbl) h+=T(q.p,q.lbl,'lbl'+(q.c?' '+q.c:''),12,-12);
+  });
+  svg.innerHTML=h;
+}
+
+/* ---------- two lines: direction test, then solve with t and s ---------- */
+function relation(A,u,B,v){
+  const w=sub(B,A);
+  if(par(u,v)) return {kind:par(w,u)?'same':'par'};
+  for(const [i,j] of [[0,1],[0,2],[1,2]]){
+    const det=-u[i]*v[j]+v[i]*u[j];
+    if(Math.abs(det)<1e-9) continue;
+    const t=(-w[i]*v[j]+v[i]*w[j])/det, s=(u[i]*w[j]-w[i]*u[j])/det;
+    const k=3-i-j, lhs=A[k]+t*u[k], rhs=B[k]+s*v[k];
+    return {kind:Math.abs(lhs-rhs)<1e-9?'meet':'skew',i,j,k,t,s,lhs,rhs,pt:add(A,mul(u,t))};
+  }
+}
+/* the steps of the check, as html lines */
+function relSteps(A,u,B,v){
+  const R=relation(A,u,B,v), out=[];
+  if(R.kind==='par'||R.kind==='same'){
+    const i=u.findIndex(x=>x!==0), k=v[i]/u[i];
+    out.push(`<strong>הכיוונים:</strong> ${E(`${vec(v)} = ${r2(k)}·${vec(u)}`)}. הם פרופורציונליים, אז הישרים מקבילים או מתלכדים.`);
+    const w=sub(B,A);
+    if(R.kind==='same'){ const m=w[i]/u[i]; out.push(`<strong>נקודה משותפת?</strong> ${E(`B − A = ${vec(w)}`)} ${E(`= ${r2(m)}·${vec(u)}`)}. הנקודה ${E('B')} יושבת על ${E('ℓ₁')}, ולכן הישרים <strong>מתלכדים</strong>.`); }
+    else out.push(`<strong>נקודה משותפת?</strong> ${E(`B − A = ${vec(w)}`)} לא פרופורציונלי ל-${E('<i>u</i>')}. הנקודה ${E('B')} לא על ${E('ℓ₁')}, ולכן הישרים <strong>מקבילים</strong>.`);
+    return {R,out};
+  }
+  out.push(`<strong>הכיוונים:</strong> ${E(vec(u))} ו-${E(vec(v))} לא פרופורציונליים. אז הישרים נחתכים או מצטלבים.`);
+  const {i,j,k,t,s}=R;
+  out.push(`<strong>משווים ב-${XYZ[i]} וב-${XYZ[j]}:</strong> ${E(`${lin(A[i],u[i],'t')} = ${lin(B[i],v[i],'s')}`)} ו-${E(`${lin(A[j],u[j],'t')} = ${lin(B[j],v[j],'s')}`)}. מכאן ${E(`<i>t</i> = ${r2(t)}`)} ו-${E(`<i>s</i> = ${r2(s)}`)}.`);
+  if(R.kind==='meet') out.push(`<strong>בדיקה ב-${XYZ[k]}:</strong> ${E(`${numTxt(A[k])} + ${br(u[k])}·${br(t)} = ${r2(R.lhs)}`)} וגם ${E(`${numTxt(B[k])} + ${br(v[k])}·${br(s)} = ${r2(R.rhs)}`)}. מתקיים, ולכן הישרים <strong>נחתכים</strong> בנקודה ${E(vec(R.pt))}.`);
+  else out.push(`<strong>בדיקה ב-${XYZ[k]}:</strong> מהישר הראשון ${E(r2(R.lhs))}, מהשני ${E(r2(R.rhs))}. לא שווה! אין נקודה משותפת, ולכן הישרים <strong>מצטלבים</strong>.`);
+  return {R,out};
+}
+
+/* ---------- lab ---------- */
+const LA=[1,2,1];
+const TWO={
+  meet:{A:[1,0,0],u:[1,1,1],B:[3,0,4],v:[0,1,-1]},
+  par:{A:[0,1,1],u:[1,2,1],B:[2,0,3],v:[2,4,2]},
+  skew:{A:[0,0,1],u:[1,1,0],B:[4,0,3],v:[0,1,1]},
+  same:{A:[1,1,1],u:[1,0,1],B:[3,1,3],v:[-2,0,-2]}
+};
+const PLANES={
+  cut:{n:[1,1,1],d:6,A:[0,0,0],u:[1,2,1]},
+  cut2:{n:[2,1,0],d:6,A:[0,0,0],u:[1,1,1]},
+  par:{n:[0,0,1],d:4,A:[0,0,1],u:[1,1,0]},
+  in:{n:[0,0,1],d:2,A:[0,1,2],u:[1,0,0]}
+};
+let lmode='line', rel='meet', pk='cut';
+function press(sel,on){ document.querySelectorAll(sel).forEach(b=>{ const p=on(b); b.classList.toggle('primary',p); b.setAttribute('aria-pressed',p); }); }
+function setMode(m){
+  lmode=m;
+  press('#modeSeg button',b=>b.id==='m'+m[0].toUpperCase()+m.slice(1));
+  $('lineCtl').hidden=m!=='line'; $('twoCtl').hidden=m!=='two'; $('planeCtl').hidden=m!=='plane';
+}
+function lab(){
+  const t=+$('lt').value; $('ltv').textContent=numTxt(t);
+  let h='';
+  if(lmode==='line'){
+    const u=['u1','u2','u3'].map(id=>+$(id).value);
+    ['u1','u2','u3'].forEach((id,i)=>$(id+'v').textContent=numTxt(u[i]));
+    if(isZero(u)){
+      draw($('labG'),{pts:[{p:LA,lbl:'A',drop:true}]});
+      $('labTxt').innerHTML='<div>וקטור האפס לא מצביע לשום כיוון. לכל <span class="eq"><i>t</i></span> נשארים באותה נקודה <span class="eq">A</span>, ולכן אין כאן ישר. וקטור כיוון חייב להיות שונה מאפס.</div>';
+      return;
+    }
+    const P=add(LA,mul(u,t));
+    draw($('labG'),{lines:[{A:LA,u,c:'l1',name:'ℓ'}],vec:{A:LA,u},pts:[{p:LA,lbl:'A'},{p:P,lbl:'P',c:'p',drop:true}]});
+    h+=`<div><strong>הישר:</strong> ${lineTxt('ℓ',LA,u)}</div>`;
+    h+=`<div><strong>הנקודה ב-<span class="eq"><i>t</i> = ${numTxt(t)}</span>:</strong></div>`;
+    h+=u.map((c,i)=>`<div>${E(`<i>${XYZ[i]}</i> = ${numTxt(LA[i])} + ${br(t)}·${br(c)} = ${r2(P[i])}`)}</div>`).join('');
+    h+=`<div>${E(`P = ${vec(P)}`)}. ${t===0?'ב-<span class="eq"><i>t</i> = 0</span> זו בדיוק הנקודה A.':t===1?'ב-<span class="eq"><i>t</i> = 1</span> זה הקצה של החץ <span class="eq"><i>u</i></span>.':t<0?'<span class="eq"><i>t</i></span> שלילי: הולכים נגד כיוון החץ.':'שנו את <span class="eq"><i>t</i></span> והנקודה תזוז על הישר.'}</div>`;
+  }else if(lmode==='two'){
+    const {A,u,B,v}=TWO[rel], P=add(A,mul(u,t));
+    const {R,out}=relSteps(A,u,B,v);
+    const pts=[{p:A,lbl:'A',c:'p'},{p:B,lbl:'B',c:'b'},{p:P,lbl:'P',c:'p',drop:true,open:true}];
+    if(R.kind==='meet') pts.push({p:R.pt,lbl:'',drop:false});
+    draw($('labG'),{lines:[{A,u,c:'l1',name:'ℓ₁'},{A:B,u:v,c:'l2',name:'ℓ₂'}],pts});
+    h+=`<div><span class="key p"></span>${lineTxt('ℓ₁',A,u)}</div><div><span class="key b"></span>${lineTxt('ℓ₂',B,v,'s')}</div>`;
+    h+=out.map(s=>`<div>${s}</div>`).join('');
+  }else{
+    const {n,d,A,u}=PLANES[pk], P=add(A,mul(u,t)), nu=dot(n,u), nA=dot(n,A);
+    const pts=[{p:P,lbl:'P',c:'p',drop:true,open:true}];
+    h+=`<div><strong>המישור:</strong> ${E(planeTxt(n,d))}. <strong>הישר:</strong> ${lineTxt('ℓ',A,u)}</div>`;
+    h+=`<div><strong>מציבים:</strong> ${u.map((c,i)=>E(`<i>${XYZ[i]}</i> = ${lin(A[i],c,'t')}`)).join(', ')}.</div>`;
+    if(nu!==0){
+      const t0=(d-nA)/nu, M=add(A,mul(u,t0));
+      pts.push({p:M,lbl:'',drop:false});
+      h+=`<div>${E(`${nA?numTxt(nA)+' + ':''}${lin(0,nu,'t')} = ${numTxt(d)}`)}, ולכן ${E(`<i>t</i> = ${r2(t0)}`)}. נקודת החיתוך: ${E(vec(M))}.</div>`;
+    }else{
+      h+=`<div>ה-<span class="eq"><i>t</i></span> נעלם: ${E(`<i>n</i> · <i>u</i> = 0`)}. נשאר ${E(`${numTxt(nA)} = ${numTxt(d)}`)}, ${nA===d?'וזה תמיד נכון. כל נקודה של הישר על המישור: הישר <strong>מוכל</strong> במישור.':'וזה אף פעם לא נכון. אין נקודה משותפת: הישר <strong>מקביל</strong> למישור.'}</div>`;
+    }
+    const val=dot(n,P);
+    h+=`<div>בנקודה ${E('P')} עכשיו: ${E(`${planeLhs(n)} = ${r2(val)}`)} ${Math.abs(val-d)<1e-9?'✓ על המישור':'≠ '+numTxt(d)}.</div>`;
+    draw($('labG'),{plane:{n,d},lines:[{A,u,c:'l1',name:'ℓ'}],pts});
+  }
+  $('labTxt').innerHTML=h;
+}
+['u1','u2','u3','lt'].forEach(id=>$(id).addEventListener('input',lab));
+$('mLine').onclick=()=>{setMode('line');lab();}; $('mTwo').onclick=()=>{setMode('two');lab();}; $('mPlane').onclick=()=>{setMode('plane');lab();};
+document.querySelectorAll('#twoCtl [data-r]').forEach(b=>b.onclick=()=>{ rel=b.dataset.r; press('#twoCtl [data-r]',x=>x===b); lab(); });
+document.querySelectorAll('#planeCtl [data-p]').forEach(b=>b.onclick=()=>{ pk=b.dataset.p; press('#planeCtl [data-p]',x=>x===b); lab(); });
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  const k=b.dataset.k, v=b.dataset.v;
+  if(k==='line'){ setMode('line'); v.split(',').forEach((x,i)=>$('u'+(i+1)).value=x); }
+  else if(k==='two'){ setMode('two'); rel=v; press('#twoCtl [data-r]',x=>x.dataset.r===v); }
+  else { setMode('plane'); pk=v; press('#planeCtl [data-p]',x=>x.dataset.p===v); }
+  lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const XA=[1,0,0],XU=[1,1,1],XB=[3,0,4],XV=[0,1,-1], PN=[1,1,1], PA=[0,0,0], PU=[1,2,1];
+const twoScene=(pts=[])=>({lines:[{A:XA,u:XU,c:'l1',name:'ℓ₁'},{A:XB,u:XV,c:'l2',name:'ℓ₂'}],pts:[{p:XA,lbl:'A',c:'p'},{p:XB,lbl:'B',c:'b'},...pts]});
+const plScene=(pts=[])=>({plane:{n:PN,d:6},lines:[{A:PA,u:PU,c:'l1',name:'ℓ'}],pts});
+const EX=[
+  {t:`<strong>חלק א, הכיוונים:</strong> ${E('(1, 1, 1)')} ו-${E('(0, 1, −1)')}. אין ${E('<i>k</i>')} שהופך אחד לשני (יש 0 מול 1), אז הם לא מקבילים. נשאר: נחתכים או מצטלבים.`, f:s=>draw(s,twoScene())},
+  {t:`<strong>משווים, עם פרמטר לכל ישר:</strong> ${E('(1 + <i>t</i>, <i>t</i>, <i>t</i>)')} ${E('= (3, <i>s</i>, 4 − <i>s</i>)')}.`, f:s=>draw(s,twoScene())},
+  {t:`<strong>שתי קואורדינטות:</strong> מ-x: ${E('1 + <i>t</i> = 3')}, ולכן ${E('<i>t</i> = 2')}. מ-y: ${E('<i>t</i> = <i>s</i>')}, ולכן ${E('<i>s</i> = 2')}.`, f:s=>draw(s,twoScene([{p:[3,2,2],lbl:'?',drop:true,open:true}]))},
+  {t:`<strong>בודקים ב-z:</strong> ${E('<i>t</i> = 2')} מול ${E('4 − <i>s</i> = 2')}. שווה! הישרים <strong>נחתכים</strong> בנקודה ${E('(3, 2, 2)')}.`, f:s=>draw(s,twoScene([{p:[3,2,2],lbl:'(3, 2, 2)',drop:true}]))},
+  {t:`<strong>חלק ב, מציבים:</strong> על הישר ${E('<i>x</i> = <i>t</i>')}, ${E('<i>y</i> = 2<i>t</i>')}, ${E('<i>z</i> = <i>t</i>')}. במישור: ${E('<i>t</i> + 2<i>t</i> + <i>t</i> = 6')}.`, f:s=>draw(s,plScene())},
+  {t:`<strong>פותרים:</strong> ${E('4<i>t</i> = 6')}, ולכן ${E('<i>t</i> = 1.5')}.`, f:s=>draw(s,plScene())},
+  {t:`<strong>הנקודה:</strong> מציבים בחזרה בישר: ${E('(1.5, 3, 1.5)')}. בדיקה: ${E('1.5 + 3 + 1.5 = 6')} ✓.`, f:s=>draw(s,plScene([{p:[1.5,3,1.5],lbl:'(1.5, 3, 1.5)',c:'p',drop:true}]))}
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EX.slice(0,exI+1).map(s=>`<div>${s.t}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+  EX[exI].f($('exG'));
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const rndVec=(r=2)=>{ let v; do{ v=[rnd(-r,r),rnd(-r,r),rnd(-r,r)]; }while(isZero(v)); return v; };
+const rndPt=(a=0,b=3)=>[rnd(a,b),rnd(a,b),rnd(a,b)];
+const CH=[['meet','נחתכים'],['par','מקבילים'],['same','מתלכדים'],['skew','מצטלבים']];
+const NAME={meet:'נחתכים',par:'מקבילים',same:'מתלכדים',skew:'מצטלבים'};
+let pmode='mix', pr=null, sel=null, solved=0, streak=0;
+
+function genRel(){
+  const kind=pick(['meet','par','same','skew']), A=rndPt();
+  let u,v,B;
+  if(kind==='par'||kind==='same'){
+    u=rndVec(2); v=mul(u,pick([2,-1,-2]));
+    if(kind==='same') B=add(A,mul(u,pick([1,2,-1])));
+    else { let w; do{ w=rndVec(2); }while(par(w,u)); B=add(A,w); }
+  }else{
+    let c;
+    do{ u=rndVec(1); v=rndVec(1); c=cross(u,v); }while(isZero(c)||Math.max(...c.map(Math.abs))>2);
+    if(kind==='meet'){ const P=add(A,mul(u,pick([1,2,-1]))); B=sub(P,mul(v,pick([1,-1,2]))); }
+    else B=sub(add(add(A,u),c),v);
+  }
+  return {A,u,B,v,kind};
+}
+function newPr(){
+  const type=pmode==='mix'?pick(['onLine','rel','meet','plane']):pmode;
+  const p={type,tries:0,hint:0}; sel=null;
+  if(type==='onLine'){
+    p.A=rndPt(); p.u=rndVec(2); p.t0=pick([-2,-1,2,3]); p.Q=add(p.A,mul(p.u,p.t0));
+    draw($('prG'),{lines:[{A:p.A,u:p.u,c:'l1',name:'ℓ'}],pts:[{p:p.A,lbl:'A'},{p:p.Q,lbl:'Q',c:'p',drop:true}]});
+    $('prQ').innerHTML=`הנקודה ${E(`Q = ${vec(p.Q)}`)} נמצאת על הישר ${lineTxt('ℓ',p.A,p.u)}. בשביל איזה ${E('<i>t</i>')} מגיעים אליה?`;
+    $('prLbl').innerHTML='<i>t</i> =';
+  }else if(type==='rel'){
+    Object.assign(p,genRel());
+    draw($('prG'),{lines:[{A:p.A,u:p.u,c:'l1',name:'ℓ₁'},{A:p.B,u:p.v,c:'l2',name:'ℓ₂'}],pts:[{p:p.A,lbl:'A',c:'p'},{p:p.B,lbl:'B',c:'b'}]});
+    $('prQ').innerHTML=`מה המצב ההדדי של ${lineTxt('ℓ₁',p.A,p.u)} ו-${lineTxt('ℓ₂',p.B,p.v,'s')}?`;
+    $('prChoices').innerHTML=CH.map(([k,t],i)=>`<button data-i="${i}" aria-pressed="false">${t}</button>`).join('');
+    $('prChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }else if(type==='meet'){
+    do{ p.n=rndVec(2); p.u=rndVec(2); }while(dot(p.n,p.u)===0||Math.abs(dot(p.n,p.u))>4);
+    p.A=rndPt(); p.t0=pick([1,2,-1]); p.M=add(p.A,mul(p.u,p.t0)); p.d=dot(p.n,p.M);
+    draw($('prG'),{plane:{n:p.n,d:p.d},lines:[{A:p.A,u:p.u,c:'l1',name:'ℓ'}],pts:[{p:p.A,lbl:'A'}]});
+    $('prQ').innerHTML=`מצאו את נקודת החיתוך של הישר ${lineTxt('ℓ',p.A,p.u)} עם המישור ${E(planeTxt(p.n,p.d))}.`;
+  }else{
+    p.n=rndVec(3); p.P=rndPt(-2,3); p.d=dot(p.n,p.P);
+    draw($('prG'),{plane:{n:p.n,d:p.d},vec:{A:p.P,u:p.n,name:'n'},pts:[{p:p.P,lbl:'P',c:'p'}]});
+    $('prQ').innerHTML=`מישור עובר דרך ${E(`P = ${vec(p.P)}`)} ומאונך לווקטור ${E(`<i>n</i> = ${vec(p.n)}`)}. משוואת המישור היא ${E(planeTxt(p.n,'<i>d</i>'))}. מה ${E('<i>d</i>')}?`;
+    $('prLbl').innerHTML='<i>d</i> =';
+  }
+  pr=p;
+  $('prOne').hidden=!(type==='onLine'||type==='plane'); $('prThree').hidden=type!=='meet'; $('prChoices').hidden=type!=='rel';
+  if(type!=='rel') $('prChoices').innerHTML='';
+  ['prA','prX','prY','prZ'].forEach(id=>$(id).value='');
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const p=pr;
+  if(p.type==='onLine'){
+    const i=p.u.findIndex(c=>c!==0);
+    return `לפי ${XYZ[i]}: ${E(`${lin(p.A[i],p.u[i],'t')} = ${numTxt(p.Q[i])}`)}, ולכן ${E(`<i>t</i> = ${numTxt(p.t0)}`)}. בשתי הקואורדינטות האחרות יוצא אותו ${E('<i>t</i>')}.`;
+  }
+  if(p.type==='rel') return relSteps(p.A,p.u,p.B,p.v).out.join(' ');
+  if(p.type==='meet'){
+    const nA=dot(p.n,p.A), nu=dot(p.n,p.u);
+    return `מציבים את הישר במישור: ${E(`${nA?numTxt(nA)+' + ':''}${lin(0,nu,'t')} = ${numTxt(p.d)}`)}, ולכן ${E(`<i>t</i> = ${numTxt(p.t0)}`)}. מציבים בחזרה בישר: ${E(vec(p.M))}.`;
+  }
+  return `מציבים את ${E('P')} במשוואה: ${E(p.n.map((c,i)=>`${br(c)}·${br(p.P[i])}`).join(' + '))} ${E(`= ${numTxt(p.d)}`)}. אז ${E(`<i>d</i> = ${numTxt(p.d)}`)}.`;
+}
+function diagnose(x){
+  const p=pr;
+  if(p.type==='onLine'){
+    if(x===-p.t0) return 'הסימן הפוך. בדקו: A ועוד t כפול u צריך לתת את Q.';
+    for(let i=0;i<3;i++){
+      if(!p.u[i]) continue;
+      if(Math.abs(p.u[i])!==1&&x===p.Q[i]-p.A[i]) return `חיסרתם נכון, אבל שכחתם לחלק ב-${E(`<i>u</i>${'₁₂₃'[i]} = ${numTxt(p.u[i])}`)}.`;
+      if(Math.abs(x-p.Q[i]/p.u[i])<1e-9&&p.A[i]!==0) return 'חילקתם את Q ב-u בלי להחסיר קודם את A. התחילו מ-Q פחות A.';
+    }
+    return 'לא בדיוק. כתבו משוואה לאחת הקואורדינטות: הקואורדינטה של A ועוד t כפול הקואורדינטה של u, שווה לקואורדינטה של Q.';
+  }
+  if(p.type==='plane'){
+    if(x===-p.d) return 'הסימן הפוך. כאן המשוואה כתובה בצורה ax + by + cz = d, אז d הוא בדיוק מה שיוצא בהצבה.';
+    if(x===p.P[0]+p.P[1]+p.P[2]) return 'חיברתם רק את הקואורדינטות של P. צריך להכפיל כל אחת במקדם שלה מ-n.';
+    for(let i=0;i<3;i++) if(p.n[i]&&p.P[i]&&x===p.d-p.n[i]*p.P[i]) return `כמעט! חסר האיבר של ${XYZ[i]}: ${E(`${br(p.n[i])}·${br(p.P[i])}`)}.`;
+    return 'לא בדיוק. הציבו את הנקודה P במקום x, y ו-z, וחשבו את אגף שמאל.';
+  }
+  return '';
+}
+function diagnoseMeet(X){
+  const p=pr, eq=(a,b)=>a.every((v,i)=>Math.abs(v-b[i])<1e-9);
+  if(eq(X,p.A)) return 'זו נקודת המוצא של הישר, ב-t = 0. מצאו את t מההצבה במישור, ואז הציבו אותו בישר.';
+  if(eq(X,[p.t0,p.t0,p.t0])) return `מצאתם נכון ש-${E(`<i>t</i> = ${numTxt(p.t0)}`)}! עכשיו הציבו אותו בישר כדי לקבל את הנקודה עצמה.`;
+  if(eq(X,sub(p.A,mul(p.u,p.t0)))) return 'כמעט. יצא לכם t עם סימן הפוך. בדקו את המעבר אגפים כשפתרתם את t.';
+  const onPlane=Math.abs(dot(p.n,X)-p.d)<1e-9;
+  const w=sub(X,p.A), onLine=par(w,p.u);
+  if(onPlane) return 'הנקודה הזאת על המישור, אבל לא על הישר. נקודת החיתוך צריכה להיות על שניהם.';
+  if(onLine) return 'הנקודה הזאת על הישר, אבל לא על המישור. בדקו את החישוב של t.';
+  return 'לא בדיוק. כתבו x, y ו-z של הישר בעזרת t, הציבו במישור ופתרו.';
+}
+const RELMSG={
+  meet:{par:'הכיוונים לא פרופורציונליים: אין k שבו v = k·u. לכן הישרים לא מקבילים.',same:'הכיוונים לא פרופורציונליים, אז זה לא אותו ישר.',skew:'נסו לפתור: יש t ו-s שמתאימים לכל שלוש הקואורדינטות, כולל הבדיקה בשלישית.'},
+  par:{meet:'בדקו את הכיוונים: v הוא כפולה של u. ישרים עם אותו כיוון לא נחתכים בנקודה אחת.',skew:'בדקו את הכיוונים: v הוא כפולה של u. ישרים מצטלבים הם בעלי כיוונים שונים.',same:'הכיוונים פרופורציונליים, נכון. עכשיו בדקו אם B נמצאת על ℓ₁. כאן היא לא.'},
+  same:{meet:'בדקו את הכיוונים: v הוא כפולה של u.',skew:'בדקו את הכיוונים: v הוא כפולה של u.',par:'הכיוונים פרופורציונליים, נכון. אבל B נמצאת גם על ℓ₁, אז זה בעצם אותו ישר.'},
+  skew:{par:'הכיוונים לא פרופורציונליים, אז הישרים לא מקבילים.',same:'הכיוונים לא פרופורציונליים, אז זה לא אותו ישר.',meet:'משתי קואורדינטות מוצאים t ו-s, אבל בשלישית זה לא מתקיים. אין נקודה משותפת.'}
+};
+function ok(){
+  if(pr.tries===0) streak++; solved++; streakTxt();
+  $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+}
+function wrong(msg){
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${msg}</div>`;
+}
+$('prCheck').onclick=()=>{
+  const p=pr;
+  if(p.type==='rel'){
+    if(sel===null||!CH[sel]){ $('prFb').innerHTML='<div class="fb err">בחרו קודם אחת מהתשובות.</div>'; return; }
+    const k=CH[sel][0];
+    return k===p.kind?ok():wrong(RELMSG[p.kind][k]);
+  }
+  if(p.type==='meet'){
+    const X=['prX','prY','prZ'].map(id=>parseNum($(id).value.trim()));
+    if(X.some(isNaN)){ $('prFb').innerHTML='<div class="fb err">מלאו מספר בכל אחת משלוש התיבות.</div>'; return; }
+    return X.every((v,i)=>Math.abs(v-p.M[i])<1e-9)?ok():wrong(diagnoseMeet(X));
+  }
+  const x=parseNum($('prA').value.trim());
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 2 או −1.</div>'; return; }
+  const ans=p.type==='onLine'?p.t0:p.d;
+  return Math.abs(x-ans)<1e-9?ok():wrong(diagnose(x));
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2); let h;
+  if(p.type==='onLine'){
+    const i=p.u.findIndex(c=>c!==0);
+    h=p.hint===1?'כל קואורדינטה נותנת משוואה עם t. מספיק לפתור אחת מהן.':`לפי ${XYZ[i]}: ${E(`${lin(p.A[i],p.u[i],'t')} = ${numTxt(p.Q[i])}`)}. פתרו את המשוואה.`;
+  }else if(p.type==='rel'){
+    const R=relation(p.A,p.u,p.B,p.v);
+    if(p.hint===1) h='התחילו מהכיוונים: האם יש מספר k שבו v = k·u?';
+    else if(R.kind==='par'||R.kind==='same') h='כן, הכיוונים פרופורציונליים. עכשיו בדקו אם הנקודה B יושבת על ℓ₁: האם B − A הוא כפולה של u?';
+    else h=`לא, הכיוונים שונים. השוו ${E(`A + <i>t</i>·<i>u</i> = B + <i>s</i>·<i>v</i>`)}, פתרו לפי ${XYZ[R.i]} ו-${XYZ[R.j]}, ובדקו ב-${XYZ[R.k]}.`;
+  }else if(p.type==='meet'){
+    const nA=dot(p.n,p.A), nu=dot(p.n,p.u);
+    h=p.hint===1?`על הישר: ${p.u.map((c,i)=>E(`<i>${XYZ[i]}</i> = ${lin(p.A[i],c,'t')}`)).join(', ')}. הציבו במשוואת המישור.`:`אחרי הצבה וכינוס: ${E(`${nA?numTxt(nA)+' + ':''}${lin(0,nu,'t')} = ${numTxt(p.d)}`)}. מצאו את t והציבו אותו בחזרה בישר.`;
+  }else{
+    h=p.hint===1?'הנקודה P על המישור, אז היא מקיימת את המשוואה. הציבו אותה.':`${E(p.n.map((c,i)=>`${br(c)}·${br(p.P[i])}`).join(' + '))}. חשבו כל מכפלה וחברו.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+['prA','prX','prY','prZ'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  pmode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

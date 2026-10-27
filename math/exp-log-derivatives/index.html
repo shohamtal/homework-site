@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>נגזרות של eˣ ו-ln x · כיתה יב · מירי</title>
+<meta name="description" content="נגזרת של eˣ ושל ln x, גזירת פונקציות מורכבות מהן, וחקירת פונקציות כמו x·eˣ ו-ln x / x. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/exp-log-derivatives/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="נגזרות של eˣ ו-ln x · כיתה יב · מירי">
+<meta property="og:description" content="נגזרת של eˣ ושל ln x, גזירת פונקציות מורכבות מהן, וחקירת פונקציות כמו x·eˣ ו-ln x / x. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/exp-log-derivatives/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"מעריכיות ולוגריתמים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#exp-log-12"},{"@type":"ListItem","position":5,"name":"נגזרות של eˣ ו-ln x","item":"https://shohamtal.github.io/homework-site/math/exp-log-derivatives/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה הנגזרת של e בחזקת x?","acceptedAnswer":{"@type":"Answer","text":"הנגזרת של ex היא ex, אותה פונקציה. זו הפונקציה היחידה (חוץ מכפולות שלה) שהשיפוע שלה שווה לגובה שלה בכל נקודה. ראו את זה במעבדה."}},{"@type":"Question","name":"מה הנגזרת של ln x?","acceptedAnswer":{"@type":"Answer","text":"הנגזרת של ln x היא 1 ÷ x, והיא מוגדרת רק ל-x &gt; 0. אם בתוך ה-ln יש ביטוי, מחלקים את הנגזרת שלו בביטוי עצמו: (ln(2x + 3))′ = 2 ÷ (2x + 3)."}},{"@type":"Question","name":"איך גוזרים e בחזקת 2x?","acceptedAnswer":{"@type":"Answer","text":"משתמשים בכלל השרשרת: משאירים את e2x כמו שהוא וכופלים בנגזרת של המעריך, 2. לכן (e2x)′ = 2e2x. באותה דרך (ex²)′ = 2x · ex²."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"נגזרות של eˣ ו-ln x","description":"נגזרת של eˣ ושל ln x, גזירת פונקציות מורכבות מהן, וחקירת פונקציות כמו x·eˣ ו-ln x / x. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/exp-log-derivatives/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מעריכיות ולוגריתמים","teaches":"נגזרות של eˣ ו-ln x","keywords":"נגזרת eˣ, נגזרת ln, חקירה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .tan{stroke:var(--blue); stroke-width:2.2; fill:none; stroke-dasharray:6 4}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .g .hgt{stroke:var(--ok); stroke-width:2.6}
+  .g .rise{stroke:var(--blue); stroke-width:2; fill:none}
+  .g .lbl{font:700 8px var(--f-body); paint-order:stroke; stroke:var(--card); stroke-width:2.5px}
+  .g .lbl.ok{fill:var(--ok)} .g .lbl.bl{fill:var(--blue)} .g .lbl.ink{fill:var(--ink)}
+  .g .ext{fill:var(--ok); stroke:var(--ink); stroke-width:1.2}
+  .seg{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .rule{font-size:1.1rem; line-height:2}
+  .up{color:var(--ok); font-weight:700} .down{color:var(--err); font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="exp-log-derivatives">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#exp-log-12">מעריכיות ולוגריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">נגזרות של eˣ ו-ln x</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · מעריכיות ולוגריתמים</div>
+  <h1>נגזרות של eˣ ו-ln x <span class="slogan">הפונקציה שהיא הנגזרת של עצמה</span></h1>
+  <p class="lead">יש פונקציה אחת מיוחדת מאוד: <span class="eq"><i>e</i><sup><i>x</i></sup></span>. בכל נקודה על הגרף שלה, השיפוע שווה בדיוק לגובה. ולפונקציה <span class="eq">ln <i>x</i></span>, ההפוכה שלה, יש נגזרת פשוטה במיוחד: <span class="eq">1 ÷ <i>x</i></span>.
+  נלמד את שתי הנגזרות, נגזור פונקציות מורכבות מהן בעזרת <a href="../derivative-rules/">כלל השרשרת וכלל המכפלה</a>, ונחקור פונקציה כמו <span class="eq"><i>x</i> · <i>e</i><sup><i>x</i></sup></span>. רוצים להיזכר מה זה <i>e</i>? ראו <a href="../exponential-functions/">פונקציה מעריכית</a> ו<a href="../logarithms/">לוגריתמים</a>. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שתי נגזרות לזכור</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>e בחזקת x</h3>
+      <p class="rule"><span class="eq">(<i>e</i><sup><i>x</i></sup>)′ = <i>e</i><sup><i>x</i></sup></span></p>
+      <p>הנגזרת של <span class="eq"><i>e</i><sup><i>x</i></sup></span> היא אותה פונקציה בדיוק. לכן בכל נקודה, השיפוע של הגרף שווה לגובה שלו. ב-<span class="eq"><i>x</i> = 0</span> הגובה 1, וגם השיפוע 1.</p>
+    </div>
+    <div class="mini">
+      <h3>ln x</h3>
+      <p class="rule"><span class="eq">(ln <i>x</i>)′ = 1 ÷ <i>x</i></span></p>
+      <p>הפונקציה מוגדרת רק ל-<span class="eq"><i>x</i> &gt; 0</span>. ככל ש-x גדל, השיפוע קטן: ב-<span class="eq"><i>x</i> = 1</span> השיפוע 1, וב-<span class="eq"><i>x</i> = 4</span> רק <span class="eq">¼</span>.</p>
+    </div>
+  </div>
+  <div class="mini" style="margin-top:12px">
+    <h3>ועם כלל השרשרת</h3>
+    <p class="rule"><span class="eq">(<i>e</i><sup><i>g</i>(<i>x</i>)</sup>)′ = <i>g</i>′(<i>x</i>) · <i>e</i><sup><i>g</i>(<i>x</i>)</sup></span></p>
+    <p class="rule"><span class="eq">(ln <i>g</i>(<i>x</i>))′ = <i>g</i>′(<i>x</i>) ÷ <i>g</i>(<i>x</i>)</span></p>
+    <p>למשל <span class="eq">(<i>e</i><sup>3<i>x</i></sup>)′ = 3<i>e</i><sup>3<i>x</i></sup></span>, ו-<span class="eq">(ln(<i>x</i>² + 1))′ = 2<i>x</i> ÷ (<i>x</i>² + 1)</span>.</p>
+  </div>
+  <div class="callout"><strong>חשוב:</strong> <span class="eq"><i>e</i><sup><i>x</i></sup></span> תמיד חיובי. לכן כשגוזרים פונקציה כמו <span class="eq"><i>e</i><sup><i>x</i></sup>(<i>x</i> + 1)</span>, הסימן של הנגזרת תלוי רק בחלק השני. זה הטריק המרכזי בחקירה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: שיפוע בכל נקודה</h2></div>
+  <p class="text">בחרו פונקציה והזיזו את הנקודה. הקו הכחול המקווקו הוא המשיק. המשולש הכחול מראה כמה המשיק עולה כשזזים צעד אחד ימינה: זה השיפוע.</p>
+  <div class="seg" id="fnPick" role="group" aria-label="בחירת פונקציה">
+    <button data-f="E" aria-pressed="true" dir="ltr">f(x) = eˣ</button><button data-f="L" aria-pressed="false" dir="ltr">f(x) = ln x</button><button data-f="X" aria-pressed="false" dir="ltr">f(x) = x · eˣ</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף הפונקציה עם המשיק בנקודה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="xRange"><span>הנקודה <span class="eq"><i>x</i>₀</span></span><span class="eq" id="xVal"></span></label>
+      <input type="range" id="xRange" min="-4" max="1.5" step="0.1" value="0">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="E,0"><span class="eq"><i>e</i><sup><i>x</i></sup></span> ב-<span class="eq"><i>x</i> = 0</span></button>
+          <button data-p="E,1">eˣ: שיפוע שווה לגובה</button>
+          <button data-p="L,1"><span class="eq">ln <i>x</i></span> ב-<span class="eq"><i>x</i> = 1</span></button>
+          <button data-p="L,0.5">ln x: קרוב ל-0</button>
+          <button data-p="X,-1">x · eˣ: נקודת המינימום</button>
+          <button data-p="X,-3">x · eˣ: יורדת</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>גוזרים כמו חזקה.</strong> <span class="eq"><i>e</i><sup><i>x</i></sup></span> הוא <strong>לא</strong> <span class="eq"><i>x</i><sup>n</sup></span>. הנגזרת היא לא <span class="eq"><i>x</i> · <i>e</i><sup><i>x</i> − 1</sup></span>. כאן x נמצא במעריך, ולכן <span class="eq">(<i>e</i><sup><i>x</i></sup>)′ = <i>e</i><sup><i>x</i></sup></span>.</div></li>
+    <li><div><strong>שוכחים את הנגזרת של המעריך.</strong> <span class="eq">(<i>e</i><sup>5<i>x</i></sup>)′ = 5<i>e</i><sup>5<i>x</i></sup></span>, ולא <span class="eq"><i>e</i><sup>5<i>x</i></sup></span>. בלי ה-5 התשובה קטנה פי 5.</div></li>
+    <li><div><strong>ב-ln שוכחים את המונה.</strong> <span class="eq">(ln(3<i>x</i> + 1))′ = 3 ÷ (3<i>x</i> + 1)</span>. מה שבתוך ה-ln הולך למכנה, והנגזרת שלו הולכת למונה.</div></li>
+    <li><div><strong>שוכחים את תחום ההגדרה.</strong> ב-<span class="eq">ln <i>x</i></span> מותר רק <span class="eq"><i>x</i> &gt; 0</span>. נקודה שבה הנגזרת מתאפסת אבל x שלילי היא לא בתחום, ולכן היא לא נקודת קיצון.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> ב-<span class="eq"><i>x</i> = 0</span> הגרף של <span class="eq"><i>e</i><sup><i>kx</i></sup></span> עובר בגובה 1, והשיפוע שם הוא בדיוק <i>k</i>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: חקירה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true" dir="ltr">x · eˣ</button>
+    <button id="exB" role="tab" aria-selected="false" dir="ltr">x − ln x</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: גוזרים ומציבים</h2></div>
+  <p class="text">גזרו את הפונקציה וענו על השאלה. אפשר לכתוב שבר עם קו נטוי (<span class="eq">3/4</span>) או מספר עשרוני מעוגל לשתי ספרות אחרי הנקודה. זכרו: <span class="eq"><i>e</i> ≈ 2.718</span>.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה הנגזרת של e בחזקת x?</h3>
+    <p>הנגזרת של <span class="eq"><i>e</i><sup><i>x</i></sup></span> היא <span class="eq"><i>e</i><sup><i>x</i></sup></span>, אותה פונקציה. זו הפונקציה היחידה (חוץ מכפולות שלה) שהשיפוע שלה שווה לגובה שלה בכל נקודה. <a href="#lab">ראו את זה במעבדה</a>.</p>
+    <h3>מה הנגזרת של ln x?</h3>
+    <p>הנגזרת של <span class="eq">ln <i>x</i></span> היא <span class="eq">1 ÷ <i>x</i></span>, והיא מוגדרת רק ל-<span class="eq"><i>x</i> &gt; 0</span>. אם בתוך ה-ln יש ביטוי, מחלקים את הנגזרת שלו בביטוי עצמו: <span class="eq">(ln(2<i>x</i> + 3))′ = 2 ÷ (2<i>x</i> + 3)</span>.</p>
+    <h3>איך גוזרים e בחזקת 2x?</h3>
+    <p>משתמשים בכלל השרשרת: משאירים את <span class="eq"><i>e</i><sup>2<i>x</i></sup></span> כמו שהוא וכופלים בנגזרת של המעריך, 2. לכן <span class="eq">(<i>e</i><sup>2<i>x</i></sup>)′ = 2<i>e</i><sup>2<i>x</i></sup></span>. באותה דרך <span class="eq">(<i>e</i><sup><i>x</i>²</sup>)′ = 2<i>x</i> · <i>e</i><sup><i>x</i>²</sup></span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/derivative-rules/">כללי גזירה: מכפלה, מנה ושרשרת</a> · <a href="../../math/logarithms/">לוגריתמים וחוקי הלוג</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/logarithms/"><small>→ הנושא הקודם</small>לוגריתמים וחוקי הלוג</a><a class="next" href="../../math/growth-decay/"><small>הנושא הבא ←</small>גדילה ודעיכה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracTxt,parseNum,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const r2=v=>Math.round(v*100)/100;
+const nt=v=>numTxt(r2(v));
+const near=(a,b)=>Math.abs(a-b)<=0.011+Math.abs(b)*0.005;
+const X='<i>x</i>', E='<i>e</i>';
+const ex=(p)=>`${E}<sup>${p}</sup>`;
+let pid=0;
+
+function curvePath(f,x1=-6,x2=6){
+  let d='', pen=false;
+  for(let x=x1;x<=x2+1e-9;x+=0.03){
+    const y=f(x);
+    if(!isFinite(y)||Math.abs(y)>30){ pen=false; continue; }
+    d+=(pen?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); pen=true;
+  }
+  return d;
+}
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+/* graph with the tangent at x0, a run-1 slope triangle, and optional height bar / extremum */
+function plot(svg,F,x0,opt={}){
+  const id='ec'+(++pid);
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  h+=`<path class="ln" d="${curvePath(F.f,F.x1,F.x2)}"/>`;
+  let top='';
+  if(typeof x0==='number'){
+    const y=F.f(x0), m=F.d(x0);
+    h+=`<line class="tan" x1="${sx(-6)}" y1="${sy(y+m*(-6-x0))}" x2="${sx(6)}" y2="${sy(y+m*(6-x0))}"/>`;
+    if(opt.height) h+=`<line class="hgt" x1="${sx(x0)}" y1="${sy(0)}" x2="${sx(x0)}" y2="${sy(y)}"/>`;
+    if(opt.tri){
+      h+=`<path class="rise" d="M${sx(x0)} ${sy(y)} H${sx(x0+1)} V${sy(y+m)}"/>`;
+      if(inG(x0+1,y+m/2)) top+=`<text class="lbl bl" x="${sx(x0+1)+4}" y="${sy(y+m/2)+3}">${nt(m)}</text>`;
+      if(inG(x0+0.5,y)) top+=`<text class="lbl bl" x="${sx(x0+0.5)}" y="${sy(y)+(m>=0?10:-4)}" text-anchor="middle">1</text>`;
+    }
+    if(opt.height&&inG(x0,y/2)) top+=`<text class="lbl ok" x="${sx(x0)-4}" y="${sy(y/2)+3}" text-anchor="end">${nt(y)}</text>`;
+    if(inG(x0,y)) top+=`<circle class="cur" cx="${sx(x0)}" cy="${sy(y)}" r="4.5"/>`;
+  }
+  h+='</g>';
+  if(opt.ext) top+=`<circle class="ext" cx="${sx(opt.ext.x)}" cy="${sy(opt.ext.y)}" r="4.5"/><text class="lbl ink" x="${sx(opt.ext.x)}" y="${sy(opt.ext.y)+14}" text-anchor="middle">${opt.ext.t}</text>`;
+  if(opt.vx!==undefined) h+=`<line class="tan" x1="${sx(opt.vx)}" y1="${sy(-6)}" x2="${sx(opt.vx)}" y2="${sy(6)}" style="stroke:var(--muted)"/>`;
+  draw(svg,null,0,{extra:h+top});
+}
+
+/* lab */
+const FN={
+  E:{f:Math.exp,d:Math.exp,x1:-6,x2:2,min:-4,max:1.5,eq:`<i>f</i>(${X}) = ${ex(X)}`},
+  L:{f:x=>x>0?Math.log(x):NaN,d:x=>1/x,x1:0.004,x2:6,min:0.2,max:5,eq:`<i>f</i>(${X}) = ln ${X}`},
+  X:{f:x=>x*Math.exp(x),d:x=>Math.exp(x)*(1+x),x1:-6,x2:1.6,min:-5,max:1,eq:`<i>f</i>(${X}) = ${X} · ${ex(X)}`}
+};
+let fk='E';
+const xR=$('xRange');
+function setPick(){
+  $('fnPick').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===fk));
+  const F=FN[fk]; xR.min=F.min; xR.max=F.max;
+  if(+xR.value<F.min||+xR.value>F.max) xR.value=fk==='L'?1:0;
+}
+function lab(){
+  const F=FN[fk], x0=+xR.value, y=F.f(x0), m=F.d(x0);
+  $('xVal').textContent=numTxt(x0);
+  $('labEq').innerHTML=`<span class="eq">${F.eq}</span>`;
+  let t='';
+  if(fk==='E'){
+    plot($('labG'),F,x0,{tri:true,height:true});
+    t+=`<div>הגובה (הקו הירוק): <span class="eq">${ex(numTxt(x0))} ≈ ${nt(y)}</span></div>`;
+    t+=`<div>השיפוע (המשולש הכחול): <span class="eq"><i>f</i>′(${numTxt(x0)}) = ${ex(numTxt(x0))} ≈ ${nt(m)}</span></div>`;
+    t+=`<div><strong>אותו מספר!</strong> הנגזרת של <span class="eq">${ex(X)}</span> היא הפונקציה עצמה. ${x0<-1.5?'כשהגרף קרוב לציר x, גם השיפוע קרוב ל-0.':x0>0.9?'גבוה יותר, ולכן גם תלול יותר.':''}</div>`;
+  }else if(fk==='L'){
+    plot($('labG'),F,x0,{tri:true});
+    t+=`<div>הנקודה: <span class="eq">(${numTxt(x0)}, ${nt(y)})</span></div>`;
+    t+=`<div>השיפוע: <span class="eq"><i>f</i>′(${numTxt(x0)}) = 1 ÷ ${numTxt(x0)} ≈ ${nt(m)}</span></div>`;
+    t+=`<div>${x0<1?'קרוב ל-0 הגרף תלול מאוד, כי מחלקים במספר קטן.':x0>1?'ככל ש-x גדל, הגרף עדיין עולה, אבל לאט יותר ויותר.':'ב-<span class="eq">'+X+' = 1</span> הגרף חותך את ציר x, והשיפוע בדיוק 1.'} הפונקציה מוגדרת רק ל-<span class="eq">${X} &gt; 0</span>.</div>`;
+  }else{
+    plot($('labG'),F,x0,{ext:{x:-1,y:-1/Math.E,t:'מינימום'}});
+    const s=1+x0;
+    t+=`<div>כלל המכפלה: <span class="eq"><i>f</i>′(${X}) = 1 · ${ex(X)} + ${X} · ${ex(X)}</span> <span class="eq">= ${ex(X)}(1 + ${X})</span></div>`;
+    t+=`<div>ב-<span class="eq">${X} = ${numTxt(x0)}</span>: <span class="eq">${ex(numTxt(x0))} ≈ ${nt(Math.exp(x0))}</span> (תמיד חיובי) ו-<span class="eq">1 + ${X} = ${numTxt(r2(s))}</span>.</div>`;
+    t+=`<div>${Math.abs(s)<0.05?'<strong>הנגזרת 0</strong>: המשיק אופקי. זו נקודת המינימום <span class="eq">(−1, −1 ÷ '+E+')</span>, בערך <span class="eq">(−1, −0.37)</span>.':s>0?'<span class="up">הנגזרת חיובית</span>, ולכן הפונקציה עולה כאן.':'<span class="down">הנגזרת שלילית</span>, ולכן הפונקציה יורדת כאן.'}</div>`;
+  }
+  $('labExplain').innerHTML=t;
+}
+$('fnPick').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ fk=b.dataset.f; setPick(); lab(); }));
+xR.addEventListener('input',lab);
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [f,x]=btn.dataset.p.split(','); fk=f; setPick(); xR.value=x; lab(); }));
+setPick(); lab();
+
+/* worked examples */
+const EXS={
+  A:{F:FN.X,ext:{x:-1,y:-1/Math.E,t:'(−1, −0.37)'},steps:[
+    `נחקור את <span class="eq"><i>f</i>(${X}) = ${X} · ${ex(X)}</span>: תחום, נגזרת, קיצון ועלייה וירידה.`,
+    `<strong>צעד 1, תחום הגדרה:</strong> אין שבר ואין ln, אז כל x מותר.`,
+    `<strong>צעד 2, גוזרים בכלל המכפלה:</strong> <span class="eq"><i>u</i> = ${X}</span>, <span class="eq"><i>v</i> = ${ex(X)}</span>. <span class="eq"><i>f</i>′(${X}) = 1 · ${ex(X)} + ${X} · ${ex(X)}</span>.`,
+    `<strong>צעד 3, מוציאים גורם משותף:</strong> <span class="eq"><i>f</i>′(${X}) = ${ex(X)}(1 + ${X})</span>.`,
+    `<strong>צעד 4, משווים ל-0:</strong> <span class="eq">${ex(X)}</span> אף פעם לא 0, אז נשאר <span class="eq">1 + ${X} = 0</span>, כלומר <span class="eq">${X} = −1</span>.`,
+    `<strong>צעד 5, סימן הנגזרת:</strong> הסימן תלוי רק ב-<span class="eq">1 + ${X}</span>. משמאל ל-−1 הוא שלילי, ולכן הפונקציה <span class="down">יורדת</span>. מימין חיובי, ולכן <span class="up">עולה</span>.`,
+    `<strong>צעד 6, נקודת הקיצון:</strong> <span class="eq"><i>f</i>(−1) = −1 · ${ex('−1')} = −1 ÷ ${E} ≈ −0.37</span>. לכן <span class="eq">(−1, −0.37)</span> היא נקודת מינימום. רואים אותה בגרף.`
+  ]},
+  B:{F:{f:x=>x>0?x-Math.log(x):NaN,d:x=>1-1/x,x1:0.02,x2:6},ext:{x:1,y:1,t:'(1, 1)'},steps:[
+    `נחקור את <span class="eq"><i>f</i>(${X}) = ${X} − ln ${X}</span>.`,
+    `<strong>צעד 1, תחום הגדרה:</strong> בגלל ה-ln, רק <span class="eq">${X} &gt; 0</span>.`,
+    `<strong>צעד 2, גוזרים:</strong> <span class="eq"><i>f</i>′(${X}) = 1 − 1 ÷ ${X}</span>.`,
+    `<strong>צעד 3, משווים ל-0:</strong> <span class="eq">1 − 1 ÷ ${X} = 0</span>, ולכן <span class="eq">1 ÷ ${X} = 1</span>, כלומר <span class="eq">${X} = 1</span>. הוא בתחום, אז ממשיכים.`,
+    `<strong>צעד 4, סימן הנגזרת:</strong> ב-<span class="eq">${X} = 0.5</span>: <span class="eq">1 − 2 = −1</span>, <span class="down">יורדת</span>. ב-<span class="eq">${X} = 2</span>: <span class="eq">1 − 0.5 = 0.5</span>, <span class="up">עולה</span>.`,
+    `<strong>צעד 5, נקודת הקיצון:</strong> <span class="eq"><i>f</i>(1) = 1 − ln 1 = 1 − 0 = 1</span>. לכן <span class="eq">(1, 1)</span> היא נקודת מינימום.`
+  ]}
+};
+let exKey='A', exI=0;
+function showEx(){
+  const e=EXS[exKey], last=exI===e.steps.length-1;
+  plot($('exG'),e.F,undefined,last?{ext:e.ext}:{});
+  $('exText').innerHTML=e.steps[exI];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=last;
+}
+$('exNext').onclick=()=>{ if(exI<EXS[exKey].steps.length-1){ exI++; showEx(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; showEx(); } };
+['A','B'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); showEx(); }; });
+showEx();
+
+/* practice */
+let pr=null, streak=0, solved=0;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const coef=(a,s)=>a===1?s:a===-1?MINUS+s:(a<0?MINUS:'')+Math.abs(a)+s;
+const kx=k=>coef(k,X);
+const sgn=(v,s)=>v<0?` ${MINUS} ${Math.abs(v)}${s||''}`:v>0?` + ${v}${s||''}`:'';
+function newPr(){
+  const kind=pick(['exp','ln','lnmix','prod','ext']);
+  let F,html,q,ans,w={},x0,parts;
+  if(kind==='exp'){
+    const a=pick([1,2,3,-1,-2]), k=pick([1,2,3,-1,-2]);
+    x0=Math.abs(k)===1&&Math.random()<0.5?pick([1,-1]):0;
+    F={f:x=>a*Math.exp(k*x),d:x=>a*k*Math.exp(k*x),x1:-6,x2:6};
+    html=`<i>f</i>(${X}) = ${coef(a,'')}${a===1||a===-1?'':' '}${ex(kx(k))}`;
+    ans=F.d(x0);
+    w={noK:a*Math.exp(k*x0), pow:a*k*x0*Math.exp(k*x0-1)};
+    parts={a,k};
+  }else if(kind==='ln'){
+    const a=pick([1,2,3,4]); let b,g=0;
+    do{ b=rnd(-2,5); x0=rnd(0,3); g++; }while((a*x0+b<=0||a*x0+b===1&&g<30));
+    F={f:x=>a*x+b>0?Math.log(a*x+b):NaN,d:x=>a/(a*x+b),x1:-6,x2:6};
+    html=`<i>f</i>(${X}) = ln(${kx(a)}${sgn(b)})`;
+    ans=F.d(x0);
+    w={noA:1/(a*x0+b), val:Math.log(a*x0+b), overX:x0?a/x0:NaN};
+    parts={a,b,in:a*x0+b};
+  }else if(kind==='lnmix'){
+    const c=pick([2,4,6,-2,-4]), m=pick([-3,-2,-1,1,2,3]);
+    x0=pick([1,2,4]);
+    F={f:x=>x>0?c*Math.log(x)+m*x:NaN,d:x=>c/x+m,x1:0.01,x2:6};
+    html=`<i>f</i>(${X}) = ${c} ln ${X}${sgn(m,X)}`.replace(`${c} ln`,`${c<0?MINUS+Math.abs(c):c} ln`);
+    ans=F.d(x0);
+    w={noM:c/x0, val:c*Math.log(x0)+m, cx:c*x0+m};
+    parts={c,m};
+  }else if(kind==='prod'){
+    const b=pick([0,1,2,-1,-2]); x0=pick([-1,0,1]);
+    if(x0+b+1===0) return newPr();
+    F={f:x=>(x+b)*Math.exp(x),d:x=>Math.exp(x)*(x+b+1),x1:-6,x2:2};
+    html=b?`<i>f</i>(${X}) = (${X}${sgn(b)}) · ${ex(X)}`:`<i>f</i>(${X}) = ${X} · ${ex(X)}`;
+    ans=F.d(x0);
+    w={half:Math.exp(x0), self:(x0+b)*Math.exp(x0)};
+    parts={b};
+  }else{
+    if(Math.random()<0.5){
+      const k=pick([2,3,4,5]);
+      F={f:x=>Math.exp(x)-k*x,d:x=>Math.exp(x)-k,x1:-6,x2:6,sub:'E',k};
+      html=`<i>f</i>(${X}) = ${ex(X)} ${MINUS} ${k}${X}`;
+      ans=Math.log(k); w={k, ek:Math.exp(k), inv:1/k};
+    }else{
+      const k=pick([2,4,5]);
+      F={f:x=>x>0?k*x-Math.log(x):NaN,d:x=>k-1/x,x1:0.01,x2:6,sub:'L',k};
+      html=`<i>f</i>(${X}) = ${k}${X} ${MINUS} ln ${X}`;
+      ans=1/k; w={k, neg:-1/k};
+    }
+    parts={k:F.k,sub:F.sub};
+  }
+  pr={kind,F,html,ans,w,x0,parts,tries:0,hint:0};
+  $('prEq').innerHTML=`<span class="eq">${html}</span>`;
+  if(kind==='ext'){
+    $('prQ').innerHTML='באיזה x הנגזרת מתאפסת? (שם יש לפונקציה נקודת מינימום.)';
+    $('prInputs').innerHTML=`<label for="prV"><span class="eq">${X} =</span><input id="prV" inputmode="text" autocomplete="off"></label>`;
+  }else{
+    $('prQ').innerHTML=`מה השיפוע של הגרף ב-<span class="eq">${X} = ${numTxt(x0)}</span>? כלומר <span class="eq"><i>f</i>′(${numTxt(x0)})</span>.`;
+    $('prInputs').innerHTML=`<label for="prV"><span class="eq"><i>f</i>′(${numTxt(x0)}) =</span><input id="prV" inputmode="text" autocomplete="off"></label>`;
+  }
+  $('prV').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  plot($('prG'),F);
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const p=pr.parts, x=numTxt(pr.x0);
+  switch(pr.kind){
+    case 'exp': return `<span class="eq"><i>f</i>′(${X}) = ${p.a*p.k===1?'':p.a*p.k===-1?MINUS:numTxt(p.a*p.k)}${ex(kx(p.k))}</span>. ב-<span class="eq">${X} = ${x}</span>: <span class="eq">${numTxt(p.a*p.k)} · ${ex(numTxt(p.k*pr.x0))} ≈ ${nt(pr.ans)}</span>`;
+    case 'ln': return `<span class="eq"><i>f</i>′(${X}) = ${p.a} ÷ (${kx(p.a)}${sgn(p.b)})</span>. ב-<span class="eq">${X} = ${x}</span>: <span class="eq">${p.a} ÷ ${p.in} = ${fracTxt(pr.ans)}</span>`;
+    case 'lnmix': return `<span class="eq"><i>f</i>′(${X}) = ${numTxt(p.c)} ÷ ${X}${sgn(p.m)}</span>. ב-<span class="eq">${X} = ${x}</span>: <span class="eq">${numTxt(p.c)} ÷ ${x}${sgn(p.m)} = ${fracTxt(pr.ans)}</span>`;
+    case 'prod': return `כלל המכפלה: <span class="eq"><i>f</i>′(${X}) = ${ex(X)}(${X}${sgn(p.b+1)})</span>. ב-<span class="eq">${X} = ${x}</span>: <span class="eq">${ex(x)} · ${numTxt(pr.x0+p.b+1)} ≈ ${nt(pr.ans)}</span>`;
+    default: return p.sub==='E'
+      ?`<span class="eq"><i>f</i>′(${X}) = ${ex(X)} − ${p.k}</span>. משווים ל-0: <span class="eq">${ex(X)} = ${p.k}</span>, ולכן <span class="eq">${X} = ln ${p.k} ≈ ${nt(pr.ans)}</span>`
+      :`<span class="eq"><i>f</i>′(${X}) = ${p.k} − 1 ÷ ${X}</span>. משווים ל-0: <span class="eq">1 ÷ ${X} = ${p.k}</span>, ולכן <span class="eq">${X} = 1/${p.k}</span>`;
+  }
+}
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  const fb=$('prFb'), y=parseNum($('prV').value.replace(/,/g,'.')), w=pr.w;
+  if(isNaN(y)){ fb.innerHTML='<div class="fb err">כתבו מספר (אפשר שבר כמו 1/4 או מספר עשרוני).</div>'; return; }
+  if(near(y,pr.ans)){
+    streak++; solved++; score();
+    if(pr.kind==='ext') plot($('prG'),pr.F,pr.ans); else plot($('prG'),pr.F,pr.x0);
+    fb.innerHTML=`<div class="fb ok">נכון! ${pr.kind==='ext'?'שם המשיק אופקי, וזו נקודת המינימום.':'זה השיפוע של המשיק הכחול.'}</div>`; return;
+  }
+  let m;
+  switch(pr.kind){
+    case 'exp':
+      if(near(y,w.noK)) m='שכחתם לכפול בנגזרת של המעריך. <span class="eq">(<i>e</i><sup><i>kx</i></sup>)′ = <i>k</i> · <i>e</i><sup><i>kx</i></sup></span>.';
+      else if(near(y,w.pow)) m='גזרתם כמו חזקה רגילה. כאן x נמצא במעריך, ולכן <span class="eq"><i>e</i><sup><i>x</i></sup></span> נשאר <span class="eq"><i>e</i><sup><i>x</i></sup></span>.';
+      else m='לא בדיוק. גזרו לפי <span class="eq">(<i>a</i><i>e</i><sup><i>kx</i></sup>)′ = <i>a</i><i>k</i> · <i>e</i><sup><i>kx</i></sup></span>, ורק אז הציבו.';
+      break;
+    case 'ln':
+      if(near(y,w.noA)&&pr.parts.a!==1) m='שכחתם את המונה. הנגזרת של מה שבתוך ה-ln עולה למונה: <span class="eq">(ln <i>g</i>)′ = <i>g</i>′ ÷ <i>g</i></span>.';
+      else if(near(y,w.val)) m='זה הערך של הפונקציה, לא השיפוע. קודם גוזרים, ורק אז מציבים.';
+      else if(near(y,w.overX)) m='חילקתם ב-x. מחלקים בכל הביטוי שבתוך ה-ln, לא רק ב-x.';
+      else m='לא בדיוק. <span class="eq">(ln <i>g</i>)′ = <i>g</i>′ ÷ <i>g</i></span>: הנגזרת של הפנים, חלקי הפנים.';
+      break;
+    case 'lnmix':
+      if(near(y,w.noM)) m='שכחתם לגזור את החלק השני. גם האיבר עם x נותן נגזרת: המקדם שלו.';
+      else if(near(y,w.val)) m='זה הערך של הפונקציה, לא השיפוע. <span class="eq">(ln <i>x</i>)′ = 1 ÷ <i>x</i></span>.';
+      else if(near(y,w.cx)) m='כפלתם ב-x במקום לחלק. <span class="eq">(<i>c</i> ln <i>x</i>)′ = <i>c</i> ÷ <i>x</i></span>.';
+      else m='לא בדיוק. גזרו כל איבר לחוד: <span class="eq">(<i>c</i> ln <i>x</i>)′ = <i>c</i> ÷ <i>x</i></span>, ו-<span class="eq">(<i>mx</i>)′ = <i>m</i></span>.';
+      break;
+    case 'prod':
+      if(near(y,w.half)) m='יש לכם רק חצי מכלל המכפלה (או שכפלתם את הנגזרות). צריך <span class="eq"><i>u</i>′<i>v</i> + <i>u</i><i>v</i>′</span>.';
+      else if(near(y,w.self)) m='זה בדיוק הערך של הפונקציה. בכלל המכפלה יש שני מחוברים, וחסר לכם <span class="eq"><i>u</i>′<i>v</i></span>.';
+      else m='לא בדיוק. בכלל המכפלה: <span class="eq"><i>u</i>′<i>v</i> + <i>u</i><i>v</i>′</span>. אחר כך הוציאו <span class="eq"><i>e</i><sup><i>x</i></sup></span> כגורם משותף.';
+      break;
+    default:
+      if(pr.parts.sub==='E'&&near(y,w.k)) m=`פתרתם <span class="eq"><i>x</i> = ${w.k}</span>, אבל המשוואה היא <span class="eq"><i>e</i><sup><i>x</i></sup> = ${w.k}</span>. כדי להוריד את ה-x מהמעריך משתמשים ב-ln.`;
+      else if(pr.parts.sub==='E'&&near(y,w.ek)) m='זה <span class="eq"><i>e</i><sup><i>k</i></sup></span>. ההפך: x הוא המעריך שנותן k, כלומר ln.';
+      else if(pr.parts.sub==='L'&&near(y,w.k)) m='הפכתם את השבר. אם <span class="eq">1 ÷ <i>x</i> = <i>k</i></span>, אז <span class="eq"><i>x</i> = 1 ÷ <i>k</i></span>.';
+      else if(pr.parts.sub==='L'&&near(y,w.neg)) m='יצא סימן הפוך. וגם: x שלילי בכלל לא בתחום של ln.';
+      else m='לא בדיוק. גזרו, השוו את הנגזרת ל-0, ובודדו את x.';
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2);
+  const p=pr.parts, x=numTxt(pr.x0); let t;
+  const H1={exp:'הכלל: <span class="eq">(<i>a</i><i>e</i><sup><i>kx</i></sup>)′ = <i>a</i><i>k</i> · <i>e</i><sup><i>kx</i></sup></span>.',
+    ln:'הכלל: <span class="eq">(ln <i>g</i>)′ = <i>g</i>′ ÷ <i>g</i></span>. מה הנגזרת של מה שבתוך ה-ln?',
+    lnmix:'גזרו כל איבר לחוד. <span class="eq">(ln <i>x</i>)′ = 1 ÷ <i>x</i></span>.',
+    prod:'זו מכפלה: <span class="eq"><i>u</i> = </span>הסוגריים, <span class="eq"><i>v</i> = <i>e</i><sup><i>x</i></sup></span>. כלל המכפלה: <span class="eq"><i>u</i>′<i>v</i> + <i>u</i><i>v</i>′</span>.',
+    ext:'קודם גוזרים, ואז פותרים <span class="eq"><i>f</i>′(<i>x</i>) = 0</span>.'};
+  if(pr.hint===1) t=H1[pr.kind];
+  else switch(pr.kind){
+    case 'exp': t=`הנגזרת היא <span class="eq">${numTxt(p.a*p.k)}${ex(kx(p.k))}</span>. עכשיו הציבו <span class="eq">${X} = ${x}</span>${pr.x0===0?' (וזכרו: <span class="eq">'+ex('0')+' = 1</span>)':''}.`; break;
+    case 'ln': t=`הנגזרת היא <span class="eq">${p.a} ÷ (${kx(p.a)}${sgn(p.b)})</span>. ב-<span class="eq">${X} = ${x}</span> המכנה שווה ${p.in}.`; break;
+    case 'lnmix': t=`הנגזרת היא <span class="eq">${numTxt(p.c)} ÷ ${X}${sgn(p.m)}</span>. הציבו <span class="eq">${X} = ${x}</span>.`; break;
+    case 'prod': t=`אחרי הוצאת גורם משותף: <span class="eq"><i>f</i>′(${X}) = ${ex(X)}(${X}${sgn(p.b+1)})</span>. הציבו <span class="eq">${X} = ${x}</span>.`; break;
+    default: t=p.sub==='E'?`<span class="eq"><i>f</i>′(${X}) = ${ex(X)} − ${p.k} = 0</span>. איזה מעריך נותן ${p.k}? זה בדיוק ln ${p.k}.`:`<span class="eq"><i>f</i>′(${X}) = ${p.k} − 1 ÷ ${X} = 0</span>. בודדו את <span class="eq">1 ÷ ${X}</span>.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  if(!pr) return;
+  if(pr.kind==='ext') plot($('prG'),pr.F,pr.ans); else plot($('prG'),pr.F,pr.x0);
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

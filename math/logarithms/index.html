@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>לוגריתמים וחוקי הלוג · כיתה יב · מירי</title>
+<meta name="description" content="log הוא השאלה &quot;באיזו חזקה?&quot;. חוקי הלוגריתמים, משוואות לוגריתמיות והגרף של ln x. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/logarithms/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="לוגריתמים וחוקי הלוג · כיתה יב · מירי">
+<meta property="og:description" content="log הוא השאלה &quot;באיזו חזקה?&quot;. חוקי הלוגריתמים, משוואות לוגריתמיות והגרף של ln x. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/logarithms/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"מעריכיות ולוגריתמים","item":"https://shohamtal.github.io/homework-site/math/grade-12/#exp-log-12"},{"@type":"ListItem","position":5,"name":"לוגריתמים וחוקי הלוג","item":"https://shohamtal.github.io/homework-site/math/logarithms/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה לוגריתם?","acceptedAnswer":{"@type":"Answer","text":"לוגריתם עונה על השאלה \"באיזו חזקה?\". logb x הוא המספר שצריך להעלות בו את b כדי לקבל x. למשל log5 25 = 2, כי 52 = 25. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין log ל-ln?","acceptedAnswer":{"@type":"Answer","text":"log בלי בסיס כתוב הוא לוגריתם בבסיס 10, ו-ln הוא לוגריתם בבסיס e, בערך 2.718. החוקים זהים בשניהם. log 100 = 2, ו-ln e3 = 3."}},{"@type":"Question","name":"איך פותרים משוואה לוגריתמית?","acceptedAnswer":{"@type":"Answer","text":"הופכים אותה לחזקה: אם logb A = n אז A = bn. למשל log3(x + 1) = 2 נותן x + 1 = 9, אז x = 8. בסוף בודקים שהמספר בתוך הלוג חיובי."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"לוגריתמים וחוקי הלוג","description":"log הוא השאלה \"באיזו חזקה?\". חוקי הלוגריתמים, משוואות לוגריתמיות והגרף של ln x. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/logarithms/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מעריכיות ולוגריתמים","teaches":"לוגריתמים וחוקי הלוג","keywords":"חוקי לוג, ln, משוואה לוגריתמית","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .orig{stroke:var(--muted); stroke-width:1.6; stroke-dasharray:5 4; fill:none}
+  .g .expc{stroke:var(--blue); stroke-width:2.2; stroke-dasharray:6 4; fill:none}
+  .g .asy{stroke:var(--blue); stroke-width:1.4; stroke-dasharray:4 4}
+  .g .lbl{font:700 8px var(--f-body); paint-order:stroke; stroke:var(--card); stroke-width:2.5px}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button{font-family:var(--f-math); font-size:1.1rem; min-width:3.2em}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .laws{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:10px; margin-top:10px}
+  .laws div{border:2px solid var(--border); border-radius:12px; padding:8px 12px; background:var(--card)}
+  .laws b{display:block; margin-bottom:4px}
+  .ask{font-size:1.15rem; text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="logarithms">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-12/#exp-log-12">מעריכיות ולוגריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">לוגריתמים וחוקי הלוג</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · מעריכיות ולוגריתמים</div>
+  <h1>לוגריתמים וחוקי הלוג <span class="slogan">באיזו חזקה?</span></h1>
+  <p class="lead">לוגריתם הוא שאלה אחת: <strong>באיזו חזקה</strong> צריך להעלות את הבסיס כדי לקבל את המספר? <span class="eq">log<sub>2</sub> 8 = 3</span>, כי <span class="eq">2<sup>3</sup> = 8</span>.
+  לומדים לחשב לוגריתמים, את שלושת חוקי הלוג, מה זה <span class="eq">ln</span>, ואיך פותרים משוואה לוגריתמית. נושא של כיתה יב, לרמת 4 ו-5 יח״ל.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: <span class="eq">log<sub><i>b</i></sub> <i>x</i> = <i>y</i></span> <span class="eq">⇔ <i>b</i><sup><i>y</i></sup> = <i>x</i></span></h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>לוג הוא החזקה</h3>
+      <p>כדי לחשב <span class="eq">log<sub>3</sub> 81</span> שואלים: 3 בחזקת כמה זה 81? <span class="eq">3<sup>4</sup> = 81</span>, אז <span class="eq">log<sub>3</sub> 81 = 4</span>.</p>
+      <p>ומספר קטן מ-1? <span class="eq">log<sub>2</sub> ⅛ = −3</span>, כי <span class="eq">2<sup>−3</sup> = ⅛</span>. וכל בסיס בחזקת 0 הוא 1, לכן <span class="eq">log<sub><i>b</i></sub> 1 = 0</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>log ו-ln</h3>
+      <p><span class="eq">log</span> בלי בסיס הוא בסיס 10: <span class="eq">log 1000 = 3</span>. ו-<span class="eq">ln</span> הוא בסיס <i>e</i>, הלוגריתם הטבעי. הגרף של <span class="eq">ln <i>x</i></span> (ורוד) הוא תמונת מראה של <span class="eq"><i>e</i><sup><i>x</i></sup></span> (כחול) סביב הישר <span class="eq"><i>y</i> = <i>x</i></span>.</p>
+      <svg class="g" id="introG" viewBox="0 0 240 240" role="img" aria-label="הגרפים של ln x ושל e בחזקת x, תמונת מראה סביב y שווה x"></svg>
+    </div>
+  </div>
+  <div class="laws">
+    <div><b>כפל הופך לחיבור</b><span class="eq">log<sub><i>b</i></sub>(<i>xy</i>) =</span> <span class="eq">log<sub><i>b</i></sub> <i>x</i> + log<sub><i>b</i></sub> <i>y</i></span></div>
+    <div><b>חילוק הופך לחיסור</b><span class="eq">log<sub><i>b</i></sub>(<i>x</i>/<i>y</i>) =</span> <span class="eq">log<sub><i>b</i></sub> <i>x</i> − log<sub><i>b</i></sub> <i>y</i></span></div>
+    <div><b>חזקה יוצאת קדימה</b><span class="eq">log<sub><i>b</i></sub>(<i>x</i><sup><i>n</i></sup>) =</span> <span class="eq"><i>n</i>·log<sub><i>b</i></sub> <i>x</i></span></div>
+    <div><b>החלפת בסיס</b><span class="eq">log<sub><i>b</i></sub> <i>x</i> =</span> <span class="eq">log <i>x</i> / log <i>b</i></span></div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: באיזו חזקה?</h2></div>
+  <p class="text">בחרו בסיס והזיזו את x. הנקודה הוורודה היא <span class="eq">(<i>x</i>, log<sub><i>b</i></sub> <i>x</i>)</span> על גרף הלוג, והנקודה הכחולה היא תמונת המראה שלה על הגרף של <span class="eq"><i>b</i><sup><i>x</i></sup></span>.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: לוג בוורוד, חזקה בכחול"></svg>
+    <div class="ctrl">
+      <div class="seg" id="labBase" role="group" aria-label="הבסיס">
+        <button data-b="2" aria-pressed="true" dir="ltr">2</button>
+        <button data-b="3" aria-pressed="false" dir="ltr">3</button>
+        <button data-b="10" aria-pressed="false" dir="ltr">10</button>
+        <button data-b="e" aria-pressed="false" dir="ltr">e</button>
+      </div>
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="xRange"><span>המספר <i>x</i></span><span class="eq" id="xVal"></span></label>
+      <input type="range" id="xRange" min="0" max="16" step="1" value="11">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="2,8" dir="ltr">log₂ 8</button>
+          <button data-p="2,1/2" dir="ltr">log₂ ½</button>
+          <button data-p="3,1/9" dir="ltr">log₃ 1/9</button>
+          <button data-p="10,100" dir="ltr">log 100</button>
+          <button data-p="10,1/10" dir="ltr">log 0.1</button>
+          <button data-p="2,5" dir="ltr">log₂ 5</button>
+          <button data-p="e,1" dir="ltr">ln 1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>לוג של סכום הוא לא סכום של לוגים.</strong> <span class="eq">log(2 + 8)</span> הוא לא <span class="eq">log 2 + log 8</span>. החוק עובד רק לכפל: <span class="eq">log 2 + log 8 = log 16</span>.</div></li>
+    <li><div><strong>חילוק של לוגים הוא לא לוג של חילוק.</strong> <span class="eq">log 8 / log 2</span> הוא 3 (החלפת בסיס), אבל <span class="eq">log(8/2) = log 4</span>. אלה שני דברים שונים.</div></li>
+    <li><div><strong>המספר בתוך הלוג חייב להיות חיובי.</strong> אין <span class="eq">log<sub>2</sub>(−4)</span> ואין <span class="eq">log<sub>2</sub> 0</span>: שום חזקה של 2 לא נותנת אותם. במשוואה בודקים שהפתרון לא נותן מספר שלילי בתוך הלוג.</div></li>
+    <li><div><strong>הבסיס למטה, המעריך למעלה.</strong> <span class="eq">log<sub>2</sub> <i>x</i> = 5</span> אומר <span class="eq"><i>x</i> = 2<sup>5</sup> = 32</span>, לא <span class="eq">5<sup>2</sup></span> ולא <span class="eq">2·5</span>.</div></li>
+  </ol>
+  <div class="callout"><strong>במחשבון</strong> יש רק <span class="eq">log</span> (בסיס 10) ו-<span class="eq">ln</span>. בשביל בסיס אחר משתמשים בהחלפת בסיס: <span class="eq">log<sub>2</sub> 5 =</span> <span class="eq">log 5 / log 2 ≈ 2.32</span>. הלוג הוא הפעולה ההפוכה ל<a href="../exponential-functions/">פונקציה מעריכית</a>.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (משוואה)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (חוקי הלוג)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חישוב, חוקים ומשוואות</h2></div>
+  <p class="text">יש שלושה סוגי שאלות: לחשב לוגריתם, לפשט בעזרת חוקי הלוג, ולפתור משוואה לוגריתמית. בלי מחשבון!</p>
+  <div class="ctrl">
+    <div class="big-eq" id="prEq" dir="ltr"></div>
+    <p class="text" id="prQ" style="font-weight:700"></p>
+    <div class="inputs"><label for="prIn" id="prLbl">x =<input id="prIn" inputmode="text" autocomplete="off"></label></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה לוגריתם?</h3>
+    <p>לוגריתם עונה על השאלה "באיזו חזקה?". <span class="eq">log<sub><i>b</i></sub> <i>x</i></span> הוא המספר שצריך להעלות בו את b כדי לקבל x. למשל <span class="eq">log<sub>5</sub> 25 = 2</span>, כי <span class="eq">5<sup>2</sup> = 25</span>. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין log ל-ln?</h3>
+    <p><span class="eq">log</span> בלי בסיס כתוב הוא לוגריתם בבסיס 10, ו-<span class="eq">ln</span> הוא לוגריתם בבסיס <i>e</i>, בערך 2.718. החוקים זהים בשניהם. <span class="eq">log 100 = 2</span>, ו-<span class="eq">ln <i>e</i><sup>3</sup> = 3</span>.</p>
+    <h3>איך פותרים משוואה לוגריתמית?</h3>
+    <p>הופכים אותה לחזקה: אם <span class="eq">log<sub><i>b</i></sub> <i>A</i> = <i>n</i></span> אז <span class="eq"><i>A</i> = <i>b</i><sup><i>n</i></sup></span>. למשל <span class="eq">log<sub>3</sub>(<i>x</i> + 1) = 2</span> נותן <span class="eq"><i>x</i> + 1 = 9</span>, אז <span class="eq"><i>x</i> = 8</span>. בסוף בודקים שהמספר בתוך הלוג חיובי.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/exponential-functions/">פונקציה מעריכית</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/exponential-functions/"><small>→ הנושא הקודם</small>פונקציה מעריכית</a><a class="next" href="../../math/exp-log-derivatives/"><small>הנושא הבא ←</small>נגזרות של eˣ ו-ln x</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,signedFracHTML,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`, E=Math.E;
+const rnd=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const r3=v=>Math.round(v*1000)/1000;
+let pid=0;
+
+const LOG=(b,x)=>Math.log(x)/Math.log(b);
+const isE=b=>Math.abs(b-E)<1e-9;
+/* "log₂", "log", "ln" as HTML */
+const lb=b=>isE(b)?'ln':b===10?'log':`log<sub>${b}</sub>`;
+const bH=b=>isE(b)?'<i>e</i>':String(b);
+/* a positive number as HTML: fractions below 1 as 1/n */
+const nH=v=>v<1?fracHTML(v):numTxt(r3(v));
+/* exact value of log_b x as a simple fraction, or null */
+function exactLog(b,x){
+  const y=LOG(b,x);
+  for(const d of [1,2,3]){ const r=Math.round(y*d)/d; if(Math.abs(Math.pow(b,r)-x)<1e-9*Math.max(1,x)) return r; }
+  return null;
+}
+function curve(f){
+  let d='', on=false;
+  for(let x=-6;x<=6.001;x+=0.02){
+    const y=f(x);
+    if(!isFinite(y)||y>40||y<-40){ on=false; continue; }
+    d+=(on?'L':'M')+sx(x).toFixed(1)+' '+sy(y).toFixed(1); on=true;
+  }
+  return d;
+}
+const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+/* log_b(x − h); opt: exp (draw b^x), mirror (y = x), vasym, lines [y], points [{x,y,label,cls}] */
+function plot(svg,b,opt={}){
+  const id='lc'+(++pid), h=opt.h||0;
+  let s=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  if(opt.mirror) s+=`<line class="orig" x1="${sx(-6)}" y1="${sy(-6)}" x2="${sx(6)}" y2="${sy(6)}"/>`;
+  if(opt.vasym) s+=`<line class="asy" x1="${sx(h)}" y1="${sy(-6)}" x2="${sx(h)}" y2="${sy(6)}"/>`;
+  (opt.lines||[]).forEach(L=>{ s+=`<line class="ln2" x1="${sx(-6)}" y1="${sy(L)}" x2="${sx(6)}" y2="${sy(L)}"/>`; });
+  if(opt.exp) s+=`<path class="expc" d="${curve(x=>Math.pow(b,x))}"/>`;
+  s+=`<path class="ln" d="${curve(x=>x-h>0?LOG(b,x-h):NaN)}"/>`;
+  s+='</g>';
+  (opt.points||[]).forEach(p=>{
+    if(!inG(p.x,p.y)) return;
+    s+=`<circle class="${p.cls||'dot'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`;
+    if(p.label) s+=`<text class="ptlbl" x="${sx(p.x)+(p.dx||7)}" y="${sy(p.y)-7}" ${p.dx<0?'text-anchor="end"':''}>${p.label}</text>`;
+  });
+  if(opt.names) s+=opt.names;
+  draw(svg,null,0,{extra:s});
+}
+
+/* intro */
+plot($('introG'),E,{exp:true,mirror:true,points:[{x:1,y:0,label:'(1, 0)'},{x:0,y:1,cls:'pt',label:'(0, 1)',dx:-7}],
+  names:`<text class="lbl" x="${sx(3.2)}" y="${sy(1.6)}" style="fill:var(--line)">ln x</text><text class="lbl" x="${sx(1.2)}" y="${sy(4.6)}" style="fill:var(--blue)">eˣ</text><text class="lbl" x="${sx(4)}" y="${sy(4.6)}" style="fill:var(--muted)">y = x</text>`});
+
+/* lab */
+const XS=[1/10,1/9,1/8,1/4,1/3,1/2,1,2,3,4,5,8,9,10,16,27,100];
+const xR=$('xRange'); xR.max=XS.length-1;
+let base=2;
+function setBase(b){ base=b; $('labBase').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',(x.dataset.b==='e'?isE(b):+x.dataset.b===b))); }
+function lab(){
+  const x=XS[+xR.value], b=base, y=LOG(b,x), ex=exactLog(b,x);
+  $('xVal').innerHTML=nH(x);
+  const yH=ex!==null?signedFracHTML(ex):'≈ '+numTxt(r3(y));
+  $('labEq').innerHTML=eqs(`${lb(b)} ${nH(x)} = ${yH}`);
+  plot($('labG'),b,{exp:true,mirror:true,points:[{x,y,label:`(${numTxt(r3(x))}, ${numTxt(Math.round(y*100)/100)})`},{x:y,y:x,cls:'pt'}]});
+  let t=`<div class="ask">השאלה: ${eqs(`${bH(b)}<sup>?</sup> = ${nH(x)}`)}</div>`;
+  if(ex!==null){
+    t+=`<div><strong>בדיוק ${signedFracHTML(ex)}</strong>, כי ${eqs(`${bH(b)}<sup>${signedFracHTML(ex)}</sup> = ${nH(x)}`)}.</div>`;
+  }else{
+    const n=Math.floor(y);
+    t+=`<div>אין כאן חזקה "יפה". ${eqs(`${bH(b)}<sup>${numTxt(n)}</sup> &lt; ${nH(x)} &lt; ${bH(b)}<sup>${numTxt(n+1)}</sup>`)}, אז התשובה בין ${numTxt(n)} ל-${numTxt(n+1)}, בערך ${numTxt(r3(y))}.${b!==10&&!isE(b)?` במחשבון: ${eqs(`log ${nH(x)} / log ${b}`)}.`:''}</div>`;
+  }
+  if(eqv(x,1)) t+=`<div>${eqs(`${lb(b)} 1 = 0`)} בכל בסיס, כי כל מספר בחזקת 0 הוא 1.</div>`;
+  else if(eqv(x,b)) t+=`<div>${eqs(`${lb(b)} ${bH(b)} = 1`)}: הבסיס בחזקת 1 הוא הבסיס עצמו.</div>`;
+  else if(x<1) t+='<div>x קטן מ-1, ולכן הלוג <strong>שלילי</strong>: צריך מעריך שלילי כדי לקבל שבר.</div>';
+  t+=`<div>הנקודה הכחולה ${eqs(`(${numTxt(Math.round(y*100)/100)}, ${numTxt(r3(x))})`)} נמצאת על הגרף של ${eqs(`${bH(b)}<sup>${X}</sup>`)}: אותם מספרים, בסדר הפוך.</div>`;
+  $('labExplain').innerHTML=t;
+}
+xR.addEventListener('input',lab);
+$('labBase').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{ setBase(btn.dataset.b==='e'?E:+btn.dataset.b); lab(); }));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{
+  const [b,x]=btn.dataset.p.split(','); setBase(b==='e'?E:+b);
+  const v=parseNum(x); xR.value=XS.findIndex(q=>Math.abs(q-v)<1e-9); lab();
+}));
+lab();
+
+/* worked examples: [plot opt, text] */
+const EX={
+  A:[
+    [{h:1,vasym:true,lines:[2]},`נפתור ${eqs(`log<sub>2</sub>(${X} − 1) = 2`)}. בגרף: ${eqs(`log<sub>2</sub>(${X} − 1)`)} בוורוד, והקו ${eqs('<i>y</i> = 2')} בכחול. הפתרון הוא ה-x של נקודת המפגש.`],
+    [{h:1,vasym:true,lines:[2]},`<strong>צעד 1, הופכים לחזקה:</strong> ${eqs(`log<sub>2</sub> <i>A</i> = 2`)} אומר ${eqs('<i>A</i> = 2<sup>2</sup>')}. כאן ${eqs(`<i>A</i> = ${X} − 1`)}, אז ${eqs(`${X} − 1 = 4`)}.`],
+    [{h:1,vasym:true,lines:[2],points:[{x:5,y:2,label:'(5, 2)',dx:-7}]},`<strong>צעד 2, פותרים:</strong> ${eqs(`${X} = 5`)}. זו נקודת המפגש בגרף.`],
+    [{h:1,vasym:true,lines:[2],points:[{x:5,y:2,label:'(5, 2)',dx:-7}]},`<strong>בדיקה:</strong> בתוך הלוג צריך ${eqs(`${X} − 1 &gt; 0`)}, כלומר ${eqs(`${X} &gt; 1`)}. הקו הכחול האנכי הוא ${eqs(`${X} = 1`)}, והגרף לא עובר אותו. ${eqs('5 − 1 = 4')} ו-${eqs('log<sub>2</sub> 4 = 2')}. מתאים!`]
+  ],
+  B:[
+    [{exp:true,mirror:true,points:[{x:1,y:0,cls:'pt'},{x:2,y:1,cls:'pt'},{x:4,y:2,cls:'pt'}]},`נחשב ${eqs('log<sub>2</sub> 24 − log<sub>2</sub> 3')} בלי מחשבון. אף אחד מהם לא "יפה" לבד, אבל ביחד כן.`],
+    [{exp:true,mirror:true,points:[{x:3,y:LOG(2,3),label:'(3, 1.58)'}]},`<strong>צעד 1, חוק החילוק:</strong> אותו בסיס ומינוס ביניהם, אז ${eqs('log<sub>2</sub> 24 − log<sub>2</sub> 3 =')} ${eqs('log<sub>2</sub>(24/3)')}.`],
+    [{exp:true,mirror:true},`<strong>צעד 2:</strong> ${eqs('24 / 3 = 8')}, אז נשאר ${eqs('log<sub>2</sub> 8')}. שואלים: 2 בחזקת כמה זה 8? ${eqs('2<sup>3</sup> = 8')}, אז התשובה <strong>3</strong>.`],
+    [{exp:true,mirror:true},`<strong>בדיקה במחשבון:</strong> ${eqs('log<sub>2</sub> 24 ≈ 4.585')} ו-${eqs('log<sub>2</sub> 3 ≈ 1.585')}. ההפרש ${eqs('4.585 − 1.585 = 3')}. מתאים!`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const s=EX[exKey][exI];
+  plot($('exG'),2,s[0]);
+  $('exText').innerHTML=s[1];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+['A','B'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice */
+const LAWS={
+  add:[[2,2,4],[2,4,8],[3,3,9],[3,6,1.5],[10,2,50],[10,4,25],[10,5,200],[2,0.5,16]],
+  sub:[[2,12,3],[2,40,5],[2,24,3],[3,54,2],[3,18,2],[10,300,3],[10,5000,5]],
+  pow:[[2,3,4],[3,2,9],[2,0.5,16],[2,1/3,64],[5,2,25],[10,4,100]]
+};
+const RANGE={2:[-3,5],3:[-2,4],5:[-1,3],10:[-2,3]};
+let pr=null, streak=0, solved=0;
+const cH=c=>c===0.5?'½':c===1/3?'⅓':String(c);
+function newPr(){
+  const kind=pick(['eval','eval','law','law','eqn','eqn']);
+  let p, guard=0;
+  do{
+    guard++;
+    if(kind==='eval'){
+      const b=pick([2,3,5,10]), n=rnd(...RANGE[b]), x=Math.pow(b,n);
+      p={kind,b,n,x,ans:n,txt:`${lb(b)} ${nH(x)}`,q:'חשבו את הלוגריתם.'};
+    }else if(kind==='law'){
+      const t=pick(['add','add','sub','sub','pow']), [b,u,v]=pick(LAWS[t]);
+      const ans=t==='add'?LOG(b,u*v):t==='sub'?LOG(b,u/v):u*LOG(b,v);
+      const txt=t==='add'?`${lb(b)} ${numTxt(u)} + ${lb(b)} ${numTxt(v)}`:t==='sub'?`${lb(b)} ${numTxt(u)} − ${lb(b)} ${numTxt(v)}`:`${cH(u)}·${lb(b)} ${numTxt(v)}`;
+      p={kind,t,b,u,v,ans:Math.round(ans*1e6)/1e6,txt,q:'חשבו בעזרת חוקי הלוג, בלי מחשבון.'};
+    }else{
+      const b=pick([2,3,10]), n=b===2?rnd(1,4):b===3?rnd(1,3):rnd(1,2), a=pick([1,1,2,3,4]), x=rnd(-3,6), c=Math.pow(b,n)-a*x;
+      if(c===0) continue;
+      const inner=`${a===1?'':a}${X} ${c<0?MINUS:'+'} ${Math.abs(c)}`;
+      p={kind,b,n,a,c,ans:x,txt:`${lb(b)}(${inner}) = ${n}`,inner,q:'פתרו את המשוואה. מה x?'};
+    }
+  }while((!p||(pr&&pr.txt===p.txt))&&guard<30);
+  p.tries=0; p.hint=0; pr=p;
+  $('prEq').innerHTML=eqs(p.txt);
+  $('prQ').textContent=p.q;
+  $('prLbl').firstChild.textContent=kind==='eqn'?'x =':'= ';
+  $('prIn').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const p=pr;
+  if(p.kind==='eval') return `שואלים: ${eqs(`${p.b}<sup>?</sup> = ${nH(p.x)}`)}. ${eqs(`${p.b}<sup>${numTxt(p.n)}</sup> = ${nH(p.x)}`)}, אז ${eqs(`${p.txt} = ${numTxt(p.n)}`)}.`;
+  if(p.kind==='law'){
+    if(p.t==='add') return `חוק הכפל: ${eqs(`${p.txt} =`)} ${eqs(`${lb(p.b)}(${numTxt(p.u)}·${numTxt(p.v)}) = ${lb(p.b)} ${numTxt(p.u*p.v)}`)}, וזה ${eqs(numTxt(p.ans))}, כי ${eqs(`${p.b}<sup>${numTxt(p.ans)}</sup> = ${numTxt(p.u*p.v)}`)}.`;
+    if(p.t==='sub') return `חוק החילוק: ${eqs(`${p.txt} =`)} ${eqs(`${lb(p.b)}(${numTxt(p.u)}/${numTxt(p.v)}) = ${lb(p.b)} ${numTxt(p.u/p.v)}`)}, וזה ${eqs(numTxt(p.ans))}, כי ${eqs(`${p.b}<sup>${numTxt(p.ans)}</sup> = ${numTxt(p.u/p.v)}`)}.`;
+    return `קודם ${eqs(`${lb(p.b)} ${numTxt(p.v)} = ${numTxt(LOG(p.b,p.v))}`)}, ואז כופלים: ${eqs(`${cH(p.u)}·${numTxt(LOG(p.b,p.v))} = ${numTxt(p.ans)}`)}.`;
+  }
+  return `הופכים לחזקה: ${eqs(`${p.inner} = ${p.b}<sup>${p.n}</sup> = ${Math.pow(p.b,p.n)}`)}. ${p.a===1?'':`${eqs(`${p.a}${X} = ${Math.pow(p.b,p.n)-p.c}`)}, `}${eqs(`${X} = ${numTxt(p.ans)}`)}. בדיקה: בתוך הלוג יוצא ${Math.pow(p.b,p.n)}, מספר חיובי.`;
+}
+function wrongMsg(v){
+  const p=pr;
+  if(p.kind==='eval'){
+    if(eqv(v,p.x)) return 'התשובה היא <strong>החזקה</strong>, לא המספר עצמו. באיזו חזקה צריך להעלות את הבסיס?';
+    if(eqv(v,-p.n)) return p.x<1?'כמעט! המספר קטן מ-1, אז החזקה שלילית.':'כמעט! המספר גדול מ-1, אז החזקה חיובית.';
+    if(eqv(v,p.x/p.b)) return 'לא מחלקים בבסיס. שואלים כמה פעמים כופלים את הבסיס בעצמו.';
+    if(eqv(p.x,1)) return 'כל בסיס בחזקת 0 נותן 1.';
+    return `בדקו: ${eqs(`${p.b}<sup>תשובה</sup>`)} צריך לתת ${nH(p.x)}.`;
+  }
+  if(p.kind==='law'){
+    if(p.t==='add'&&eqv(v,LOG(p.b,p.u+p.v))) return 'חיברתם את המספרים שבתוך הלוג. סכום של לוגים הוא לוג של <strong>מכפלה</strong>.';
+    if(p.t==='sub'&&p.u>p.v&&eqv(v,LOG(p.b,p.u-p.v))) return 'חיסרתם את המספרים שבתוך הלוג. הפרש של לוגים הוא לוג של <strong>מנה</strong>.';
+    if(p.t==='pow'&&eqv(v,LOG(p.b,p.v))) return 'חישבתם את הלוג, אבל שכחתם להכפיל במספר שלפניו.';
+    if(p.t==='pow'&&eqv(v,LOG(p.b,p.v)/p.u)) return 'המספר שלפני הלוג כופל אותו, לא מחלק.';
+    return `קודם הפכו את הביטוי ללוג אחד בעזרת החוק, ואז שאלו: ${p.b} בחזקת כמה?`;
+  }
+  const B=Math.pow(p.b,p.n);
+  if(eqv(v,(p.n-p.c)/p.a)) return `שכחתם להפוך לחזקה. ${eqs(`${lb(p.b)} <i>A</i> = ${p.n}`)} אומר ${eqs(`<i>A</i> = ${p.b}<sup>${p.n}</sup>`)}, לא ${eqs(`<i>A</i> = ${p.n}`)}.`;
+  if(p.n>1&&eqv(v,(p.b*p.n-p.c)/p.a)) return `${eqs(`${p.b}<sup>${p.n}</sup>`)} זה ${p.b} בחזקת ${p.n}, לא ${p.b} כפול ${p.n}.`;
+  if(Math.pow(p.n,p.b)!==B&&eqv(v,(Math.pow(p.n,p.b)-p.c)/p.a)) return `הבסיס הוא ${p.b} והמעריך ${p.n}: ${eqs(`${p.b}<sup>${p.n}</sup>`)}, לא ${eqs(`${p.n}<sup>${p.b}</sup>`)}.`;
+  if(eqv(v,(B+p.c)/p.a)) return `כשמעבירים את ${numTxt(p.c)} לאגף השני, הסימן מתהפך.`;
+  if(p.a!==1&&eqv(v,B-p.c)) return `נשאר ${eqs(`${p.a}${X} = ${B-p.c}`)}. חלקו ב-${p.a}.`;
+  return `הציבו את התשובה שלכם: בתוך הלוג צריך לצאת ${eqs(`${p.b}<sup>${p.n}</sup> = ${B}`)}.`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), v=parseNum($('prIn').value);
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר. אפשר גם שבר, למשל 1/2.</div>'; return; }
+  if(eqv(v,pr.ans)){ streak++; solved++; score(); fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`; return; }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err">${wrongMsg(v)}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prIn').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const p=pr; let t;
+  if(p.kind==='eval'){
+    if(p.hint===1) t=`תרגמו לשאלה על חזקה: ${eqs(`${p.b}<sup>?</sup> = ${nH(p.x)}`)}.`;
+    else t=p.x<1?`המספר קטן מ-1, אז החזקה שלילית. כמה זה ${eqs(`${p.b}<sup>${numTxt(-p.n)}</sup>`)}? ואם מעריך שלילי הופך לשבר...`:`נסו חזקות: ${eqs(`${p.b}<sup>1</sup> = ${p.b}`)}, ${eqs(`${p.b}<sup>2</sup> = ${p.b*p.b}`)}... עד שמגיעים ל-${nH(p.x)}.`;
+  }else if(p.kind==='law'){
+    if(p.hint===1) t=p.t==='add'?'סכום של שני לוגים עם אותו בסיס הוא לוג של המכפלה.':p.t==='sub'?'הפרש של שני לוגים עם אותו בסיס הוא לוג של המנה.':'חשבו קודם את הלוג לבד, ואז הכפילו במספר שלפניו.';
+    else t=p.t==='add'?`${eqs(`${numTxt(p.u)}·${numTxt(p.v)} = ${numTxt(p.u*p.v)}`)}. עכשיו: ${p.b} בחזקת כמה זה ${numTxt(p.u*p.v)}?`:p.t==='sub'?`${eqs(`${numTxt(p.u)} / ${numTxt(p.v)} = ${numTxt(p.u/p.v)}`)}. עכשיו: ${p.b} בחזקת כמה זה ${numTxt(p.u/p.v)}?`:`${eqs(`${lb(p.b)} ${numTxt(p.v)} = ${numTxt(LOG(p.b,p.v))}`)}. עכשיו הכפילו ב-${cH(p.u)}.`;
+  }else{
+    if(p.hint===1) t=`הופכים לחזקה: אם ${eqs(`${lb(p.b)} <i>A</i> = ${p.n}`)}, אז ${eqs(`<i>A</i> = ${p.b}<sup>${p.n}</sup>`)}.`;
+    else t=`${eqs(`${p.inner} = ${Math.pow(p.b,p.n)}`)}. עכשיו זו משוואה רגילה. בודדו את x.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} אחר כך נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>
