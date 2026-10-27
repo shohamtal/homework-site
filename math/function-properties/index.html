@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פונקציות ותכונותיהן · כיתה י · מירי</title>
+<meta name="description" content="תחום הגדרה, נקודות חיתוך, תחומי עלייה וירידה, חיובית ושלילית. איך קוראים את כל זה מהגרף ומהנוסחה. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/function-properties/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פונקציות ותכונותיהן · כיתה י · מירי">
+<meta property="og:description" content="תחום הגדרה, נקודות חיתוך, תחומי עלייה וירידה, חיובית ושלילית. איך קוראים את כל זה מהגרף ומהנוסחה. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/function-properties/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"פונקציות","item":"https://shohamtal.github.io/homework-site/math/grade-10/#functions-10"},{"@type":"ListItem","position":5,"name":"פונקציות ותכונותיהן","item":"https://shohamtal.github.io/homework-site/math/function-properties/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים תחום הגדרה של פונקציה?","acceptedAnswer":{"@type":"Answer","text":"מתחילים מ\"כל x\" ומוציאים את מה שאסור. אם יש x במכנה, מוציאים את ה-x שמאפס את המכנה. אם יש שורש, דורשים שמה שבתוך השורש יהיה גדול או שווה ל-0. למשל ב-y = √(x + 4) התחום הוא x ≥ −4. תרגלו למטה."}},{"@type":"Question","name":"מה ההבדל בין תחום עלייה לתחום חיוביות?","acceptedAnswer":{"@type":"Answer","text":"תחום עלייה הוא איפה הגרף עולה כשזזים ימינה. תחום חיוביות הוא איפה הגרף נמצא מעל ציר x. שניהם נכתבים בעזרת x, אבל הם עונים על שאלות שונות. ראו את שניהם במעבדה."}},{"@type":"Question","name":"איך מוצאים נקודת מינימום או מקסימום של פרבולה?","acceptedAnswer":{"@type":"Answer","text":"הקודקוד של הפרבולה הוא נקודת הקיצון שלה. מוצאים את ה-x בנוסחה x = −b ÷ (2a) ומציבים כדי למצוא את ה-y. אם a חיובי זה מינימום, ואם a שלילי זה מקסימום. עוד על זה בפונקציה ריבועית."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"פונקציות ותכונותיהן","description":"תחום הגדרה, נקודות חיתוך, תחומי עלייה וירידה, חיובית ושלילית. איך קוראים את כל זה מהגרף ומהנוסחה. הסבר, מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/math/function-properties/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"פונקציות","teaches":"פונקציות ותכונותיהן","keywords":"תחום הגדרה, עלייה וירידה, חיוביות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .up{stroke:var(--ok); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .down{stroke:var(--err); stroke-width:3.4; fill:none; stroke-linecap:round}
+  .g .band{stroke-width:7; stroke-opacity:.4; stroke-linecap:butt}
+  .g .band.ok{stroke:var(--ok)} .g .band.err{stroke:var(--err)} .g .band.dom{stroke:var(--blue)}
+  .g .hole{fill:var(--card); stroke:var(--ink); stroke-width:1.6}
+  .g .cur{fill:var(--hl); stroke:var(--ink); stroke-width:1.4}
+  .g .drop{stroke:var(--ink); stroke-width:1.2; stroke-dasharray:3 3}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button[aria-pressed="true"], .choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .props{margin:0; padding:0; list-style:none; display:grid; gap:4px}
+  .props li.on{font-weight:800}
+  .choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+  .choices button{font-size:1rem}
+  .key{display:inline-block; width:1.4em; height:.45em; border-radius:3px; vertical-align:middle}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="function-properties">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#functions-10">פונקציות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">פונקציות ותכונותיהן</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · פונקציות</div>
+  <h1>פונקציות ותכונותיהן <span class="slogan">קוראים גרף כמו מפה</span></h1>
+  <p class="lead">כל גרף מספר סיפור. איפה הוא מתחיל, איפה הוא חוצה את הצירים, מתי הוא עולה ומתי הוא יורד, ומתי הוא מעל ציר x.
+  בכיתה י (4 ו-5 יח״ל) לומדים לזהות את כל התכונות האלה גם מהגרף וגם מהנוסחה. זה הבסיס לכל חקירת פונקציה שתבוא אחר כך.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שש שאלות על כל פונקציה</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>איפה היא קיימת ואיפה היא פוגשת את הצירים</h3>
+      <p><strong>תחום הגדרה:</strong> כל ה-x שמותר להציב. אסור לחלק ב-0, ואסור שורש של מספר שלילי.</p>
+      <p><strong>חיתוך עם ציר y:</strong> מציבים <span class="eq"><i>x</i> = 0</span>. <strong>חיתוך עם ציר x</strong> (נקודות האפס): פותרים <span class="eq"><i>f</i>(<i>x</i>) = 0</span>.</p>
+      <p><strong>חיובית ושלילית:</strong> איפה הגרף מעל ציר x, ואיפה מתחתיו.</p>
+    </div>
+    <div class="mini">
+      <h3>לאן היא הולכת</h3>
+      <p><strong>עלייה:</strong> הולכים ימינה על ציר x, והגרף עולה. <strong>ירידה:</strong> הולכים ימינה, והגרף יורד.</p>
+      <p><strong>נקודת קיצון:</strong> המקום שבו עלייה הופכת לירידה (מקסימום) או ירידה הופכת לעלייה (מינימום).</p>
+      <svg class="g" id="introG" viewBox="0 0 240 240" role="img" aria-label="פרבולה צבועה: ירוק במקום שהיא עולה ואדום במקום שהיא יורדת"></svg>
+    </div>
+  </div>
+  <div class="callout"><strong>שימו לב:</strong> "ימינה" על ציר x הוא הכיוון שבו המספרים גדלים. גם באתר בעברית, הגרף נקרא <strong>משמאל לימין</strong>, מ-x קטן ל-x גדול.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: צובעים תכונה</h2></div>
+  <p class="text">בחרו פונקציה ומה לצבוע. אחר כך הזיזו את המחוון והזיזו את הנקודה הצהובה על הגרף. תיבת ההסבר אומרת לכם מה קורה בנקודה.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <div class="seg" id="labMode" role="group" aria-label="מה לצבוע">
+        <button data-m="mono" aria-pressed="true">עלייה וירידה</button>
+        <button data-m="sign" aria-pressed="false">חיובית ושלילית</button>
+        <button data-m="dom" aria-pressed="false">תחום הגדרה</button>
+      </div>
+      <label class="slider" for="xRange"><span>הנקודה הצהובה, <i>x</i> =</span><span class="eq" id="xVal"></span></label>
+      <input type="range" id="xRange" class="hl" min="-5" max="5" step="0.25" value="2">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="labFns"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>תחומי עלייה כותבים לפי x, לא לפי y.</strong> הפרבולה <span class="eq"><i>y</i> = <i>x</i>² − 2<i>x</i> − 3</span> עולה ב-<span class="eq"><i>x</i> &gt; 1</span>. מי שכותב <span class="eq"><i>y</i> &gt; −4</span> כתב משהו אחר לגמרי.</div></li>
+    <li><div><strong>"חיובית" זה לא "עולה".</strong> פונקציה יכולה להיות מעל הציר ולרדת, או מתחת לציר ולעלות. אלה שתי שאלות נפרדות.</div></li>
+    <li><div><strong>נקודת קיצון היא נקודה.</strong> כותבים את שני השיעורים, למשל <span class="eq">(1, −4)</span>. ה-y לבד הוא <strong>ערך</strong> המינימום, וה-x לבד הוא <strong>איפה</strong> הוא קורה.</div></li>
+    <li><div><strong>שוכחים את תחום ההגדרה.</strong> ב-<span class="eq"><i>y</i> = 2 ÷ <i>x</i></span> אי אפשר להציב 0. לכן הפונקציה יורדת ב-<span class="eq"><i>x</i> &lt; 0</span> ו<strong>גם</strong> ב-<span class="eq"><i>x</i> &gt; 0</span>, אבל אלה שני תחומים נפרדים.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> מצאתם תחום חיוביות? בחרו x אחד מתוכו והציבו. הערך חייב לצאת גדול מ-0.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: כל התכונות של פונקציה אחת</h2></div>
+  <p class="text">נחקור את <span class="eq"><i>f</i>(<i>x</i>) = −<i>x</i>² + 2<i>x</i> + 3</span>. לחצו "הצעד הבא".</p>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: תכונה אחת בכל פעם</h2></div>
+  <p class="text">כל פעם תופיע פונקציה ושאלה על תכונה אחת. הגרף מופיע רק כשמבקשים רמז שני, אז נסו קודם מהנוסחה.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="choices" id="prChoices"></div>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים תחום הגדרה של פונקציה?</h3>
+    <p>מתחילים מ"כל x" ומוציאים את מה שאסור. אם יש x במכנה, מוציאים את ה-x שמאפס את המכנה. אם יש שורש, דורשים שמה שבתוך השורש יהיה גדול או שווה ל-0. למשל ב-<span class="eq"><i>y</i> = √(<i>x</i> + 4)</span> התחום הוא <span class="eq"><i>x</i> ≥ −4</span>. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>מה ההבדל בין תחום עלייה לתחום חיוביות?</h3>
+    <p>תחום עלייה הוא איפה הגרף <strong>עולה</strong> כשזזים ימינה. תחום חיוביות הוא איפה הגרף נמצא <strong>מעל</strong> ציר x. שניהם נכתבים בעזרת x, אבל הם עונים על שאלות שונות. <a href="#lab">ראו את שניהם במעבדה</a>.</p>
+    <h3>איך מוצאים נקודת מינימום או מקסימום של פרבולה?</h3>
+    <p>הקודקוד של הפרבולה הוא נקודת הקיצון שלה. מוצאים את ה-x בנוסחה <span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span> ומציבים כדי למצוא את ה-y. אם a חיובי זה מינימום, ואם a שלילי זה מקסימום. עוד על זה ב<a href="../parabola/">פונקציה ריבועית</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/parabola/">פונקציה ריבועית: הפרבולה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/quadratic-inequalities/"><small>→ הנושא הקודם</small>אי-שוויון ריבועי</a><a class="next" href="../../math/function-transformations/"><small>הנושא הבא ←</small>הזזה ומתיחה של גרפים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`;
+const r2=v=>Math.round(v*100)/100, nt=v=>numTxt(r2(v));
+const I=Infinity;
+let pid=0;
+
+/* preset functions. ints are drawn on the x axis: pos/neg/dom = [[lo,hi,loIn,hiIn]] */
+const FNS=[
+  {id:'lin',lbl:'y = 2x − 2',h:`<i>y</i> = 2${X} − 2`,f:x=>2*x-2,dom:()=>true,
+   p:{dom:'כל x',y:'(0, −2)',zero:eqs(`${X} = 1`),ext:'אין. ישר לא מתהפך.',up:'כל x (השיפוע חיובי)',down:'אין',pos:eqs(`${X} &gt; 1`),neg:eqs(`${X} &lt; 1`)}},
+  {id:'par',lbl:'y = x² − 2x − 3',h:`<i>y</i> = ${X}² − 2${X} − 3`,f:x=>x*x-2*x-3,dom:()=>true,
+   p:{dom:'כל x',y:'(0, −3)',zero:`${eqs(`${X} = −1`)} ו-${eqs(`${X} = 3`)}`,ext:`מינימום ב-${eqs('(1, −4)')}`,up:eqs(`${X} &gt; 1`),down:eqs(`${X} &lt; 1`),pos:`${eqs(`${X} &lt; −1`)} או ${eqs(`${X} &gt; 3`)}`,neg:eqs(`−1 &lt; ${X} &lt; 3`)}},
+  {id:'pard',lbl:'y = −x² + 4',h:`<i>y</i> = −${X}² + 4`,f:x=>-x*x+4,dom:()=>true,
+   p:{dom:'כל x',y:'(0, 4)',zero:`${eqs(`${X} = −2`)} ו-${eqs(`${X} = 2`)}`,ext:`מקסימום ב-${eqs('(0, 4)')}`,up:eqs(`${X} &lt; 0`),down:eqs(`${X} &gt; 0`),pos:eqs(`−2 &lt; ${X} &lt; 2`),neg:`${eqs(`${X} &lt; −2`)} או ${eqs(`${X} &gt; 2`)}`}},
+  {id:'root',lbl:'y = √(x + 4) − 1',h:`<i>y</i> = √(${X} + 4) − 1`,f:x=>Math.sqrt(x+4)-1,dom:x=>x>=-4-1e-9,start:-4,
+   p:{dom:eqs(`${X} ≥ −4`),y:'(0, 1)',zero:eqs(`${X} = −3`),ext:`מינימום בקצה התחום, ${eqs('(−4, −1)')}`,up:eqs(`${X} &gt; −4`)+', בכל התחום',down:'אין',pos:eqs(`${X} &gt; −3`),neg:eqs(`−4 ≤ ${X} &lt; −3`)}},
+  {id:'hyp',lbl:'y = 2 ÷ x',h:`<i>y</i> = 2 ÷ ${X}`,f:x=>2/x,dom:x=>Math.abs(x)>1e-9,hole:0,
+   p:{dom:eqs(`${X} ≠ 0`),y:'אין, כי אסור להציב 0',zero:'אין. 2 חלקי מספר אף פעם לא יוצא 0.',ext:'אין',up:'אין',down:`${eqs(`${X} &lt; 0`)} וגם ${eqs(`${X} &gt; 0`)}, בנפרד`,pos:eqs(`${X} &gt; 0`),neg:eqs(`${X} &lt; 0`)}},
+  {id:'cub',lbl:'y = (x³ − 12x) ÷ 8',h:`<i>y</i> = (${X}³ − 12${X}) ÷ 8`,f:x=>(x*x*x-12*x)/8,dom:()=>true,
+   p:{dom:'כל x',y:'(0, 0)',zero:`${eqs(`${X} = 0`)} ו-${eqs(`${X} ≈ ±3.46`)}`,ext:`מקסימום ב-${eqs('(−2, 2)')}, מינימום ב-${eqs('(2, −2)')}`,up:`${eqs(`${X} &lt; −2`)} או ${eqs(`${X} &gt; 2`)}`,down:eqs(`−2 &lt; ${X} &lt; 2`),pos:`${eqs(`−3.46 &lt; ${X} &lt; 0`)} או ${eqs(`${X} &gt; 3.46`)}`,neg:`${eqs(`${X} &lt; −3.46`)} או ${eqs(`0 &lt; ${X} &lt; 3.46`)}`}}
+];
+
+/* draw a function. mode: mono (green up / red down), sign (green above / red below), dom (blue band), plain */
+function plotF(svg,F,opt={}){
+  const id='fc'+(++pid), mode=opt.mode||'plain', clampY=v=>Math.max(-30,Math.min(30,v));
+  const cat=x=>{
+    if(mode==='mono'){ const d=F.f(x+0.01)-F.f(x-0.01); return Math.abs(d)<1e-6?'ln':d>0?'up':'down'; }
+    if(mode==='sign'){ const v=F.f(x); return Math.abs(v)<1e-9?'ln':v>0?'up':'down'; }
+    return 'ln';
+  };
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  if(mode==='sign'||mode==='dom'){
+    const step=0.02; let cur=null, from=-6;
+    const band=(c,a,b)=>{ if(c) h+=`<line class="band ${c}" x1="${sx(a)}" y1="${sy(0)}" x2="${sx(b)}" y2="${sy(0)}"/>`; };
+    for(let x=-6;x<=6.001;x+=step){
+      let c=null;
+      if(F.dom(x)){ if(mode==='dom') c='dom'; else { const v=F.f(x); c=v>1e-9?'ok':v<-1e-9?'err':null; } }
+      if(c!==cur){ band(cur,from,x); cur=c; from=x; }
+    }
+    band(cur,from,6);
+  }
+  if(opt.curve!==false){
+    let d='', last=null, prevOk=false;
+    for(let x=-6;x<=6.001;x+=0.02){
+      const xx=F.start!==undefined&&x<F.start&&x+0.02>F.start?F.start:x;
+      if(!F.dom(xx)){ prevOk=false; continue; }
+      const y=F.f(xx), c=cat(xx), P=sx(xx).toFixed(1)+' '+sy(clampY(y)).toFixed(1);
+      if(!prevOk||c!==last||Math.abs(y)>30){ if(d) h+=`<path class="${last}" d="${d}"/>`; d='M'+P; }
+      else d+='L'+P;
+      last=c; prevOk=Math.abs(y)<=30;
+    }
+    if(d) h+=`<path class="${last}" d="${d}"/>`;
+  }
+  h+='</g>';
+  if(F.start!==undefined&&opt.curve!==false) h+=`<circle class="pt" cx="${sx(F.start)}" cy="${sy(F.f(F.start))}" r="3.5"/>`;
+  if(F.hole!==undefined&&mode==='dom') h+=`<circle class="hole" cx="${sx(F.hole)}" cy="${sy(0)}" r="4"/>`;
+  (opt.points||[]).forEach(p=>{ if(Math.abs(p.x)<=5.5&&Math.abs(p.y)<=5.5){ h+=`<circle class="${p.cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`; if(p.label) h+=`<text class="ptlbl" x="${sx(p.x)+6}" y="${sy(p.y)-6}">${p.label}</text>`; } });
+  if(opt.cur!==undefined){
+    const x=opt.cur;
+    if(F.dom(x)){ const y=F.f(x); if(Math.abs(y)<=5.6){ h+=`<line class="drop" x1="${sx(x)}" y1="${sy(0)}" x2="${sx(x)}" y2="${sy(y)}"/><circle class="cur" cx="${sx(x)}" cy="${sy(y)}" r="5"/>`; } }
+    else h+=`<circle class="hole" cx="${sx(x)}" cy="${sy(0)}" r="5"/>`;
+  }
+  draw(svg,null,0,{extra:h});
+}
+
+/* intro */
+plotF($('introG'),FNS[1],{mode:'mono',points:[{x:1,y:-4,cls:'dot'}]});
+
+/* lab */
+let F=FNS[1], mode='mono';
+const xR=$('xRange');
+$('labFns').innerHTML=FNS.map((g,i)=>`<button data-i="${i}" dir="ltr">${g.lbl}</button>`).join('');
+$('labFns').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ F=FNS[+b.dataset.i]; lab(); }));
+$('labMode').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ mode=b.dataset.m; $('labMode').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); lab(); }));
+xR.addEventListener('input',lab);
+function lab(){
+  const x=+xR.value;
+  $('xVal').textContent=numTxt(x);
+  $('labEq').innerHTML=eqs(F.h);
+  plotF($('labG'),F,{mode,cur:x});
+  const P=F.p;
+  const rows=[['dom','תחום הגדרה',P.dom],['y','חיתוך עם ציר y',P.y],['zero','חיתוך עם ציר x',P.zero],['ext','נקודות קיצון',P.ext],['up','עלייה',P.up],['down','ירידה',P.down],['pos','חיובית',P.pos],['neg','שלילית',P.neg]];
+  const on={mono:['up','down','ext'],sign:['pos','neg','zero'],dom:['dom']}[mode];
+  let pt;
+  if(!F.dom(x)) pt=`ב-${eqs(`${X} = ${numTxt(x)}`)} הפונקציה <strong>לא מוגדרת</strong>. ${F.id==='hyp'?'אסור לחלק ב-0.':'יש שורש של מספר שלילי.'} לכן אין שם נקודה על הגרף.`;
+  else{
+    const y=F.f(x), d=F.f(x+0.01)-F.f(x-0.01);
+    pt=`ב-${eqs(`${X} = ${numTxt(x)}`)} הערך הוא ${eqs(`<i>y</i> ${isFinite(y)&&Math.abs(y-r2(y))<1e-9?'=':'≈'} ${nt(y)}`)}. `;
+    pt+=Math.abs(y)<1e-9?'זו <strong>נקודת אפס</strong>, הגרף על ציר x. ':y>0?'הגרף <strong>מעל</strong> ציר x (חיובית). ':'הגרף <strong>מתחת</strong> לציר x (שלילית). ';
+    pt+=Math.abs(d)<1e-4?'כאן הגרף לא עולה ולא יורד: זו נקודת קיצון.':d>0?'וזזים ימינה? הגרף <strong>עולה</strong>.':'וזזים ימינה? הגרף <strong>יורד</strong>.';
+  }
+  const key=mode==='mono'?'<div><span class="key" style="background:var(--ok)"></span> עולה · <span class="key" style="background:var(--err)"></span> יורד</div>':mode==='sign'?'<div><span class="key" style="background:var(--ok)"></span> חיובית (מעל הציר) · <span class="key" style="background:var(--err)"></span> שלילית</div>':'<div><span class="key" style="background:var(--blue)"></span> ה-x שמותר להציב</div>';
+  $('labExplain').innerHTML=`<div>${pt}</div>${key}<ul class="props">${rows.map(([k,n,v])=>`<li class="${on.includes(k)?'on':''}">${n}: ${v}</li>`).join('')}</ul>`;
+}
+lab();
+
+/* worked example: f(x) = −x² + 2x + 3 */
+const EXF={f:x=>-x*x+2*x+3,dom:()=>true};
+const EXS=[
+  [{mode:'plain'},`<strong>צעד 1, תחום הגדרה:</strong> אין מכנה ואין שורש, אז מותר להציב כל מספר. התחום: <strong>כל x</strong>.`],
+  [{points:[{x:0,y:3,cls:'dot',label:'(0, 3)'}]},`<strong>צעד 2, חיתוך עם ציר y:</strong> מציבים ${eqs(`${X} = 0`)} ומקבלים ${eqs('<i>y</i> = 3')}. הנקודה ${eqs('(0, 3)')}.`],
+  [{points:[{x:-1,y:0,cls:'pt'},{x:3,y:0,cls:'pt'}]},`<strong>צעד 3, חיתוך עם ציר x:</strong> פותרים ${eqs(`−${X}² + 2${X} + 3 = 0`)}. בנוסחת השורשים: ${eqs(`${X} = −1`)} ו-${eqs(`${X} = 3`)}.`],
+  [{points:[{x:1,y:4,cls:'dot',label:'(1, 4)'}]},`<strong>צעד 4, קיצון:</strong> ${eqs(`${X} = −2 ÷ (−2) = 1`)}, ובהצבה ${eqs('<i>y</i> = 4')}. a שלילי, אז ${eqs('(1, 4)')} היא נקודת <strong>מקסימום</strong>.`],
+  [{mode:'mono',points:[{x:1,y:4,cls:'dot'}]},`<strong>צעד 5, עלייה וירידה:</strong> עד הקודקוד הגרף עולה, ואחריו יורד. עולה ב-${eqs(`${X} &lt; 1`)}, יורד ב-${eqs(`${X} &gt; 1`)}.`],
+  [{mode:'sign'},`<strong>צעד 6, חיובית ושלילית:</strong> בין נקודות האפס הגרף מעל הציר. חיובית ב-${eqs(`−1 &lt; ${X} &lt; 3`)}, שלילית ב-${eqs(`${X} &lt; −1`)} או ${eqs(`${X} &gt; 3`)}. סיימנו!`]
+];
+let exI=0;
+function ex(){
+  const [opt,txt]=EXS[exI];
+  plotF($('exG'),EXF,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+function polyHTML(a,b,c){
+  const parts=[];
+  parts.push({neg:false,h:`${a===1?'':a===-1?MINUS:numTxt(a)}${X}²`});
+  if(b) parts.push({neg:b<0,h:`${Math.abs(b)===1?'':numTxt(Math.abs(b))}${X}`});
+  if(c) parts.push({neg:c<0,h:numTxt(Math.abs(c))});
+  return '<i>y</i> = '+parts.map((p,i)=>i===0?p.h:` ${p.neg?MINUS:'+'} ${p.h}`).join('');
+}
+const iv={gt:v=>eqs(`${X} &gt; ${numTxt(v)}`),lt:v=>eqs(`${X} &lt; ${numTxt(v)}`),ge:v=>eqs(`${X} ≥ ${numTxt(v)}`),le:v=>eqs(`${X} ≤ ${numTxt(v)}`),
+  in:(p,q)=>eqs(`${numTxt(p)} &lt; ${X} &lt; ${numTxt(q)}`),out:(p,q)=>`${eqs(`${X} &lt; ${numTxt(p)}`)} או ${eqs(`${X} &gt; ${numTxt(q)}`)}`};
+let pr=null, sel=null, streak=0, solved=0;
+function newPr(){
+  const kind=pick(['up','down','ext','pos','pos','dom']);
+  let q;
+  if(kind==='dom'){
+    let p; do{ p=Math.floor(Math.random()*9)-4; }while(p===0);
+    const k=pick([-2,-1,1,2]);
+    const Fp={f:x=>Math.sqrt(x-p)+k,dom:x=>x>=p-1e-9,start:p};
+    q={kind,F:Fp,eq:`<i>y</i> = √(${X} ${p<0?'+':MINUS} ${Math.abs(p)}) ${k<0?MINUS:'+'} ${Math.abs(k)}`,
+      text:'מה תחום ההגדרה של הפונקציה?',
+      ch:[{h:iv.ge(p),r:'ok'},{h:iv.ge(-p),r:'sign'},{h:iv.gt(p),r:'strict'},{h:iv.le(p),r:'flip'}],
+      sol:`בתוך השורש צריך ${eqs(`${X} ${p<0?'+':MINUS} ${Math.abs(p)} ≥ 0`)}, ולכן ${iv.ge(p)}.`,
+      hint1:'אסור שורש של מספר שלילי. מה שבתוך השורש חייב להיות גדול או שווה ל-0.',
+      hint2:`פתרו את אי-השוויון ${eqs(`${X} ${p<0?'+':MINUS} ${Math.abs(p)} ≥ 0`)}. ציירנו את הגרף: איפה הוא מתחיל?`};
+  }else{
+    const a=pick([1,1,-1]), h=Math.floor(Math.random()*7)-3;
+    let k, m=null;
+    if(kind==='pos'){ m=pick([1,2,3]); k=-a*m*m; } else k=Math.floor(Math.random()*9)-4;
+    const b=-2*a*h, c=a*h*h+k, Fp={f:x=>a*x*x+b*x+c,dom:()=>true};
+    q={kind,F:Fp,a,h,k,m,eq:polyHTML(a,b,c)};
+    const upRight=a>0;
+    if(kind==='up'||kind==='down'){
+      const wantRight=(kind==='up')===upRight;
+      const right=wantRight?iv.gt(h):iv.lt(h), other=wantRight?iv.lt(h):iv.gt(h);
+      q.text=kind==='up'?'באיזה תחום הפונקציה עולה?':'באיזה תחום הפונקציה יורדת?';
+      q.ch=[{h:right,r:'ok'},{h:other,r:'dir'}];
+      if(h!==0) q.ch.push({h:wantRight?iv.gt(-h):iv.lt(-h),r:'sign'});
+      if(k!==h&&k!==-h) q.ch.push({h:wantRight?iv.gt(k):iv.lt(k),r:'yval'});
+      q.sol=`הקודקוד ב-${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}, והפרבולה פתוחה ${upRight?'למעלה':'למטה'}. לכן היא ${upRight?'יורדת עד הקודקוד ועולה אחריו':'עולה עד הקודקוד ויורדת אחריו'}: ${right}.`;
+    }else if(kind==='pos'){
+      const p=h-m, qq=h+m, right=upRight?iv.out(p,qq):iv.in(p,qq);
+      q.text='באיזה תחום הפונקציה חיובית?';
+      q.ch=[{h:right,r:'ok'},{h:upRight?iv.in(p,qq):iv.out(p,qq),r:'dir'},{h:iv.gt(qq),r:'half'}];
+      if(h!==0) q.ch.push({h:upRight?iv.out(-qq,-p):iv.in(-qq,-p),r:'sign'});
+      q.sol=`נקודות האפס הן ${eqs(`${X} = ${numTxt(p)}`)} ו-${eqs(`${X} = ${numTxt(qq)}`)}. הפרבולה פתוחה ${upRight?'למעלה, אז היא מעל הציר מחוץ להן':'למטה, אז היא מעל הציר בין שתיהן'}: ${right}.`;
+    }else{
+      q.text=`מה נקודת ה${upRight?'מינימום':'מקסימום'} של הפונקציה?`;
+      q.inputs=true;
+      q.sol=`${eqs(`${X} = ${numTxt(-b)} ÷ ${numTxt(2*a)} = ${numTxt(h)}`)}, ובהצבה ${eqs(`<i>y</i> = ${numTxt(k)}`)}. הנקודה ${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}.`;
+    }
+    q.hint1=`מצאו קודם את הקודקוד: ${eqs(`${X} = −<i>b</i> ÷ (2<i>a</i>)`)}, ואז הציבו. ובדקו את הסימן של a: ${eqs(`<i>a</i> = ${numTxt(a)}`)}.`;
+    q.hint2=`הקודקוד ב-${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}, והפרבולה פתוחה ${upRight?'למעלה':'למטה'}. ציירנו לכם את הגרף.`;
+  }
+  if(q.ch){ const seen=new Set(); q.ch=shuffle(q.ch.filter(x=>!seen.has(x.h)&&seen.add(x.h))); }
+  pr={...q,tries:0,hint:0}; sel=null;
+  $('prEq').innerHTML=eqs(q.eq);
+  $('prQ').textContent=q.text;
+  $('prChoices').innerHTML=q.ch?q.ch.map((c,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${c.h}</button>`).join(''):'';
+  $('prChoices').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{ sel=+btn.dataset.i; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===btn)); }));
+  $('prInputs').innerHTML=q.inputs?'<label for="prX">x =<input id="prX" inputmode="text" autocomplete="off"></label><label for="prY">y =<input id="prY" inputmode="text" autocomplete="off"></label>':'';
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  plotF($('prG'),q.F,{curve:false});
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const MSG={
+  dir:()=>pr.kind==='pos'?'הצד הפוך. בדקו לאן הפרבולה פתוחה: למעלה היא מעל הציר <strong>מחוץ</strong> לנקודות האפס, למטה היא מעל הציר <strong>בין</strong> נקודות האפס.':'הכיוון הפוך. פרבולה פתוחה למעלה יורדת עד הקודקוד ואחר כך עולה. פתוחה למטה עושה את ההפך.',
+  sign:()=>pr.kind==='dom'?'הסימן הפוך. כדי ש-x פחות מספר יהיה לפחות 0, x צריך להיות <strong>גדול</strong> מהמספר. בדקו בהצבה.':'יצא לכם סימן הפוך ב-x של הקודקוד. זכרו את המינוס בנוסחה: <span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span>.',
+  yval:()=>'השתמשתם ב-y של הקודקוד. תחומי עלייה וירידה כותבים לפי <strong>x</strong>, כלומר לפי ה-x של הקודקוד.',
+  half:()=>'זה רק חלק מהתשובה. בדקו מה קורה גם בצד השני של הפרבולה.',
+  strict:()=>'כמעט. גם 0 מותר בתוך שורש, כי √0 = 0. לכן צריך "גדול <strong>או שווה</strong>".',
+  flip:()=>'הכיוון הפוך. נסו להציב מספר גדול מאוד: האם השורש מוגדר? ומספר קטן מאוד?'
+};
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(pr.inputs){
+    const x=parseNum($('prX').value), y=parseNum($('prY').value);
+    if(isNaN(x)||isNaN(y)){ fb.innerHTML='<div class="fb err">מלאו מספר גם ב-x וגם ב-y.</div>'; return; }
+    if(eqv(x,pr.h)&&eqv(y,pr.k)){ streak++; solved++; score(); plotF($('prG'),pr.F,{mode:'mono',points:[{x:pr.h,y:pr.k,cls:'dot'}]}); fb.innerHTML=`<div class="fb ok">נכון! ${eqs(`(${numTxt(pr.h)}, ${numTxt(pr.k)})`)} היא נקודת ה${pr.a>0?'מינימום':'מקסימום'}.</div>`; return; }
+    let m;
+    if(eqv(x,pr.k)&&eqv(y,pr.h)&&pr.h!==pr.k) m='החלפתם בין x ל-y. הראשון בסוגריים הוא x.';
+    else if(!eqv(x,pr.h)&&eqv(x,-pr.h)) m='הסימן של x הפוך. זכרו את המינוס בנוסחה <span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span>.';
+    else if(eqv(x,pr.h)) m='ה-x נכון! עכשיו הציבו אותו בפונקציה וחשבו את y בזהירות.';
+    else m='ה-x לא נכון. השתמשו בנוסחה <span class="eq"><i>x</i> = −<i>b</i> ÷ (2<i>a</i>)</span>.';
+    streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${m}</div>`;
+  }else{
+    if(sel===null){ fb.innerHTML='<div class="fb err">בחרו קודם אחת מהתשובות.</div>'; return; }
+    const c=pr.ch[sel];
+    if(c.r==='ok'){ streak++; solved++; score(); plotF($('prG'),pr.F,{mode:pr.kind==='dom'?'dom':pr.kind==='pos'?'sign':'mono'}); fb.innerHTML=`<div class="fb ok">נכון! ${c.h}. הגרף הצבוע מראה בדיוק את זה.</div>`; return; }
+    streak=0; pr.tries++; fb.innerHTML=`<div class="fb err">${MSG[c.r]()}</div>`;
+  }
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  if(pr.hint===2) plotF($('prG'),pr.F,{});
+  $('prFb').innerHTML=`<div class="fb hint">${pr.hint===1?pr.hint1:pr.hint2}</div>`;
+};
+$('prShow').onclick=()=>{
+  plotF($('prG'),pr.F,{mode:pr.kind==='dom'?'dom':pr.kind==='pos'?'sign':'mono'});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${pr.sol} אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

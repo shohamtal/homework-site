@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הנדסה אנליטית: מעגל · כיתה י · מירי</title>
+<meta name="description" content="משוואת המעגל (x − a)² + (y − b)² = R², מציאת מרכז ורדיוס, ובדיקה אם נקודה על המעגל, בתוכו או מחוצה לו. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/analytic-circle/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הנדסה אנליטית: מעגל · כיתה י · מירי">
+<meta property="og:description" content="משוואת המעגל (x − a)² + (y − b)² = R², מציאת מרכז ורדיוס, ובדיקה אם נקודה על המעגל, בתוכו או מחוצה לו. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/analytic-circle/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"הנדסה אנליטית","item":"https://shohamtal.github.io/homework-site/math/grade-10/#analytic-10"},{"@type":"ListItem","position":5,"name":"הנדסה אנליטית: מעגל","item":"https://shohamtal.github.io/homework-site/math/analytic-circle/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מוצאים מרכז ורדיוס ממשוואת מעגל?","acceptedAnswer":{"@type":"Answer","text":"כשהמשוואה בצורה (x − a)² + (y − b)² = R², המרכז הוא (a, b) עם סימן הפוך למה שכתוב בסוגריים, והרדיוס הוא השורש של המספר בצד ימין. אם המשוואה פתוחה, קודם משלימים לריבוע."}},{"@type":"Question","name":"איך בודקים אם נקודה נמצאת על המעגל?","acceptedAnswer":{"@type":"Answer","text":"מציבים את הנקודה במשוואה. אם שני הצדדים שווים, היא על המעגל. אם צד שמאל קטן מ-R², היא בתוכו, ואם גדול, היא מחוצה לו. נסו במעבדה עם הנקודה P."}},{"@type":"Question","name":"איך מוצאים משוואת משיק למעגל בנקודה?","acceptedAnswer":{"@type":"Answer","text":"המשיק מאונך לרדיוס בנקודת ההשקה. מחשבים את שיפוע הרדיוס מהמרכז לנקודה, הופכים אותו ומחליפים סימן, ומציבים את הנקודה כדי למצוא את b. על משיקים בגאומטריה יש עמוד משלו: משיקים ומרובע חסום."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הנדסה אנליטית: מעגל","description":"משוואת המעגל (x − a)² + (y − b)² = R², מציאת מרכז ורדיוס, ובדיקה אם נקודה על המעגל, בתוכו או מחוצה לו. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/analytic-circle/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"הנדסה אנליטית","teaches":"הנדסה אנליטית: מעגל","keywords":"משוואת מעגל, מרכז ורדיוס, משיק","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc{display:flex; flex-direction:column; gap:4px}
+.calc .ln-row{display:flex; flex-wrap:wrap; gap:6px; align-items:baseline}
+.g .circ{fill:var(--line); fill-opacity:.08; stroke:var(--line); stroke-width:2.6}
+.g .rad{stroke:var(--ink); stroke-width:1.6; stroke-dasharray:4 3}
+.g .dist{stroke:var(--blue); stroke-width:2; stroke-linecap:round}
+.g .ctr{fill:var(--hl); stroke:var(--ink); stroke-width:1.2}
+.g .tan{stroke:var(--blue); stroke-width:2.2; stroke-dasharray:6 4}
+.choices{display:flex; flex-wrap:wrap; gap:8px}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.status{font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="analytic-circle">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#analytic-10">הנדסה אנליטית</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הנדסה אנליטית: מעגל</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · הנדסה אנליטית</div>
+  <h1>הנדסה אנליטית: מעגל <span class="slogan">מרכז, רדיוס ומשוואה אחת</span></h1>
+  <p class="lead">מעגל הוא כל הנקודות שנמצאות באותו מרחק מהמרכז. מהרעיון הפשוט הזה יוצאת משוואת המעגל. כאן תלמדו לקרוא ממנה את המרכז והרדיוס, לכתוב אותה בעצמכם, ולבדוק איפה נקודה נמצאת. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מאיפה באה המשוואה</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מרחק קבוע מהמרכז</h3>
+      <p>המרכז הוא <span class="eq">(<i>a</i>, <i>b</i>)</span> והרדיוס הוא <span class="eq"><i>R</i></span>. נקודה <span class="eq">(<i>x</i>, <i>y</i>)</span> על המעגל רחוקה מהמרכז בדיוק <span class="eq"><i>R</i></span>.</p>
+      <p>כותבים את נוסחת המרחק, מעלים בריבוע כדי להיפטר מהשורש, ומקבלים:</p>
+      <div class="big-eq" style="font-size:1.5rem"><span class="eq">(<i>x</i> − <i>a</i>)² + (<i>y</i> − <i>b</i>)² = <i>R</i>²</span></div>
+    </div>
+    <div class="mini">
+      <h3>קוראים את המשוואה</h3>
+      <p><span class="eq">(<i>x</i> − 2)² + (<i>y</i> + 1)² = 9</span></p>
+      <p>המרכז הוא <span class="eq">(2, −1)</span>. שימו לב: <span class="eq">+1</span> בסוגריים אומר <span class="eq"><i>b</i> = −1</span>.</p>
+      <p>הרדיוס הוא <span class="eq">√9 = 3</span>, ולא 9.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בתוך, על או מחוץ?</strong> מציבים את הנקודה בצד שמאל של המשוואה. יצא פחות מ-<span class="eq"><i>R</i>²</span>? הנקודה בתוך המעגל. בדיוק <span class="eq"><i>R</i>²</span>? עליו. יותר? מחוצה לו.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בנו מעגל</h2></div>
+  <p class="text">קבעו את המרכז והרדיוס, וראו איך המשוואה משתנה. אחר כך הזיזו את הנקודה הכחולה P ובדקו אם היא בתוך המעגל, עליו או מחוצה לו.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: מעגל ונקודה"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" style="font-size:1.4rem"></div>
+      <label class="slider" for="la"><span>a: ה-x של המרכז</span><span class="eq" id="lav"></span></label>
+      <input type="range" class="hl" id="la" min="-3" max="3" step="1" value="1">
+      <label class="slider" for="lb"><span>b: ה-y של המרכז</span><span class="eq" id="lbv"></span></label>
+      <input type="range" class="hl" id="lb" min="-3" max="3" step="1" value="-1">
+      <label class="slider" for="lr"><span>R: הרדיוס</span><span class="eq" id="lrv"></span></label>
+      <input type="range" id="lr" min="1" max="5" step="1" value="3">
+      <label class="slider" for="lx"><span>P: ה-x שלה</span><span class="eq" id="lxv"></span></label>
+      <input type="range" class="blue" id="lx" min="-5" max="5" step="1" value="4">
+      <label class="slider" for="ly"><span>P: ה-y שלה</span><span class="eq" id="lyv"></span></label>
+      <input type="range" class="blue" id="ly" min="-5" max="5" step="1" value="-1">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="0,0,5,3,4" dir="ltr">x² + y² = 25</button>
+          <button data-p="2,1,2,2,3" dir="ltr">(x − 2)² + (y − 1)² = 4</button>
+          <button data-p="-2,1,3,0,0" dir="ltr">(x + 2)² + (y − 1)² = 9</button>
+          <button data-p="1,-2,4,5,2" dir="ltr">(x − 1)² + (y + 2)² = 16</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כש-P על המעגל, הקו הכחול מהמרכז ל-P שווה בדיוק לרדיוס.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הסימן של המרכז</h3>
+      <p>במשוואה כתוב <strong>מינוס</strong> a. לכן <span class="eq">(<i>x</i> + 4)²</span> אומר <span class="eq"><i>a</i> = −4</span>.</p>
+      <p>טיפ: המרכז הוא המספר שמאפס את הסוגריים. <span class="eq"><i>x</i> + 4 = 0</span> כש-<span class="eq"><i>x</i> = −4</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>R או R²?</h3>
+      <p>בצד ימין כתוב <span class="eq"><i>R</i>²</span>. אם כתוב 16, הרדיוס הוא 4.</p>
+      <p>ולהפך: רדיוס 5 נותן 25 בצד ימין, לא 5.</p>
+    </div>
+    <div class="mini">
+      <h3>משוואה פתוחה</h3>
+      <p><span class="eq"><i>x</i>² + <i>y</i>² − 6<i>x</i> + 2<i>y</i> = 6</span> היא גם מעגל, רק בלי סוגריים.</p>
+      <p>משלימים לריבוע: מוסיפים 9 ו-1 <strong>לשני האגפים</strong>. מי שמוסיף רק לצד אחד מקבל רדיוס לא נכון.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: השלמה לריבוע</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: מעגל לפי קוטר</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">כל פעם תופיע שאלה מסוג אחר: למצוא מרכז ורדיוס, למצוא <span class="eq"><i>R</i>²</span>, או לבדוק איפה נקודה נמצאת.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div id="prQ"></div>
+      <div class="inputs" id="prIn"></div>
+      <div class="choices" id="prCh"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מוצאים מרכז ורדיוס ממשוואת מעגל?</h3>
+    <p>כשהמשוואה בצורה <span class="eq">(<i>x</i> − <i>a</i>)² + (<i>y</i> − <i>b</i>)² = <i>R</i>²</span>, המרכז הוא <span class="eq">(<i>a</i>, <i>b</i>)</span> עם סימן הפוך למה שכתוב בסוגריים, והרדיוס הוא השורש של המספר בצד ימין. אם המשוואה פתוחה, קודם משלימים לריבוע.</p>
+    <h3>איך בודקים אם נקודה נמצאת על המעגל?</h3>
+    <p>מציבים את הנקודה במשוואה. אם שני הצדדים שווים, היא על המעגל. אם צד שמאל קטן מ-<span class="eq"><i>R</i>²</span>, היא בתוכו, ואם גדול, היא מחוצה לו. <a href="#lab">נסו במעבדה</a> עם הנקודה P.</p>
+    <h3>איך מוצאים משוואת משיק למעגל בנקודה?</h3>
+    <p>המשיק מאונך לרדיוס בנקודת ההשקה. מחשבים את שיפוע הרדיוס מהמרכז לנקודה, הופכים אותו ומחליפים סימן, ומציבים את הנקודה כדי למצוא את b. על משיקים בגאומטריה יש עמוד משלו: <a href="../circle-tangents/">משיקים ומרובע חסום</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/analytic-line/">הנדסה אנליטית: ישר</a> · <a href="../../math/circle-angles/">מעגל: זווית מרכזית, זווית היקפית ומיתרים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/analytic-line/"><small>→ הנושא הקודם</small>הנדסה אנליטית: ישר</a><a class="next" href="../../math/unit-circle/"><small>הנושא הבא ←</small>מעגל היחידה: סינוס וקוסינוס של כל זווית</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,sx,sy,S,numTxt,signedFracHTML,eqv,parseNum,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const P=(x,y)=>E(`(${numTxt(x)}, ${numTxt(y)})`);
+const paren=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+
+/* "(x − 2)²", "(y + 1)²" or "x²" */
+const sq=(v,c)=>c===0?`<i>${v}</i>²`:`(<i>${v}</i> ${c>0?'−':'+'} ${Math.abs(c)})²`;
+const stdEq=(a,b,R2)=>`${sq('x',a)} + ${sq('y',b)} = ${R2}`;
+/* x² + y² + Dx + Ey + F = 0 split into short pieces */
+function openEq(a,b,R2){
+  const D=-2*a, Ee=-2*b, F=a*a+b*b-R2;
+  const t=(c,v)=>c===0?'':` ${c>0?'+':'−'} ${Math.abs(c)===1?'':Math.abs(c)}<i>${v}</i>`;
+  const f=F===0?'':` ${F>0?'+':'−'} ${Math.abs(F)}`;
+  return [E(`<i>x</i>² + <i>y</i>²${t(D,'x')}${t(Ee,'y')}`),E(`${f} = 0`.trim())];
+}
+const rootTxt=n=>{ const r=Math.round(Math.sqrt(n)); return r*r===n?String(r):`√${n}`; };
+
+/* circle(s) + optional segments + points */
+function plot(svg,o){
+  let ex='';
+  (o.circles||[]).forEach(c=>{ ex+=`<circle class="circ" cx="${sx(c.a)}" cy="${sy(c.b)}" r="${S*Math.sqrt(c.R2)}"/>`; });
+  (o.segs||[]).forEach(s=>{ ex+=`<line class="${s.cls||'rad'}" x1="${sx(s.x1)}" y1="${sy(s.y1)}" x2="${sx(s.x2)}" y2="${sy(s.y2)}"/>`; });
+  (o.pts||[]).forEach(p=>{ ex+=`<circle class="${p.cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`+(p.label?`<text class="ptlbl" x="${sx(p.x)+6}" y="${sy(p.y)-6}">${p.label}</text>`:''); });
+  draw(svg,null,0,{extra:ex});
+}
+function where(a,b,R2,x,y){ const v=(x-a)**2+(y-b)**2; return v<R2?'in':v===R2?'on':'out'; }
+const WHERE={in:'בתוך המעגל',on:'על המעגל',out:'מחוץ למעגל'};
+
+/* ---------- lab ---------- */
+const L=['la','lb','lr','lx','ly'].map($);
+function lab(){
+  const [a,b,R,x,y]=L.map(r=>+r.value), R2=R*R;
+  L.forEach(r=>$(r.id+'v').textContent=numTxt(+r.value));
+  const w=where(a,b,R2,x,y), v=(x-a)**2+(y-b)**2;
+  plot($('labG'),{circles:[{a,b,R2}],segs:[{x1:a,y1:b,x2:a+R,y2:b,cls:'rad'},{x1:a,y1:b,x2:x,y2:y,cls:'dist'}],
+    pts:[{x:a,y:b,cls:'ctr',label:'O'},{x,y,cls:'pt',label:'P'}]});
+  $('labEq').innerHTML=E(stdEq(a,b,R2));
+  const [o1,o2]=openEq(a,b,R2);
+  let t=`<div class="ln-row"><strong>מרכז:</strong> ${P(a,b)} · <strong>רדיוס:</strong> ${E(`R = ${R}`)}, ${E(`R² = ${R2}`)}</div>`;
+  t+=`<div class="ln-row"><strong>פתוחה:</strong> ${o1} ${o2}</div>`;
+  t+=`<div class="ln-row"><strong>הצבה של P:</strong> ${E(`(${numTxt(x)} − ${paren(a)})² + (${numTxt(y)} − ${paren(b)})²`)} ${E(`= ${(x-a)**2} + ${(y-b)**2} = ${v}`)}</div>`;
+  t+=`<div class="status">${E(`${v} ${v<R2?'<':v===R2?'=':'>'} ${R2}`)}, ולכן P ${WHERE[w]}.</div>`;
+  $('labTxt').innerHTML=t;
+}
+L.forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{b.dataset.p.split(',').forEach((v,i)=>L[i].value=v); lab();}));
+lab();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:[
+    [g=>plot(g,{}),`מה המרכז והרדיוס של המעגל ${E('<i>x</i>² + <i>y</i>² − 4<i>x</i> + 2<i>y</i> = 4')}?`],
+    [g=>plot(g,{}),`<strong>מסדרים:</strong> שמים יחד את האיברים של x ואת האיברים של y: ${E('(<i>x</i>² − 4<i>x</i>) + (<i>y</i>² + 2<i>y</i>) = 4')}.`],
+    [g=>plot(g,{}),`<strong>משלימים לריבוע:</strong> חצי מ-4 הוא 2, ו-${E('2² = 4')}. חצי מ-2 הוא 1, ו-${E('1² = 1')}. מוסיפים 4 ו-1 <strong>לשני האגפים</strong>.`],
+    [g=>plot(g,{}),`${E('(<i>x</i>² − 4<i>x</i> + 4) + (<i>y</i>² + 2<i>y</i> + 1)')} ${E('= 4 + 4 + 1')}.`],
+    [g=>plot(g,{pts:[{x:2,y:-1,cls:'ctr',label:'O'}]}),`<strong>כותבים בסוגריים:</strong> ${E('(<i>x</i> − 2)² + (<i>y</i> + 1)² = 9')}. המרכז ${P(2,-1)}.`],
+    [g=>plot(g,{circles:[{a:2,b:-1,R2:9}],segs:[{x1:2,y1:-1,x2:5,y2:-1}],pts:[{x:2,y:-1,cls:'ctr',label:'O'}]}),`<strong>רדיוס:</strong> ${E('R = √9 = 3')}. זה המעגל.`]
+  ],
+  B:[
+    [g=>plot(g,{pts:[{x:-1,y:2,label:'A'},{x:3,y:-2,label:'B'}]}),`AB הוא קוטר של מעגל, עם A ${P(-1,2)} ו-B ${P(3,-2)}. מה משוואת המעגל?`],
+    [g=>plot(g,{segs:[{x1:-1,y1:2,x2:3,y2:-2,cls:'dist'}],pts:[{x:-1,y:2,label:'A'},{x:3,y:-2,label:'B'},{x:1,y:0,cls:'ctr',label:'O'}]}),`<strong>המרכז הוא אמצע הקוטר:</strong> ${E('((−1 + 3) : 2, (2 + (−2)) : 2)')} ${E('= (1, 0)')}.`],
+    [g=>plot(g,{segs:[{x1:1,y1:0,x2:-1,y2:2,cls:'rad'}],pts:[{x:-1,y:2,label:'A'},{x:3,y:-2,label:'B'},{x:1,y:0,cls:'ctr',label:'O'}]}),`<strong>הרדיוס הוא המרחק מהמרכז ל-A:</strong> ${E('R² = (−1 − 1)² + (2 − 0)²')} ${E('= 4 + 4 = 8')}.`],
+    [g=>plot(g,{circles:[{a:1,b:0,R2:8}],pts:[{x:-1,y:2,label:'A'},{x:3,y:-2,label:'B'},{x:1,y:0,cls:'ctr',label:'O'}]}),`<strong>המשוואה:</strong> ${E('(<i>x</i> − 1)² + <i>y</i>² = 8')}. אין צורך להוציא שורש: בצד ימין כותבים ${E('R²')}.`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const [fn,txt]=EX[exKey][exI];
+  fn($('exG')); $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+let pr={}, streak=0, solved=0, pick3=null;
+function inputs(list){
+  $('prIn').innerHTML=list.map(([id,lab])=>`<label for="${id}">${lab}<input id="${id}" inputmode="text" autocomplete="off"></label>`).join('');
+  $('prIn').querySelectorAll('input').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+}
+function choices(on){
+  pick3=null;
+  $('prCh').innerHTML=on?Object.entries(WHERE).map(([k,t])=>`<button data-k="${k}" aria-pressed="false">${t}</button>`).join(''):'';
+  $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{pick3=b.dataset.k; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));});
+}
+function newPr(){
+  let kind; do{ kind=pick(['read','open','r2','where']); } while(kind===pr.kind&&Math.random()<.6);
+  const a=ri(-3,3), b=ri(-3,3), R=ri(1,4), R2=R*R, o={kind,a,b,R,R2,tries:0,hint:0};
+  inputs([]); choices(false);
+  if(kind==='read'){ o.q=`מה המרכז והרדיוס של המעגל ${E(stdEq(a,b,R2))}?`; inputs([['pa','a ='],['pb','b ='],['pr','R =']]); plot($('prG'),{}); }
+  if(kind==='open'){ const [o1,o2]=openEq(a,b,R2); o.q=`מה המרכז והרדיוס של המעגל ${o1} ${o2}?`; inputs([['pa','a ='],['pb','b ='],['pr','R =']]); plot($('prG'),{}); }
+  if(kind==='r2'){ /* a point on the circle with whole coordinates */
+    const offs=[[R,0],[0,R],[-R,0],[0,-R]].concat(R===5?[[3,4],[4,-3]]:[]), [dx,dy]=pick(offs.concat([[1,2],[2,2],[1,3],[3,1]]));
+    o.px=a+dx; o.py=b+dy; o.R2=dx*dx+dy*dy;
+    o.q=`מעגל שהמרכז שלו ${P(a,b)} עובר בנקודה ${P(o.px,o.py)}. מה המספר בצד ימין של המשוואה (${E('R²')})?`; inputs([['pr','R² =']]);
+    plot($('prG'),{pts:[{x:a,y:b,cls:'ctr',label:'O'},{x:o.px,y:o.py,label:'P'}]}); }
+  if(kind==='where'){
+    let x,y; const want=pick(['in','on','out']);
+    for(let i=0;i<200;i++){ x=ri(-5,5); y=ri(-5,5); if(where(a,b,R2,x,y)===want) break; }
+    if(where(a,b,R2,x,y)!==want){ x=a+R; y=b; }
+    o.px=x; o.py=y; o.ans=where(a,b,R2,x,y);
+    o.q=`איפה נמצאת הנקודה ${P(x,y)} ביחס למעגל ${E(stdEq(a,b,R2))}?`; choices(true); plot($('prG'),{pts:[{x,y,label:'P'}]}); }
+  pr=o; $('prQ').innerHTML=o.q; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr;
+  if(p.kind==='read') return `המרכז הוא המספר שמאפס כל סוגריים: ${P(p.a,p.b)}. הרדיוס ${E(`√${p.R2} = ${p.R}`)}.`;
+  if(p.kind==='open') return `משלימים לריבוע ומקבלים ${E(stdEq(p.a,p.b,p.R2))}. המרכז ${P(p.a,p.b)}, הרדיוס ${E(`√${p.R2} = ${p.R}`)}.`;
+  if(p.kind==='r2') return `${E(`R² = (${numTxt(p.px)} − ${paren(p.a)})² + (${numTxt(p.py)} − ${paren(p.b)})²`)} ${E(`= ${p.R2}`)}. המשוואה: ${E(stdEq(p.a,p.b,p.R2))}.`;
+  const v=(p.px-p.a)**2+(p.py-p.b)**2;
+  return `מציבים: ${E(`(${numTxt(p.px)} − ${paren(p.a)})² + (${numTxt(p.py)} − ${paren(p.b)})² = ${v}`)}, ומשווים ל-${E(p.R2)}. ${E(`${v} ${v<p.R2?'<':v===p.R2?'=':'>'} ${p.R2}`)}, אז הנקודה ${WHERE[p.ans]}.`;
+}
+function solvedDraw(){
+  const p=pr, pts=[{x:p.a,y:p.b,cls:'ctr',label:'O'}];
+  if(p.px!==undefined) pts.push({x:p.px,y:p.py,label:'P'});
+  plot($('prG'),{circles:[{a:p.a,b:p.b,R2:p.R2}],segs:p.px!==undefined?[{x1:p.a,y1:p.b,x2:p.px,y2:p.py,cls:'dist'}]:[{x1:p.a,y1:p.b,x2:p.a+Math.sqrt(p.R2),y2:p.b}],pts});
+}
+$('prCheck').onclick=()=>{
+  const p=pr, fb=$('prFb'); let ok=false, msg='';
+  if(p.kind==='read'||p.kind==='open'){
+    const a=parseNum($('pa').value), b=parseNum($('pb').value), r=parseNum($('pr').value);
+    if([a,b,r].some(isNaN)){ fb.innerHTML='<div class="fb err">כתבו מספר בכל אחת משלוש התיבות.</div>'; return; }
+    ok=eqv(a,p.a)&&eqv(b,p.b)&&eqv(r,p.R);
+    if(!ok){
+      if((p.a||p.b)&&eqv(a,-p.a)&&eqv(b,-p.b)) msg='הסימנים של המרכז הפוכים. המרכז הוא המספר שמאפס את הסוגריים: ב-(x + 2) זה −2.';
+      else if(eqv(a,p.a)&&eqv(b,p.b)&&eqv(r,p.R2)) msg='המרכז נכון. אבל בצד ימין כתוב R², אז הרדיוס הוא השורש שלו.';
+      else if(eqv(a,p.a)&&eqv(b,p.b)) msg='המרכז נכון. בדקו שוב את הרדיוס.';
+      else if(p.kind==='open'&&eqv(a,-2*p.a)&&eqv(b,-2*p.b)) msg='לקחתם את המקדמים של x ו-y כמו שהם. צריך חצי מהם, עם סימן הפוך.';
+      else msg=p.kind==='open'?'עוד לא. השלימו לריבוע: חצי מהמקדם של x, בריבוע. אותו דבר עם y. ואל תשכחו להוסיף גם לצד ימין.':'עוד לא. מה מאפס כל אחד מהסוגריים? ומה השורש של המספר בצד ימין?';
+    }
+  }
+  if(p.kind==='r2'){
+    const v=parseNum($('pr').value); if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    ok=eqv(v,p.R2);
+    if(!ok){ const dx=p.px-p.a, dy=p.py-p.b;
+      if(eqv(v,Math.sqrt(p.R2))) msg='זה הרדיוס R. בצד ימין של המשוואה כותבים R², בלי שורש.';
+      else if(eqv(v,Math.abs(dx)+Math.abs(dy))) msg='חיברתם את ההפרשים. מעלים כל הפרש בריבוע ורק אז מחברים.';
+      else if(eqv(v,(p.px+p.a)**2+(p.py+p.b)**2)) msg='חיברתם את השיעורים במקום לחסר. R² הוא ריבוע המרחק, אז מחסרים.';
+      else msg='עוד לא. חשבו את ההפרש ב-x ואת ההפרש ב-y בין המרכז לנקודה, העלו בריבוע וחברו.'; }
+  }
+  if(p.kind==='where'){
+    if(!pick3){ fb.innerHTML='<div class="fb err">קודם בחרו תשובה.</div>'; return; }
+    ok=pick3===p.ans;
+    if(!ok) msg='לא הפעם. הציבו את הנקודה בצד שמאל של המשוואה, וחשבו. אחר כך השוו ל-R².';
+  }
+  if(ok){ streak++; solved++; streakTxt(); solvedDraw(); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2); let h;
+  if(p.kind==='read') h=p.hint===1?'איזה x מאפס את הסוגריים הראשונים? איזה y מאפס את השניים?':`המרכז ${P(p.a,p.b)}. עכשיו מה השורש של ${E(p.R2)}?`;
+  else if(p.kind==='open') h=p.hint===1?`קחו חצי מהמקדם של x (${E(numTxt(-2*p.a))}) ושנו סימן. זה a. אותו דבר עם y.`
+    :`אחרי ההשלמה: ${E(stdEq(p.a,p.b,'?'))}. בצד ימין: המספר שהעברתם, ועוד ${E(`${p.a*p.a} + ${p.b*p.b}`)} שהוספתם לשני האגפים.`;
+  else if(p.kind==='r2') h=p.hint===1?'R² הוא ריבוע המרחק בין המרכז לנקודה. כמה ההפרש ב-x וכמה ב-y?':`${E(`R² = (${numTxt(p.px-p.a)})² + (${numTxt(p.py-p.b)})²`)}.`;
+  else { const v=(p.px-p.a)**2+(p.py-p.b)**2; h=p.hint===1?`הציבו את הנקודה: ${E(`(${numTxt(p.px)} − ${paren(p.a)})² + (${numTxt(p.py)} − ${paren(p.b)})²`)}.`:`יצא ${E(v)}. האם זה קטן, שווה או גדול מ-${E(p.R2)}?`; }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ solvedDraw(); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>סדרה חשבונית: איבר כללי וסכום · כיתה י · מירי</title>
+<meta name="description" content="איך מחשבים את הסכום של n האיברים הראשונים בסדרה חשבונית, ולמה הטריק של גאוס עובד. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/arithmetic-series/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="סדרה חשבונית: איבר כללי וסכום · כיתה י · מירי">
+<meta property="og:description" content="איך מחשבים את הסכום של n האיברים הראשונים בסדרה חשבונית, ולמה הטריק של גאוס עובד. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/arithmetic-series/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"סדרות","item":"https://shohamtal.github.io/homework-site/math/grade-10/#sequences-10"},{"@type":"ListItem","position":5,"name":"סדרה חשבונית: איבר כללי וסכום","item":"https://shohamtal.github.io/homework-site/math/arithmetic-series/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים סכום של סדרה חשבונית?","acceptedAnswer":{"@type":"Answer","text":"משתמשים בנוסחה Sn = n(a1 + an) ÷ 2: מספר האיברים, כפול הראשון ועוד האחרון, חלקי 2. אם לא יודעים את האיבר האחרון, משתמשים ב-Sn = n[2a1 + (n − 1)d] ÷ 2. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"מה הטריק של גאוס?","acceptedAnswer":{"@type":"Answer","text":"מחברים את המספרים בזוגות מהקצוות: הראשון עם האחרון, השני עם הלפני אחרון. כל זוג נותן אותו סכום. ב-1 + 2 + … + 100 יש 50 זוגות של 101, ולכן הסכום 5050. ראו את זה במעבדה."}},{"@type":"Question","name":"איך יודעים כמה איברים יש בסדרה?","acceptedAnswer":{"@type":"Answer","text":"מציבים את האיבר האחרון באיבר הכללי ופותרים: a1 + (n − 1)d = an. בקיצור: n = (an − a1) ÷ d + 1. לא לשכוח את ה-1 בסוף."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סדרה חשבונית: איבר כללי וסכום","description":"איך מחשבים את הסכום של n האיברים הראשונים בסדרה חשבונית, ולמה הטריק של גאוס עובד. הסבר, מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/math/arithmetic-series/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"סדרות","teaches":"סדרה חשבונית: איבר כללי וסכום","keywords":"סכום סדרה, נוסחת הסכום, הפרש","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.seq{display:flex; flex-wrap:wrap; gap:4px 2px; direction:ltr; justify-content:center; align-items:center}
+.seq .chip{font-family:var(--f-math); font-size:1.15rem; min-width:2.2em; text-align:center}
+.seq .chip.on{background:var(--hl); font-weight:600}
+.seq .plus{font-family:var(--f-math); color:var(--muted); padding:0 2px}
+.seq .dots{font-family:var(--f-math); color:var(--muted); padding:0 4px}
+svg.stairs{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.stairs .bar{fill:var(--blue); stroke:var(--ink); stroke-width:1}
+.stairs .flip{fill:var(--line); stroke:var(--ink); stroke-width:1; opacity:.85}
+.stairs .frame{fill:none; stroke:var(--ink); stroke-width:2; stroke-dasharray:5 4}
+.stairs .lbl{fill:var(--ink); font:700 10px var(--f-math); text-anchor:middle}
+.stairs .lbl.w{fill:var(--card)}
+.stairs .cap{fill:var(--muted); font:10px var(--f-body); text-anchor:middle}
+.legend{display:flex; flex-wrap:wrap; gap:6px 14px; justify-content:center; font-size:.9rem}
+.sw{display:inline-block; width:12px; height:12px; border:1px solid var(--ink); vertical-align:-1px; margin-inline-end:4px}
+.sw.b{background:var(--blue)} .sw.p{background:var(--line)}
+.ctrl .chk{display:flex; gap:8px; align-items:center; font-weight:700}
+.ctrl .chk input{width:20px; height:20px; accent-color:var(--line)}
+.calc .eq{white-space:normal}
+.big-s{font-family:var(--f-math); font-size:1.5rem; text-align:center; direction:ltr}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="arithmetic-series">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#sequences-10">סדרות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">סדרה חשבונית: איבר כללי וסכום</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · סדרות</div>
+  <h1>סדרה חשבונית: איבר כללי וסכום <span class="slogan">הטריק של גאוס</span></h1>
+  <p class="lead">כמה זה 1 + 2 + 3 + … + 100? אפשר לחבר מאה מספרים, ואפשר לגלות טריק קצר שעובד בכל סדרה חשבונית. בעמוד הזה לומדים את נוסחת הסכום, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>מחברים מהקצוות</h2></div>
+  <p class="text">את האיבר הכללי כבר הכרתם ב<a href="../sequences/">סדרות של כיתה ט</a>: <span class="eq"><i>a</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub> + (<i>n</i> − 1)<i>d</i></span>. עכשיו רוצים את הסכום של כל האיברים.</p>
+  <div class="seq"><span class="chip">1</span><span class="plus">+</span><span class="chip">2</span><span class="plus">+</span><span class="chip">3</span><span class="plus">+</span><span class="dots">…</span><span class="plus">+</span><span class="chip">98</span><span class="plus">+</span><span class="chip">99</span><span class="plus">+</span><span class="chip">100</span></div>
+  <div class="two">
+    <div class="mini">
+      <h3>זוגות שווים</h3>
+      <p>הראשון ועוד האחרון: <span class="eq">1 + 100 = 101</span>.</p>
+      <p>השני ועוד הלפני אחרון: <span class="eq">2 + 99 = 101</span>.</p>
+      <p>כל זוג כזה נותן אותו סכום, כי צד אחד עולה בדיוק כמו שהצד השני יורד.</p>
+    </div>
+    <div class="mini">
+      <h3>כמה זוגות?</h3>
+      <p>יש 100 מספרים, אז יש 50 זוגות.</p>
+      <p><span class="eq">50 · 101 = 5050</span></p>
+      <p>זה כל הסכום, בלי לחבר מאה מספרים.</p>
+    </div>
+    <div class="mini">
+      <h3>הנוסחה</h3>
+      <p><span class="eq"><i>S</i><sub><i>n</i></sub> = <i>n</i>(<i>a</i><sub>1</sub> + <i>a</i><sub><i>n</i></sub>) ÷ 2</span></p>
+      <p>מספר האיברים, כפול (ראשון ועוד אחרון), חלקי 2.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>נוסחה שנייה, בלי האיבר האחרון:</strong> מציבים <span class="eq"><i>a</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub> + (<i>n</i> − 1)<i>d</i></span> ומקבלים <span class="eq"><i>S</i><sub><i>n</i></sub> = <i>n</i>[2<i>a</i><sub>1</sub> + (<i>n</i> − 1)<i>d</i>] ÷ 2</span>. משתמשים בה כשיודעים את <i>a</i><sub>1</sub>, את <i>d</i> ואת <i>n</i>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מגדל ועוד מגדל הפוך</h2></div>
+  <p class="text">כל איבר הוא עמודה כחולה. הדליקו את "המגדל ההפוך" ותראו: אותן עמודות, הפוכות, ממלאות בדיוק מלבן. כל עמודה במלבן גבוהה <span class="eq"><i>a</i><sub>1</sub> + <i>a</i><sub><i>n</i></sub></span>, ויש <i>n</i> עמודות. הסכום הוא חצי מהמלבן.</p>
+  <div class="lab">
+    <div>
+      <div class="seq" id="labSeq"></div>
+      <svg class="stairs" id="labG" viewBox="0 0 360 260" role="img" aria-label="עמודות של איברי הסדרה ומגדל הפוך שיוצרים מלבן"></svg>
+      <div class="legend"><span><span class="sw b"></span>הסדרה</span><span><span class="sw p"></span>אותה סדרה, הפוכה</span></div>
+    </div>
+    <div class="ctrl">
+      <div class="big-s" id="labS"></div>
+      <div><label class="slider" for="a1"><span>האיבר הראשון <span class="eq"><i>a</i><sub>1</sub></span></span><span class="eq" id="a1v"></span></label>
+        <input type="range" id="a1" min="1" max="10" step="1" value="2"></div>
+      <div><label class="slider" for="d"><span>ההפרש <span class="eq"><i>d</i></span></span><span class="eq" id="dv"></span></label>
+        <input type="range" id="d" class="hl" min="0" max="4" step="1" value="3"></div>
+      <div><label class="slider" for="n"><span>מספר האיברים <span class="eq"><i>n</i></span></span><span class="eq" id="nv"></span></label>
+        <input type="range" id="n" class="blue" min="2" max="10" step="1" value="6"></div>
+      <label class="chk"><input type="checkbox" id="flip" checked> המגדל ההפוך</label>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-a="1" data-d="1" data-n="10">1 + 2 + … + 10</button>
+          <button dir="ltr" data-a="1" data-d="2" data-n="8">1 + 3 + 5 + …</button>
+          <button dir="ltr" data-a="2" data-d="2" data-n="7">2 + 4 + 6 + …</button>
+          <button dir="ltr" data-a="5" data-d="0" data-n="6">d = 0</button>
+          <button dir="ltr" data-a="3" data-d="4" data-n="9">3 + 7 + 11 + …</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">גלו משהו: בסדרת האי-זוגיים <span class="eq">1 + 3 + 5 + …</span> הסכום של <i>n</i> איברים הוא תמיד <span class="eq"><i>n</i>²</span>. נסו עם הכפתור השני ושנו את <i>n</i>.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים לחלק ב-2</h3>
+      <p><span class="eq"><i>n</i>(<i>a</i><sub>1</sub> + <i>a</i><sub><i>n</i></sub>)</span> הוא המלבן כולו, כלומר פעמיים הסכום.</p>
+      <p>ב-<span class="eq">1 + 2 + … + 10</span> המלבן הוא <span class="eq">10 · 11 = 110</span>, והסכום <span class="eq">55</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>סופרים לא נכון את n</h3>
+      <p>כמה איברים יש מ-7 עד 99 בקפיצות של 4? לא <span class="eq">92 ÷ 4 = 23</span>.</p>
+      <p>יש 23 <strong>קפיצות</strong>, ולכן <span class="eq">24</span> איברים. תמיד מוסיפים 1.</p>
+    </div>
+    <div class="mini">
+      <h3>מבלבלים בין <i>a</i><sub><i>n</i></sub> ל-<i>S</i><sub><i>n</i></sub></h3>
+      <p><span class="eq"><i>a</i><sub>10</sub></span> הוא <strong>האיבר</strong> העשירי.</p>
+      <p><span class="eq"><i>S</i><sub>10</sub></span> הוא <strong>הסכום</strong> של עשרת האיברים הראשונים. קראו את השאלה פעמיים.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> הסכום חייב לצאת בין <span class="eq"><i>n</i> · <i>a</i><sub>1</sub></span> ל-<span class="eq"><i>n</i> · <i>a</i><sub><i>n</i></sub></span> (כשהסדרה עולה). אם יצא מחוץ לטווח הזה, משהו השתבש.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">חשבו את הסכום:</p>
+  <div class="seq"><span class="chip">5</span><span class="plus">+</span><span class="chip">9</span><span class="plus">+</span><span class="chip">13</span><span class="plus">+</span><span class="dots">…</span><span class="plus">+</span><span class="chip">81</span></div>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">כל פעם תקבלו סדרה חדשה ושאלה אחת. מספר שלילי כותבים עם מינוס, למשל <span class="eq">-40</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="sum" aria-pressed="false">סכום n איברים</button>
+    <button data-t="count" aria-pressed="false">כמה איברים?</button>
+    <button data-t="last" aria-pressed="false">סכום עד איבר נתון</button>
+  </div>
+  <div class="seq" id="prSeq"></div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span id="prLbl">התשובה</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">סדרה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים סכום של סדרה חשבונית?</h3>
+    <p>משתמשים בנוסחה <span class="eq"><i>S</i><sub><i>n</i></sub> = <i>n</i>(<i>a</i><sub>1</sub> + <i>a</i><sub><i>n</i></sub>) ÷ 2</span>: מספר האיברים, כפול הראשון ועוד האחרון, חלקי 2. אם לא יודעים את האיבר האחרון, משתמשים ב-<span class="eq"><i>S</i><sub><i>n</i></sub> = <i>n</i>[2<i>a</i><sub>1</sub> + (<i>n</i> − 1)<i>d</i>] ÷ 2</span>. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>מה הטריק של גאוס?</h3>
+    <p>מחברים את המספרים בזוגות מהקצוות: הראשון עם האחרון, השני עם הלפני אחרון. כל זוג נותן אותו סכום. ב-<span class="eq">1 + 2 + … + 100</span> יש 50 זוגות של 101, ולכן הסכום 5050. <a href="#lab">ראו את זה במעבדה</a>.</p>
+    <h3>איך יודעים כמה איברים יש בסדרה?</h3>
+    <p>מציבים את האיבר האחרון באיבר הכללי ופותרים: <span class="eq"><i>a</i><sub>1</sub> + (<i>n</i> − 1)<i>d</i> = <i>a</i><sub><i>n</i></sub></span>. בקיצור: <span class="eq"><i>n</i> = (<i>a</i><sub><i>n</i></sub> − <i>a</i><sub>1</sub>) ÷ <i>d</i> + 1</span>. לא לשכוח את ה-1 בסוף.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/sequences/">סדרות: איבר כללי וחוקיות</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/trig-equations/"><small>→ הנושא הקודם</small>משוואות טריגונומטריות</a><a class="next" href="../../math/circle-tangents/"><small>הנושא הבא ←</small>מעגל: משיקים, מרובע חסום ומשולש חסום</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const A=k=>`<i>a</i><sub>${k}</sub>`, S=k=>`<i>S</i><sub>${k}</sub>`, N='<i>n</i>';
+const term=(a1,d,n)=>a1+(n-1)*d;
+const sum=(a1,d,n)=>n*(2*a1+(n-1)*d)/2;
+const par=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+function seqHTML(a1,d,n,max){
+  const k=Math.min(n,max);
+  if(n<=max) return Array.from({length:n},(x,i)=>`<span class="chip">${numTxt(term(a1,d,i+1))}</span>`).join('<span class="plus">+</span>');
+  return Array.from({length:3},(x,i)=>`<span class="chip">${numTxt(term(a1,d,i+1))}</span>`).join('<span class="plus">+</span>')+`<span class="plus">+</span><span class="dots">…</span><span class="plus">+</span><span class="chip">${numTxt(term(a1,d,n))}</span>`;
+}
+
+/* ---------- lab ---------- */
+function stairs(svg,a1,d,n,flip){
+  const an=term(a1,d,n), top=a1+an;
+  const W=300, H=210, x0=40, y0=230;
+  const bw=W/n, u=H/Math.max(top,1);
+  let h='';
+  for(let i=1;i<=n;i++){
+    const v=term(a1,d,i), x=x0+(i-1)*bw, hb=v*u;
+    h+=`<rect class="bar" x="${x}" y="${y0-hb}" width="${bw}" height="${hb}"/>`;
+    if(bw>=22) h+=`<text class="lbl w" x="${x+bw/2}" y="${y0-hb/2+4}">${numTxt(v)}</text>`;
+    if(flip){
+      const w=term(a1,d,n+1-i), hf=w*u;
+      h+=`<rect class="flip" x="${x}" y="${y0-hb-hf}" width="${bw}" height="${hf}"/>`;
+      if(bw>=22 && hf>=14) h+=`<text class="lbl w" x="${x+bw/2}" y="${y0-hb-hf/2+4}">${numTxt(w)}</text>`;
+    }
+  }
+  if(flip){
+    h+=`<rect class="frame" x="${x0}" y="${y0-top*u}" width="${W}" height="${top*u}"/>`;
+    h+=`<text class="lbl" x="${x0-16}" y="${y0-top*u/2+4}">${numTxt(top)}</text>`;
+  }
+  h+=`<text class="cap" x="${x0+W/2}" y="${y0+16}">${n} עמודות</text>`;
+  svg.innerHTML=h;
+}
+function lab(){
+  const a1=+$('a1').value, d=+$('d').value, n=+$('n').value, flip=$('flip').checked;
+  $('a1v').textContent=numTxt(a1); $('dv').textContent=numTxt(d); $('nv').textContent=n;
+  const an=term(a1,d,n), s=sum(a1,d,n);
+  $('labSeq').innerHTML=seqHTML(a1,d,n,10);
+  $('labS').innerHTML=`${S(N)} = ${numTxt(s)}`;
+  stairs($('labG'),a1,d,n,flip);
+  let t=`<div><strong>האיבר האחרון:</strong> ${E(`${A(n)} = ${numTxt(a1)} + ${n-1} · ${numTxt(d)} = ${numTxt(an)}`)}.</div>`;
+  if(flip) t+=`<div><strong>המלבן:</strong> ${n} עמודות, כל אחת בגובה ${E(`${numTxt(a1)} + ${numTxt(an)} = ${numTxt(a1+an)}`)}. השטח ${E(`${n} · ${numTxt(a1+an)} = ${numTxt(n*(a1+an))}`)}.</div>`;
+  else t+=`<div>הדליקו את המגדל ההפוך כדי לראות את המלבן.</div>`;
+  t+=`<div><strong>הסכום הוא חצי:</strong> ${E(`${S(n)} = ${n} · ${numTxt(a1+an)} ÷ 2 = ${numTxt(s)}`)}.</div>`;
+  if(a1===1&&d===2) t+=`<div>וזה בדיוק ${E(`${n}² = ${n*n}`)}!</div>`;
+  if(d===0) t+=`<div>כשההפרש 0, כל האיברים שווים, והסכום פשוט ${E(`${n} · ${numTxt(a1)}`)}.</div>`;
+  $('labCalc').innerHTML=t;
+}
+['a1','d','n'].forEach(id=>$(id).addEventListener('input',lab));
+$('flip').addEventListener('change',lab);
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  $('a1').value=b.dataset.a; $('d').value=b.dataset.d; $('n').value=b.dataset.n; lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>ההפרש:</strong> ${E('9 − 5 = 4')}, וגם ${E('13 − 9 = 4')}. אז ${E('<i>d</i> = 4')} ו-${E(`${A(1)} = 5`)}.`,
+  `<strong>כמה איברים?</strong> האיבר האחרון הוא 81. מציבים באיבר הכללי: ${E(`5 + (${N} − 1) · 4 = 81`)}.`,
+  `<strong>פותרים:</strong> ${E(`(${N} − 1) · 4 = 76`)}, ואז ${E(`${N} − 1 = 19`)} ו-${E(`${N} = 20`)}. יש 20 איברים.`,
+  `<strong>נוסחת הסכום:</strong> ${E(`${S(20)} = 20 · (5 + 81) ÷ 2`)}.`,
+  `<strong>מחשבים:</strong> ${E('20 · 86 = 1720')}, וחצי מזה ${E('860')}.`,
+  `<strong>בודקים בדרך השנייה:</strong> ${E(`${S(20)} = 20 · [2 · 5 + 19 · 4] ÷ 2`)} ${E('= 20 · 86 ÷ 2 = 860')}. אותה תשובה.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+let mode='mix', pr=null, solved=0, streak=0;
+function newPr(){
+  const type=mode==='mix'?pick(['sum','count','last']):mode;
+  let d=0; while(d===0) d=rnd(-4,7);
+  const a1=d<0?rnd(20,60):rnd(-6,15);
+  const n=type==='sum'?pick([8,10,12,15,20,25,30]):rnd(9,30);
+  const p={type,a1,d,n,an:term(a1,d,n),tries:0,hint:0};
+  p.ans=type==='count'?n:sum(a1,d,n);
+  pr=p;
+  $('prSeq').innerHTML=type==='sum'
+    ?Array.from({length:4},(x,i)=>`<span class="chip">${numTxt(term(a1,d,i+1))}</span>`).join('<span class="plus">,</span>')+'<span class="dots">…</span>'
+    :seqHTML(a1,d,n,0);
+  $('prQ').innerHTML={sum:`מה הסכום של ${n} האיברים הראשונים? כלומר, כמה זה ${E(S(n))}?`,
+    count:`כמה איברים יש בסדרה הזאת, מהראשון עד ${E(numTxt(p.an))}?`,
+    last:`מה הסכום של כל האיברים, מהראשון עד ${E(numTxt(p.an))}?`}[type];
+  $('prLbl').innerHTML=type==='count'?'<i>n</i> =':'הסכום =';
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {type,a1,d,n,an}=pr;
+  const cnt=`${E(`${numTxt(a1)} + (${N} − 1) · ${par(d)} = ${numTxt(an)}`)}, ולכן ${E(`${N} − 1 = ${n-1}`)} ו-${E(`${N} = ${n}`)}`;
+  const s=`${E(`${S(n)} = ${n} · (${numTxt(a1)} + ${par(an)}) ÷ 2`)} ${E(`= ${numTxt(sum(a1,d,n))}`)}`;
+  if(type==='count') return `ההפרש ${E(numTxt(d))}. ${cnt}.`;
+  if(type==='sum') return `ההפרש ${E(numTxt(d))}, והאיבר ה-${n} הוא ${E(`${numTxt(a1)} + ${n-1} · ${par(d)} = ${numTxt(an)}`)}. ${s}.`;
+  return `ההפרש ${E(numTxt(d))}. ${cnt}. ${s}.`;
+}
+function diagnose(x){
+  const {type,a1,d,n}=pr;
+  if(type==='count'){
+    if(eqv(x,n-1)) return 'ספרתם את הקפיצות. מספר האיברים גדול ב-1 ממספר הקפיצות.';
+    if(eqv(x,n+1)) return 'קרוב! בדקו את החשבון: אחרי שמוצאים n − 1 מוסיפים 1 פעם אחת בלבד.';
+    if(eqv(x,-n)||eqv(x,-(n-1))) return 'יצא שלילי? בדקו את הסימן של ההפרש. בסדרה יורדת גם האיבר האחרון פחות הראשון שלילי, והחלוקה נותנת חיובי.';
+    return 'לא בדיוק. הציבו את האיבר האחרון באיבר הכללי ופתרו משוואה ב-n.';
+  }
+  const s=sum(a1,d,n);
+  if(eqv(x,2*s)) return 'זה המלבן כולו, כלומר פעמיים הסכום. חלקו ב-2.';
+  if(eqv(x,sum(a1,d,n-1))) return `חיברתם רק ${n-1} איברים. בדקו כמה איברים יש.`;
+  if(eqv(x,sum(a1,d,n+1))) return `חיברתם ${n+1} איברים. בדקו כמה איברים יש.`;
+  if(eqv(x,n*(a1+term(a1,d,n-1))/2)||eqv(x,n*(a1+term(a1,d,n+1))/2)) return 'האיבר האחרון שלקחתם לא נכון. חשבו אותו עם (n − 1) קפיצות.';
+  if(eqv(x,term(a1,d,n))) return 'זה האיבר האחרון, לא הסכום. עכשיו הציבו אותו בנוסחת הסכום.';
+  if(eqv(x,n*(a1+d*n)/2)) return 'בנוסחה השנייה כופלים את d ב-(n − 1), לא ב-n.';
+  return 'לא בדיוק. מצאו קודם את מספר האיברים ואת האיבר האחרון, ואז הציבו בנוסחה.';
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim());
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר, למשל 860 או -40.</div>'; return; }
+  if(eqv(x,pr.ans)){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,a1,d,n,an}=pr; let h;
+  if(type==='sum') h=pr.hint===1?`קודם מצאו את ההפרש ואת האיבר ה-${n}.`:`האיבר ה-${n} הוא ${E(numTxt(an))}. הציבו ב-${E(`${S(n)} = ${N}(${A(1)} + ${A(N)}) ÷ 2`)}.`;
+  else if(type==='count') h=pr.hint===1?'מצאו את ההפרש, והציבו את האיבר האחרון באיבר הכללי.':`פתרו ${E(`${numTxt(a1)} + (${N} − 1) · ${par(d)} = ${numTxt(an)}`)}.`;
+  else h=pr.hint===1?'שני שלבים: קודם מוצאים כמה איברים יש, ואז את הסכום.':`יש ${E(`${N} = ${n}`)} איברים. עכשיו ${E(`${S(n)} = ${n} · (${numTxt(a1)} + ${par(an)}) ÷ 2`)}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו סדרה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מעגל היחידה: סינוס וקוסינוס של כל זווית · כיתה י · מירי</title>
+<meta name="description" content="איך מגדירים sin ו-cos לזוויות גדולות מ-90°, באיזה רביע כל אחד חיובי, וזוויות שנותנות אותו סינוס. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/unit-circle/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מעגל היחידה: סינוס וקוסינוס של כל זווית · כיתה י · מירי">
+<meta property="og:description" content="איך מגדירים sin ו-cos לזוויות גדולות מ-90°, באיזה רביע כל אחד חיובי, וזוויות שנותנות אותו סינוס. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/unit-circle/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"טריגונומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-10/#trig-10"},{"@type":"ListItem","position":5,"name":"מעגל היחידה: סינוס וקוסינוס של כל זווית","item":"https://shohamtal.github.io/homework-site/math/unit-circle/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה מעגל היחידה?","acceptedAnswer":{"@type":"Answer","text":"מעגל ברדיוס 1 שמרכזו בראשית הצירים. מסובבים רדיוס בזווית α נגד כיוון השעון, והנקודה שמגיעים אליה היא (cos α, sin α). כך מגדירים סינוס וקוסינוס לכל זווית, גם גדולה מ-90°."}},{"@type":"Question","name":"למה sin של זווית קהה חיובי וה-cos שלילי?","acceptedAnswer":{"@type":"Answer","text":"זווית קהה נמצאת ברביע II, משמאל לציר y ומעל ציר x. הנקודה על המעגל נמצאת למעלה, אז הסינוס (הגובה) חיובי, ושמאלה, אז הקוסינוס שלילי. למשל sin 120° ≈ 0.866 ו-cos 120° = −0.5."}},{"@type":"Question","name":"איך מוצאים זווית קהה כשנותנים את הסינוס?","acceptedAnswer":{"@type":"Answer","text":"לוחצים sin⁻¹ במחשבון ומקבלים זווית חדה α. לזווית 180° − α יש אותו סינוס, והיא הקהה. למשל sin x = 0.6: המחשבון נותן 36.9°, והזווית הקהה היא 143.1°."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מעגל היחידה: סינוס וקוסינוס של כל זווית","description":"איך מגדירים sin ו-cos לזוויות גדולות מ-90°, באיזה רביע כל אחד חיובי, וזוויות שנותנות אותו סינוס. הסבר, מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/math/unit-circle/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"טריגונומטריה","teaches":"מעגל היחידה: סינוס וקוסינוס של כל זווית","keywords":"מעגל היחידה, רביעים, זוויות כלליות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.uc{width:100%; max-width:330px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.uc .ax{stroke:var(--ink); stroke-width:1.4}
+.uc .circ{fill:none; stroke:var(--ink); stroke-width:2}
+.uc .quad{fill:var(--hl); fill-opacity:.35}
+.uc .rad{stroke:var(--ink); stroke-width:2.4; stroke-linecap:round}
+.uc .rad2{stroke:var(--muted); stroke-width:2; stroke-dasharray:5 4}
+.uc .cosl{stroke:var(--blue); stroke-width:5; stroke-linecap:round}
+.uc .sinl{stroke:var(--line); stroke-width:5; stroke-linecap:round}
+.uc .ang{fill:var(--line); fill-opacity:.18; stroke:var(--line); stroke-width:1.4}
+.uc .pt{fill:var(--ink); stroke:var(--card); stroke-width:2}
+.uc .pt2{fill:var(--card); stroke:var(--muted); stroke-width:2}
+.uc .lbl{font:700 12px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.uc .lbl.c{fill:var(--blue)} .uc .lbl.s{fill:var(--line)} .uc .lbl.m{fill:var(--muted)}
+.uc .qn{font:700 13px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--muted)}
+table.signs{border-collapse:collapse; margin-top:6px}
+table.signs td, table.signs th{padding:3px 10px; border-bottom:1px solid var(--soft); text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="unit-circle">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#trig-10">טריגונומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מעגל היחידה: סינוס וקוסינוס של כל זווית</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · טריגונומטריה</div>
+  <h1>מעגל היחידה: סינוס וקוסינוס של כל זווית <span class="slogan">גם מעל 90°</span></h1>
+  <p class="lead">במשולש ישר זווית אין זווית של 150° או של 300°. אז איך מחשבים <span class="eq">sin 150°</span>? בעזרת מעגל היחידה: מעגל ברדיוס 1 שמרכזו בראשית. כל זווית נותנת נקודה על המעגל, ושיעורי הנקודה הם הקוסינוס והסינוס. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>נקודה על המעגל</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>x הוא קוסינוס, y הוא סינוס</h3>
+      <svg class="uc" id="ideaG" viewBox="0 0 300 300" role="img" aria-label="מעגל היחידה עם זווית, נקודה עליו והיטלים על הצירים"></svg>
+      <p>מתחילים בציר x החיובי ומסתובבים נגד כיוון השעון בזווית <span class="eq">α</span>. מגיעים לנקודה P על המעגל.</p>
+      <p>השיעור האופקי של P הוא <span class="eq">cos α</span> (כחול), והשיעור האנכי הוא <span class="eq">sin α</span> (ורוד).</p>
+    </div>
+    <div class="mini">
+      <h3>הסימן תלוי ברביע</h3>
+      <p>ימינה מהראשית x חיובי, שמאלה שלילי. למעלה y חיובי, למטה שלילי. לכן:</p>
+      <table class="signs">
+        <tr><th>רביע</th><th>זוויות</th><th><span class="eq">sin</span></th><th><span class="eq">cos</span></th></tr>
+        <tr><td>I</td><td><span class="eq">0° עד 90°</span></td><td>+</td><td>+</td></tr>
+        <tr><td>II</td><td><span class="eq">90° עד 180°</span></td><td>+</td><td>−</td></tr>
+        <tr><td>III</td><td><span class="eq">180° עד 270°</span></td><td>−</td><td>−</td></tr>
+        <tr><td>IV</td><td><span class="eq">270° עד 360°</span></td><td>−</td><td>+</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="callout">בזווית חדה זה בדיוק מה שלמדתם ב<a href="../trigonometry/">טריגונומטריה של כיתה ט</a>: יש משולש ישר זווית שהיתר שלו 1, ולכן הניצב שמול הזווית הוא <span class="eq">sin α</span> והניצב שליד הוא <span class="eq">cos α</span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מסובבים את הנקודה</h2></div>
+  <p class="text">הזיזו את הזווית מ-0° עד 360°. הרביע שבו נמצאת הנקודה צבוע בצהוב. הנקודה האפורה היא הזווית <span class="eq">180° − α</span>: היא באותו גובה, ולכן יש לה אותו סינוס.</p>
+  <div class="lab">
+    <svg class="uc" id="labG" viewBox="0 0 300 300" role="img" aria-label="מעגל היחידה שאפשר לסובב"></svg>
+    <div class="ctrl">
+      <label class="slider" for="la"><span>הזווית <i>α</i></span><span class="eq" id="lav"></span></label>
+      <input type="range" id="la" min="0" max="360" step="5" value="30">
+      <label class="slider" for="lm"><span>להראות את <span class="eq">180° − α</span></span><input type="checkbox" id="lm" checked></label>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-a="30" dir="ltr">30°</button>
+          <button data-a="150" dir="ltr">150°</button>
+          <button data-a="210" dir="ltr">210°</button>
+          <button data-a="330" dir="ltr">330°</button>
+          <button data-a="90" dir="ltr">90°</button>
+          <button data-a="180" dir="ltr">180°</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: <span class="eq">30°</span>, <span class="eq">150°</span>, <span class="eq">210°</span> ו-<span class="eq">330°</span> נותנות את אותם מספרים, רק עם סימנים שונים. בכולן "הזווית מהציר" היא <span class="eq">30°</span>.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>זווית קהה, סינוס חיובי</h3>
+      <p>ברביע II הנקודה למעלה, ולכן <span class="eq">sin 150° = 0.5</span>, לא <span class="eq">−0.5</span>.</p>
+      <p>רק הקוסינוס שלילי שם: <span class="eq">cos 150° ≈ −0.866</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>המחשבון נותן רק תשובה אחת</h3>
+      <p>אם <span class="eq">sin α = 0.5</span>, המחשבון אומר <span class="eq">30°</span>. אבל גם <span class="eq">150°</span> מתאימה.</p>
+      <p>כשכתוב שהזווית קהה (למשל זווית במשולש), התשובה היא <span class="eq">180° − 30° = 150°</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>הסימן לא נכנס לזווית</h3>
+      <p>קודם מוצאים את הזווית מהציר (חדה), ורק אחר כך מוסיפים סימן לפי הרביע.</p>
+      <p><span class="eq">cos 240°</span>: הזווית מהציר <span class="eq">60°</span>, ורביע III, אז <span class="eq">−cos 60° = −0.5</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקת שפיות:</strong> הנקודה על מעגל ברדיוס 1, ולכן sin ו-cos תמיד בין <span class="eq">−1</span> ל-<span class="eq">1</span>. ובנוסף <span class="eq">sin²α + cos²α = 1</span>, זה פיתגורס על המעגל.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: <span dir="ltr">sin</span> ו-<span dir="ltr">cos</span> של 135°</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: זווית קהה מסינוס</button>
+  </div>
+  <div class="lab">
+    <svg class="uc" id="exG" viewBox="0 0 300 300" role="img" aria-label="מעגל היחידה של הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">אפשר להשתמש במחשבון (במצב מעלות). ערכים מעגלים לשתי ספרות אחרי הנקודה, וזוויות למספר שלם.</p>
+  <div class="lab">
+    <svg class="uc" id="prG" viewBox="0 0 300 300" role="img" aria-label="מעגל היחידה לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs">
+        <label for="prA"><span id="prLbl">התשובה ≈</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה מעגל היחידה?</h3>
+    <p>מעגל ברדיוס 1 שמרכזו בראשית הצירים. מסובבים רדיוס בזווית α נגד כיוון השעון, והנקודה שמגיעים אליה היא <span class="eq">(cos α, sin α)</span>. כך מגדירים סינוס וקוסינוס לכל זווית, גם גדולה מ-90°.</p>
+    <h3>למה sin של זווית קהה חיובי וה-cos שלילי?</h3>
+    <p>זווית קהה נמצאת ברביע II, משמאל לציר y ומעל ציר x. הנקודה על המעגל נמצאת למעלה, אז הסינוס (הגובה) חיובי, ושמאלה, אז הקוסינוס שלילי. למשל <span class="eq">sin 120° ≈ 0.866</span> ו-<span class="eq">cos 120° = −0.5</span>.</p>
+    <h3>איך מוצאים זווית קהה כשנותנים את הסינוס?</h3>
+    <p>לוחצים <span class="eq">sin⁻¹</span> במחשבון ומקבלים זווית חדה α. לזווית <span class="eq">180° − α</span> יש אותו סינוס, והיא הקהה. למשל <span class="eq">sin x = 0.6</span>: המחשבון נותן <span class="eq">36.9°</span>, והזווית הקהה היא <span class="eq">143.1°</span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/trigonometry/">טריגונומטריה: סינוס, קוסינוס וטנגנס</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/analytic-circle/"><small>→ הנושא הקודם</small>הנדסה אנליטית: מעגל</a><a class="next" href="../../math/sine-cosine-law/"><small>הנושא הבא ←</small>משפט הסינוסים ומשפט הקוסינוסים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const D=Math.PI/180;
+const fx=v=>v.toFixed(1);
+const r2=v=>{ const x=Math.round(v*100)/100; return Object.is(x,-0)?0:x; };
+const r1=v=>Math.round(v*10)/10;
+const num=v=>String(r2(v)).replace('-','−');
+const near=(a,b,t)=>Math.abs(a-b)<=t;
+const norm=a=>((a%360)+360)%360;
+const quad=a=>{ a=norm(a); if(a===0||a===90||a===180||a===270) return 0; return a<90?1:a<180?2:a<270?3:4; };
+const QN=['על ציר','I','II','III','IV'];
+const refAng=a=>{ a=norm(a); return a<=90?a:a<=180?180-a:a<=270?a-180:360-a; };
+
+/* unit circle drawing. o.mirror: also draw 180−α; o.proj: projections; o.quad: shade quadrant; o.vals: label values; o.extra: [angles] grey points */
+const CX=150, CY=150, R=105;
+function circle(svg,a,o={}){
+  const P=[CX+R*Math.cos(a*D), CY-R*Math.sin(a*D)];
+  let s='';
+  const q=quad(a);
+  if(o.quad!==false&&q){
+    const st=(q-1)*90;
+    const p1=[CX+R*Math.cos(st*D),CY-R*Math.sin(st*D)], p2=[CX+R*Math.cos((st+90)*D),CY-R*Math.sin((st+90)*D)];
+    s+=`<path class="quad" d="M${CX},${CY} L${fx(p1[0])},${fx(p1[1])} A${R},${R} 0 0 0 ${fx(p2[0])},${fx(p2[1])} Z"/>`;
+  }
+  s+=`<line class="ax" x1="20" y1="${CY}" x2="280" y2="${CY}"/><line class="ax" x1="${CX}" y1="280" x2="${CX}" y2="20"/>`;
+  s+=`<text class="lbl" x="288" y="${CY}">x</text><text class="lbl" x="${CX}" y="12">y</text>`;
+  s+=`<circle class="circ" cx="${CX}" cy="${CY}" r="${R}"/>`;
+  s+=`<text class="lbl m" x="${CX+R+10}" y="${CY+12}">1</text><text class="lbl m" x="${CX-R-12}" y="${CY+12}">−1</text>`;
+  s+=`<text class="lbl m" x="${CX+12}" y="${CY-R-8}">1</text><text class="lbl m" x="${CX+14}" y="${CY+R+8}">−1</text>`;
+  [[1,215,85],[2,85,85],[3,85,215],[4,215,215]].forEach(([n,x,y])=>{ s+=`<text class="qn" x="${x}" y="${y}">${QN[n]}</text>`; });
+  /* angle arc */
+  const ar=26, an=norm(a);
+  if(an>0){
+    const e=[CX+ar*Math.cos(an*D),CY-ar*Math.sin(an*D)];
+    s+=`<path class="ang" d="M${CX},${CY} L${CX+ar},${CY} A${ar},${ar} 0 ${an>180?1:0} 0 ${fx(e[0])},${fx(e[1])} Z"/>`;
+  }
+  if(o.mirror){
+    const m=180-a, M=[CX+R*Math.cos(m*D), CY-R*Math.sin(m*D)];
+    s+=`<line class="rad2" x1="${CX}" y1="${CY}" x2="${fx(M[0])}" y2="${fx(M[1])}"/>`;
+    s+=`<line class="rad2" x1="${fx(M[0])}" y1="${fx(M[1])}" x2="${fx(P[0])}" y2="${fx(P[1])}"/>`;
+    s+=`<circle class="pt2" cx="${fx(M[0])}" cy="${fx(M[1])}" r="5"/>`;
+    s+=`<text class="lbl m" x="${fx(CX+(R+20)*Math.cos(m*D))}" y="${fx(CY-(R+20)*Math.sin(m*D))}">${norm(m)}°</text>`;
+  }
+  (o.extra||[]).forEach(b=>{ const B=[CX+R*Math.cos(b*D), CY-R*Math.sin(b*D)];
+    s+=`<line class="rad2" x1="${CX}" y1="${CY}" x2="${fx(B[0])}" y2="${fx(B[1])}"/><circle class="pt2" cx="${fx(B[0])}" cy="${fx(B[1])}" r="5"/>`;
+    s+=`<text class="lbl m" x="${fx(CX+(R+20)*Math.cos(b*D))}" y="${fx(CY-(R+20)*Math.sin(b*D))}">${norm(b)}°</text>`; });
+  if(o.proj!==false){
+    s+=`<line class="cosl" x1="${CX}" y1="${CY}" x2="${fx(P[0])}" y2="${CY}"/>`;
+    s+=`<line class="sinl" x1="${fx(P[0])}" y1="${CY}" x2="${fx(P[0])}" y2="${fx(P[1])}"/>`;
+  }
+  s+=`<line class="rad" x1="${CX}" y1="${CY}" x2="${fx(P[0])}" y2="${fx(P[1])}"/>`;
+  s+=`<circle class="pt" cx="${fx(P[0])}" cy="${fx(P[1])}" r="6"/>`;
+  const lx=CX+(R+20)*Math.cos(a*D), ly=CY-(R+20)*Math.sin(a*D);
+  s+=`<text class="lbl" x="${fx(lx)}" y="${fx(ly)}">${o.alpha!=null?o.alpha:'P'}</text>`;
+  if(o.vals&&o.proj!==false){
+    const c=Math.cos(a*D), si=Math.sin(a*D);
+    if(Math.abs(c)>.12) s+=`<text class="lbl c" x="${fx((CX+P[0])/2)}" y="${fx(CY+(si>=0?14:-14))}">${o.vals.c}</text>`;
+    if(Math.abs(si)>.12) s+=`<text class="lbl s" x="${fx(P[0]+(c>=0?24:-24))}" y="${fx((CY+P[1])/2)}">${o.vals.s}</text>`;
+  }
+  svg.innerHTML=s;
+}
+circle($('ideaG'),55,{quad:false,vals:{c:'cos α',s:'sin α'},alpha:'P'});
+
+/* ---------- lab ---------- */
+const LA=$('la'), LM=$('lm');
+function lab(){
+  const a=+LA.value, c=Math.cos(a*D), s=Math.sin(a*D), q=quad(a), ra=refAng(a);
+  $('lav').textContent=a+'°';
+  circle($('labG'),a,{mirror:LM.checked&&norm(a)!==90&&norm(a)!==270,vals:{c:num(c),s:num(s)},alpha:a+'°'});
+  let x=`<div>${E(`cos ${a}° ≈ ${num(c)}`)} · ${E(`sin ${a}° ≈ ${num(s)}`)}</div>`;
+  if(q) x+=`<div>הנקודה ברביע ${QN[q]}: הסינוס ${s>0?'<strong>חיובי</strong>':'<strong>שלילי</strong>'} והקוסינוס ${c>0?'<strong>חיובי</strong>':'<strong>שלילי</strong>'}.</div>`;
+  else x+='<div>הנקודה בדיוק על ציר, אז אחד מהשניים הוא 0 והשני 1 או −1.</div>';
+  if(q&&q!==1) x+=`<div>הזווית מהציר x היא ${E(ra+'°')}, ולכן המספרים הם של ${E(ra+'°')} עם סימן לפי הרביע.</div>`;
+  if(LM.checked&&q) x+=`<div>${E(`sin ${norm(180-a)}° = sin ${a}°`)}: אותו גובה, צד שני של ציר y.</div>`;
+  $('labTxt').innerHTML=x;
+}
+[LA,LM].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{LA.value=b.dataset.a; lab();}));
+lab();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{steps:[
+    [135,{proj:false,quad:false,alpha:'135°'},`מצאו את ${E('sin 135°')} ואת ${E('cos 135°')}. מסובבים את הרדיוס ב-135° מציר x החיובי.`],
+    [135,{proj:false,alpha:'135°'},'הנקודה ברביע II (בין 90° ל-180°): למעלה ושמאלה. לכן הסינוס חיובי והקוסינוס שלילי.'],
+    [135,{alpha:'135°',vals:{c:'?',s:'?'}},`הזווית מהציר x היא ${E('180° − 135° = 45°')}. המספרים הם של ${E('45°')}.`],
+    [135,{alpha:'135°',vals:{c:'−0.71',s:'0.71'}},`${E('sin 45° ≈ 0.71')}, ולכן ${E('sin 135° ≈ 0.71')} ו-${E('cos 135° ≈ −0.71')}. בדיקה במחשבון: יוצא אותו דבר.`]
+  ]},
+  B:{steps:[
+    [36.87,{proj:false,quad:false,alpha:'?'},`במשולש יש זווית קהה x, ו-${E('sin x = 0.6')}. מצאו את x.`],
+    [36.87,{alpha:'36.9°',vals:{c:'',s:'0.6'}},`במחשבון: ${E('sin⁻¹(0.6) ≈ 36.9°')}. זו זווית חדה, אבל השאלה מבקשת קהה.`],
+    [36.87,{alpha:'36.9°',mirror:true,vals:{c:'',s:'0.6'}},'הנקודה האפורה נמצאת באותו גובה, 0.6, אבל ברביע II. לה יש אותו סינוס.'],
+    [143.13,{alpha:'143.1°',vals:{c:'',s:'0.6'}},`${E('x = 180° − 36.9° = 143.1°')}. בדיקה: ${E('sin 143.1° ≈ 0.6')}, והזווית קהה. מתאים!`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [a,o,txt]=e.steps[exI];
+  circle($('exG'),a,o);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k; exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+const VAL_ANGLES=[120,135,150,210,225,240,300,315,330,110,160,200,250,290,340,100,170,260];
+const OBT=[0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,0.25,0.75,0.45];
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let t; do{ t=pick(['val','val','obt']); }while(false);
+  if(t==='val'){
+    let a,f; do{ a=pick(VAL_ANGLES); f=pick(['sin','cos']); }while(pr.a===a&&pr.f===f);
+    const v=f==='sin'?Math.sin(a*D):Math.cos(a*D);
+    pr={t,a,f,ans:r2(v),raw:v,tries:0,hint:0};
+    $('prQ').innerHTML=`חשבו את ${E(`${f} ${a}°`)}.`;
+    $('prLbl').textContent=`${f} ${a}° ≈`;
+    circle($('prG'),a,{proj:false,quad:false,alpha:a+'°'});
+  } else {
+    let k; do{ k=pick(OBT); }while(pr.k===k);
+    const acute=Math.asin(k)/D;
+    pr={t,k,acute,ans:180-acute,tries:0,hint:0};
+    $('prQ').innerHTML=`x היא זווית <strong>קהה</strong>, ו-${E(`sin x = ${k}`)}. מצאו את x במעלות.`;
+    $('prLbl').textContent='x ≈';
+    circle($('prG'),acute,{proj:false,quad:false,alpha:'?'});
+  }
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr;
+  if(p.t==='val'){
+    const ra=refAng(p.a), q=quad(p.a), sgn=p.raw<0?'−':'';
+    return `${E(p.a+'°')} ברביע ${QN[q]}, הזווית מהציר ${E(ra+'°')}. ${E(`${p.f} ${ra}° ≈ ${num(Math.abs(p.raw))}`)}, ועם הסימן: ${E(`${p.f} ${p.a}° ≈ ${sgn}${num(Math.abs(p.raw))}`)}.`;
+  }
+  return `${E(`sin⁻¹(${p.k}) ≈ ${r1(p.acute)}°`)} היא החדה. הקהה: ${E(`x = 180° − ${r1(p.acute)}° ≈ ${r1(p.ans)}°`)}.`;
+}
+function showSol(cls){
+  const p=pr;
+  if(p.t==='val') circle($('prG'),p.a,{alpha:p.a+'°',vals:{c:p.f==='cos'?num(p.raw):'',s:p.f==='sin'?num(p.raw):''}});
+  else circle($('prG'),p.ans,{alpha:r1(p.ans)+'°',vals:{c:'',s:String(p.k)}});
+}
+$('prCheck').onclick=()=>{
+  const v=parseNum($('prA').value.replace('°','')), fb=$('prFb'), p=pr;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל −0.5.</div>'; return; }
+  const ok=p.t==='val'?near(v,p.raw,.015):near(v,p.ans,.6);
+  if(ok){ streak++; solved++; streakTxt(); showSol(); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  let m;
+  if(p.t==='val'){
+    const other=p.f==='sin'?Math.cos(p.a*D):Math.sin(p.a*D);
+    const radv=p.f==='sin'?Math.sin(p.a):Math.cos(p.a);
+    if(near(v,-p.raw,.015)) m=`המספר נכון, אבל הסימן לא. באיזה רביע נמצאת ${E(p.a+'°')}? שם ה-${p.f} ${p.raw>0?'חיובי':'שלילי'}.`;
+    else if(near(v,other,.015)||near(v,-other,.015)) m=`זה ה-${p.f==='sin'?'cos':'sin'}. ${p.f==='sin'?'הסינוס הוא הגובה (שיעור y)':'הקוסינוס הוא השיעור האופקי (x)'} של הנקודה.`;
+    else if(near(v,radv,.015)) m='נראה שהמחשבון ברדיאנים. העבירו ל-DEG (מעלות) ונסו שוב.';
+    else if(Math.abs(v)>1) m='sin ו-cos תמיד בין −1 ל-1, כי הנקודה על מעגל ברדיוס 1.';
+    else m='עוד לא. מצאו את הרביע ואת הזווית מהציר x, ואז הוסיפו סימן.';
+  } else {
+    if(near(v,p.acute,.6)) m='זו הזווית החדה שהמחשבון נותן. השאלה מבקשת זווית קהה, עם אותו סינוס.';
+    else if(near(v,90+p.acute,.6)) m=`לא מוסיפים 90°. לזווית ${E('180° − α')} יש אותו סינוס כמו ל-α.`;
+    else if(near(v,180+p.acute,.6)||near(v,360-p.acute,.6)) m='הזווית הזאת ברביע III או IV, שם הסינוס שלילי. וזווית במשולש קטנה מ-180°.';
+    else if(v<90) m='זווית קהה גדולה מ-90°.';
+    else m=`עוד לא. התחילו מ-${E(`sin⁻¹(${p.k})`)} במחשבון.`;
+  }
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2);
+  let h;
+  if(p.t==='val'){
+    const q=quad(p.a), ra=refAng(p.a);
+    circle($('prG'),p.a,{alpha:p.a+'°',proj:p.hint===2,vals:{c:'',s:''}});
+    h=p.hint===1?`${E(p.a+'°')} נמצאת ברביע ${QN[q]}. שם ה-${p.f} ${p.raw>0?'חיובי':'שלילי'}.`
+      :`הזווית מהציר x היא ${E(ra+'°')}. חשבו ${E(`${p.f} ${ra}°`)} והוסיפו את הסימן.`;
+  } else {
+    circle($('prG'),p.acute,{proj:false,alpha:r1(p.acute)+'°',mirror:p.hint===2});
+    h=p.hint===1?`במחשבון ${E(`sin⁻¹(${p.k})`)} נותן זווית חדה. יש עוד זווית עם אותו סינוס.`
+      :`לזווית ${E('180° − α')} יש אותו סינוס, והיא קהה. חשבו ${E(`180° − ${r1(p.acute)}°`)}.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ showSol(); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

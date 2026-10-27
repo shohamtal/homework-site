@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הזזה ומתיחה של גרפים · כיתה י · מירי</title>
+<meta name="description" content="מה קורה לגרף של f(x) כשמוסיפים מספר, מכפילים או מחליפים x ב-x − a. מזיזים מחוונים ורואים את הגרף זז. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/function-transformations/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הזזה ומתיחה של גרפים · כיתה י · מירי">
+<meta property="og:description" content="מה קורה לגרף של f(x) כשמוסיפים מספר, מכפילים או מחליפים x ב-x − a. מזיזים מחוונים ורואים את הגרף זז. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/function-transformations/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"פונקציות","item":"https://shohamtal.github.io/homework-site/math/grade-10/#functions-10"},{"@type":"ListItem","position":5,"name":"הזזה ומתיחה של גרפים","item":"https://shohamtal.github.io/homework-site/math/function-transformations/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מזיזים גרף של פונקציה ימינה או שמאלה?","acceptedAnswer":{"@type":"Answer","text":"מחליפים כל x ב-(x − h). אם h חיובי הגרף זז h צעדים ימינה, ואם h שלילי הוא זז שמאלה. למשל y = (x − 2)² היא הפרבולה x² מוזזת 2 ימינה. נסו במעבדה."}},{"@type":"Question","name":"למה x − 3 מזיז את הגרף ימינה ולא שמאלה?","acceptedAnswer":{"@type":"Answer","text":"כי הגרף \"מגיע\" לאותו ערך מאוחר יותר. ב-x² מקבלים 0 כש-x = 0. ב-(x − 3)² מקבלים 0 רק כש-x = 3. כל נקודה על הגרף זזה 3 צעדים ימינה."}},{"@type":"Question","name":"מה עושה מינוס לפני הפונקציה?","acceptedAnswer":{"@type":"Answer","text":"מינוס לפני הפונקציה, y = −f(x), הופך את הגרף כמו מראה על ציר x. מה שהיה למעלה עובר למטה. פרבולה פתוחה למעלה נהיית פתוחה למטה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הזזה ומתיחה של גרפים","description":"מה קורה לגרף של f(x) כשמוסיפים מספר, מכפילים או מחליפים x ב-x − a. מזיזים מחוונים ורואים את הגרף זז. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/function-transformations/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"פונקציות","teaches":"הזזה ומתיחה של גרפים","keywords":"הזזה, מתיחה, שיקוף","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .orig{stroke:var(--muted); stroke-width:2; stroke-dasharray:5 4; fill:none}
+  .g .move{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:3 3; fill:none}
+  .g .k0{fill:var(--card); stroke:var(--muted); stroke-width:1.6}
+  .g .k1{fill:var(--line); stroke:var(--ink); stroke-width:1.2}
+  .seg{display:flex; flex-wrap:wrap; gap:8px}
+  .seg button{font-family:var(--f-math); font-size:1.1rem; min-width:3.2em}
+  .seg button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="function-transformations">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#functions-10">פונקציות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הזזה ומתיחה של גרפים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · פונקציות</div>
+  <h1>הזזה ומתיחה של גרפים <span class="slogan">אותו גרף, מקום חדש</span></h1>
+  <p class="lead">אם אתם מכירים את הגרף של <span class="eq"><i>y</i> = <i>x</i>²</span>, אתם כבר מכירים גם את <span class="eq"><i>y</i> = −2(<i>x</i> − 3)² + 1</span>. זה אותו גרף, רק מוזז, מתוח והפוך.
+  לומדים שלושה מספרים: <span class="m"><i>a</i></span> מותח והופך, <i>h</i> מזיז ימינה ושמאלה, ו-<span class="b"><i>k</i></span> מזיז למעלה ולמטה. נושא של כיתה י, לרמת 4 ו-5 יח״ל.
+  במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: <span class="eq"><i>y</i> = <span class="m"><i>a</i></span>·<i>f</i>(<i>x</i> − <i>h</i>) + <span class="b"><i>k</i></span></span></h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מה שבחוץ: למעלה ולמטה</h3>
+      <p>מוסיפים מספר <span class="b"><i>k</i></span> <strong>אחרי</strong> הפונקציה, וכל הגרף עולה ב-<span class="b"><i>k</i></span>. אם <span class="b"><i>k</i></span> שלילי, הוא יורד. כאן <span class="eq"><i>y</i> = <i>x</i>² + 2</span>, מקווקו הוא <span class="eq"><i>y</i> = <i>x</i>²</span>.</p>
+      <svg class="g" id="introK" viewBox="0 0 240 240" role="img" aria-label="הפרבולה x בריבוע ועוד 2, מעל הפרבולה המקורית"></svg>
+    </div>
+    <div class="mini">
+      <h3>מה שבפנים: ימינה ושמאלה, הפוך!</h3>
+      <p>כותבים <span class="eq"><i>x</i> − 3</span> <strong>במקום</strong> x, והגרף זז 3 <strong>ימינה</strong>. למה? הקודקוד היה ב-<span class="eq"><i>x</i> = 0</span>, ועכשיו צריך <span class="eq"><i>x</i> = 3</span> כדי שבסוגריים יהיה 0.</p>
+      <svg class="g" id="introH" viewBox="0 0 240 240" role="img" aria-label="הפרבולה x פחות 3 בריבוע, מוזזת 3 ימינה"></svg>
+    </div>
+  </div>
+  <div class="callout"><strong>ו-<span class="m">a</span>?</strong> הוא כופל את כל הגובה. <span class="eq">|<i>a</i>| &gt; 1</span> מותח (הגרף צר יותר), <span class="eq">|<i>a</i>| &lt; 1</span> מכווץ (רחב יותר), ו-<span class="m">a</span> שלילי הופך את הגרף, כמו מראה על ציר x.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הזיזו את הגרף</h2></div>
+  <p class="text">בחרו פונקציה בסיסית והזיזו את המחוונים. הגרף המקווקו הוא המקור, והחץ הכחול מראה לאן עברה הנקודה המיוחדת.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: המקור מקווקו והגרף החדש בוורוד"></svg>
+    <div class="ctrl">
+      <div class="seg" id="labBase" role="group" aria-label="הפונקציה הבסיסית">
+        <button data-b="sq" aria-pressed="true" dir="ltr">x²</button>
+        <button data-b="abs" aria-pressed="false" dir="ltr">|x|</button>
+        <button data-b="sqrt" aria-pressed="false" dir="ltr">√x</button>
+      </div>
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="aRange"><span><span class="m">a</span> (מתיחה והיפוך)</span><span class="eq" id="aVal"></span></label>
+      <input type="range" id="aRange" min="-3" max="3" step="0.5" value="1">
+      <label class="slider" for="hRange"><span><i>h</i> (ימינה ושמאלה)</span><span class="eq" id="hVal"></span></label>
+      <input type="range" id="hRange" min="-4" max="4" step="1" value="2">
+      <label class="slider" for="kRange"><span><span class="b">k</span> (למעלה ולמטה)</span><span class="eq" id="kVal"></span></label>
+      <input type="range" id="kRange" class="hl" min="-4" max="4" step="1" value="-1">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="sq,1,3,0" dir="ltr">y = (x − 3)²</button>
+          <button data-p="sq,1,-3,0" dir="ltr">y = (x + 3)²</button>
+          <button data-p="sq,-1,0,3" dir="ltr">y = −x² + 3</button>
+          <button data-p="sq,0.5,0,-2" dir="ltr">y = ½x² − 2</button>
+          <button data-p="abs,2,-1,-3" dir="ltr">y = 2|x + 1| − 3</button>
+          <button data-p="sqrt,1,-3,1" dir="ltr">y = √(x + 3) + 1</button>
+          <button data-p="sqrt,-1,1,2" dir="ltr">y = −√(x − 1) + 2</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>מינוס בפנים זז ימינה.</strong> <span class="eq">(<i>x</i> − 4)²</span> זז 4 <strong>ימינה</strong>, ו-<span class="eq">(<i>x</i> + 4)²</span> זז 4 <strong>שמאלה</strong>. בחוץ זה בדיוק כמו שזה נראה: <span class="eq">+ 4</span> זה למעלה.</div></li>
+    <li><div><strong>בפנים או בחוץ?</strong> <span class="eq">√<i>x</i> + 2</span> זז 2 למעלה, אבל <span class="eq">√(<i>x</i> + 2)</span> זז 2 שמאלה. הסוגריים קובעים הכול.</div></li>
+    <li><div><strong>a לא מזיז את הקודקוד.</strong> ב-<span class="eq"><i>y</i> = 3(<i>x</i> − 1)² + 2</span> הקודקוד עדיין ב-<span class="eq">(1, 2)</span>. a רק מותח את הגרף סביב הקודקוד.</div></li>
+    <li><div><strong>המינוס של a הוא לא המינוס של k.</strong> <span class="eq">−<i>x</i>² + 3</span> זה "הופכים ואז עולים 3", והקודקוד ב-<span class="eq">(0, 3)</span>. זה לא אותו דבר כמו <span class="eq">−(<i>x</i>² + 3)</span>, שהקודקוד שלו ב-<span class="eq">(0, −3)</span>.</div></li>
+  </ol>
+  <div class="callout"><strong>ולרמת 5 יח״ל:</strong> <span class="eq"><i>f</i>(−<i>x</i>)</span> הופך את הגרף כמו מראה על ציר y, ו-<span class="eq"><i>f</i>(2<i>x</i>)</span> מכווץ אותו לרוחב פי 2. גם כאן מה שבפנים עובד "הפוך".</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א (פרבולה)</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב (שורש)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: לאן זז הגרף?</h2></div>
+  <p class="text">יש שני סוגי שאלות. לפעמים נותנים נוסחה ושואלים לאן עברה הנקודה המיוחדת. לפעמים נותנים גרף, ואתם כותבים את הנוסחה.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <p class="text" id="prQ" style="font-weight:700"></p>
+      <div class="inputs" id="prInputs"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מזיזים גרף של פונקציה ימינה או שמאלה?</h3>
+    <p>מחליפים כל x ב-<span class="eq">(<i>x</i> − <i>h</i>)</span>. אם h חיובי הגרף זז h צעדים ימינה, ואם h שלילי הוא זז שמאלה. למשל <span class="eq"><i>y</i> = (<i>x</i> − 2)²</span> היא הפרבולה <span class="eq"><i>x</i>²</span> מוזזת 2 ימינה. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>למה x − 3 מזיז את הגרף ימינה ולא שמאלה?</h3>
+    <p>כי הגרף "מגיע" לאותו ערך מאוחר יותר. ב-<span class="eq"><i>x</i>²</span> מקבלים 0 כש-<span class="eq"><i>x</i> = 0</span>. ב-<span class="eq">(<i>x</i> − 3)²</span> מקבלים 0 רק כש-<span class="eq"><i>x</i> = 3</span>. כל נקודה על הגרף זזה 3 צעדים ימינה.</p>
+    <h3>מה עושה מינוס לפני הפונקציה?</h3>
+    <p>מינוס לפני הפונקציה, <span class="eq"><i>y</i> = −<i>f</i>(<i>x</i>)</span>, הופך את הגרף כמו מראה על ציר x. מה שהיה למעלה עובר למטה. פרבולה פתוחה למעלה נהיית פתוחה למטה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/function-properties/">פונקציות ותכונותיהן</a> · <a href="../../math/parabola/">פונקציה ריבועית: הפרבולה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/function-properties/"><small>→ הנושא הקודם</small>פונקציות ותכונותיהן</a><a class="next" href="../../math/analytic-line/"><small>הנושא הבא ←</small>הנדסה אנליטית: ישר</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,parseNum,eqv,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const X='<i>x</i>', eqs=s=>`<span class="eq">${s}</span>`;
+let pid=0;
+
+const BASES={
+  sq:{f:x=>x*x,dom:()=>true,key:'הקודקוד',txt:'x²'},
+  abs:{f:x=>Math.abs(x),dom:()=>true,key:'הקודקוד',txt:'|x|'},
+  sqrt:{f:x=>Math.sqrt(x),dom:x=>x>=-1e-9,key:'נקודת ההתחלה',txt:'√x'}
+};
+/* y = a·f(x − h) + k as HTML */
+function eqT(b,a,h,k){
+  const inner=h===0?X:`${X} ${h>0?MINUS:'+'} ${Math.abs(h)}`;
+  const coef=a===1?'':a===-1?MINUS:(a<0?MINUS:'')+fracHTML(a);
+  let core;
+  if(b==='sq') core=h===0?`${X}²`:`(${inner})²`;
+  else if(b==='abs') core=`|${inner}|`;
+  else core=h===0?`√${X}`:`√(${inner})`;
+  let s=`<i>y</i> = <span class="m">${coef}</span>${core}`;
+  if(a===0) s=`<i>y</i> = 0·${core}`;
+  if(k) s+=` ${k<0?MINUS:'+'} <span class="b">${Math.abs(k)}</span>`;
+  return s;
+}
+function curve(F,a,h,k){
+  let d='', on=false;
+  for(let x=-6;x<=6.001;x+=0.02){
+    let xx=x;
+    if(!F.dom(x-h)){ if(F.dom(x+0.02-h)) xx=h; else { on=false; continue; } }
+    const y=Math.max(-30,Math.min(30,a*F.f(xx-h)+k));
+    d+=(on?'L':'M')+sx(xx).toFixed(1)+' '+sy(y).toFixed(1); on=true;
+  }
+  return d;
+}
+function plotT(svg,b,a,h,k,opt={}){
+  const F=BASES[b], id='tc'+(++pid);
+  let h1=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath><marker id="arw${pid}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--blue)"/></marker></defs><g clip-path="url(#${id})">`;
+  if(opt.orig!==false) h1+=`<path class="orig" d="${curve(F,1,0,0)}"/>`;
+  (opt.ghosts||[]).forEach(g=>{ h1+=`<path class="orig" d="${curve(F,...g)}"/>`; });
+  if(opt.curve!==false) h1+=`<path class="ln" d="${curve(F,a,h,k)}"/>`;
+  h1+='</g>';
+  const inG=(x,y)=>Math.abs(x)<=5.5&&Math.abs(y)<=5.5;
+  if(opt.arrow!==false&&(h||k)&&opt.curve!==false){
+    const L=Math.hypot(h,k), ex=h-(h/L)*0.35, ey=k-(k/L)*0.35;
+    h1+=`<line class="move" marker-end="url(#arw${pid})" x1="${sx(0)}" y1="${sy(0)}" x2="${sx(ex)}" y2="${sy(ey)}"/>`;
+  }
+  if(opt.orig!==false) h1+=`<circle class="k0" cx="${sx(0)}" cy="${sy(0)}" r="4"/>`;
+  if(opt.curve!==false&&opt.key!==false&&inG(h,k)) h1+=`<circle class="k1" cx="${sx(h)}" cy="${sy(k)}" r="5"/><text class="ptlbl" x="${sx(h)+7}" y="${sy(k)-7}">(${numTxt(h)}, ${numTxt(k)})</text>`;
+  draw(svg,null,0,{extra:h1});
+}
+
+/* intro */
+plotT($('introK'),'sq',1,0,2,{});
+plotT($('introH'),'sq',1,3,0,{});
+
+/* lab */
+let base='sq';
+const aR=$('aRange'), hR=$('hRange'), kR=$('kRange');
+function setBase(b){ base=b; $('labBase').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.b===b)); }
+function lab(){
+  const a=+aR.value, h=+hR.value, k=+kR.value, F=BASES[base];
+  $('aVal').innerHTML=(a<0?MINUS:'')+fracHTML(a); $('hVal').textContent=numTxt(h); $('kVal').textContent=numTxt(k);
+  $('labEq').innerHTML=eqs(eqT(base,a,h,k));
+  plotT($('labG'),base,a,h,k,{});
+  if(a===0){ $('labExplain').innerHTML=`<div>כש-<span class="m">a = 0</span> כל הגובה נכפל ב-0. נשאר רק <span class="eq"><i>y</i> = ${numTxt(k)}</span>, ישר אופקי. הזיזו את <span class="m">a</span> חזרה.</div>`; return; }
+  let t='';
+  t+=`<div><strong><i>h</i> = ${numTxt(h)}:</strong> ${h===0?'אין הזזה הצידה.':`בפנים כתוב ${eqs(`${X} ${h>0?MINUS:'+'} ${Math.abs(h)}`)}, אז הגרף זז ${Math.abs(h)} <strong>${h>0?'ימינה':'שמאלה'}</strong>.${h>0?' מינוס בפנים, ימינה בגרף.':' פלוס בפנים, שמאלה בגרף.'}`}</div>`;
+  t+=`<div><strong><span class="b">k</span> = ${numTxt(k)}:</strong> ${k===0?'אין הזזה למעלה או למטה.':`בחוץ כתוב ${eqs(`${k>0?'+':MINUS} ${Math.abs(k)}`)}, אז הגרף זז ${Math.abs(k)} <strong>${k>0?'למעלה':'למטה'}</strong>.`}</div>`;
+  const A=Math.abs(a);
+  t+=`<div><strong><span class="m">a</span> = ${(a<0?MINUS:'')+fracHTML(a)}:</strong> ${A===1?'בלי מתיחה.':A>1?`מתיחה פי ${fracHTML(A)}: הגרף <strong>צר</strong> יותר.`:`כיווץ פי ${fracHTML(A)}: הגרף <strong>רחב</strong> יותר.`}${a<0?' ומינוס: הגרף <strong>הפוך</strong>, כמו מראה על ציר x.':''}</div>`;
+  t+=`<div>${F.key} עבר מ-${eqs('(0, 0)')} ל-${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}.${base==='sqrt'?` תחום ההגדרה עכשיו ${eqs(`${X} ≥ ${numTxt(h)}`)}.`:''}</div>`;
+  $('labExplain').innerHTML=t;
+}
+[aR,hR,kR].forEach(r=>r.addEventListener('input',lab));
+$('labBase').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ setBase(b.dataset.b); lab(); }));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [b,a,h,k]=btn.dataset.p.split(','); setBase(b); aR.value=a; hR.value=h; kR.value=k; lab(); }));
+lab();
+
+/* worked examples: each step = [base, a, h, k, ghosts, text] */
+const EX={
+  A:[
+    ['sq',1,0,0,[],`מתחילים מ-${eqs(`<i>y</i> = ${X}²`)} ורוצים להגיע ל-${eqs(`<i>y</i> = −(${X} − 3)² + 2`)}. נעשה את זה בשלושה צעדים.`],
+    ['sq',1,3,0,[],`<strong>צעד 1, ימינה:</strong> ${eqs(`(${X} − 3)²`)}. מינוס בפנים, אז זזים 3 <strong>ימינה</strong>. הקודקוד עובר ל-${eqs('(3, 0)')}.`],
+    ['sq',-1,3,0,[[1,3,0]],`<strong>צעד 2, הופכים:</strong> ${eqs(`−(${X} − 3)²`)}. המינוס שלפני הסוגריים הופך את הפרבולה. עכשיו היא פתוחה למטה, והקודקוד נשאר ב-${eqs('(3, 0)')}.`],
+    ['sq',-1,3,2,[[-1,3,0]],`<strong>צעד 3, למעלה:</strong> ${eqs('+ 2')} בחוץ, אז עולים 2. הקודקוד עובר ל-${eqs('(3, 2)')}, והוא נקודת מקסימום.`],
+    ['sq',-1,3,2,[],`<strong>בדיקה:</strong> מציבים ${eqs(`${X} = 3`)}: ${eqs('−(0)² + 2 = 2')}. מציבים ${eqs(`${X} = 4`)}: ${eqs('−(1)² + 2 = 1')}. שתי הנקודות על הגרף. מתאים!`]
+  ],
+  B:[
+    ['sqrt',1,0,0,[],`מתחילים מ-${eqs(`<i>y</i> = √${X}`)}, שמתחיל בנקודה ${eqs('(0, 0)')} והולך ימינה. היעד: ${eqs(`<i>y</i> = √(${X} + 2) − 1`)}.`],
+    ['sqrt',1,-2,0,[],`<strong>צעד 1, שמאלה:</strong> ${eqs(`√(${X} + 2)`)}. פלוס בפנים, אז זזים 2 <strong>שמאלה</strong>. ההתחלה עוברת ל-${eqs('(−2, 0)')}, ותחום ההגדרה נהיה ${eqs(`${X} ≥ −2`)}.`],
+    ['sqrt',1,-2,-1,[[1,-2,0]],`<strong>צעד 2, למטה:</strong> ${eqs('− 1')} בחוץ, אז יורדים 1. ההתחלה ב-${eqs('(−2, −1)')}.`],
+    ['sqrt',1,-2,-1,[],`<strong>בדיקה:</strong> מציבים ${eqs(`${X} = 2`)}: ${eqs('√4 − 1 = 1')}. הנקודה ${eqs('(2, 1)')} על הגרף. ובשביל ${eqs(`${X} = −3`)} אין ערך, כי ${eqs('√(−1)')} לא מוגדר.`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const s=EX[exKey][exI];
+  plotT($('exG'),s[0],s[1],s[2],s[3],{ghosts:s[4]});
+  $('exText').innerHTML=s[5];
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+['A','B'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice: key = where does the special point go; write = read a, h, k from a drawn parabola */
+let pr=null, streak=0, solved=0;
+const rnd=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+function newPr(){
+  const kind=Math.random()<0.55?'key':'write';
+  let b,a,h,k,guard=0;
+  do{
+    b=kind==='write'?'sq':pick(['sq','sq','abs','sqrt']);
+    a=kind==='write'?pick([1,-1]):pick([1,-1,2,-2,0.5]);
+    h=rnd(-4,4); k=rnd(-4,4); guard++;
+  }while(((h===0&&k===0)||(pr&&pr.h===h&&pr.k===k&&pr.b===b))&&guard<40);
+  pr={kind,b,a,h,k,tries:0,hint:0};
+  if(kind==='key'){
+    $('prEq').innerHTML=eqs(eqT(b,a,h,k));
+    $('prQ').textContent=`לאן עבר ${BASES[b].key}? בגרף המקורי ${BASES[b].txt} הוא ב-(0, 0).`;
+    $('prInputs').innerHTML='<label for="prX">x =<input id="prX" inputmode="text" autocomplete="off"></label><label for="prY">y =<input id="prY" inputmode="text" autocomplete="off"></label>';
+    plotT($('prG'),b,a,h,k,{curve:false});
+  }else{
+    $('prEq').innerHTML=eqs(`<i>y</i> = <span class="m"><i>a</i></span>(${X} − <i>h</i>)² + <span class="b"><i>k</i></span>`);
+    $('prQ').textContent='הגרף הוורוד הוא הפרבולה x² אחרי הזזה. מצאו את a, h ו-k.';
+    $('prInputs').innerHTML='<label for="prA">a =<input id="prA" inputmode="text" autocomplete="off"></label><label for="prH">h =<input id="prH" inputmode="text" autocomplete="off"></label><label for="prK">k =<input id="prK" inputmode="text" autocomplete="off"></label>';
+    plotT($('prG'),b,a,h,k,{key:false,arrow:false});
+  }
+  $('prInputs').querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); }));
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {b,a,h,k}=pr;
+  if(pr.kind==='key') return `בפנים ${h===0?'אין הזזה':`${eqs(`${X} ${h>0?MINUS:'+'} ${Math.abs(h)}`)}, כלומר ${Math.abs(h)} ${h>0?'ימינה':'שמאלה'}`}. בחוץ ${k===0?'אין הזזה':`${eqs(`${k>0?'+':MINUS} ${Math.abs(k)}`)}, כלומר ${Math.abs(k)} ${k>0?'למעלה':'למטה'}`}. a לא מזיז את הנקודה. לכן ${BASES[b].key} ב-${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}.`;
+  return `הקודקוד ב-${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}, אז ${eqs(`<i>h</i> = ${numTxt(h)}`)} ו-${eqs(`<i>k</i> = ${numTxt(k)}`)}. הפרבולה פתוחה ${a>0?'למעלה':'למטה'} ובאותו רוחב כמו x², אז ${eqs(`<i>a</i> = ${numTxt(a)}`)}. הנוסחה: ${eqs(eqT('sq',a,h,k))}.`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), {b,a,h,k}=pr, msgs=[];
+  if(pr.kind==='key'){
+    const x=parseNum($('prX').value), y=parseNum($('prY').value);
+    if(isNaN(x)||isNaN(y)){ fb.innerHTML='<div class="fb err">מלאו מספר גם ב-x וגם ב-y.</div>'; return; }
+    if(eqv(x,h)&&eqv(y,k)){ streak++; solved++; score(); plotT($('prG'),b,a,h,k,{}); fb.innerHTML=`<div class="fb ok">נכון! ${BASES[b].key} ב-${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}.</div>`; return; }
+    if(eqv(x,k)&&eqv(y,h)&&h!==k) msgs.push('החלפתם בין x ל-y. ההזזה הצידה (בפנים) קובעת את x, וההזזה למעלה (בחוץ) קובעת את y.');
+    else{
+      if(!eqv(x,h)) msgs.push(eqv(x,-h)?'ה-x בכיוון הפוך. מינוס בפנים מזיז <strong>ימינה</strong>, ופלוס בפנים מזיז <strong>שמאלה</strong>.':'ה-x לא נכון. מה כתוב בתוך הסוגריים, ליד ה-x?');
+      else msgs.push('ה-x נכון!');
+      if(!eqv(y,k)) msgs.push(eqv(y,a*k)||eqv(y,k*Math.abs(a))?'ה-y לא נכון. a לא כופל את ההזזה למעלה. בדקו רק את המספר שבחוץ.':eqv(y,-k)?'ה-y בכיוון הפוך. בחוץ הכול כמו שזה נראה: פלוס זה למעלה.':'ה-y לא נכון. מה המספר שבחוץ, בסוף הנוסחה?');
+    }
+  }else{
+    const A=parseNum($('prA').value), H=parseNum($('prH').value), K=parseNum($('prK').value);
+    if([A,H,K].some(isNaN)){ fb.innerHTML='<div class="fb err">מלאו מספר בכל שלוש התיבות.</div>'; return; }
+    if(eqv(A,a)&&eqv(H,h)&&eqv(K,k)){ streak++; solved++; score(); plotT($('prG'),b,a,h,k,{}); fb.innerHTML=`<div class="fb ok">נכון! ${eqs(eqT('sq',a,h,k))}.</div>`; return; }
+    if(!eqv(A,a)) msgs.push(eqv(A,-a)?`בדקו את הכיוון: הפרבולה פתוחה ${a>0?'למעלה, אז a חיובי':'למטה, אז a שלילי'}.`:'הפרבולה באותו רוחב כמו x² המקווקו, אז a הוא 1 או 1−.');
+    if(!eqv(H,h)) msgs.push(eqv(H,-h)?`h בסימן הפוך. בנוסחה כתוב <span class="eq">(<i>x</i> − <i>h</i>)</span>, ולכן h הוא בדיוק ה-x של הקודקוד, ${numTxt(h)}.`:'h הוא ה-x של הקודקוד. קראו אותו מהגרף.');
+    if(!eqv(K,k)) msgs.push(eqv(K,-k)?'k בסימן הפוך. k הוא בדיוק ה-y של הקודקוד.':'k הוא ה-y של הקודקוד. קראו אותו מהגרף.');
+    if(!msgs.length) msgs.push('בדקו שוב את התשובות.');
+  }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err"><ul>${msgs.map(m=>'<li>'+m+'</li>').join('')}</ul></div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const {b,a,h,k}=pr; let t;
+  if(pr.kind==='key'){
+    if(pr.hint===1) t='טפלו בכל מספר בנפרד. מה שבתוך הסוגריים מזיז ימינה ושמאלה (בכיוון ההפוך לסימן). מה שבחוץ מזיז למעלה ולמטה. ו-a? הוא לא מזיז את הנקודה בכלל.';
+    else { t=`ההזזה הצידה: ${h===0?'אין':`${Math.abs(h)} ${h>0?'ימינה':'שמאלה'}`}. ציירנו לכם את הגרף החדש. עכשיו מה עם ההזזה למעלה או למטה?`; plotT($('prG'),b,a,h,k,{key:false}); }
+  }else{
+    if(pr.hint===1) t='מצאו קודם את הקודקוד של הפרבולה הוורודה. בנוסחה הזאת, h ו-k הם בדיוק השיעורים של הקודקוד.';
+    else t=`הקודקוד ב-${eqs(`(${numTxt(h)}, ${numTxt(k)})`)}. עכשיו בדקו לאן הפרבולה פתוחה כדי לדעת את הסימן של a.`;
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  plotT($('prG'),pr.b,pr.a,pr.h,pr.k,{});
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הנדסה אנליטית: ישר · כיתה י · מירי</title>
+<meta name="description" content="מרחק בין נקודות, אמצע קטע, ישרים מקבילים ומאונכים. כלים לפתרון שאלות על משולשים ומרובעים במערכת צירים. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/analytic-line/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הנדסה אנליטית: ישר · כיתה י · מירי">
+<meta property="og:description" content="מרחק בין נקודות, אמצע קטע, ישרים מקבילים ומאונכים. כלים לפתרון שאלות על משולשים ומרובעים במערכת צירים. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/analytic-line/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"הנדסה אנליטית","item":"https://shohamtal.github.io/homework-site/math/grade-10/#analytic-10"},{"@type":"ListItem","position":5,"name":"הנדסה אנליטית: ישר","item":"https://shohamtal.github.io/homework-site/math/analytic-line/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים מרחק בין שתי נקודות?","acceptedAnswer":{"@type":"Answer","text":"מחסרים את ה-x, מחסרים את ה-y, מעלים כל הפרש בריבוע, מחברים ומוציאים שורש. למשל בין (1, 1) ל-(4, 5): √(3² + 4²) = √25 = 5. זה משפט פיתגורס על המשולש שההפרשים יוצרים."}},{"@type":"Question","name":"איך יודעים ששני ישרים מאונכים?","acceptedAnswer":{"@type":"Answer","text":"כופלים את השיפועים. אם יוצא −1, הישרים מאונכים. למשל 2 ו-−½. יוצא דופן: ישר אנכי וישר אופקי מאונכים, אף שלישר האנכי אין שיפוע."}},{"@type":"Question","name":"איך מוצאים את אמצע הקטע?","acceptedAnswer":{"@type":"Answer","text":"מחברים את שני ה-x ומחלקים ב-2, ואותו דבר עם ה-y. בין (−2, 3) ל-(4, 7) האמצע הוא (1, 5). נסו במעבדה ותראו את הנקודה הצהובה זזה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הנדסה אנליטית: ישר","description":"מרחק בין נקודות, אמצע קטע, ישרים מקבילים ומאונכים. כלים לפתרון שאלות על משולשים ומרובעים במערכת צירים. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/analytic-line/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"הנדסה אנליטית","teaches":"הנדסה אנליטית: ישר","keywords":"מרחק, אמצע קטע, ישרים מאונכים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc{display:flex; flex-direction:column; gap:4px}
+.calc .ln-row{display:flex; flex-wrap:wrap; gap:6px; align-items:baseline}
+.g .seg{stroke:var(--line); stroke-width:3; stroke-linecap:round}
+.g .perp{stroke:var(--blue); stroke-width:2.2; stroke-dasharray:6 4; fill:none}
+.g .mid{fill:var(--hl); stroke:var(--ink); stroke-width:1.2}
+.g .ra{fill:none; stroke:var(--ink); stroke-width:1.1}
+.g .side{stroke:var(--ink); stroke-width:2.2; stroke-linecap:round}
+.g .fill{fill:var(--hl); fill-opacity:.35; stroke:none}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="analytic-line">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#analytic-10">הנדסה אנליטית</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הנדסה אנליטית: ישר</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · הנדסה אנליטית</div>
+  <h1>הנדסה אנליטית: ישר <span class="slogan">גאומטריה עם מספרים</span></h1>
+  <p class="lead">בהנדסה אנליטית פותרים שאלות על משולשים ומרובעים בעזרת שיעורי הנקודות. ארבעה כלים עושים את רוב העבודה: מרחק בין נקודות, אמצע קטע, ישרים מקבילים וישרים מאונכים. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>ארבעת הכלים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מרחק בין שתי נקודות</h3>
+      <p>זה בעצם משפט פיתגורס. ההפרש ב-x הוא ניצב אחד, ההפרש ב-y הוא הניצב השני, והמרחק הוא היתר.</p>
+      <div class="big-eq" style="font-size:1.35rem"><span class="eq"><i>d</i> = √<span style="font-size:.9em">((<i>x</i>₂ − <i>x</i>₁)² + (<i>y</i>₂ − <i>y</i>₁)²)</span></span></div>
+    </div>
+    <div class="mini">
+      <h3>אמצע קטע</h3>
+      <p>האמצע הוא הממוצע של ה-x והממוצע של ה-y. כאן <strong>מחברים</strong>, לא מחסרים.</p>
+      <div class="big-eq" style="font-size:1.35rem"><span class="eq"><i>M</i> = (<span class="frac"><span><i>x</i>₁ + <i>x</i>₂</span><span>2</span></span>, <span class="frac"><span><i>y</i>₁ + <i>y</i>₂</span><span>2</span></span>)</span></div>
+    </div>
+    <div class="mini">
+      <h3>ישרים מקבילים</h3>
+      <p>לישרים מקבילים יש <strong>אותו שיפוע</strong>. רק ה-b שונה.</p>
+      <p><span class="eq"><i>y</i> = 2<i>x</i> + 1</span> מקביל ל-<span class="eq"><i>y</i> = 2<i>x</i> − 4</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>ישרים מאונכים</h3>
+      <p>מכפלת השיפועים היא <span class="eq">−1</span>. הופכים את השבר ומחליפים סימן.</p>
+      <p><span class="eq"><i>m</i>₁ = 2</span>, אז <span class="eq"><i>m</i>₂ = −½</span>, כי <span class="eq">2 · (−½) = −1</span>.</p>
+    </div>
+  </div>
+  <div class="callout">ישר אנכי (כמו <span class="eq"><i>x</i> = 3</span>) וישר אופקי (כמו <span class="eq"><i>y</i> = 1</span>) מאונכים זה לזה, אבל לאנכי אין שיפוע. שם בודקים בעיניים, לא בנוסחה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: קטע, אמצע ואנך</h2></div>
+  <p class="text">הזיזו את A ואת B. הנקודה הצהובה היא אמצע הקטע, והקו הכחול המקווקו הוא האנך האמצעי: הוא עובר באמצע ומאונך לקטע.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה: קטע AB, אמצע ואנך אמצעי"></svg>
+    <div class="ctrl">
+      <label class="slider" for="x1"><span>A: ה-x שלה</span><span class="eq" id="x1v"></span></label>
+      <input type="range" class="blue" id="x1" min="-5" max="5" step="1" value="-3">
+      <label class="slider" for="y1"><span>A: ה-y שלה</span><span class="eq" id="y1v"></span></label>
+      <input type="range" class="blue" id="y1" min="-5" max="5" step="1" value="-2">
+      <label class="slider" for="x2"><span>B: ה-x שלה</span><span class="eq" id="x2v"></span></label>
+      <input type="range" class="hl" id="x2" min="-5" max="5" step="1" value="1">
+      <label class="slider" for="y2"><span>B: ה-y שלה</span><span class="eq" id="y2v"></span></label>
+      <input type="range" class="hl" id="y2" min="-5" max="5" step="1" value="4">
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="0,0,3,4" dir="ltr">(0, 0) (3, 4)</button>
+          <button data-p="-4,1,4,1" dir="ltr">(−4, 1) (4, 1)</button>
+          <button data-p="2,-4,2,4" dir="ltr">(2, −4) (2, 4)</button>
+          <button data-p="-2,3,4,-3" dir="ltr">(−2, 3) (4, −3)</button>
+          <button data-p="-5,-1,3,3" dir="ltr">(−5, −1) (3, 3)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב: כל נקודה על האנך האמצעי רחוקה <strong>באותה מידה</strong> מ-A ומ-B. ובדקו שמכפלת השיפועים תמיד יוצאת <span class="eq">−1</span>.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אמצע: מחברים</h3>
+      <p>בשיפוע ובמרחק <strong>מחסרים</strong>. באמצע <strong>מחברים</strong> ומחלקים ב-2.</p>
+      <p>A <span class="eq">(1, 2)</span> ו-B <span class="eq">(5, 8)</span>: האמצע הוא <span class="eq">(3, 5)</span>, לא <span class="eq">(2, 3)</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>לא לשכוח את השורש</h3>
+      <p><span class="eq">3² + 4² = 25</span> זה עוד לא המרחק. המרחק הוא <span class="eq">√25 = 5</span>.</p>
+      <p>ומינוס בהפרש לא מפריע: <span class="eq">(−3)² = 9</span>, כמו <span class="eq">3²</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מאונך: שני שינויים</h3>
+      <p>שיפוע 3? המאונך הוא <span class="eq">−⅓</span>. גם הופכים וגם מחליפים סימן.</p>
+      <p><span class="eq">−3</span> זה רק הפוך בסימן, ו-<span class="eq">⅓</span> זה רק הפוך בשבר. שניהם טעות.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: משולש ישר זווית</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: משוואת האנך האמצעי</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">כל פעם תופיע שאלה מסוג אחר: מרחק, אמצע, נקודת קצה או שיפוע של ישר מאונך. שבר כותבים עם קו נטוי, למשל <span class="eq">-1/2</span>. שורש אפשר לכתוב כ-<span class="eq">√20</span> או כמספר עשרוני.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs" id="prIn"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים מרחק בין שתי נקודות?</h3>
+    <p>מחסרים את ה-x, מחסרים את ה-y, מעלים כל הפרש בריבוע, מחברים ומוציאים שורש. למשל בין <span class="eq">(1, 1)</span> ל-<span class="eq">(4, 5)</span>: <span class="eq">√(3² + 4²) = √25 = 5</span>. זה משפט פיתגורס על המשולש שההפרשים יוצרים.</p>
+    <h3>איך יודעים ששני ישרים מאונכים?</h3>
+    <p>כופלים את השיפועים. אם יוצא <span class="eq">−1</span>, הישרים מאונכים. למשל <span class="eq">2</span> ו-<span class="eq">−½</span>. יוצא דופן: ישר אנכי וישר אופקי מאונכים, אף שלישר האנכי אין שיפוע.</p>
+    <h3>איך מוצאים את אמצע הקטע?</h3>
+    <p>מחברים את שני ה-x ומחלקים ב-2, ואותו דבר עם ה-y. בין <span class="eq">(−2, 3)</span> ל-<span class="eq">(4, 7)</span> האמצע הוא <span class="eq">(1, 5)</span>. <a href="#lab">נסו במעבדה</a> ותראו את הנקודה הצהובה זזה.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/slope-two-points/">שיפוע בין שתי נקודות</a> · <a href="../../math/equation-from-points/">משוואת ישר לפי שיפוע ונקודה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/function-transformations/"><small>→ הנושא הקודם</small>הזזה ומתיחה של גרפים</a><a class="next" href="../../math/analytic-circle/"><small>הנושא הבא ←</small>הנדסה אנליטית: מעגל</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,sx,sy,numTxt,signedFracHTML,eqv,parseNum,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const P=(x,y)=>E(`(${numTxt(x)}, ${numTxt(y)})`);
+const paren=v=>v<0?`(${numTxt(v)})`:numTxt(v);
+const f1=v=>v.toFixed(1);
+
+/* √n as text: perfect squares become whole numbers, otherwise k√r when possible */
+function rootTxt(n){
+  const r=Math.round(Math.sqrt(n)); if(r*r===n) return String(r);
+  for(let k=Math.floor(Math.sqrt(n));k>1;k--) if(n%(k*k)===0) return `${k}√${n/(k*k)}`;
+  return `√${n}`;
+}
+/* reads "5", "√20", "2√5", "4.47" */
+function readLen(s){
+  s=String(s).replace(/\s/g,'').replace(/sqrt/gi,'√');
+  const m=s.match(/^(\d*\.?\d*)√(\d*\.?\d+)$/);
+  if(m){ const k=m[1]===''?1:parseFloat(m[1]); return k*Math.sqrt(parseFloat(m[2])); }
+  return parseNum(s);
+}
+/* slope as HTML, or null for a vertical segment */
+const slope=(x1,y1,x2,y2)=>x1===x2?null:(y2-y1)/(x2-x1);
+
+/* grid + extra svg (lines) + points on top. Lines run from x=-6 to 6, the viewBox crops them */
+function plot(svg,ex,pts){
+  draw(svg,null,0,{extra:ex+pts.map(p=>`<circle class="${p.cls||'pt'}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="4.5"/>`+(p.label?`<text class="ptlbl" x="${sx(p.x)+6}" y="${sy(p.y)-6}">${p.label}</text>`:'')).join('')});
+}
+/* draws segment AB, its midpoint and (optionally) the perpendicular bisector */
+function scene(svg,x1,y1,x2,y2,o={}){
+  const mx=(x1+x2)/2, my=(y1+y2)/2, m=slope(x1,y1,x2,y2);
+  let ex='';
+  if(o.perp!==false && (x1!==x2||y1!==y2)){
+    if(m===null) ex+=`<line class="perp" x1="${sx(-6)}" y1="${sy(my)}" x2="${sx(6)}" y2="${sy(my)}"/>`;
+    else if(m===0) ex+=`<line class="perp" x1="${sx(mx)}" y1="${sy(-6)}" x2="${sx(mx)}" y2="${sy(6)}"/>`;
+    else { const p=-1/m, b=my-p*mx; ex+=`<line class="perp" x1="${sx(-6)}" y1="${sy(p*-6+b)}" x2="${sx(6)}" y2="${sy(p*6+b)}"/>`; }
+  }
+  ex+=`<line class="seg" x1="${sx(x1)}" y1="${sy(y1)}" x2="${sx(x2)}" y2="${sy(y2)}"/>`;
+  if(o.tri) ex+=`<path class="tri" d="M${sx(x1)} ${sy(y1)} H${sx(x2)} V${sy(y2)}"/>`;
+  const pts=[{x:x1,y:y1,label:'A'},{x:x2,y:y2,label:'B'}];
+  if(o.mid!==false) pts.push({x:mx,y:my,cls:'mid',label:'M'});
+  plot(svg,ex,pts);
+}
+
+/* ---------- lab ---------- */
+const R=['x1','y1','x2','y2'].map($);
+function lab(){
+  const [x1,y1,x2,y2]=R.map(r=>+r.value);
+  R.forEach(r=>$(r.id+'v').textContent=numTxt(+r.value));
+  scene($('labG'),x1,y1,x2,y2);
+  const dx=x2-x1, dy=y2-y1, mx=(x1+x2)/2, my=(y1+y2)/2, m=slope(x1,y1,x2,y2);
+  let t=`<div>A = ${P(x1,y1)} · B = ${P(x2,y2)}</div>`;
+  if(!dx&&!dy){ $('labCalc').innerHTML=t+'<div>A ו-B באותו מקום. הזיזו אחת מהן.</div>'; return; }
+  t+=`<div class="ln-row"><strong>אמצע:</strong> ${E(`M = (${paren(x1)} + ${paren(x2)}) : 2, (${paren(y1)} + ${paren(y2)}) : 2`)} ${E(`= (${numTxt(mx)}, ${numTxt(my)})`)}</div>`;
+  const d2=dx*dx+dy*dy;
+  t+=`<div class="ln-row"><strong>מרחק:</strong> ${E(`AB = √(${paren(dx)}² + ${paren(dy)}²)`)} ${E(`= √${d2}`)}${rootTxt(d2)!==`√${d2}`?' '+E(`= ${rootTxt(d2)}`):''}${Number.isInteger(Math.sqrt(d2))?'':' '+E(`≈ ${Math.sqrt(d2).toFixed(2)}`)}</div>`;
+  if(m===null) t+='<div><strong>שיפוע:</strong> הקטע עומד, אין לו שיפוע. האנך האמצעי שוכב: '+E(`y = ${numTxt(my)}`)+'.</div>';
+  else if(m===0) t+='<div><strong>שיפוע:</strong> הקטע שוכב, השיפוע 0. האנך האמצעי עומד: '+E(`x = ${numTxt(mx)}`)+'.</div>';
+  else {
+    const p=-1/m;
+    t+=`<div class="ln-row"><strong>שיפועים:</strong> ${E(`m₁ = ${signedFracHTML(m)}`)} ${E(`m₂ = ${signedFracHTML(p)}`)}</div>`;
+    t+=`<div class="ln-row">${E(`${signedFracHTML(m)} · ${p<0?'(':''}${signedFracHTML(p)}${p<0?')':''} = −1`)} ולכן הקו הכחול מאונך לקטע.</div>`;
+  }
+  $('labCalc').innerHTML=t;
+}
+R.forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{b.dataset.p.split(',').forEach((v,i)=>R[i].value=v); lab();}));
+lab();
+
+/* ---------- worked examples ---------- */
+function triScene(svg,pts,o={}){
+  let ex='';
+  if(o.fill) ex+=`<path class="fill" d="M${pts.map(p=>sx(p.x)+' '+sy(p.y)).join(' L')} Z"/>`;
+  (o.sides||[]).forEach(([a,b,c])=>{ const A=pts[a],B=pts[b]; ex+=`<line class="${c||'side'}" x1="${sx(A.x)}" y1="${sy(A.y)}" x2="${sx(B.x)}" y2="${sy(B.y)}"/>`; });
+  if(o.right){ const [v,a,b]=o.right, V=pts[v], A=pts[a], B=pts[b];
+    const ua=[A.x-V.x,A.y-V.y], ub=[B.x-V.x,B.y-V.y], la=Math.hypot(...ua), lb=Math.hypot(...ub), k=.55;
+    const p1=[V.x+ua[0]/la*k,V.y+ua[1]/la*k], p2=[V.x+ub[0]/lb*k,V.y+ub[1]/lb*k], p3=[p1[0]+ub[0]/lb*k,p1[1]+ub[1]/lb*k];
+    ex+=`<path class="ra" d="M${sx(p1[0])} ${sy(p1[1])} L${sx(p3[0])} ${sy(p3[1])} L${sx(p2[0])} ${sy(p2[1])}"/>`; }
+  if(o.line) { const L=o.line; ex+=`<line class="perp" x1="${sx(-6)}" y1="${sy(L.m*-6+L.b)}" x2="${sx(6)}" y2="${sy(L.m*6+L.b)}"/>`; }
+  plot(svg,ex,pts.map(p=>({x:p.x,y:p.y,label:p.l,cls:p.cls})));
+}
+const TA=[{x:-2,y:-1,l:'A'},{x:2,y:3,l:'B'},{x:5,y:0,l:'C'}];
+const TB=[{x:-3,y:1,l:'A'},{x:1,y:5,l:'B'}];
+const TBm=[...TB,{x:-1,y:3,l:'M',cls:'mid'}];
+const EX={
+  A:[
+    [g=>triScene(g,TA,{sides:[[0,1],[1,2],[2,0]]}),`נתון משולש עם הקודקודים A ${P(-2,-1)}, B ${P(2,3)} ו-C ${P(5,0)}. האם הוא ישר זווית? אם כן, מה השטח שלו?`],
+    [g=>triScene(g,TA,{sides:[[0,1,'seg'],[1,2],[2,0]]}),`<strong>שיפוע AB:</strong> ${E('m = (3 − (−1)) : (2 − (−2))')} ${E('= 4 : 4 = 1')}.`],
+    [g=>triScene(g,TA,{sides:[[0,1,'seg'],[1,2,'seg'],[2,0]]}),`<strong>שיפוע BC:</strong> ${E('m = (0 − 3) : (5 − 2)')} ${E('= −3 : 3 = −1')}.`],
+    [g=>triScene(g,TA,{sides:[[0,1,'seg'],[1,2,'seg'],[2,0]],right:[1,0,2]}),`<strong>מכפלת השיפועים:</strong> ${E('1 · (−1) = −1')}. לכן AB מאונך ל-BC, והזווית ב-B ישרה.`],
+    [g=>triScene(g,TA,{sides:[[0,1,'seg'],[1,2,'seg'],[2,0]],right:[1,0,2]}),`<strong>אורכי הניצבים:</strong> ${E('AB = √(4² + 4²) = √32')} ו-${E('BC = √(3² + 3²) = √18')}.`],
+    [g=>triScene(g,TA,{sides:[[0,1,'seg'],[1,2,'seg'],[2,0]],right:[1,0,2],fill:true}),`<strong>שטח:</strong> במשולש ישר זווית, ניצב כפול ניצב חלקי 2: ${E('√32 · √18 : 2')} ${E('= √576 : 2 = 24 : 2 = 12')}.`]
+  ],
+  B:[
+    [g=>triScene(g,TB,{sides:[[0,1,'seg']]}),`נתונות הנקודות A ${P(-3,1)} ו-B ${P(1,5)}. מצאו את משוואת האנך האמצעי לקטע AB.`],
+    [g=>triScene(g,TBm,{sides:[[0,1,'seg']]}),`<strong>אמצע:</strong> ${E('M = ((−3 + 1) : 2, (1 + 5) : 2)')} ${E('= (−1, 3)')}.`],
+    [g=>triScene(g,TBm,{sides:[[0,1,'seg']]}),`<strong>שיפוע AB:</strong> ${E('(5 − 1) : (1 − (−3)) = 4 : 4 = 1')}.`],
+    [g=>triScene(g,TBm,{sides:[[0,1,'seg']]}),`<strong>שיפוע האנך:</strong> הופכים ומחליפים סימן: ${E('m = −1')}. בדיקה: ${E('1 · (−1) = −1')}.`],
+    [g=>triScene(g,TBm,{sides:[[0,1,'seg']]}),`<strong>מציבים את M:</strong> ${E('y = −x + b')}, ובנקודה ${P(-1,3)}: ${E('3 = 1 + b')}, אז ${E('b = 2')}.`],
+    [g=>triScene(g,TBm,{sides:[[0,1,'seg']],line:{m:-1,b:2}}),`<strong>התשובה:</strong> ${E('y = −x + 2')}. הקו עובר ב-M ומאונך לקטע.`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const [fn,txt]=EX[exKey][exI];
+  fn($('exG')); $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+let pr={}, streak=0, solved=0;
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const TRIP=[[3,4],[4,3],[0,5],[5,0],[0,4],[3,0],[2,2],[1,3],[2,4],[1,2]];
+function inputs(list){
+  $('prIn').innerHTML=list.map(([id,lab])=>`<label for="${id}">${lab}<input id="${id}" inputmode="text" autocomplete="off"></label>`).join('');
+  $('prIn').querySelectorAll('input').forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+}
+function newPr(){
+  let kind; do{ kind=pick(['dist','mid','end','perp']); } while(kind===pr.kind&&Math.random()<.6);
+  const o={kind,tries:0,hint:0};
+  if(kind==='dist'){
+    let dx,dy; [dx,dy]=pick(TRIP); if(Math.random()<.5) dx=-dx; if(Math.random()<.5) dy=-dy;
+    const x1=ri(Math.max(-5,-5-dx),Math.min(5,5-dx)), y1=ri(Math.max(-5,-5-dy),Math.min(5,5-dy));
+    Object.assign(o,{x1,y1,x2:x1+dx,y2:y1+dy,d2:dx*dx+dy*dy}); o.ans=Math.sqrt(o.d2);
+    o.q=`מה המרחק בין A ${P(x1,y1)} ל-B ${P(o.x2,o.y2)}?`; inputs([['pa','AB =']]);
+    scene($('prG'),x1,y1,o.x2,o.y2,{mid:false,perp:false});
+  }
+  if(kind==='mid'||kind==='end'){
+    let x1,y1,x2,y2; do{ x1=ri(-5,5); y1=ri(-5,5); x2=ri(-5,5); y2=ri(-5,5); } while((x1+x2)%2||(y1+y2)%2||(x1===x2&&y1===y2));
+    Object.assign(o,{x1,y1,x2,y2,mx:(x1+x2)/2,my:(y1+y2)/2});
+    if(kind==='mid'){ o.q=`מה האמצע M של הקטע בין A ${P(x1,y1)} ל-B ${P(x2,y2)}?`; inputs([['pa','x של M'],['pb','y של M']]);
+      scene($('prG'),x1,y1,x2,y2,{mid:false,perp:false}); }
+    else { o.q=`M ${P(o.mx,o.my)} הוא אמצע הקטע AB, ו-A = ${P(x1,y1)}. מה השיעורים של B?`; inputs([['pa','x של B'],['pb','y של B']]);
+      plot($('prG'),'',[{x:x1,y:y1,label:'A'},{x:o.mx,y:o.my,label:'M',cls:'mid'}]); }
+  }
+  if(kind==='perp'){
+    const m=pick([2,-3,0.5,-0.5,4,-0.25,1.5,-2/3,3,-1]), b=ri(-3,3);
+    Object.assign(o,{m,b,ans:-1/m}); o.q=`מה השיפוע של ישר שמאונך לישר ${G.eqHTML(m,b)}?`; inputs([['pa','m =']]);
+    draw($('prG'),m,b,{});
+  }
+  pr=o; $('prQ').innerHTML=o.q; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr;
+  if(p.kind==='dist'){ const dx=p.x2-p.x1, dy=p.y2-p.y1; return `${E(`√(${paren(dx)}² + ${paren(dy)}²) = √${p.d2}`)}${rootTxt(p.d2)!==`√${p.d2}`?' '+E(`= ${rootTxt(p.d2)}`):''}${Number.isInteger(p.ans)?'':' '+E(`≈ ${p.ans.toFixed(2)}`)}.`; }
+  if(p.kind==='mid') return `${E(`((${paren(p.x1)} + ${paren(p.x2)}) : 2, (${paren(p.y1)} + ${paren(p.y2)}) : 2)`)} ${E(`= (${numTxt(p.mx)}, ${numTxt(p.my)})`)}.`;
+  if(p.kind==='end') return `מ-A ל-M זזים ${E(`${numTxt(p.mx-p.x1)}`)} ב-x ו-${E(`${numTxt(p.my-p.y1)}`)} ב-y. עושים את אותו צעד שוב מ-M: ${E(`B = (${numTxt(p.x2)}, ${numTxt(p.y2)})`)}. או בנוסחה: ${E('B = 2M − A')}.`;
+  return `הופכים את השבר ומחליפים סימן: ${E(`m = ${signedFracHTML(p.ans)}`)}. בדיקה: ${E(`${signedFracHTML(p.m)} · ${p.ans<0?'(':''}${signedFracHTML(p.ans)}${p.ans<0?')':''} = −1`)}.`;
+}
+function solvedDraw(){
+  const p=pr;
+  if(p.kind==='dist') scene($('prG'),p.x1,p.y1,p.x2,p.y2,{mid:false,perp:false,tri:true});
+  if(p.kind==='mid'||p.kind==='end') scene($('prG'),p.x1,p.y1,p.x2,p.y2,{perp:false});
+  if(p.kind==='perp') draw($('prG'),p.m,p.b,{lines:[{m:p.ans,b:p.b,cls:'ln2'}]});
+}
+$('prCheck').onclick=()=>{
+  const p=pr, fb=$('prFb'), a=$('pa').value, b=$('pb')?$('pb').value:'';
+  let ok=false, msg='';
+  if(p.kind==='dist'){
+    const v=readLen(a); if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 5, או שורש כמו √20.</div>'; return; }
+    ok=Math.abs(v-p.ans)<0.02;
+    if(!ok){ const dx=Math.abs(p.x2-p.x1), dy=Math.abs(p.y2-p.y1);
+      if(eqv(v,p.d2)) msg='זה הסכום של הריבועים. חסר עוד צעד אחד: השורש.';
+      else if(eqv(v,dx+dy)) msg='חיברתם את ההפרשים. במרחק מעלים כל הפרש בריבוע, מחברים, ורק אז מוציאים שורש.';
+      else msg='עוד לא. חשבו את ההפרש ב-x ואת ההפרש ב-y, העלו כל אחד בריבוע וחברו.'; }
+  }
+  if(p.kind==='mid'||p.kind==='end'){
+    const u=parseNum(a), w=parseNum(b); if(isNaN(u)||isNaN(w)){ fb.innerHTML='<div class="fb err">כתבו מספר בכל אחת מהתיבות.</div>'; return; }
+    const tx=p.kind==='mid'?p.mx:p.x2, ty=p.kind==='mid'?p.my:p.y2;
+    ok=eqv(u,tx)&&eqv(w,ty);
+    if(!ok){
+      if(p.kind==='mid'&&eqv(u,(p.x2-p.x1)/2)&&eqv(w,(p.y2-p.y1)/2)) msg='חיסרתם במקום לחבר. באמצע מחברים את שני ה-x ומחלקים ב-2.';
+      else if(p.kind==='mid'&&eqv(u,p.x1+p.x2)&&eqv(w,p.y1+p.y2)) msg='חיברתם, יופי. עכשיו חלקו ב-2.';
+      else if(p.kind==='end'&&eqv(u,(p.x1+p.mx)/2)&&eqv(w,(p.y1+p.my)/2)) msg='זה האמצע בין A ל-M. אבל M הוא האמצע, ו-B נמצאת מעבר לו.';
+      else if(p.kind==='end'&&eqv(u,p.mx-p.x1)&&eqv(w,p.my-p.y1)) msg='זה הצעד מ-A ל-M. עכשיו הוסיפו את אותו צעד ל-M.';
+      else if(eqv(u,tx)) msg='ה-x נכון. בדקו שוב את ה-y.';
+      else if(eqv(w,ty)) msg='ה-y נכון. בדקו שוב את ה-x.';
+      else msg=p.kind==='mid'?'עוד לא. חברו את שני ה-x וחלקו ב-2, ואותו דבר עם ה-y.':'עוד לא. כמה זזים מ-A ל-M? מ-M ל-B זזים בדיוק אותו דבר.';
+    }
+  }
+  if(p.kind==='perp'){
+    const v=parseNum(a); if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר או שבר, למשל -1/2.</div>'; return; }
+    ok=eqv(v,p.ans);
+    if(!ok){
+      if(eqv(v,p.m)) msg='זה השיפוע של ישר <strong>מקביל</strong>. למאונך צריך מכפלה של −1.';
+      else if(eqv(v,-p.m)) msg='החלפתם סימן, אבל לא הפכתם את השבר.';
+      else if(eqv(v,1/p.m)) msg='הפכתם את השבר, אבל שכחתם להחליף סימן.';
+      else msg='עוד לא. השיפוע של המאונך הוא מספר שכשכופלים אותו בשיפוע הנתון יוצא −1.';
+    }
+  }
+  if(ok){ streak++; solved++; streakTxt(); solvedDraw(); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2); let h;
+  if(p.kind==='dist'){ const dx=p.x2-p.x1, dy=p.y2-p.y1;
+    h=p.hint===1?'ציירו משולש: ימינה או שמאלה מ-A, ואז למעלה או למטה עד B. כמה משבצות כל צלע?'
+      :`הניצבים הם ${E(numTxt(Math.abs(dx)))} ו-${E(numTxt(Math.abs(dy)))}. לפי פיתגורס: ${E(`AB = √(${Math.abs(dx)}² + ${Math.abs(dy)}²)`)}.`;
+    if(p.hint===1) scene($('prG'),p.x1,p.y1,p.x2,p.y2,{mid:false,perp:false,tri:true}); }
+  else if(p.kind==='mid') h=p.hint===1?'האמצע הוא הממוצע. כמה זה הממוצע של שני ה-x?':`${E(`x = (${paren(p.x1)} + ${paren(p.x2)}) : 2`)}. עשו אותו דבר עם ה-y.`;
+  else if(p.kind==='end') h=p.hint===1?'M באמצע הדרך מ-A ל-B. כמה זזים ב-x וב-y מ-A ל-M?':`מ-A ל-M זזים ${E(numTxt(p.mx-p.x1))} ב-x. אז ${E(`x של B = ${numTxt(p.mx)} + ${paren(p.mx-p.x1)}`)}. אותו דבר עם ה-y.`;
+  else h=p.hint===1?`השיפוע הנתון הוא ${E(signedFracHTML(p.m))}. איזה מספר כופלים בו כדי לקבל −1?`:`הפכו את ${E(signedFracHTML(p.m))} לשבר הפוך, ואז החליפו את הסימן.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ solvedDraw(); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

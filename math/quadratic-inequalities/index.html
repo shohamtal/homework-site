@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>אי-שוויון ריבועי · כיתה י · מירי</title>
+<meta name="description" content="פותרים אי-שוויון כמו x² − 5x + 6 &gt; 0 בעזרת הפרבולה: מוצאים שורשים, בודקים איפה הגרף מעל ציר x ואיפה מתחתיו. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/quadratic-inequalities/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אי-שוויון ריבועי · כיתה י · מירי">
+<meta property="og:description" content="פותרים אי-שוויון כמו x² − 5x + 6 &gt; 0 בעזרת הפרבולה: מוצאים שורשים, בודקים איפה הגרף מעל ציר x ואיפה מתחתיו. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/quadratic-inequalities/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"משוואות ואי-שוויונות","item":"https://shohamtal.github.io/homework-site/math/grade-10/#algebra-10"},{"@type":"ListItem","position":5,"name":"אי-שוויון ריבועי","item":"https://shohamtal.github.io/homework-site/math/quadratic-inequalities/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך פותרים אי-שוויון ריבועי?","acceptedAnswer":{"@type":"Answer","text":"מעבירים הכול לצד אחד כך שבצד השני יש 0. מוצאים את השורשים של המשוואה, מציירים סקיצה של הפרבולה לפי הסימן של a, ובודקים איפה היא מעל ציר x (גדול מ-0) ואיפה מתחתיו (קטן מ-0). למשל x² − x − 6 &lt; 0 נותן −2 &lt; x &lt; 3. תרגלו למטה."}},{"@type":"Question","name":"מתי התשובה היא \"בין השורשים\" ומתי \"מחוץ לשורשים\"?","acceptedAnswer":{"@type":"Answer","text":"כשהפרבולה פתוחה למעלה (a חיובי), היא מתחת לציר בין השורשים ומעליו מחוץ להם. לכן \"קטן מ-0\" הוא בין השורשים, ו\"גדול מ-0\" הוא מחוץ להם. כשהפרבולה פתוחה למטה הכול מתהפך. נסו במעבדה."}},{"@type":"Question","name":"מה עושים כשאין לפרבולה שורשים?","acceptedAnswer":{"@type":"Answer","text":"אם אין שורשים, הפרבולה כולה מעל הציר או כולה מתחתיו. פתוחה למעלה? היא תמיד מעל, אז \"גדול מ-0\" נכון לכל x ו\"קטן מ-0\" אין לו פתרון. פתוחה למטה? בדיוק הפוך."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אי-שוויון ריבועי","description":"פותרים אי-שוויון כמו x² − 5x + 6 > 0 בעזרת הפרבולה: מוצאים שורשים, בודקים איפה הגרף מעל ציר x ואיפה מתחתיו. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/quadratic-inequalities/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"משוואות ואי-שוויונות","teaches":"אי-שוויון ריבועי","keywords":"פרבולה, שורשים, תחום פתרון","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+  .g .axs{stroke:var(--blue); stroke-width:1.6; stroke-dasharray:5 4; fill:none}
+  .g .lnok{stroke:var(--ok); stroke-width:4.5; fill:none; stroke-linecap:round}
+  .g .band{stroke:var(--ok); stroke-width:7; stroke-opacity:.45; stroke-linecap:butt}
+  .g .cl{fill:var(--ok); stroke:var(--ink); stroke-width:1.2}
+  .g .op{fill:var(--card); stroke:var(--ok); stroke-width:2.2}
+  .ops{display:flex; flex-wrap:wrap; gap:8px}
+  .ops button{font-family:var(--f-math); font-size:1.15rem; min-width:3em}
+  .ops button[aria-pressed="true"], .choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+  .choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+  .choices button{font-size:1rem}
+  .solbox{font-size:1.15rem; font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="quadratic-inequalities">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#algebra-10">משוואות ואי-שוויונות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">אי-שוויון ריבועי</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · משוואות ואי-שוויונות</div>
+  <h1>אי-שוויון ריבועי <span class="slogan">איפה הפרבולה מעל הציר?</span></h1>
+  <p class="lead">אי-שוויון כמו <span class="eq"><i>x</i>² − 5<i>x</i> + 6 &gt; 0</span> שואל שאלה אחת פשוטה: <strong>לאילו x הפרבולה נמצאת מעל ציר x?</strong>
+  לא מנחשים ולא מעבירים אגפים כמו במשוואה. מוצאים את השורשים, בודקים לאן הפרבולה פתוחה, וקוראים את התשובה מהציור.
+  זה נושא של כיתה י, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים בעמוד">
+    <a href="#intro">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="intro">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון: שלושה צעדים וציור קטן</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>פתוחה למעלה: "מחוץ" או "בין"</h3>
+      <svg class="g" id="introUp" viewBox="0 0 240 240" role="img" aria-label="פרבולה פתוחה למעלה עם שורשים 1 ו-4"></svg>
+      <p><span class="eq"><i>y</i> = <i>x</i>² − 5<i>x</i> + 4</span> חותכת את ציר x ב-1 וב-4. היא <strong>מעל</strong> הציר משני הצדדים, ו<strong>מתחת</strong> לציר רק בין השורשים.</p>
+    </div>
+    <div class="mini">
+      <h3>פתוחה למטה: הפוך</h3>
+      <svg class="g" id="introDown" viewBox="0 0 240 240" role="img" aria-label="פרבולה פתוחה למטה עם שורשים מינוס 2 ו-2"></svg>
+      <p><span class="eq"><i>y</i> = −<i>x</i>² + 4</span> חותכת ב-2− וב-2. כאן היא <strong>מעל</strong> הציר רק בין השורשים, ו<strong>מתחת</strong> לציר מחוץ להם.</p>
+    </div>
+  </div>
+  <ol class="steps">
+    <li><div><strong>מעבירים הכול לצד אחד</strong>, כך שבצד השני יהיה 0.</div></li>
+    <li><div><strong>מוצאים שורשים:</strong> פותרים את המשוואה <span class="eq">… = 0</span>, למשל ב<a href="../quadratic-equation/">נוסחת השורשים</a> או ב<a href="../trinomial-factoring/">פירוק טרינום</a>.</div></li>
+    <li><div><strong>מציירים סקיצה</strong> (פתוחה למעלה או למטה, לפי <span class="m">a</span>) וקוראים: איפה הגרף מעל הציר (&gt; 0) ואיפה מתחתיו (&lt; 0).</div></li>
+  </ol>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: צובעים את הפתרון</h2></div>
+  <p class="text">בחרו סימן והזיזו את המחוונים. החלק הירוק על ציר x הוא הפתרון. נקודה מלאה אומרת שהשורש נכלל בפתרון, ונקודה ריקה אומרת שלא.</p>
+  <div class="lab">
+    <svg class="g" id="labG" viewBox="0 0 240 240" role="img" aria-label="גרף המעבדה עם הפתרון צבוע על ציר x"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <div class="ops" id="labOps" role="group" aria-label="סימן האי-שוויון">
+        <button data-op="&gt;" aria-pressed="true">&gt; 0</button>
+        <button data-op="≥" aria-pressed="false">≥ 0</button>
+        <button data-op="&lt;" aria-pressed="false">&lt; 0</button>
+        <button data-op="≤" aria-pressed="false">≤ 0</button>
+      </div>
+      <label class="slider" for="aRange"><span><span class="m">a</span> (פתיחה)</span><span class="eq" id="aVal"></span></label>
+      <input type="range" id="aRange" min="-2" max="2" step="0.5" value="1">
+      <label class="slider" for="bRange"><span><i>b</i></span><span class="eq" id="bVal"></span></label>
+      <input type="range" id="bRange" min="-6" max="6" step="1" value="-1">
+      <label class="slider" for="cRange"><span><span class="b">c</span></span><span class="eq" id="cVal"></span></label>
+      <input type="range" id="cRange" class="hl" min="-6" max="6" step="1" value="-6">
+      <div class="explain fb hint" id="labExplain" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="1,-1,-6,&gt;" dir="ltr">x² − x − 6 &gt; 0</button>
+          <button data-p="1,-1,-6,≤" dir="ltr">x² − x − 6 ≤ 0</button>
+          <button data-p="-1,0,4,&gt;" dir="ltr">−x² + 4 &gt; 0</button>
+          <button data-p="1,-4,4,&gt;" dir="ltr">x² − 4x + 4 &gt; 0</button>
+          <button data-p="1,-4,4,≤" dir="ltr">x² − 4x + 4 ≤ 0</button>
+          <button data-p="1,0,2,&lt;" dir="ltr">x² + 2 &lt; 0</button>
+          <button data-p="1,0,2,&gt;" dir="ltr">x² + 2 &gt; 0</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב לשני המקרים המיוחדים. כשהפרבולה רק <strong>נוגעת</strong> בציר (שורש אחד), וכשהיא <strong>לא פוגשת</strong> אותו בכלל. אז התשובה יכולה להיות "כל x", "אין פתרון" או נקודה אחת בלבד.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>מלכודות שכולם נופלים בהן</h2></div>
+  <ol class="steps">
+    <li><div><strong>השורשים הם לא התשובה.</strong> ב-<span class="eq"><i>x</i>² − 9 &gt; 0</span> השורשים הם 3− ו-3, אבל הפתרון הוא <span class="eq"><i>x</i> &lt; −3</span> או <span class="eq"><i>x</i> &gt; 3</span>. השורשים הם רק הגבולות.</div></li>
+    <li><div><strong>לא מוציאים שורש משני האגפים.</strong> מ-<span class="eq"><i>x</i>² &gt; 9</span> לא יוצא רק <span class="eq"><i>x</i> &gt; 3</span>. גם <span class="eq"><i>x</i> = −4</span> מקיים אותו, כי <span class="eq">16 &gt; 9</span>.</div></li>
+    <li><div><strong>לא מחלקים ב-x.</strong> ב-<span class="eq"><i>x</i>² &gt; 2<i>x</i></span> אסור לחלק ב-x, כי לא יודעים אם הוא חיובי או שלילי. מעבירים: <span class="eq"><i>x</i>² − 2<i>x</i> &gt; 0</span>, ואז פותרים.</div></li>
+    <li><div><strong>"אין שורשים" זה לא תמיד "אין פתרון".</strong> ל-<span class="eq"><i>x</i>² + 1 &gt; 0</span> אין שורשים, אבל הפרבולה כולה מעל הציר. לכן כל x הוא פתרון.</div></li>
+    <li><div><strong>כתיבה נכונה.</strong> "בין" כותבים <span class="eq">−2 &lt; <i>x</i> &lt; 3</span>. "מחוץ" כותבים בשני חלקים עם המילה <strong>או</strong>. אף פעם לא <span class="eq">3 &lt; <i>x</i> &lt; −2</span>.</div></li>
+  </ol>
+  <div class="callout"><strong>בדיקה מהירה:</strong> בחרו מספר אחד מתוך התשובה והציבו. אם האי-שוויון מתקיים, ואם מספר מחוץ לתשובה לא מקיים אותו, כנראה צדקתם.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב</button>
+    <button id="exC" role="tab" aria-selected="false">דוגמה ג (בלי שורשים)</button>
+  </div>
+  <div class="lab">
+    <svg class="g" id="exG" viewBox="0 0 240 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: בחרו את הפתרון</h2></div>
+  <p class="text">פתרו במחברת, ואז בחרו את התשובה הנכונה ולחצו "בדיקה". הגרף מופיע רק כשמבקשים רמז שני.</p>
+  <div class="lab">
+    <svg class="g" id="prG" viewBox="0 0 240 240" role="img" aria-label="גרף לתרגול"></svg>
+    <div class="ctrl">
+      <div class="big-eq" id="prEq" dir="ltr"></div>
+      <div class="choices" id="prChoices"></div>
+      <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך פותרים אי-שוויון ריבועי?</h3>
+    <p>מעבירים הכול לצד אחד כך שבצד השני יש 0. מוצאים את השורשים של המשוואה, מציירים סקיצה של הפרבולה לפי הסימן של a, ובודקים איפה היא מעל ציר x (גדול מ-0) ואיפה מתחתיו (קטן מ-0). למשל <span class="eq"><i>x</i>² − <i>x</i> − 6 &lt; 0</span> נותן <span class="eq">−2 &lt; <i>x</i> &lt; 3</span>. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>מתי התשובה היא "בין השורשים" ומתי "מחוץ לשורשים"?</h3>
+    <p>כשהפרבולה פתוחה למעלה (a חיובי), היא מתחת לציר בין השורשים ומעליו מחוץ להם. לכן "קטן מ-0" הוא בין השורשים, ו"גדול מ-0" הוא מחוץ להם. כשהפרבולה פתוחה למטה הכול מתהפך. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה עושים כשאין לפרבולה שורשים?</h3>
+    <p>אם אין שורשים, הפרבולה כולה מעל הציר או כולה מתחתיו. פתוחה למעלה? היא תמיד מעל, אז "גדול מ-0" נכון לכל x ו"קטן מ-0" אין לו פתרון. פתוחה למטה? בדיוק הפוך.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/quadratic-equation/">משוואה ריבועית ונוסחת השורשים</a> · <a href="../../math/parabola/">פונקציה ריבועית: הפרבולה</a> · <a href="../../math/compound-inequalities/">מערכת אי-שוויונות ואי-שוויון כפול</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/probability-two-stage/"><small>→ הנושא הקודם</small>הסתברות בניסוי דו-שלבי</a><a class="next" href="../../math/function-properties/"><small>הנושא הבא ←</small>פונקציות ותכונותיהן</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {draw,numTxt,fracHTML,sx,sy,pick,MINUS}=G;
+const $=id=>document.getElementById(id);
+const f=(x,a,b,c)=>a*x*x+b*x+c;
+const r2=v=>Math.round(v*100)/100;
+const isInt=v=>Math.abs(v-Math.round(v))<1e-9;
+const rt=v=>isInt(v)?numTxt(Math.round(v)):'≈'+numTxt(r2(v));
+const OPS={'>':'&gt;','≥':'≥','<':'&lt;','≤':'≤'};
+const X='<i>x</i>';
+const eqs=s=>`<span class="eq">${s}</span>`;
+let pid=0;
+
+/* ax² + bx + c as HTML, without "y =" */
+function exprHTML(a,b,c){
+  const parts=[];
+  if(a){ const k=a===1?'':a===-1?MINUS:(a<0?MINUS:'')+fracHTML(a); parts.push({neg:false,h:`<span class="m">${k}</span>${X}²`}); }
+  if(b){ const k=Math.abs(b)===1?'':fracHTML(b); parts.push({neg:b<0,h:`${k}${X}`}); }
+  if(c||!parts.length) parts.push({neg:c<0,h:`<span class="b">${fracHTML(c)}</span>`});
+  return parts.map((p,i)=>i===0?(p.neg?MINUS:'')+p.h:` ${p.neg?MINUS:'+'} ${p.h}`).join('');
+}
+function rootsOf(a,b,c){
+  const D=b*b-4*a*c;
+  if(D<-1e-9) return [];
+  if(Math.abs(D)<1e-9) return [-b/(2*a)];
+  const s=Math.sqrt(D); return [(-b-s)/(2*a),(-b+s)/(2*a)].sort((p,q)=>p-q);
+}
+const holds=(v,op)=>op==='>'?v>1e-9:op==='≥'?v>-1e-9:op==='<'?v<-1e-9:v<1e-9;
+
+/* solution of ax² + bx + c (op) 0 → {html, ints:[[lo,hi,loIn,hiIn]], pts:[x], kind} */
+function solve(a,b,c,op){
+  const rs=rootsOf(a,b,c), pos=op==='>'||op==='≥', strict=op==='>'||op==='<', same=(a>0)===pos;
+  const L=strict?'&lt;':'≤', Gt=strict?'&gt;':'≥', I=Infinity;
+  if(rs.length===2){
+    const [p,q]=rs;
+    if(same) return {kind:'out',html:`${eqs(`${X} ${L} ${rt(p)}`)} או ${eqs(`${X} ${Gt} ${rt(q)}`)}`,ints:[[-I,p,false,!strict],[q,I,!strict,false]],pts:[]};
+    return {kind:'in',html:eqs(`${rt(p)} ${L} ${X} ${L} ${rt(q)}`),ints:[[p,q,!strict,!strict]],pts:[]};
+  }
+  if(rs.length===1){
+    const r=rs[0];
+    if(same) return strict?{kind:'allbut',html:`כל x חוץ מ-${eqs(`${X} = ${rt(r)}`)}`,ints:[[-I,r,false,false],[r,I,false,false]],pts:[]}
+                         :{kind:'all',html:'כל x',ints:[[-I,I,false,false]],pts:[]};
+    return strict?{kind:'none',html:'אין פתרון',ints:[],pts:[]}:{kind:'pt',html:`רק ${eqs(`${X} = ${rt(r)}`)}`,ints:[],pts:[r]};
+  }
+  return same?{kind:'all',html:'כל x',ints:[[-I,I,false,false]],pts:[]}:{kind:'none',html:'אין פתרון',ints:[],pts:[]};
+}
+
+/* parabola with optional solution shading. opt: op, roots, axis, curve, vertex */
+function plot(svg,a,b,c,opt={}){
+  const id='qc'+(++pid), clamp=v=>Math.max(-40,Math.min(40,v));
+  let d='', ok='', run=false;
+  for(let x=-6;x<=6.001;x+=0.05){
+    const y=clamp(f(x,a,b,c)), P=sx(x).toFixed(1)+' '+sy(y).toFixed(1);
+    d+=(d?'L':'M')+P;
+    if(opt.op&&holds(f(x,a,b,c),opt.op)){ ok+=(run?'L':'M')+P; run=true; } else run=false;
+  }
+  let h=`<defs><clipPath id="${id}"><rect x="${sx(-5.6)}" y="${sy(5.6)}" width="224" height="224"/></clipPath></defs><g clip-path="url(#${id})">`;
+  const rs=a?rootsOf(a,b,c):[];
+  if(opt.axis&&a){ const xv=-b/(2*a); h+=`<line class="axs" x1="${sx(xv)}" y1="${sy(6)}" x2="${sx(xv)}" y2="${sy(-6)}"/>`; }
+  if(opt.curve!==false) h+=`<path class="ln" d="${d}"/>`;
+  let ends='';
+  if(opt.op&&a){
+    const s=solve(a,b,c,opt.op);
+    if(opt.curve!==false&&ok) h+=`<path class="lnok" d="${ok}"/>`;
+    s.ints.forEach(([lo,hi,li,hi2])=>{
+      const L=Math.max(lo,-5.8), H=Math.min(hi,5.8);
+      if(H>L) h+=`<line class="band" x1="${sx(L)}" y1="${sy(0)}" x2="${sx(H)}" y2="${sy(0)}"/>`;
+      if(isFinite(lo)&&Math.abs(lo)<=5.5) ends+=`<circle class="${li?'cl':'op'}" cx="${sx(lo)}" cy="${sy(0)}" r="4.5"/>`;
+      if(isFinite(hi)&&Math.abs(hi)<=5.5) ends+=`<circle class="${hi2?'cl':'op'}" cx="${sx(hi)}" cy="${sy(0)}" r="4.5"/>`;
+    });
+    s.pts.forEach(x=>{ if(Math.abs(x)<=5.5) ends+=`<circle class="cl" cx="${sx(x)}" cy="${sy(0)}" r="4.5"/>`; });
+  }
+  h+='</g>';
+  if(opt.roots&&!opt.op) rs.forEach(r=>{ if(Math.abs(r)<=5.5) h+=`<circle class="pt" cx="${sx(r)}" cy="${sy(0)}" r="4.5"/>`; });
+  h+=ends;
+  draw(svg,null,0,{extra:h});
+}
+
+/* intro */
+plot($('introUp'),1,-5,4,{op:'>'});
+plot($('introDown'),-1,0,4,{op:'>'});
+
+/* lab */
+const aR=$('aRange'), bR=$('bRange'), cR=$('cRange');
+let op='>';
+function setOp(o){ op=o; $('labOps').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.op===o)); }
+function lab(){
+  const a=+aR.value, b=+bR.value, c=+cR.value;
+  $('aVal').innerHTML=(a<0?MINUS:'')+fracHTML(a); $('bVal').textContent=numTxt(b); $('cVal').textContent=numTxt(c);
+  $('labEq').innerHTML=eqs(`${exprHTML(a,b,c)} ${OPS[op]} 0`);
+  if(a===0){
+    plot($('labG'),0,b,c,{});
+    $('labExplain').innerHTML=`<div>כש-<span class="m">a = 0</span> אין ${eqs(X+'²')}, אז זה כבר אי-שוויון <strong>קווי</strong>, כמו ב<a href="../inequalities/">אי-שוויונות ממעלה ראשונה</a>. הזיזו את <span class="m">a</span> חזרה.</div>`;
+    return;
+  }
+  const rs=rootsOf(a,b,c), s=solve(a,b,c,op), pos=op==='>'||op==='≥', strict=op==='>'||op==='<';
+  plot($('labG'),a,b,c,{op});
+  let t=`<div><strong>1. לאן פתוחה?</strong> <span class="m">a</span> ${a>0?'חיובי, הפרבולה פתוחה <strong>למעלה</strong>.':'שלילי, הפרבולה פתוחה <strong>למטה</strong>.'}</div>`;
+  t+=`<div><strong>2. שורשים:</strong> ${rs.length===2?`${eqs(`${X} = ${rt(rs[0])}`)} ו-${eqs(`${X} = ${rt(rs[1])}`)}.`:rs.length===1?`רק אחד, ${eqs(`${X} = ${rt(rs[0])}`)}. הפרבולה נוגעת בציר בקודקוד.`:'אין. הפרבולה לא פוגשת את ציר x.'}</div>`;
+  t+=`<div><strong>3. מה מבקשים?</strong> ${pos?'גדול':'קטן'} מ-0${strict?'':' או שווה'}, כלומר איפה הגרף <strong>${pos?'מעל':'מתחת ל'}</strong>ציר x${strict?'':' (או עליו)'}.</div>`;
+  t+=`<div class="solbox">הפתרון: ${s.html}</div>`;
+  if(rs.length===2&&(Math.abs(rs[0])>5.5||Math.abs(rs[1])>5.5)) t+='<div>אחד השורשים יצא מחוץ לגרף. נסו להקטין את b או את c.</div>';
+  $('labExplain').innerHTML=t;
+}
+[aR,bR,cR].forEach(r=>r.addEventListener('input',lab));
+$('labOps').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ setOp(b.dataset.op); lab(); }));
+document.querySelectorAll('.tries button').forEach(btn=>btn.addEventListener('click',()=>{ const [a,b,c,o]=btn.dataset.p.split(','); aR.value=a; bR.value=b; cR.value=c; setOp(o); lab(); }));
+lab();
+
+/* worked examples */
+const EX={
+  A:{p:[1,-2,-3],steps:[
+    [{curve:false},`פותרים ${eqs(`${X}² − 2${X} − 3 &lt; 0`)}. כבר יש 0 בצד ימין, אז אפשר להתחיל.`],
+    [{curve:false,roots:true},`<strong>צעד 1, שורשים:</strong> פותרים ${eqs(`${X}² − 2${X} − 3 = 0`)}. פירוק: ${eqs(`(${X} − 3)(${X} + 1) = 0`)}, ולכן ${eqs(`${X} = −1`)} או ${eqs(`${X} = 3`)}.`],
+    [{roots:true},`<strong>צעד 2, סקיצה:</strong> ${eqs('<i>a</i> = 1')} חיובי, אז הפרבולה פתוחה למעלה ועוברת דרך שני השורשים.`],
+    [{op:'<'},`<strong>צעד 3, קוראים:</strong> מבקשים קטן מ-0, כלומר מתחת לציר. זה קורה <strong>בין</strong> השורשים. הפתרון: ${eqs(`−1 &lt; ${X} &lt; 3`)}. הנקודות ריקות כי ב-1− וב-3 הערך שווה 0, ו-0 לא קטן מ-0.`],
+    [{op:'<'},`<strong>בדיקה:</strong> ${eqs(`${X} = 0`)} נמצא בתשובה: ${eqs('0 − 0 − 3 = −3 &lt; 0')}. מתאים. ${eqs(`${X} = 4`)} מחוץ לתשובה: ${eqs('16 − 8 − 3 = 5')}, לא קטן מ-0. מתאים גם כן.`]
+  ]},
+  B:{p:[-1,1,6],steps:[
+    [{curve:false},`פותרים ${eqs(`6 + ${X} ≤ ${X}²`)}. קודם מעבירים הכול לצד אחד.`],
+    [{curve:false},`<strong>צעד 1, צד אחד:</strong> מחסרים ${eqs(`${X}²`)} משני הצדדים: ${eqs(`−${X}² + ${X} + 6 ≤ 0`)}.`],
+    [{curve:false,roots:true},`<strong>צעד 2, שורשים:</strong> ${eqs(`−${X}² + ${X} + 6 = 0`)}. בנוסחת השורשים יוצא ${eqs(`${X} = −2`)} ו-${eqs(`${X} = 3`)}.`],
+    [{roots:true,axis:true},`<strong>צעד 3, סקיצה:</strong> ${eqs('<i>a</i> = −1')} שלילי, הפרבולה פתוחה <strong>למטה</strong>. היא מעל הציר בין השורשים, ומתחתיו מחוץ להם.`],
+    [{op:'≤'},`<strong>צעד 4, קוראים:</strong> מבקשים קטן או שווה ל-0, כלומר מתחת לציר או עליו. זה <strong>מחוץ</strong> לשורשים: ${eqs(`${X} ≤ −2`)} או ${eqs(`${X} ≥ 3`)}. הנקודות מלאות בגלל ה"שווה".`]
+  ]},
+  C:{p:[1,2,5],steps:[
+    [{curve:false},`פותרים ${eqs(`${X}² + 2${X} + 5 &gt; 0`)}.`],
+    [{curve:false},`<strong>צעד 1, שורשים:</strong> הדיסקרימיננטה ${eqs('<i>b</i>² − 4<i>ac</i> = 4 − 20 = −16')}. היא שלילית, ולכן <strong>אין שורשים</strong>. הפרבולה לא פוגשת את ציר x.`],
+    [{},`<strong>צעד 2, סקיצה:</strong> ${eqs('<i>a</i> = 1')} חיובי, פתוחה למעלה. בלי שורשים, היא כולה מעל הציר.`],
+    [{op:'>'},`<strong>צעד 3, קוראים:</strong> מבקשים גדול מ-0, והגרף תמיד מעל הציר. הפתרון: <strong>כל x</strong>. ואם היו שואלים ${eqs(`${X}² + 2${X} + 5 &lt; 0`)}? אז <strong>אין פתרון</strong>.`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [opt,txt]=e.steps[exI];
+  plot($('exG'),...e.p,opt);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX[exKey].steps.length-1){ exI++; ex(); } };
+$('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+['A','B','C'].forEach(k=>{ $('ex'+k).onclick=()=>{ exKey=k; exI=0;
+  ['A','B','C'].forEach(j=>{ const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k); }); ex(); }; });
+ex();
+
+/* practice: multiple choice. each choice has a reason id for diagnostic feedback */
+let pr=null, sel=null, streak=0, solved=0;
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const flipStrict=o=>({'>':'≥','≥':'>','<':'≤','≤':'<'})[o];
+const flipDir=o=>({'>':'<','<':'>','≥':'≤','≤':'≥'})[o];
+function newPr(){
+  let a,b,c,o,guard=0;
+  do{
+    o=pick(['>','≥','<','≤']);
+    if(Math.random()<0.8){
+      a=pick([1,1,1,-1,-1]); let p,q;
+      do{ p=Math.floor(Math.random()*9)-4; q=Math.floor(Math.random()*9)-4; }while(p===q);
+      b=-a*(p+q); c=a*p*q;
+    }else{
+      a=pick([1,-1]); const h=Math.floor(Math.random()*5)-2, m=pick([1,2,3]);
+      b=-2*a*h; c=a*(h*h+m);
+    }
+    guard++;
+  }while(((pr&&pr.a===a&&pr.b===b&&pr.c===c&&pr.op===o)||Math.abs(c)>12)&&guard<50);
+  const rs=rootsOf(a,b,c), right=solve(a,b,c,o);
+  let ch=[{h:right.html,r:'ok'}];
+  if(rs.length===2){
+    ch.push({h:solve(a,b,c,flipDir(o)).html,r:'dir'});
+    ch.push({h:solve(a,b,c,flipStrict(o)).html,r:'strict'});
+    if(rs[0]!==-rs[1]){ const w=solve(a,-b,c,o); ch.push({h:w.html,r:'roots'}); }
+    else ch.push({h:eqs(`${X} ${right.kind==='in'?'&lt;':'&gt;'} ${rt(rs[1])}`),r:'half'});
+  }else{
+    const other=solve(a,b,c,flipDir(o)).html;
+    ch.push({h:other,r:'dirnone'});
+    ch.push({h:`${eqs(`${X} &gt; ${rt(-b/(2*a))}`)}`,r:'guess'});
+  }
+  const seen=new Set(); ch=ch.filter(x=>!seen.has(x.h)&&seen.add(x.h));
+  pr={a,b,c,op:o,rs,right,ch:shuffle(ch),tries:0,hint:0}; sel=null;
+  $('prEq').innerHTML=eqs(`${exprHTML(a,b,c)} ${OPS[o]} 0`);
+  $('prChoices').innerHTML=pr.ch.map((x,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${x.h}</button>`).join('');
+  $('prChoices').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{ sel=+btn.dataset.i; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===btn)); }));
+  plot($('prG'),a,b,c,{curve:false});
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function score(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const MSG={
+  dir:()=>`הגבולות נכונים, אבל הצד הפוך. הפרבולה פתוחה ${pr.a>0?'למעלה':'למטה'}, ולכן היא ${pr.a>0?'מתחת לציר בין':'מעל הציר בין'} השורשים. בדקו מה האי-שוויון מבקש: מעל או מתחת?`,
+  strict:()=>`כמעט! בדקו את הסימן: ${pr.op==='≥'||pr.op==='≤'?'יש "שווה", אז גם השורשים עצמם נכנסים לפתרון.':'אין "שווה", אז השורשים עצמם <strong>לא</strong> נכנסים (בהם הערך הוא בדיוק 0).'}`,
+  roots:()=>'השורשים לא נכונים, יצא להם סימן הפוך. פתרו שוב את המשוואה <strong>= 0</strong> ובדקו בהצבה.',
+  half:()=>'לקחתם רק צד אחד. כשמוציאים שורש מ-x² יש <strong>שני</strong> כיוונים: גם מספרים שליליים גדולים מקיימים את האי-שוויון.',
+  dirnone:()=>`אין שורשים, אז הפרבולה כולה ${pr.a>0?'מעל':'מתחת ל'}ציר x. שאלו את עצמכם: האם זה מה שהאי-שוויון מבקש?`,
+  guess:()=>'לפרבולה הזאת אין שורשים, אז אין גבול שבו התשובה מתחלפת. הפתרון הוא או "כל x" או "אין פתרון".'
+};
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(sel===null||!pr.ch[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם אחת מהתשובות.</div>'; return; }
+  const c=pr.ch[sel];
+  if(c.r==='ok'){ streak++; solved++; score(); plot($('prG'),pr.a,pr.b,pr.c,{op:pr.op}); fb.innerHTML=`<div class="fb ok">נכון! הפתרון: ${pr.right.html}. בירוק על הגרף רואים בדיוק את החלק הזה.</div>`; return; }
+  streak=0; pr.tries++;
+  fb.innerHTML=`<div class="fb err">${MSG[c.r]()}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+  score();
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const {a,b,c,rs}=pr; let t;
+  if(pr.hint===1) t=`קודם פתרו את המשוואה ${eqs(`${exprHTML(a,b,c)} = 0`)}. אפשר בפירוק טרינום או בנוסחת השורשים. ושימו לב: ${eqs(`<i>a</i> = ${numTxt(a)}`)}, אז הפרבולה פתוחה ${a>0?'למעלה':'למטה'}.`;
+  else{
+    t=rs.length?`השורשים הם ${rs.map(r=>eqs(`${X} = ${rt(r)}`)).join(' ו-')}. ציירנו לכם את הפרבולה. עכשיו בדקו איפה היא ${pr.op==='>'||pr.op==='≥'?'מעל':'מתחת ל'}ציר x.`
+            :`אין שורשים (הדיסקרימיננטה שלילית). ציירנו את הפרבולה. האם היא כולה מעל הציר או כולה מתחתיו?`;
+    plot($('prG'),a,b,c,{roots:true});
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  plot($('prG'),pr.a,pr.b,pr.c,{op:pr.op});
+  const rs=pr.rs;
+  $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${rs.length?`השורשים ${rs.map(r=>rt(r)).join(' ו-')}, `:'אין שורשים, '}הפרבולה פתוחה ${pr.a>0?'למעלה':'למטה'}, ולכן ${pr.right.html}. אחר כך נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); score();
+})();
+</script>
+</body>
+</html>

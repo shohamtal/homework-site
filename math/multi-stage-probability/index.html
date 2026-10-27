@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>הסתברות: עץ רב-שלבי ו&quot;לפחות פעם אחת&quot; · כיתה י · מירי</title>
+<meta name="description" content="ניסויים עם שלושה שלבים ויותר, מאורע משלים, ולמה &quot;לפחות אחד&quot; מחשבים מהסוף: 1 פחות &quot;אף אחד&quot;. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/multi-stage-probability/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="הסתברות: עץ רב-שלבי ו&quot;לפחות פעם אחת&quot; · כיתה י · מירי">
+<meta property="og:description" content="ניסויים עם שלושה שלבים ויותר, מאורע משלים, ולמה &quot;לפחות אחד&quot; מחשבים מהסוף: 1 פחות &quot;אף אחד&quot;. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/multi-stage-probability/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"הסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-10/#probability-10"},{"@type":"ListItem","position":5,"name":"הסתברות: עץ רב-שלבי ו\"לפחות פעם אחת\"","item":"https://shohamtal.github.io/homework-site/math/multi-stage-probability/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים הסתברות של \"לפחות פעם אחת\"?","acceptedAnswer":{"@type":"Answer","text":"מחשבים את ההפך, \"אף פעם\", ומורידים מ-1. אם הסיכוי להצלחה בפעם אחת הוא p ומנסים n פעמים, אז P = 1 − (1 − p)n. בקובייה שלוש פעמים: 1 − (5/6)³ = 91/216. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"מה זה מאורע משלים?","acceptedAnswer":{"@type":"Answer","text":"המשלים של מאורע A הוא \"A לא קרה\". הסיכויים של מאורע ושל המשלים שלו מסתכמים ל-1, ולכן P(לא A) = 1 − P(A). משתמשים בו כשקל יותר לחשב את ההפך."}},{"@type":"Question","name":"מתי כופלים הסתברויות ומתי מחברים?","acceptedAnswer":{"@type":"Answer","text":"לאורך מסלול אחד בעץ כופלים, כי צריך שכל השלבים יקרו. בין מסלולים שונים מחברים, כי מספיק שאחד מהם יקרה. לכן \"בדיוק פעם אחת\" בשלוש הטלות הוא שלושה מסלולים שמחברים. ראו את העץ במעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הסתברות: עץ רב-שלבי ו\"לפחות פעם אחת\"","description":"ניסויים עם שלושה שלבים ויותר, מאורע משלים, ולמה \"לפחות אחד\" מחשבים מהסוף: 1 פחות \"אף אחד\". הסבר, מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/math/multi-stage-probability/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"הסתברות","teaches":"הסתברות: עץ רב-שלבי ו\"לפחות פעם אחת\"","keywords":"עץ הסתברות, מאורע משלים, לפחות פעם אחת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.calc .eq{white-space:normal}
+svg.tree{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.tree .br{stroke:var(--soft); stroke-width:2}
+.tree .br.on{stroke:var(--blue); stroke-width:3.4}
+.tree .pl{fill:var(--muted); font:700 9px var(--f-math); text-anchor:middle}
+.tree .pl.on{fill:var(--ink)}
+.tree .node{fill:var(--card); stroke:var(--ink); stroke-width:1.2}
+.tree .s{fill:var(--line)} .tree .f{fill:var(--blue)}
+.tree .mk{fill:var(--card); font:700 8px var(--f-body); text-anchor:middle}
+.tree .end{fill:var(--muted); font:9px var(--f-math)}
+.tree .end.on{fill:var(--ink); font-weight:700}
+.tree .box{fill:var(--card); stroke:var(--blue); stroke-width:2.4}
+.tree .bx{fill:var(--blue); font:700 15px var(--f-body); text-anchor:middle}
+.tree .times{fill:var(--muted); font:700 14px var(--f-math); text-anchor:middle}
+.tree .cap{fill:var(--ink); font:700 11px var(--f-body); text-anchor:middle}
+svg.bars{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.bars .b{fill:var(--soft); stroke:var(--ink); stroke-width:1}
+.bars .b.on{fill:var(--line)}
+.bars .v{fill:var(--ink); font:700 10px var(--f-math); text-anchor:middle}
+.bars .t{fill:var(--muted); font:10px var(--f-body); text-anchor:middle}
+.bars .ax{stroke:var(--ink); stroke-width:1.2}
+.big-p{font-family:var(--f-math); font-size:1.35rem; text-align:center; direction:ltr}
+.sim{display:flex; flex-direction:column; gap:6px}
+.dot{display:inline-block; width:12px; height:12px; border-radius:50%; border:1px solid var(--ink); vertical-align:-1px}
+.dot.s{background:var(--line)} .dot.f{background:var(--blue)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="multi-stage-probability">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#probability-10">הסתברות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הסתברות: עץ רב-שלבי ו"לפחות פעם אחת"</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · הסתברות</div>
+  <h1>הסתברות: עץ רב-שלבי ו"לפחות פעם אחת" <span class="slogan">מחשבים מהסוף</span></h1>
+  <p class="lead">מטילים קובייה שלוש פעמים. מה הסיכוי שלפחות פעם אחת ייצא 6? יש כאן הרבה מסלולים, אבל יש דרך קצרה: מחשבים את ההפך ומורידים מ-1. בעמוד הזה, לרמת 4 ו-5 יח״ל. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שלושה כלים לניסוי ארוך</h2></div>
+  <p class="text">ב<a href="../probability-two-stage/">ניסוי דו-שלבי</a> ציירנו עץ עם שני שלבים. כשיש שלושה שלבים ויותר, העץ גדל מהר מאוד: 3 שלבים זה 8 מסלולים, ו-5 שלבים זה 32. לכן צריך עוד כלים.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>כופלים לאורך מסלול</h3>
+      <p>כשהשלבים לא משפיעים זה על זה, הסיכוי למסלול הוא מכפלת הסיכויים שלו.</p>
+      <p>שלוש פעמים "לא 6": <span class="eq">5/6 · 5/6 · 5/6</span></p>
+    </div>
+    <div class="mini">
+      <h3>המאורע המשלים</h3>
+      <p>המשלים של מאורע הוא "הוא לא קרה". הסיכויים של שניהם ביחד הם 1.</p>
+      <p><span class="eq"><i>P</i>(לא <i>A</i>) = 1 − <i>P</i>(<i>A</i>)</span></p>
+    </div>
+    <div class="mini">
+      <h3>"לפחות פעם אחת"</h3>
+      <p>ההפך של "לפחות פעם אחת" הוא "אף פעם". ל"אף פעם" יש מסלול אחד בלבד.</p>
+      <p><span class="eq"><i>P</i> = 1 − (1 − <i>p</i>)<sup><i>n</i></sup></span></p>
+    </div>
+  </div>
+  <div class="callout"><strong>למה מהסוף?</strong> "לפחות פעם אחת" בשלוש הטלות זה 7 מסלולים שצריך לחבר. "אף פעם" זה מסלול אחד. מחשבים את המסלול האחד ומורידים מ-1.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: כמה ניסיונות צריך?</h2></div>
+  <p class="text">בחרו את הסיכוי להצלחה בפעם אחת, ואת מספר הפעמים. המסלול הכחול הוא "אף פעם לא הצלחתי". כל השאר הם "לפחות פעם אחת".</p>
+  <div class="lab">
+    <div>
+      <svg class="tree" id="labT" viewBox="0 0 360 250" role="img" aria-label="עץ הניסוי, והמסלול של אף הצלחה מודגש"></svg>
+      <p class="text" style="text-align:center; font-size:.9rem"><span class="dot s"></span> הצלחה &nbsp; <span class="dot f"></span> כישלון</p>
+      <svg class="bars" id="labB" viewBox="0 0 360 140" role="img" aria-label="הסיכוי ללפחות הצלחה אחת לפי מספר הפעמים"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="big-p" id="labP"></div>
+      <div><label class="slider" for="p"><span>הסיכוי להצלחה בפעם אחת <span class="eq"><i>p</i></span></span><span class="eq" id="pv"></span></label>
+        <input type="range" id="p" min="0.1" max="0.9" step="0.1" value="0.3"></div>
+      <div><label class="slider" for="n"><span>מספר הפעמים <span class="eq"><i>n</i></span></span><span class="eq" id="nv"></span></label>
+        <input type="range" id="n" class="blue" min="1" max="5" step="1" value="3"></div>
+      <div class="explain fb hint calc" id="labCalc" aria-live="polite"></div>
+      <div class="sim">
+        <div class="row"><button id="simBtn" class="primary">הריצו 100 ניסויים</button><button id="simReset">איפוס</button></div>
+        <div id="simOut" class="text" aria-live="polite"></div>
+      </div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button dir="ltr" data-p="0.5" data-n="3">מטבע, 3 הטלות</button>
+          <button dir="ltr" data-p="0.7" data-n="3">קליעה 0.7, 3 זריקות</button>
+          <button dir="ltr" data-p="0.3" data-n="5">גשם 0.3, 5 ימים</button>
+          <button dir="ltr" data-p="0.1" data-n="5">סיכוי קטן, 5 פעמים</button>
+          <button dir="ltr" data-p="0.9" data-n="1">p = 0.9, פעם אחת</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">שימו לב לעמודות: ככל שמנסים יותר פעמים, הסיכוי להצליח לפחות פעם אחת עולה, אבל אף פעם לא מגיע ל-1. גם אחרי 5 ניסיונות, עם סיכוי קטן, עדיין אפשר להיכשל בכולם.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מחברים במקום להשתמש במשלים</h3>
+      <p>מטבע שלוש פעמים, "לפחות עץ אחד": <span class="eq">½ + ½ + ½ = 1.5</span>?</p>
+      <p>הסתברות לא יכולה להיות יותר מ-1. התשובה הנכונה: <span class="eq">1 − ⅛ = ⅞</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>המשלים הלא נכון</h3>
+      <p>ההפך של "לפחות פעם אחת" הוא <strong>"אף פעם"</strong>.</p>
+      <p>לא "בדיוק פעם אחת", ולא "לא בכל הפעמים". <span class="eq">1 − <i>p</i><sup><i>n</i></sup></span> הוא הסיכוי ש<strong>לא כל</strong> הפעמים הצליחו, וזו שאלה אחרת.</p>
+    </div>
+    <div class="mini">
+      <h3>"בדיוק פעם אחת" יש כמה מסלולים</h3>
+      <p>בשלוש הטלות, הצלחה אחת יכולה לקרות בפעם הראשונה, השנייה או השלישית.</p>
+      <p>מסלול אחד הוא <span class="eq"><i>p</i>(1 − <i>p</i>)²</span>, ויש שלושה כאלה: <span class="eq">3<i>p</i>(1 − <i>p</i>)²</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> הסיכוי ל"לפחות פעם אחת" תמיד גדול או שווה לסיכוי של פעם אחת בודדת, <i>p</i>, וקטן מ-1. אם יצא מחוץ לטווח הזה, חזרו לבדוק.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">מטילים קובייה רגילה שלוש פעמים. מה הסיכוי שלפחות פעם אחת ייצא 6? ומה הסיכוי שבדיוק פעם אחת ייצא 6?</p>
+  <div class="stepper">
+    <div class="stepbox fb hint calc" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: חשבו בעצמכם</h2></div>
+  <p class="text">כתבו את התשובה כשבר, למשל <span class="eq">91/216</span>, או כמספר עשרוני עם שתי ספרות אחרי הנקודה לפחות, למשל <span class="eq">0.42</span>.</p>
+  <div class="row" role="group" aria-label="סוג שאלה">
+    <button data-t="mix" class="primary" aria-pressed="true">מעורב</button>
+    <button data-t="atleast" aria-pressed="false">לפחות פעם אחת</button>
+    <button data-t="none" aria-pressed="false">אף פעם</button>
+    <button data-t="all" aria-pressed="false">בכל הפעמים</button>
+    <button data-t="one" aria-pressed="false">בדיוק פעם אחת</button>
+  </div>
+  <p class="text" id="prQ" style="font-weight:700"></p>
+  <div class="inputs">
+    <label for="prA"><span><i>P</i> =</span><input id="prA" inputmode="text" autocomplete="off"></label>
+    <button id="prCheck" class="primary">בדיקה</button>
+  </div>
+  <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים הסתברות של "לפחות פעם אחת"?</h3>
+    <p>מחשבים את ההפך, "אף פעם", ומורידים מ-1. אם הסיכוי להצלחה בפעם אחת הוא p ומנסים n פעמים, אז <span class="eq"><i>P</i> = 1 − (1 − <i>p</i>)<sup><i>n</i></sup></span>. בקובייה שלוש פעמים: <span class="eq">1 − (5/6)³ = 91/216</span>. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>מה זה מאורע משלים?</h3>
+    <p>המשלים של מאורע A הוא "A לא קרה". הסיכויים של מאורע ושל המשלים שלו מסתכמים ל-1, ולכן <span class="eq"><i>P</i>(לא <i>A</i>) = 1 − <i>P</i>(<i>A</i>)</span>. משתמשים בו כשקל יותר לחשב את ההפך.</p>
+    <h3>מתי כופלים הסתברויות ומתי מחברים?</h3>
+    <p>לאורך מסלול אחד בעץ כופלים, כי צריך שכל השלבים יקרו. בין מסלולים שונים מחברים, כי מספיק שאחד מהם יקרה. לכן "בדיוק פעם אחת" בשלוש הטלות הוא שלושה מסלולים שמחברים. <a href="#lab">ראו את העץ במעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/probability-two-stage/">הסתברות בניסוי דו-שלבי</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/circle-tangents/"><small>→ הנושא הקודם</small>מעגל: משיקים, מרובע חסום ומשולש חסום</a><a class="next" href="../../math/"><small>סיימתם את הפרק ←</small>לכל הנושאים במתמטיקה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+/* exact fractions as [num, den] */
+const red=([a,b])=>{const g=gcd(a,b)||1; return [a/g,b/g];};
+const mul=(x,y)=>red([x[0]*y[0],x[1]*y[1]]);
+const pw=(x,n)=>{let r=[1,1]; for(let i=0;i<n;i++) r=mul(r,x); return r;};
+const oneMinus=x=>red([x[1]-x[0],x[1]]);
+const times=(k,x)=>red([k*x[0],x[1]]);
+const val=x=>x[0]/x[1];
+const pow10=d=>/^10*$/.test(String(d));
+const fr=x=>x[1]===1?String(x[0]):`<span class="frac"><span>${x[0]}</span><span>${x[1]}</span></span>`;
+const r3=v=>numTxt(Math.round(v*1000)/1000);
+/* "91/216 ≈ 0.421", or "0.343" when the denominator is 10, 100, 1000 */
+const dec=v=>String(+v.toFixed(6));
+const show=x=>pow10(x[1])?dec(val(x)):`${fr(x)} ≈ ${r3(val(x))}`;
+const pct=v=>Math.round(v*100)+'%';
+
+/* ---------- lab ---------- */
+function tree(svg,p,n){
+  let h='';
+  if(n<=3){
+    const leaves=1<<n, x0=18, dx=(n===1?150:n===2?120:80), top=12, H=226;
+    const ly=i=>top+H*(i+.5)/leaves;
+    /* node y at level L, index k (k in 0..2^L-1) = middle of its leaves */
+    const ny=(L,k)=>{const span=leaves>>L; return (ly(k*span)+ly(k*span+span-1))/2;};
+    const nx=L=>x0+L*dx;
+    for(let L=0;L<n;L++){
+      for(let k=0;k<(1<<L);k++){
+        const allFail=k===(1<<L)-1;
+        [0,1].forEach(c=>{ /* c=0 success (top), c=1 fail */
+          const k2=k*2+c, on=allFail&&c===1;
+          const x1=nx(L),y1=ny(L,k),x2=nx(L+1),y2=ny(L+1,k2);
+          h+=`<line class="br${on?' on':''}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+          if(n<=2||L<2) h+=`<text class="pl${on?' on':''}" x="${(x1+x2)/2}" y="${(y1+y2)/2-4}">${c?numTxt(Math.round((1-p)*10)/10):numTxt(p)}</text>`;
+        });
+      }
+    }
+    h+=`<circle class="node" cx="${nx(0)}" cy="${ny(0,0)}" r="5"/>`;
+    for(let L=1;L<=n;L++) for(let k=0;k<(1<<L);k++){
+      const c=k%2; h+=`<circle class="${c?'f':'s'}" cx="${nx(L)}" cy="${ny(L,k)}" r="7"/><text class="mk" x="${nx(L)}" y="${ny(L,k)+3}">${c?'✗':'✓'}</text>`;
+    }
+    for(let i=0;i<leaves;i++){
+      let s=0, pr=1; for(let b=n-1;b>=0;b--){ if((i>>b)&1) pr*=1-p; else {pr*=p; s++;} }
+      const on=i===leaves-1;
+      h+=`<text class="end${on?' on':''}" x="${nx(n)+12}" y="${ly(i)+3}">${r3(pr)}</text>`;
+    }
+  }else{
+    const q=Math.round((1-p)*10)/10, w=46, gap=18, tot=n*w+(n-1)*gap, x0=(360-tot)/2;
+    h+=`<text class="cap" x="180" y="40" direction="rtl">${1<<n} מסלולים. מודגש המסלול "אף פעם":</text>`;
+    for(let i=0;i<n;i++){
+      const x=x0+i*(w+gap);
+      h+=`<rect class="box" x="${x}" y="80" width="${w}" height="${w}" rx="8"/><text class="bx" x="${x+w/2}" y="${80+w/2+5}">✗</text><text class="pl on" x="${x+w/2}" y="${80+w+16}">${numTxt(q)}</text>`;
+      if(i<n-1) h+=`<text class="times" x="${x+w+gap/2}" y="${80+w/2+5}">·</text>`;
+    }
+    h+=`<text class="cap" x="180" y="200" direction="rtl">כל ה-${(1<<n)-1} האחרים: לפחות הצלחה אחת</text>`;
+  }
+  svg.innerHTML=h;
+}
+function bars(svg,p,n){
+  let h=`<line class="ax" x1="20" y1="110" x2="340" y2="110"/>`;
+  for(let k=1;k<=5;k++){
+    const v=1-Math.pow(1-p,k), x=20+(k-1)*64+12, bh=v*90;
+    h+=`<rect class="b${k===n?' on':''}" x="${x}" y="${110-bh}" width="40" height="${bh}"/><text class="v" x="${x+20}" y="${106-bh}">${pct(v)}</text><text class="t" x="${x+20}" y="125" direction="rtl">${k===1?'פעם אחת':k+' פעמים'}</text>`;
+  }
+  svg.innerHTML=h;
+}
+let sim={runs:0,hit:0};
+function lab(){
+  const p=+$('p').value, n=+$('n').value, q=Math.round((1-p)*10)/10;
+  $('pv').textContent=numTxt(p); $('nv').textContent=n;
+  tree($('labT'),p,n); bars($('labB'),p,n);
+  const none=Math.pow(q,n), atl=1-none;
+  $('labP').innerHTML=`<i>P</i>(לפחות פעם אחת) = ${r3(atl)}`;
+  let t=`<div><strong>כישלון בפעם אחת:</strong> ${E(`1 − ${numTxt(p)} = ${numTxt(q)}`)}.</div>`;
+  t+=`<div><strong>אף פעם:</strong> ${n===1?E(`${numTxt(q)}`):E(`${numTxt(q)}<sup>${n}</sup> = ${r3(none)}`)}. זה המסלול הכחול.</div>`;
+  t+=`<div><strong>לפחות פעם אחת:</strong> ${E(`1 − ${r3(none)} = ${r3(atl)}`)}, בערך ${pct(atl)}.</div>`;
+  if(n>1) t+=`<div>ובכל הפעמים הצלחה: ${E(`${numTxt(p)}<sup>${n}</sup> = ${r3(Math.pow(p,n))}`)}. זה רק המסלול העליון.</div>`;
+  $('labCalc').innerHTML=t;
+  simOut();
+}
+function simOut(){
+  const p=+$('p').value, n=+$('n').value, atl=1-Math.pow(1-p,n);
+  $('simOut').innerHTML=sim.runs?`ב-<strong>${sim.hit}</strong> מתוך ${sim.runs} ניסויים הייתה לפחות הצלחה אחת. זה ${pct(sim.hit/sim.runs)}. הנוסחה אומרת ${pct(atl)}.`:'כל ניסוי הוא '+n+' פעמים. כמה מהם יצליחו לפחות פעם אחת?';
+}
+function resetSim(){ sim={runs:0,hit:0}; }
+['p','n'].forEach(id=>$(id).addEventListener('input',()=>{resetSim(); lab();}));
+$('simBtn').onclick=()=>{
+  const p=+$('p').value, n=+$('n').value;
+  for(let r=0;r<100;r++){ let ok=false; for(let i=0;i<n;i++) if(Math.random()<p) ok=true; sim.runs++; if(ok) sim.hit++; }
+  simOut();
+};
+$('simReset').onclick=()=>{ resetSim(); simOut(); };
+document.querySelectorAll('#lab .tries button').forEach(b=>b.onclick=()=>{
+  $('p').value=b.dataset.p; $('n').value=b.dataset.n; resetSim(); lab();
+});
+lab();
+
+/* ---------- worked example ---------- */
+const EXS=[
+  `<strong>מה ההפך?</strong> ההפך של "לפחות פעם אחת 6" הוא "אף פעם לא 6", כלומר שלוש פעמים "לא 6".`,
+  `<strong>פעם אחת "לא 6":</strong> יש 5 תוצאות שאינן 6 מתוך 6, אז ${E(fr([5,6]))}.`,
+  `<strong>שלוש פעמים "לא 6":</strong> ההטלות לא משפיעות זו על זו, אז כופלים: ${E(`${fr([5,6])} · ${fr([5,6])} · ${fr([5,6])} = ${fr([125,216])}`)}.`,
+  `<strong>מורידים מ-1:</strong> ${E(`1 − ${fr([125,216])} = ${fr([91,216])}`)}, בערך ${E('0.42')}.`,
+  `<strong>למה לא ${E(`3 · ${fr([1,6])}`)}?</strong> זה ${E('0.5')}, ויותר מדי: ספרנו פעמיים מקרים שבהם יצא 6 יותר מפעם אחת. עם 7 הטלות החיבור כבר נותן יותר מ-1.`,
+  `<strong>ובדיוק פעם אחת 6?</strong> מסלול אחד, למשל 6 ואז לא ולא: ${E(`${fr([1,6])} · ${fr([5,6])} · ${fr([5,6])} = ${fr([25,216])}`)}.`,
+  `<strong>כמה מסלולים כאלה?</strong> ה-6 יכול לצאת בהטלה הראשונה, השנייה או השלישית. שלושה מסלולים: ${E(`3 · ${fr([25,216])} = ${fr([75,216])}`)}, בערך ${E('0.35')}.`
+];
+let exI=0;
+function ex(){
+  $('exText').innerHTML=EXS.slice(0,exI+1).map(s=>`<div>${s}</div>`).join('');
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+ex();
+
+/* ---------- practice ---------- */
+const SC=[
+  {intro:n=>`מטילים קובייה רגילה ${n} פעמים.`, ev:'ייצא 6', p:[1,6], nmax:4},
+  {intro:n=>`מטילים מטבע ${n} פעמים.`, ev:'ייצא עץ', p:[1,2], nmax:5},
+  {intro:n=>`בכל זריקה לסל יש סיכוי של 0.7 לקליעה. זורקים ${n} פעמים.`, ev:'תהיה קליעה', p:[7,10], nmax:4},
+  {intro:n=>`הסיכוי לגשם בכל יום הוא 0.3. בודקים ${n} ימים.`, ev:'ירד גשם', p:[3,10], nmax:4},
+  {intro:n=>`גלגל מזל מחולק ל-4 חלקים שווים, ואחד מהם זוכה. מסובבים אותו ${n} פעמים.`, ev:'ייצא החלק הזוכה', p:[1,4], nmax:4}
+];
+const QQ={atleast:ev=>`מה הסיכוי שלפחות פעם אחת ${ev}?`, none:ev=>`מה הסיכוי שאף פעם לא ${ev}?`, all:ev=>`מה הסיכוי שבכל הפעמים ${ev}?`, one:ev=>`מה הסיכוי שבדיוק פעם אחת ${ev}?`};
+let mode='mix', pr=null, solved=0, streak=0;
+function ansOf(t,p,n){
+  const q=oneMinus(p);
+  if(t==='atleast') return oneMinus(pw(q,n));
+  if(t==='none') return pw(q,n);
+  if(t==='all') return pw(p,n);
+  return times(n,mul(p,pw(q,n-1)));
+}
+function newPr(){
+  const type=mode==='mix'?pick(['atleast','atleast','none','all','one']):mode;
+  const sc=pick(SC), n=rnd(2,sc.nmax);
+  pr={type,sc,n,p:sc.p,ans:ansOf(type,sc.p,n),tries:0,hint:0};
+  $('prQ').innerHTML=`${sc.intro(n)} ${QQ[type](sc.ev)}`;
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+const pT=x=>pow10(x[1])?dec(val(x)):fr(x);
+function solution(){
+  const {type,p,n}=pr, q=oneMinus(p);
+  const once=`הסיכוי בפעם אחת ${E(pT(p))}, ולכישלון ${E(pT(q))}.`;
+  if(type==='none') return `${once} אף פעם: ${E(`(${pT(q)})<sup>${n}</sup> = ${show(pw(q,n))}`)}.`;
+  if(type==='atleast') return `${once} אף פעם: ${E(`(${pT(q)})<sup>${n}</sup> = ${show(pw(q,n))}`)}. לפחות פעם אחת: ${E(`1 − ${pT(pw(q,n))} = ${show(oneMinus(pw(q,n)))}`)}.`;
+  if(type==='all') return `${once} בכל הפעמים: ${E(`(${pT(p)})<sup>${n}</sup> = ${show(pw(p,n))}`)}.`;
+  return `${once} מסלול אחד: ${E(`${pT(p)} · (${pT(q)})<sup>${n-1}</sup> = ${pT(mul(p,pw(q,n-1)))}`)}. יש ${n} מסלולים כאלה: ${E(`${n} · ${pT(mul(p,pw(q,n-1)))} = ${show(pr.ans)}`)}.`;
+}
+/* exact match, or a decimal rounded to 2 or more places */
+const close=(x,v)=>Math.abs(x-v)<=Math.max(1e-6,Math.min(0.0051,v*0.05));
+function diagnose(x){
+  const {type,p,n}=pr, q=oneMinus(p), P=val(p), Q=val(q);
+  const c=v=>close(x,v);
+  if(x>1) return 'הסתברות לא יכולה להיות יותר מ-1. אולי חיברתם במקום לכפול?';
+  if(type==='atleast'){
+    if(c(n*P)) return 'חיברתם את הסיכוי של כל פעם. כך סופרים פעמיים מקרים עם כמה הצלחות. השתמשו במשלים: 1 פחות "אף פעם".';
+    if(c(Math.pow(Q,n))) return 'זה הסיכוי של "אף פעם". עכשיו הורידו אותו מ-1.';
+    if(c(1-Math.pow(P,n))) return 'זה הסיכוי ש"לא בכל הפעמים" הייתה הצלחה. ההפך של "לפחות פעם אחת" הוא "אף פעם", כלומר כישלון בכל הפעמים.';
+    if(c(Math.pow(P,n))) return 'זה הסיכוי להצלחה בכל הפעמים. "לפחות פעם אחת" זה הרבה יותר מקרים.';
+    if(c(val(ansOf('one',p,n)))) return 'זה "בדיוק פעם אחת". "לפחות פעם אחת" כולל גם פעמיים, שלוש וכן הלאה.';
+    if(c(1-Q*n)) return 'את "אף פעם" כופלים, לא מחברים: הכישלון בחזקת n.';
+  }
+  if(type==='none'){
+    if(c(1-Math.pow(Q,n))) return 'זה "לפחות פעם אחת". השאלה היא על "אף פעם".';
+    if(c(Q)) return `זה כישלון בפעם אחת. צריך כישלון ${n} פעמים ברצף: כופלים.`;
+    if(c(Math.pow(P,n))) return 'זה הצלחה בכל הפעמים. "אף פעם" זה כישלון בכל הפעמים.';
+    if(c(1-P*n)) return 'כופלים את סיכויי הכישלון לאורך המסלול, לא מחסרים.';
+  }
+  if(type==='all'){
+    if(c(P)) return `זה הצלחה בפעם אחת. צריך הצלחה ${n} פעמים: כופלים.`;
+    if(c(n*P)) return 'לאורך מסלול כופלים, לא מחברים.';
+    if(c(1-Math.pow(Q,n))) return 'זה "לפחות פעם אחת". כאן צריך הצלחה בכל הפעמים.';
+  }
+  if(type==='one'){
+    if(c(P*Math.pow(Q,n-1))) return `זה מסלול אחד. ההצלחה יכולה לקרות בכל אחת מ-${n} הפעמים, אז יש ${n} מסלולים כאלה.`;
+    if(c(1-Math.pow(Q,n))) return 'זה "לפחות פעם אחת". "בדיוק פעם אחת" לא כולל פעמיים או יותר.';
+    if(c(n*P)) return `במסלול צריך גם הצלחה אחת וגם ${n-1} כישלונות. כפלו גם בסיכויי הכישלון.`;
+    if(c(P)) return 'זה רק הסיכוי להצלחה בפעם אחת. מה עם שאר הפעמים, שבהן צריך כישלון?';
+  }
+  return 'לא בדיוק. ציירו את המסלול (או המסלולים) שמתאימים, כפלו לאורך כל מסלול וחברו בין מסלולים.';
+}
+$('prCheck').onclick=()=>{
+  const x=parseNum($('prA').value.trim());
+  if(isNaN(x)){ $('prFb').innerHTML='<div class="fb err">כתבו שבר, למשל 91/216, או מספר עשרוני, למשל 0.42.</div>'; return; }
+  if(close(x,val(pr.ans))){
+    if(pr.tries===0) streak++; solved++; streakTxt();
+    $('prFb').innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`;
+    return;
+  }
+  pr.tries++; streak=0; streakTxt();
+  if(pr.tries>=2) $('prShow').disabled=false;
+  $('prFb').innerHTML=`<div class="fb err">${diagnose(x)}</div>`;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {type,p,n}=pr, q=oneMinus(p); let h;
+  if(type==='atleast') h=pr.hint===1?'חשבו את ההפך: מה הסיכוי שאף פעם לא?':`"אף פעם" זה ${E(`(${pT(q)})<sup>${n}</sup>`)}. הורידו מ-1.`;
+  else if(type==='none') h=pr.hint===1?'"אף פעם" זה כישלון בכל אחת מהפעמים. מה הסיכוי לכישלון בפעם אחת?':`כישלון בפעם אחת ${E(pT(q))}. כפלו אותו בעצמו ${n} פעמים.`;
+  else if(type==='all') h=pr.hint===1?'זה מסלול אחד בעץ: הצלחה, הצלחה וכן הלאה.':`כפלו את ${E(pT(p))} בעצמו ${n} פעמים.`;
+  else h=pr.hint===1?'כמה מסלולים יש עם הצלחה אחת בדיוק? בכל אחד, הצלחה אחת וכל השאר כישלונות.':`מסלול אחד: ${E(`${pT(p)} · (${pT(q)})<sup>${n-1}</sup>`)}. יש ${n} מסלולים כאלה.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${solution()} נסו עכשיו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+document.querySelectorAll('#practice [data-t]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#practice [data-t]').forEach(x=>{x.classList.toggle('primary',x===b); x.setAttribute('aria-pressed',x===b);});
+  mode=b.dataset.t; newPr();
+});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

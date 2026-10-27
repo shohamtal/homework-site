@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מעגל: משיקים, מרובע חסום ומשולש חסום · כיתה י · מירי</title>
+<meta name="description" content="משיק מאונך לרדיוס, שני משיקים מנקודה שווים, ובמרובע חסום סכום זוויות נגדיות הוא 180°. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/circle-tangents/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מעגל: משיקים, מרובע חסום ומשולש חסום · כיתה י · מירי">
+<meta property="og:description" content="משיק מאונך לרדיוס, שני משיקים מנקודה שווים, ובמרובע חסום סכום זוויות נגדיות הוא 180°. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/circle-tangents/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"גאומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-10/#geometry-10"},{"@type":"ListItem","position":5,"name":"מעגל: משיקים, מרובע חסום ומשולש חסום","item":"https://shohamtal.github.io/homework-site/math/circle-tangents/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה משיק מאונך לרדיוס?","acceptedAnswer":{"@type":"Answer","text":"משיק נוגע במעגל רק בנקודה אחת, וכל שאר הנקודות שלו מחוץ למעגל. לכן נקודת ההשקה היא הנקודה על הישר הכי קרובה למרכז. והקטע הכי קצר מנקודה לישר הוא תמיד הקטע המאונך. לכן הרדיוס לנקודת ההשקה מאונך למשיק."}},{"@type":"Question","name":"איך מחשבים אורך משיק מנקודה מחוץ למעגל?","acceptedAnswer":{"@type":"Answer","text":"מחברים את הנקודה P למרכז O ולנקודת ההשקה A. מקבלים משולש ישר זווית ב-A, עם יתר OP. לפי פיתגורס: PA = √(OP² − R²). למשל רדיוס 6 ומרחק 10 נותנים משיק של 8. נסו במעבדה."}},{"@type":"Question","name":"מה התכונה של מרובע חסום במעגל?","acceptedAnswer":{"@type":"Answer","text":"סכום כל שתי זוויות נגדיות בו הוא 180°. זה נכון גם בכיוון ההפוך: אם במרובע יש שתי זוויות נגדיות שסכומן 180°, אפשר לחסום אותו במעגל. לכן כל מלבן אפשר לחסום במעגל, ומקבילית שאינה מלבן אי אפשר."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מעגל: משיקים, מרובע חסום ומשולש חסום","description":"משיק מאונך לרדיוס, שני משיקים מנקודה שווים, ובמרובע חסום סכום זוויות נגדיות הוא 180°. הסבר, מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/math/circle-tangents/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"גאומטריה","teaches":"מעגל: משיקים, מרובע חסום ומשולש חסום","keywords":"משיק, מרובע חסום, מעגל חוסם","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.ci{width:100%; max-width:360px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.ci .circ{fill:var(--card); stroke:var(--ink); stroke-width:2}
+.ci .tan{stroke:var(--line); stroke-width:3; stroke-linecap:round}
+.ci .rad{stroke:var(--blue); stroke-width:2.2; stroke-linecap:round}
+.ci .op{stroke:var(--ink); stroke-width:1.6; stroke-dasharray:5 4}
+.ci .side{stroke:var(--ink); stroke-width:2.2; stroke-linejoin:round; fill:var(--hl); fill-opacity:.25}
+.ci .ra{fill:none; stroke:var(--ink); stroke-width:1.4}
+.ci .ang{fill:var(--line); fill-opacity:.2; stroke:var(--line); stroke-width:1.6}
+.ci .angB{fill:var(--blue); fill-opacity:.18; stroke:var(--blue); stroke-width:1.6}
+.ci .angX{fill:var(--hl); fill-opacity:.65; stroke:var(--ink); stroke-width:1.4}
+.ci .dot{fill:var(--ink)}
+.ci .dotP{fill:var(--line); stroke:var(--card); stroke-width:2}
+.ci .vx{font:700 14px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.ci .val{font:700 12px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.ci .len{font:700 12px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--line); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.calc{display:flex; flex-direction:column; gap:4px}
+.calc .ln-row{display:flex; flex-wrap:wrap; gap:6px; align-items:baseline}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="circle-tangents">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#geometry-10">גאומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מעגל: משיקים, מרובע חסום ומשולש חסום</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · גאומטריה</div>
+  <h1>מעגל: משיקים, מרובע חסום ומשולש חסום <span class="slogan">שלושה משפטים שפותחים כל שאלה</span></h1>
+  <p class="lead">משיק הוא ישר שנוגע במעגל בנקודה אחת בלבד. יש לו שתי תכונות שמופיעות כמעט בכל שאלת מעגל. ומרובע שכל הקודקודים שלו על המעגל מקיים כלל אחד פשוט על הזוויות. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שלושה משפטים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>משיק מאונך לרדיוס</h3>
+      <svg class="ci" id="ideaA" viewBox="0 0 300 220" role="img" aria-label="משיק ורדיוס עם זווית ישרה"></svg>
+      <p>הרדיוס לנקודת ההשקה יוצר עם המשיק זווית של <strong>90°</strong>. כך נוצרים משולשים ישרי זווית, ומשם פיתגורס.</p>
+    </div>
+    <div class="mini">
+      <h3>שני משיקים מנקודה אחת</h3>
+      <svg class="ci" id="ideaB" viewBox="0 0 300 220" role="img" aria-label="שני משיקים מנקודה חיצונית"></svg>
+      <p>מנקודה P מחוץ למעגל יוצאים שני משיקים, והם <strong>שווים באורכם</strong>: <span class="eq">PA = PB</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מרובע חסום במעגל</h3>
+      <svg class="ci" id="ideaC" viewBox="0 0 300 220" role="img" aria-label="מרובע שכל קודקודיו על המעגל"></svg>
+      <p>כשכל ארבעת הקודקודים על המעגל, סכום כל שתי זוויות <strong>נגדיות</strong> הוא <span class="eq">180°</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ומשולש?</strong> סביב כל משולש אפשר לצייר מעגל אחד שעובר בשלושת הקודקודים: <strong>המעגל החוסם</strong>. המרכז שלו הוא המפגש של האנכים האמצעיים לצלעות. ובמשולש ישר זווית, המרכז נמצא בדיוק באמצע היתר.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה</h2></div>
+  <div class="row" role="tablist">
+    <button id="mT" class="primary" role="tab" aria-selected="true">שני משיקים</button>
+    <button id="mQ" role="tab" aria-selected="false">מרובע חסום</button>
+  </div>
+  <div class="lab">
+    <svg class="ci" id="labG" viewBox="0 0 320 240" role="img" aria-label="ציור המעבדה"></svg>
+    <div class="ctrl">
+      <div id="ctlT">
+        <label class="slider" for="lr"><span>הרדיוס R</span><span class="eq" id="lrv"></span></label>
+        <input type="range" class="blue" id="lr" min="3" max="8" step="1" value="3">
+        <label class="slider" for="ld"><span>המרחק OP</span><span class="eq" id="ldv"></span></label>
+        <input type="range" class="hl" id="ld" min="4" max="8" step="1" value="5">
+      </div>
+      <div id="ctlQ" hidden>
+        <label class="slider" for="lb"><span>המקום של B</span><span class="eq" id="lbv"></span></label>
+        <input type="range" class="blue" id="lb" min="200" max="340" step="5" value="250">
+        <label class="slider" for="lq"><span>המקום של D</span><span class="eq" id="lqv"></span></label>
+        <input type="range" class="hl" id="lq" min="20" max="160" step="5" value="110">
+      </div>
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="triesT">
+          <button data-p="3,5" dir="ltr">R = 3, OP = 5</button>
+          <button data-p="6,10" dir="ltr">R = 6, OP = 10</button>
+          <button data-p="5,13" dir="ltr">R = 5, OP = 13</button>
+          <button data-p="8,17" dir="ltr">R = 8, OP = 17</button>
+        </div>
+        <div class="tries" id="triesQ" hidden>
+          <button data-p="270,90" dir="ltr">B = 270°, D = 90°</button>
+          <button data-p="210,150" dir="ltr">B = 210°, D = 150°</button>
+          <button data-p="330,40" dir="ltr">B = 330°, D = 40°</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text" id="labNote">הגדילו את OP: המשיקים מתארכים, אבל הם תמיד שווים זה לזה. והזווית ב-A וב-B נשארת 90°.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>היתר הוא OP</h3>
+      <p>במשולש OAP הזווית הישרה היא ב-A. לכן היתר הוא <span class="eq">OP</span>, הקטע שמחבר את P למרכז.</p>
+      <p><span class="eq">PA² = OP² − R²</span>. לא חיבור.</p>
+    </div>
+    <div class="mini">
+      <h3>זוויות נגדיות, לא שכנות</h3>
+      <p>במרובע חסום, <span class="eq">∠A + ∠C = 180°</span> ו-<span class="eq">∠B + ∠D = 180°</span>.</p>
+      <p>זוויות שכנות כמו A ו-B לא חייבות להשלים ל-180°.</p>
+    </div>
+    <div class="mini">
+      <h3>זווית בין המשיקים</h3>
+      <p>במרובע OAPB יש שתי זוויות ישרות. לכן <span class="eq">∠APB + ∠AOB = 180°</span>.</p>
+      <p>זווית של 50° בין המשיקים נותנת זווית מרכזית של 130°, לא 100°.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: אורך המשיק</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: מרובע חסום</button>
+  </div>
+  <div class="lab">
+    <svg class="ci" id="exG" viewBox="0 0 320 240" role="img" aria-label="ציור הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">כל פעם תופיע שאלה מסוג אחר. O הוא תמיד מרכז המעגל, ו-PA ו-PB הם משיקים.</p>
+  <div class="lab">
+    <svg class="ci" id="prG" viewBox="0 0 320 240" role="img" aria-label="ציור לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs">
+        <label for="prA"><span id="prL">התשובה =</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה משיק מאונך לרדיוס?</h3>
+    <p>משיק נוגע במעגל רק בנקודה אחת, וכל שאר הנקודות שלו מחוץ למעגל. לכן נקודת ההשקה היא הנקודה על הישר הכי קרובה למרכז. והקטע הכי קצר מנקודה לישר הוא תמיד הקטע המאונך. לכן הרדיוס לנקודת ההשקה מאונך למשיק.</p>
+    <h3>איך מחשבים אורך משיק מנקודה מחוץ למעגל?</h3>
+    <p>מחברים את הנקודה P למרכז O ולנקודת ההשקה A. מקבלים משולש ישר זווית ב-A, עם יתר OP. לפי פיתגורס: <span class="eq">PA = √(OP² − R²)</span>. למשל רדיוס 6 ומרחק 10 נותנים משיק של 8. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה התכונה של מרובע חסום במעגל?</h3>
+    <p>סכום כל שתי זוויות נגדיות בו הוא <span class="eq">180°</span>. זה נכון גם בכיוון ההפוך: אם במרובע יש שתי זוויות נגדיות שסכומן 180°, אפשר לחסום אותו במעגל. לכן כל מלבן אפשר לחסום במעגל, ומקבילית שאינה מלבן אי אפשר.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/circle-angles/">מעגל: זווית מרכזית, זווית היקפית ומיתרים</a> · <a href="../../math/congruence/">חפיפת משולשים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/arithmetic-series/"><small>→ הנושא הקודם</small>סדרה חשבונית: איבר כללי וסכום</a><a class="next" href="../../math/multi-stage-probability/"><small>הנושא הבא ←</small>הסתברות: עץ רב-שלבי ו"לפחות פעם אחת"</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const D=Math.PI/180, fx=v=>v.toFixed(1);
+const r1=v=>Math.round(v*10)/10;
+
+/* geometry in pixels. A scene is {c:[cx,cy], r, pts:{name:[x,y]}, segs:[[p,q,cls]], polys:[[names],cls], rights:[[v,a,b]], angles:[{v,a,b,cls,label}], lens:[[p,q,text]], dots:[names]} */
+function render(svg,s){
+  const P=Object.assign({O:s.c},s.pts||{});
+  let h='';
+  if(s.r) h+=`<circle class="circ" cx="${fx(s.c[0])}" cy="${fx(s.c[1])}" r="${fx(s.r)}"/>`;
+  (s.polys||[]).forEach(([ns,cls])=>{ h+=`<path class="${cls||'side'}" d="M${ns.map(n=>fx(P[n][0])+','+fx(P[n][1])).join(' L')} Z"/>`; });
+  (s.angles||[]).forEach(g=>{
+    const V=P[g.v], A=P[g.a], B=P[g.b], rr=g.r||22;
+    const u=[A[0]-V[0],A[1]-V[1]], w=[B[0]-V[0],B[1]-V[1]], nu=Math.hypot(...u), nw=Math.hypot(...w);
+    const s1=[V[0]+u[0]/nu*rr,V[1]+u[1]/nu*rr], s2=[V[0]+w[0]/nw*rr,V[1]+w[1]/nw*rr], cr=u[0]*w[1]-u[1]*w[0];
+    h+=`<path class="${g.cls||'ang'}" d="M${fx(V[0])},${fx(V[1])} L${fx(s1[0])},${fx(s1[1])} A${rr},${rr} 0 0 ${cr>0?1:0} ${fx(s2[0])},${fx(s2[1])} Z"/>`;
+    if(g.label){ const bx=u[0]/nu+w[0]/nw, by=u[1]/nu+w[1]/nw, n=Math.hypot(bx,by)||1;
+      h+=`<text class="val" x="${fx(V[0]+bx/n*(rr+14))}" y="${fx(V[1]+by/n*(rr+14))}">${g.label}</text>`; }
+  });
+  (s.segs||[]).forEach(([p,q,cls])=>{ h+=`<line class="${cls||'side'}" x1="${fx(P[p][0])}" y1="${fx(P[p][1])}" x2="${fx(P[q][0])}" y2="${fx(P[q][1])}"/>`; });
+  (s.rights||[]).forEach(([v,a,b])=>{ const V=P[v], A=P[a], B=P[b], k=10;
+    const u=[A[0]-V[0],A[1]-V[1]], w=[B[0]-V[0],B[1]-V[1]], nu=Math.hypot(...u), nw=Math.hypot(...w);
+    const p1=[V[0]+u[0]/nu*k,V[1]+u[1]/nu*k], p2=[V[0]+w[0]/nw*k,V[1]+w[1]/nw*k], p3=[p1[0]+w[0]/nw*k,p1[1]+w[1]/nw*k];
+    h+=`<path class="ra" d="M${fx(p1[0])},${fx(p1[1])} L${fx(p3[0])},${fx(p3[1])} L${fx(p2[0])},${fx(p2[1])}"/>`; });
+  (s.lens||[]).forEach(([p,q,t,side])=>{ const A=P[p], B=P[q], mx=(A[0]+B[0])/2, my=(A[1]+B[1])/2;
+    let nx=-(B[1]-A[1]), ny=B[0]-A[0]; const n=Math.hypot(nx,ny)||1; nx/=n; ny/=n; const k=side||14;
+    h+=`<text class="len" x="${fx(mx+nx*k)}" y="${fx(my+ny*k)}">${t}</text>`; });
+  for(const k in P){ if(s.hide&&s.hide.includes(k)) continue; const [x,y]=P[k], dp=(s.dots||[]).includes(k);
+    h+=`<circle class="${dp?'dotP':'dot'}" cx="${fx(x)}" cy="${fx(y)}" r="${dp?5:3.2}"/>`;
+    let dx=x-s.c[0], dy=y-s.c[1], n=Math.hypot(dx,dy);
+    const lx=k==='O'||n<1?x-12:x+dx/n*15, ly=k==='O'||n<1?y+12:y+dy/n*15;
+    h+=`<text class="vx" x="${fx(lx)}" y="${fx(ly)}">${k}</text>`; }
+  svg.innerHTML=h;
+}
+/* two tangents from P. R and OP in cm, drawn with the circle at a fixed size. P sits to the right of O */
+function tangentScene(R,OP,cx,cy,rpx){
+  const k=rpx/R, d=OP*k, a=Math.acos(R/OP);
+  const P=[cx+d,cy], A=[cx+rpx*Math.cos(a),cy-rpx*Math.sin(a)], B=[cx+rpx*Math.cos(a),cy+rpx*Math.sin(a)];
+  return {c:[cx,cy],r:rpx,pts:{A,B,P}};
+}
+const at=(c,r,deg)=>[c[0]+r*Math.cos(deg*D),c[1]-r*Math.sin(deg*D)];
+/* interior angle of the polygon at vertex v (degrees) */
+function angAt(V,A,B){ const u=[A[0]-V[0],A[1]-V[1]], w=[B[0]-V[0],B[1]-V[1]];
+  return Math.acos((u[0]*w[0]+u[1]*w[1])/Math.hypot(...u)/Math.hypot(...w))/D; }
+
+/* ---------- idea ---------- */
+(function(){
+  const c=[110,110], r=62, A=at(c,r,60), t=[Math.cos(60*D),-Math.sin(60*D)], dir=[-t[1],t[0]];
+  render($('ideaA'),{c,r,pts:{A,T1:[A[0]+dir[0]*90,A[1]+dir[1]*90],T2:[A[0]-dir[0]*70,A[1]-dir[1]*70]},hide:['T1','T2'],
+    segs:[['T1','T2','tan'],['O','A','rad']],rights:[['A','O','T1']]});
+  const s=tangentScene(3,5.4,90,110,62);
+  render($('ideaB'),Object.assign(s,{segs:[['P','A','tan'],['P','B','tan'],['O','A','rad'],['O','B','rad']],rights:[['A','O','P'],['B','O','P']],lens:[['A','P','PA',-14],['B','P','PB',14]]}));
+  const C=[150,110], R2=88, q={A:at(C,R2,170),B:at(C,R2,250),C:at(C,R2,345),D:at(C,R2,80)};
+  render($('ideaC'),{c:C,r:R2,pts:q,hide:['O'],polys:[[['A','B','C','D'],'side']],
+    angles:[{v:'A',a:'B',b:'D',cls:'ang'},{v:'C',a:'D',b:'B',cls:'ang'}]});
+})();
+
+/* ---------- lab ---------- */
+let mode='T';
+const LR=$('lr'), LD=$('ld'), LB=$('lb'), LQ=$('lq');
+function labT(){
+  const R=+LR.value; LD.min=R+1; LD.max=Math.floor(R*2.7); if(+LD.value<+LD.min) LD.value=LD.min; if(+LD.value>+LD.max) LD.value=LD.max;
+  const OP=+LD.value, PA=Math.sqrt(OP*OP-R*R), aP=2*Math.asin(R/OP)/D;
+  $('lrv').textContent=R; $('ldv').textContent=OP;
+  const s=tangentScene(R,OP,90,120,62);
+  render($('labG'),Object.assign(s,{dots:['P'],segs:[['O','P','op'],['P','A','tan'],['P','B','tan'],['O','A','rad'],['O','B','rad']],rights:[['A','O','P'],['B','O','P']],
+    lens:[['A','P',r1(PA),-14],['B','P',r1(PA),14]],angles:[{v:'P',a:'A',b:'B',cls:'ang',r:20}]}));
+  const whole=Number.isInteger(PA);
+  let t=`<div class="ln-row"><strong>משולש OAP:</strong> הזווית ב-A ישרה, והיתר הוא ${E('OP')}.</div>`;
+  t+=`<div class="ln-row">${E(`PA² = ${OP}² − ${R}²`)} ${E(`= ${OP*OP} − ${R*R} = ${OP*OP-R*R}`)}</div>`;
+  t+=`<div class="ln-row">${E(`PA = PB = √${OP*OP-R*R}`)}${whole?' '+E(`= ${PA}`):' '+E(`≈ ${PA.toFixed(2)}`)}</div>`;
+  t+=`<div class="ln-row"><strong>הזוויות:</strong> ${E(`∠APB ≈ ${Math.round(aP)}°`)} ו-${E(`∠AOB ≈ ${180-Math.round(aP)}°`)}. ביחד ${E('180°')}.</div>`;
+  $('labTxt').innerHTML=t;
+}
+function labQ(){
+  const c=[160,120], r=92, b=+LB.value, d=+LQ.value;
+  $('lbv').textContent=b+'°'; $('lqv').textContent=d+'°';
+  const q={A:at(c,r,180),B:at(c,r,b),C:at(c,r,0),D:at(c,r,d)};
+  const aA=angAt(q.A,q.B,q.D), aB=angAt(q.B,q.A,q.C), aC=angAt(q.C,q.B,q.D), aD=angAt(q.D,q.A,q.C);
+  const R=v=>Math.round(v);
+  render($('labG'),{c,r,pts:q,hide:['O'],dots:['B','D'],polys:[[['A','B','C','D'],'side']],
+    angles:[{v:'A',a:'B',b:'D',cls:'ang',label:R(aA)+'°'},{v:'C',a:'D',b:'B',cls:'ang',label:R(aC)+'°'},{v:'B',a:'C',b:'A',cls:'angB',label:R(aB)+'°'},{v:'D',a:'A',b:'C',cls:'angB',label:R(aD)+'°'}]});
+  let t=`<div class="ln-row"><strong>ורודות (נגדיות):</strong> ${E(`${R(aA)}° + ${R(aC)}° = ${R(aA)+R(aC)}°`)}</div>`;
+  t+=`<div class="ln-row"><strong>כחולות (נגדיות):</strong> ${E(`${R(aB)}° + ${R(aD)}° = ${R(aB)+R(aD)}°`)}</div>`;
+  t+=`<div>הזיזו את B ואת D: כל זווית משתנה, אבל כל זוג נגדי נשאר ${E('180°')}. כל זווית היא היקפית, והשתיים יחד נשענות על המעגל כולו.</div>`;
+  $('labTxt').innerHTML=t;
+}
+const lab=()=>mode==='T'?labT():labQ();
+[LR,LD,LB,LQ].forEach(x=>x.addEventListener('input',lab));
+function setMode(m){
+  mode=m;
+  [['T','mT'],['Q','mQ']].forEach(([k,id])=>{ $(id).classList.toggle('primary',k===m); $(id).setAttribute('aria-selected',k===m); });
+  $('ctlT').hidden=m!=='T'; $('triesT').hidden=m!=='T'; $('ctlQ').hidden=m!=='Q'; $('triesQ').hidden=m!=='Q';
+  $('labNote').textContent=m==='T'?'הגדילו את OP: המשיקים מתארכים, אבל הם תמיד שווים זה לזה. והזווית ב-A וב-B נשארת 90°.'
+    :'שימו לב: זה עובד רק כשכל ארבעת הקודקודים על המעגל. מרובע אחר לא חייב לקיים את זה.';
+  lab();
+}
+$('mT').onclick=()=>setMode('T'); $('mQ').onclick=()=>setMode('Q');
+document.querySelectorAll('#triesT button').forEach(b=>b.addEventListener('click',()=>{const [r,d]=b.dataset.p.split(','); LR.value=r; labT(); LD.value=d; labT();}));
+document.querySelectorAll('#triesQ button').forEach(b=>b.addEventListener('click',()=>{const [x,y]=b.dataset.p.split(','); LB.value=x; LQ.value=y; labQ();}));
+setMode('T');
+
+/* ---------- worked examples ---------- */
+const sA=()=>tangentScene(5,13,80,120,58);
+const exQ=(()=>{ const c=[160,120], r=92; return {c,r,pts:{A:at(c,r,165),B:at(c,r,245),C:at(c,r,330),D:at(c,r,70)},hide:['O']}; })();
+const EX={
+  A:[
+    [()=>Object.assign(sA(),{dots:['P'],segs:[['O','P','op'],['P','A','tan'],['P','B','tan']],lens:[['O','P','13',-12]]}),`רדיוס המעגל 5, והנקודה P רחוקה 13 מהמרכז. PA ו-PB משיקים. מה אורך המשיק, ומה ההיקף של המרובע OAPB?`],
+    [()=>Object.assign(sA(),{dots:['P'],segs:[['O','P','op'],['P','A','tan'],['P','B','tan'],['O','A','rad']],rights:[['A','O','P']],lens:[['O','P','13',-12],['O','A','5',-12]]}),`מחברים את O ל-A. משיק מאונך לרדיוס, אז ${E('∠OAP = 90°')}. במשולש OAP היתר הוא ${E('OP = 13')}.`],
+    [()=>Object.assign(sA(),{dots:['P'],segs:[['O','P','op'],['P','A','tan'],['P','B','tan'],['O','A','rad']],rights:[['A','O','P']],lens:[['O','P','13',-12],['O','A','5',-12],['A','P','12',-14]]}),`<strong>פיתגורס:</strong> ${E('PA² = 13² − 5²')} ${E('= 169 − 25 = 144')}, אז ${E('PA = 12')}.`],
+    [()=>Object.assign(sA(),{dots:['P'],segs:[['O','P','op'],['P','A','tan'],['P','B','tan'],['O','A','rad'],['O','B','rad']],rights:[['A','O','P'],['B','O','P']],lens:[['A','P','12',-14],['B','P','12',14]]}),`<strong>שני משיקים מאותה נקודה שווים:</strong> ${E('PB = PA = 12')}. וגם ${E('OB = OA = 5')}, כי שניהם רדיוסים.`],
+    [()=>Object.assign(sA(),{dots:['P'],polys:[[['O','A','P','B'],'side']],segs:[['P','A','tan'],['P','B','tan'],['O','A','rad'],['O','B','rad']],rights:[['A','O','P'],['B','O','P']],lens:[['A','P','12',-14],['B','P','12',14]]}),`<strong>היקף OAPB:</strong> ${E('5 + 12 + 12 + 5 = 34')}.`]
+  ],
+  B:[
+    [()=>Object.assign({},exQ,{polys:[[['A','B','C','D'],'side']],angles:[{v:'A',a:'B',b:'D',cls:'ang',label:'3x'},{v:'C',a:'D',b:'B',cls:'angX',label:'x + 20'}]}),`ABCD מרובע חסום במעגל. ${E('∠A = 3x')} ו-${E('∠C = x + 20')}. מצאו את x ואת שתי הזוויות.`],
+    [()=>Object.assign({},exQ,{polys:[[['A','B','C','D'],'side']],angles:[{v:'A',a:'B',b:'D',cls:'ang',label:'3x'},{v:'C',a:'D',b:'B',cls:'angX',label:'x + 20'}]}),`A ו-C הן זוויות <strong>נגדיות</strong> במרובע חסום, ולכן ${E('∠A + ∠C = 180°')}.`],
+    [()=>Object.assign({},exQ,{polys:[[['A','B','C','D'],'side']],angles:[{v:'A',a:'B',b:'D',cls:'ang',label:'3x'},{v:'C',a:'D',b:'B',cls:'angX',label:'x + 20'}]}),`${E('3x + x + 20 = 180')}, אז ${E('4x = 160')} ו-${E('x = 40')}.`],
+    [()=>Object.assign({},exQ,{polys:[[['A','B','C','D'],'side']],angles:[{v:'A',a:'B',b:'D',cls:'ang',label:'120°'},{v:'C',a:'D',b:'B',cls:'ang',label:'60°'}]}),`${E('∠A = 3 · 40 = 120°')} ו-${E('∠C = 40 + 20 = 60°')}. בדיקה: ${E('120 + 60 = 180')}.`]
+  ]
+};
+let exKey='A', exI=0;
+function ex(){
+  const [fn,txt]=EX[exKey][exI];
+  render($('exG'),fn()); $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX[exKey].length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX[exKey].length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k;exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+/* kinds: len (find PA from R and OP), op (find OP from R and PA), eq (PA and PB as expressions), ang (angle between tangents → central), quad (cyclic opposite angle) */
+const TRIP=[[3,4,5],[6,8,10],[5,12,13],[8,15,17],[9,12,15],[7,24,25],[12,16,20]];
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let kind; do{ kind=pick(['len','op','eq','ang','quad']); } while(kind===pr.kind&&Math.random()<.6);
+  const o={kind,tries:0,hint:0};
+  if(kind==='len'||kind==='op'){
+    const [r,t,h]=pick(TRIP); Object.assign(o,{R:r,PA:t,OP:h});
+    const s=tangentScene(r,h,90,120,Math.min(62,150/(h/r)));
+    if(kind==='len'){ o.ans=t; o.q=`רדיוס המעגל ${E(r)}, ו-${E(`OP = ${h}`)}. מה האורך של המשיק ${E('PA')}?`; $('prL').textContent='PA =';
+      o.scene=Object.assign(s,{dots:['P'],segs:[['O','P','op'],['P','A','tan'],['P','B','tan']],lens:[['O','P',h,-12]]}); }
+    else { o.ans=h; o.q=`רדיוס המעגל ${E(r)}, והמשיק ${E(`PA = ${t}`)}. מה המרחק ${E('OP')} מהמרכז?`; $('prL').textContent='OP =';
+      o.scene=Object.assign(s,{dots:['P'],segs:[['O','P','op'],['P','A','tan'],['P','B','tan']],lens:[['A','P',t,-14]]}); }
+    o.full=Object.assign({},o.scene,{segs:o.scene.segs.concat([['O','A','rad']]),rights:[['A','O','P']],lens:[['O','P',h,-12],['A','P',t,-14],['O','A',r,-12]]});
+  }
+  if(kind==='eq'){
+    let a,b,c,d,x; do{ x=pick([2,3,4,5,6]); a=pick([2,3,4,5]); c=pick([1,2,3]); b=pick([1,2,3,5,7]); d=a*x+b-c*x; } while(a===c||d<=0);
+    Object.assign(o,{x,a,b,c,d,ans:x}); o.len=a*x+b;
+    o.q=`PA ו-PB משיקים מ-P. ${E(`PA = ${a}x + ${b}`)} ו-${E(`PB = ${c===1?'':c}x + ${d}`)}. מה x?`; $('prL').textContent='x =';
+    o.scene=Object.assign(tangentScene(3,5,90,120,62),{dots:['P'],segs:[['P','A','tan'],['P','B','tan']],lens:[['A','P',`${a}x + ${b}`,-14],['B','P',`${c===1?'':c}x + ${d}`,14]]});
+    o.full=Object.assign({},o.scene,{lens:[['A','P',o.len,-14],['B','P',o.len,14]]});
+  }
+  if(kind==='ang'){
+    const p=pick([40,50,60,70,80,36,44,110]); Object.assign(o,{p,ans:180-p});
+    const OP=1/Math.sin(p/2*D)*3; const s=tangentScene(3,OP,80,120,Math.min(60,190/(OP/3)));
+    o.q=`הזווית בין שני המשיקים היא ${E(`∠APB = ${p}°`)}. כמה היא הזווית המרכזית ${E('∠AOB')}?`; $('prL').textContent='∠AOB =';
+    o.scene=Object.assign(s,{dots:['P'],segs:[['P','A','tan'],['P','B','tan'],['O','A','rad'],['O','B','rad']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:p+'°',r:18},{v:'O',a:'A',b:'B',cls:'angX',label:'?'}]});
+    o.full=Object.assign({},o.scene,{rights:[['A','O','P'],['B','O','P']],angles:[{v:'P',a:'A',b:'B',cls:'ang',label:p+'°',r:18},{v:'O',a:'A',b:'B',cls:'angB',label:(180-p)+'°'}]});
+  }
+  if(kind==='quad'){
+    const g=pick([65,72,85,95,104,110,118,124]), pair=pick([['A','C'],['B','D']]);
+    Object.assign(o,{g,ans:180-g,pair});
+    const c=[160,120], r=92, q={A:at(c,r,170),B:at(c,r,250),C:at(c,r,335),D:at(c,r,75)};
+    const nb={A:['B','D'],B:['C','A'],C:['D','B'],D:['A','C']}, [u,v]=pair;
+    o.q=`ABCD מרובע חסום במעגל, ו-${E(`∠${u} = ${g}°`)}. כמה ${E(`∠${v}`)}?`; $('prL').textContent=`∠${v} =`;
+    o.scene={c,r,pts:q,hide:['O'],polys:[[['A','B','C','D'],'side']],angles:[{v:u,a:nb[u][0],b:nb[u][1],cls:'ang',label:g+'°'},{v,a:nb[v][0],b:nb[v][1],cls:'angX',label:'?'}]};
+    o.full=Object.assign({},o.scene,{angles:[{v:u,a:nb[u][0],b:nb[u][1],cls:'ang',label:g+'°'},{v,a:nb[v][0],b:nb[v][1],cls:'angB',label:(180-g)+'°'}]});
+  }
+  pr=o; render($('prG'),o.scene);
+  $('prQ').innerHTML=o.q; $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr;
+  if(p.kind==='len') return `משיק מאונך לרדיוס, אז במשולש OAP: ${E(`PA² = ${p.OP}² − ${p.R}²`)} ${E(`= ${p.OP**2-p.R**2}`)}, ו-${E(`PA = ${p.PA}`)}.`;
+  if(p.kind==='op') return `במשולש OAP היתר הוא OP: ${E(`OP² = ${p.R}² + ${p.PA}²`)} ${E(`= ${p.OP**2}`)}, ו-${E(`OP = ${p.OP}`)}.`;
+  if(p.kind==='eq') return `שני משיקים מאותה נקודה שווים: ${E(`${p.a}x + ${p.b} = ${p.c===1?'':p.c}x + ${p.d}`)}, אז ${E(`${p.a-p.c}x = ${p.d-p.b}`)} ו-${E(`x = ${p.x}`)}. כל משיק באורך ${E(p.len)}.`;
+  if(p.kind==='ang') return `במרובע OAPB יש שתי זוויות ישרות (ב-A וב-B), וסכום הזוויות במרובע 360°: ${E(`∠AOB = 360° − 90° − 90° − ${p.p}°`)} ${E(`= ${p.ans}°`)}.`;
+  return `${p.pair[0]} ו-${p.pair[1]} זוויות נגדיות במרובע חסום, אז הסכום שלהן 180°: ${E(`180° − ${p.g}° = ${p.ans}°`)}.`;
+}
+$('prCheck').onclick=()=>{
+  const v=parseNum($('prA').value.replace('°','')), fb=$('prFb'), p=pr;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+  if(eqv(v,p.ans)){ streak++; solved++; streakTxt(); render($('prG'),p.full); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  let m;
+  if(p.kind==='len'&&eqv(v,p.OP-p.R)) m='חיסרתם את האורכים עצמם. צריך לחסר את הריבועים, ורק אז להוציא שורש.';
+  else if(p.kind==='len'&&eqv(v,Math.sqrt(p.OP**2+p.R**2))) m='חיברתם את הריבועים. אבל OP הוא היתר, הצלע הארוכה. לכן מחסרים: PA² = OP² − R².';
+  else if(p.kind==='len'&&eqv(v,p.OP**2-p.R**2)) m='זה PA². עכשיו הוציאו שורש.';
+  else if(p.kind==='op'&&eqv(v,Math.sqrt(Math.abs(p.PA**2-p.R**2)))) m='חיסרתם. כאן OP הוא היתר, הצלע הכי ארוכה, אז מחברים את הריבועים.';
+  else if(p.kind==='op'&&eqv(v,p.R+p.PA)) m='חיברתם את האורכים. בפיתגורס מחברים ריבועים, ואז מוציאים שורש.';
+  else if(p.kind==='op'&&eqv(v,p.OP**2)) m='זה OP². עכשיו הוציאו שורש.';
+  else if(p.kind==='eq'&&eqv(v,p.len)) m='זה האורך של המשיק. השאלה שואלת מה x.';
+  else if(p.kind==='ang'&&eqv(v,2*p.p)) m='זה לא מצב של זווית מרכזית והיקפית. P מחוץ למעגל. הסתכלו על המרובע OAPB ועל שתי הזוויות הישרות שבו.';
+  else if(p.kind==='ang'&&eqv(v,360-p.p)) m='שכחתם את שתי הזוויות הישרות ב-A וב-B.';
+  else if(p.kind==='ang'&&eqv(v,p.p)) m='הזוויות לא שוות. ביחד הן משלימות ל-180°.';
+  else if(p.kind==='quad'&&eqv(v,p.g)) m='זוויות נגדיות במרובע חסום לא שוות, הן <strong>משלימות</strong> ל-180°.';
+  else if(p.kind==='quad'&&eqv(v,360-p.g)) m='הסכום של זוויות נגדיות הוא 180°, לא 360°.';
+  else m='עוד לא. בדקו איזה משפט מתאים: משיק ורדיוס, שני משיקים, או מרובע חסום.';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2); let h;
+  if(p.kind==='len'||p.kind==='op'){
+    if(p.hint===1){ render($('prG'),Object.assign({},p.scene,{segs:p.scene.segs.concat([['O','A','rad']]),rights:[['A','O','P']]})); h='חברו את O ל-A. איזו זווית יש ב-A? מי היתר במשולש OAP?'; }
+    else h=p.kind==='len'?`${E(`PA² = ${p.OP}² − ${p.R}²`)}. חשבו והוציאו שורש.`:`${E(`OP² = ${p.R}² + ${p.PA}²`)}. חשבו והוציאו שורש.`;
+  }
+  else if(p.kind==='eq') h=p.hint===1?'מה ידוע על שני משיקים שיוצאים מאותה נקודה?':`הם שווים, אז ${E(`${p.a}x + ${p.b} = ${p.c===1?'':p.c}x + ${p.d}`)}. פתרו את המשוואה.`;
+  else if(p.kind==='ang'){ if(p.hint===1){ render($('prG'),Object.assign({},p.scene,{rights:[['A','O','P'],['B','O','P']]})); h='כמה מעלות יש בזווית בין רדיוס למשיק? וכמה מעלות במרובע?'; }
+    else h=`במרובע OAPB: ${E(`90° + 90° + ${p.p}° + ∠AOB = 360°`)}.`; }
+  else h=p.hint===1?`האם ${p.pair[0]} ו-${p.pair[1]} שכנות או נגדיות?`:`הן נגדיות, אז ${E(`∠${p.pair[0]} + ∠${p.pair[1]} = 180°`)}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ render($('prG'),pr.full); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

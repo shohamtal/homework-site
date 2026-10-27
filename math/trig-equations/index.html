@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>משוואות טריגונומטריות · כיתה י · מירי</title>
+<meta name="description" content="פותרים sin x = 0.5 או 2cos x = 1: מוצאים את כל הפתרונות בעזרת מעגל היחידה והמחזור. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/trig-equations/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משוואות טריגונומטריות · כיתה י · מירי">
+<meta property="og:description" content="פותרים sin x = 0.5 או 2cos x = 1: מוצאים את כל הפתרונות בעזרת מעגל היחידה והמחזור. הסבר, מעבדה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/trig-equations/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"טריגונומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-10/#trig-10"},{"@type":"ListItem","position":5,"name":"משוואות טריגונומטריות","item":"https://shohamtal.github.io/homework-site/math/trig-equations/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה למשוואה טריגונומטרית יש הרבה פתרונות?","acceptedAnswer":{"@type":"Answer","text":"כי כל 360° חוזרים לאותה נקודה על המעגל, וסינוס וקוסינוס חוזרים על עצמם. לכן כותבים פתרון כללי עם + 360°·n, כאשר n מספר שלם."}},{"@type":"Question","name":"איך מוצאים את הפתרון השני של sin x = k?","acceptedAnswer":{"@type":"Answer","text":"המחשבון נותן x₁ = sin⁻¹(k). הפתרון השני הוא 180° − x₁. למשל sin x = 0.5: x = 30° או x = 150°. בקוסינוס הפתרון השני הוא 360° − x₁."}},{"@type":"Question","name":"מה עושים כש-sin x שווה למספר גדול מ-1?","acceptedAnswer":{"@type":"Answer","text":"אין פתרון. סינוס וקוסינוס הם שיעורים של נקודה על מעגל ברדיוס 1, ולכן הם תמיד בין −1 ל-1. המחשבון יראה הודעת שגיאה, וזה בסדר."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"משוואות טריגונומטריות","description":"פותרים sin x = 0.5 או 2cos x = 1: מוצאים את כל הפתרונות בעזרת מעגל היחידה והמחזור. הסבר, מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/math/trig-equations/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"טריגונומטריה","teaches":"משוואות טריגונומטריות","keywords":"פתרון כללי, מחזור, זהויות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.te{width:100%; max-width:380px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.te .ax{stroke:var(--ink); stroke-width:1.2}
+.te .grid{stroke:var(--soft); stroke-width:1}
+.te .circ{fill:none; stroke:var(--ink); stroke-width:1.8}
+.te .curve{fill:none; stroke:var(--ink); stroke-width:2.2}
+.te .kl{stroke:var(--line); stroke-width:2.4; stroke-dasharray:6 4}
+.te .rad{stroke:var(--blue); stroke-width:2.2}
+.te .sol{fill:var(--blue); stroke:var(--card); stroke-width:2}
+.te .drop{stroke:var(--blue); stroke-width:1.2; stroke-dasharray:3 3}
+.te .lbl{font:700 10px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.te .lbl.s{fill:var(--blue)} .te .lbl.k{fill:var(--line)} .te .lbl.m{fill:var(--muted); font-weight:400}
+.fnsw{display:flex; gap:6px}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="trig-equations">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#trig-10">טריגונומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">משוואות טריגונומטריות</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · טריגונומטריה</div>
+  <h1>משוואות טריגונומטריות <span class="slogan">תמיד יש עוד פתרון</span></h1>
+  <p class="lead">במשוואה <span class="eq">2x + 1 = 7</span> יש פתרון אחד. במשוואה <span class="eq">sin x = 0.5</span> יש המון: <span class="eq">30°</span>, <span class="eq">150°</span>, <span class="eq">390°</span> ועוד. כאן תלמדו למצוא את כולם, בעזרת <a href="../unit-circle/">מעגל היחידה</a> והגרף. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שני פתרונות בכל סיבוב</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>סינוס: x ו-<span dir="ltr">180° − x</span></h3>
+      <p>הסינוס הוא הגובה של הנקודה על המעגל. ישר אופקי בגובה k חותך את המעגל בשתי נקודות, אחת מכל צד של ציר y.</p>
+      <div class="big-eq"><span class="eq">x = x₁ + 360°·n</span></div>
+      <div class="big-eq"><span class="eq">x = 180° − x₁</span> <span class="eq">+ 360°·n</span></div>
+    </div>
+    <div class="mini">
+      <h3>קוסינוס: x ו-<span dir="ltr">−x</span></h3>
+      <p>הקוסינוס הוא המרחק ימינה או שמאלה. ישר אנכי חותך את המעגל בשתי נקודות, אחת מעל ציר x ואחת מתחתיו.</p>
+      <div class="big-eq"><span class="eq">x = ±x₁ + 360°·n</span></div>
+      <p>בתחום <span class="eq">0°</span> עד <span class="eq">360°</span> הפתרון השני הוא <span class="eq">360° − x₁</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הצעד הראשון תמיד:</strong> מבודדים את הסינוס או הקוסינוס. <span class="eq">2cos x − 1 = 0</span> הופך ל-<span class="eq">cos x = 0.5</span>, ורק אז לוחצים <span class="eq">cos⁻¹</span>. את <span class="eq">x₁</span> נותן המחשבון, והמספר <span class="eq">n</span> הוא מספר שלם כלשהו (מספר הסיבובים).</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: ישר חותך מעגל וגל</h2></div>
+  <p class="text">בחרו סינוס או קוסינוס, והזיזו את k. הקו הוורוד הוא <span class="eq">y = k</span>. הנקודות הכחולות הן הפתרונות בין <span class="eq">0°</span> ל-<span class="eq">360°</span>, גם על המעגל וגם על הגרף.</p>
+  <div class="fnsw" role="tablist">
+    <button class="primary" data-f="sin" role="tab" aria-selected="true" dir="ltr">sin x = k</button>
+    <button data-f="cos" role="tab" aria-selected="false" dir="ltr">cos x = k</button>
+  </div>
+  <div class="lab">
+    <svg class="te" id="labG" viewBox="0 0 380 200" role="img" aria-label="מעגל היחידה וגרף הפונקציה עם הישר y שווה k"></svg>
+    <div class="ctrl">
+      <label class="slider" for="lk"><span>המספר <i>k</i></span><span class="eq" id="lkv"></span></label>
+      <input type="range" id="lk" min="-1.2" max="1.2" step="0.05" value="0.5">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="sin,0.5" dir="ltr">sin x = 0.5</button>
+          <button data-p="sin,-0.5" dir="ltr">sin x = −0.5</button>
+          <button data-p="cos,0.5" dir="ltr">cos x = 0.5</button>
+          <button data-p="cos,-1" dir="ltr">cos x = −1</button>
+          <button data-p="sin,1" dir="ltr">sin x = 1</button>
+          <button data-p="sin,1.1" dir="ltr">sin x = 1.1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">ב-<span class="eq">k = 1</span> הישר רק נוגע במעגל, ויש פתרון אחד בסיבוב. וכש-k גדול מ-1, הישר בכלל לא פוגש את המעגל: אין פתרון.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שכחו את הפתרון השני</h3>
+      <p>המחשבון נותן רק <span class="eq">x₁</span>. ב-<span class="eq">sin x = 0.5</span> הוא אומר <span class="eq">30°</span>, אבל גם <span class="eq">150°</span> פתרון.</p>
+    </div>
+    <div class="mini">
+      <h3>הנוסחה הלא נכונה</h3>
+      <p>לסינוס הפתרון השני הוא <span class="eq">180° − x₁</span>. לקוסינוס הוא <span class="eq">−x₁</span>, כלומר <span class="eq">360° − x₁</span>.</p>
+      <p>מתבלבלים? ציירו את המעגל ובדקו איפה הישר חותך.</p>
+    </div>
+    <div class="mini">
+      <h3>זווית שלילית מהמחשבון</h3>
+      <p><span class="eq">sin⁻¹(−0.5) = −30°</span>. זה פתרון, אבל לא בתחום. מוסיפים <span class="eq">360°</span>: <span class="eq">330°</span>.</p>
+      <p>והשני: <span class="eq">180° − (−30°) = 210°</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה:</strong> הציבו כל פתרון במשוואה המקורית. ואם k גדול מ-1 או קטן מ-<span class="eq">−1</span>, עצרו: אין פתרון, כי סינוס וקוסינוס לא יוצאים מהתחום הזה.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: <span dir="ltr">2sin x = 1</span></button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: <span dir="ltr">2cos x + 1 = 0</span></button>
+  </div>
+  <div class="lab">
+    <svg class="te" id="exG" viewBox="0 0 380 200" role="img" aria-label="מעגל וגרף של הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">מצאו את שני הפתרונות בין <span class="eq">0°</span> ל-<span class="eq">360°</span>. עגלו למספר שלם. הסדר לא משנה.</p>
+  <div class="lab">
+    <svg class="te" id="prG" viewBox="0 0 380 200" role="img" aria-label="מעגל וגרף לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ" class="big-eq"></p>
+      <div class="inputs">
+        <label for="prA"><span>x₁ ≈</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+        <label for="prB"><span>x₂ ≈</span><input id="prB" inputmode="decimal" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">משוואה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה למשוואה טריגונומטרית יש הרבה פתרונות?</h3>
+    <p>כי כל 360° חוזרים לאותה נקודה על המעגל, וסינוס וקוסינוס חוזרים על עצמם. לכן כותבים פתרון כללי עם <span class="eq">+ 360°·n</span>, כאשר n מספר שלם.</p>
+    <h3>איך מוצאים את הפתרון השני של sin x = k?</h3>
+    <p>המחשבון נותן <span class="eq">x₁ = sin⁻¹(k)</span>. הפתרון השני הוא <span class="eq">180° − x₁</span>. למשל <span class="eq">sin x = 0.5</span>: <span class="eq">x = 30°</span> או <span class="eq">x = 150°</span>. בקוסינוס הפתרון השני הוא <span class="eq">360° − x₁</span>.</p>
+    <h3>מה עושים כש-sin x שווה למספר גדול מ-1?</h3>
+    <p>אין פתרון. סינוס וקוסינוס הם שיעורים של נקודה על מעגל ברדיוס 1, ולכן הם תמיד בין <span class="eq">−1</span> ל-<span class="eq">1</span>. המחשבון יראה הודעת שגיאה, וזה בסדר.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/unit-circle/">מעגל היחידה: סינוס וקוסינוס של כל זווית</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/sine-cosine-law/"><small>→ הנושא הקודם</small>משפט הסינוסים ומשפט הקוסינוסים</a><a class="next" href="../../math/arithmetic-series/"><small>הנושא הבא ←</small>סדרה חשבונית: איבר כללי וסכום</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const D=Math.PI/180;
+const fx=v=>v.toFixed(1);
+const r1=v=>Math.round(v*10)/10;
+const n1=v=>String(r1(v)).replace('-','−');
+const near=(a,b,t)=>Math.abs(a-b)<=t;
+const norm=a=>{ a=((a%360)+360)%360; return a>359.95?0:a; };
+const F={sin:d=>Math.sin(d*D), cos:d=>Math.cos(d*D)};
+const INV={sin:k=>Math.asin(k)/D, cos:k=>Math.acos(k)/D};
+
+/* solutions in [0,360) of f(x)=k */
+function solve(f,k){
+  if(Math.abs(k)>1+1e-9) return {x1:null,list:[]};
+  const x1=INV[f](Math.max(-1,Math.min(1,k)));
+  const raw=f==='sin'?[x1,180-x1]:[x1,-x1];
+  const list=[...new Set(raw.map(v=>r1(norm(v))))].sort((a,b)=>a-b);
+  return {x1,list};
+}
+
+/* left: unit circle, right: graph of f from 0 to 360 */
+const CX=62, CY=100, R=52, GX0=140, GX1=370, GY=100, AMP=52;
+const gx=d=>GX0+(GX1-GX0)*d/360, gy=v=>GY-AMP*v;
+function draw(svg,f,k,o={}){
+  let s='';
+  /* graph grid */
+  for(let d=0; d<=360; d+=90){ s+=`<line class="grid" x1="${fx(gx(d))}" y1="${GY-AMP-10}" x2="${fx(gx(d))}" y2="${GY+AMP+10}"/>`;
+    s+=`<text class="lbl m" x="${fx(gx(d))}" y="${GY+AMP+20}">${d}°</text>`; }
+  s+=`<line class="ax" x1="${GX0}" y1="${GY}" x2="${GX1+4}" y2="${GY}"/><line class="ax" x1="${GX0}" y1="${GY-AMP-12}" x2="${GX0}" y2="${GY+AMP+12}"/>`;
+  s+=`<text class="lbl m" x="${GX0-8}" y="${fx(gy(1))}">1</text><text class="lbl m" x="${GX0-10}" y="${fx(gy(-1))}">−1</text>`;
+  let path='';
+  for(let d=0; d<=360; d+=4) path+=(d?'L':'M')+fx(gx(d))+','+fx(gy(F[f](d)));
+  s+=`<path class="curve" d="${path}"/>`;
+  s+=`<text class="lbl" x="${GX1-8}" y="${GY-AMP-14}">${f} x</text>`;
+  /* circle */
+  s+=`<line class="ax" x1="${CX-R-8}" y1="${CY}" x2="${CX+R+8}" y2="${CY}"/><line class="ax" x1="${CX}" y1="${CY-R-8}" x2="${CX}" y2="${CY+R+8}"/>`;
+  s+=`<circle class="circ" cx="${CX}" cy="${CY}" r="${R}"/>`;
+  const kk=Math.max(-1.25,Math.min(1.25,k));
+  if(o.line!==false){
+    if(f==='sin'){
+      s+=`<line class="kl" x1="${CX-R-8}" y1="${fx(gy(kk))}" x2="${GX1+4}" y2="${fx(gy(kk))}"/>`;
+    } else {
+      s+=`<line class="kl" x1="${fx(CX+R*kk)}" y1="${CY-R-8}" x2="${fx(CX+R*kk)}" y2="${CY+R+8}"/>`;
+      s+=`<line class="kl" x1="${GX0}" y1="${fx(gy(kk))}" x2="${GX1+4}" y2="${fx(gy(kk))}"/>`;
+    }
+    s+=`<text class="lbl k" x="${GX1-4}" y="${fx(gy(kk)+(kk>0?10:-10))}">k</text>`;
+  }
+  const {list}=solve(f,k), show=o.sols||list;
+  show.forEach(d=>{
+    const P=[CX+R*Math.cos(d*D), CY-R*Math.sin(d*D)];
+    s+=`<line class="rad" x1="${CX}" y1="${CY}" x2="${fx(P[0])}" y2="${fx(P[1])}"/><circle class="sol" cx="${fx(P[0])}" cy="${fx(P[1])}" r="4.5"/>`;
+    const Q=[gx(d),gy(F[f](d))];
+    s+=`<line class="drop" x1="${fx(Q[0])}" y1="${fx(Q[1])}" x2="${fx(Q[0])}" y2="${GY}"/><circle class="sol" cx="${fx(Q[0])}" cy="${fx(Q[1])}" r="4.5"/>`;
+    if(o.labels!==false) s+=`<text class="lbl s" x="${fx(Q[0])}" y="${fx(GY+(F[f](d)>0?10:-10))}">${n1(d)}°</text>`;
+  });
+  svg.innerHTML=s;
+}
+
+/* ---------- lab ---------- */
+let fn='sin';
+const LK=$('lk');
+function lab(){
+  const k=r1(+LK.value*100)/100, kk=Math.round(+LK.value*100)/100;
+  $('lkv').textContent=String(kk).replace('-','−');
+  draw($('labG'),fn,kk);
+  const {x1,list}=solve(fn,kk);
+  let x;
+  if(x1===null) x=`<div>${E(`${fn} x = ${n1(kk)}`)}: <strong>אין פתרון</strong>. ${fn==='sin'?'הישר האופקי':'הישר האנכי'} לא פוגש את המעגל, כי ${fn} תמיד בין −1 ל-1.</div>`;
+  else {
+    x=`<div>במחשבון: ${E(`${fn}⁻¹(${String(kk).replace('-','−')}) ≈ ${n1(x1)}°`)}.</div>`;
+    if(list.length===1) x+=`<div>יש רק פתרון אחד בסיבוב: ${E(n1(list[0])+'°')}. הישר נוגע במעגל בנקודה אחת.</div>`;
+    else {
+      x+=`<div>${fn==='sin'?`הפתרון השני: ${E(`180° − ${n1(x1)}° = ${n1(180-x1)}°`)}`:`הפתרון השני: ${E(`−${n1(x1)}°`)}, כלומר ${E(`${n1(norm(-x1))}°`)}`}.</div>`;
+      if(x1<0) x+=`<div>${E(n1(x1)+'°')} שלילית, אז מוסיפים 360° ומקבלים ${E(n1(norm(x1))+'°')}.</div>`;
+      x+=`<div>בתחום 0° עד 360°: ${E(list.map(v=>v+'°').join(', '))}.</div>`;
+    }
+    x+=`<div>פתרון כללי: ${fn==='sin'?`${E(`x = ${n1(x1)}° + 360°·n`)} או ${E(`x = ${n1(180-x1)}° + 360°·n`)}`:`${E(`x = ±${n1(x1)}° + 360°·n`)}`}.</div>`;
+  }
+  $('labTxt').innerHTML=x;
+}
+function setFn(f){ fn=f; document.querySelectorAll('.fnsw button').forEach(b=>{const on=b.dataset.f===f; b.classList.toggle('primary',on); b.setAttribute('aria-selected',on);}); lab(); }
+LK.addEventListener('input',lab);
+document.querySelectorAll('.fnsw button').forEach(b=>b.addEventListener('click',()=>setFn(b.dataset.f)));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{const [f,k]=b.dataset.p.split(','); LK.value=k; setFn(f);}));
+lab();
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{f:'sin',k:.5,steps:[
+    [{line:false,sols:[]},`פתרו ${E('2sin x = 1')} בתחום ${E('0° ≤ x < 360°')}.`],
+    [{sols:[]},`מבודדים: מחלקים ב-2, ${E('sin x = 0.5')}. הקו הוורוד הוא ${E('y = 0.5')}.`],
+    [{sols:[30]},`במחשבון: ${E('sin⁻¹(0.5) = 30°')}. זה ${E('x₁')}.`],
+    [{sols:[30,150]},`הקו חותך את המעגל גם משמאל לציר y: ${E('x₂ = 180° − 30° = 150°')}.`],
+    [{sols:[30,150]},`התשובה: ${E('x = 30°')} או ${E('x = 150°')}. בפתרון כללי מוסיפים ${E('+ 360°·n')} לכל אחד.`]
+  ]},
+  B:{f:'cos',k:-.5,steps:[
+    [{line:false,sols:[]},`פתרו ${E('2cos x + 1 = 0')} בתחום ${E('0° ≤ x < 360°')}.`],
+    [{sols:[]},`מבודדים: ${E('2cos x = −1')}, ולכן ${E('cos x = −0.5')}. בקוסינוס זה ישר אנכי משמאל לציר y.`],
+    [{sols:[120]},`במחשבון: ${E('cos⁻¹(−0.5) = 120°')}. זה ${E('x₁')}.`],
+    [{sols:[120,240]},`הפתרון השני בקוסינוס הוא ${E('−120°')}, וכדי להיכנס לתחום מוסיפים 360°: ${E('240°')}.`],
+    [{sols:[120,240]},`התשובה: ${E('x = 120°')} או ${E('x = 240°')}. בדיקה: ${E('2cos 240° + 1 = 2·(−0.5) + 1 = 0')}. מתאים!`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [o,txt]=e.steps[exI];
+  draw($('exG'),e.f,e.k,o);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k; exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+/* [a, k]: a·f(x) + b = c with f(x) = k */
+const PAIRS=[[2,.5],[2,-.5],[5,.6],[5,-.6],[5,.8],[5,-.8],[10,.3],[10,-.3],[4,.75],[4,-.25],[10,.9],[10,-.7],[5,.4],[2,.5]];
+let pr={}, streak=0, solved=0;
+const sgn=v=>v<0?` − ${-v}`:` + ${v}`;
+function newPr(){
+  let f,a,k; do{ f=pick(['sin','cos']); [a,k]=pick(PAIRS); }while(pr.f===f&&pr.k===k);
+  const b=pick([-3,-2,-1,0,0,1,2,3]), c=Math.round((a*k+b)*100)/100;
+  const {x1,list}=solve(f,k);
+  pr={f,a,k,b,c,x1,list,tries:0,hint:0};
+  $('prQ').innerHTML=E(`${a}${f} x${b?sgn(b):''} = ${String(c).replace('-','−')}`);
+  draw($('prG'),f,k,{line:false,sols:[]});
+  $('prA').value=''; $('prB').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr, ks=String(p.k).replace('-','−');
+  let t=`${p.b?`${E(`${p.a}${p.f} x = ${String(r1((p.c-p.b)*100)/100).replace('-','−')}`)}, `:''}${E(`${p.f} x = ${ks}`)}. ${E(`${p.f}⁻¹(${ks}) ≈ ${n1(p.x1)}°`)}. `;
+  t+=p.f==='sin'?`השני: ${E(`180° − ${n1(p.x1)}° ≈ ${n1(180-p.x1)}°`)}. `:`השני: ${E(`360° − ${n1(p.x1)}° ≈ ${n1(360-p.x1)}°`)}. `;
+  if(p.f==='sin'&&p.x1<0) t+=`ו-${E(n1(p.x1)+'°')} הופכת ל-${E(n1(norm(p.x1))+'°')}. `;
+  return t+`בתחום: ${E(p.list.map(v=>Math.round(v)+'°').join(', '))}.`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), p=pr;
+  const vs=[$('prA').value,$('prB').value].map(s=>parseNum(s.replace('°',''))).filter(v=>!isNaN(v));
+  if(!vs.length){ fb.innerHTML='<div class="fb err">כתבו את שני הפתרונות במעלות, למשל 30 ו-150.</div>'; return; }
+  const hits=p.list.map(t=>vs.some(v=>near(v,t,.6)));
+  const extra=vs.filter(v=>!p.list.some(t=>near(v,t,.6)));
+  if(hits.every(Boolean)&&!extra.length){ streak++; solved++; streakTxt(); draw($('prG'),p.f,p.k); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  let m;
+  const wrongFamily=p.f==='sin'?[norm(-p.x1),norm(360-p.x1)]:[norm(180-p.x1)];
+  const notIsolated=[p.c,p.c/p.a,p.c-p.b].filter(v=>Math.abs(v)<=1&&!near(v,p.k,.001)).map(v=>norm(INV[p.f](v)));
+  if(hits.some(Boolean)&&vs.length===1) m='פתרון אחד נכון! יש עוד אחד בתחום. בדקו בציור איפה עוד הישר חותך את המעגל.';
+  else if(extra.some(v=>wrongFamily.some(w=>near(v,w,.6)))) m=p.f==='sin'?'בסינוס הפתרון השני הוא 180° פחות x₁, לא 360° פחות x₁.':'בקוסינוס הפתרון השני הוא 360° פחות x₁ (כלומר −x₁), לא 180° פחות x₁.';
+  else if(extra.some(v=>v<0)) m='יש פתרון שלילי. הוסיפו לו 360° כדי שייכנס לתחום 0° עד 360°.';
+  else if(extra.some(v=>notIsolated.some(w=>near(v,w,.6)))) m=`קודם מבודדים את ה-${p.f}: מעבירים את המספר החופשי ומחלקים ב-${p.a}.`;
+  else if(extra.some(v=>near(v,Math.asin(Math.max(-1,Math.min(1,p.k))),.02)||near(v,Math.acos(Math.max(-1,Math.min(1,p.k))),.02))) m='נראה שהמחשבון ברדיאנים. העבירו ל-DEG (מעלות).';
+  else if(hits.some(Boolean)) m='פתרון אחד נכון, והשני לא. השתמשו בנוסחה של הפתרון השני.';
+  else m=`עוד לא. בודדו את ה-${p.f}, ואז לחצו ${p.f}⁻¹ במחשבון.`;
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2);
+  const ks=String(p.k).replace('-','−');
+  draw($('prG'),p.f,p.k,{sols:p.hint===2?p.list:[],labels:false});
+  const h=p.hint===1?`מבודדים: ${p.b?`מעבירים את ה-${String(p.b).replace('-','−')} לצד השני, `:''}ומחלקים ב-${p.a}. יוצא ${E(`${p.f} x = ${ks}`)}.`
+    :`${E(`${p.f}⁻¹(${ks}) ≈ ${n1(p.x1)}°`)}. הפתרון השני: ${p.f==='sin'?E('180° − x₁'):E('360° − x₁')}${p.f==='sin'&&p.x1<0?', ואל תשכחו להוסיף 360° לזווית השלילית':''}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ draw($('prG'),pr.f,pr.k); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו משוואה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+[$('prA'),$('prB')].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();}));
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

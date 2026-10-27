@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>משפט הסינוסים ומשפט הקוסינוסים · כיתה י · מירי</title>
+<meta name="description" content="פותרים משולש שאינו ישר זווית: מתי משתמשים במשפט הסינוסים, מתי בקוסינוסים, ואיך מחשבים שטח בעזרת סינוס. הסבר, מעבדה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/sine-cosine-law/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משפט הסינוסים ומשפט הקוסינוסים · כיתה י · מירי">
+<meta property="og:description" content="פותרים משולש שאינו ישר זווית: מתי משתמשים במשפט הסינוסים, מתי בקוסינוסים, ואיך מחשבים שטח בעזרת סינוס. הסבר, מעבדה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/sine-cosine-law/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/math/grade-10/"},{"@type":"ListItem","position":4,"name":"טריגונומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-10/#trig-10"},{"@type":"ListItem","position":5,"name":"משפט הסינוסים ומשפט הקוסינוסים","item":"https://shohamtal.github.io/homework-site/math/sine-cosine-law/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מתי משתמשים במשפט הסינוסים ומתי במשפט הקוסינוסים?","acceptedAnswer":{"@type":"Answer","text":"אם נתונה צלע והזווית שמולה, ועוד צלע או זווית, משתמשים בסינוסים. אם נתונות שתי צלעות והזווית שביניהן, או שלוש צלעות, משתמשים בקוסינוסים. נסו את שלושת המצבים במעבדה."}},{"@type":"Question","name":"איך מחשבים שטח משולש בלי גובה?","acceptedAnswer":{"@type":"Answer","text":"בעזרת שתי צלעות והזווית שביניהן: S = ½ · b · c · sin A. למשל צלעות 6 ו-8 עם זווית של 30° ביניהן: S = ½ · 6 · 8 · 0.5 = 12."}},{"@type":"Question","name":"מה הקשר בין משפט הקוסינוסים לפיתגורס?","acceptedAnswer":{"@type":"Answer","text":"משפט הקוסינוסים הוא פיתגורס עם תיקון: a² = b² + c² − 2bc · cos A. כשהזווית A ישרה, cos 90° = 0, התיקון נעלם ונשאר a² = b² + c²."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"משפט הסינוסים ומשפט הקוסינוסים","description":"פותרים משולש שאינו ישר זווית: מתי משתמשים במשפט הסינוסים, מתי בקוסינוסים, ואיך מחשבים שטח בעזרת סינוס. הסבר, מעבדה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/math/sine-cosine-law/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"טריגונומטריה","teaches":"משפט הסינוסים ומשפט הקוסינוסים","keywords":"משפט הסינוסים, משפט הקוסינוסים, שטח משולש","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+svg.tw{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.tw .tri{fill:var(--hl); fill-opacity:.4; stroke:var(--ink); stroke-width:2; stroke-linejoin:round}
+.tw .giv{stroke:var(--blue); stroke-width:5; stroke-linecap:round}
+.tw .ask{stroke:var(--line); stroke-width:5; stroke-linecap:round}
+.tw .ang{fill:var(--blue); fill-opacity:.18; stroke:var(--blue); stroke-width:1.4}
+.tw .ang.ask{fill:var(--line); fill-opacity:.2; stroke:var(--line); stroke-width:1.4}
+.tw .v{font:700 14px var(--f-body); text-anchor:middle; dominant-baseline:middle; fill:var(--ink)}
+.tw .lbl{font:700 12px var(--f-math); text-anchor:middle; dominant-baseline:middle; fill:var(--ink); paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.tw .lbl.g{fill:var(--blue)} .tw .lbl.q{fill:var(--line)}
+.modes{display:flex; flex-wrap:wrap; gap:6px}
+.law{font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="sine-cosine-law">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-10/#trig-10">טריגונומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">משפט הסינוסים ומשפט הקוסינוסים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · טריגונומטריה</div>
+  <h1>משפט הסינוסים ומשפט הקוסינוסים <span class="slogan">כל משולש, לא רק ישר זווית</span></h1>
+  <p class="lead">עד עכשיו פתרתם רק משולשים ישרי זווית. שני המשפטים האלה עובדים בכל משולש: חד, קהה או ישר. השאלה החשובה היא איזה משפט לבחור, וזה תלוי במה שנתון. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>שני משפטים ונוסחת שטח</h2></div>
+  <p class="text">במשולש ABC, הצלע <span class="eq">a</span> נמצאת מול הזווית <span class="eq">A</span>, הצלע <span class="eq">b</span> מול <span class="eq">B</span>, והצלע <span class="eq">c</span> מול <span class="eq">C</span>.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>משפט הסינוסים</h3>
+      <div class="big-eq"><span class="eq">a : sin A = b : sin B</span></div>
+      <div class="big-eq"><span class="eq">= c : sin C = 2R</span></div>
+      <p>כל צלע חלקי הסינוס של הזווית <strong>שמולה</strong> נותן אותו מספר. R הוא רדיוס המעגל החוסם.</p>
+      <p><strong>מתי?</strong> כשיש זוג של צלע והזווית שמולה, ועוד נתון אחד.</p>
+    </div>
+    <div class="mini">
+      <h3>משפט הקוסינוסים</h3>
+      <div class="big-eq"><span class="eq">a² = b² + c²</span></div>
+      <div class="big-eq"><span class="eq">− 2bc · cos A</span></div>
+      <p>זה כמו פיתגורס, עם תיקון. כש-A ישרה, <span class="eq">cos 90° = 0</span> ומקבלים בדיוק פיתגורס.</p>
+      <p><strong>מתי?</strong> כשנתונות שתי צלעות והזווית <strong>שביניהן</strong>, או שלוש צלעות.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>שטח בעזרת סינוס:</strong> <span class="eq">S = ½ · b · c · sin A</span>. שתי צלעות, והזווית שביניהן. לא צריך את הגובה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מה נתון, ואיזה משפט?</h2></div>
+  <p class="text">בחרו מה נתון, ובנו משולש עם המחוונים. בכחול: מה שנתון. התיבה מראה איזה משפט מתאים ומחשבת את כל השאר.</p>
+  <div class="modes" role="tablist">
+    <button class="primary" data-m="sas" role="tab" aria-selected="true">שתי צלעות וזווית ביניהן</button>
+    <button data-m="sss" role="tab" aria-selected="false">שלוש צלעות</button>
+    <button data-m="asa" role="tab" aria-selected="false">שתי זוויות וצלע</button>
+  </div>
+  <div class="lab">
+    <svg class="tw" id="labG" viewBox="0 0 300 220" role="img" aria-label="משולש שבונים מהמחוונים"></svg>
+    <div class="ctrl">
+      <label class="slider" for="s1"><span id="s1n"></span><span class="eq" id="s1v"></span></label>
+      <input type="range" class="blue" id="s1">
+      <label class="slider" for="s2"><span id="s2n"></span><span class="eq" id="s2v"></span></label>
+      <input type="range" class="blue" id="s2">
+      <label class="slider" for="s3"><span id="s3n"></span><span class="eq" id="s3v"></span></label>
+      <input type="range" class="hl" id="s3">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="sas,5,8,60" dir="ltr">b=5, c=8, A=60°</button>
+          <button data-p="sas,6,6,120" dir="ltr">A=120°</button>
+          <button data-p="sss,3,4,5" dir="ltr">3, 4, 5</button>
+          <button data-p="sss,7,7,7" dir="ltr">7, 7, 7</button>
+          <button data-p="sss,2,3,9" dir="ltr">2, 3, 9</button>
+          <button data-p="asa,45,75,10" dir="ltr">45°, 75°, c=10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text">נסו את <span class="eq">3, 4, 5</span>: יוצאת זווית של בדיוק <span class="eq">90°</span>. ובמשולש <span class="eq">2, 3, 9</span> אין משולש בכלל, כי <span class="eq">2 + 3</span> קטן מ-<span class="eq">9</span>.</p>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הסדר בקוסינוסים</h3>
+      <p>מחשבים קודם את <span class="eq">2bc · cos A</span>, ורק אז מחסרים מ-<span class="eq">b² + c²</span>.</p>
+      <p>לא נכון: <span class="eq">(b² + c² − 2bc) · cos A</span>. ואל תשכחו להוציא שורש בסוף.</p>
+    </div>
+    <div class="mini">
+      <h3>זווית קהה: מינוס כפול מינוס</h3>
+      <p>אם A קהה, <span class="eq">cos A</span> שלילי. אז <span class="eq">−2bc · cos A</span> הופך לפלוס, והצלע יוצאת ארוכה.</p>
+      <p>זה הגיוני: מול זווית גדולה יש צלע גדולה.</p>
+    </div>
+    <div class="mini">
+      <h3>זווית מסינוסים: שתי אפשרויות</h3>
+      <p>כשמוצאים זווית ממשפט הסינוסים, המחשבון נותן זווית חדה. גם <span class="eq">180°</span> פחות אותה זווית מתאימה.</p>
+      <p>בודקים: האם סכום הזוויות עדיין קטן מ-180°? ומול הצלע הגדולה הזווית הגדולה?</p>
+    </div>
+  </div>
+  <div class="callout"><strong>איך בוחרים?</strong> יש לכם צלע והזווית שמולה? סינוסים. אין זוג כזה? קוסינוסים. ואם מחפשים זווית, עדיף קוסינוסים, כי שם אין בלבול בין חדה לקהה.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="row" role="tablist">
+    <button id="exA" class="primary" role="tab" aria-selected="true">דוגמה א: משפט הקוסינוסים</button>
+    <button id="exB" role="tab" aria-selected="false">דוגמה ב: משפט הסינוסים</button>
+  </div>
+  <div class="lab">
+    <svg class="tw" id="exG" viewBox="0 0 300 220" role="img" aria-label="משולש הדוגמה"></svg>
+    <div class="stepper">
+      <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+      <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">השתמשו במחשבון במצב מעלות. עגלו לספרה אחת אחרי הנקודה.</p>
+  <div class="lab">
+    <svg class="tw" id="prG" viewBox="0 0 300 220" role="img" aria-label="משולש לתרגול"></svg>
+    <div class="ctrl">
+      <p id="prQ"></p>
+      <div class="inputs">
+        <label for="prA"><span id="prLbl">x ≈</span><input id="prA" inputmode="decimal" autocomplete="off"></label>
+        <button id="prCheck" class="primary">בדיקה</button>
+      </div>
+      <div class="row"><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">שאלה חדשה</button></div>
+      <div id="prFb" aria-live="polite"></div>
+      <p class="counter" id="prStreak"></p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מתי משתמשים במשפט הסינוסים ומתי במשפט הקוסינוסים?</h3>
+    <p>אם נתונה צלע והזווית שמולה, ועוד צלע או זווית, משתמשים בסינוסים. אם נתונות שתי צלעות והזווית שביניהן, או שלוש צלעות, משתמשים בקוסינוסים. <a href="#lab">נסו את שלושת המצבים במעבדה</a>.</p>
+    <h3>איך מחשבים שטח משולש בלי גובה?</h3>
+    <p>בעזרת שתי צלעות והזווית שביניהן: <span class="eq">S = ½ · b · c · sin A</span>. למשל צלעות 6 ו-8 עם זווית של 30° ביניהן: <span class="eq">S = ½ · 6 · 8 · 0.5 = 12</span>.</p>
+    <h3>מה הקשר בין משפט הקוסינוסים לפיתגורס?</h3>
+    <p>משפט הקוסינוסים הוא פיתגורס עם תיקון: <span class="eq">a² = b² + c² − 2bc · cos A</span>. כשהזווית A ישרה, <span class="eq">cos 90° = 0</span>, התיקון נעלם ונשאר <span class="eq">a² = b² + c²</span>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/trigonometry/">טריגונומטריה: סינוס, קוסינוס וטנגנס</a> · <a href="../../math/unit-circle/">מעגל היחידה: סינוס וקוסינוס של כל זווית</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/unit-circle/"><small>→ הנושא הקודם</small>מעגל היחידה: סינוס וקוסינוס של כל זווית</a><a class="next" href="../../math/trig-equations/"><small>הנושא הבא ←</small>משוואות טריגונומטריות</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const D=Math.PI/180;
+const fx=v=>v.toFixed(1);
+const r1=v=>Math.round(v*10)/10, r3=v=>Math.round(v*1000)/1000;
+const n1=v=>String(r1(v)).replace('-','−'), n3=v=>String(r3(v)).replace('-','−');
+const near=(a,b,t)=>Math.abs(a-b)<=t;
+const sin=d=>Math.sin(d*D), cos=d=>Math.cos(d*D);
+const acosd=x=>Math.acos(Math.max(-1,Math.min(1,x)))/D;
+
+/* triangle from its three sides. A at left, B at right (side c on the bottom), C above.
+   o.lab {a,b,c,A,B,C}: text; o.giv / o.ask: lists of keys (sides a,b,c or angles A,B,C) to color */
+function tri(svg,a,b,c,o={}){
+  const W=300,H=220,pad=34;
+  const A0=acosd((b*b+c*c-a*a)/(2*b*c));
+  const P={A:[0,0],B:[c,0],C:[b*cos(A0),b*sin(A0)]};
+  const xs=[0,c,P.C[0]], ys=[0,P.C[1]];
+  const minx=Math.min(...xs), maxx=Math.max(...xs), maxy=Math.max(...ys);
+  const k=Math.min((W-2*pad)/(maxx-minx),(H-2*pad-10)/(maxy||1));
+  const ox=(W-(maxx-minx)*k)/2-minx*k, oy=(H+maxy*k)/2+4;
+  const S=p=>[ox+p[0]*k, oy-p[1]*k];
+  const A=S(P.A), B=S(P.B), C=S(P.C);
+  const giv=o.giv||[], ask=o.ask||[], L=o.lab||{};
+  let s='';
+  const seg={a:[B,C],b:[A,C],c:[A,B]};
+  const ang={A:[A,B,C],B:[B,C,A],C:[C,A,B]};
+  /* angle wedges first */
+  for(const key of ['A','B','C']){
+    if(!giv.includes(key)&&!ask.includes(key)) continue;
+    const [V,P1,P2]=ang[key], r=22;
+    const t1=Math.atan2(P1[1]-V[1],P1[0]-V[0]), t2=Math.atan2(P2[1]-V[1],P2[0]-V[0]);
+    let d=t2-t1; while(d>Math.PI) d-=2*Math.PI; while(d<-Math.PI) d+=2*Math.PI;
+    const e1=[V[0]+r*Math.cos(t1),V[1]+r*Math.sin(t1)], e2=[V[0]+r*Math.cos(t2),V[1]+r*Math.sin(t2)];
+    s+=`<path class="ang${ask.includes(key)?' ask':''}" d="M${fx(V[0])},${fx(V[1])} L${fx(e1[0])},${fx(e1[1])} A${r},${r} 0 0 ${d>0?1:0} ${fx(e2[0])},${fx(e2[1])} Z"/>`;
+  }
+  s+=`<polygon class="tri" points="${[A,B,C].map(p=>p.map(fx).join(',')).join(' ')}"/>`;
+  for(const key of ['a','b','c']){
+    const cls=ask.includes(key)?'ask':giv.includes(key)?'giv':'';
+    if(cls){ const [p,q]=seg[key]; s+=`<line class="${cls}" x1="${fx(p[0])}" y1="${fx(p[1])}" x2="${fx(q[0])}" y2="${fx(q[1])}"/>`; }
+  }
+  const G0=[(A[0]+B[0]+C[0])/3,(A[1]+B[1]+C[1])/3];
+  const out=(p,d)=>{ const vx=p[0]-G0[0], vy=p[1]-G0[1], n=Math.hypot(vx,vy)||1; return [p[0]+vx/n*d, p[1]+vy/n*d]; };
+  const V={A,B,C};
+  for(const key of ['A','B','C']){ const p=out(V[key],14); s+=`<text class="v" x="${fx(p[0])}" y="${fx(p[1])}">${key}</text>`;
+    if(L[key]!=null){ const q=out(V[key],-30); s+=`<text class="lbl ${ask.includes(key)?'q':giv.includes(key)?'g':''}" x="${fx(q[0])}" y="${fx(q[1])}">${L[key]}</text>`; } }
+  for(const key of ['a','b','c']){ if(L[key]==null) continue; const [p,q]=seg[key]; const m=out([(p[0]+q[0])/2,(p[1]+q[1])/2],14);
+    s+=`<text class="lbl ${ask.includes(key)?'q':giv.includes(key)?'g':''}" x="${fx(m[0])}" y="${fx(m[1])}">${L[key]}</text>`; }
+  svg.innerHTML=s;
+}
+tri($('labG'),7,5,8);
+
+/* ---------- lab ---------- */
+const MODES={
+  sas:{n:['צלע b','צלע c','הזווית A ביניהן'],r:[[2,10,1,5],[2,10,1,8],[20,160,5,60]],u:['','','°']},
+  sss:{n:['צלע a','צלע b','צלע c'],r:[[2,10,1,7],[2,10,1,5],[2,10,1,8]],u:['','','']},
+  asa:{n:['הזווית A','הזווית B','צלע c (בין A ל-B)'],r:[[20,130,5,45],[20,130,5,75],[3,10,1,10]],u:['°','°','']}
+};
+let mode='sas';
+const S1=$('s1'),S2=$('s2'),S3=$('s3');
+function setMode(m,vals){
+  mode=m; const M=MODES[m];
+  [S1,S2,S3].forEach((el,i)=>{ const [mn,mx,st,df]=M.r[i]; el.min=mn; el.max=mx; el.step=st; el.value=vals?vals[i]:df; $(`s${i+1}n`).textContent=M.n[i]; });
+  document.querySelectorAll('.modes button').forEach(b=>{ const on=b.dataset.m===m; b.classList.toggle('primary',on); b.setAttribute('aria-selected',on); });
+  lab();
+}
+function lab(){
+  const M=MODES[mode], v=[+S1.value,+S2.value,+S3.value];
+  v.forEach((x,i)=>$(`s${i+1}v`).textContent=x+M.u[i]);
+  let a,b,c,A,B,C,x='';
+  if(mode==='sas'){
+    [b,c,A]=v; const a2=b*b+c*c-2*b*c*cos(A); a=Math.sqrt(a2);
+    B=acosd((a*a+c*c-b*b)/(2*a*c)); C=180-A-B;
+    x+=`<div class="law">שתי צלעות והזווית שביניהן: משפט הקוסינוסים.</div>`;
+    x+=`<div>${E(`a² = ${b}² + ${c}²`)} ${E(`− 2·${b}·${c}·cos ${A}°`)}</div>`;
+    x+=`<div>${E(`a² ≈ ${n1(a2)}`)}, ולכן ${E(`a ≈ ${n1(a)}`)}.</div>`;
+    if(A>90) x+=`<div>A קהה, אז ${E(`cos ${A}°`)} שלילי והצלע a ארוכה מהשתיים האחרות.</div>`;
+    x+=`<div>שאר הזוויות: ${E(`B ≈ ${n1(B)}°`)}, ${E(`C ≈ ${n1(C)}°`)}.</div>`;
+    x+=`<div>שטח: ${E(`S = ½·${b}·${c}·sin ${A}° ≈ ${n1(.5*b*c*sin(A))}`)}</div>`;
+    tri($('labG'),a,b,c,{giv:['b','c','A'],ask:['a'],lab:{b,c,A:A+'°',a:n1(a)}});
+  } else if(mode==='sss'){
+    [a,b,c]=v;
+    const big=Math.max(a,b,c);
+    if(a+b+c-big<=big){
+      $('labTxt').innerHTML=`<div class="law">אין משולש כזה.</div><div>${E(`${a+b+c-big} ≤ ${big}`)}: שתי הצלעות הקצרות יחד לא ארוכות מהשלישית, ולכן הן לא נפגשות.</div>`;
+      $('labG').innerHTML=''; return;
+    }
+    A=acosd((b*b+c*c-a*a)/(2*b*c)); B=acosd((a*a+c*c-b*b)/(2*a*c)); C=180-A-B;
+    x+=`<div class="law">שלוש צלעות: משפט הקוסינוסים, כדי למצוא זווית.</div>`;
+    x+=`<div>${E(`cos A = (${b}² + ${c}² − ${a}²)`)} ${E(`: (2·${b}·${c})`)} ${E(`≈ ${n3(cos(A))}`)}</div>`;
+    x+=`<div>${E(`A ≈ ${n1(A)}°`)}, ${E(`B ≈ ${n1(B)}°`)}, ${E(`C ≈ ${n1(C)}°`)}.</div>`;
+    const mx=Math.max(A,B,C);
+    if(near(mx,90,.05)) x+='<div>יש זווית של 90°: זה משולש ישר זווית, ופיתגורס מתקיים.</div>';
+    else x+=`<div>הזווית הגדולה (${n1(mx)}°) נמצאת מול הצלע הגדולה, והמשולש ${mx>90?'קהה זווית':'חד זווית'}.</div>`;
+    x+=`<div>שטח: ${E(`S = ½·${b}·${c}·sin A ≈ ${n1(.5*b*c*sin(A))}`)}</div>`;
+    tri($('labG'),a,b,c,{giv:['a','b','c'],ask:['A'],lab:{a,b,c,A:n1(A)+'°'}});
+  } else {
+    [A,B,c]=v; C=180-A-B;
+    if(C<10){
+      $('labTxt').innerHTML=`<div class="law">אין משולש כזה.</div><div>${E(`${A}° + ${B}° = ${A+B}°`)}. בשביל הזווית השלישית צריך שהסכום יהיה קטן מ-180°.</div>`;
+      $('labG').innerHTML=''; return;
+    }
+    a=c*sin(A)/sin(C); b=c*sin(B)/sin(C);
+    x+=`<div class="law">שתי זוויות וצלע: משפט הסינוסים.</div>`;
+    x+=`<div>קודם הזווית השלישית: ${E(`C = 180° − ${A}° − ${B}° = ${C}°`)}. עכשיו יש זוג: c והזווית שמולה, C.</div>`;
+    x+=`<div>${E(`a : sin ${A}° = ${c} : sin ${C}°`)}, ולכן ${E(`a = ${c}·sin ${A}° : sin ${C}° ≈ ${n1(a)}`)}.</div>`;
+    x+=`<div>באותה דרך ${E(`b ≈ ${n1(b)}`)}. רדיוס המעגל החוסם: ${E(`R = c : (2 sin C) ≈ ${n1(c/(2*sin(C)))}`)}.</div>`;
+    tri($('labG'),a,b,c,{giv:['A','B','c'],ask:['a'],lab:{A:A+'°',B:B+'°',c,a:n1(a)}});
+  }
+  $('labTxt').innerHTML=x;
+}
+[S1,S2,S3].forEach(r=>r.addEventListener('input',lab));
+document.querySelectorAll('.modes button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{ const [m,...vs]=b.dataset.p.split(','); setMode(m,vs); }));
+setMode('sas');
+
+/* ---------- worked examples ---------- */
+const EX={
+  A:{t:[7,5,8],steps:[
+    [{lab:{b:'5',c:'8',A:'60°',a:'a'},giv:['b','c','A'],ask:['a']},'במשולש ABC נתון: b = 5, c = 8, והזווית ביניהן A = 60°. מצאו את a.'],
+    [{lab:{b:'5',c:'8',A:'60°',a:'a'},giv:['b','c','A'],ask:['a']},'האם יש צלע והזווית שמולה? הזווית A נתונה, אבל הצלע שמולה (a) לא. יש שתי צלעות והזווית <strong>שביניהן</strong>: משפט הקוסינוסים.'],
+    [{lab:{b:'5',c:'8',A:'60°',a:'a'},giv:['b','c','A'],ask:['a']},`${E('a² = 5² + 8² − 2·5·8·cos 60°')}`],
+    [{lab:{b:'5',c:'8',A:'60°',a:'a'},giv:['b','c','A'],ask:['a']},`${E('cos 60° = 0.5')}, אז ${E('2·5·8·0.5 = 40')}. ${E('a² = 25 + 64 − 40 = 49')}.`],
+    [{lab:{b:'5',c:'8',A:'60°',a:'7'},giv:['b','c','A'],ask:['a']},`${E('a = √49 = 7')}. בדיקה: 7 בין 5 ל-8, והזווית 60° לא גדולה ולא קטנה. מתאים!`]
+  ]},
+  B:{t:[10*sin(45)/sin(60),10*sin(75)/sin(60),10],steps:[
+    [{lab:{A:'45°',B:'75°',c:'10',a:'a'},giv:['A','B','c'],ask:['a']},'במשולש ABC נתון: A = 45°, B = 75°, c = 10. מצאו את a.'],
+    [{lab:{A:'45°',B:'75°',C:'60°',c:'10',a:'a'},giv:['A','B','c','C'],ask:['a']},`קודם הזווית השלישית: ${E('C = 180° − 45° − 75° = 60°')}. עכשיו יש זוג: הצלע c = 10 והזווית שמולה C = 60°.`],
+    [{lab:{A:'45°',C:'60°',c:'10',a:'a'},giv:['A','c','C'],ask:['a']},`יש זוג, אז משפט הסינוסים: ${E('a : sin 45° = 10 : sin 60°')}.`],
+    [{lab:{A:'45°',C:'60°',c:'10',a:'a'},giv:['A','c','C'],ask:['a']},`כופלים ב-${E('sin 45°')}: ${E('a = 10 · sin 45° : sin 60°')} ${E('≈ 10 · 0.707 : 0.866')}.`],
+    [{lab:{A:'45°',B:'75°',C:'60°',c:'10',a:'8.2'},giv:['A','c','C'],ask:['a']},`${E('a ≈ 8.2')}. בדיקה: A היא הזווית הקטנה, ולכן a צריכה להיות הצלע הקצרה. ${E('8.2 < 10')}. מתאים!`]
+  ]}
+};
+let exKey='A', exI=0;
+function ex(){
+  const e=EX[exKey], [o,txt]=e.steps[exI];
+  tri($('exG'),...e.t,o);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${e.steps.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===e.steps.length-1;
+}
+$('exNext').onclick=()=>{exI++;ex();}; $('exPrev').onclick=()=>{exI--;ex();};
+['A','B'].forEach(k=>{$('ex'+k).onclick=()=>{exKey=k; exI=0;
+  ['A','B'].forEach(j=>{const el=$('ex'+j); el.classList.toggle('primary',j===k); el.setAttribute('aria-selected',j===k);}); ex();};});
+ex();
+
+/* ---------- practice ---------- */
+let pr={}, streak=0, solved=0;
+function newPr(){
+  let t; do{ t=pick(['cos','sin','area']); }while(t===pr.t&&Math.random()<.6);
+  if(t==='cos'){
+    const b=pick([3,4,5,6,7,8,9]), c=pick([4,5,6,7,8,10]), A=pick([40,50,60,70,100,110,120,130]);
+    const a=Math.sqrt(b*b+c*c-2*b*c*cos(A));
+    pr={t,b,c,A,a,ans:a};
+    $('prQ').innerHTML=`נתון: ${E(`b = ${b}`)}, ${E(`c = ${c}`)}, ${E(`A = ${A}°`)}. מצאו את הצלע a.`;
+    $('prLbl').textContent='a ≈';
+    pr.draw=reveal=>tri($('prG'),a,b,c,{giv:['b','c','A'],ask:['a'],lab:{b,c,A:A+'°',a:reveal?n1(a):'a'}});
+  } else if(t==='sin'){
+    let A,B; do{ A=pick([30,35,40,45,50,55,60,70]); B=pick([40,50,60,65,70,75,80,100]); }while(A+B>150);
+    const C=180-A-B, c=pick([6,8,9,10,12,15]), a=c*sin(A)/sin(C), b=c*sin(B)/sin(C);
+    pr={t,A,B,C,c,a,ans:a};
+    $('prQ').innerHTML=`נתון: ${E(`A = ${A}°`)}, ${E(`B = ${B}°`)}, ${E(`c = ${c}`)}. מצאו את הצלע a.`;
+    $('prLbl').textContent='a ≈';
+    pr.draw=reveal=>tri($('prG'),a,b,c,{giv:['A','B','c'],ask:['a'],lab:{A:A+'°',B:B+'°',c,a:reveal?n1(a):'a'}});
+  } else {
+    const b=pick([4,5,6,7,8,9,10]), c=pick([5,6,8,10,12]), A=pick([30,40,45,60,70,110,120,150]);
+    const a=Math.sqrt(b*b+c*c-2*b*c*cos(A)), S=.5*b*c*sin(A);
+    pr={t,b,c,A,a,ans:S};
+    $('prQ').innerHTML=`נתון: ${E(`b = ${b}`)}, ${E(`c = ${c}`)}, והזווית ביניהן ${E(`A = ${A}°`)}. מצאו את שטח המשולש.`;
+    $('prLbl').textContent='S ≈';
+    pr.draw=()=>tri($('prG'),a,b,c,{giv:['b','c','A'],lab:{b,c,A:A+'°'}});
+  }
+  pr.tries=0; pr.hint=0; pr.draw(false);
+  $('prA').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+function sol(){
+  const p=pr;
+  if(p.t==='cos') return `${E(`a² = ${p.b}² + ${p.c}² − 2·${p.b}·${p.c}·cos ${p.A}°`)} ${E(`≈ ${n1(p.a*p.a)}`)}, ולכן ${E(`a ≈ ${n1(p.a)}`)}.`;
+  if(p.t==='sin') return `${E(`C = 180° − ${p.A}° − ${p.B}° = ${p.C}°`)}. ${E(`a = ${p.c}·sin ${p.A}° : sin ${p.C}°`)} ${E(`≈ ${n1(p.a)}`)}.`;
+  return `${E(`S = ½·${p.b}·${p.c}·sin ${p.A}°`)} ${E(`≈ ${n1(p.ans)}`)}.`;
+}
+$('prCheck').onclick=()=>{
+  const v=parseNum($('prA').value), fb=$('prFb'), p=pr;
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר, למשל 7.2.</div>'; return; }
+  if(near(v,p.ans,.15)){ streak++; solved++; streakTxt(); p.draw(true); fb.innerHTML=`<div class="fb ok">נכון! ${sol()}</div>`; return; }
+  streak=0; p.tries++; streakTxt();
+  let m;
+  if(p.t==='cos'){
+    const {b,c,A}=p, rad=Math.sqrt(Math.max(0,b*b+c*c-2*b*c*Math.cos(A)));
+    if(near(v,p.a*p.a,.3)) m='זה a², עוד לא a. נשאר להוציא שורש.';
+    else if(near(v,Math.sqrt(b*b+c*c+2*b*c*cos(A)),.15)) m=`הסימן של ${E('2bc · cos A')} התהפך. בנוסחה יש מינוס: ${E('a² = b² + c² − 2bc · cos A')}.`;
+    else if(near(v,Math.sqrt(b*b+c*c),.15)) m='זה פיתגורס. הזווית לא ישרה, אז צריך גם את התיקון עם הקוסינוס.';
+    else if(near(v,Math.sqrt(Math.abs((b*b+c*c-2*b*c)*cos(A))),.15)) m=`הסדר התבלבל. קודם מחשבים ${E('2bc · cos A')}, ורק אז מחסרים מ-${E('b² + c²')}.`;
+    else if(near(v,rad,.15)) m='נראה שהמחשבון ברדיאנים. העבירו ל-DEG (מעלות) ונסו שוב.';
+    else m='עוד לא. הציבו במשפט הקוסינוסים לאט, איבר אחרי איבר.';
+  } else if(p.t==='sin'){
+    const {A,B,C,c}=p;
+    if(near(v,c*sin(C)/sin(A),.15)) m='היחס הפוך. a מול A, אז a מגיעה עם sin A למעלה: a = c · sin A : sin C.';
+    else if(near(v,c*sin(A)/sin(B),.15)) m=`חילקתם ב-sin B, אבל הצלע הנתונה c נמצאת מול C. קודם מצאו את C.`;
+    else if(near(v,c*sin(A),.15)) m='שכחתם לחלק ב-sin C.';
+    else if(near(v,c*Math.sin(A)/Math.sin(C),.15)) m='נראה שהמחשבון ברדיאנים. העבירו ל-DEG (מעלות) ונסו שוב.';
+    else m='עוד לא. מצאו קודם את הזווית השלישית, ואז כתבו את משפט הסינוסים עם הזוג c ו-C.';
+  } else {
+    const {b,c,A}=p;
+    if(near(v,b*c*sin(A),.15)) m='שכחתם את החצי: S = ½ · b · c · sin A.';
+    else if(near(v,.5*b*c*Math.abs(cos(A)),.15)) m='בנוסחת השטח יש סינוס, לא קוסינוס.';
+    else if(near(v,.5*b*c,.15)) m='זה היה השטח רק אם הזווית ישרה. הכפילו גם ב-sin A.';
+    else if(near(v,.5*b*c*Math.sin(A),.15)) m='נראה שהמחשבון ברדיאנים. העבירו ל-DEG (מעלות) ונסו שוב.';
+    else m='עוד לא. השתמשו בשתי הצלעות ובזווית שביניהן.';
+  }
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(p.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  const p=pr; p.hint=Math.min(p.hint+1,2);
+  let h;
+  if(p.t==='cos') h=p.hint===1?'נתונות שתי צלעות והזווית שביניהן, ואין זוג של צלע וזווית שמולה. זה משפט הקוסינוסים.'
+    :`${E(`a² = ${p.b}² + ${p.c}²`)} ${E(`− 2·${p.b}·${p.c}·cos ${p.A}°`)}. חשבו, ואז הוציאו שורש.`;
+  else if(p.t==='sin') h=p.hint===1?`חסרה זווית אחת. ${E(`C = 180° − ${p.A}° − ${p.B}°`)}, ועכשיו יש זוג: c ו-C.`
+    :`${E(`a : sin ${p.A}° = ${p.c} : sin ${p.C}°`)}. כפלו את שני הצדדים ב-${E(`sin ${p.A}°`)}.`;
+  else h=p.hint===1?'שתי צלעות והזווית שביניהן? יש נוסחת שטח עם סינוס.'
+    :`${E(`S = ½ · ${p.b} · ${p.c} · sin ${p.A}°`)}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ pr.draw(true); $('prFb').innerHTML=`<div class="fb hint">הפתרון: ${sol()} עכשיו נסו שאלה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>
