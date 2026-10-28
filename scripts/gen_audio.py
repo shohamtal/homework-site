@@ -65,18 +65,26 @@ def main():
         return
     from faster_whisper import WhisperModel
     m = WhisperModel('base.en', device='cpu', compute_type='int8')
-    norm = lambda s: re.sub(r'[^a-z0-9 ]', '', re.sub(r'\[([^\]]+)\]\([^)]*\)', r'\1', s).lower()).split()
+    NUM = {str(i): w for i, w in enumerate('zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty'.split())}
+    SAME = {'bah': 'baa', 'eieio': 'e i e i o', 'byebye': 'bye bye', 'mum': 'mom'}
+    def norm(s):
+        s = re.sub(r'\[([^\]]+)\]\([^)]*\)', r'\1', s).lower().replace('-', ' ')
+        words = re.sub(r"[^a-z0-9 ']", ' ', s).replace("'", '').split()
+        words = ' '.join(NUM.get(w, SAME.get(w, w)) for w in words).split()
+        while words[:1] in (['a'], ['and']) and len(words) > 1: words = words[1:]  # whisper adds these before a lone word
+        return words
     bad = 0
+    h_skip = lambda k: k.startswith('l_') or len(lines[k].strip(' .!?')) <= 2  # whisper cannot judge a lone letter
     for k in (lines if '--check' in sys.argv else todo):
-        if k.startswith('ph_'):
+        if k.startswith('ph_') or h_skip(k):
             continue
         # whisper guesses wildly on half-second clips, so it listens to a copy with a second of silence around it
         with tempfile.NamedTemporaryFile(suffix='.wav') as w:
             subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', os.path.join(OUT, manifest[k]), '-af', 'adelay=1000,apad=pad_dur=1', w.name], check=True)
             heard = ''.join(s.text for s in m.transcribe(w.name, beam_size=5, language='en')[0])
-        h = norm(heard)
-        if h[:1] == ['a'] and norm(lines[k])[:1] != ['a']: h = h[1:]  # whisper likes to add 'a' before a lone word
-        if h != norm(lines[k]):
+        if h_skip(k):
+            continue
+        if norm(heard) != norm(lines[k]):
             bad += 1; print(f'CHECK {k}: said "{lines[k]}", heard "{heard.strip()}"')
     print('speech check:', 'all match' if not bad else f'{bad} to listen to')
 

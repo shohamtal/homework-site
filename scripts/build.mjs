@@ -84,9 +84,9 @@ function jsonLd(pg, m) {
     mainEntity: pg.faq.map(q => ({'@type': 'Question', name: q.q, acceptedAnswer: {'@type': 'Answer', text: q.a}}))});
   if (pg.kind === 'topic') {
     out.push({'@context': 'https://schema.org', '@type': 'LearningResource', name: pg.topic.title, description: m.description, url,
-      inLanguage: pg.subj.id === 'english' ? ['he', 'en'] : 'he', isAccessibleForFree: true,
+      inLanguage: 'he', isAccessibleForFree: true,
       learningResourceType: pg.subj.id === 'english' ? ['interactive activity', 'שיר', 'תרגול'] : ['הסבר', 'מעבדה אינטראקטיבית', 'דוגמה פתורה', 'תרגול'],
-      educationalLevel: pg.chapter.grade, about: pg.chapter.name, teaches: pg.topic.title, keywords: pg.topic.tags.join(', '),
+      educationalLevel: pg.chapter.grade, about: pg.subj.id === 'english' ? pg.topic.title : pg.chapter.name, teaches: pg.topic.title, keywords: pg.topic.tags.join(', '),
       audience: {'@type': 'EducationalAudience', educationalRole: 'student'},
       isPartOf: {'@type': 'WebSite', name: cfg.name, url: BASE}});
   }
@@ -129,7 +129,8 @@ function head(pg, root) {
   ].join('\n');
 }
 
-const footer = (pg, root) => `<footer class="site">${cfg.name} · ${cfg.slogan}${pg.kind === 'requests' ? '' : ` · <a href="${root}requests/">חסר לכם נושא? בקשו אותו</a>`}</footer>`;
+const footer = (pg, root) => `<footer class="site">${cfg.name} · ${cfg.slogan}${pg.kind === 'requests' ? '' : ` · <a href="${root}requests/">חסר לכם נושא? בקשו אותו</a>`}${pg.subj?.id === 'english'
+  ? `<br><small>הקול באנגלית: <span lang="en" dir="ltr">Kokoro-82M</span>, רישיון <span lang="en" dir="ltr">Apache-2.0</span>. המנגינות עממיות, והמילים שלנו או מסורתיות.</small>` : ''}</footer>`;
 
 /* the visible "שאלות שכולם שואלים" section: <h3> question + <p> answer pairs, as plain text */
 const text = h => h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();

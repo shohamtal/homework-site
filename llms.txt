@@ -339,7 +339,17 @@
 
 ## אנגלית כיתה א · מילים ראשונות
 
+- [ברכות באנגלית: Hello, Goodbye](https://shohamtal.github.io/homework-site/english/hello-goodbye/): איך אומרים שלום, להתראות ומה שלומך באנגלית. שומעים, עונים בקול ושרים שיר ברכה קצר עם מירי. שירים, צלילים ותרגול עם רמזים לכיתה א.
 - [צבעים באנגלית](https://shohamtal.github.io/homework-site/english/colors/): red, blue, yellow, green ועוד: לוחצים על צבע ושומעים איך אומרים אותו, צובעים ציור לפי מה ששומעים ושרים את שיר הצבעים. שירים, צלילים ותרגול עם רמזים.
+- [מספרים באנגלית 1–10](https://shohamtal.github.io/homework-site/english/numbers-1-10/): one, two, three עד ten: סופרים בקול בקצב של תוף, שומעים כל מספר ומוצאים את הכמות הנכונה. שירים, צלילים ותרגול עם רמזים לכיתה א.
+- [חלקי הגוף באנגלית](https://shohamtal.github.io/homework-site/english/body-parts/): head, shoulders, knees and toes: שומעים, נוגעים ושרים. משחק "מירי אומרת" עם עיניים, אוזניים, פה ואף. שירים, צלילים ותרגול עם רמזים לכיתה א.
+- [חיות באנגלית וקולות החיות](https://shohamtal.github.io/homework-site/english/animals/): cat, dog, cow, duck ועוד: לוחצים על חיה, שומעים את השם שלה באנגלית ואת הקול שלה, ושרים על החווה. שירים, צלילים ותרגול עם רמזים לכיתה א.
+- [המשפחה באנגלית](https://shohamtal.github.io/homework-site/english/family/): mom, dad, brother, sister, baby, grandma ו-grandpa: מכירים את בני המשפחה באנגלית בעזרת עץ משפחה שמדבר. שירים, צלילים ותרגול עם רמזים לכיתה א.
+
+## אנגלית כיתה א · שירים ותנועה
+
+- [פעולות באנגלית: Clap, Jump, Stop](https://shohamtal.github.io/homework-site/english/action-words/): clap, jump, walk, run, sit down, stand up: מירי אומרת פעולה ואתם עושים אותה. לומדים מילים דרך תנועה וקצב. שירים, צלילים ותרגול עם רמזים לכיתה א.
+- [שיר ה-ABC](https://shohamtal.github.io/homework-site/english/abc-song/): שרים את שיר האותיות באנגלית לאט ומהר, ושומעים את השם של כל אות. בלי קריאה, רק להקשיב ולשיר. שירים, צלילים ותרגול עם רמזים לכיתה א.
 
 ## עמודים נוספים
 
