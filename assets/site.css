@@ -174,3 +174,4 @@ h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
 .crumbs .sep{color:var(--muted)}
 .crumbs{font-size:1rem; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:4px 14px}
 .related{margin:0}
+.sfx-mute{display:inline-block; margin-top:10px; min-height:40px; padding:6px 14px; font-size:.95rem}

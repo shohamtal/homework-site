@@ -130,7 +130,10 @@ function head(pg, root) {
 }
 
 const footer = (pg, root) => `<footer class="site">${cfg.name} · ${cfg.slogan}${pg.kind === 'requests' ? '' : ` · <a href="${root}requests/">חסר לכם נושא? בקשו אותו</a>`}${pg.subj?.id === 'english'
-  ? `<br><small>הקול באנגלית: <span lang="en" dir="ltr">Kokoro-82M</span>, רישיון <span lang="en" dir="ltr">Apache-2.0</span>. המנגינות עממיות, והמילים שלנו או מסורתיות.</small>` : ''}</footer>`;
+  ? `<br><small>הקול באנגלית: <span lang="en" dir="ltr">Kokoro-82M</span>, רישיון <span lang="en" dir="ltr">Apache-2.0</span>. המנגינות עממיות, והמילים שלנו או מסורתיות.</small>` : ''}</footer>${YOUNG_MATH(pg)
+  ? `\n<script src="${root}assets/sound.js"></script>\n<script src="${root}assets/sfx.js"></script>` : ''}`;
+/* math topics for grades 1 to 3 get small success and try-again sounds (assets/sfx.js) */
+const YOUNG_MATH = pg => pg.kind === 'topic' && pg.subj.id === 'math' && ['כיתה א', 'כיתה ב', 'כיתה ג'].includes(pg.chapter.grade);
 
 /* the visible "שאלות שכולם שואלים" section: <h3> question + <p> answer pairs, as plain text */
 const text = h => h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
