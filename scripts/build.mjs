@@ -84,7 +84,8 @@ function jsonLd(pg, m) {
     mainEntity: pg.faq.map(q => ({'@type': 'Question', name: q.q, acceptedAnswer: {'@type': 'Answer', text: q.a}}))});
   if (pg.kind === 'topic') {
     out.push({'@context': 'https://schema.org', '@type': 'LearningResource', name: pg.topic.title, description: m.description, url,
-      inLanguage: 'he', isAccessibleForFree: true, learningResourceType: ['הסבר', 'מעבדה אינטראקטיבית', 'דוגמה פתורה', 'תרגול'],
+      inLanguage: pg.subj.id === 'english' ? ['he', 'en'] : 'he', isAccessibleForFree: true,
+      learningResourceType: pg.subj.id === 'english' ? ['interactive activity', 'שיר', 'תרגול'] : ['הסבר', 'מעבדה אינטראקטיבית', 'דוגמה פתורה', 'תרגול'],
       educationalLevel: pg.chapter.grade, about: pg.chapter.name, teaches: pg.topic.title, keywords: pg.topic.tags.join(', '),
       audience: {'@type': 'EducationalAudience', educationalRole: 'student'},
       isPartOf: {'@type': 'WebSite', name: cfg.name, url: BASE}});
@@ -208,7 +209,9 @@ for (const pg of pages) {
     html = region(html, 'gradehead', `<header class="page">
   <div class="eyebrow">${pg.subj.name}</div>
   <h1>${pg.subj.name} ${pg.grade.name}</h1>
-  <p class="lead">בחרו נושא. בכל נושא יש הסבר, מעבדה שאפשר להזיז ותרגול שבו מירי נותנת רמז במקום תשובה. כדאי ללמוד לפי הסדר, כי כל נושא נשען על הקודם.</p>
+  <p class="lead">${pg.subj.id === 'english'
+    ? 'בחרו נושא. בכל נושא שומעים, שרים ומשחקים, ובתרגול מירי נותנת רמז במקום תשובה. לוחצים פעם אחת על "הקשיבו" כדי להפעיל את הצלילים.'
+    : 'בחרו נושא. בכל נושא יש הסבר, מעבדה שאפשר להזיז ותרגול שבו מירי נותנת רמז במקום תשובה. כדאי ללמוד לפי הסדר, כי כל נושא נשען על הקודם.'}</p>
   <label class="search" for="q"><span class="sr">חיפוש נושא</span>
     <input id="q" type="search" placeholder="חפשו נושא ב${pg.grade.name}" autocomplete="off">
   </label>

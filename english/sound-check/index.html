@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>בדיקת צלילים · מירי</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/english.css">
+</head>
+<body data-root="../../">
+<div class="wrap">
+<header class="page">
+  <h1>בדיקת צלילים</h1>
+  <p class="lead">עמוד פנימי לבדיקה באוזן ובטלפון, לא מקושר מהאתר. לחצו על כל כפתור והקשיבו: האם המילה ברורה, והאם הצליל הבודד נשמע נכון?</p>
+  <div class="sound-bar" data-hello="hello_colors"></div>
+</header>
+<section class="card">
+  <h2>מילים</h2>
+  <div class="pics" id="words"></div>
+</section>
+<section class="card">
+  <h2>צלילים בודדים (לכיתה ג)</h2>
+  <p class="text">הצליל צריך להיות קצר, בלי "אִי" או "בִּי" בסוף: /b/ ולא bee.</p>
+  <div class="pics" id="phon"></div>
+</section>
+<section class="card">
+  <h2>מוזיקה</h2>
+  <div class="row-c"><button type="button" id="mel">מנגינה</button><button type="button" id="bt">תוף</button><button type="button" id="ch">הצלחה</button><button type="button" id="oo">נסו שוב</button></div>
+</section>
+</div>
+<script type="application/json" class="say-lines">{
+"hello_colors":"Hello! Let's learn colors.",
+"c_red":"red","c_white":"white","c_purple":"purple",
+"chk_thin":"thin","chk_ship":"ship","chk_cat":"cat",
+"ph_b":"[b](/b/)","ph_k":"[k](/k/)","ph_s":"[s](/s/)","ph_m":"[m](/m/)",
+"ph_sh":"[sh](/ʃ/)","ph_th":"[th](/θ/)","ph_a":"[a](/æ/)","ph_e":"[e](/ɛ/)"
+}</script>
+<script src="../../assets/sound.js"></script>
+<script>
+const L=JSON.parse(document.querySelector('.say-lines').textContent);
+const mk=(el,ids)=>{ el.innerHTML=ids.map(id=>`<button type="button" class="pic" data-id="${id}"><span lang="en" dir="ltr" class="en">${L[id].replace(/\[([^\]]+)\]\(([^)]*)\)/,'$1 $2')}</span></button>`).join('');
+  el.addEventListener('click',e=>{ const b=e.target.closest('.pic'); if(b) S.say(b.dataset.id); }); };
+mk(document.getElementById('words'),Object.keys(L).filter(k=>!k.startsWith('ph_')));
+mk(document.getElementById('phon'),Object.keys(L).filter(k=>k.startsWith('ph_')));
+document.getElementById('mel').onclick=()=>S.play([['C4',1],['D4',1],['E4',1],['C4',1]],{tempo:100});
+document.getElementById('bt').onclick=()=>S.beat(4,{tempo:100});
+document.getElementById('ch').onclick=()=>S.chime();
+document.getElementById('oo').onclick=()=>S.oops();
+</script>
+</body>
+</html>
