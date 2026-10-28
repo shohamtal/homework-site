@@ -17,7 +17,7 @@ window.SITE={
             { slug:'numbers-to-20', title:'מספרים עד 20', aka:['מספרים עד 20'],
               desc:'סופרים, קוראים וכותבים מספרים עד 20. רואים כל מספר כנקודות במסגרת עשר, ומגלים שאחרי 10 מתחילה עשרת חדשה.',
               tags:['ספירה', 'מסגרת עשר', 'עשרת ויחידות'] },
-            { slug:'numbers-to-100', related:['numbers-to-20','months-time'], title:'מספרים עד 100 וישר המספרים', aka:['מספרים עד 100 וישר המספרים'],
+            { slug:'numbers-to-100', related:['numbers-to-20'], title:'מספרים עד 100 וישר המספרים', aka:['מספרים עד 100 וישר המספרים'],
               desc:'עשרות ויחידות, איפה כל מספר גר על ישר המספרים, ומה בא לפני ואחרי. קופצים על הישר ומוצאים מספרים.',
               tags:['ישר המספרים', 'עשרות', 'לפני ואחרי'] },
             { slug:'compare-numbers', related:['numbers-to-100'], title:'גדול, קטן ושווה', aka:['גדול, קטן ושווה (סימני > < =)'],
@@ -759,7 +759,7 @@ window.SITE={
           ] },
         { id:'en-words-4', name:'מילים ואיות', grade:'כיתה ד',
           topics:[
-            { slug:'numbers-to-100', related:['numbers-11-20'], title:'מספרים באנגלית עד 100',
+            { slug:'numbers-to-100', related:['numbers-11-20','months-time'], title:'מספרים באנגלית עד 100',
               desc:'twenty one, thirty five, ninety nine: איך בונים כל מספר עד 100 מעשרות ויחידות, ושומעים את ההבדל בין fifteen ל-fifty.',
               tags:['twenty one', 'fifty', 'hundred'] },
             { slug:'spelling-words', related:['alphabet-letters', 'cvc-words'], title:'איות באנגלית: מאייתים מילים קצרות',

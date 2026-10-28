@@ -394,6 +394,30 @@
 - [מספרים באנגלית עד 100](https://shohamtal.github.io/homework-site/english/numbers-to-100/): twenty one, thirty five, ninety nine: איך בונים כל מספר עד 100 מעשרות ויחידות, ושומעים את ההבדל בין fifteen ל-fifty. הסבר, צלילים ותרגול עם רמזים.
 - [איות באנגלית: מאייתים מילים קצרות](https://shohamtal.github.io/homework-site/english/spelling-words/): מאייתים בקול בשמות האותיות: c, a, t זה cat. שומעים מילה, מסדרים את האותיות, ובודקים את האיות של מילים שכיחות. שירים, צלילים ותרגול עם רמזים לכיתה ד.
 
+## אנגלית כיתה ה · זמנים ומבנים
+
+- [Present Simple באנגלית](https://shohamtal.github.io/homework-site/english/present-simple/): מה עושים כל יום: I play, he plays. מתי מוסיפים s, איך אומרים לא עם don't ו-doesn't, ואיך שואלים עם Do. שירים, צלילים ותרגול עם רמזים לכיתה ה.
+- [There is ו-There are באנגלית](https://shohamtal.github.io/homework-site/english/there-is-there-are/): יש בחדר שולחן אחד ויש שלושה כיסאות: There is a table, There are three chairs. בונים חדר ושומעים מה יש בו. שירים, צלילים ותרגול עם רמזים לכיתה ה.
+- [have, has ו-have got באנגלית](https://shohamtal.github.io/homework-site/english/have-has-got/): I have a dog, she has a cat: מתי אומרים have ומתי has, ומה זה have got. ממלאים תיק לכל אחד ושומעים מה יש לו. שירים, צלילים ותרגול עם רמזים לכיתה ה.
+- [מילות שאלה באנגלית: what, where, who](https://shohamtal.github.io/homework-site/english/wh-questions/): what, where, who, when, how many: איזו מילת שאלה מתאימה לאיזו תשובה. שומעים שאלה ובוחרים תשובה, או להפך. שירים, צלילים ותרגול עם רמזים לכיתה ה.
+
+## אנגלית כיתה ה · מילים
+
+- [רבים באנגלית: s, es ומילים מיוחדות](https://shohamtal.github.io/homework-site/english/plurals/): cat ו-cats, box ו-boxes, child ו-children: כללי הרבים באנגלית והמילים שלא מתנהגות לפי הכלל. שירים, צלילים ותרגול עם רמזים לכיתה ה.
+- [חודשים ושעות באנגלית](https://shohamtal.github.io/homework-site/english/months-time/): January עד December, ואיך אומרים מה השעה: It is three o'clock, half past four. מזיזים את השעון ושומעים. שירים, צלילים ותרגול עם רמזים לכיתה ה.
+
+## אנגלית כיתה ו · זמנים
+
+- [Present Progressive באנגלית: עכשיו](https://shohamtal.github.io/homework-site/english/present-progressive/): מה קורה עכשיו: I am reading, she is running. בונים משפט עם am, is, are ו-ing, ומשווים ל-Present Simple. שירים, צלילים ותרגול עם רמזים לכיתה ו.
+- [Past Simple באנגלית: פעלים רגילים עם ed](https://shohamtal.github.io/homework-site/english/past-simple-regular/): מה קרה אתמול: I played, she walked. מוסיפים ed, שומעים את שלושת הצלילים של הסיומת, ואומרים לא עם didn't. שירים, צלילים ותרגול עם רמזים לכיתה ו.
+- [can ו-can't באנגלית](https://shohamtal.github.io/homework-site/english/can-cant/): I can swim, I can't fly: מה אפשר ומה אי אפשר. שואלים Can you? ועונים, ושומעים את ההבדל בין can ל-can't. שירים, צלילים ותרגול עם רמזים לכיתה ו.
+
+## אנגלית כיתה ו · מילים וקריאה
+
+- [תארים באנגלית: big, small, happy](https://shohamtal.github.io/homework-site/english/adjectives/): תארים מתארים: a big dog, a small cat. התואר בא לפני השם, ולמדים גם הפכים כמו hot ו-cold. שירים, צלילים ותרגול עם רמזים לכיתה ו.
+- [כינויי גוף ושייכות באנגלית](https://shohamtal.github.io/homework-site/english/pronouns-possessive/): I, you, he, she ו-my, your, his, her: מי עושה ושל מי זה. מחליפים שמות בכינויים ושומעים את המשפט. שירים, צלילים ותרגול עם רמזים לכיתה ו.
+- [הבנת הנקרא באנגלית: טקסטים קצרים](https://shohamtal.github.io/homework-site/english/reading-short-texts/): קוראים סיפורים קצרים באנגלית, שומעים אותם בקול, ועונים על שאלות. כל מילה קשה מקבלת עזרה בלחיצה. שירים, צלילים ותרגול עם רמזים לכיתה ו.
+
 ## עמודים נוספים
 
 - [מתמטיקה](https://shohamtal.github.io/homework-site/math/): הסברים, מעבדות אינטראקטיביות ותרגול עם רמזים במתמטיקה לפי תוכנית הלימודים, מכיתה א ועד כיתה יב. בחרו כיתה.
@@ -414,4 +438,6 @@
 - [אנגלית כיתה ב](https://shohamtal.github.io/homework-site/english/grade-2/): אנגלית לכיתה ב בשירים וצלילים: היכרות, מספרים 11–20, אוכל, בגדים, חפצים בכיתה, רגשות, מזג אוויר, ימי השבוע, צלילים וחרוזים.
 - [אנגלית כיתה ג](https://shohamtal.github.io/homework-site/english/grade-3/): אנגלית לכיתה ג: אותיות גדולות וקטנות, צלילי האותיות, תנועות קצרות, קריאת מילים קצרות, sh ch th ומשפטים ראשונים.
 - [אנגלית כיתה ד](https://shohamtal.github.io/homework-site/english/grade-4/): אנגלית לכיתה ד עם צלילים ומשחקים: הפועל to be, משפטים פשוטים, this ו-that, מילות מקום, מספרים עד 100 ואיות. להקשיב ולתרגל.
+- [אנגלית כיתה ה](https://shohamtal.github.io/homework-site/english/grade-5/): אנגלית לכיתה ה עם צלילים ומשחקים: Present Simple, There is ו-There are, have ו-has, מילות שאלה, רבים, חודשים ושעות.
+- [אנגלית כיתה ו](https://shohamtal.github.io/homework-site/english/grade-6/): אנגלית לכיתה ו עם צלילים ומשחקים: Present Progressive, Past Simple, can ו-can't, תארים, כינויי גוף ושייכות והבנת הנקרא.
 - [בקשות נושאים והצבעות](https://shohamtal.github.io/homework-site/requests/): חסר לכם נושא? בקשו אותו או הצביעו לנושא שמישהו אחר כבר ביקש. הנושאים עם הכי הרבה קולות עולים לאתר ראשונים.
