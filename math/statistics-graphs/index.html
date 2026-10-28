@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>סטטיסטיקה וגרפים · כיתה ו · מירי</title>
+<meta name="description" content="קוראים ובונים דיאגרמת עמודות, גרף קו ודיאגרמת עוגה, ומחליטים איזה גרף מתאים לאילו נתונים. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/statistics-graphs/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="סטטיסטיקה וגרפים · כיתה ו · מירי">
+<meta property="og:description" content="קוראים ובונים דיאגרמת עמודות, גרף קו ודיאגרמת עוגה, ומחליטים איזה גרף מתאים לאילו נתונים. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/statistics-graphs/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ו","item":"https://shohamtal.github.io/homework-site/math/grade-6/"},{"@type":"ListItem","position":4,"name":"סטטיסטיקה","item":"https://shohamtal.github.io/homework-site/math/grade-6/#data-6"},{"@type":"ListItem","position":5,"name":"סטטיסטיקה וגרפים","item":"https://shohamtal.github.io/homework-site/math/statistics-graphs/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מתי משתמשים בדיאגרמת עוגה?","acceptedAnswer":{"@type":"Answer","text":"כשרוצים להראות חלקים מתוך שלם, למשל איך מתחלק הכסף של הכיתה או מה אוהבים כל הילדים. כל העוגה היא 100%. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין גרף קו לדיאגרמת עמודות?","acceptedAnswer":{"@type":"Answer","text":"גרף קו מראה שינוי לאורך זמן, ורואים בו אם משהו עולה או יורד. דיאגרמת עמודות משווה בין דברים שונים. אם על הציר יש ימים או חודשים, קו מתאים. אם יש סוגים, עמודות."}},{"@type":"Question","name":"איך מחשבים כמה אחוזים זו פרוסה בעוגה?","acceptedAnswer":{"@type":"Answer","text":"מחלקים את החלק בכל השלם וכופלים ב-100. אם 5 ילדים מתוך 20 בחרו משהו, זה 5 : 20 = 0.25, כלומר 25%, רבע עוגה. בכיתה ח ממשיכים לממוצע, חציון ושכיח."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סטטיסטיקה וגרפים","description":"קוראים ובונים דיאגרמת עמודות, גרף קו ודיאגרמת עוגה, ומחליטים איזה גרף מתאים לאילו נתונים. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.","url":"https://shohamtal.github.io/homework-site/math/statistics-graphs/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ו","about":"סטטיסטיקה","teaches":"סטטיסטיקה וגרפים","keywords":"דיאגרמת עוגה, גרף קו, קריאת נתונים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card p, .mini p, .stepbox, .explain{font-size:1.08rem; line-height:1.75}
+.row button, .tries button, .choices button, .modes button{min-height:46px; padding:10px 16px; font-size:1.05rem}
+.modes{display:flex; flex-wrap:wrap; gap:8px}
+.modes button[aria-pressed="true"], .choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.choices button{min-width:6.5em; font-size:1.05rem}
+svg.gr{width:100%; max-width:380px; height:auto; display:block; margin-inline:auto}
+.gr .gl{stroke:var(--soft); stroke-width:1}
+.gr .ax{stroke:var(--ink); stroke-width:1.8}
+.gr .yt{fill:var(--muted); font:700 11px var(--f-math); text-anchor:start}
+.gr .cat{fill:var(--ink); font:700 11px var(--f-body); text-anchor:middle}
+.gr .val{fill:var(--ink); font:700 12px var(--f-math); text-anchor:middle}
+.gr .bar{fill:var(--blue); stroke:var(--ink); stroke-width:1.5}
+.gr .ln{fill:none; stroke:var(--line); stroke-width:3}
+.gr .dot{fill:var(--line); stroke:var(--ink); stroke-width:1.4}
+.gr .sl{stroke:var(--card); stroke-width:2}
+.gr .pl{fill:var(--ink); font:700 12px var(--f-math); text-anchor:middle}
+.gr .pc{fill:var(--ink); font:700 11px var(--f-body)}
+.gr .s0{fill:var(--blue)} .gr .s1{fill:var(--line)} .gr .s2{fill:var(--hl)} .gr .s3{fill:var(--green)} .gr .s4{fill:var(--soft)}
+.legend{display:flex; flex-wrap:wrap; gap:8px 14px; justify-content:center; font-weight:700; margin-top:6px}
+.legend i{display:inline-block; width:14px; height:14px; border:1.5px solid var(--ink); border-radius:3px; vertical-align:-2px; margin-inline-end:4px}
+.minin{display:flex; align-items:center; gap:8px; justify-content:center; font-weight:700; font-size:1.1rem; flex-wrap:wrap}
+.minin input{font:700 1.3rem var(--f-math); width:4.5em; padding:8px 6px; border-radius:8px; border:2px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="statistics-graphs">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-6/">כיתה ו</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-6/#data-6">סטטיסטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">סטטיסטיקה וגרפים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ו · סטטיסטיקה</div>
+  <h1>סטטיסטיקה וגרפים <span class="slogan">איזה גרף מספר את הסיפור?</span></h1>
+  <p class="lead">אותם נתונים אפשר לצייר בכמה דרכים: דיאגרמת עמודות, גרף קו או דיאגרמת עוגה. כל אחד מהם טוב לשאלה אחרת. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>דיאגרמת עמודות</h3>
+      <p>משווה בין דברים שונים: מה הכי אהוב, ובכמה יותר. כל עמודה היא דבר אחר.</p>
+    </div>
+    <div class="mini">
+      <h3>גרף קו</h3>
+      <p>מראה שינוי לאורך זמן: ימים, חודשים או שנים. רואים אם עולה, יורד או נשאר.</p>
+    </div>
+    <div class="mini">
+      <h3>דיאגרמת עוגה</h3>
+      <p>מראה חלקים מתוך שלם. כל העוגה היא 100%, וכל פרוסה היא חלק ממנה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>איך בוחרים?</strong> משווים בין דברים, עמודות. משהו משתנה עם הזמן, קו. חלקים מתוך הכול, עוגה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: אותם נתונים, שלושה גרפים</h2></div>
+  <p class="text">בחרו סוג גרף, ושנו את המספרים במחוונים. כל הגרפים מציירים את אותם נתונים.</p>
+  <div class="modes" id="kinds" role="group" aria-label="סוג הגרף">
+    <button type="button" data-k="bar" aria-pressed="true">עמודות</button>
+    <button type="button" data-k="line" aria-pressed="false">קו</button>
+    <button type="button" data-k="pie" aria-pressed="false">עוגה</button>
+  </div>
+  <div class="lab">
+    <div>
+      <svg class="gr" id="labG" viewBox="0 0 340 240" role="img" aria-label="הגרף של המעבדה"></svg>
+      <div class="legend" id="labLeg"></div>
+    </div>
+    <div class="ctrl" id="labCtrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="labTries">
+          <button data-v="10,10,10,10" data-k="pie">ארבעה חלקים שווים</button>
+          <button data-v="4,8,12,16" data-k="line">עולה כל הזמן</button>
+          <button data-v="20,5,5,10" data-k="pie">חצי מהכול</button>
+          <button data-v="12,4,12,4" data-k="line">עולה ויורד</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>עוגה בלי שלם</h3>
+      <p>דיאגרמת עוגה מתאימה רק כשהחלקים יחד הם כל הדבר. טמפרטורה בכל יום היא לא חלק מעוגה.</p>
+    </div>
+    <div class="mini">
+      <h3>קו בין דברים שונים</h3>
+      <p>גרף קו מחבר בין נקודות לפי הסדר. בין "תפוח" ל"בננה" אין סדר בזמן, אז לא מחברים בקו.</p>
+    </div>
+    <div class="mini">
+      <h3>לא בודקים את הסולם</h3>
+      <p>לפני שקוראים גרף, בודקים בכמה קופצים המספרים בצד. אם בקפיצות של 5, כל קו שווה 5.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">שאלו 20 ילדים מה הם אוהבים לעשות בהפסקה. 10 משחקים כדור, 5 קוראים, 5 מדברים. איזה גרף מתאים, ומה הוא מראה?</p>
+  <div class="stepper">
+    <svg class="gr" id="exG" viewBox="0 0 340 240" role="img" aria-label="גרף הדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: בוחרים וקוראים גרפים</h2></div>
+  <p class="text" id="prAsk"></p>
+  <svg class="gr" id="prG" viewBox="0 0 340 240" role="img" aria-label="הגרף של התרגיל"></svg>
+  <div class="legend" id="prLeg"></div>
+  <div class="ctrl">
+    <div class="choices" id="prChoices"></div>
+    <div class="minin" id="prNum"><input id="prN" inputmode="numeric" autocomplete="off" aria-label="התשובה"><span id="prUnit"></span></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מתי משתמשים בדיאגרמת עוגה?</h3>
+    <p>כשרוצים להראות חלקים מתוך שלם, למשל איך מתחלק הכסף של הכיתה או מה אוהבים כל הילדים. כל העוגה היא 100%. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין גרף קו לדיאגרמת עמודות?</h3>
+    <p>גרף קו מראה שינוי לאורך זמן, ורואים בו אם משהו עולה או יורד. דיאגרמת עמודות משווה בין דברים שונים. אם על הציר יש ימים או חודשים, קו מתאים. אם יש סוגים, עמודות.</p>
+    <h3>איך מחשבים כמה אחוזים זו פרוסה בעוגה?</h3>
+    <p>מחלקים את החלק בכל השלם וכופלים ב-100. אם 5 ילדים מתוך 20 בחרו משהו, זה <span class="eq">5 : 20 = 0.25</span>, כלומר 25%, רבע עוגה. בכיתה ח ממשיכים ל<a href="../statistics/">ממוצע, חציון ושכיח</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/bar-charts/">טבלאות ודיאגרמת עמודות</a> · <a href="../../math/average/">ממוצע</a> · <a href="../../math/frequency-tables/">טבלת שכיחויות ודיאגרמות</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/ratio-proportion/"><small>→ הנושא הקודם</small>יחס ופרופורציה</a><a class="next" href="../../math/negative-numbers/"><small>הנושא הבא ←</small>מספרים שליליים וציר המספרים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+const sum=a=>a.reduce((s,x)=>s+x,0);
+const pct=(v,t)=>t?Math.round(v/t*100):0;
+
+/* one drawing function for all three kinds; categories go right to left (reading order) */
+function draw(svg,kind,cats,vals,opt={}){
+  const H=170, Y0=200, XR=300, XL=14, sc=opt.scale||(Math.max(...vals,1)>20?5:2);
+  const top=Math.max(sc*4,Math.ceil(Math.max(...vals,1)/sc)*sc), yOf=v=>Y0-v/top*H, slot=(XR-XL)/cats.length;
+  let s='';
+  if(kind==='pie'){
+    const t=sum(vals), cx=170, cy=118, r=96;
+    if(!t){ svg.innerHTML=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--soft)" stroke-width="2"/>`; return; }
+    let a=-Math.PI/2;
+    vals.forEach((v,i)=>{ if(!v) return; const f=v/t, b=a+f*2*Math.PI;
+      if(f>=.9999) s+=`<circle class="s${i}" cx="${cx}" cy="${cy}" r="${r}"/>`;
+      else { const x1=cx+r*Math.cos(a), y1=cy+r*Math.sin(a), x2=cx+r*Math.cos(b), y2=cy+r*Math.sin(b);
+        s+=`<path class="s${i}" d="M${cx},${cy} L${x1.toFixed(1)},${y1.toFixed(1)} A${r},${r} 0 ${f>.5?1:0} 1 ${x2.toFixed(1)},${y2.toFixed(1)} Z"/>`; }
+      const m=(a+b)/2; if(f>=.06) s+=`<text class="pl" x="${(cx+r*.62*Math.cos(m)).toFixed(1)}" y="${(cy+r*.62*Math.sin(m)+4).toFixed(1)}">${pct(v,t)}%</text>`;
+      a=b; });
+    s+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--ink)" stroke-width="2"/>`;
+    svg.innerHTML=s; return;
+  }
+  for(let v=0;v<=top;v+=sc){ const y=yOf(v).toFixed(1);
+    s+=`<line class="gl" x1="${XL}" y1="${y}" x2="${XR}" y2="${y}"/><text class="yt" x="${XR+6}" y="${(+y+4).toFixed(1)}">${v}</text>`; }
+  s+=`<line class="ax" x1="${XL}" y1="${Y0}" x2="${XR}" y2="${Y0}"/><line class="ax" x1="${XR}" y1="${Y0}" x2="${XR}" y2="${Y0-H-6}"/>`;
+  const pts=cats.map((c,i)=>[XR-(i+.5)*slot, yOf(vals[i])]);
+  if(kind==='bar'){ const bw=Math.min(44,slot*.6);
+    cats.forEach((c,i)=>{ const [cx,y]=pts[i]; if(vals[i]>0) s+=`<rect class="bar" x="${(cx-bw/2).toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${(Y0-y).toFixed(1)}" rx="2"/>`; }); }
+  else { s+=`<polyline class="ln" points="${pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')}"/>`;
+    pts.forEach(p=>{ s+=`<circle class="dot" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="5"/>`; }); }
+  cats.forEach((c,i)=>{ const [cx,y]=pts[i];
+    if(opt.vals!==false) s+=`<text class="val" x="${cx.toFixed(1)}" y="${(y-8).toFixed(1)}">${vals[i]}</text>`;
+    s+=`<text class="cat" x="${cx.toFixed(1)}" y="${Y0+18}">${c}</text>`; });
+  svg.innerHTML=s;
+}
+const legend=(el,kind,cats)=>{ el.innerHTML=kind==='pie'?cats.map((c,i)=>`<span><i class="sw" style="background:var(${['--blue','--line','--hl','--green','--soft'][i]})"></i>${c}</span>`).join(''):''; };
+
+/* lab: one data set (four values) */
+const LCATS=['א','ב','ג','ד'];
+let kind='bar', vals=[6,10,4,8];
+const ctrl=$('labCtrl');
+ctrl.insertAdjacentHTML('afterbegin',LCATS.map((c,i)=>`<label class="slider" for="ls${i}"><span>קבוצה ${c}</span><input type="range" id="ls${i}" min="0" max="20" step="1" value="${vals[i]}"><output id="lo${i}">${vals[i]}</output></label>`).join(''));
+LCATS.forEach((c,i)=>$('ls'+i).addEventListener('input',e=>{ vals[i]=+e.target.value; lab(); }));
+function setKind(k){ kind=k; $('kinds').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k)); lab(); }
+$('kinds').querySelectorAll('button').forEach(b=>b.onclick=()=>setKind(b.dataset.k));
+function lab(){
+  LCATS.forEach((c,i)=>{ $('ls'+i).value=vals[i]; $('lo'+i).textContent=vals[i]; });
+  const cats=LCATS.map(c=>'קבוצה '+c);
+  draw($('labG'),kind,cats,vals,{scale:2}); legend($('labLeg'),kind,cats);
+  const t=sum(vals), mx=Math.max(...vals), im=vals.indexOf(mx);
+  const L=[];
+  if(kind==='bar') L.push(`<div>בעמודות קל להשוות: הכי הרבה בקבוצה ${LCATS[im]}, <strong>${mx}</strong>.</div>`);
+  if(kind==='line'){ const up=vals.every((v,i)=>!i||v>=vals[i-1]), down=vals.every((v,i)=>!i||v<=vals[i-1]);
+    L.push(`<div>בקו רואים איך המספר משתנה מנקודה לנקודה. ${up&&!down?'כאן הוא רק עולה.':down&&!up?'כאן הוא רק יורד.':up&&down?'כאן הוא לא משתנה בכלל.':'כאן הוא עולה ויורד.'}</div>`,
+      '<div>קו מתאים כשהקבוצות הן זמנים לפי הסדר, למשל ימים בשבוע.</div>'); }
+  if(kind==='pie') L.push(t?`<div>בעוגה רואים חלק מתוך הכול. בסך הכול ${t}, וקבוצה ${LCATS[im]} היא <span class="eq">${mx} : ${t}</span>, בערך <strong>${pct(mx,t)}%</strong> מהעוגה.</div>`:'<div>כל המספרים 0, אז אין עוגה לצייר.</div>');
+  L.push(`<div>סך הכול: <span class="eq">${vals.join(' + ')} = ${t}</span>.</div>`);
+  $('labTxt').innerHTML=L.join('');
+}
+$('labTries').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ vals=b.dataset.v.split(',').map(Number); setKind(b.dataset.k); }));
+lab();
+
+/* worked example */
+const ECATS=['כדור','קריאה','דיבורים'], EV=[10,5,5];
+const EX=[
+  {k:'bar', t:'אפשר לצייר עמודות. רואים מיד שכדור הכי אהוב: 10 ילדים.'},
+  {k:'pie', t:'השאלה היא על חלקים מתוך כל 20 הילדים, אז עוגה מתאימה במיוחד.'},
+  {k:'pie', t:'כדור: <span class="eq">10 : 20 = 0.5</span>, כלומר 50%. זו חצי עוגה.'},
+  {k:'pie', t:'קריאה: <span class="eq">5 : 20 = 0.25</span>, כלומר 25%, רבע עוגה. גם דיבורים הם רבע.'},
+  {k:'pie', t:'בודקים: <span class="eq">50% + 25% + 25% = 100%</span>. כל העוגה ✓. גרף קו לא מתאים כאן, כי אין כאן זמן.'}
+];
+let exI=0;
+function ex(){ const s=EX[exI]; draw($('exG'),s.k,ECATS,EV,{scale:2}); $('exText').innerHTML=s.t;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){exI++;ex();} }; $('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+ex();
+
+/* practice */
+const FIT=[
+  {q:'הטמפרטורה בכל יום בשבוע.', a:'line', why:'זה שינוי לאורך זמן, ימים לפי הסדר.'},
+  {q:'כמות הגשם בכל חודש בחורף.', a:'line', why:'זה שינוי לאורך זמן, חודשים לפי הסדר.'},
+  {q:'הגובה של ילד בכל יום הולדת.', a:'line', why:'זה שינוי לאורך זמן.'},
+  {q:'איך מתחלק כל דמי הכיס החודשי: ממתקים, חיסכון, משחקים.', a:'pie', why:'אלה חלקים מתוך כל הכסף.'},
+  {q:'איזה אחוז מהכיתה בא ברגל, באוטובוס או במכונית.', a:'pie', why:'אלה חלקים מתוך כל הכיתה.'},
+  {q:'כמה ספרים קרא כל ילד בקבוצה.', a:'bar', why:'משווים בין ילדים שונים, אין כאן זמן ולא שלם.'},
+  {q:'כמה ילדים אוהבים כל סוג חיה.', a:'bar', why:'משווים בין סוגים שונים.'}
+];
+const KN={bar:'דיאגרמת עמודות', line:'גרף קו', pie:'דיאגרמת עוגה'};
+const DAYS=['ראשון','שני','שלישי','רביעי','חמישי'];
+let pr={}, sel=null, streak=0, solved=0;
+function newPr(){
+  const type=pick(['fit','fit','readLine','change','piePct']);
+  pr={type,tries:0,hint:0}; sel=null;
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  if(type==='fit'){
+    const f=pick(FIT); Object.assign(pr,f);
+    $('prAsk').innerHTML=`איזה גרף הכי מתאים? <strong>${f.q}</strong>`;
+    $('prG').innerHTML=''; $('prG').style.display='none'; $('prLeg').innerHTML='';
+    $('prChoices').hidden=false; $('prNum').hidden=true;
+    $('prChoices').innerHTML=Object.keys(KN).map(k=>`<button type="button" data-k="${k}" aria-pressed="false">${KN[k]}</button>`).join('');
+    $('prChoices').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=b.dataset.k; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+    return;
+  }
+  $('prG').style.display=''; $('prChoices').hidden=true; $('prChoices').innerHTML=''; $('prNum').hidden=false;
+  if(type==='piePct'){
+    const tot=pick([20,40,50,100]), parts=pick([[50,25,25],[50,30,20],[40,40,20],[25,25,50],[60,20,20]]).slice();
+    const cats=shuffle(['ממתקים','חיסכון','משחקים','ספרים']).slice(0,3), v=parts.map(p=>p*tot/100);
+    const i=ri(0,2); Object.assign(pr,{cats,v,tot,i,ans:parts[i]});
+    draw($('prG'),'pie',cats,v); legend($('prLeg'),'pie',cats);
+    $('prAsk').innerHTML=`יש ${tot} שקלים. הנה איך הם מתחלקים. כמה <strong>שקלים</strong> הם ה${cats[i]}?`;
+    pr.ans=v[i]; $('prUnit').textContent='שקלים'; return;
+  }
+  const v=DAYS.map(()=>ri(1,10)*2), cats=DAYS;
+  Object.assign(pr,{cats,v});
+  draw($('prG'),'line',cats,v,{scale:2,vals:false}); $('prLeg').innerHTML='';
+  if(type==='readLine'){ const i=ri(0,4); pr.i=i; pr.ans=v[i];
+    $('prAsk').innerHTML=`גרף הקו מראה כמה ילדים הגיעו לחוג בכל יום. כמה הגיעו ביום <strong>${cats[i]}</strong>?`; $('prUnit').textContent='ילדים'; }
+  else { let i; do{ i=ri(0,3); } while(v[i]===v[i+1]); pr.i=i; pr.ans=Math.abs(v[i+1]-v[i]); pr.up=v[i+1]>v[i];
+    $('prAsk').innerHTML=`גרף הקו מראה כמה ילדים הגיעו לחוג בכל יום. בכמה ילדים השתנה המספר מיום <strong>${cats[i]}</strong> ליום <strong>${cats[i+1]}</strong>?`; $('prUnit').textContent='ילדים'; }
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function good(m){ streak++; solved++; streakTxt(); $('prFb').innerHTML=`<div class="fb ok">נכון! ${m}</div>`; }
+function bad(m){ streak=0; pr.tries++; streakTxt(); $('prFb').innerHTML=`<div class="fb err">${m}</div>`; if(pr.tries>=2) $('prShow').disabled=false; }
+$('prCheck').onclick=()=>{
+  const p=pr;
+  if(p.type==='fit'){
+    if(!sel||!KN[sel]){ $('prFb').innerHTML='<div class="fb err">בחרו אחד מהגרפים.</div>'; return; }
+    if(sel===p.a) return good(`${KN[p.a]}: ${p.why}`);
+    if(sel==='pie') return bad('עוגה מתאימה רק לחלקים מתוך שלם. האם הנתונים כאן הם חלקים של דבר אחד?');
+    if(sel==='line') return bad('קו מתאים לשינוי לאורך זמן. יש כאן זמן לפי הסדר?');
+    return bad(p.a==='line'?'עמודות יכולות לעבוד, אבל כאן משהו משתנה עם הזמן. איזה גרף מראה שינוי?':'כאן יש חלקים מתוך שלם אחד. איזה גרף מראה את זה?');
+  }
+  const raw=$('prN').value.trim(); if(!/^\d{1,4}$/.test(raw)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+  const n=+raw;
+  if(n===p.ans) return good(p.type==='piePct'?`<span class="eq">${p.ans} : ${p.tot}</span> הם ${Math.round(p.ans/p.tot*100)}% מהעוגה.`:p.type==='change'?`<span class="eq">${Math.max(p.v[p.i],p.v[p.i+1])} − ${Math.min(p.v[p.i],p.v[p.i+1])} = ${p.ans}</span>. המספר ${p.up?'עלה':'ירד'}.`:`${p.ans} ילדים.`);
+  if(p.type==='piePct'){
+    if(n===Math.round(p.v[p.i]/p.tot*100)) return bad('זה האחוז. שאלו כמה שקלים: אחוז מתוך '+p.tot+' שקלים.');
+    return bad('מצאו קודם איזה אחוז הפרוסה, ואז חשבו את האחוז הזה מתוך כל הכסף.');
+  }
+  if(p.type==='readLine'){ if(n*2===p.ans) return bad('ספרתם קווים. המספרים בצד קופצים ב-2, אז כל קו שווה 2.'); return bad('מצאו את הנקודה של היום הזה, ולכו ממנה ישר הצידה אל המספרים.'); }
+  if(n===p.v[p.i]+p.v[p.i+1]) return bad('חיברתם את שני הימים. השינוי הוא ההפרש: הגדול פחות הקטן.');
+  if(n===p.v[p.i]||n===p.v[p.i+1]) return bad('זה רק מה שהיה ביום אחד. קראו את שני הימים וחסרו.');
+  return bad('קראו את שתי הנקודות, ואז חסרו את הקטן מהגדול.');
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const p=pr; let t;
+  if(p.type==='fit') t=pr.hint<2?'שאלו: משווים בין דברים? יש זמן לפי הסדר? או שאלה חלקים מתוך שלם?':'זמן לפי הסדר, קו. חלקים מתוך שלם, עוגה. השוואה בין סוגים, עמודות.';
+  else if(p.type==='piePct') t=pr.hint<2?`קראו את האחוז של ה${p.cats[p.i]} בעוגה.`:`זה ${Math.round(p.v[p.i]/p.tot*100)}%. כמה זה מתוך ${p.tot} שקלים?`;
+  else if(p.type==='readLine') t=pr.hint<2?'בדקו בכמה קופצים המספרים בצד: ב-2.':`הנקודה של ${p.cats[p.i]} מגיעה עד ${p.v[p.i]}.`;
+  else t=pr.hint<2?'קראו את שתי הנקודות, ביום הראשון וביום שאחריו.':`${p.cats[p.i]}: ${p.v[p.i]}, ${p.cats[p.i+1]}: ${p.v[p.i+1]}. עכשיו חסרו.`;
+  $('prFb').innerHTML=`<div class="fb hint">${t}</div>`;
+};
+$('prShow').onclick=()=>{
+  const p=pr; let t;
+  if(p.type==='fit'){ t=`${KN[p.a]}. ${p.why}`; sel=p.a; $('prChoices').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.k===p.a)); }
+  else { t=p.type==='piePct'?`${Math.round(p.v[p.i]/p.tot*100)}% מתוך ${p.tot} הם ${p.ans} שקלים.`:p.type==='change'?`<span class="eq">${Math.max(p.v[p.i],p.v[p.i+1])} − ${Math.min(p.v[p.i],p.v[p.i+1])} = ${p.ans}</span>.`:`הנקודה מגיעה עד ${p.ans}.`;
+    $('prN').value=p.ans; if(p.type!=='piePct') draw($('prG'),'line',p.cats,p.v,{scale:2}); }
+  $('prFb').innerHTML=`<div class="fb hint">${t} עכשיו נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

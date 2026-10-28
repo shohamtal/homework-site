@@ -4,8 +4,10 @@
   <url><loc>https://shohamtal.github.io/homework-site/math/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/grade-1/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/grade-2/</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/grade-3/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/grade-4/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/grade-3/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/grade-4/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/grade-5/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/grade-6/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/grade-7/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/grade-8/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/grade-9/</loc><lastmod>2026-10-27</lastmod></url>
@@ -35,28 +37,38 @@
   <url><loc>https://shohamtal.github.io/homework-site/math/length-cm-m/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/clock-half-quarter/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/money-shekels/</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/numbers-to-10000/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/rounding-estimation/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/add-sub-10000/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/mult-div-100/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/division-remainder/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/multiply-2digit-1digit/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/unit-fractions/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/perpendicular-parallel/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/triangles-quadrilaterals/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/time-minutes/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/bar-charts/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/numbers-to-million/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/divisibility-rules/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/column-add-sub/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/multiply-2digit/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/long-division/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/simple-fractions/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/equivalent-fractions/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/angles-intro/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/polygons/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/rectangle-perimeter-area/</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/math/measurement-units/</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/numbers-to-10000/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/rounding-estimation/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/add-sub-10000/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/mult-div-100/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/division-remainder/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/multiply-2digit-1digit/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/unit-fractions/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/perpendicular-parallel/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/triangles-quadrilaterals/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/time-minutes/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/bar-charts/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/numbers-to-million/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/divisibility-rules/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/column-add-sub/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/multiply-2digit/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/long-division/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/simple-fractions/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/equivalent-fractions/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/angles-intro/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/polygons/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/rectangle-perimeter-area/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/measurement-units/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/prime-numbers/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/add-sub-fractions/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/mixed-numbers/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/decimals/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/triangle-types/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/average/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/divide-fractions/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/percent-intro/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/ratio-proportion/</loc><lastmod>2026-10-28</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/math/statistics-graphs/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/negative-numbers/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/signed-operations/</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/algebraic-expressions/</loc><lastmod>2026-10-27</lastmod></url>
