@@ -382,6 +382,18 @@
 - [אות גדולה, נקודה וסימן שאלה](https://shohamtal.github.io/homework-site/english/capital-full-stop/): משפט באנגלית מתחיל באות גדולה ונגמר בנקודה או בסימן שאלה. מתקנים משפטים ושומעים את ההבדל בין שאלה לתשובה. שירים, צלילים ותרגול עם רמזים לכיתה ג.
 - [הוראות בכיתה באנגלית](https://shohamtal.github.io/homework-site/english/classroom-english/): Open your book, Listen, Look, Be quiet: ההוראות שהמורה אומרת בשיעור אנגלית. שומעים ועושים, כמו במשחק. שירים, צלילים ותרגול עם רמזים לכיתה ג.
 
+## אנגלית כיתה ד · משפטים ראשונים
+
+- [הפועל to be: I am, you are, he is](https://shohamtal.github.io/homework-site/english/verb-to-be/): I am, you are, he is, she is, we are, they are: הפועל הכי חשוב באנגלית. בונים משפטים ושומעים אותם, ומגלים מתי אומרים am, is ו-are.
+- [משפטים פשוטים באנגלית](https://shohamtal.github.io/homework-site/english/simple-sentences/): מי עושה, מה עושה ומה: בונים משפטים קצרים כמו I like cats ו-The dog is big, ושומעים איך הסדר באנגלית שונה מעברית. הסבר, צלילים ותרגול עם רמזים.
+- [this, that, these, those באנגלית](https://shohamtal.github.io/homework-site/english/this-that/): זה, ההוא, אלה ואלה שם: מתי אומרים this ומתי that, ומה קורה כשיש הרבה. מצביעים על חפצים קרובים ורחוקים ושומעים. שירים, צלילים ותרגול עם רמזים לכיתה ד.
+- [מילות מקום באנגלית: in, on, under](https://shohamtal.github.io/homework-site/english/prepositions-place/): איפה החתול? in the box, on the table, under the bed. מזיזים את החתול בחדר ושומעים איפה הוא, ובוחרים את מילת המקום הנכונה. הסבר, צלילים ותרגול עם רמזים.
+
+## אנגלית כיתה ד · מילים ואיות
+
+- [מספרים באנגלית עד 100](https://shohamtal.github.io/homework-site/english/numbers-to-100/): twenty one, thirty five, ninety nine: איך בונים כל מספר עד 100 מעשרות ויחידות, ושומעים את ההבדל בין fifteen ל-fifty. הסבר, צלילים ותרגול עם רמזים.
+- [איות באנגלית: מאייתים מילים קצרות](https://shohamtal.github.io/homework-site/english/spelling-words/): מאייתים בקול בשמות האותיות: c, a, t זה cat. שומעים מילה, מסדרים את האותיות, ובודקים את האיות של מילים שכיחות. שירים, צלילים ותרגול עם רמזים לכיתה ד.
+
 ## עמודים נוספים
 
 - [מתמטיקה](https://shohamtal.github.io/homework-site/math/): הסברים, מעבדות אינטראקטיביות ותרגול עם רמזים במתמטיקה לפי תוכנית הלימודים, מכיתה א ועד כיתה יב. בחרו כיתה.
@@ -397,8 +409,9 @@
 - [מתמטיקה כיתה י](https://shohamtal.github.io/homework-site/math/grade-10/): כל נושאי המתמטיקה לכיתה י: אי-שוויון ריבועי, פונקציות, הנדסה אנליטית, טריגונומטריה, סדרות והסתברות. הסבר, מעבדה ותרגול עם רמזים.
 - [מתמטיקה כיתה יא](https://shohamtal.github.io/homework-site/math/grade-11/): כל נושאי המתמטיקה לכיתה יא: נגזרות, חקירת פונקציות, בעיות קיצון, סדרה הנדסית, טריגונומטריה והתפלגויות. הסבר, מעבדה ותרגול עם רמזים.
 - [מתמטיקה כיתה יב](https://shohamtal.github.io/homework-site/math/grade-12/): כל נושאי המתמטיקה לכיתה יב: אינטגרלים, מעריכיות ולוגריתמים, גדילה ודעיכה, וקטורים, מרוכבים ואינדוקציה. הסבר, מעבדה ותרגול עם רמזים.
-- [אנגלית](https://shohamtal.github.io/homework-site/english/): אנגלית לכיתות א עד ג עם שירים, צלילים ומשחקים: מילים ראשונות, צלילי האותיות וקריאה ראשונה. בלי דפי עבודה, רק להקשיב, לשיר ולשחק.
+- [אנגלית](https://shohamtal.github.io/homework-site/english/): אנגלית לכיתות א עד ו עם שירים, צלילים ומשחקים: מילים ראשונות, אותיות וצלילים, משפטים, זמנים והבנת הנקרא. בלי דפי עבודה.
 - [אנגלית כיתה א](https://shohamtal.github.io/homework-site/english/grade-1/): אנגלית לכיתה א בשירים וצלילים: שיר ה-ABC, האותיות, ברכות, צבעים, מספרים 1–10, חלקי הגוף, חיות, משפחה ופעולות. להקשיב, לשיר ולשחק.
 - [אנגלית כיתה ב](https://shohamtal.github.io/homework-site/english/grade-2/): אנגלית לכיתה ב בשירים וצלילים: היכרות, מספרים 11–20, אוכל, בגדים, חפצים בכיתה, רגשות, מזג אוויר, ימי השבוע, צלילים וחרוזים.
 - [אנגלית כיתה ג](https://shohamtal.github.io/homework-site/english/grade-3/): אנגלית לכיתה ג: אותיות גדולות וקטנות, צלילי האותיות, תנועות קצרות, קריאת מילים קצרות, sh ch th ומשפטים ראשונים.
+- [אנגלית כיתה ד](https://shohamtal.github.io/homework-site/english/grade-4/): אנגלית לכיתה ד עם צלילים ומשחקים: הפועל to be, משפטים פשוטים, this ו-that, מילות מקום, מספרים עד 100 ואיות. להקשיב ולתרגל.
 - [בקשות נושאים והצבעות](https://shohamtal.github.io/homework-site/requests/): חסר לכם נושא? בקשו אותו או הצביעו לנושא שמישהו אחר כבר ביקש. הנושאים עם הכי הרבה קולות עולים לאתר ראשונים.

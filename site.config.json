@@ -731,7 +731,7 @@
     },
     "english/": {
       "title": "אנגלית · בחרו כיתה · מירי המורה שלך להצלחה",
-      "description": "אנגלית לכיתות א עד ג עם שירים, צלילים ומשחקים: מילים ראשונות, צלילי האותיות וקריאה ראשונה. בלי דפי עבודה, רק להקשיב, לשיר ולשחק."
+      "description": "אנגלית לכיתות א עד ו עם שירים, צלילים ומשחקים: מילים ראשונות, אותיות וצלילים, משפטים, זמנים והבנת הנקרא. בלי דפי עבודה."
     },
     "english/grade-1/": {
       "title": "אנגלית כיתה א · כל הנושאים · מירי",
@@ -752,6 +752,90 @@
     "english/my-name-is/": {
       "title": "היכרות באנגלית: My name is, How are you? · כיתה ב · מירי",
       "description": "איך מציגים את עצמנו באנגלית ושואלים מה שלומך: My name is, What is your name, How are you ו-I am fine. משחקים בשיחה עם מירי. שירים, צלילים ותרגול עם רמזים."
+    },
+    "english/verb-to-be/": {
+      "title": "הפועל to be: I am, you are, he is · אנגלית כיתה ד · מירי",
+      "description": "I am, you are, he is, she is, we are, they are: הפועל הכי חשוב באנגלית. בונים משפטים ושומעים אותם, ומגלים מתי אומרים am, is ו-are."
+    },
+    "english/simple-sentences/": {
+      "title": "משפטים פשוטים באנגלית · כיתה ד · מירי",
+      "description": "מי עושה, מה עושה ומה: בונים משפטים קצרים כמו I like cats ו-The dog is big, ושומעים איך הסדר באנגלית שונה מעברית. הסבר, צלילים ותרגול עם רמזים."
+    },
+    "english/this-that/": {
+      "title": "this, that, these, those באנגלית · כיתה ד · מירי",
+      "description": "זה, ההוא, אלה ואלה שם: מתי אומרים this ומתי that, ומה קורה כשיש הרבה. מצביעים על חפצים קרובים ורחוקים ושומעים. שירים, צלילים ותרגול עם רמזים לכיתה ד."
+    },
+    "english/prepositions-place/": {
+      "title": "מילות מקום באנגלית: in, on, under · כיתה ד · מירי",
+      "description": "איפה החתול? in the box, on the table, under the bed. מזיזים את החתול בחדר ושומעים איפה הוא, ובוחרים את מילת המקום הנכונה. הסבר, צלילים ותרגול עם רמזים."
+    },
+    "english/numbers-to-100/": {
+      "title": "מספרים באנגלית עד 100 · כיתה ד · מירי",
+      "description": "twenty one, thirty five, ninety nine: איך בונים כל מספר עד 100 מעשרות ויחידות, ושומעים את ההבדל בין fifteen ל-fifty. הסבר, צלילים ותרגול עם רמזים."
+    },
+    "english/spelling-words/": {
+      "title": "איות באנגלית: מאייתים מילים קצרות · כיתה ד · מירי",
+      "description": "מאייתים בקול בשמות האותיות: c, a, t זה cat. שומעים מילה, מסדרים את האותיות, ובודקים את האיות של מילים שכיחות. שירים, צלילים ותרגול עם רמזים לכיתה ד."
+    },
+    "english/present-simple/": {
+      "title": "Present Simple באנגלית · כיתה ה · מירי",
+      "description": "מה עושים כל יום: I play, he plays. מתי מוסיפים s, איך אומרים לא עם don't ו-doesn't, ואיך שואלים עם Do. שירים, צלילים ותרגול עם רמזים לכיתה ה."
+    },
+    "english/there-is-there-are/": {
+      "title": "There is ו-There are באנגלית · כיתה ה · מירי",
+      "description": "יש בחדר שולחן אחד ויש שלושה כיסאות: There is a table, There are three chairs. בונים חדר ושומעים מה יש בו. שירים, צלילים ותרגול עם רמזים לכיתה ה."
+    },
+    "english/have-has-got/": {
+      "title": "have, has ו-have got באנגלית · כיתה ה · מירי",
+      "description": "I have a dog, she has a cat: מתי אומרים have ומתי has, ומה זה have got. ממלאים תיק לכל אחד ושומעים מה יש לו. שירים, צלילים ותרגול עם רמזים לכיתה ה."
+    },
+    "english/wh-questions/": {
+      "title": "מילות שאלה באנגלית: what, where, who · כיתה ה · מירי",
+      "description": "what, where, who, when, how many: איזו מילת שאלה מתאימה לאיזו תשובה. שומעים שאלה ובוחרים תשובה, או להפך. שירים, צלילים ותרגול עם רמזים לכיתה ה."
+    },
+    "english/plurals/": {
+      "title": "רבים באנגלית: s, es ומילים מיוחדות · כיתה ה · מירי",
+      "description": "cat ו-cats, box ו-boxes, child ו-children: כללי הרבים באנגלית והמילים שלא מתנהגות לפי הכלל. שירים, צלילים ותרגול עם רמזים לכיתה ה."
+    },
+    "english/months-time/": {
+      "title": "חודשים ושעות באנגלית · כיתה ה · מירי",
+      "description": "January עד December, ואיך אומרים מה השעה: It is three o'clock, half past four. מזיזים את השעון ושומעים. שירים, צלילים ותרגול עם רמזים לכיתה ה."
+    },
+    "english/present-progressive/": {
+      "title": "Present Progressive באנגלית: עכשיו · כיתה ו · מירי",
+      "description": "מה קורה עכשיו: I am reading, she is running. בונים משפט עם am, is, are ו-ing, ומשווים ל-Present Simple. שירים, צלילים ותרגול עם רמזים לכיתה ו."
+    },
+    "english/past-simple-regular/": {
+      "title": "Past Simple באנגלית: פעלים רגילים עם ed · כיתה ו · מירי",
+      "description": "מה קרה אתמול: I played, she walked. מוסיפים ed, שומעים את שלושת הצלילים של הסיומת, ואומרים לא עם didn't. שירים, צלילים ותרגול עם רמזים לכיתה ו."
+    },
+    "english/can-cant/": {
+      "title": "can ו-can't באנגלית · כיתה ו · מירי",
+      "description": "I can swim, I can't fly: מה אפשר ומה אי אפשר. שואלים Can you? ועונים, ושומעים את ההבדל בין can ל-can't. שירים, צלילים ותרגול עם רמזים לכיתה ו."
+    },
+    "english/adjectives/": {
+      "title": "תארים באנגלית: big, small, happy · כיתה ו · מירי",
+      "description": "תארים מתארים: a big dog, a small cat. התואר בא לפני השם, ולמדים גם הפכים כמו hot ו-cold. שירים, צלילים ותרגול עם רמזים לכיתה ו."
+    },
+    "english/pronouns-possessive/": {
+      "title": "כינויי גוף ושייכות באנגלית · כיתה ו · מירי",
+      "description": "I, you, he, she ו-my, your, his, her: מי עושה ושל מי זה. מחליפים שמות בכינויים ושומעים את המשפט. שירים, צלילים ותרגול עם רמזים לכיתה ו."
+    },
+    "english/reading-short-texts/": {
+      "title": "הבנת הנקרא באנגלית: טקסטים קצרים · כיתה ו · מירי",
+      "description": "קוראים סיפורים קצרים באנגלית, שומעים אותם בקול, ועונים על שאלות. כל מילה קשה מקבלת עזרה בלחיצה. שירים, צלילים ותרגול עם רמזים לכיתה ו."
+    },
+    "english/grade-4/": {
+      "title": "אנגלית כיתה ד · כל הנושאים · מירי",
+      "description": "אנגלית לכיתה ד עם צלילים ומשחקים: הפועל to be, משפטים פשוטים, this ו-that, מילות מקום, מספרים עד 100 ואיות. להקשיב ולתרגל."
+    },
+    "english/grade-5/": {
+      "title": "אנגלית כיתה ה · כל הנושאים · מירי",
+      "description": "אנגלית לכיתה ה עם צלילים ומשחקים: Present Simple, There is ו-There are, have ו-has, מילות שאלה, רבים, חודשים ושעות."
+    },
+    "english/grade-6/": {
+      "title": "אנגלית כיתה ו · כל הנושאים · מירי",
+      "description": "אנגלית לכיתה ו עם צלילים ומשחקים: Present Progressive, Past Simple, can ו-can't, תארים, כינויי גוף ושייכות והבנת הנקרא."
     }
   }
 }

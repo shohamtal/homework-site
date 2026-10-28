@@ -2,7 +2,7 @@
    breadcrumbs and prev/next links are all built from this one list (scripts/build.mjs).
    To add a topic: add an entry here, create <subject>/<slug>/index.html, run `node scripts/build.mjs`.
    chapter.grade must match a name in subject.grades. aka: names of the same material in assets/curriculum.js,
-   so the request form marks them "כבר באתר". related: slugs linked under "כדאי לחזור גם על" at the end of the page. */
+   so the request form marks them "כבר באתר". hold:true = written later (the request form doesn't mark it yet). related: slugs linked under "כדאי לחזור גם על" at the end of the page. */
 window.SITE={
   name:'מירי', slogan:'המורה שלך להצלחה',
   subjects:[
@@ -17,7 +17,7 @@ window.SITE={
             { slug:'numbers-to-20', title:'מספרים עד 20', aka:['מספרים עד 20'],
               desc:'סופרים, קוראים וכותבים מספרים עד 20. רואים כל מספר כנקודות במסגרת עשר, ומגלים שאחרי 10 מתחילה עשרת חדשה.',
               tags:['ספירה', 'מסגרת עשר', 'עשרת ויחידות'] },
-            { slug:'numbers-to-100', related:['numbers-to-20'], title:'מספרים עד 100 וישר המספרים', aka:['מספרים עד 100 וישר המספרים'],
+            { slug:'numbers-to-100', related:['numbers-to-20','months-time'], title:'מספרים עד 100 וישר המספרים', aka:['מספרים עד 100 וישר המספרים'],
               desc:'עשרות ויחידות, איפה כל מספר גר על ישר המספרים, ומה בא לפני ואחרי. קופצים על הישר ומוצאים מספרים.',
               tags:['ישר המספרים', 'עשרות', 'לפני ואחרי'] },
             { slug:'compare-numbers', related:['numbers-to-100'], title:'גדול, קטן ושווה', aka:['גדול, קטן ושווה (סימני > < =)'],
@@ -696,7 +696,7 @@ window.SITE={
             { slug:'weather', related:['clothes'], title:'מזג האוויר באנגלית',
               desc:'sunny, rainy, cloudy, windy, hot ו-cold: משנים את מזג האוויר בחלון ושומעים איך אומרים אותו באנגלית.',
               tags:['sunny', 'rainy', 'cold'] },
-            { slug:'days-of-week', title:'ימי השבוע באנגלית',
+            { slug:'days-of-week', related:['months-time'], title:'ימי השבוע באנגלית',
               desc:'Sunday, Monday עד Saturday: שרים את שיר הימים, מתחילים מיום ראשון כמו אצלנו, ומוצאים איזה יום בא אחרי.',
               tags:['Sunday', 'Monday', 'week'] }
           ] },
@@ -714,16 +714,16 @@ window.SITE={
             { slug:'alphabet-letters', related:['abc-song','letters-intro'], title:'האותיות באנגלית: גדולות וקטנות',
               desc:'כל 26 האותיות באנגלית, גדולות וקטנות: מתאימים A ל-a, מסדרים לפי הסדר ושומעים את שם האות.',
               tags:['A a', 'alphabet', 'סדר האותיות'] },
-            { slug:'letter-sounds', related:['alphabet-letters', 'first-sounds'], title:'צלילי האותיות (Phonics)', aka:['האלף-בית והגייה (Phonics)'],
+            { slug:'letter-sounds', hold:true, related:['alphabet-letters', 'first-sounds'], title:'צלילי האותיות (Phonics)', aka:['האלף-בית והגייה (Phonics)'],
               desc:'לכל אות יש שם וגם צליל: b אומרים bee אבל הצליל הוא /b/. שומעים את הצליל של כל אות ומוצאים מילה שמתחילה בו.',
               tags:['phonics', 'צליל', 'b d'] },
-            { slug:'short-vowels', related:['letter-sounds'], title:'תנועות קצרות באנגלית: a, e, i, o, u',
+            { slug:'short-vowels', hold:true, related:['letter-sounds'], title:'תנועות קצרות באנגלית: a, e, i, o, u',
               desc:'חמש התנועות הקצרות במילים כמו cat, bed, pig, dog ו-sun. שומעים את ההבדל בין bed ל-bad ובין pin ל-pen.',
               tags:['a e i o u', 'short vowels', 'cat bed'] },
-            { slug:'cvc-words', related:['short-vowels'], title:'קוראים מילים קצרות: cat, dog, sun',
+            { slug:'cvc-words', hold:true, related:['short-vowels'], title:'קוראים מילים קצרות: cat, dog, sun',
               desc:'מחברים שלושה צלילים למילה: c, a, t ביחד זה cat. מחליקים את הסרגל ושומעים איך הצלילים נהיים מילה.',
               tags:['blending', 'cat', 'CVC'] },
-            { slug:'sh-ch-th', related:['letter-sounds'], title:'צירופים באנגלית: sh, ch, th',
+            { slug:'sh-ch-th', hold:true, related:['letter-sounds'], title:'צירופים באנגלית: sh, ch, th',
               desc:'sh כמו ship, ch כמו chip ו-th כמו thin. שני אותיות שעושות צליל אחד, וגם הצליל th שקשה לדוברי עברית.',
               tags:['sh', 'ch', 'th'] }
           ] },
@@ -741,6 +741,78 @@ window.SITE={
             { slug:'classroom-english', related:['action-words'], title:'הוראות בכיתה באנגלית',
               desc:'Open your book, Listen, Look, Be quiet: ההוראות שהמורה אומרת בשיעור אנגלית. שומעים ועושים, כמו במשחק.',
               tags:['open your book', 'listen', 'look'] }
+          ] },
+        { id:'en-grammar-4', name:'משפטים ראשונים', grade:'כיתה ד',
+          topics:[
+            { slug:'verb-to-be', related:['i-am-i-have','present-simple'], title:'הפועל to be: I am, you are, he is', aka:['I am / You are / He is'],
+              desc:'I am, you are, he is, she is, we are, they are: הפועל הכי חשוב באנגלית. בונים משפטים ושומעים אותם, ומגלים מתי אומרים am, is ו-are.',
+              tags:['I am', 'he is', 'they are'] },
+            { slug:'simple-sentences', related:['verb-to-be'], title:'משפטים פשוטים באנגלית', aka:['משפטים פשוטים'],
+              desc:'מי עושה, מה עושה ומה: בונים משפטים קצרים כמו I like cats ו-The dog is big, ושומעים איך הסדר באנגלית שונה מעברית.',
+              tags:['סדר מילים', 'I like', 'The dog is'] },
+            { slug:'this-that', related:['verb-to-be','plurals'], title:'this, that, these, those באנגלית',
+              desc:'זה, ההוא, אלה ואלה שם: מתי אומרים this ומתי that, ומה קורה כשיש הרבה. מצביעים על חפצים קרובים ורחוקים ושומעים.',
+              tags:['this', 'that', 'these'] },
+            { slug:'prepositions-place', related:['simple-sentences','there-is-there-are'], title:'מילות מקום באנגלית: in, on, under',
+              desc:'איפה החתול? in the box, on the table, under the bed. מזיזים את החתול בחדר ושומעים איפה הוא, ובוחרים את מילת המקום הנכונה.',
+              tags:['in', 'on', 'under'] }
+          ] },
+        { id:'en-words-4', name:'מילים ואיות', grade:'כיתה ד',
+          topics:[
+            { slug:'numbers-to-100', related:['numbers-11-20'], title:'מספרים באנגלית עד 100',
+              desc:'twenty one, thirty five, ninety nine: איך בונים כל מספר עד 100 מעשרות ויחידות, ושומעים את ההבדל בין fifteen ל-fifty.',
+              tags:['twenty one', 'fifty', 'hundred'] },
+            { slug:'spelling-words', related:['alphabet-letters', 'cvc-words'], title:'איות באנגלית: מאייתים מילים קצרות',
+              desc:'מאייתים בקול בשמות האותיות: c, a, t זה cat. שומעים מילה, מסדרים את האותיות, ובודקים את האיות של מילים שכיחות.',
+              tags:['spelling', 'letter names', 'c a t'] }
+          ] },
+        { id:'en-grammar-5', name:'זמנים ומבנים', grade:'כיתה ה',
+          topics:[
+            { slug:'present-simple', related:['verb-to-be','present-progressive','past-simple-regular'], title:'Present Simple באנגלית', aka:['Present Simple'],
+              desc:'מה עושים כל יום: I play, he plays. מתי מוסיפים s, איך אומרים לא עם don\'t ו-doesn\'t, ואיך שואלים עם Do.',
+              tags:['he plays', "don't", 'Do you'] },
+            { slug:'there-is-there-are', related:['prepositions-place'], title:'There is ו-There are באנגלית', aka:['There is / There are'],
+              desc:'יש בחדר שולחן אחד ויש שלושה כיסאות: There is a table, There are three chairs. בונים חדר ושומעים מה יש בו.',
+              tags:['there is', 'there are', 'how many'] },
+            { slug:'have-has-got', related:['i-am-i-have','pronouns-possessive'], title:'have, has ו-have got באנגלית', aka:['Have / Has got'],
+              desc:'I have a dog, she has a cat: מתי אומרים have ומתי has, ומה זה have got. ממלאים תיק לכל אחד ושומעים מה יש לו.',
+              tags:['I have', 'she has', 'have got'] },
+            { slug:'wh-questions', related:['present-simple'], title:'מילות שאלה באנגלית: what, where, who', aka:['מילות שאלה (WH questions)'],
+              desc:'what, where, who, when, how many: איזו מילת שאלה מתאימה לאיזו תשובה. שומעים שאלה ובוחרים תשובה, או להפך.',
+              tags:['what', 'where', 'who'] }
+          ] },
+        { id:'en-words-5', name:'מילים', grade:'כיתה ה',
+          topics:[
+            { slug:'plurals', related:['this-that','there-is-there-are'], title:'רבים באנגלית: s, es ומילים מיוחדות', aka:['רבים (Plural)'],
+              desc:'cat ו-cats, box ו-boxes, child ו-children: כללי הרבים באנגלית והמילים שלא מתנהגות לפי הכלל.',
+              tags:['plural s', 'boxes', 'children'] },
+            { slug:'months-time', related:['days-of-week'], title:'חודשים ושעות באנגלית', aka:['ימים, חודשים ושעות'],
+              desc:'January עד December, ואיך אומרים מה השעה: It is three o\'clock, half past four. מזיזים את השעון ושומעים.',
+              tags:['months', "o'clock", 'half past'] }
+          ] },
+        { id:'en-grammar-6', name:'זמנים', grade:'כיתה ו',
+          topics:[
+            { slug:'present-progressive', related:['present-simple'], title:'Present Progressive באנגלית: עכשיו', aka:['Present Progressive'],
+              desc:'מה קורה עכשיו: I am reading, she is running. בונים משפט עם am, is, are ו-ing, ומשווים ל-Present Simple.',
+              tags:['I am reading', 'ing', 'right now'] },
+            { slug:'past-simple-regular', related:['present-simple'], title:'Past Simple באנגלית: פעלים רגילים עם ed', aka:['Past Simple: פעלים רגילים'],
+              desc:'מה קרה אתמול: I played, she walked. מוסיפים ed, שומעים את שלושת הצלילים של הסיומת, ואומרים לא עם didn\'t.',
+              tags:['played', 'ed', "didn't"] },
+            { slug:'can-cant', related:['present-simple'], title:'can ו-can\'t באנגלית', aka:["Can / Can't"],
+              desc:'I can swim, I can\'t fly: מה אפשר ומה אי אפשר. שואלים Can you? ועונים, ושומעים את ההבדל בין can ל-can\'t.',
+              tags:['can', "can't", 'Can you'] }
+          ] },
+        { id:'en-words-6', name:'מילים וקריאה', grade:'כיתה ו',
+          topics:[
+            { slug:'adjectives', related:['colors'], title:'תארים באנגלית: big, small, happy', aka:['תארים (Adjectives)'],
+              desc:'תארים מתארים: a big dog, a small cat. התואר בא לפני השם, ולמדים גם הפכים כמו hot ו-cold.',
+              tags:['big small', 'hot cold', 'a red ball'] },
+            { slug:'pronouns-possessive', related:['verb-to-be','have-has-got'], title:'כינויי גוף ושייכות באנגלית', aka:['כינויי גוף ושייכות'],
+              desc:'I, you, he, she ו-my, your, his, her: מי עושה ושל מי זה. מחליפים שמות בכינויים ושומעים את המשפט.',
+              tags:['he she', 'my your', 'his her'] },
+            { slug:'reading-short-texts', related:['wh-questions'], title:'הבנת הנקרא באנגלית: טקסטים קצרים', aka:['הבנת הנקרא: טקסטים קצרים'],
+              desc:'קוראים סיפורים קצרים באנגלית, שומעים אותם בקול, ועונים על שאלות. כל מילה קשה מקבלת עזרה בלחיצה.',
+              tags:['reading', 'short story', 'questions'] }
           ] }
       ] },
     { id:'hebrew', name:'עברית', desc:'בקרוב.', soon:true, chapters:[] }

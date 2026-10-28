@@ -47,7 +47,7 @@ window.CURRICULUM={
 };
 (function(){
   const C=window.CURRICULUM, onSite={}, siteTitles={}, akaOf={};
-  (window.SITE?SITE.subjects:[]).forEach(s=>s.chapters.forEach(ch=>ch.topics.forEach(t=>{
+  (window.SITE?SITE.subjects:[]).forEach(s=>s.chapters.forEach(ch=>ch.topics.filter(t=>!t.hold).forEach(t=>{
     onSite[s.name+'|'+t.title]=`${s.id}/${t.slug}/`;
     (t.aka||[]).forEach(a=>{ onSite[s.name+'|'+a]=onSite[s.name+'|'+a]||`${s.id}/${t.slug}/`; });
     ((siteTitles[s.name]=siteTitles[s.name]||{})[ch.grade]=siteTitles[s.name][ch.grade]||[]).push(t.title);

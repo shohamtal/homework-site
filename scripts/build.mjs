@@ -132,6 +132,8 @@ function head(pg, root) {
 const footer = (pg, root) => `<footer class="site">${cfg.name} · ${cfg.slogan}${pg.kind === 'requests' ? '' : ` · <a href="${root}requests/">חסר לכם נושא? בקשו אותו</a>`}${pg.subj?.id === 'english'
   ? `<br><small>הקול באנגלית: <span lang="en" dir="ltr">Kokoro-82M</span>, רישיון <span lang="en" dir="ltr">Apache-2.0</span>. המנגינות עממיות, והמילים שלנו או מסורתיות.</small>` : ''}</footer>${YOUNG_MATH(pg)
   ? `\n<script src="${root}assets/sound.js"></script>\n<script src="${root}assets/sfx.js"></script>` : ''}`;
+/* the next grade of the same subject that has pages, for the "ממשיכים ל…" link on grade hubs */
+const nextGrade = pg => { const gs = gradesWithTopics(pg.subj), i = gs.findIndex(g => g.id === pg.grade.id); return i >= 0 ? gs[i + 1] : null; };
 /* math topics for grades 1 to 3 get small success and try-again sounds (assets/sfx.js) */
 const YOUNG_MATH = pg => pg.kind === 'topic' && pg.subj.id === 'math' && ['כיתה א', 'כיתה ב', 'כיתה ג'].includes(pg.chapter.grade);
 
@@ -216,6 +218,7 @@ for (const pg of pages) {
   <p class="lead">${pg.subj.id === 'english'
     ? 'בחרו נושא. בכל נושא שומעים, שרים ומשחקים, ובתרגול מירי נותנת רמז במקום תשובה. לוחצים פעם אחת על "הקשיבו" כדי להפעיל את הצלילים.'
     : 'בחרו נושא. בכל נושא יש הסבר, מעבדה שאפשר להזיז ותרגול שבו מירי נותנת רמז במקום תשובה. כדאי ללמוד לפי הסדר, כי כל נושא נשען על הקודם.'}</p>
+  ${nextGrade(pg) ? `<p class="text">סיימתם? <a href="${root}${pg.subj.id}/${nextGrade(pg).id}/">ממשיכים ל${nextGrade(pg).name} ←</a></p>` : ''}
   <label class="search" for="q"><span class="sr">חיפוש נושא</span>
     <input id="q" type="search" placeholder="חפשו נושא ב${pg.grade.name}" autocomplete="off">
   </label>
