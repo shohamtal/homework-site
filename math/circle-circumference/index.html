@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מעגל והיקף מעגל · כיתה ו · מירי</title>
+<meta name="description" content="מרכז, רדיוס וקוטר, ולמה ההיקף הוא בערך פי 3.14 מהקוטר. מגלגלים מעגל ומודדים את פאי. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/circle-circumference/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מעגל והיקף מעגל · כיתה ו · מירי">
+<meta property="og:description" content="מרכז, רדיוס וקוטר, ולמה ההיקף הוא בערך פי 3.14 מהקוטר. מגלגלים מעגל ומודדים את פאי. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/circle-circumference/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ו","item":"https://shohamtal.github.io/homework-site/math/grade-6/"},{"@type":"ListItem","position":4,"name":"מעגל וגופים","item":"https://shohamtal.github.io/homework-site/math/grade-6/#geometry-6"},{"@type":"ListItem","position":5,"name":"מעגל והיקף מעגל","item":"https://shohamtal.github.io/homework-site/math/circle-circumference/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים היקף של מעגל?","acceptedAnswer":{"@type":"Answer","text":"כופלים את הקוטר ב-3.14. למשל מעגל בקוטר 8 ס\"מ: 3.14 כפול 8 זה 25.12 ס\"מ. אם נתון רדיוס, מכפילים אותו קודם ב-2 כדי לקבל את הקוטר. תרגלו למטה."}},{"@type":"Question","name":"מה ההבדל בין רדיוס לקוטר?","acceptedAnswer":{"@type":"Answer","text":"הרדיוס הוא המרחק מהמרכז של המעגל עד הקצה שלו. הקוטר הוא קו מקצה לקצה שעובר דרך המרכז, ולכן הוא ארוך פי 2 מהרדיוס. רדיוס 4 ס\"מ זה קוטר 8 ס\"מ."}},{"@type":"Question","name":"איך מסבירים לילד מה זה פאי?","acceptedAnswer":{"@type":"Answer","text":"לוקחים כוס או צלחת, מודדים בחוט את ההיקף, ואז מודדים את הקוטר. מחלקים את ההיקף בקוטר, ויוצא בערך 3.14. זה יוצא כמעט אותו מספר בכל עיגול, ולמספר הזה קוראים פאי. נסו במעבדה. בכיתה ט לומדים על זוויות ומיתרים במעגל."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מעגל והיקף מעגל","description":"מרכז, רדיוס וקוטר, ולמה ההיקף הוא בערך פי 3.14 מהקוטר. מגלגלים מעגל ומודדים את פאי. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.","url":"https://shohamtal.github.io/homework-site/math/circle-circumference/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ו","about":"מעגל וגופים","teaches":"מעגל והיקף מעגל","keywords":"רדיוס וקוטר, פאי, היקף מעגל","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.04rem}
+.row button,.tries button{min-height:44px}
+svg.cc{width:100%; max-width:460px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.cc .ground{stroke:var(--ink); stroke-width:2}
+.cc .disc{fill:var(--card); stroke:var(--ink); stroke-width:3}
+.cc .trace{stroke:var(--line); stroke-width:5; stroke-linecap:round}
+.cc .rad{stroke:var(--blue); stroke-width:3; stroke-linecap:round}
+.cc .dia{stroke:var(--line); stroke-width:2.5; stroke-dasharray:6 4}
+.cc .ctr{fill:var(--ink)}
+.cc .dot{fill:var(--line); stroke:var(--card); stroke-width:2}
+.cc .tk{stroke:var(--muted); stroke-width:1.5}
+.cc .rim{fill:none; stroke:var(--line); stroke-width:5}
+.cc text{font:12px var(--f-body); fill:var(--muted); text-anchor:middle}
+.cc text.b{font:700 13px var(--f-body); fill:var(--ink)}
+.cc text.r{fill:var(--blue); font-weight:700}
+.cc text.p{fill:var(--line); font-weight:700}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.ansrow input{font:1.15rem var(--f-math); width:6em; padding:6px 10px; border-radius:8px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.q{font-size:1.15rem; font-weight:600}
+.calc{display:flex; flex-direction:column; gap:6px}
+.big-eq{font:1.5rem var(--f-math); text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="circle-circumference">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-6/">כיתה ו</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-6/#geometry-6">מעגל וגופים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מעגל והיקף מעגל</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ו · מעגל וגופים</div>
+  <h1>מעגל והיקף מעגל <span class="slogan">מגלגלים ומודדים</span></h1>
+  <p class="lead">למעגל יש מרכז, רדיוס וקוטר. ההיקף הוא האורך של הקו מסביב, והוא תמיד בערך פי 3.14 מהקוטר. במעבדה מגלגלים מעגל סיבוב אחד ורואים את ההיקף נפרש על הרצפה. ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מרכז ורדיוס</h3>
+      <p>המרכז הוא הנקודה באמצע. כל נקודה על המעגל נמצאת באותו מרחק ממנו.</p>
+      <p>המרחק הזה הוא ה<strong>רדיוס</strong>. מסמנים אותו באות <span class="eq"><i>r</i></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>קוטר</h3>
+      <p>הקוטר הוא קו ישר מצד לצד, שעובר דרך המרכז. מסמנים אותו <span class="eq"><i>d</i></span>.</p>
+      <p>הקוטר הוא פעמיים הרדיוס: <span class="eq"><i>d</i> = 2 · <i>r</i></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>היקף</h3>
+      <p>ההיקף הוא האורך של הקו מסביב למעגל. כמו חוט שמקיף צלחת.</p>
+      <p>בכל מעגל, גדול או קטן, ההיקף הוא בערך פי 3.14 מהקוטר. למספר הזה קוראים <strong>פאי</strong>, <span class="eq">π</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>הנוסחה:</strong> <span class="eq">היקף = π · <i>d</i></span>, ובקירוב <span class="eq">היקף ≈ 3.14 · <i>d</i></span>. יש רדיוס במקום קוטר? מכפילים אותו ב-2 קודם.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מגלגלים את המעגל</h2></div>
+  <p class="text">בחרו רדיוס. אחר כך לחצו "גלגלו". המעגל מסתובב סיבוב אחד שלם, והקו הוורוד על הרצפה הוא בדיוק ההיקף שלו. השנתות מראות כמה קטרים נכנסים בו.</p>
+  <svg class="cc" id="labSvg" viewBox="0 0 420 175" role="img" aria-label="מעגל שמתגלגל על קו"></svg>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="big-eq" id="labEq" dir="ltr"></div>
+      <label class="slider" for="rr"><span>הרדיוס (ס"מ)</span><span class="eq" id="rrv"></span></label>
+      <input type="range" id="rr" min="1" max="5" step="0.5" value="2">
+      <div class="row"><button id="roll" class="primary">גלגלו את המעגל</button><button id="reset">חזרה להתחלה</button></div>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint calc" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-r="1" dir="ltr">r = 1</button>
+          <button data-r="2.5" dir="ltr">d = 5</button>
+          <button data-r="3.5" dir="ltr">d = 7</button>
+          <button data-r="5" dir="ltr">r = 5</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>שלוש מלכודות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>רדיוס במקום קוטר</h3>
+      <p>הנוסחה משתמשת ב<strong>קוטר</strong>. נתון רדיוס 5? הקוטר הוא 10.</p>
+      <p>נכון: <span class="eq">3.14 · 10 = 31.4</span>. לא <span class="eq">3.14 · 5</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מי זה מי?</h3>
+      <p>הרדיוס הולך מהמרכז עד הקצה. הקוטר הולך מקצה לקצה, דרך המרכז.</p>
+      <p>הקוטר תמיד ארוך פי 2 מהרדיוס, אף פעם לא להפך.</p>
+    </div>
+    <div class="mini">
+      <h3>היקף זה לא שטח</h3>
+      <p>היקף הוא אורך, כמו גדר מסביב. מודדים אותו בס"מ או במטרים.</p>
+      <p>שטח הוא כמה מקום יש בפנים. על שטח עיגול לומדים בנושא הבא.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקה מהירה:</strong> ההיקף צריך לצאת קצת יותר מפי 3 מהקוטר. קוטר 10? ההיקף קצת יותר מ-30. יצא 15 או 60? משהו השתבש.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">לגלגל של אופניים יש רדיוס של 30 ס"מ. כמה מטרים האופניים נוסעים כשהגלגל מסתובב סיבוב אחד?</p>
+    <svg class="cc" id="exSvg" viewBox="0 0 420 175" role="img" aria-label="גלגל האופניים של הדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="q" id="prQ"></p>
+  <svg class="cc" id="prSvg" viewBox="0 0 420 175" role="img" aria-label="המעגל של התרגיל"></svg>
+  <div class="ctrl">
+    <div class="ansrow">
+      <input id="prA" inputmode="decimal" autocomplete="off" aria-label="התשובה">
+      <span>ס"מ</span>
+    </div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים היקף של מעגל?</h3>
+    <p>כופלים את הקוטר ב-3.14. למשל מעגל בקוטר 8 ס"מ: 3.14 כפול 8 זה 25.12 ס"מ. אם נתון רדיוס, מכפילים אותו קודם ב-2 כדי לקבל את הקוטר. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>מה ההבדל בין רדיוס לקוטר?</h3>
+    <p>הרדיוס הוא המרחק מהמרכז של המעגל עד הקצה שלו. הקוטר הוא קו מקצה לקצה שעובר דרך המרכז, ולכן הוא ארוך פי 2 מהרדיוס. רדיוס 4 ס"מ זה קוטר 8 ס"מ.</p>
+    <h3>איך מסבירים לילד מה זה פאי?</h3>
+    <p>לוקחים כוס או צלחת, מודדים בחוט את ההיקף, ואז מודדים את הקוטר. מחלקים את ההיקף בקוטר, ויוצא בערך 3.14. זה יוצא כמעט אותו מספר בכל עיגול, ולמספר הזה קוראים פאי. <a href="#lab">נסו במעבדה</a>. בכיתה ט לומדים על <a href="../circle-angles/">זוויות ומיתרים במעגל</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/circle-angles/">מעגל: זווית מרכזית, זווית היקפית ומיתרים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/map-scale/"><small>→ הנושא הקודם</small>קנה מידה</a><a class="next" href="../../math/circle-area/"><small>הנושא הבא ←</small>שטח עיגול</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {numTxt,parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const n=v=>numTxt(v);
+const E=s=>`<span class="eq">${s}</span>`;
+const num=s=>parseNum(String(s).replace(/,/g,'.'));
+const PI=3.14;
+
+/* one picture for lab, example and practice:
+   r = radius in cm, u = px per cm, dist = rolled length in cm (0..C), opt = what to show */
+function scene(svg,r,u,dist,opt){
+  opt=opt||{};
+  const gy=135, x0=opt.x0||60, R=r*u, C=2*PI*r, d=2*r;
+  const cx=x0+dist*u, cy=gy-R, th=dist/r;
+  let s=`<line class="ground" x1="8" y1="${gy}" x2="412" y2="${gy}"/>`;
+  if(opt.ticks){
+    for(let k=1;k<=3;k++){ const x=x0+k*d*u; if(x>410) break;
+      s+=`<line class="tk" x1="${x}" y1="${gy-6}" x2="${x}" y2="${gy+6}"/><text x="${x}" y="${gy+20}">${k===1?'קוטר 1':k}</text>`; }
+  }
+  if(dist>0) s+=`<line class="trace" x1="${x0}" y1="${gy}" x2="${x0+dist*u}" y2="${gy}"/>`;
+  s+=`<circle class="disc" cx="${cx}" cy="${cy}" r="${R}"/>`;
+  if(opt.rim) s+=`<circle class="rim" cx="${cx}" cy="${cy}" r="${R}"/>`;
+  if(opt.dia) s+=`<line class="dia" x1="${cx-R}" y1="${cy}" x2="${cx+R}" y2="${cy}"/><text class="p" x="${cx}" y="${cy+16}">${opt.diaTxt||'d'}</text>`;
+  if(opt.rad!==false){
+    const px=cx-R*Math.sin(th), py=cy+R*Math.cos(th);
+    s+=`<line class="rad" x1="${cx}" y1="${cy}" x2="${px}" y2="${py}"/><circle class="dot" cx="${px}" cy="${py}" r="5"/>`;
+    if(dist===0 && opt.radTxt) s+=`<text class="r" x="${cx+14}" y="${cy+R/2+4}" text-anchor="start">${opt.radTxt}</text>`;
+  }
+  s+=`<circle class="ctr" cx="${cx}" cy="${cy}" r="3.5"/>`;
+  if(opt.cTxt && dist>=C-1e-9) s+=`<text class="p" x="${x0+C*u/2}" y="${gy+36}">${opt.cTxt}</text>`;
+  svg.innerHTML=s;
+}
+
+/* lab */
+const U=8.8; let anim=null, rolled=0;
+function stop(){ if(anim){ cancelAnimationFrame(anim); anim=null; } }
+function drawLab(){
+  const r=+$('rr').value, C=2*PI*r;
+  scene($('labSvg'),r,U,rolled,{ticks:true,dia:rolled===0,diaTxt:'d = '+n(2*r),radTxt:'r = '+n(r),cTxt:'היקף ≈ '+n(C)});
+}
+function lab(){
+  const r=+$('rr').value, d=2*r, C=PI*d;
+  $('rrv').textContent=n(r);
+  $('labEq').innerHTML=E(`3.14 · ${n(d)} ≈ ${n(C)}`);
+  const t=[`<div>רדיוס ${E('r = '+n(r))}, אז הקוטר ${E(`d = 2 · ${n(r)} = ${n(d)}`)}.</div>`,
+    `<div>ההיקף: ${E(`3.14 · ${n(d)} ≈ ${n(C)}`)} ס"מ.</div>`];
+  if(rolled>=C-1e-9) t.push(`<div>הקו הוורוד נכנס בו הקוטר 3 פעמים, ועוד חתיכה קטנה. זה ה-3.14.</div>`);
+  else t.push('<div>לחצו "גלגלו" וראו את ההיקף נפרש על הרצפה.</div>');
+  $('labTxt').innerHTML=t.join('');
+  drawLab();
+}
+$('rr').addEventListener('input',()=>{ stop(); rolled=0; lab(); });
+$('reset').onclick=()=>{ stop(); rolled=0; lab(); };
+$('roll').onclick=()=>{
+  stop(); rolled=0;
+  const r=+$('rr').value, C=2*PI*r, t0=performance.now(), dur=1800;
+  const step=now=>{
+    const k=Math.min(1,(now-t0)/dur);
+    rolled=C*k; drawLab();
+    if(k<1) anim=requestAnimationFrame(step); else { anim=null; rolled=C; lab(); }
+  };
+  anim=requestAnimationFrame(step);
+};
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{ stop(); rolled=0; $('rr').value=b.dataset.r; lab(); }));
+lab();
+
+/* worked example: bike wheel, r = 30 cm (drawn at r = 3 so it fits) */
+const EX=[
+  [{dia:false,radTxt:'r = 30'},0,'מה יודעים? הרדיוס של הגלגל הוא 30 ס"מ. סיבוב אחד של הגלגל זה בדיוק ההיקף שלו.'],
+  [{dia:true,diaTxt:'d = 60'},0,`<strong>מוצאים קוטר:</strong> הקוטר הוא פעמיים הרדיוס. ${E('d = 2 · 30 = 60')} ס"מ.`],
+  [{rim:true,rad:false},0,`<strong>מחשבים היקף:</strong> ${E('3.14 · 60 = 188.4')} ס"מ.`],
+  [{cTxt:'188.4 ס"מ'},1,`<strong>סיבוב אחד:</strong> הגלגל מתגלגל 188.4 ס"מ. במטרים זה ${E('1.884')} מטר, בערך מטר ושמונים ותשעה.`],
+  [{cTxt:'188.4 ס"מ'},1,`<strong>בודקים:</strong> פי 3 מהקוטר זה ${E('3 · 60 = 180')}. התשובה קצת יותר, כמו שצריך.`]
+];
+let exI=0;
+function ex(){
+  const [o,full,t]=EX[exI], r=3;
+  scene($('exSvg'),r,7.6,full?2*PI*r:0,o);
+  $('exText').innerHTML=t; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){exI++;ex();} };
+$('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+ex();
+
+/* practice */
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const CTX=['צלחת','שעון קיר','גלגל של עגלה','בריכה עגולה','מגש פיצה','שולחן עגול'];
+let pr={}, streak=0, solved=0;
+const close=(v,a)=>Math.abs(v-a)<=0.051;
+function newPr(){
+  const t=pick(['d2c','d2c','r2c','r2c','c2d','r2d']), obj=pick(CTX);
+  pr={t,tries:0,hint:0};
+  $('prFb').innerHTML=''; $('prShow').disabled=true; $('prA').value='';
+  if(t==='d2c'){ const d=ri(2,20); Object.assign(pr,{d,ans:PI*d});
+    $('prQ').textContent=`ל${obj} יש קוטר של ${d} ס"מ. מה ההיקף? (השתמשו ב-3.14)`;
+    scene($('prSvg'),5,8.8,0,{dia:true,diaTxt:'d = '+d,rad:false}); }
+  else if(t==='r2c'){ const r=ri(2,10); Object.assign(pr,{r,d:2*r,ans:PI*2*r});
+    $('prQ').textContent=`ל${obj} יש רדיוס של ${r} ס"מ. מה ההיקף? (השתמשו ב-3.14)`;
+    scene($('prSvg'),5,8.8,0,{radTxt:'r = '+r}); }
+  else if(t==='c2d'){ const d=ri(2,15); Object.assign(pr,{d,C:PI*d,ans:d});
+    $('prQ').textContent=`ל${obj} יש היקף של ${n(PI*d)} ס"מ. מה הקוטר?`;
+    scene($('prSvg'),5,8.8,0,{rim:true,rad:false}); }
+  else { const r=ri(2,25); Object.assign(pr,{r,ans:2*r});
+    $('prQ').textContent=`ל${obj} יש רדיוס של ${r} ס"מ. מה הקוטר?`;
+    scene($('prSvg'),5,8.8,0,{radTxt:'r = '+r}); }
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function good(m){ streak++; solved++; streakTxt(); $('prFb').innerHTML=`<div class="fb ok">נכון! ${m}</div>`; }
+function bad(m){ streak=0; pr.tries++; streakTxt(); $('prFb').innerHTML=`<div class="fb err">${m}</div>`; if(pr.tries>=2) $('prShow').disabled=false; }
+$('prCheck').onclick=()=>{
+  const v=num($('prA').value);
+  if(isNaN(v)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר.</div>'; $('prA').focus(); return; }
+  const {t,ans}=pr;
+  if(close(v,ans) || ((t==='d2c'||t==='r2c') && close(v,Math.PI*pr.d))) return good(t==='r2d'?`הקוטר הוא פעמיים הרדיוס: ${n(ans)} ס"מ.`:t==='c2d'?`${E(`${n(pr.C)} : 3.14 = ${n(ans)}`)}.`:`${E(`3.14 · ${n(pr.d)} = ${n(ans)}`)} ס"מ.`);
+  if(t==='d2c'){
+    if(close(v,PI*pr.d/2)) return bad('חילקתם את הקוטר ב-2. כאן נתון כבר הקוטר, אז כופלים אותו ישר ב-3.14.');
+    if(close(v,2*PI*pr.d)) return bad('הכפלתם את הקוטר ב-2. רק רדיוס צריך להכפיל. הקוטר כבר שלם.');
+    if(close(v,3*pr.d)) return bad('קרוב! כפלתם ב-3. השתמשו ב-3.14 כדי לקבל תשובה מדויקת יותר.');
+    if(close(v,PI+pr.d)) return bad('חיברתם. ההיקף הוא <strong>פי</strong> 3.14 מהקוטר, כלומר כופלים.');
+    if(close(v,PI*pr.d*pr.d)) return bad('כפלתם בקוטר פעמיים. בהיקף כופלים את הקוטר רק ב-3.14.');
+  } else if(t==='r2c'){
+    if(close(v,PI*pr.r)) return bad('חישבתם עם הרדיוס. הנוסחה משתמשת בקוטר. מה הקוטר?');
+    if(close(v,PI*pr.r*pr.r)) return bad('זה כמו חישוב של שטח. להיקף צריך את הקוטר: פעמיים הרדיוס, ואז כפול 3.14.');
+    if(close(v,3*pr.d)) return bad('הקוטר נכון! אבל כפלתם ב-3. השתמשו ב-3.14.');
+    if(close(v,4*PI*pr.r)) return bad('הכפלתם ב-2 פעמיים. הקוטר הוא פעם אחת פעמיים הרדיוס.');
+  } else if(t==='c2d'){
+    if(close(v,pr.C*PI)) return bad('כפלתם ב-3.14. ההיקף כבר גדול פי 3.14 מהקוטר, אז כדי לחזור לקוטר מחלקים.');
+    if(close(v,pr.d/2)) return bad('זה הרדיוס. השאלה היא על הקוטר, שארוך פי 2.');
+    if(close(v,pr.C-PI)) return bad('חיסרתם. ההיקף הוא <strong>פי</strong> 3.14 מהקוטר, אז הפעולה ההפוכה היא חילוק.');
+  } else {
+    if(close(v,pr.r/2)) return bad('חילקתם ב-2. הקוטר <strong>ארוך</strong> מהרדיוס, פי 2.');
+    if(close(v,pr.r)) return bad('זה הרדיוס עצמו. הקוטר עובר מצד לצד, כלומר שני רדיוסים.');
+  }
+  if(ans>0 && Math.abs(v-ans)/ans<0.05) return bad('קרוב מאוד, אבל לא מדויק. בדקו את הכפל שוב.');
+  bad('עוד לא. קחו רמז, או בדקו: ההיקף קצת יותר מפי 3 מהקוטר.');
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {t}=pr; let h;
+  if(t==='d2c') h=pr.hint<2?'ההיקף הוא בערך פי 3.14 מהקוטר.':`כופלים: ${E(`3.14 · ${pr.d}`)}. אפשר לחשב ${E(`3 · ${pr.d}`)} ועוד ${E(`0.14 · ${pr.d}`)}.`;
+  else if(t==='r2c') h=pr.hint<2?'יש לכם רדיוס. הנוסחה צריכה קוטר. הקוטר הוא פעמיים הרדיוס.':`${E(`d = 2 · ${pr.r} = ${pr.d}`)}. עכשיו ${E(`3.14 · ${pr.d}`)}.`;
+  else if(t==='c2d') h=pr.hint<2?'ההיקף גדול פי 3.14 מהקוטר. כדי לחזור לקוטר עושים את הפעולה ההפוכה.':`מחלקים: ${E(`${n(pr.C)} : 3.14`)}.`;
+  else h=pr.hint<2?'הקוטר עובר מצד לצד דרך המרכז.':'הקוטר הוא שני רדיוסים: פעמיים הרדיוס.';
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  const {t}=pr; let h;
+  if(t==='d2c') h=`<div>ההיקף הוא פי 3.14 מהקוטר:</div><div>${E(`3.14 · ${pr.d} = ${n(pr.ans)}`)} ס"מ.</div>`;
+  else if(t==='r2c') h=`<div>קודם קוטר: ${E(`d = 2 · ${pr.r} = ${pr.d}`)}</div><div>אחר כך היקף: ${E(`3.14 · ${pr.d} = ${n(pr.ans)}`)} ס"מ.</div>`;
+  else if(t==='c2d') h=`<div>מחלקים את ההיקף ב-3.14:</div><div>${E(`${n(pr.C)} : 3.14 = ${pr.ans}`)} ס"מ.</div>`;
+  else h=`<div>${E(`d = 2 · ${pr.r} = ${pr.ans}`)} ס"מ.</div>`;
+  $('prFb').innerHTML=`<div class="fb hint calc">${h}<div>עכשיו נסו תרגיל חדש.</div></div>`;
+};
+$('prNew').onclick=newPr;
+$('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

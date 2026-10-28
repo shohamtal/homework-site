@@ -205,12 +205,12 @@ const KN={zero:'אפס',acute:'חדה',right:'ישרה',obtuse:'קהה',straight
 
 /* the angle drawing. base ray points right from vertex, rotated by rot */
 function angleSVG(o){
-  const cx=o.cx, cy=o.cy, R=o.R, a=o.a, rot=o.rot||0, rr=o.rr||R, s=[];
+  const cx=o.cx, cy=o.cy, R=o.R, a=o.a, rot=o.rot||0, rr=o.rr||(o.pro?R+16:R), s=[];
   if(o.pro){ /* protractor: half disc on the base side */
     s.push(`<path class="pro" d="M${P(cx,cy,R+18,rot)} A${R+18},${R+18} 0 0,0 ${P(cx,cy,R+18,rot+180)} Z"/>`);
     for(let t=0;t<=180;t+=5){ const big=t%10===0, r1=R+18, r2=R+18-(t%30===0?12:big?8:4);
       s.push(`<line class="tk${big?' big':''}" x1="${P(cx,cy,r1,rot+t)[0]}" y1="${P(cx,cy,r1,rot+t)[1]}" x2="${P(cx,cy,r2,rot+t)[0]}" y2="${P(cx,cy,r2,rot+t)[1]}"/>`);
-      if(t%30===0){ const [x1,y1]=P(cx,cy,R-2,rot+t), [x2,y2]=P(cx,cy,R-16,rot+t);
+      if(t%30===0){ const tt=Math.min(173,Math.max(7,t)), [x1,y1]=P(cx,cy,R-2,rot+tt), [x2,y2]=P(cx,cy,R-17,rot+tt);
         s.push(`<text class="sc1" x="${x1}" y="${y1}">${t}</text>`); if(o.two) s.push(`<text class="sc2" x="${x2}" y="${y2}">${180-t}</text>`); }
     }
   }

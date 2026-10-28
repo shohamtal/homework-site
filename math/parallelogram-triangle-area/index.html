@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>שטח מקבילית ומשולש · כיתה ה · מירי</title>
+<meta name="description" content="גוזרים מקבילית והופכים אותה למלבן, וחוצים אותה לשני משולשים. כך מגיעים לנוסחאות בסיס כפול גובה. הסבר, מעבדה ותרגול עם רמזים לכיתה ה.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/parallelogram-triangle-area/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="שטח מקבילית ומשולש · כיתה ה · מירי">
+<meta property="og:description" content="גוזרים מקבילית והופכים אותה למלבן, וחוצים אותה לשני משולשים. כך מגיעים לנוסחאות בסיס כפול גובה. הסבר, מעבדה ותרגול עם רמזים לכיתה ה.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/parallelogram-triangle-area/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ה","item":"https://shohamtal.github.io/homework-site/math/grade-5/"},{"@type":"ListItem","position":4,"name":"גאומטריה","item":"https://shohamtal.github.io/homework-site/math/grade-5/#geometry-5"},{"@type":"ListItem","position":5,"name":"שטח מקבילית ומשולש","item":"https://shohamtal.github.io/homework-site/math/parallelogram-triangle-area/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים שטח של מקבילית?","acceptedAnswer":{"@type":"Answer","text":"כופלים את הבסיס בגובה: שטח = בסיס · גובה. הגובה הוא הקו שיורד בזווית ישרה אל הבסיס, לא הצלע המשופעת. למשל בסיס 7 וגובה 3 נותנים 21 סמ״ר. נסו במעבדה."}},{"@type":"Question","name":"איך מחשבים שטח של משולש?","acceptedAnswer":{"@type":"Answer","text":"כופלים בסיס בגובה ומחלקים ב-2: בסיס · גובה : 2. למשל בסיס 10 וגובה 6: 10 · 6 = 60, וחצי מזה 30 סמ״ר. כשהמשולש קהה, הגובה יכול ליפול מחוץ למשולש."}},{"@type":"Question","name":"איך מסבירים לילד למה שטח משולש הוא חצי?","acceptedAnswer":{"@type":"Answer","text":"גוזרים מנייר שני משולשים זהים. מסובבים אחד מהם ומצמידים אותו לשני: יוצאת מקבילית. אז כל משולש הוא חצי מהמקבילית. לפני זה כדאי לחזור על שטח מלבן, ובכיתה ח ממשיכים לשטח משולש בין ישרים."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"שטח מקבילית ומשולש","description":"גוזרים מקבילית והופכים אותה למלבן, וחוצים אותה לשני משולשים. כך מגיעים לנוסחאות בסיס כפול גובה. הסבר, מעבדה ותרגול עם רמזים לכיתה ה.","url":"https://shohamtal.github.io/homework-site/math/parallelogram-triangle-area/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ה","about":"גאומטריה","teaches":"שטח מקבילית ומשולש","keywords":"שטח מקבילית, שטח משולש, גובה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card button{min-height:44px}
+svg.pg{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.pg .cell{fill:none; stroke:var(--soft); stroke-width:1}
+.pg .shape{fill:var(--hl); fill-opacity:.7; stroke:var(--ink); stroke-width:2.5; stroke-linejoin:round}
+.pg .cutp{fill:var(--line); fill-opacity:.35; stroke:var(--ink); stroke-width:2.5; stroke-linejoin:round}
+.pg .copy{fill:var(--blue); fill-opacity:.15; stroke:var(--blue); stroke-width:2; stroke-dasharray:6 4; stroke-linejoin:round}
+.pg .base{stroke:var(--blue); stroke-width:5; stroke-linecap:round}
+.pg .ext{stroke:var(--blue); stroke-width:2; stroke-dasharray:4 4}
+.pg .hline{stroke:var(--line); stroke-width:3; stroke-dasharray:7 5}
+.pg .cutline{stroke:var(--ink); stroke-width:2; stroke-dasharray:3 4}
+.pg .ra{fill:none; stroke:var(--line); stroke-width:2}
+.pg .lbl{font:700 15px var(--f-body); fill:var(--ink); text-anchor:middle; dominant-baseline:central}
+.pg .lbl.b{fill:var(--blue)} .pg .lbl.h{fill:var(--line)} .pg .lbl.s{fill:var(--muted)}
+.pg .mv{transition:transform .9s ease}
+.choices{display:flex; flex-wrap:wrap; gap:10px}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.ansrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.ansrow input{font:1.25rem var(--f-body); width:4.5em; padding:8px 10px; border-radius:10px; border:2px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+.q{font-size:1.15rem; font-weight:600}
+.legend{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; font-weight:600}
+.legend .b{color:var(--blue)} .legend .h{color:var(--line)}
+.nums{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+.nums .box{border:2px solid var(--border); border-radius:12px; padding:6px 12px; text-align:center; min-width:130px}
+.nums .box b{display:block; font-size:1.4rem}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="parallelogram-triangle-area">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-5/">כיתה ה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-5/#geometry-5">גאומטריה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">שטח מקבילית ומשולש</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ה · גאומטריה</div>
+  <h1>שטח מקבילית ומשולש <span class="slogan">גוזרים, מזיזים ומחשבים</span></h1>
+  <p class="lead">איך מחשבים שטח של צורה עם צלעות משופעות? גוזרים חתיכה מהמקבילית, מזיזים אותה לצד השני, ומקבלים מלבן. ומשולש הוא בדיוק חצי ממקבילית. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">טעויות</a><a href="#example">דוגמה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מקבילית הופכת למלבן</h3>
+      <p>חותכים משולש קטן מצד אחד של המקבילית, ומדביקים אותו בצד השני.</p>
+      <p>יוצא מלבן עם אותו שטח: <span class="eq">שטח = בסיס · גובה</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>הגובה עומד ישר</h3>
+      <p>הגובה הוא הקו שיורד מהצלע העליונה אל הבסיס, ופוגש אותו בזווית ישרה.</p>
+      <p>הצלע המשופעת היא <strong>לא</strong> הגובה. היא ארוכה ממנו.</p>
+    </div>
+    <div class="mini">
+      <h3>משולש הוא חצי</h3>
+      <p>שני משולשים זהים יחד יוצרים מקבילית.</p>
+      <p>לכן <span class="eq">שטח משולש = בסיס · גובה : 2</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> מקבילית: בסיס כפול גובה. משולש: אותו דבר, ואז חצי. ובשני המקרים, הגובה ולא הצלע המשופעת.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: גוזרים ומזיזים</h2></div>
+  <div class="choices" id="mode" role="group" aria-label="איזו צורה">
+    <button data-m="para" aria-pressed="true">מקבילית</button>
+    <button data-m="tri" aria-pressed="false">משולש</button>
+  </div>
+  <div class="lab">
+    <div>
+      <svg class="pg" id="labG" viewBox="0 0 300 186" role="img" aria-label="הצורה על דף משבצות"></svg>
+      <p class="legend"><span class="b">כחול: הבסיס</span><span class="h">ורוד מקווקו: הגובה</span></p>
+    </div>
+    <div class="ctrl">
+      <label class="slider" for="b"><span>הבסיס</span><span class="eq" id="bv"></span></label>
+      <input type="range" id="b" min="2" max="9" step="1" value="6">
+      <label class="slider" for="h"><span>הגובה</span><span class="eq" id="hv"></span></label>
+      <input type="range" id="h" min="1" max="6" step="1" value="4">
+      <label class="slider" for="s"><span>כמה הצורה נוטה</span><span class="eq" id="sv"></span></label>
+      <input type="range" id="s" min="0" max="4" step="1" value="2">
+      <div class="row"><button id="cutBtn" class="primary"></button></div>
+      <div class="nums"><div class="box">השטח<b id="nS"></b></div></div>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="para,6,4,2">מקבילית 6 על 4</button>
+          <button data-p="para,5,3,0">בלי נטייה: מלבן</button>
+          <button data-p="para,8,2,4">מקבילית שטוחה</button>
+          <button data-p="tri,6,4,3">משולש 6 על 4</button>
+          <button data-p="tri,8,3,0">משולש ישר זווית</button>
+          <button data-p="tri,2,5,4">הגובה מחוץ למשולש</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הצלע המשופעת במקום הגובה</h3>
+      <p>מקבילית עם בסיס 8, צלע משופעת 5 וגובה 4.</p>
+      <p>השטח הוא <span class="eq">8 · 4 = 32</span>, ולא <span class="eq">8 · 5 = 40</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את החצי</h3>
+      <p>משולש עם בסיס 6 וגובה 4. <span class="eq">6 · 4 = 24</span> זה השטח של המקבילית השלמה.</p>
+      <p>המשולש הוא חצי: <span class="eq">24 : 2 = 12</span>.</p>
+    </div>
+    <div class="mini">
+      <h3>מחלקים גם במקבילית</h3>
+      <p>החצי שייך רק למשולש. במקבילית לא מחלקים ב-2.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>טיפ:</strong> חפשו את הסימן של הזווית הישרה. הקו שמגיע לבסיס בזווית ישרה הוא הגובה.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">מקבילית עם בסיס 6 ס״מ וגובה 4 ס״מ. מה השטח שלה? ומה השטח של משולש עם אותו בסיס ואותו גובה?</p>
+    <svg class="pg" id="exG" viewBox="0 0 300 186" role="img" aria-label="הצורה בדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="q" id="prQ"></p>
+  <svg class="pg" id="prG" viewBox="0 0 300 186" role="img" aria-label="הצורה בתרגיל"></svg>
+  <div class="ctrl">
+    <div class="ansrow" id="prIn"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים שטח של מקבילית?</h3>
+    <p>כופלים את הבסיס בגובה: <span class="eq">שטח = בסיס · גובה</span>. הגובה הוא הקו שיורד בזווית ישרה אל הבסיס, לא הצלע המשופעת. למשל בסיס 7 וגובה 3 נותנים 21 סמ״ר. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך מחשבים שטח של משולש?</h3>
+    <p>כופלים בסיס בגובה ומחלקים ב-2: <span class="eq">בסיס · גובה : 2</span>. למשל בסיס 10 וגובה 6: <span class="eq">10 · 6 = 60</span>, וחצי מזה 30 סמ״ר. כשהמשולש קהה, הגובה יכול ליפול מחוץ למשולש.</p>
+    <h3>איך מסבירים לילד למה שטח משולש הוא חצי?</h3>
+    <p>גוזרים מנייר שני משולשים זהים. מסובבים אחד מהם ומצמידים אותו לשני: יוצאת מקבילית. אז כל משולש הוא חצי מהמקבילית. לפני זה כדאי לחזור על <a href="../rectangle-perimeter-area/">שטח מלבן</a>, ובכיתה ח ממשיכים ל<a href="../triangle-area/">שטח משולש בין ישרים</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/rectangle-perimeter-area/">היקף ושטח של מלבן</a> · <a href="../../math/triangle-area/">שטח משולש בין ישרים לצירים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/triangle-types/"><small>→ הנושא הקודם</small>סוגי משולשים</a><a class="next" href="../../math/box-volume/"><small>הנושא הבא ←</small>תיבה ונפח</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,eqv,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+
+/* Draw a parallelogram (mode 'para') or triangle (mode 'tri') with base b, height h and lean s, in grid units.
+   o: {grid, moved (para: cut piece moved), anim, copy (tri: dashed second triangle), cutline, lb, lh, ls (label texts)} */
+const U=20, X=20, ROWS=7, COLS=13, YB=14+ROWS*U;
+function fig(svg,b,h,s,mode,o){
+  o=o||{}; let t='';
+  if(o.grid!==false) for(let i=0;i<COLS;i++) for(let j=0;j<ROWS;j++) t+=`<rect class="cell" x="${X+i*U}" y="${14+j*U}" width="${U}" height="${U}"/>`;
+  const yt=YB-h*U, A=[X,YB], B=[X+b*U,YB], C=[X+(b+s)*U,yt], D=[X+s*U,yt], F=[X+s*U,YB];
+  const P=pts=>pts.map(p=>p.join(',')).join(' ');
+  if(mode==='para'){
+    if(s>0 && (o.moved||o.anim)){
+      t+=`<polygon class="shape" points="${P([F,B,C,D])}"/>`;
+      t+=`<g class="mv" id="${svg.id}mv" style="transform:translate(${o.anim?0:b*U}px,0px)"><polygon class="cutp" points="${P([A,F,D])}"/></g>`;
+    } else {
+      t+=`<polygon class="shape" points="${P([A,B,C,D])}"/>`;
+      if(s>0 && o.cutline) t+=`<polygon class="cutp" points="${P([A,F,D])}"/>`;
+    }
+  } else {
+    if(o.copy) t+=`<polygon class="copy" points="${P([B,C,D])}"/>`;
+    t+=`<polygon class="shape" points="${P([A,B,D])}"/>`;
+    if(s>b) t+=`<line class="ext" x1="${B[0]}" y1="${YB}" x2="${F[0]}" y2="${YB}"/>`;
+  }
+  t+=`<line class="base" x1="${A[0]}" y1="${YB}" x2="${B[0]}" y2="${YB}"/>`;
+  if(o.showH!==false){
+    const hx=(mode==='para'&&s===0)?X+b*U:D[0], dir=hx>=X+(b*U)/2?-1:1;
+    t+=`<line class="hline" x1="${hx}" y1="${yt}" x2="${hx}" y2="${YB}"/>`;
+    t+=`<polyline class="ra" points="${hx+dir*9},${YB} ${hx+dir*9},${YB-9} ${hx},${YB-9}"/>`;
+    if(o.lh!==null) t+=`<text class="lbl h" x="${hx-dir*14}" y="${(yt+YB)/2}">${o.lh!==undefined?o.lh:h}</text>`;
+  }
+  if(o.lb!==null) t+=`<text class="lbl b" x="${(A[0]+B[0])/2}" y="${YB+14}">${o.lb!==undefined?o.lb:b}</text>`;
+  if(o.ls) t+=`<text class="lbl s" x="${(A[0]+D[0])/2-12}" y="${(YB+yt)/2-6}">${o.ls}</text>`;
+  svg.innerHTML=t;
+  if(o.anim){ const g=svg.querySelector('.mv'); requestAnimationFrame(()=>requestAnimationFrame(()=>{ if(g) g.style.transform=`translate(${b*U}px,0px)`; })); }
+}
+
+/* lab */
+let mode='para', moved=false;
+function clampS(){ const b=+$('b').value, max=mode==='para'?Math.min(4,b-1):4; $('s').max=max; if(+$('s').value>max) $('s').value=max; }
+function lab(anim){
+  $('mode').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.m===mode));
+  clampS();
+  const b=+$('b').value, h=+$('h').value, s=+$('s').value;
+  $('bv').textContent=b+' ס״מ'; $('hv').textContent=h+' ס״מ'; $('sv').textContent=s===0?'ישר':s+' משבצות';
+  let t='';
+  if(mode==='para'){
+    $('cutBtn').textContent=moved?'מחזירים את החתיכה':'גוזרים ומזיזים';
+    $('cutBtn').disabled=s===0;
+    fig($('labG'),b,h,s,'para',{moved:moved&&!anim, anim:moved&&anim, cutline:!moved});
+    $('nS').textContent=b*h+' סמ״ר';
+    if(s===0) t+='<div>אין נטייה, אז זה כבר מלבן. הגובה הוא הצלע הצדדית.</div>';
+    else if(!moved) t+='<div>המשולש הוורוד הוא החתיכה שנגזור. לחצו על "גוזרים ומזיזים".</div>';
+    else t+=`<div>החתיכה עברה לצד השני ויצא מלבן של ${E(`${b} · ${h}`)}. לא הוספנו ולא הורדנו כלום.</div>`;
+    t+=`<div>${E(`שטח = ${b} · ${h} = ${b*h}`)} סמ״ר.</div>`;
+    if(s>0) t+='<div>שנו את הנטייה: הצלע המשופעת משתנה, אבל השטח נשאר אותו דבר.</div>';
+  } else {
+    $('cutBtn').textContent=moved?'מסתירים את המשולש השני':'מוסיפים משולש זהה';
+    $('cutBtn').disabled=false;
+    fig($('labG'),b,h,s,'tri',{copy:moved});
+    const S=b*h/2; $('nS').textContent=S+' סמ״ר';
+    t+=`<div>${E(`${b} · ${h} = ${b*h}`)}, וחצי מזה: ${E(`${b*h} : 2 = ${S}`)} סמ״ר.</div>`;
+    t+=moved?'<div>שני המשולשים יחד הם מקבילית. לכן המשולש הוא חצי ממנה.</div>':'<div>לחצו על "מוסיפים משולש זהה" כדי לראות למה מחלקים ב-2.</div>';
+    if(s>b) t+='<div>המשולש קהה, אז הגובה נופל מחוץ לו. ממשיכים את הבסיס בקו מקווקו.</div>';
+    if(s===0) t+='<div>כאן זווית ישרה, אז הגובה הוא הצלע עצמה.</div>';
+  }
+  $('labTxt').innerHTML=t;
+}
+$('mode').querySelectorAll('button').forEach(x=>x.addEventListener('click',()=>{ mode=x.dataset.m; moved=false; lab(); }));
+['b','h','s'].forEach(id=>$(id).addEventListener('input',()=>lab()));
+$('cutBtn').addEventListener('click',()=>{ moved=!moved; lab(moved&&mode==='para'); });
+document.querySelectorAll('#lab .tries button').forEach(x=>x.addEventListener('click',()=>{
+  const [m,b,h,s]=x.dataset.p.split(','); mode=m; moved=false; $('b').value=b; $('h').value=h; $('s').max=4; $('s').value=s; lab();
+}));
+lab();
+
+/* worked example: base 6, height 4, lean 2 */
+const EX=[
+  ['para',{cutline:false,showH:false,ls:'?'},'זו המקבילית. הבסיס הוא 6 משבצות. הצלע המשופעת היא לא הגובה, ולכן לא נשתמש בה.'],
+  ['para',{cutline:false},'מורידים קו ישר מהצלע העליונה אל הבסיס, בזווית ישרה. זה הגובה: 4 משבצות.'],
+  ['para',{cutline:true},'גוזרים לאורך הגובה. המשולש הוורוד הוא החתיכה שנזיז.'],
+  ['para',{moved:true},`מזיזים אותו לצד השני ויוצא מלבן של 6 על 4. ${E('6 · 4 = 24')} סמ״ר.`],
+  ['tri',{copy:true},`עכשיו משולש עם אותו בסיס ואותו גובה. הוא חצי מהמקבילית: ${E('24 : 2 = 12')} סמ״ר.`]
+];
+let exI=0;
+function ex(){
+  const [m,o,txt]=EX[exI];
+  fig($('exG'),6,4,2,m,o);
+  $('exText').innerHTML=txt;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){exI++;ex();} }; $('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+ex();
+
+/* practice */
+let pr={}, streak=0, solved=0;
+const TRIPLES=[[3,4,5],[4,3,5],[6,8,10],[8,6,10]];
+function newPr(){
+  let t; do{ t=pick(['pGrid','tGrid','pWord','tWord','missH']); }while(t===pr.t);
+  let q, grd=true;
+  if(t==='pGrid'){ const b=ri(3,8), h=ri(2,5), s=ri(1,Math.min(3,b-1)); pr={t,b,h,s,ans:b*h}; q='מה השטח של המקבילית? כל משבצת היא סמ״ר אחד.'; fig($('prG'),b,h,s,'para',{lb:null,lh:null}); }
+  if(t==='tGrid'){ let b,h,s; do{ b=ri(2,9); h=ri(2,6); s=ri(0,4); }while((b*h)%2); pr={t,b,h,s,ans:b*h/2}; q='מה השטח של המשולש? כל משבצת היא סמ״ר אחד.'; fig($('prG'),b,h,s,'tri',{lb:null,lh:null}); }
+  if(t==='pWord'){ const [s,h,L]=pick(TRIPLES.slice(0,2)), b=ri(6,12); pr={t,b,h,L,ans:b*h}; q=`מקבילית עם בסיס ${b} ס״מ, צלע משופעת ${L} ס״מ וגובה ${h} ס״מ. מה השטח שלה?`; fig($('prG'),7,4,3,'para',{grid:false,lb:b,lh:h,ls:L}); }
+  if(t==='tWord'){ const [s,h,L]=pick(TRIPLES), b=2*ri(3,6); pr={t,b,h,L,ans:b*h/2}; q=`משולש עם בסיס ${b} ס״מ וגובה ${h} ס״מ. הצלע המשופעת שלו ${L} ס״מ. מה השטח שלו?`; fig($('prG'),7,4,2,'tri',{grid:false,lb:b,lh:h,ls:L}); }
+  if(t==='missH'){ const b=ri(3,9), h=ri(2,8); pr={t,b,h,S:b*h,ans:h}; q=`למקבילית יש שטח של ${b*h} סמ״ר, והבסיס שלה ${b} ס״מ. מה הגובה שלה?`; grd=false; }
+  pr.tries=0; pr.hint=0;
+  $('prQ').textContent=q;
+  $('prG').style.display=grd?'':'none';
+  $('prIn').innerHTML=`<input id="a1" inputmode="numeric" autocomplete="off" aria-label="התשובה"><span>${t==='missH'?'ס״מ':'סמ״ר'}</span>`;
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('a1').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {t,b,h}=pr;
+  if(t==='pGrid') return `הבסיס ${b} משבצות והגובה ${h} משבצות: ${E(`${b} · ${h} = ${pr.ans}`)} סמ״ר.`;
+  if(t==='tGrid') return `הבסיס ${b} והגובה ${h}: ${E(`${b} · ${h} = ${b*h}`)}, וחצי מזה ${E(`${b*h} : 2 = ${pr.ans}`)} סמ״ר.`;
+  if(t==='pWord') return `משתמשים בגובה, לא בצלע המשופעת: ${E(`${b} · ${h} = ${pr.ans}`)} סמ״ר.`;
+  if(t==='tWord') return `בסיס כפול גובה, ואז חצי: ${E(`${b} · ${h} = ${b*h}`)}, ${E(`${b*h} : 2 = ${pr.ans}`)} סמ״ר.`;
+  if(t==='missH') return `${E(`${b} · ? = ${pr.S}`)}, אז ${E(`${pr.S} : ${b} = ${h}`)} ס״מ.`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), {t,b,h}=pr; if(!t) return;
+  const ok=()=>{ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`; };
+  const bad=msg=>{ streak=0; pr.tries++; streakTxt(); fb.innerHTML=`<div class="fb err">${msg}</div>`; if(pr.tries>=2) $('prShow').disabled=false; };
+  const inp=$('a1'); if(!inp) return;
+  const v=parseNum(inp.value);
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; inp.focus(); return; }
+  if(eqv(v,pr.ans)) return ok();
+  if(t==='pGrid'){
+    if(eqv(v,b*h/2)) return bad('זו מקבילית, לא משולש. במקבילית לא מחלקים ב-2.');
+    if(eqv(v,(b+pr.s)*h)) return bad('ספרתם את כל הרוחב, כולל החלק שבולט. הבסיס הוא רק הצלע הכחולה שלמטה.');
+    if(eqv(v,b+h)) return bad('בשטח כופלים, לא מחברים.');
+    return bad('ספרו את המשבצות לאורך הבסיס, ואז כמה שורות יש מהבסיס עד למעלה.');
+  }
+  if(t==='tGrid'){
+    if(eqv(v,b*h)) return bad('זה השטח של מקבילית שלמה. המשולש הוא חצי ממנה.');
+    if(eqv(v,(b+h)/2)||eqv(v,b+h)) return bad('בשטח כופלים בסיס בגובה, ורק אחר כך מחלקים ב-2.');
+    return bad('ספרו את הבסיס ואת הגובה במשבצות. אחר כך כפלו ומצאו חצי.');
+  }
+  if(t==='pWord'){
+    if(eqv(v,b*pr.L)) return bad('השתמשתם בצלע המשופעת. השטח הוא בסיס כפול <strong>גובה</strong>.');
+    if(eqv(v,b*h/2)) return bad('זו מקבילית. החצי שייך רק למשולש.');
+    if(eqv(v,2*(b+pr.L))) return bad('זה ההיקף, הדרך מסביב. אנחנו מחפשים שטח.');
+    return bad('איזה מהמספרים הוא הגובה? כפלו אותו בבסיס.');
+  }
+  if(t==='tWord'){
+    if(eqv(v,b*h)) return bad('שכחתם לחלק ב-2. זה השטח של המקבילית השלמה.');
+    if(eqv(v,b*pr.L/2)||eqv(v,b*pr.L)) return bad('השתמשתם בצלע המשופעת. צריך את הגובה.');
+    return bad('כפלו בסיס בגובה, ואז מצאו חצי.');
+  }
+  if(t==='missH'){
+    if(eqv(v,pr.S-b)) return bad('בשטח כופלים, אז כדי למצוא את הגובה מחלקים, לא מחסרים.');
+    if(eqv(v,pr.S*b)) return bad('כפלתם. מחפשים מספר שכפול הבסיס נותן את השטח.');
+    if(eqv(v,pr.S/b/2)) return bad('זו מקבילית, לא משולש. אין חצי.');
+    return bad(`איזה מספר כפול ${b} נותן ${pr.S}?`);
+  }
+  bad('נסו שוב.');
+};
+$('prHint').onclick=()=>{
+  if(!pr.t) return;
+  pr.hint=Math.min(pr.hint+1,2); const {t,b,h}=pr, h2=pr.hint>=2; let m;
+  if(t==='pGrid') m=h2?`הבסיס ${b} משבצות והגובה ${h} משבצות. כמה זה ${E(`${b} · ${h}`)}?`:'הבסיס הוא הצלע הכחולה שלמטה. הגובה הוא הקו הוורוד. ספרו כמה משבצות כל אחד.';
+  if(t==='tGrid') m=h2?`${E(`${b} · ${h} = ${b*h}`)}. עכשיו מצאו חצי מזה.`:'המשולש הוא חצי ממקבילית עם אותו בסיס ואותו גובה. ספרו את שניהם.';
+  if(t==='pWord') m=h2?`הגובה הוא ${h}, והצלע המשופעת ${pr.L} רק מבלבלת. כמה זה ${E(`${b} · ${h}`)}?`:'יש כאן שלושה מספרים. רק שניים מהם צריך: הבסיס והגובה.';
+  if(t==='tWord') m=h2?`${E(`${b} · ${h} = ${b*h}`)}. וחצי מזה?`:'משתמשים בבסיס ובגובה. הצלע המשופעת לא נכנסת לחישוב.';
+  if(t==='missH') m=h2?`${E(`${b} · ? = ${pr.S}`)}. חלקו ${pr.S} ב-${b}.`:'שטח מקבילית הוא בסיס כפול גובה. הבסיס ידוע.';
+  $('prFb').innerHTML=`<div class="fb hint">${m}</div>`;
+};
+$('prShow').onclick=()=>{ if(!pr.t) return; $('prFb').innerHTML=`<div class="fb hint"><div>${solution()}</div><div>עכשיו נסו תרגיל חדש.</div></div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

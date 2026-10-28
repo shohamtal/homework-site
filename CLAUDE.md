@@ -1,6 +1,6 @@
 # Homework site — notes for Claude
 
-- Audience: Israeli middle- and high-school kids (math grades 7–12 are complete; English and Hebrew are בקרוב). Hebrew, RTL, plural address (נסו, בחרו), short simple sentences, no em-dashes, no student names.
+- Audience: Israeli school kids, grades 1 to 12 (math grades 1–12 are complete; English and Hebrew are בקרוב). Hebrew, RTL, plural address (נסו, בחרו), short simple sentences, no em-dashes, no student names.
 - Every topic page follows the same pattern and look: sitebar → header.page → numbered section.card blocks: idea (mini cards) → **slider lab** (the parent's favorite: sliders + live graph + live explanation box + "נסו את אלה" presets) → method / pitfalls callout → worked-example stepper → practice with diagnostic feedback, progressive hints, solution only after 2 wrong tries → topicNav + footer.
 - Look: "comic clean" (light only): white dotted background, 2px black outlines with a hard offset shadow (`--hard`), Secular One headings, Rubik body, STIX Two Text for math, pink `--line` accent, yellow `--hl` badges. Thin dividers use `--soft`.
 - Math inside Hebrew text goes in `.eq` spans (LTR, isolated). A long equation may be split into several adjacent `.eq` spans so it can wrap; nav.js wraps each run in an LTR `.eq-run` so the pieces still read left to right (not inside flex or grid containers, which lay out their children themselves).

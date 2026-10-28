@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>שטח עיגול · כיתה ו · מירי</title>
+<meta name="description" content="חותכים עיגול לפרוסות ומסדרים אותן כמעט כמלבן. כך מגיעים לנוסחה π כפול רדיוס בריבוע. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/circle-area/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="שטח עיגול · כיתה ו · מירי">
+<meta property="og:description" content="חותכים עיגול לפרוסות ומסדרים אותן כמעט כמלבן. כך מגיעים לנוסחה π כפול רדיוס בריבוע. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/circle-area/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה ו","item":"https://shohamtal.github.io/homework-site/math/grade-6/"},{"@type":"ListItem","position":4,"name":"מעגל וגופים","item":"https://shohamtal.github.io/homework-site/math/grade-6/#geometry-6"},{"@type":"ListItem","position":5,"name":"שטח עיגול","item":"https://shohamtal.github.io/homework-site/math/circle-area/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מחשבים שטח של עיגול?","acceptedAnswer":{"@type":"Answer","text":"כופלים את הרדיוס בעצמו, ואת התוצאה כופלים ב-3.14. למשל עיגול עם רדיוס 4 ס״מ: 3.14 · 4 · 4 = 50.24 סמ״ר. תרגלו למטה."}},{"@type":"Question","name":"מה ההבדל בין שטח עיגול להיקף מעגל?","acceptedAnswer":{"@type":"Answer","text":"ההיקף הוא האורך מסביב, והנוסחה שלו 2 · π · r. השטח הוא כמה מקום יש בפנים, והנוסחה שלו π · r². ההיקף בס״מ, השטח בסמ״ר. על ההיקף אפשר לקרוא במעגל והיקף מעגל."}},{"@type":"Question","name":"איך מסבירים לילד למה השטח הוא π כפול רדיוס בריבוע?","acceptedAnswer":{"@type":"Answer","text":"גוזרים עיגול מנייר לשמונה פרוסות, ומסדרים אותן בשורה, חוד למעלה וחוד למטה. מקבלים צורה שדומה למלבן: הגובה שלו הוא הרדיוס, והרוחב הוא חצי מההיקף. רוחב כפול גובה נותן את הנוסחה. במעבדה רואים את זה עם יותר פרוסות."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"שטח עיגול","description":"חותכים עיגול לפרוסות ומסדרים אותן כמעט כמלבן. כך מגיעים לנוסחה π כפול רדיוס בריבוע. הסבר, מעבדה ותרגול עם רמזים לכיתה ו.","url":"https://shohamtal.github.io/homework-site/math/circle-area/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ו","about":"מעגל וגופים","teaches":"שטח עיגול","keywords":"שטח עיגול, רדיוס בריבוע, פאי","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card button{min-height:44px}
+svg.ca{width:100%; max-width:340px; height:auto; display:block; margin-inline:auto; direction:ltr}
+.ca .s1{fill:var(--hl); stroke:var(--ink); stroke-width:1.2; stroke-linejoin:round}
+.ca .s2{fill:var(--line); fill-opacity:.35; stroke:var(--ink); stroke-width:1.2; stroke-linejoin:round}
+.ca .circ{fill:var(--card); stroke:var(--ink); stroke-width:2}
+.ca .rad{stroke:var(--blue); stroke-width:3; stroke-linecap:round}
+.ca .dia{stroke:var(--line); stroke-width:3; stroke-linecap:round; stroke-dasharray:6 5}
+.ca .dot{fill:var(--ink)}
+.ca .brace{stroke:var(--blue); stroke-width:2; fill:none}
+.ca .brace.h{stroke:var(--line)}
+.ca .lbl{font:700 13px var(--f-math); fill:var(--ink); text-anchor:middle; dominant-baseline:central; paint-order:stroke; stroke:var(--card); stroke-width:3px}
+.ca .lbl.b{fill:var(--blue)} .ca .lbl.p{fill:var(--line)}
+.ca .cap{font:600 12px var(--f-body); fill:var(--muted); text-anchor:middle; dominant-baseline:central}
+.ansrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.ansrow input{font:1.25rem var(--f-body); width:6em; padding:8px 10px; border-radius:10px; border:2px solid var(--border); background:var(--paper); color:var(--ink); text-align:center}
+.q{font-size:1.15rem; font-weight:600}
+.nums{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+.nums .box{border:2px solid var(--border); border-radius:12px; padding:6px 12px; text-align:center; min-width:120px}
+.nums .box b{display:block; font-size:1.3rem}
+.nums .ar{border-color:var(--hl)} .nums .per{border-color:var(--line)}
+</style>
+</head>
+<body data-root="../../" data-subject="math" data-topic="circle-area">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/">מתמטיקה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-6/">כיתה ו</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../math/grade-6/#geometry-6">מעגל וגופים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">שטח עיגול</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ו · מעגל וגופים</div>
+  <h1>שטח עיגול <span class="slogan">פרוסות שהופכות למלבן</span></h1>
+  <p class="lead">כמה בצק יש בפיצה עגולה? כדי לדעת, חותכים את העיגול לפרוסות ומסדרים אותן אחת ליד השנייה. מתקבל כמעט מלבן, ואת השטח של מלבן כבר יודעים לחשב. במעבדה מזיזים מחוונים ורואים מה קורה, ובתרגול מקבלים רמזים במקום תשובות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">טעויות</a><a href="#example">דוגמה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חותכים ומסדרים</h3>
+      <p>חותכים את העיגול להרבה פרוסות שוות.</p>
+      <p>שמים אותן בשורה: אחת עם החוד למעלה, אחת עם החוד למטה.</p>
+    </div>
+    <div class="mini">
+      <h3>כמעט מלבן</h3>
+      <p>הגובה של ה"מלבן" הוא הרדיוס <span class="eq"><i>r</i></span>.</p>
+      <p>הרוחב הוא חצי מההיקף: <span class="eq">π · <i>r</i></span>.</p>
+    </div>
+    <div class="mini">
+      <h3>הנוסחה</h3>
+      <p>רוחב כפול גובה: <span class="eq">π · <i>r</i> · <i>r</i></span>.</p>
+      <p>ובקיצור: <span class="eq">שטח = π · <i>r</i>²</span>. נחשב עם <span class="eq">π ≈ 3.14</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> קודם כופלים את הרדיוס בעצמו, ואז כופלים ב-3.14. השטח יוצא בסמ״ר.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: חותכים את העיגול</h2></div>
+  <p class="text">הזיזו את מספר הפרוסות. ככל שיש יותר פרוסות, הצורה למטה נראית יותר כמו מלבן. הזיזו גם את הרדיוס וראו איך השטח משתנה.</p>
+  <div class="lab">
+    <svg class="ca" id="labG" viewBox="0 0 300 270" role="img" aria-label="עיגול חתוך לפרוסות, והפרוסות מסודרות כמעט כמלבן"></svg>
+    <div class="ctrl">
+      <label class="slider" for="r"><span>הרדיוס <span class="eq"><i>r</i></span></span><span class="eq" id="rv"></span></label>
+      <input type="range" id="r" min="1" max="10" step="1" value="5">
+      <label class="slider" for="n"><span>מספר הפרוסות</span><span class="eq" id="nv"></span></label>
+      <input type="range" id="n" min="4" max="32" step="2" value="8">
+      <div class="nums"><div class="box per">חצי היקף<b id="nH"></b></div><div class="box ar">שטח<b id="nS"></b></div></div>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries">
+          <button data-p="5,4">4 פרוסות</button>
+          <button data-p="5,16">16 פרוסות</button>
+          <button data-p="5,32">32 פרוסות</button>
+          <button data-p="2,16">רדיוס 2</button>
+          <button data-p="4,16">רדיוס 4 (פי 2)</button>
+          <button data-p="10,24">רדיוס 10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מחשבים היקף במקום שטח</h3>
+      <p><span class="eq">2 · π · <i>r</i></span> זה ההיקף, האורך מסביב.</p>
+      <p>השטח הוא <span class="eq">π · <i>r</i> · <i>r</i></span>: הרדיוס פעמיים, ואין 2.</p>
+    </div>
+    <div class="mini">
+      <h3>משתמשים בקוטר</h3>
+      <p>קוטר 10 ס״מ? הרדיוס הוא 5.</p>
+      <p>מחשבים <span class="eq">3.14 · 5 · 5 = 78.5</span>, לא <span class="eq">3.14 · 10 · 10</span>. זה יוצא פי 4 גדול מדי.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את הריבוע</h3>
+      <p><span class="eq">3.14 · 5 = 15.7</span> זה רק חצי ההיקף.</p>
+      <p>צריך לכפול שוב ברדיוס: <span class="eq">15.7 · 5 = 78.5</span>.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>טיפ:</strong> לפני שמחשבים, שאלו: נתון לי רדיוס או קוטר? אם קוטר, חלקו קודם ב-2.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">לפיצה עגולה יש קוטר של 30 ס״מ. מה השטח שלה?</p>
+    <svg class="ca" id="exG" viewBox="0 0 300 200" role="img" aria-label="הפיצה בדוגמה"></svg>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="q" id="prQ"></p>
+  <svg class="ca" id="prG" viewBox="0 0 300 200" role="img" aria-label="העיגול בתרגיל"></svg>
+  <div class="ctrl">
+    <div class="ansrow" id="prIn"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מחשבים שטח של עיגול?</h3>
+    <p>כופלים את הרדיוס בעצמו, ואת התוצאה כופלים ב-3.14. למשל עיגול עם רדיוס 4 ס״מ: <span class="eq">3.14 · 4 · 4 = 50.24</span> סמ״ר. <a href="#practice">תרגלו למטה</a>.</p>
+    <h3>מה ההבדל בין שטח עיגול להיקף מעגל?</h3>
+    <p>ההיקף הוא האורך מסביב, והנוסחה שלו <span class="eq">2 · π · <i>r</i></span>. השטח הוא כמה מקום יש בפנים, והנוסחה שלו <span class="eq">π · <i>r</i>²</span>. ההיקף בס״מ, השטח בסמ״ר. על ההיקף אפשר לקרוא ב<a href="../circle-circumference/">מעגל והיקף מעגל</a>.</p>
+    <h3>איך מסבירים לילד למה השטח הוא π כפול רדיוס בריבוע?</h3>
+    <p>גוזרים עיגול מנייר לשמונה פרוסות, ומסדרים אותן בשורה, חוד למעלה וחוד למטה. מקבלים צורה שדומה למלבן: הגובה שלו הוא הרדיוס, והרוחב הוא חצי מההיקף. רוחב כפול גובה נותן את הנוסחה. במעבדה רואים את זה עם יותר פרוסות.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../math/circle-circumference/">מעגל והיקף מעגל</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../math/circle-circumference/"><small>→ הנושא הקודם</small>מעגל והיקף מעגל</a><a class="next" href="../../math/prisms/"><small>הנושא הבא ←</small>מנסרות וגופים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/graph.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const {parseNum,pick}=G;
+const $=id=>document.getElementById(id);
+const E=s=>`<span class="eq">${s}</span>`;
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const PI=3.14;
+const fmt=x=>String(Math.round(x*100)/100);
+const near=(v,a)=>Math.abs(v-a)<=Math.max(0.05,Math.abs(a)*0.005);
+const f1=x=>x.toFixed(1);
+
+/* one pie slice: apex (ax,ay), pointing at angle th, radius R, opening a */
+function slice(ax,ay,th,R,a,cls){
+  const x1=ax+R*Math.cos(th-a/2), y1=ay+R*Math.sin(th-a/2), x2=ax+R*Math.cos(th+a/2), y2=ay+R*Math.sin(th+a/2);
+  return `<path class="${cls}" d="M${f1(ax)} ${f1(ay)} L${f1(x1)} ${f1(y1)} A${f1(R)} ${f1(R)} 0 0 1 ${f1(x2)} ${f1(y2)} Z"/>`;
+}
+
+/* lab: circle cut into n slices on top, rearranged below */
+function lab(){
+  const r=+$('r').value, n=+$('n').value;
+  $('rv').textContent=r+' ס״מ'; $('nv').textContent=String(n);
+  const R=14+r*4.2, a=2*Math.PI/n;
+  let s='';
+  const cx=150, cy=10+R;
+  for(let k=0;k<n;k++) s+=slice(cx,cy,-Math.PI/2+(k+.5)*a,R,a,k%2?'s2':'s1');
+  s+=`<line class="rad" x1="${cx}" y1="${cy}" x2="${f1(cx+R)}" y2="${cy}"/><circle class="dot" cx="${cx}" cy="${cy}" r="3"/>`;
+  s+=`<text class="lbl b" x="${f1(cx+R/2)}" y="${f1(cy-10)}">r</text>`;
+  /* rearranged: half the slices point down (arc at the bottom), half point up */
+  const c=2*R*Math.sin(a/2), W=(n/2)*c, top=cy+R+30, X0=150-(W+c/2)/2, h=R*Math.cos(a/2);
+  for(let k=0;k<n;k++){
+    if(k%2===0){ const ax=X0+c/2+(k/2)*c; s+=slice(ax,top,Math.PI/2,R,a,'s1'); }
+    else { const ax=X0+c+((k-1)/2)*c; s+=slice(ax,top+h,-Math.PI/2,R,a,'s2'); }
+  }
+  const by=top+h+16;
+  s+=`<path class="brace h" d="M${f1(X0+c/2)} ${f1(by-5)} V${f1(by)} H${f1(X0+c/2+W)} V${f1(by-5)}"/>`;
+  s+=`<text class="lbl p" x="${f1(X0+c/2+W/2)}" y="${f1(by+12)}">π · r ≈ ${fmt(PI*r)}</text>`;
+  const sx=X0+W+c/2+10;
+  s+=`<path class="brace" d="M${f1(sx-4)} ${f1(top)} H${f1(sx)} V${f1(top+h)} H${f1(sx-4)}"/>`;
+  s+=`<text class="lbl b" x="${f1(sx+12)}" y="${f1(top+h/2)}">r</text>`;
+  $('labG').innerHTML=s;
+  const H=PI*r, S=PI*r*r;
+  $('nH').textContent=fmt(H)+' ס״מ'; $('nS').textContent=fmt(S)+' סמ״ר';
+  let t=`<div>הגובה הוא הרדיוס: ${E(`<i>r</i> = ${r}`)}.</div>`;
+  t+=`<div>הרוחב הוא חצי מההיקף: ${E(`3.14 · ${r} = ${fmt(H)}`)}.</div>`;
+  t+=`<div>השטח: ${E(`${fmt(H)} · ${r}`)} ${E(`= ${fmt(S)}`)} סמ״ר.</div>`;
+  t+=n<=8?'<div>עם מעט פרוסות הצורה גלית. הוסיפו פרוסות.</div>':n>=24?'<div>עם הרבה פרוסות זה כמעט מלבן מושלם.</div>':'<div>עוד פרוסות, והקצוות נעשים ישרים יותר.</div>';
+  if(r<=5) t+=`<div>אם הרדיוס היה ${2*r}, השטח היה ${fmt(PI*4*r*r)}: פי 4, לא פי 2.</div>`;
+  $('labTxt').innerHTML=t;
+}
+['r','n'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{ const [r,n]=b.dataset.p.split(','); $('r').value=r; $('n').value=n; lab(); }));
+lab();
+
+/* a plain circle with radius or diameter marked */
+function circ(svg,R,opt){
+  opt=opt||{}; const cx=150, cy=100; let s=`<circle class="circ" cx="${cx}" cy="${cy}" r="${R}"/>`;
+  if(opt.fill) s=`<circle class="s1" cx="${cx}" cy="${cy}" r="${R}"/>`;
+  if(opt.half) s=`<circle class="circ" cx="${cx}" cy="${cy}" r="${R}" stroke-dasharray="4 5"/><path class="s1" d="M${cx-R} ${cy} A${R} ${R} 0 0 1 ${cx+R} ${cy} Z"/>`;
+  if(opt.dia) s+=`<line class="dia" x1="${cx-R}" y1="${cy}" x2="${cx+R}" y2="${cy}"/><text class="lbl p" x="${cx-R/2}" y="${cy+14}">${opt.dia}</text>`;
+  if(opt.rad) s+=`<line class="rad" x1="${cx}" y1="${cy}" x2="${cx+R}" y2="${cy}"/><text class="lbl b" x="${cx+R/2}" y="${cy-12}">${opt.rad}</text>`;
+  s+=`<circle class="dot" cx="${cx}" cy="${cy}" r="3"/>`;
+  if(opt.cap) s+=`<text class="cap" x="${cx}" y="${cy+R+16}">${opt.cap}</text>`;
+  svg.innerHTML=s;
+}
+
+/* worked example: pizza with diameter 30 */
+const EX=[
+  [{dia:'30'},'נתון הקוטר: 30 ס״מ. הקוטר עובר מצד לצד דרך המרכז.'],
+  [{dia:'30',rad:'15'},`הנוסחה צריכה רדיוס. הרדיוס הוא חצי מהקוטר: ${E('30 : 2 = 15')} ס״מ.`],
+  [{rad:'15'},`כופלים את הרדיוס בעצמו: ${E('15 · 15 = 225')}.`],
+  [{rad:'15',fill:true},`כופלים ב-3.14: ${E('3.14 · 225 = 706.5')}.`],
+  [{rad:'15',fill:true,cap:'706.5 סמ״ר'},'<strong>התשובה:</strong> השטח של הפיצה הוא 706.5 סמ״ר. סמ״ר, כי זה שטח.']
+];
+let exI=0;
+function ex(){
+  const [opt,txt]=EX[exI]; circ($('exG'),80,opt);
+  $('exText').innerHTML=txt; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){exI++;ex();} }; $('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+ex();
+
+/* practice */
+let pr={}, streak=0, solved=0, qid=0;
+function newPr(){
+  let t; do{ t=pick(['r','r','d','half','inv']); }while(t===pr.t&&t!=='r');
+  const r=ri(1,10); let q, unit='סמ״ר', opt={};
+  if(t==='r'){ pr={t,r,ans:PI*r*r}; q=`הרדיוס של עיגול הוא ${r} ס״מ. מה השטח שלו?`; opt={rad:String(r)}; }
+  if(t==='d'){ pr={t,r,d:2*r,ans:PI*r*r}; q=`הקוטר של עיגול הוא ${2*r} ס״מ. מה השטח שלו?`; opt={dia:String(2*r)}; }
+  if(t==='half'){ const rr=2*ri(1,5); pr={t,r:rr,ans:PI*rr*rr/2}; q=`חצי עיגול עם רדיוס ${rr} ס״מ. מה השטח של חצי העיגול?`; opt={rad:String(rr),half:true}; }
+  if(t==='inv'){ pr={t,r,S:PI*r*r,ans:r}; q=`השטח של עיגול הוא ${fmt(PI*r*r)} סמ״ר. מה הרדיוס שלו?`; unit='ס״מ'; opt={rad:'?',fill:true}; }
+  pr.tries=0; pr.hint=0; pr.id=++qid;
+  $('prQ').textContent=q;
+  $('prIn').innerHTML=`<input id="a1" inputmode="decimal" autocomplete="off" aria-label="התשובה"><span>${unit}</span>`;
+  circ($('prG'),70,opt);
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('a1').addEventListener('keydown',e=>{if(e.key==='Enter')$('prCheck').click();});
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {t,r}=pr;
+  if(t==='r') return `${E(`${r} · ${r} = ${r*r}`)}, ואז ${E(`3.14 · ${r*r} = ${fmt(pr.ans)}`)} סמ״ר.`;
+  if(t==='d') return `הרדיוס: ${E(`${pr.d} : 2 = ${r}`)}. ${E(`${r} · ${r} = ${r*r}`)}, ואז ${E(`3.14 · ${r*r} = ${fmt(pr.ans)}`)} סמ״ר.`;
+  if(t==='half') return `העיגול השלם: ${E(`3.14 · ${r} · ${r} = ${fmt(PI*r*r)}`)}. חצי ממנו: ${E(`${fmt(PI*r*r)} : 2 = ${fmt(pr.ans)}`)} סמ״ר.`;
+  if(t==='inv') return `${E(`${fmt(pr.S)} : 3.14 = ${r*r}`)}. איזה מספר כפול עצמו נותן ${r*r}? ${E(`${r} · ${r} = ${r*r}`)}, אז הרדיוס ${r} ס״מ.`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'), {t,r}=pr, id=pr.id;
+  if(!$('a1')||id!==qid) return;
+  const ok=()=>{ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`; };
+  const bad=msg=>{ streak=0; pr.tries++; streakTxt(); fb.innerHTML=`<div class="fb err">${msg}</div>`; if(pr.tries>=2) $('prShow').disabled=false; };
+  const v=parseNum($('a1').value);
+  if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר. אפשר עם נקודה עשרונית, למשל 12.56.</div>'; $('a1').focus(); return; }
+  if(near(v,pr.ans)) return ok();
+  if(t==='r'||t==='d'||t==='half'){
+    const full=PI*r*r;
+    if(t==='half'&&near(v,full)) return bad('זה השטח של העיגול השלם. כאן יש רק חצי עיגול.');
+    if(near(v,2*PI*r)||(t==='half'&&near(v,PI*r))) return bad('זה ההיקף (או חלק ממנו), האורך מסביב. בשטח כופלים את הרדיוס בעצמו, ואין 2.');
+    if(near(v,PI*r)||(t==='half'&&near(v,PI*r/2))) return bad('כפלתם ב-3.14 רק פעם אחת ברדיוס. צריך את הרדיוס פעמיים: רדיוס כפול רדיוס.');
+    if(near(v,PI*4*r*r)||(t==='half'&&near(v,PI*2*r*r))) return bad('השתמשתם בקוטר במקום ברדיוס. הרדיוס הוא חצי מהקוטר.');
+    if(near(v,r*r)||(t==='half'&&near(v,r*r/2))) return bad('שכחתם לכפול ב-3.14.');
+    if(t==='d'&&near(v,PI*2*r)) return bad('זה ההיקף. בשטח צריך רדיוס כפול רדיוס, ואז כפול 3.14.');
+    return bad('בדקו את החישוב: רדיוס כפול רדיוס, ואז כפול 3.14.');
+  }
+  if(t==='inv'){
+    if(near(v,r*r)) return bad(`${r*r} זה הרדיוס כפול עצמו. איזה מספר כפול עצמו נותן ${r*r}?`);
+    if(near(v,pr.S/2)) return bad('חילקתם ב-2. בשטח אין 2, יש 3.14.');
+    if(near(v,2*r)) return bad('זה הקוטר. שאלנו על הרדיוס, חצי ממנו.');
+    return bad('חלקו את השטח ב-3.14, ואז חפשו מספר שכפול עצמו נותן את התוצאה.');
+  }
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {t,r}=pr, h2=pr.hint>=2; let m;
+  if(t==='r') m=h2?`כמה זה ${E(`${r} · ${r}`)}? את התוצאה כפלו ב-3.14.`:'הנוסחה: 3.14 כפול רדיוס כפול רדיוס.';
+  if(t==='d') m=h2?`הרדיוס הוא ${E(`${pr.d} : 2`)}. אחר כך רדיוס כפול רדיוס, וכפול 3.14.`:'נתון קוטר. מה הקשר בין קוטר לרדיוס?';
+  if(t==='half') m=h2?`השטח של העיגול השלם הוא ${E(`3.14 · ${r} · ${r}`)}. חלקו אותו ב-2.`:'קודם חשבו את השטח של העיגול השלם.';
+  if(t==='inv') m=h2?`${E(`${fmt(pr.S)} : 3.14 = ${r*r}`)}. איזה מספר כפול עצמו נותן ${r*r}?`:'עבדו הפוך: השטח חלקי 3.14 נותן רדיוס כפול רדיוס.';
+  $('prFb').innerHTML=`<div class="fb hint">${m}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint"><div>${solution()}</div><div>עכשיו נסו תרגיל חדש.</div></div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>
