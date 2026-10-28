@@ -337,22 +337,27 @@
 
 - [אינדוקציה מתמטית](https://shohamtal.github.io/homework-site/math/induction/): מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.
 
+## אנגלית כיתה א · אותיות ראשונות
+
+- [שיר ה-ABC](https://shohamtal.github.io/homework-site/english/abc-song/): שרים את שיר האותיות באנגלית לאט ומהר, ושומעים את השם של כל אות. בלי קריאה, רק להקשיב ולשיר. שירים, צלילים ותרגול עם רמזים לכיתה א.
+- [מכירים את האותיות באנגלית](https://shohamtal.github.io/homework-site/english/letters-intro/): A, B, C ועד Z: מכירים את הצורה ואת השם של כל אות גדולה באנגלית. מקשיבים לשם, מוצאים את האות ומחפשים אותה בציורים, בלי צלילים ובלי קריאה.
+
 ## אנגלית כיתה א · מילים ראשונות
 
-- [ברכות באנגלית: Hello, Goodbye](https://shohamtal.github.io/homework-site/english/hello-goodbye/): איך אומרים שלום, להתראות ומה שלומך באנגלית. שומעים, עונים בקול ושרים שיר ברכה קצר עם מירי. שירים, צלילים ותרגול עם רמזים לכיתה א.
+- [ברכות באנגלית: Hello, Goodbye](https://shohamtal.github.io/homework-site/english/hello-goodbye/): איך אומרים שלום ולהתראות באנגלית: hello, hi, goodbye ו-bye. שומעים, עונים בקול ושרים שיר ברכה קצר עם מירי. שירים, צלילים ותרגול עם רמזים לכיתה א.
 - [צבעים באנגלית](https://shohamtal.github.io/homework-site/english/colors/): red, blue, yellow, green ועוד: לוחצים על צבע ושומעים איך אומרים אותו, צובעים ציור לפי מה ששומעים ושרים את שיר הצבעים. שירים, צלילים ותרגול עם רמזים.
 - [מספרים באנגלית 1–10](https://shohamtal.github.io/homework-site/english/numbers-1-10/): one, two, three עד ten: סופרים בקול בקצב של תוף, שומעים כל מספר ומוצאים את הכמות הנכונה. שירים, צלילים ותרגול עם רמזים לכיתה א.
 - [חלקי הגוף באנגלית](https://shohamtal.github.io/homework-site/english/body-parts/): head, shoulders, knees and toes: שומעים, נוגעים ושרים. משחק "מירי אומרת" עם עיניים, אוזניים, פה ואף. שירים, צלילים ותרגול עם רמזים לכיתה א.
 - [חיות באנגלית וקולות החיות](https://shohamtal.github.io/homework-site/english/animals/): cat, dog, cow, duck ועוד: לוחצים על חיה, שומעים את השם שלה באנגלית ואת הקול שלה, ושרים על החווה. שירים, צלילים ותרגול עם רמזים לכיתה א.
 - [המשפחה באנגלית](https://shohamtal.github.io/homework-site/english/family/): mom, dad, brother, sister, baby, grandma ו-grandpa: מכירים את בני המשפחה באנגלית בעזרת עץ משפחה שמדבר. שירים, צלילים ותרגול עם רמזים לכיתה א.
 
-## אנגלית כיתה א · שירים ותנועה
+## אנגלית כיתה א · תנועה וקצב
 
 - [פעולות באנגלית: Clap, Jump, Stop](https://shohamtal.github.io/homework-site/english/action-words/): clap, jump, walk, run, sit down, stand up: מירי אומרת פעולה ואתם עושים אותה. לומדים מילים דרך תנועה וקצב. שירים, צלילים ותרגול עם רמזים לכיתה א.
-- [שיר ה-ABC](https://shohamtal.github.io/homework-site/english/abc-song/): שרים את שיר האותיות באנגלית לאט ומהר, ושומעים את השם של כל אות. בלי קריאה, רק להקשיב ולשיר. שירים, צלילים ותרגול עם רמזים לכיתה א.
 
 ## אנגלית כיתה ב · עוד מילים
 
+- [היכרות באנגלית: My name is, How are you?](https://shohamtal.github.io/homework-site/english/my-name-is/): איך מציגים את עצמנו באנגלית ושואלים מה שלומך: My name is, What is your name, How are you ו-I am fine. משחקים בשיחה עם מירי. שירים, צלילים ותרגול עם רמזים.
 - [מספרים באנגלית 11–20](https://shohamtal.github.io/homework-site/english/numbers-11-20/): eleven, twelve עד twenty: סופרים בקצב, שומעים את ההבדל בין thirteen ל-thirty ומוצאים את המספר הנכון. שירים, צלילים ותרגול עם רמזים לכיתה ב.
 - [פירות ואוכל באנגלית](https://shohamtal.github.io/homework-site/english/fruit-food/): apple, banana, bread, milk ו-pizza: בוחרים אוכל לצלחת, שומעים את השם ואומרים I like באנגלית. שירים, צלילים ותרגול עם רמזים לכיתה ב.
 - [בגדים באנגלית](https://shohamtal.github.io/homework-site/english/clothes/): shirt, pants, shoes, hat ו-dress: מלבישים את מירי לפי מה ששומעים, ולומדים בגדים לכל מזג אוויר. שירים, צלילים ותרגול עם רמזים לכיתה ב.
@@ -393,7 +398,7 @@
 - [מתמטיקה כיתה יא](https://shohamtal.github.io/homework-site/math/grade-11/): כל נושאי המתמטיקה לכיתה יא: נגזרות, חקירת פונקציות, בעיות קיצון, סדרה הנדסית, טריגונומטריה והתפלגויות. הסבר, מעבדה ותרגול עם רמזים.
 - [מתמטיקה כיתה יב](https://shohamtal.github.io/homework-site/math/grade-12/): כל נושאי המתמטיקה לכיתה יב: אינטגרלים, מעריכיות ולוגריתמים, גדילה ודעיכה, וקטורים, מרוכבים ואינדוקציה. הסבר, מעבדה ותרגול עם רמזים.
 - [אנגלית](https://shohamtal.github.io/homework-site/english/): אנגלית לכיתות א עד ג עם שירים, צלילים ומשחקים: מילים ראשונות, צלילי האותיות וקריאה ראשונה. בלי דפי עבודה, רק להקשיב, לשיר ולשחק.
-- [אנגלית כיתה א](https://shohamtal.github.io/homework-site/english/grade-1/): אנגלית לכיתה א בשירים וצלילים: ברכות, צבעים, מספרים 1–10, חלקי הגוף, חיות, משפחה, פעולות ושיר ה-ABC. להקשיב, לשיר ולשחק.
-- [אנגלית כיתה ב](https://shohamtal.github.io/homework-site/english/grade-2/): אנגלית לכיתה ב בשירים וצלילים: מספרים 11–20, אוכל, בגדים, חפצים בכיתה, רגשות, מזג אוויר, ימי השבוע, צלילים וחרוזים.
+- [אנגלית כיתה א](https://shohamtal.github.io/homework-site/english/grade-1/): אנגלית לכיתה א בשירים וצלילים: שיר ה-ABC, האותיות, ברכות, צבעים, מספרים 1–10, חלקי הגוף, חיות, משפחה ופעולות. להקשיב, לשיר ולשחק.
+- [אנגלית כיתה ב](https://shohamtal.github.io/homework-site/english/grade-2/): אנגלית לכיתה ב בשירים וצלילים: היכרות, מספרים 11–20, אוכל, בגדים, חפצים בכיתה, רגשות, מזג אוויר, ימי השבוע, צלילים וחרוזים.
 - [אנגלית כיתה ג](https://shohamtal.github.io/homework-site/english/grade-3/): אנגלית לכיתה ג: אותיות גדולות וקטנות, צלילי האותיות, תנועות קצרות, קריאת מילים קצרות, sh ch th ומשפטים ראשונים.
 - [בקשות נושאים והצבעות](https://shohamtal.github.io/homework-site/requests/): חסר לכם נושא? בקשו אותו או הצביעו לנושא שמישהו אחר כבר ביקש. הנושאים עם הכי הרבה קולות עולים לאתר ראשונים.

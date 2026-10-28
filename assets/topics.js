@@ -637,10 +637,19 @@ window.SITE={
     { id:'english', name:'אנגלית', desc:'שירים, צלילים ומשחקים: מילים ראשונות, צלילי האותיות וקריאה ראשונה.',
       grades:[ {id:'grade-1', name:'כיתה א'}, {id:'grade-2', name:'כיתה ב'}, {id:'grade-3', name:'כיתה ג'}, {id:'grade-4', name:'כיתה ד'}, {id:'grade-5', name:'כיתה ה'}, {id:'grade-6', name:'כיתה ו'}, {id:'grade-7', name:'כיתה ז'}, {id:'grade-8', name:'כיתה ח'}, {id:'grade-9', name:'כיתה ט'}, {id:'grade-10', name:'כיתה י'}, {id:'grade-11', name:'כיתה יא'}, {id:'grade-12', name:'כיתה יב'} ],
       chapters:[
+        { id:'en-letters-1', name:'אותיות ראשונות', grade:'כיתה א',
+          topics:[
+            { slug:'abc-song', title:'שיר ה-ABC',
+              desc:'שרים את שיר האותיות באנגלית לאט ומהר, ושומעים את השם של כל אות. בלי קריאה, רק להקשיב ולשיר.',
+              tags:['ABC', 'letters', 'song'] },
+            { slug:'letters-intro', related:['abc-song','alphabet-letters'], title:'מכירים את האותיות באנגלית',
+              desc:'A, B, C ועד Z: מכירים את הצורה ואת השם של כל אות גדולה באנגלית. מקשיבים לשם, מוצאים את האות ומחפשים אותה בציורים, בלי צלילים ובלי קריאה.',
+              tags:['אותיות גדולות','שם האות','A B C'] }
+          ] },
         { id:'en-words-1', name:'מילים ראשונות', grade:'כיתה א',
           topics:[
             { slug:'hello-goodbye', title:'ברכות באנגלית: Hello, Goodbye',
-              desc:'איך אומרים שלום, להתראות ומה שלומך באנגלית. שומעים, עונים בקול ושרים שיר ברכה קצר עם מירי.',
+              desc:'איך אומרים שלום ולהתראות באנגלית: hello, hi, goodbye ו-bye. שומעים, עונים בקול ושרים שיר ברכה קצר עם מירי.',
               tags:['hello', 'goodbye', 'my name is'] },
             { slug:'colors', title:'צבעים באנגלית', aka:['מילים בסיסיות: צבעים, מספרים, משפחה'],
               desc:'red, blue, yellow, green ועוד: לוחצים על צבע ושומעים איך אומרים אותו, צובעים ציור לפי מה ששומעים ושרים את שיר הצבעים.',
@@ -658,17 +667,17 @@ window.SITE={
               desc:'mom, dad, brother, sister, baby, grandma ו-grandpa: מכירים את בני המשפחה באנגלית בעזרת עץ משפחה שמדבר.',
               tags:['mom', 'dad', 'sister'] }
           ] },
-        { id:'en-songs-1', name:'שירים ותנועה', grade:'כיתה א',
+        { id:'en-songs-1', name:'תנועה וקצב', grade:'כיתה א',
           topics:[
             { slug:'action-words', related:['body-parts'], title:'פעולות באנגלית: Clap, Jump, Stop',
               desc:'clap, jump, walk, run, sit down, stand up: מירי אומרת פעולה ואתם עושים אותה. לומדים מילים דרך תנועה וקצב.',
-              tags:['clap', 'jump', 'stand up'] },
-            { slug:'abc-song', title:'שיר ה-ABC',
-              desc:'שרים את שיר האותיות באנגלית לאט ומהר, ושומעים את השם של כל אות. בלי קריאה, רק להקשיב ולשיר.',
-              tags:['ABC', 'letters', 'song'] }
+              tags:['clap', 'jump', 'stand up'] }
           ] },
         { id:'en-words-2', name:'עוד מילים', grade:'כיתה ב',
           topics:[
+            { slug:'my-name-is', related:['hello-goodbye','feelings'], title:'היכרות באנגלית: My name is, How are you?',
+              desc:'איך מציגים את עצמנו באנגלית ושואלים מה שלומך: My name is, What is your name, How are you ו-I am fine. משחקים בשיחה עם מירי.',
+              tags:['my name is','how are you','I am fine'] },
             { slug:'numbers-11-20', related:['numbers-1-10'], title:'מספרים באנגלית 11–20',
               desc:'eleven, twelve עד twenty: סופרים בקצב, שומעים את ההבדל בין thirteen ל-thirty ומוצאים את המספר הנכון.',
               tags:['eleven', 'twelve', 'twenty'] },
