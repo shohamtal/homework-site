@@ -648,7 +648,7 @@ window.SITE={
           ] },
         { id:'en-words-1', name:'מילים ראשונות', grade:'כיתה א',
           topics:[
-            { slug:'hello-goodbye', title:'ברכות באנגלית: Hello, Goodbye',
+            { slug:'hello-goodbye', related:['my-name-is'], title:'ברכות באנגלית: Hello, Goodbye',
               desc:'איך אומרים שלום ולהתראות באנגלית: hello, hi, goodbye ו-bye. שומעים, עונים בקול ושרים שיר ברכה קצר עם מירי.',
               tags:['hello', 'goodbye', 'my name is'] },
             { slug:'colors', title:'צבעים באנגלית', aka:['מילים בסיסיות: צבעים, מספרים, משפחה'],
@@ -711,7 +711,7 @@ window.SITE={
           ] },
         { id:'en-letters-3', name:'אותיות וצלילים', grade:'כיתה ג',
           topics:[
-            { slug:'alphabet-letters', related:['abc-song'], title:'האותיות באנגלית: גדולות וקטנות',
+            { slug:'alphabet-letters', related:['abc-song','letters-intro'], title:'האותיות באנגלית: גדולות וקטנות',
               desc:'כל 26 האותיות באנגלית, גדולות וקטנות: מתאימים A ל-a, מסדרים לפי הסדר ושומעים את שם האות.',
               tags:['A a', 'alphabet', 'סדר האותיות'] },
             { slug:'letter-sounds', related:['alphabet-letters', 'first-sounds'], title:'צלילי האותיות (Phonics)', aka:['האלף-בית והגייה (Phonics)'],
