@@ -731,7 +731,7 @@
     },
     "english/": {
       "title": "אנגלית · בחרו כיתה · מירי המורה שלך להצלחה",
-      "description": "אנגלית לכיתות א עד ו עם שירים, צלילים ומשחקים: מילים ראשונות, אותיות וצלילים, משפטים, זמנים והבנת הנקרא. בלי דפי עבודה."
+      "description": "אנגלית לכיתות א עד ט עם שירים, צלילים ומשחקים: מילים ראשונות, אותיות, משפטים, זמנים, קריאה וכתיבה. בלי דפי עבודה."
     },
     "english/grade-1/": {
       "title": "אנגלית כיתה א · כל הנושאים · מירי",
@@ -836,6 +836,98 @@
     "english/grade-6/": {
       "title": "אנגלית כיתה ו · כל הנושאים · מירי",
       "description": "אנגלית לכיתה ו עם צלילים ומשחקים: Present Progressive, Past Simple, can ו-can't, תארים, כינויי גוף ושייכות והבנת הנקרא."
+    },
+    "english/past-simple-irregular/": {
+      "title": "Past Simple באנגלית: פעלים לא רגילים · כיתה ז · מירי",
+      "description": "go ו-went, see ו-saw, eat ו-ate: הפעלים שלא מקבלים ed. שומעים, משננים בקצב ומספרים מה קרה אתמול. הסבר, צלילים ותרגול עם רמזים לכיתה ז."
+    },
+    "english/future-will-going-to/": {
+      "title": "Future באנגלית: will ו-going to · כיתה ז · מירי",
+      "description": "I will help you ו-I am going to visit: מתי משתמשים בכל אחד, איך שואלים ואיך אומרים לא, עם תחזית ותוכנית. הסבר, צלילים ותרגול עם רמזים לכיתה ז."
+    },
+    "english/comparatives-superlatives/": {
+      "title": "השוואה באנגלית: bigger, the biggest · כיתה ז · מירי",
+      "description": "big, bigger, the biggest ו-good, better, the best: משווים בין שניים ובין הרבה, עם er, est, more ו-most. הסבר, צלילים ותרגול עם רמזים לכיתה ז."
+    },
+    "english/countable-uncountable/": {
+      "title": "Countable ו-Uncountable באנגלית · כיתה ז · מירי",
+      "description": "apples אפשר לספור, water אי אפשר: some, any, much, many ו-a lot of, ואיך שואלים How much ו-How many. הסבר, צלילים ותרגול עם רמזים לכיתה ז."
+    },
+    "english/reading-grade-7/": {
+      "title": "הבנת הנקרא באנגלית לכיתה ז · מירי",
+      "description": "קטעי קריאה מקוריים בזמן עבר ועתיד, עם הקראה, מילים קשות בלחיצה ושאלות הבנה. כך מתרגלים קריאה לפני מבחן. הסבר, צלילים ותרגול עם רמזים לכיתה ז."
+    },
+    "english/paragraph-writing/": {
+      "title": "כתיבת פסקה באנגלית · כיתה ז · מירי",
+      "description": "משפט פתיחה, שלושה משפטים תומכים ומשפט סיום: בונים פסקה מקוביות, שומעים אותה ובודקים מה חסר. הסבר, צלילים ותרגול עם רמזים לכיתה ז."
+    },
+    "english/present-perfect/": {
+      "title": "Present Perfect באנגלית · כיתה ח · מירי",
+      "description": "I have seen, she has eaten: מה קרה פעם ועדיין חשוב עכשיו. have או has, צורה שלישית, ever, never, already ו-yet. הסבר, צלילים ותרגול עם רמזים לכיתה ח."
+    },
+    "english/past-progressive/": {
+      "title": "Past Progressive באנגלית · כיתה ח · מירי",
+      "description": "I was reading when the phone rang: מה היה באמצע לקרות בעבר. was או were עם ing, ומתי משתמשים ב-when ו-while. הסבר, צלילים ותרגול עם רמזים לכיתה ח."
+    },
+    "english/modals/": {
+      "title": "must, should ו-have to באנגלית · כיתה ח · מירי",
+      "description": "חובה, עצה או צורך: you must stop, you should rest, I have to go. ההבדל בין mustn't ל-don't have to. הסבר, צלילים ותרגול עם רמזים לכיתה ח."
+    },
+    "english/first-conditional/": {
+      "title": "First Conditional באנגלית · כיתה ח · מירי",
+      "description": "If it rains, I will stay home: משפטי תנאי על דברים שיכולים לקרות. איזה זמן בא אחרי if ואיזה בא אחרי הפסיק. הסבר, צלילים ותרגול עם רמזים לכיתה ח."
+    },
+    "english/prepositions-time/": {
+      "title": "מילות יחס לזמן באנגלית: at, on, in · כיתה ח · מירי",
+      "description": "at seven, on Monday, in May, ו-to, from, into: מילות יחס של זמן ותנועה, והכללים שמסדרים אותן. הסבר, צלילים ותרגול עם רמזים לכיתה ח."
+    },
+    "english/reading-grade-8/": {
+      "title": "הבנת הנקרא באנגלית לכיתה ח · מירי",
+      "description": "קטעים מקוריים ארוכים יותר עם Present Perfect ותנאים, הקראה, עזרה במילים ושאלות מסוגים שונים כמו במבחן. הסבר, צלילים ותרגול עם רמזים לכיתה ח."
+    },
+    "english/short-essay/": {
+      "title": "כתיבת חיבור קצר באנגלית · כיתה ח · מירי",
+      "description": "פתיחה, שתי פסקאות וסיום: בונים חיבור קצר בשלבים, עם מילות קישור, ושומעים אותו בסוף. הסבר, צלילים ותרגול עם רמזים לכיתה ח."
+    },
+    "english/passive-voice/": {
+      "title": "Passive Voice באנגלית · כיתה ט · מירי",
+      "description": "The cake was eaten by the dog: מתי המשפט מתמקד במה שקרה ולא במי שעשה. to be עם צורה שלישית, בהווה ובעבר. הסבר, צלילים ותרגול עם רמזים לכיתה ט."
+    },
+    "english/second-conditional/": {
+      "title": "Second Conditional באנגלית · כיתה ט · מירי",
+      "description": "If I had wings, I would fly: תנאי דמיוני. Past Simple אחרי if ו-would אחרי הפסיק, וההבדל מ-First Conditional. הסבר, צלילים ותרגול עם רמזים לכיתה ט."
+    },
+    "english/reported-speech/": {
+      "title": "Reported Speech באנגלית · כיתה ט · מירי",
+      "description": "He said that he was tired: מעבירים דברים שמישהו אמר. הזמן זז אחורה, והמילים I ו-here משתנות. הסבר, צלילים ותרגול עם רמזים לכיתה ט."
+    },
+    "english/relative-clauses/": {
+      "title": "Relative Clauses באנגלית: who, which, that · כיתה ט · מירי",
+      "description": "The girl who lives here, the book that I read: מחברים שני משפטים עם who, which, that ו-where. הסבר, צלילים ותרגול עם רמזים לכיתה ט."
+    },
+    "english/gerund-infinitive/": {
+      "title": "Gerund ו-Infinitive באנגלית · כיתה ט · מירי",
+      "description": "I enjoy reading אבל I want to read: אילו פעלים באים עם ing ואילו עם to, ומה קורה אחרי מילת יחס. הסבר, צלילים ותרגול עם רמזים לכיתה ט."
+    },
+    "english/linking-words/": {
+      "title": "מילות קישור באנגלית: and, but, because · כיתה ט · מירי",
+      "description": "and, but, so, because, however ו-although: מחברים רעיונות בחיבור וקוראים טקסטים מהר יותר. הסבר, צלילים ותרגול עם רמזים לכיתה ט."
+    },
+    "english/reading-grade-9/": {
+      "title": "הבנת הנקרא באנגלית לכיתה ט · מירי",
+      "description": "מאמר מידע, כתבה, מאמר דעה וסיפור: ארבעה קטעי unseen מקוריים לכיתה ט, עם passive, תנאים ומילות קישור, הקראה ושאלות פתוחות. הסבר, צלילים ותרגול."
+    },
+    "english/grade-7/": {
+      "title": "אנגלית כיתה ז · כל הנושאים · מירי",
+      "description": "אנגלית לכיתה ז עם צלילים ותרגול: Past Simple לא רגיל, will ו-going to, השוואות, much ו-many, הבנת הנקרא וכתיבת פסקה."
+    },
+    "english/grade-8/": {
+      "title": "אנגלית כיתה ח · כל הנושאים · מירי",
+      "description": "אנגלית לכיתה ח עם צלילים ותרגול: Present Perfect, Past Progressive, must ו-should, First Conditional, מילות יחס, קריאה וחיבור."
+    },
+    "english/grade-9/": {
+      "title": "אנגלית כיתה ט · כל הנושאים · מירי",
+      "description": "אנגלית לכיתה ט עם צלילים ותרגול: Passive, Second Conditional, Reported Speech, Relative Clauses, ing ו-to, מילות קישור וקריאה."
     }
   }
 }

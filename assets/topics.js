@@ -753,7 +753,7 @@ window.SITE={
             { slug:'this-that', related:['verb-to-be','plurals'], title:'this, that, these, those באנגלית',
               desc:'זה, ההוא, אלה ואלה שם: מתי אומרים this ומתי that, ומה קורה כשיש הרבה. מצביעים על חפצים קרובים ורחוקים ושומעים.',
               tags:['this', 'that', 'these'] },
-            { slug:'prepositions-place', related:['simple-sentences','there-is-there-are'], title:'מילות מקום באנגלית: in, on, under',
+            { slug:'prepositions-place', related:['simple-sentences','there-is-there-are','prepositions-time'], title:'מילות מקום באנגלית: in, on, under',
               desc:'איפה החתול? in the box, on the table, under the bed. מזיזים את החתול בחדר ושומעים איפה הוא, ובוחרים את מילת המקום הנכונה.',
               tags:['in', 'on', 'under'] }
           ] },
@@ -813,6 +813,84 @@ window.SITE={
             { slug:'reading-short-texts', related:['wh-questions'], title:'הבנת הנקרא באנגלית: טקסטים קצרים', aka:['הבנת הנקרא: טקסטים קצרים'],
               desc:'קוראים סיפורים קצרים באנגלית, שומעים אותם בקול, ועונים על שאלות. כל מילה קשה מקבלת עזרה בלחיצה.',
               tags:['reading', 'short story', 'questions'] }
+          ] },
+        { id:'en-grammar-7', name:'זמנים והשוואות', grade:'כיתה ז',
+          topics:[
+            { slug:'past-simple-irregular', related:['past-simple-regular'], title:'Past Simple באנגלית: פעלים לא רגילים', aka:['Past Simple: פעלים לא רגילים'],
+              desc:'go ו-went, see ו-saw, eat ו-ate: הפעלים שלא מקבלים ed. שומעים, משננים בקצב ומספרים מה קרה אתמול.',
+              tags:['went','saw','irregular verbs'] },
+            { slug:'future-will-going-to', related:['present-progressive'], title:'Future באנגלית: will ו-going to', aka:['Future: will / going to'],
+              desc:'I will help you ו-I am going to visit: מתי משתמשים בכל אחד, איך שואלים ואיך אומרים לא, עם תחזית ותוכנית.',
+              tags:['will','going to','won\'t'] },
+            { slug:'comparatives-superlatives', related:['adjectives'], title:'השוואה באנגלית: bigger, the biggest', aka:['Comparatives & Superlatives'],
+              desc:'big, bigger, the biggest ו-good, better, the best: משווים בין שניים ובין הרבה, עם er, est, more ו-most.',
+              tags:['bigger','the biggest','more'] },
+            { slug:'countable-uncountable', related:['plurals', 'there-is-there-are'], title:'Countable ו-Uncountable באנגלית', aka:['Countable / Uncountable'],
+              desc:'apples אפשר לספור, water אי אפשר: some, any, much, many ו-a lot of, ואיך שואלים How much ו-How many.',
+              tags:['much','many','some any'] }
+          ] },
+        { id:'en-skills-7', name:'קריאה וכתיבה', grade:'כיתה ז',
+          topics:[
+            { slug:'reading-grade-7', related:['reading-short-texts', 'past-simple-irregular'], title:'הבנת הנקרא באנגלית לכיתה ז', aka:['הבנת הנקרא'],
+              desc:'קטעי קריאה מקוריים בזמן עבר ועתיד, עם הקראה, מילים קשות בלחיצה ושאלות הבנה. כך מתרגלים קריאה לפני מבחן.',
+              tags:['unseen','reading','past tense'] },
+            { slug:'paragraph-writing', related:['reading-grade-7'], title:'כתיבת פסקה באנגלית', aka:['כתיבת פסקה'],
+              desc:'משפט פתיחה, שלושה משפטים תומכים ומשפט סיום: בונים פסקה מקוביות, שומעים אותה ובודקים מה חסר.',
+              tags:['topic sentence','paragraph','linking'] }
+          ] },
+        { id:'en-grammar-8', name:'זמנים ומודלים', grade:'כיתה ח',
+          topics:[
+            { slug:'present-perfect', related:['past-simple-irregular'], title:'Present Perfect באנגלית', aka:['Present Perfect'],
+              desc:'I have seen, she has eaten: מה קרה פעם ועדיין חשוב עכשיו. have או has, צורה שלישית, ever, never, already ו-yet.',
+              tags:['have seen','ever never','already yet'] },
+            { slug:'past-progressive', related:['present-progressive', 'past-simple-irregular'], title:'Past Progressive באנגלית', aka:['Past Progressive'],
+              desc:'I was reading when the phone rang: מה היה באמצע לקרות בעבר. was או were עם ing, ומתי משתמשים ב-when ו-while.',
+              tags:['was reading','when','while'] },
+            { slug:'modals', related:['can-cant'], title:'must, should ו-have to באנגלית', aka:['Modals: must, should, have to'],
+              desc:'חובה, עצה או צורך: you must stop, you should rest, I have to go. ההבדל בין mustn\'t ל-don\'t have to.',
+              tags:['must','should','have to'] },
+            { slug:'first-conditional', related:['future-will-going-to'], title:'First Conditional באנגלית', aka:['First Conditional'],
+              desc:'If it rains, I will stay home: משפטי תנאי על דברים שיכולים לקרות. איזה זמן בא אחרי if ואיזה בא אחרי הפסיק.',
+              tags:['if','will','conditional'] },
+            { slug:'prepositions-time', related:['prepositions-place', 'months-time'], title:'מילות יחס לזמן באנגלית: at, on, in', aka:['Prepositions'],
+              desc:'at seven, on Monday, in May, ו-to, from, into: מילות יחס של זמן ותנועה, והכללים שמסדרים אותן.',
+              tags:['at on in','to from','into'] }
+          ] },
+        { id:'en-skills-8', name:'קריאה וכתיבה', grade:'כיתה ח',
+          topics:[
+            { slug:'reading-grade-8', related:['reading-grade-7'], title:'הבנת הנקרא באנגלית לכיתה ח', aka:['הבנת הנקרא'],
+              desc:'קטעים מקוריים ארוכים יותר עם Present Perfect ותנאים, הקראה, עזרה במילים ושאלות מסוגים שונים כמו במבחן.',
+              tags:['unseen','main idea','details'] },
+            { slug:'short-essay', related:['paragraph-writing'], title:'כתיבת חיבור קצר באנגלית', aka:['כתיבת חיבור קצר'],
+              desc:'פתיחה, שתי פסקאות וסיום: בונים חיבור קצר בשלבים, עם מילות קישור, ושומעים אותו בסוף.',
+              tags:['essay','introduction','conclusion'] }
+          ] },
+        { id:'en-grammar-9', name:'מבנים מתקדמים', grade:'כיתה ט',
+          topics:[
+            { slug:'passive-voice', related:['present-perfect'], title:'Passive Voice באנגלית', aka:['Passive Voice'],
+              desc:'The cake was eaten by the dog: מתי המשפט מתמקד במה שקרה ולא במי שעשה. to be עם צורה שלישית, בהווה ובעבר.',
+              tags:['was made','by','passive'] },
+            { slug:'second-conditional', related:['first-conditional'], title:'Second Conditional באנגלית', aka:['Second Conditional'],
+              desc:'If I had wings, I would fly: תנאי דמיוני. Past Simple אחרי if ו-would אחרי הפסיק, וההבדל מ-First Conditional.',
+              tags:['would','if I were','imaginary'] },
+            { slug:'reported-speech', related:['past-progressive'], title:'Reported Speech באנגלית', aka:['Reported Speech'],
+              desc:'He said that he was tired: מעבירים דברים שמישהו אמר. הזמן זז אחורה, והמילים I ו-here משתנות.',
+              tags:['said that','told','backshift'] },
+            { slug:'relative-clauses', related:['linking-words'], title:'Relative Clauses באנגלית: who, which, that', aka:['Relative Clauses'],
+              desc:'The girl who lives here, the book that I read: מחברים שני משפטים עם who, which, that ו-where.',
+              tags:['who','which','that'] },
+            { slug:'gerund-infinitive', related:['modals'], title:'Gerund ו-Infinitive באנגלית', aka:['Gerund & Infinitive'],
+              desc:'I enjoy reading אבל I want to read: אילו פעלים באים עם ing ואילו עם to, ומה קורה אחרי מילת יחס.',
+              tags:['ing','to','enjoy want'] },
+            { slug:'linking-words', related:['short-essay','paragraph-writing'], title:'מילות קישור באנגלית: and, but, because', aka:['מילות קישור (Linking words)'],
+              desc:'and, but, so, because, however ו-although: מחברים רעיונות בחיבור וקוראים טקסטים מהר יותר.',
+              tags:['because','however','although'] }
+          ] },
+        { id:'en-skills-9', name:'קריאה', grade:'כיתה ט',
+          topics:[
+            { slug:'reading-grade-9', related:['reading-grade-8', 'linking-words'], title:'הבנת הנקרא באנגלית לכיתה ט', aka:['הבנת הנקרא'],
+              desc:'קטעי unseen מקוריים ברמת כיתה ט, עם passive, תנאים ומילות קישור, הקראה ושאלות פתוחות וסגורות.',
+              tags:['unseen','inference','linking words'] }
           ] }
       ] },
     { id:'hebrew', name:'עברית', desc:'בקרוב.', soon:true, chapters:[] }
