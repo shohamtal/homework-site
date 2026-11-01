@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מה קודם ומה אחר כך · מדעי המחשב כיתה א · מירי</title>
+<meta name="description" content="מסדרים שלבים של פעולה יומיומית לפי הסדר הנכון, ומגלים שסדר אחר נותן תוצאה אחרת. זה הצעד הראשון של כל אלגוריתם. מעבדה ותרגול עם רמזים לכיתה א.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/sequence-puzzles/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מה קודם ומה אחר כך · מדעי המחשב כיתה א · מירי">
+<meta property="og:description" content="מסדרים שלבים של פעולה יומיומית לפי הסדר הנכון, ומגלים שסדר אחר נותן תוצאה אחרת. זה הצעד הראשון של כל אלגוריתם. מעבדה ותרגול עם רמזים לכיתה א.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/sequence-puzzles/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה א","item":"https://shohamtal.github.io/homework-site/cs/grade-1/"},{"@type":"ListItem","position":4,"name":"חידות וחשיבה","item":"https://shohamtal.github.io/homework-site/cs/grade-1/#cs-puzzles-1"},{"@type":"ListItem","position":5,"name":"מה קודם ומה אחר כך: חידות סדר","item":"https://shohamtal.github.io/homework-site/cs/sequence-puzzles/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה חשיבה ממוחשבת בכיתה א?","acceptedAnswer":{"@type":"Answer","text":"זו דרך לחשוב על בעיה כמו מחשב: לפרק אותה לצעדים קטנים ולסדר אותם נכון. בגיל הזה עושים את זה עם חידות ותמונות, בלי מסכים מסובכים ובלי לכתוב קוד."}},{"@type":"Question","name":"איך זה קשור לתכנות בהמשך?","acceptedAnswer":{"@type":"Answer","text":"תוכנית מחשב היא רשימת צעדים לפי סדר. ילד שמבין שסדר משנה את התוצאה, ויודע לבדוק את הצעדים אחד אחד, יבין בקלות לולאות, תנאים וקוד אמיתי בכיתות הבאות."}},{"@type":"Question","name":"איך משחקים בזה בבית?","acceptedAnswer":{"@type":"Answer","text":"בקשו מהילדים להסביר לכם צעד אחרי צעד איך מצחצחים שיניים או מכינים שוקו, ועשו בדיוק מה שהם אומרים. אם שכחו צעד, זה מצחיק, ומיד מבינים למה צריך סדר מדויק. נסו את המעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מה קודם ומה אחר כך: חידות סדר","description":"מסדרים שלבים של פעולה יומיומית לפי הסדר הנכון, ומגלים שסדר אחר נותן תוצאה אחרת. זה הצעד הראשון של כל אלגוריתם. מעבדה ותרגול עם רמזים לכיתה א.","url":"https://shohamtal.github.io/homework-site/cs/sequence-puzzles/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה א","about":"מה קודם ומה אחר כך: חידות סדר","teaches":"מה קודם ומה אחר כך: חידות סדר","keywords":"סדר פעולות, רצף, אלגוריתם","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card{font-size:1.12rem}
+.card button{padding:10px 16px; font-size:1.05rem}
+.q{font-size:1.25rem; font-weight:600; text-align:center}
+.pool,.slots,.strip{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.pic{min-width:76px; min-height:84px; padding:6px 8px; border:2px solid var(--border); border-radius:14px; background:var(--card); box-shadow:var(--hard); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; font:600 .9rem var(--f-body); color:var(--ink); cursor:pointer}
+.pic .emo{font-size:2.2rem; line-height:1.1}
+.pic[disabled]{opacity:.25; box-shadow:none; cursor:default}
+.slot{position:relative; width:84px; min-height:94px; border:2px dashed var(--line); border-radius:14px; background:var(--paper); display:flex; align-items:center; justify-content:center; padding:4px; cursor:pointer}
+.slot .num{position:absolute; top:-12px; inset-inline-start:-8px; width:26px; height:26px; border-radius:50%; background:var(--hl); border:2px solid var(--border); font:800 .9rem var(--f-body); display:flex; align-items:center; justify-content:center}
+.slot .pic{box-shadow:none; min-width:0; width:100%; cursor:pointer}
+.slot.go{border-style:solid; border-color:var(--ok); background:var(--ok-bg); transform:scale(1.06); transition:transform .2s}
+.slot.bad{border-style:solid; border-color:var(--err); background:var(--err-bg); animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (prefers-reduced-motion: reduce){.slot.bad{animation:none}.slot.go{transform:none}}
+.labrow{display:flex; flex-direction:column; gap:16px}
+.bigrow{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.bigrow button{min-height:52px}
+.choices{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.choices .pic[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 3px var(--line); background:var(--hint-bg)}
+.strip .pic{cursor:default; box-shadow:none}
+.strip .gap{min-width:76px; min-height:84px; border:2px dashed var(--line); border-radius:14px; display:flex; align-items:center; justify-content:center; font:800 2rem var(--f-body); color:var(--line)}
+.arrow{align-self:center; font-size:1.4rem; color:var(--muted)}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="sequence-puzzles">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-1/">כיתה א</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-1/#cs-puzzles-1">חידות וחשיבה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מה קודם ומה אחר כך: חידות סדר</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה א · חידות וחשיבה</div>
+  <h1>מה קודם ומה אחר כך? <span class="slogan">חידות סדר</span></h1>
+  <p class="lead">גרביים לפני נעליים, ביצה לפני פרפר. מסדרים תמונות לפי הסדר, לוחצים על הפעילו ורואים מה קורה. סדר נכון של צעדים נקרא אלגוריתם, וזה הצעד הראשון בתכנות.</p>
+  <p class="text small">להורים: הילדים לא צריכים לקרוא. קראו להם את ההוראות בקול, והם רק לוחצים על התמונות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#tips">טיפים</a><a href="#example">דוגמה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הסדר חשוב</h3>
+      <div class="strip" aria-hidden="true"><div class="pic"><span class="emo">🧦</span>גרביים</div><span class="arrow">←</span><div class="pic"><span class="emo">👟</span>נעליים</div></div>
+      <p>קודם גרביים, אחר כך נעליים. הפוך זה מצחיק.</p>
+    </div>
+    <div class="mini">
+      <h3>צעד אחרי צעד</h3>
+      <div class="strip" aria-hidden="true"><div class="pic"><span class="emo">🥚</span>ביצה</div><span class="arrow">←</span><div class="pic"><span class="emo">🐛</span>זחל</div><span class="arrow">←</span><div class="pic"><span class="emo">🦋</span>פרפר</div></div>
+      <p>כל צעד בא אחרי הצעד הקודם.</p>
+    </div>
+    <div class="mini">
+      <h3>זה אלגוריתם</h3>
+      <p>רשימה של צעדים בסדר נכון נקראת <strong>אלגוריתם</strong>.</p>
+      <p>מחשב עושה בדיוק מה שכתוב, לפי הסדר. לכן הסדר חייב להיות נכון.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מה קודם?</h2></div>
+  <p class="text">לחצו על התמונות לפי הסדר. כל תמונה קופצת למקום הפנוי הבא. רוצים להחליף? לחצו על תמונה במקום שלה והיא חוזרת. בסוף לחצו על ▶ הפעילו.</p>
+  <div class="labrow">
+    <div>
+      <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+      <div class="tries" id="labSc">
+        <button data-s="teeth">🪥 צחצוח שיניים</button>
+        <button data-s="seed">🌱 שותלים זרע</button>
+        <button data-s="dress">👟 מתלבשים</button>
+        <button data-s="sandwich">🥪 מכינים כריך</button>
+        <button data-s="butterfly">🦋 ביצה ופרפר</button>
+      </div>
+    </div>
+    <label class="slider" for="labN" style="display:flex; justify-content:space-between; font-weight:700"><span>כמה צעדים?</span><span id="labNv"></span></label>
+    <input type="range" id="labN" min="3" max="5" step="1" value="3">
+    <div class="slots" id="labSlots" aria-label="המקומות לפי הסדר"></div>
+    <div class="pool" id="labPool" aria-label="התמונות"></div>
+    <div class="bigrow"><button id="labRun" class="primary">▶ הפעילו</button><button id="labMix">מערבבים מחדש</button></div>
+    <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="card" id="tips">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טיפים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שואלים: מה קודם?</h3>
+      <p>מחפשים את הצעד שאפשר לעשות ראשון, בלי שום דבר לפניו.</p>
+    </div>
+    <div class="mini">
+      <h3>מתחילים מהסוף</h3>
+      <p>מה קורה בסוף? פרפר עף, כריך נאכל. אחר כך שואלים: מה היה רגע לפני?</p>
+    </div>
+    <div class="mini">
+      <h3>מריצים בראש</h3>
+      <p>עוברים על הצעדים אחד אחד ומדמיינים. אם משהו נראה מצחיק, כנראה הסדר הפוך.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>להורים:</strong> כשילד מסדר צעדים ובודק אותם, הוא עושה בדיוק מה שמתכנת עושה: כותב אלגוריתם ובודק אותו.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">איך מכינים כריך?</p>
+    <div class="strip" id="exStrip"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="q" id="prQ"></p>
+  <div class="strip" id="prStrip"></div>
+  <div class="choices" id="prCh"></div>
+  <div class="row" style="justify-content:center"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">חידה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שהורים שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה חשיבה ממוחשבת בכיתה א?</h3>
+    <p>זו דרך לחשוב על בעיה כמו מחשב: לפרק אותה לצעדים קטנים ולסדר אותם נכון. בגיל הזה עושים את זה עם חידות ותמונות, בלי מסכים מסובכים ובלי לכתוב קוד.</p>
+    <h3>איך זה קשור לתכנות בהמשך?</h3>
+    <p>תוכנית מחשב היא רשימת צעדים לפי סדר. ילד שמבין שסדר משנה את התוצאה, ויודע לבדוק את הצעדים אחד אחד, יבין בקלות לולאות, תנאים וקוד אמיתי בכיתות הבאות.</p>
+    <h3>איך משחקים בזה בבית?</h3>
+    <p>בקשו מהילדים להסביר לכם צעד אחרי צעד איך מצחצחים שיניים או מכינים שוקו, ועשו בדיוק מה שהם אומרים. אם שכחו צעד, זה מצחיק, ומיד מבינים למה צריך סדר מדויק. <a href="#lab">נסו את המעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><span class="empty"></span><a class="next" href="../../cs/pattern-next/"><small>הנושא הבא ←</small>מה בא אחר כך? חידות דפוסים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/sound.js"></script>
+<script src="../../assets/sfx.js"></script>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+/* each story: 5 steps in the right order, which steps to keep for 3 and 4, and funny lines for a wrong order ("a>b" = step a came before step b) */
+const SC={
+  teeth:{name:'צחצוח שיניים', steps:[['🪥','לוקחים מברשת'],['🧴','שמים משחה'],['😁','מצחצחים'],['💧','שוטפים את הפה'],['✨','שיניים נקיות']], k3:[1,2,3], k4:[0,1,2,3],
+    fun:{'2>1':'מצחצחים בלי משחה? המברשת יבשה.','3>2':'שוטפים את הפה לפני שמצחצחים? המשחה עוד לא שם.','4>2':'שיניים נקיות לפני הצחצוח? עוד לא.'}},
+  seed:{name:'שותלים זרע', steps:[['🕳️','חופרים גומה'],['🌰','שמים זרע'],['🪣','משקים במים'],['☀️','מחכים לשמש'],['🌱','צומח נבט']], k3:[0,1,2], k4:[0,1,2,4],
+    fun:{'1>0':'שמים זרע לפני שיש גומה? הזרע מתגלגל על הרצפה.','4>2':'נבט צומח לפני שהשקינו? הוא צמא.','2>1':'משקים לפני שיש זרע? מגדלים בוץ.'}},
+  dress:{name:'מתלבשים לצאת', steps:[['🛏️','קמים מהמיטה'],['🧦','גרביים'],['👟','נעליים'],['🎀','קושרים שרוכים'],['🚪','יוצאים']], k3:[1,2,3], k4:[1,2,3,4],
+    fun:{'2>1':'נעליים לפני גרביים? הגרביים לא נכנסות.','3>2':'קושרים שרוכים בלי נעליים? אין מה לקשור.','4>2':'יוצאים בלי נעליים? אאוץ׳.','1>0':'גרביים בתוך המיטה? קודם קמים.'}},
+  sandwich:{name:'מכינים כריך', steps:[['🍞','פרוסת לחם'],['🧈','מורחים'],['🧀','שמים גבינה'],['🥪','סוגרים בפרוסה'],['😋','אוכלים']], k3:[0,2,4], k4:[0,1,2,4],
+    fun:{'4>3':'אוכלים לפני שסגרנו? הגבינה נופלת.','4>2':'אוכלים לפני שיש גבינה? כריך ריק.','1>0':'מורחים לפני שיש לחם? מורחים על הצלחת.','2>0':'גבינה בלי לחם? זה כבר לא כריך.'}},
+  butterfly:{name:'מביצה לפרפר', steps:[['🥚','ביצה על עלה'],['🐛','זחל קטן'],['🍃','הזחל אוכל'],['💤','גולם ישן'],['🦋','פרפר']], k3:[0,1,4], k4:[0,1,3,4],
+    fun:{'4>3':'פרפר לפני הגולם? הוא עוד לא סיים לישון.','4>1':'פרפר יוצא מהביצה? קודם יוצא זחל.','1>0':'זחל לפני ביצה? הזחל בוקע מהביצה.'}},
+  snowman:{name:'בונים איש שלג', steps:[['❄️','יורד שלג'],['⚪','כדור גדול'],['⚫','כדור קטן למעלה'],['🥕','אף מגזר'],['⛄','איש שלג']], k3:[0,1,4], k4:[0,1,2,4], fun:{}},
+  cake:{name:'אופים עוגה', steps:[['🥚','שוברים ביצים'],['🥣','מערבבים'],['🔥','אופים בתנור'],['🎂','מקשטים'],['😋','אוכלים']], k3:[1,2,4], k4:[0,1,2,3], fun:{}}
+};
+const LAB=['teeth','seed','dress','sandwich','butterfly'], ALL=Object.keys(SC);
+const keep=(s,n)=>n===5?[0,1,2,3,4]:SC[s]['k'+n];
+const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const shuffledNot=a=>{ if(a.length<2) return a.slice(); let b; do b=shuffle(a); while(b.every((x,i)=>x===a[i])); return b; };
+const pic=(s,i)=>{ const [e,t]=SC[s].steps[i]; return `<span class="emo" aria-hidden="true">${e}</span>${t}`; };
+
+/* lab */
+let sc='teeth', ids=[], placed=[], run=0;
+function labNew(){
+  run++; const n=+$('labN').value; $('labNv').textContent=n;
+  ids=keep(sc,n); placed=[];
+  const order=shuffledNot(ids);
+  $('labPool').innerHTML=order.map(i=>`<button class="pic" data-i="${i}" aria-label="${SC[sc].steps[i][1]}">${pic(sc,i)}</button>`).join('');
+  drawSlots(); say();
+}
+function drawSlots(){
+  $('labSlots').innerHTML=ids.map((_,k)=>`<div class="slot" data-k="${k}" role="button" tabindex="0" aria-label="מקום ${k+1}"><span class="num">${k+1}</span>${placed[k]!==undefined?`<div class="pic">${pic(sc,placed[k])}</div>`:''}</div>`).join('');
+  $('labPool').querySelectorAll('.pic').forEach(b=>b.disabled=placed.includes(+b.dataset.i));
+}
+function say(t){
+  const left=ids.length-placed.filter(x=>x!==undefined).length;
+  $('labTxt').innerHTML=t||(left?`${SC[sc].name}: לחצו על התמונה שבאה ${placed.length?'עכשיו':'ראשונה'}. נשארו ${left} תמונות.`:'כל המקומות מלאים. לחצו על ▶ הפעילו ובדקו את הסדר.');
+}
+$('labPool').addEventListener('click',e=>{
+  const b=e.target.closest('.pic'); if(!b||b.disabled) return; run++;
+  const k=ids.findIndex((_,j)=>placed[j]===undefined); if(k<0) return;
+  placed[k]=+b.dataset.i; drawSlots(); say();
+});
+function unplace(el){ const s=el.closest('.slot'); if(!s) return; run++; const k=+s.dataset.k; if(placed[k]===undefined) return; placed[k]=undefined; drawSlots(); say(); }
+$('labSlots').addEventListener('click',e=>unplace(e.target));
+$('labSlots').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); unplace(e.target); } });
+function wrongMsg(s,a,b){ /* a came before b, but b should be first */
+  const f=SC[s].fun[a+'>'+b]; const ta=SC[s].steps[a][1], tb=SC[s].steps[b][1];
+  return f||`"${ta}" לפני "${tb}"? זה הפוך. קודם ${tb}.`;
+}
+$('labRun').onclick=()=>{
+  const full=ids.every((_,k)=>placed[k]!==undefined);
+  if(!full){ say('קודם ממלאים את כל המקומות, ואז מפעילים.'); return; }
+  const my=++run, slots=[...$('labSlots').querySelectorAll('.slot')];
+  slots.forEach(s=>s.classList.remove('go','bad'));
+  let k=0;
+  const step=()=>{
+    if(my!==run) return;
+    /* a step is wrong when something that should come after it was already done */
+    const prev=k<placed.length?placed.slice(0,k).find(x=>x>placed[k]):undefined;
+    if(prev!==undefined){ slots[k].classList.add('bad'); say(`אוי! ${wrongMsg(sc,prev,placed[k])} נסו להחליף ושוב ▶ הפעילו.`); return; }
+    if(k===placed.length){ say(`נהדר! ${SC[sc].name} הצליח. כל הצעדים בסדר הנכון, וזה האלגוריתם שלכם. נסו עוד סיפור או יותר צעדים.`); return; }
+    slots[k].classList.add('go'); say(`צעד ${k+1}: ${SC[sc].steps[placed[k]][1]}`); k++; setTimeout(step,650);
+  };
+  step();
+};
+$('labMix').onclick=labNew;
+$('labN').addEventListener('input',labNew);
+document.querySelectorAll('#labSc button').forEach(b=>b.addEventListener('click',()=>{ sc=b.dataset.s; labNew(); }));
+labNew();
+
+/* worked example: the sandwich, built from the end */
+const EX=[
+  [[],'יש לנו 4 תמונות מעורבבות: לחם, גבינה, כריך סגור ואוכלים. מה עושים קודם?'],
+  [[4],'מתחילים מהסוף. מה קורה בסוף? אוכלים 😋. התמונה הזו תהיה אחרונה.'],
+  [[3,4],'מה היה רגע לפני שאוכלים? סוגרים את הכריך בפרוסה 🥪.'],
+  [[2,3,4],'ולפני שסוגרים? שמים גבינה 🧀 על הלחם.'],
+  [[0,2,3,4],'ובהתחלה צריך פרוסת לחם 🍞. בלי לחם אין על מה לשים גבינה.'],
+  [[0,2,3,4],'עכשיו מריצים בראש: לחם, גבינה, סוגרים, אוכלים. הכל הגיוני. זה האלגוריתם של הכריך.']
+];
+let exI=0;
+function ex(){
+  const [shown,t]=EX[exI], all=[0,2,3,4];
+  $('exStrip').innerHTML=all.map(i=>shown.includes(i)?`<div class="pic">${pic('sandwich',i)}</div>`:`<div class="gap">?</div>`).join('');
+  $('exText').innerHTML=t; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice: three kinds of puzzles */
+let pr={}, sel=null, streak=0, solved=0;
+function newPr(){
+  let s,kind,n;
+  do{ s=ALL[Math.floor(Math.random()*ALL.length)]; kind=['first','missing','check'][Math.floor(Math.random()*3)]; }while(s===pr.s&&kind===pr.kind);
+  n=Math.random()<.5?3:4; const k=keep(s,n);
+  pr={s,kind,k,tries:0,hint:0}; sel=null;
+  if(kind==='first'){
+    pr.opts=shuffle(k); pr.ans=k[0];
+    $('prQ').textContent=`${SC[s].name}: מה עושים ראשון?`; $('prStrip').innerHTML='';
+  }else if(kind==='missing'){
+    const m=1+Math.floor(Math.random()*(k.length-1)); pr.m=m; pr.ans=k[m];
+    const others=[0,1,2,3,4].filter(i=>!k.includes(i)); const wrong=shuffle(k.filter((_,j)=>j!==m)).slice(0,1).concat(others.slice(0,1));
+    pr.opts=shuffle([pr.ans].concat(wrong).slice(0,3));
+    $('prQ').textContent=`${SC[s].name}: איזו תמונה חסרה?`;
+    $('prStrip').innerHTML=k.map((i,j)=>j===m?`<div class="gap">?</div>`:`<div class="pic">${pic(s,i)}</div>`).join('<span class="arrow">←</span>');
+  }else{
+    const ok=Math.random()<.45; let seq=k.slice();
+    if(!ok){ const a=Math.floor(Math.random()*(k.length-1)); [seq[a],seq[a+1]]=[seq[a+1],seq[a]]; pr.swap=a; }
+    pr.seq=seq; pr.ans=ok?'yes':'no'; pr.opts=['yes','no'];
+    $('prQ').textContent=`${SC[s].name}: הסדר הזה נכון?`;
+    $('prStrip').innerHTML=seq.map(i=>`<div class="pic">${pic(s,i)}</div>`).join('<span class="arrow">←</span>');
+  }
+  $('prCh').innerHTML=pr.opts.map(o=>o==='yes'?`<button class="pic" data-o="yes" aria-pressed="false"><span class="emo">👍</span>כן, נכון</button>`:o==='no'?`<button class="pic" data-o="no" aria-pressed="false"><span class="emo">👎</span>לא, הפוך</button>`:`<button class="pic" data-o="${o}" aria-pressed="false">${pic(s,o)}</button>`).join('');
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCh').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; sel=b.dataset.o; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+function st(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  const {s,kind,k}=pr;
+  if(kind==='first') return `ראשון: ${SC[s].steps[k[0]][1]} ${SC[s].steps[k[0]][0]}. בלי זה אי אפשר להתחיל.`;
+  if(kind==='missing') return `חסר: ${SC[s].steps[pr.ans][1]} ${SC[s].steps[pr.ans][0]}.`;
+  return pr.ans==='yes'?'כן, הסדר נכון.':`לא. ${wrongMsg(s,pr.seq[pr.swap],pr.seq[pr.swap+1])}`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(sel===null){ fb.innerHTML='<div class="fb err">בחרו קודם תמונה אחת.</div>'; return; }
+  const v=pr.kind==='check'?sel:+sel;
+  if(v===pr.ans){ streak++; solved++; st(); fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`; $('prShow').disabled=true; return; }
+  streak=0; pr.tries++; st();
+  const {s,kind,k}=pr; let m;
+  if(kind==='first') m=`אפשר לעשות את "${SC[s].steps[v][1]}" בלי שום דבר לפני? חפשו את מה שמתחילים בו.`;
+  else if(kind==='missing') m=k.includes(v)?'התמונה הזו כבר נמצאת בשורה. מה חסר במקום של סימן השאלה?':'התמונה הזו לא שייכת לסיפור. מה קורה בין התמונה שלפני לתמונה שאחרי?';
+  else m=pr.ans==='no'?'בדקו כל שתי תמונות צמודות. יש זוג שהוא הפוך?':'עברו על הצעדים אחד אחד. כל צעד בא אחרי הקודם?';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {s,kind,k}=pr; let h;
+  if(pr.hint<2) h=kind==='check'?'מריצים בראש: עושים את הצעד הראשון, אחר כך השני... משהו מצחיק?':'שאלו: מה קורה בסוף הסיפור? ומה היה רגע לפני?';
+  else if(kind==='first') h=`הסוף הוא "${SC[s].steps[k[k.length-1]][1]}". חפשו את הצעד הכי רחוק ממנו.`;
+  else if(kind==='missing') h=`לפני סימן השאלה: "${SC[s].steps[k[pr.m-1]][1]}". מה עושים מיד אחרי זה?`;
+  else h=pr.ans==='no'?`הסתכלו על התמונה במקום ${pr.swap+1} ועל זו שאחריה.`:'כל זוג תמונות צמודות כאן בסדר טוב.';
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${solution()} עכשיו נסו חידה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); st();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>משתנים · מדעי המחשב כיתה ה · מירי</title>
+<meta name="description" content="משתנה הוא קופסה עם שם שאפשר לשים בה ערך ולהחליף אותו. סופרים נקודות במשחק ועוקבים אחרי מה שבקופסה. מעבדה ותרגול עם רמזים לכיתה ה.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/variables-boxes/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משתנים · מדעי המחשב כיתה ה · מירי">
+<meta property="og:description" content="משתנה הוא קופסה עם שם שאפשר לשים בה ערך ולהחליף אותו. סופרים נקודות במשחק ועוקבים אחרי מה שבקופסה. מעבדה ותרגול עם רמזים לכיתה ה.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/variables-boxes/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ה","item":"https://shohamtal.github.io/homework-site/cs/grade-5/"},{"@type":"ListItem","position":4,"name":"חשיבה ממוחשבת","item":"https://shohamtal.github.io/homework-site/cs/grade-5/#cs-puzzles-5"},{"@type":"ListItem","position":5,"name":"משתנים: קופסאות עם שם","item":"https://shohamtal.github.io/homework-site/cs/variables-boxes/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה משתנה בתכנות, במילים פשוטות?","acceptedAnswer":{"@type":"Answer","text":"משתנה הוא קופסה עם שם, שהמחשב שומר בה ערך. אפשר לשים בה ערך, לשנות אותו ולבדוק אותו. ניקוד במשחק, מספר החיים ושם השחקן הם כולם משתנים. נסו במעבדה."}},{"@type":"Question","name":"למה המילה \"משתנה\"?","acceptedAnswer":{"@type":"Answer","text":"כי הערך בקופסה יכול להשתנות בזמן שהתוכנית רצה. השם נשאר אותו שם, אבל מה שבתוכו מתחלף. הניקוד מתחיל ב-0 ועולה בכל פעם שתופסים כוכב."}},{"@type":"Question","name":"איך מתרגלים משתנים בבית?","acceptedAnswer":{"@type":"Answer","text":"קחו כמה כוסות, כתבו על כל אחת שם, ושימו בהן פתקים עם מספרים. אחד קורא הוראות כמו \"הוסיפו 2 לכוס ניקוד\", והשני מעדכן את הפתק. בסוף בודקים יחד מה יש בכל כוס. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"משתנים: קופסאות עם שם","description":"משתנה הוא קופסה עם שם שאפשר לשים בה ערך ולהחליף אותו. סופרים נקודות במשחק ועוקבים אחרי מה שבקופסה. מעבדה ותרגול עם רמזים לכיתה ה.","url":"https://shohamtal.github.io/homework-site/cs/variables-boxes/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ה","about":"משתנים: קופסאות עם שם","teaches":"משתנים: קופסאות עם שם","keywords":"משתנה, ערך, ניקוד","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.boxes{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+.vbox{width:88px; text-align:center}
+.vbox .nm{font-weight:800; font-size:.95rem; margin-bottom:4px}
+.vbox .vl{height:70px; border:2.5px solid var(--border); border-radius:6px 6px 14px 14px; background:var(--card); box-shadow:3px 3px 0 var(--hard); display:flex; align-items:center; justify-content:center; font:1.9rem var(--f-math); transition:transform .2s, background .2s}
+.vbox .vl.pop{transform:scale(1.12); background:var(--hl)}
+@media (prefers-reduced-motion: reduce){.vbox .vl{transition:none}}
+.script{list-style:none; padding:0; margin:0 auto; max-width:460px; display:flex; flex-direction:column; gap:6px; counter-reset:ln}
+.script li{counter-increment:ln; border:2px solid var(--border); border-radius:10px; padding:7px 10px; background:var(--card); font-weight:600}
+.script li::before{content:counter(ln) ". "; color:var(--muted)}
+.script li.now{background:var(--hl)}
+.script li.done{background:var(--paper); color:var(--muted)}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:0 auto; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace td.ch{background:var(--hint-bg); font-weight:800}
+.num{font-family:var(--f-math); font-size:1.15rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.events{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; font-size:1.6rem; direction:ltr}
+.events span{border:1.5px solid var(--soft); border-radius:10px; padding:2px 6px}
+.events span.now{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.events span.past{opacity:.4}
+.rules{text-align:center; color:var(--muted); font-size:.95rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.3rem var(--f-math); width:5em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.q-script{max-width:420px; margin:0 auto}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="variables-boxes">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-5/">כיתה ה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-5/#cs-puzzles-5">חשיבה ממוחשבת</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">משתנים: קופסאות עם שם</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ה · חשיבה ממוחשבת</div>
+  <h1>משתנים <span class="slogan">קופסאות עם שם</span></h1>
+  <p class="lead">במשחק מחשב יש ניקוד שעולה, חיים שיורדים ושלב שמשתנה. איך המחשב זוכר את כל זה? בעזרת משתנים: קופסאות עם שם, שבכל רגע יש בהן ערך אחד. כאן מריצים הוראות שורה אחרי שורה ועוקבים מה יש בכל קופסה. כדאי להכיר קודם את <a href="../algorithms-recipes/">האלגוריתם כמתכון</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">משתנה הוא קופסה. על הקופסה כתוב <strong>שם</strong>, ובתוכה יש <strong>ערך</strong>. המחשב פונה לקופסה לפי השם שלה, ויכול להסתכל על הערך או להחליף אותו.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>שמים ערך</h3>
+      <p>"שימו 0 בניקוד" אומר: בקופסה בשם ניקוד יהיה עכשיו 0. מה שהיה בה קודם נמחק.</p>
+    </div>
+    <div class="mini">
+      <h3>משנים ערך</h3>
+      <p>"הוסיפו 5 לניקוד": לוקחים את מה שיש בקופסה, מוסיפים 5, ושמים בחזרה. אם היה 10, יהיה 15.</p>
+    </div>
+    <div class="mini">
+      <h3>בודקים ערך</h3>
+      <p>"אם חיים = 0 אז…": המחשב מסתכל בקופסה חיים. רק אם יש בה 0, הוא עושה את מה שאחרי "אז".</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> בכל קופסה יש ערך אחד בלבד בכל רגע. ערך חדש מחליף את הישן.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מריצים שורה אחרי שורה</h2></div>
+  <p class="text">בחרו תוכנית מ"נסו את אלה" ולחצו "שורה הבאה". הקופסאות מתעדכנות, ובטבלת המעקב רואים מה היה בכל קופסה אחרי כל שורה. התא שהשתנה צבוע בצהוב.</p>
+  <div class="boxes" id="boxes"></div>
+  <ol class="script" id="script" aria-label="התוכנית"></ol>
+  <div class="pad">
+    <button type="button" class="primary" id="next">▶ שורה הבאה</button>
+    <button type="button" id="all">הריצו הכל</button>
+    <button type="button" id="restart">מההתחלה</button>
+  </div>
+  <table class="trace" id="trace" aria-label="טבלת מעקב"></table>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+    <div class="ctrl">
+      <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+      <div class="tries" id="tries">
+        <button type="button" data-t="0">ניקוד בסיסי</button>
+        <button type="button" data-t="1">הערך הישן נמחק</button>
+        <button type="button" data-t="2">חיים ותנאי</button>
+        <button type="button" data-t="3">שם או ערך</button>
+        <button type="button" data-t="4">עולים שלב</button>
+      </div>
+    </div>
+  </div>
+  <h3 style="margin-top:18px">משחק הכוכבים: נחשו לפני שמריצים</h3>
+  <p class="rules">כל ⭐ מוסיף 10 לניקוד. כל 💣 מוריד 1 מחיים. כל 💎 מוסיף 50 לניקוד. בהתחלה: ניקוד 0, חיים 3.</p>
+  <div class="boxes" id="gBoxes"></div>
+  <div class="events" id="ev"></div>
+  <div class="ansrow">
+    <label for="gsS">ניקוד בסוף:</label><input id="gsS" inputmode="numeric" autocomplete="off">
+    <label for="gsL">חיים בסוף:</label><input id="gsL" inputmode="numeric" autocomplete="off">
+  </div>
+  <div class="pad">
+    <button type="button" class="primary" id="gRun">בדקו את הניחוש</button>
+    <button type="button" id="gNew">משחק חדש</button>
+  </div>
+  <div id="gFb" aria-live="polite"></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>"שימו" זה לא "הוסיפו"</h3>
+      <p>בניקוד יש 7, ואז "שימו 3 בניקוד". עכשיו יש 3, לא 10. שימו מחליף את מה שהיה. רק "הוסיפו" מחבר.</p>
+    </div>
+    <div class="mini">
+      <h3>שם הוא לא ערך</h3>
+      <p>"ניקוד" הוא השם של הקופסה, לא מה שבתוכה. "שימו בשלב את מה שיש בניקוד" מעתיק את הערך. אחר כך כל קופסה משתנה לבד.</p>
+    </div>
+    <div class="mini">
+      <h3>שתי קופסאות באותו שם</h3>
+      <p>אי אפשר. אם יש שתי קופסאות בשם ניקוד, המחשב לא יידע לאיזו לפנות. לכל משתנה צריך שם משלו, כמו ניקוד1 וניקוד2.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">עוקבים אחרי התוכנית: 1. שימו 3 בחיים. 2. שימו 0 בניקוד. 3. הוסיפו 20 לניקוד. 4. הורידו 1 מחיים. 5. שימו 5 בניקוד.</p>
+  <div class="stepper">
+    <table class="trace" id="exT" aria-label="טבלת מעקב לדוגמה"></table>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <ol class="script q-script" id="prQ"></ol>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" inputmode="numeric" autocomplete="off" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה משתנה בתכנות, במילים פשוטות?</h3>
+    <p>משתנה הוא קופסה עם שם, שהמחשב שומר בה ערך. אפשר לשים בה ערך, לשנות אותו ולבדוק אותו. ניקוד במשחק, מספר החיים ושם השחקן הם כולם משתנים. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>למה המילה "משתנה"?</h3>
+    <p>כי הערך בקופסה יכול להשתנות בזמן שהתוכנית רצה. השם נשאר אותו שם, אבל מה שבתוכו מתחלף. הניקוד מתחיל ב-0 ועולה בכל פעם שתופסים כוכב.</p>
+    <h3>איך מתרגלים משתנים בבית?</h3>
+    <p>קחו כמה כוסות, כתבו על כל אחת שם, ושימו בהן פתקים עם מספרים. אחד קורא הוראות כמו "הוסיפו 2 לכוס ניקוד", והשני מעדכן את הפתק. בסוף בודקים יחד מה יש בכל כוס. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/algorithms-recipes/">אלגוריתם הוא מתכון</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/loops-puzzles/"><small>→ הנושא הקודם</small>לולאות: חוזרים על זה כמה פעמים</a><a class="next" href="../../cs/grid-robot-code/"><small>הנושא הבא ←</small>רובוט על לוח משבצות</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const V=['ניקוד','חיים','שלב'];
+const N=v=>`<span class="num">${v}</span>`;
+/* instructions: set / add / sub / copy / if (var op value then instr) */
+function txt(i){
+  if(i.t==='set') return `שימו ${i.n} ב${i.v}`;
+  if(i.t==='add') return `הוסיפו ${i.n} ל${i.v}`;
+  if(i.t==='sub') return `הורידו ${i.n} מ${i.v}`;
+  if(i.t==='copy') return `שימו ב${i.v} את מה שיש ב${i.from}`;
+  return `אם ${i.c} ${i.op} ${i.k} אז ${txt(i.then)}`;
+}
+function exec(i,s){ /* returns {s,changed,msg} */
+  const o={...s}; const was=s[i.v];
+  if(i.t==='set'){ o[i.v]=i.n; return {s:o,ch:i.v,msg:`בקופסה ${i.v} היה ${show(was)}. עכשיו יש בה ${i.n}. הערך הישן נמחק.`}; }
+  if(i.t==='add'){ o[i.v]=was+i.n; return {s:o,ch:i.v,msg:`בקופסה ${i.v} היה ${was}. הוספנו ${i.n}, ועכשיו יש ${o[i.v]}.`}; }
+  if(i.t==='sub'){ o[i.v]=was-i.n; return {s:o,ch:i.v,msg:`בקופסה ${i.v} היה ${was}. הורדנו ${i.n}, ועכשיו יש ${o[i.v]}.`}; }
+  if(i.t==='copy'){ o[i.v]=s[i.from]; return {s:o,ch:i.v,msg:`מעתיקים את הערך ${s[i.from]} מ${i.from} ל${i.v}. ${i.from} לא משתנה.`}; }
+  const val=s[i.c], ok=i.op==='='?val===i.k:i.op==='>'?val>i.k:val<i.k;
+  if(!ok) return {s:o,ch:null,msg:`בודקים: ב${i.c} יש ${val}. האם ${val} ${i.op} ${i.k}? לא. לכן לא עושים את מה שאחרי "אז".`};
+  const r=exec(i.then,s); r.msg=`בודקים: ב${i.c} יש ${val}. האם ${val} ${i.op} ${i.k}? כן! לכן: `+r.msg; return r;
+}
+const show=v=>v===null||v===undefined?'כלום':v;
+const SCR=[
+  [{t:'set',v:'ניקוד',n:0},{t:'add',v:'ניקוד',n:5},{t:'add',v:'ניקוד',n:5},{t:'add',v:'ניקוד',n:10}],
+  [{t:'set',v:'ניקוד',n:7},{t:'set',v:'ניקוד',n:3},{t:'add',v:'ניקוד',n:2}],
+  [{t:'set',v:'שלב',n:3},{t:'set',v:'חיים',n:2},{t:'sub',v:'חיים',n:1},{t:'if',c:'חיים',op:'=',k:0,then:{t:'set',v:'שלב',n:1}},{t:'sub',v:'חיים',n:1},{t:'if',c:'חיים',op:'=',k:0,then:{t:'set',v:'שלב',n:1}}],
+  [{t:'set',v:'ניקוד',n:4},{t:'copy',v:'שלב',from:'ניקוד'},{t:'add',v:'שלב',n:1}],
+  [{t:'set',v:'ניקוד',n:0},{t:'set',v:'שלב',n:1},{t:'add',v:'ניקוד',n:50},{t:'if',c:'ניקוד',op:'>',k:40,then:{t:'add',v:'שלב',n:1}}]
+];
+const empty=()=>({'ניקוד':null,'חיים':null,'שלב':null});
+let sc=SCR[0], ln=0, state=empty(), rows=[];
+function boxes(ch,s,el){ el=el||$('boxes'); el.innerHTML=V.map(v=>`<div class="vbox"><div class="nm">${v}</div><div class="vl${v===ch?' pop':''}">${show(s[v])==='כלום'?'':s[v]}</div></div>`).join(''); if(ch) setTimeout(()=>{ const e=el.querySelector('.vl.pop'); if(e) e.classList.remove('pop'); },350); }
+function trace(el,rs){
+  el.innerHTML='<tr><th>שורה</th>'+V.map(v=>`<th>${v}</th>`).join('')+'</tr>'+(rs.length?rs.map(r=>`<tr><td>${r.ln}</td>${V.map(v=>`<td class="num${v===r.ch?' ch':''}">${r.s[v]===null?'':r.s[v]}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="4" style="color:var(--muted)">עוד לא הרצנו שורות</td></tr>`);
+}
+function draw(ch,msg){
+  $('script').innerHTML=sc.map((i,k)=>`<li class="${k===ln?'now':k<ln?'done':''}">${txt(i)}</li>`).join('');
+  boxes(ch,state); trace($('trace'),rows);
+  $('next').disabled=ln>=sc.length; $('all').disabled=ln>=sc.length;
+  $('labTxt').innerHTML=msg||(ln>=sc.length?`<div>התוכנית נגמרה. בסוף: ${V.map(v=>`${v} = ${show(state[v])}`).join(', ')}.</div>`:'<div>לחצו "שורה הבאה". לפני כל לחיצה נסו לנחש מה ישתנה.</div>');
+}
+function stepLine(){ if(ln>=sc.length) return null; const r=exec(sc[ln],state); state=r.s; rows.push({ln:ln+1,s:{...state},ch:r.ch}); ln++; return r; }
+$('next').onclick=()=>{ const r=stepLine(); if(r) draw(r.ch,`<div>שורה ${ln}: ${r.msg}</div>${ln>=sc.length?`<div>זו הייתה השורה האחרונה. בסוף: ${V.map(v=>`${v} = ${show(state[v])}`).join(', ')}.</div>`:''}`); };
+$('all').onclick=()=>{ let r; while(ln<sc.length) r=stepLine(); draw(r&&r.ch); };
+$('restart').onclick=()=>{ ln=0; state=empty(); rows=[]; draw(null); };
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ sc=SCR[+b.dataset.t]; ln=0; state=empty(); rows=[]; draw(null); });
+draw(null);
+
+/* star game */
+const EVV={'⭐':['ניקוד',10],'💣':['חיים',-1],'💎':['ניקוד',50]};
+let ev=[], gId=0;
+function gNew(){ gId++; ev=[]; const n=ri(5,8); for(let i=0;i<n;i++) ev.push(pick(['⭐','⭐','⭐','💣','💣','💎'])); $('ev').innerHTML=ev.map(e=>`<span>${e}</span>`).join(''); $('gsS').value=''; $('gsL').value=''; $('gFb').innerHTML=''; $('gRun').disabled=false; boxes(null,{'ניקוד':0,'חיים':3,'שלב':1},$('gBoxes')); }
+$('gNew').onclick=gNew;
+$('gRun').onclick=()=>{
+  const gs=parseInt($('gsS').value,10), gl=parseInt($('gsL').value,10);
+  if(isNaN(gs)||isNaN(gl)){ $('gFb').innerHTML='<div class="fb err">כתבו ניחוש לניקוד וגם לחיים.</div>'; return; }
+  const id=++gId; let s={'ניקוד':0,'חיים':3,'שלב':1}, k=0; $('gRun').disabled=true;
+  const spans=[...document.querySelectorAll('#ev span')];
+  boxes(null,s,$('gBoxes'));
+  const tick=()=>{
+    if(id!==gId) return;
+    if(k>=ev.length){
+      const okS=s['ניקוד']===gs, okL=s['חיים']===gl, stars=ev.filter(e=>e==='⭐').length, gems=ev.filter(e=>e==='💎').length, bombs=ev.filter(e=>e==='💣').length;
+      $('gFb').innerHTML=okS&&okL?`<div class="fb ok">ניחשתם נכון! ניקוד ${s['ניקוד']}, חיים ${s['חיים']}.</div>`
+        :`<div class="fb err">בסוף: ניקוד ${s['ניקוד']} (${stars} כוכבים × 10${gems?` ועוד ${gems} יהלומים × 50`:''}), חיים ${s['חיים']} (3 פחות ${bombs} פצצות). ${!okL&&gl===bombs?'שימו לב: החיים מתחילים ב-3, וכל פצצה מורידה 1.':''}</div>`;
+      $('gRun').disabled=false; return;
+    }
+    spans.forEach((e,i)=>{ e.className=i<k?'past':i===k?'now':''; });
+    const [v,d]=EVV[ev[k]]; s={...s}; s[v]+=d; boxes(v,s,$('gBoxes')); k++;
+    setTimeout(tick,600);
+  };
+  tick();
+};
+gNew();
+
+/* worked example */
+const EXS=[{t:'set',v:'חיים',n:3},{t:'set',v:'ניקוד',n:0},{t:'add',v:'ניקוד',n:20},{t:'sub',v:'חיים',n:1},{t:'set',v:'ניקוד',n:5}];
+const EXR=[]; (function(){ let s=empty(); EXS.forEach((i,k)=>{ const r=exec(i,s); s=r.s; EXR.push({ln:k+1,s:{...s},ch:r.ch,msg:r.msg}); }); })();
+const EXT=['מתחילים: כל הקופסאות ריקות. נעבור שורה אחרי שורה ונמלא את טבלת המעקב.']
+  .concat(EXR.map(r=>`שורה ${r.ln}: ${r.msg}`))
+  .concat(['בסוף: חיים = 2, ניקוד = 5. שימו לב: ה-20 שהיו בניקוד נמחקו בשורה 5, כי "שימו" מחליף את מה שהיה.']);
+let exI=0;
+function ex(){ trace($('exT'),EXR.slice(0,Math.min(exI,EXR.length))); $('exText').innerHTML=EXT[exI]; $('exCount').textContent=`צעד ${exI+1} מתוך ${EXT.length}`; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXT.length-1; }
+$('exNext').onclick=()=>{ if(exI<EXT.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+let pr={}, sel=-1, streak=0, solved=0;
+function runAll(sc0){ let s=empty(); sc0.forEach(i=>{ s=exec(i,s).s; }); return s; }
+function newPr(){
+  const kind=pick(['final','final','cond','copy','name']);
+  sel=-1; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prCh').hidden=kind!=='name'; $('prIn').hidden=kind==='name';
+  let s0;
+  if(kind==='final'){
+    const a=ri(1,9)*5, b=ri(1,4)*5, c=ri(2,9), withSet=Math.random()<.5;
+    s0=[{t:'set',v:'ניקוד',n:a},{t:'add',v:'ניקוד',n:b}];
+    if(withSet) s0.push({t:'set',v:'ניקוד',n:c});
+    s0.push(pick([{t:'add',v:'ניקוד',n:ri(1,5)},{t:'sub',v:'ניקוד',n:1}]));
+    pr={kind,v:'ניקוד',withSet,sumAll:s0.reduce((t,i)=>t+(i.t==='sub'?-i.n:i.n),0)};
+  } else if(kind==='cond'){
+    const life=ri(1,2), lvl=ri(2,6);
+    s0=[{t:'set',v:'שלב',n:lvl},{t:'set',v:'חיים',n:life},{t:'sub',v:'חיים',n:1},{t:'if',c:'חיים',op:'=',k:0,then:{t:'set',v:'שלב',n:1}}];
+    pr={kind,v:'שלב',life,lvl};
+  } else if(kind==='copy'){
+    const a=ri(2,9), b=ri(1,5);
+    s0=[{t:'set',v:'ניקוד',n:a},{t:'copy',v:'שלב',from:'ניקוד'},{t:'add',v:'שלב',n:b}];
+    pr={kind,v:pick(['ניקוד','שלב']),a,b};
+  } else {
+    const n=ri(2,9);
+    s0=[{t:'add',v:'חיים',n}];
+    const opts=[{t:'השם הוא חיים, והמספר '+n+' הוא מה שמוסיפים לערך',ok:true},{t:'השם הוא '+n+', והערך הוא חיים',why:'השם כתוב על הקופסה. מספר הוא ערך, לא שם.'},{t:'השם והערך הם אותו דבר',why:'השם נשאר קבוע, והערך שבפנים משתנה.'}].sort(()=>Math.random()-.5);
+    pr={kind,opts,n};
+  }
+  pr.s0=s0; pr.ans=kind==='name'?null:runAll(s0)[pr.v];
+  $('prQ').innerHTML=s0.map(i=>`<li>${txt(i)}</li>`).join('');
+  if(kind==='name'){
+    $('prAsk').textContent='בשורה הזו, מה השם של הקופסה ומה המספר?';
+    $('prCh').innerHTML=pr.opts.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${o.t}</button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  } else $('prAsk').textContent=`הריצו בראש את התוכנית. מה יהיה בקופסה ${pr.v} בסוף?`;
+  pr.tries=0; pr.hint=0;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){
+  if(pr.kind==='name') return `השם הוא חיים: זה מה שכתוב על הקופסה. ${pr.n} הוא מספר שמוסיפים לערך שבתוכה.`;
+  let s=empty(); return pr.s0.map((i,k)=>{ const r=exec(i,s); s=r.s; return `${k+1}. ${r.msg}`; }).join('<br>');
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(pr.kind==='name'){
+    if(sel<0){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=!!pr.opts[sel].ok; if(!right) msg=pr.opts[sel].why;
+  } else {
+    const v=parseInt($('prN').value,10);
+    if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; $('prN').focus(); return; }
+    right=v===pr.ans;
+    if(!right){
+      if(pr.kind==='final'&&pr.withSet&&v===pr.sumAll) msg='חיברתם את כל המספרים. אבל "שימו" לא מוסיף, הוא מחליף את מה שהיה.';
+      else if(pr.kind==='cond'&&v===pr.lvl&&pr.life===1) msg='בדקו את התנאי: כמה חיים נשארו אחרי שורה 3?';
+      else if(pr.kind==='cond'&&v===1&&pr.life===2) msg=`אחרי שורה 3 נשארו ${pr.life-1} חיים. האם התנאי "חיים = 0" מתקיים?`;
+      else if(pr.kind==='copy'&&pr.v==='ניקוד'&&v===pr.a+pr.b) msg='הוספנו לשלב, לא לניקוד. אחרי ההעתקה כל קופסה משתנה לבד.';
+      else if(pr.kind==='copy'&&pr.v==='שלב'&&v===pr.b) msg='בשורה 2 שלב קיבל את הערך שהיה בניקוד. עם מה הוא התחיל?';
+    }
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${pr.kind==='name'?'':`בסוף יש ב${pr.v} ${pr.ans}.`}</div>`; return; }
+  streak=0; pr.tries++; streakTxt(); fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.kind==='name') h=pr.hint<2?'השם כתוב על הקופסה. הערך נמצא בפנים.':'איזו מילה בשורה היא שם של קופסה?';
+  else h=pr.hint<2?'כתבו טבלת מעקב קטנה: אחרי כל שורה, מה יש בכל קופסה?':`אחרי שורה 1 יש ב${pr.s0[0].v} ${runAll([pr.s0[0]])[pr.s0[0].v]}. המשיכו משם, שורה אחרי שורה.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${solution()}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

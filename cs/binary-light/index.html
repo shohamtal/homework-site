@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>כן או לא · מדעי המחשב כיתה ד · מירי</title>
+<meta name="description" content="מנורה דולקת או כבויה, 1 או 0: מגלים איך מחשב סופר ושומר מידע רק בעזרת שני מצבים. מעבדה ותרגול עם רמזים לכיתה ד.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/binary-light/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="כן או לא · מדעי המחשב כיתה ד · מירי">
+<meta property="og:description" content="מנורה דולקת או כבויה, 1 או 0: מגלים איך מחשב סופר ושומר מידע רק בעזרת שני מצבים. מעבדה ותרגול עם רמזים לכיתה ד.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/binary-light/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ד","item":"https://shohamtal.github.io/homework-site/cs/grade-4/"},{"@type":"ListItem","position":4,"name":"חשיבה ממוחשבת","item":"https://shohamtal.github.io/homework-site/cs/grade-4/#cs-puzzles-4"},{"@type":"ListItem","position":5,"name":"כן או לא: שפת המחשב","item":"https://shohamtal.github.io/homework-site/cs/binary-light/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה המחשב משתמש רק ב-0 ו-1?","acceptedAnswer":{"@type":"Answer","text":"כי בתוך המחשב יש מתגים חשמליים זעירים, ולכל מתג יש רק שני מצבים ברורים: יש זרם או אין זרם. קל לבנות מתגים כאלה, הם מהירים מאוד וכמעט לא טועים. מהרבה ביטים ביחד בונים מספרים, אותיות, צבעים וצלילים. נסו להדליק נורות במעבדה."}},{"@type":"Question","name":"מה ההבדל בין ביט לבייט?","acceptedAnswer":{"@type":"Answer","text":"ביט הוא יחידה אחת, 0 או 1, כמו נורה אחת. בייט הוא קבוצה של 8 ביטים, ובה אפשר לשמור מספר מ-0 עד 255. כשאומרים שלקובץ יש מגה בייט, מתכוונים בערך למיליון בייטים."}},{"@type":"Question","name":"איך מתרגלים את זה בבית?","acceptedAnswer":{"@type":"Answer","text":"משחק אצבעות: כל אצבע ביד היא נורה. האגודל שווה 1, האצבע הבאה 2, אחר כך 4, 8 ו-16. אצבע מורמת היא 1, מקופלת היא 0. נסו להראות 5, 12 ו-31 ביד אחת. עם שתי ידיים אפשר לספור עד 1,023. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"כן או לא: שפת המחשב","description":"מנורה דולקת או כבויה, 1 או 0: מגלים איך מחשב סופר ושומר מידע רק בעזרת שני מצבים. מעבדה ותרגול עם רמזים לכיתה ד.","url":"https://shohamtal.github.io/homework-site/cs/binary-light/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ד","about":"כן או לא: שפת המחשב","teaches":"כן או לא: שפת המחשב","keywords":"בינארי, 0 ו-1, ביט","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.row button,.tries button,.choices button,.modes button{min-height:46px}
+.bulbs{display:flex; direction:ltr; gap:4px; justify-content:center; width:100%}
+.bulb{flex:1 1 0; min-width:0; max-width:66px; display:flex; flex-direction:column; align-items:center; gap:4px; padding:6px 1px; border:2px solid var(--border); border-radius:12px; background:var(--card); box-shadow:2px 2px 0 var(--hard); color:var(--ink); font:inherit; cursor:pointer}
+.bulb[disabled]{cursor:default; opacity:1}
+.bulb .v{font:.8rem var(--f-math); color:var(--muted)}
+.bulb .l{width:24px; height:24px; border-radius:50%; border:2px solid var(--border); background:var(--soft)}
+.bulb.on .l{background:var(--hl); box-shadow:0 0 12px var(--hl)}
+.bulb .b{font:1.25rem var(--f-math)}
+.bulbs.small .bulb .l{width:20px; height:20px}
+.sumline{text-align:center; font-size:1.15rem; min-height:1.6em}
+.big{font:2.2rem var(--f-math); text-align:center}
+.bits{font:1.5rem var(--f-math); letter-spacing:.12em; direction:ltr; unicode-bidi:isolate}
+.modes{display:flex; gap:8px; justify-content:center; flex-wrap:wrap}
+.modes button[aria-pressed="true"],.choices button[aria-pressed="true"],.letters button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.target{display:flex; flex-direction:column; gap:6px}
+.status{font-weight:700; text-align:center}
+.status.hit{color:var(--ok)}
+.letters{display:grid; grid-template-columns:repeat(auto-fill,minmax(44px,1fr)); gap:6px}
+.letters button{min-height:50px; padding:2px; display:flex; flex-direction:column; align-items:center; line-height:1.1; font:700 1.15rem var(--f-body)}
+.letters button small{font:.75rem var(--f-math); color:var(--muted)}
+.msg{font:1.6rem var(--f-display); text-align:center; letter-spacing:.2em; min-height:1.4em}
+.msg .q{color:var(--muted)}
+.choices{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.choices button{min-width:70px; font:1.2rem var(--f-math)}
+.ansrow{display:flex; gap:8px; justify-content:center}
+.ansrow input{font:1.4rem var(--f-math); width:5em; padding:6px 10px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="binary-light">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-4/">כיתה ד</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-4/#cs-puzzles-4">חשיבה ממוחשבת</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">כן או לא: שפת המחשב</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ד · חשיבה ממוחשבת</div>
+  <h1>כן או לא: שפת המחשב <span class="slogan">הכל עשוי מ-0 ו-1</span></h1>
+  <p class="lead">בתוך המחשב יש מיליוני מתגים קטנטנים. כל מתג יודע רק שני דברים: דולק או כבוי. איך עם שני מצבים בלבד שומרים מספרים, אותיות ותמונות? כאן מדליקים נורות, סופרים בשפת המחשב ומפענחים הודעה סודית.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">נורה דולקת נכתבת <strong>1</strong>, ונורה כבויה נכתבת <strong>0</strong>. לכל נורה יש ערך, וכל נורה שווה פי 2 מהנורה שלידה. כדי לדעת איזה מספר רואים, מחברים את הערכים של הנורות הדולקות.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>למה רק שני מצבים?</h3>
+      <p>בתוך המחשב זורם חשמל. קל מאוד לבדוק אם יש זרם או אין זרם. קשה הרבה יותר להבדיל בין עשר רמות שונות של זרם. שני מצבים הם דרך בטוחה שלא מתבלבלת.</p>
+    </div>
+    <div class="mini">
+      <h3>ביט ובייט</h3>
+      <p><strong>ביט</strong> הוא נורה אחת: 0 או 1. <strong>בייט</strong> הוא 8 ביטים ביחד. בבייט אחד אפשר לשמור כל מספר מ-0 עד 255.</p>
+    </div>
+    <div class="mini">
+      <h3>כל נורה כפול 2</h3>
+      <p>מימין לשמאל: <span class="bits">1, 2, 4, 8, 16, 32, 64, 128</span>. ככה, עם מעט נורות, מגיעים למספרים גדולים.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>דוגמה:</strong> <span class="bits">1010</span> פירושו: הנורה של 8 דולקת, של 4 כבויה, של 2 דולקת ושל 1 כבויה. <span class="eq">8 + 2 = 10</span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מדליקים נורות</h2></div>
+  <p class="text">לחצו על נורה כדי להדליק או לכבות אותה. מעל כל נורה כתוב כמה היא שווה. בסרגל בוחרים מספר מטרה, ומנסים להגיע אליו בדיוק.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="modes" role="group" aria-label="כמה נורות"><button type="button" data-n="4" aria-pressed="true">4 נורות</button><button type="button" data-n="8" aria-pressed="false">8 נורות (בייט)</button></div>
+      <div class="bulbs" id="bulbs" style="margin-top:12px"></div>
+      <div class="sumline" id="sum"></div>
+      <div class="big" id="num" aria-live="polite"></div>
+      <div class="target">
+        <label for="tgt" style="font-weight:700">מספר מטרה: <span class="eq" id="tgtV"></span></label>
+        <input type="range" id="tgt" min="0" max="15" step="1" value="13">
+        <div class="status" id="st" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <p style="font-weight:700; margin:10px 0 6px">נסו את אלה:</p>
+      <div class="tries">
+        <button data-p="4:0">הכל כבוי</button>
+        <button data-p="4:15">הכל דולק (4)</button>
+        <button data-p="4:5">5</button>
+        <button data-p="4:10">10</button>
+        <button data-p="8:128">128</button>
+        <button data-p="8:255">הכל דולק (8)</button>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:22px">הודעה סודית</h3>
+  <p class="text">כל אות בהודעה מסתתרת בנורות. <span class="eq">א = 1</span>, <span class="eq">ב = 2</span>, <span class="eq">ג = 3</span>, וכך הלאה. חשבו איזה מספר מראות הנורות, ובחרו את האות שלו.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="modes" role="group" aria-label="רמת קושי"><button type="button" data-m="3" aria-pressed="true">קל: 3 נורות לאות</button><button type="button" data-m="5" aria-pressed="false">קשה: 5 נורות לאות</button></div>
+      <div class="msg" id="msg" aria-live="polite" style="margin-top:10px"></div>
+      <div class="bulbs small" id="sBulbs"></div>
+      <div class="letters" id="letters"></div>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="sTxt" aria-live="polite"></div>
+      <div class="row"><button id="sNew">הודעה אחרת</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>קוראים מהצד הלא נכון</h3>
+      <p>בעברית קוראים מימין לשמאל, אבל מספרים בינאריים כותבים כמו מספרים רגילים: הנורה הכי שווה בצד <strong>שמאל</strong>. <span class="bits">1000</span> זה 8, לא 1.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את האפס</h3>
+      <p>כשכל הנורות כבויות, זה המספר 0. לכן עם 4 נורות יש 16 מספרים שונים, מ-0 עד 15, ולא 15.</p>
+    </div>
+    <div class="mini">
+      <h3>הנורה השלישית שווה 3?</h3>
+      <p>לא! הערך הוא לא המקום של הנורה. מימין: הראשונה שווה 1, השנייה 2, השלישית 4 והרביעית 8. כל פעם כפול 2.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">איך כותבים את המספר <span class="eq">13</span> בעזרת 4 נורות?</p>
+  <div class="stepper">
+    <div class="bulbs" id="exB"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="bulbs" id="prB"></div>
+  <div class="big" id="prQ"></div>
+  <div class="ctrl">
+    <div class="ansrow" id="prIn" hidden><input id="prN" inputmode="numeric" autocomplete="off" aria-label="התשובה"></div>
+    <div class="choices" id="prCh" hidden></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה המחשב משתמש רק ב-0 ו-1?</h3>
+    <p>כי בתוך המחשב יש מתגים חשמליים זעירים, ולכל מתג יש רק שני מצבים ברורים: יש זרם או אין זרם. קל לבנות מתגים כאלה, הם מהירים מאוד וכמעט לא טועים. מהרבה ביטים ביחד בונים מספרים, אותיות, צבעים וצלילים. <a href="#lab">נסו להדליק נורות במעבדה</a>.</p>
+    <h3>מה ההבדל בין ביט לבייט?</h3>
+    <p>ביט הוא יחידה אחת, 0 או 1, כמו נורה אחת. בייט הוא קבוצה של 8 ביטים, ובה אפשר לשמור מספר מ-0 עד 255. כשאומרים שלקובץ יש מגה בייט, מתכוונים בערך למיליון בייטים.</p>
+    <h3>איך מתרגלים את זה בבית?</h3>
+    <p>משחק אצבעות: כל אצבע ביד היא נורה. האגודל שווה 1, האצבע הבאה 2, אחר כך 4, 8 ו-16. אצבע מורמת היא 1, מקופלת היא 0. נסו להראות 5, 12 ו-31 ביד אחת. עם שתי ידיים אפשר לספור עד 1,023. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/algorithms-recipes/"><small>→ הנושא הקודם</small>אלגוריתם הוא מתכון</a><a class="next" href="../../cs/loops-puzzles/"><small>הנושא הבא ←</small>לולאות: חוזרים על זה כמה פעמים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const E=v=>`<span class="eq">${v}</span>`;
+const B=v=>`<span class="bits">${v}</span>`;
+const vals=n=>Array.from({length:n},(_,i)=>2**(n-1-i));           /* left to right: 8 4 2 1 */
+const toBits=(v,n)=>v.toString(2).padStart(n,'0');
+const fromBits=s=>parseInt(s,2);
+const rev=s=>s.split('').reverse().join('');
+/* draw a row of bulbs; bits is a string like "1010" (left = biggest) */
+function bulbs(el,bits,clickable){
+  const n=bits.length, vs=vals(n);
+  el.innerHTML=bits.split('').map((b,i)=>`<button type="button" class="bulb${b==='1'?' on':''}" data-i="${i}" ${clickable?'':'disabled tabindex="-1"'} aria-label="נורה ששווה ${vs[i]}, ${b==='1'?'דולקת':'כבויה'}" aria-pressed="${b==='1'}"><span class="v">${vs[i]}</span><span class="l"></span><span class="b">${b}</span></button>`).join('');
+}
+const sumTxt=bits=>{ const vs=vals(bits.length), on=vs.filter((v,i)=>bits[i]==='1'); return on.length?`<span class="eq">${on.join(' + ')} = ${on.reduce((a,b)=>a+b,0)}</span>`:'כל הנורות כבויות: '+E(0); };
+
+/* ---------- lab ---------- */
+let N=4, bits='0000', T=13;
+function lab(){
+  bulbs($('bulbs'),bits,true);
+  const v=fromBits(bits), max=2**N-1;
+  $('sum').innerHTML=sumTxt(bits);
+  $('num').innerHTML=`${B(bits)} <span style="font-size:1.4rem">=</span> ${v}`;
+  $('tgt').max=max; if(T>max) T=max; $('tgt').value=T; $('tgtV').textContent=T;
+  const st=$('st'); st.classList.toggle('hit',v===T);
+  st.textContent=v===T?'בדיוק! הגעתם למטרה ✓':v<T?`חסר עוד ${T-v}.`:`יותר מדי: עברתם ב-${v-T}.`;
+  const tx=[];
+  tx.push(`<div>עם ${N} נורות אפשר לכתוב ${2**N} מספרים שונים, מ-0 עד ${max}.</div>`);
+  if(v===0) tx.push('<div>כל הנורות כבויות. גם זה מספר: אפס.</div>');
+  else if(v===max) tx.push(`<div>כל הנורות דולקות: זה המספר הכי גדול, ${max}. נורה נוספת הייתה שווה ${max+1}.</div>`);
+  if(v!==T){ const big=vals(N).find(x=>x<=T); tx.push(`<div>רמז למטרה ${T}: התחילו מהנורה הכי שמאלית ששווה ${big!==undefined?big:0} או פחות, ובדקו כמה נשאר.</div>`); }
+  $('labTxt').innerHTML=tx.join('');
+}
+$('bulbs').addEventListener('click',e=>{ const b=e.target.closest('.bulb'); if(!b) return; const i=+b.dataset.i; bits=bits.slice(0,i)+(bits[i]==='1'?'0':'1')+bits.slice(i+1); lab(); });
+document.querySelectorAll('#lab .modes button[data-n]').forEach(b=>b.addEventListener('click',()=>{ setN(+b.dataset.n); lab(); }));
+function setN(n){ const v=fromBits(bits); N=n; bits=toBits(Math.min(v,2**n-1),n); document.querySelectorAll('#lab .modes button[data-n]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.n===n)); }
+$('tgt').addEventListener('input',()=>{ T=+$('tgt').value; lab(); });
+document.querySelectorAll('#lab .tries button[data-p]').forEach(b=>b.addEventListener('click',()=>{ const [n,v]=b.dataset.p.split(':').map(Number); setN(n); bits=toBits(v,n); T=v; lab(); }));
+lab();
+
+/* ---------- secret message ---------- */
+const AB='אבגדהוזחטיכלמנסעפצקרשת'.split('');           /* א=1 ... ת=22 */
+const MSGS={3:['אבא','בגד','זהב'],5:['מחשב','ביט','תודה']};
+let sm=3, word='', wi=0, si=0, sSel=null;
+function sNew(keep){ const list=MSGS[sm]; let k; do{ k=Math.floor(Math.random()*list.length); } while(!keep&&list.length>1&&list[k]===word); word=list[k]; si=0; sDraw(); }
+function sDraw(){
+  const done=si>=word.length;
+  $('msg').innerHTML=word.split('').map((c,i)=>i<si?c:`<span class="q">?</span>`).join('');
+  const max=sm===3?7:22;
+  $('letters').innerHTML=AB.slice(0,max).map((c,i)=>`<button type="button" data-v="${i+1}">${c}<small>${i+1}</small></button>`).join('');
+  if(done){ $('sBulbs').innerHTML=''; $('sTxt').innerHTML=`פענחתם את כל ההודעה: <strong>${word}</strong>! לחצו "הודעה אחרת" כדי להמשיך.`; return; }
+  const v=AB.indexOf(word[si])+1;
+  bulbs($('sBulbs'),toBits(v,sm),false);
+  $('sTxt').innerHTML=`אות ${si+1} מתוך ${word.length}. חברו את הערכים של הנורות הדולקות, ובחרו את האות.`;
+}
+$('letters').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-v]'); if(!b||si>=word.length) return;
+  const got=+b.dataset.v, v=AB.indexOf(word[si])+1, bs=toBits(v,sm);
+  if(got===v){ si++; sDraw(); if(si<word.length) $('sTxt').innerHTML=`נכון, ${E(v)} זה ${AB[v-1]}. ממשיכים לאות הבאה.`; return; }
+  let m;
+  if(got===fromBits(rev(bs))) m='נראה שקראתם את הנורות מהצד השני. הנורה הכי שווה נמצאת משמאל.';
+  else m=`בחרתם ${E(got)}. ${sumTxt(bs).startsWith('כל')?'':'בדקו שוב: '}מה הערך של כל נורה דולקת? חברו אותם.`;
+  $('sTxt').innerHTML=m;
+});
+document.querySelectorAll('#lab .modes button[data-m]').forEach(b=>b.addEventListener('click',()=>{ sm=+b.dataset.m; document.querySelectorAll('#lab .modes button[data-m]').forEach(x=>x.setAttribute('aria-pressed',x===b)); sNew(true); }));
+$('sNew').onclick=()=>sNew(false);
+sNew(true);
+
+/* ---------- worked example: 13 ---------- */
+const EX=[
+  {b:'0000', t:'יש 4 נורות ששוות 8, 4, 2 ו-1. כולן כבויות. צריך להגיע ל-13.'},
+  {b:'1000', t:'מתחילים מהנורה הכי גדולה: 8. האם 8 נכנס ב-13? כן. מדליקים אותה. נשאר: <span class="eq">13 − 8 = 5</span>.'},
+  {b:'1100', t:'הנורה הבאה שווה 4. האם 4 נכנס ב-5? כן. מדליקים. נשאר: <span class="eq">5 − 4 = 1</span>.'},
+  {b:'1100', t:'הנורה הבאה שווה 2. האם 2 נכנס ב-1? לא, 2 גדול מ-1. משאירים אותה כבויה.'},
+  {b:'1101', t:'הנורה האחרונה שווה 1. האם 1 נכנס ב-1? כן. מדליקים. נשאר 0, סיימנו.'},
+  {b:'1101', t:'בודקים: <span class="eq">8 + 4 + 1 = 13</span> ✓ אז 13 בשפת המחשב הוא <span class="bits">1101</span>.'}
+];
+let exI=0;
+function ex(){ const s=EX[exI]; bulbs($('exB'),s.b,false); $('exText').innerHTML=s.t; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* ---------- practice ---------- */
+const MC=[
+  {q:'כמה מספרים שונים אפשר לכתוב עם 4 נורות?', a:16, opts:[4,15,16,8], w:{15:'שכחתם את האפס! מ-0 עד 15 יש 16 מספרים.',4:'4 זה מספר הנורות. כמה מצבים שונים הן יכולות ליצור יחד?',8:'8 הוא הערך של הנורה הכי גדולה, לא מספר האפשרויות.'}, h:['הכי קטן: הכל כבוי. הכי גדול: הכל דולק. כמה מספרים יש ביניהם?','מ-0 עד 15. ספרו גם את 0.'], why:'מ-0 עד 15 יש 16 מספרים שונים.'},
+  {q:'מה המספר הכי גדול שאפשר לכתוב עם 3 נורות?', a:7, opts:[3,7,8,6], w:{3:'3 זה מספר הנורות. מה קורה כשכולן דולקות?',8:'8 צריך נורה רביעית. עם 3 נורות יש רק 4, 2 ו-1.',6:'הדליקו גם את הנורה של 1.'}, h:['כמה שווה כל אחת משלוש הנורות?','4, 2 ו-1. חברו את כולן.'], why:'כל הנורות דולקות: 4 + 2 + 1 = 7.'},
+  {q:'כמה שווה הנורה החמישית מימין?', a:16, opts:[5,10,16,32], w:{5:'הערך הוא לא המקום. כל נורה שווה פי 2 מהקודמת.',10:'לא מוסיפים 2 בכל פעם, מכפילים ב-2.',32:'ספרו שוב מימין: 1, 2, 4, 8, ואז?'}, h:['מימין: 1, 2, 4, 8...','כל פעם כפול 2. מה בא אחרי 8?'], why:'1, 2, 4, 8, 16. הנורה החמישית שווה 16.'},
+  {q:'כמה ביטים יש בבייט אחד?', a:8, opts:[2,8,10,255], w:{2:'2 זה מספר המצבים של ביט אחד: 0 או 1.',10:'זה בסיס עשר שלנו. בייט הוא קבוצה של ביטים.',255:'255 הוא המספר הכי גדול שאפשר לשמור בבייט, לא מספר הביטים.'}, h:['בייט הוא קבוצה של ביטים. כמה נורות יש במעבדה במצב "בייט"?','חפשו במעבדה את הכפתור "8 נורות (בייט)".'], why:'בבייט יש 8 ביטים.'}
+];
+let pr={}, prBits='', sel=null, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function newPr(){
+  const kind=pick(['b2d','b2d','d2b','d2b','mc']);
+  sel=null; $('prFb').innerHTML=''; $('prShow').disabled=true; $('prN').value='';
+  $('prIn').hidden=kind!=='b2d'; $('prCh').hidden=kind!=='mc';
+  if(kind==='b2d'){
+    const n=pick([4,4,5]); let v; do{ v=ri(1,2**n-1); } while(v===pr.v||rev(toBits(v,n))===toBits(v,n)&&Math.random()<.7);
+    pr={kind,n,v,bits:toBits(v,n)};
+    $('prAsk').textContent='איזה מספר מראות הנורות? כתבו אותו.';
+    bulbs($('prB'),pr.bits,false); $('prQ').innerHTML=B(pr.bits);
+  } else if(kind==='d2b'){
+    let v; do{ v=ri(1,15); } while(v===pr.v);
+    pr={kind,n:4,v}; prBits='0000';
+    $('prAsk').textContent='הדליקו את הנורות כך שיופיע המספר:';
+    bulbs($('prB'),prBits,true); $('prQ').innerHTML=v;
+  } else {
+    let q; do{ q=pick(MC); } while(q===pr.q);
+    pr={kind,q};
+    $('prAsk').textContent=q.q; $('prB').innerHTML=''; $('prQ').innerHTML='';
+    $('prCh').innerHTML=q.opts.map(o=>`<button type="button" data-v="${o}" aria-pressed="false">${o}</button>`).join('');
+  }
+  pr.tries=0; pr.hint=0;
+}
+$('prB').addEventListener('click',e=>{ const b=e.target.closest('.bulb'); if(!b||b.disabled||pr.kind!=='d2b') return; const i=+b.dataset.i; prBits=prBits.slice(0,i)+(prBits[i]==='1'?'0':'1')+prBits.slice(i+1); bulbs($('prB'),prBits,true); });
+$('prCh').addEventListener('click',e=>{ const b=e.target.closest('button[data-v]'); if(!b) return; sel=+b.dataset.v; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+function wrong(msg){ streak=0; pr.tries++; streakTxt(); $('prFb').innerHTML=`<div class="fb err">${msg}</div>`; if(pr.tries>=2) $('prShow').disabled=false; }
+function right(msg){ streak++; solved++; streakTxt(); $('prFb').innerHTML=`<div class="fb ok">נכון! ${msg}</div>`; }
+$('prCheck').onclick=()=>{
+  if(pr.kind==='b2d'){
+    const t=$('prN').value.trim(); if(!/^\d+$/.test(t)){ $('prFb').innerHTML='<div class="fb err">כתבו מספר.</div>'; $('prN').focus(); return; }
+    const g=+t;
+    if(g===pr.v) return right(`${sumTxt(pr.bits)}.`);
+    if(g===fromBits(rev(pr.bits))) return wrong('קראתם את הנורות מהצד השני. הנורה הכי שווה נמצאת משמאל.');
+    if(g===pr.bits.split('').filter(x=>x==='1').length) return wrong('ספרתם כמה נורות דולקות. אבל כל נורה שווה ערך אחר. חברו את הערכים.');
+    return wrong(g<pr.v?'חסר לכם משהו. האם חיברתם את כל הנורות הדולקות?':'יצא יותר מדי. האם חיברתם גם נורה כבויה?');
+  }
+  if(pr.kind==='d2b'){
+    const v=fromBits(prBits);
+    if(v===pr.v) return right(`${sumTxt(prBits)}. בשפת המחשב: ${B(prBits)}.`);
+    if(fromBits(rev(prBits))===pr.v) return wrong('הדלקתם בסדר הפוך. הנורה הכי שווה, 8, נמצאת משמאל.');
+    return wrong(v<pr.v?`עכשיו יש ${E(v)}. חסר עוד ${E(pr.v-v)}.`:`עכשיו יש ${E(v)}. זה יותר מדי ב-${E(v-pr.v)}.`);
+  }
+  if(sel===null){ $('prFb').innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+  if(sel===pr.q.a) return right(pr.q.why);
+  wrong(pr.q.w[sel]||'עוד לא. נסו שוב.');
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.kind==='b2d') h=pr.hint<2?'מעל כל נורה כתוב הערך שלה. חברו רק את הערכים של הנורות הדולקות.':`הנורות הדולקות שוות: ${vals(pr.n).filter((v,i)=>pr.bits[i]==='1').join(', ')}. כמה זה ביחד?`;
+  else if(pr.kind==='d2b'){ const big=vals(4).find(x=>x<=pr.v); h=pr.hint<2?'התחילו מהנורה הכי גדולה שלא עוברת את המספר.':`הדליקו קודם את ${big}. נשאר ${pr.v-big}. איזו נורה מתאימה עכשיו?`; }
+  else h=pr.q.h[pr.hint-1];
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  let t;
+  if(pr.kind==='b2d') t=`${sumTxt(pr.bits)}. התשובה היא ${E(pr.v)}.`;
+  else if(pr.kind==='d2b'){ const b=toBits(pr.v,4); t=`${E(pr.v)} בשפת המחשב הוא ${B(b)}: ${sumTxt(b)}.`; bulbs($('prB'),b,false); }
+  else t=`התשובה: ${E(pr.q.a)}. ${pr.q.why}`;
+  $('prFb').innerHTML=`<div class="fb hint">${t} עכשיו נסו תרגיל חדש.</div>`;
+};
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

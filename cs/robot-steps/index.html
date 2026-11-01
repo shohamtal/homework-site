@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מובילים את הרובוט · מדעי המחשב כיתה ב · מירי</title>
+<meta name="description" content="כותבים לרובוט הוראות קדימה, ימינה ושמאלה כדי שיגיע לפרס במבוך, ובודקים אותן צעד אחרי צעד. מעבדה ותרגול עם רמזים לכיתה ב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/robot-steps/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מובילים את הרובוט · מדעי המחשב כיתה ב · מירי">
+<meta property="og:description" content="כותבים לרובוט הוראות קדימה, ימינה ושמאלה כדי שיגיע לפרס במבוך, ובודקים אותן צעד אחרי צעד. מעבדה ותרגול עם רמזים לכיתה ב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/robot-steps/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ב","item":"https://shohamtal.github.io/homework-site/cs/grade-2/"},{"@type":"ListItem","position":4,"name":"חידות וחשיבה","item":"https://shohamtal.github.io/homework-site/cs/grade-2/#cs-puzzles-2"},{"@type":"ListItem","position":5,"name":"מובילים את הרובוט: הוראות צעד אחרי צעד","item":"https://shohamtal.github.io/homework-site/cs/robot-steps/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה ללמד ילד בכיתה ב לתת הוראות לרובוט?","acceptedAnswer":{"@type":"Answer","text":"כך מתחילה חשיבה של מתכנתים: לפרק דרך לצעדים קטנים, לכתוב אותם לפי הסדר ולבדוק. אין צורך במחשב או בשפת תכנות. נסו את המעבדה יחד."}},{"@type":"Question","name":"הילד מתבלבל בין ימינה לשמאלה. מה עושים?","acceptedAnswer":{"@type":"Answer","text":"זה רגיל מאוד. בקשו ממנו לעמוד ולהסתובב כמו הרובוט, או לסובב את הטלפון כך שהרובוט מסתכל למעלה. אחרי כמה פעמים זה נהיה קל."}},{"@type":"Question","name":"איך מתרגלים בלי מסך?","acceptedAnswer":{"@type":"Answer","text":"מציירים לוח משבצות על דף או על הרצפה. ילד אחד הוא הרובוט, והשני כותב חצים על פתקים. מפעילים, ואם הרובוט נתקע מחפשים יחד את הפתק השגוי."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מובילים את הרובוט: הוראות צעד אחרי צעד","description":"כותבים לרובוט הוראות קדימה, ימינה ושמאלה כדי שיגיע לפרס במבוך, ובודקים אותן צעד אחרי צעד. מעבדה ותרגול עם רמזים לכיתה ב.","url":"https://shohamtal.github.io/homework-site/cs/robot-steps/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ב","about":"מובילים את הרובוט: הוראות צעד אחרי צעד","teaches":"מובילים את הרובוט: הוראות צעד אחרי צעד","keywords":"הוראות, מבוך, רובוט","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card{font-size:1.12rem}
+.card button{padding:10px 16px; font-size:1.05rem}
+.q{font-size:1.2rem; font-weight:600; text-align:center}
+.board{direction:ltr; display:grid; grid-template-columns:repeat(5,1fr); gap:4px; width:100%; max-width:300px; margin-inline:auto; aspect-ratio:1; padding:6px; border:2px solid var(--border); border-radius:14px; background:var(--card); box-shadow:4px 4px 0 var(--hard)}
+.board.sm{max-width:240px}
+.cell{display:flex; align-items:center; justify-content:center; border-radius:8px; background:var(--paper); border:1.5px solid var(--soft); font-size:clamp(1.1rem,6vw,1.7rem); position:relative; min-width:0}
+.cell.path{background:var(--hint-bg); border-color:var(--hl)}
+.cell.goal{background:var(--hint-bg)}
+.cell.wall{background:var(--soft); border-color:var(--muted)}
+.cell.cand{border:2px dashed var(--line)}
+.cell .tag{font:800 1rem var(--f-body); color:var(--line)}
+.cell.pick{background:var(--ok-bg); border:2px solid var(--ok)}
+.bot{position:relative; line-height:1}
+.bot i{position:absolute; top:-.55em; left:50%; width:1.1em; margin-left:-.55em; text-align:center; font-style:normal; font-size:.6em; color:var(--line); transform:rotate(var(--r)); transform-origin:50% 1.15em; font-weight:800}
+.cell.bump{background:var(--err-bg); border-color:var(--err)}
+.cmds{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.cmds button{min-width:92px; min-height:52px; font-weight:800}
+.prog{display:flex; flex-wrap:wrap; gap:6px; min-height:52px; padding:8px; border:2px dashed var(--soft); border-radius:12px; background:var(--paper); align-items:center}
+.prog:empty::before{content:'התוכנית ריקה. הוסיפו פקודות.'; color:var(--muted)}
+.prog .cmd{border:2px solid var(--border); border-radius:10px; padding:6px 10px; background:var(--card); font-weight:700; font-size:1rem; min-height:44px}
+.prog .cmd.now{background:var(--hl); box-shadow:0 0 0 2px var(--line)}
+.prog .cmd.done{opacity:.55}
+.prog.static .cmd{cursor:default}
+.levels{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.levels button{min-width:44px; min-height:44px; padding:6px 10px}
+.levels button[aria-pressed="true"]{background:var(--hl); border-color:var(--line)}
+.runrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.opts{display:flex; flex-direction:column; gap:10px}
+.opts button{display:flex; gap:8px; align-items:center; flex-wrap:wrap; text-align:start}
+.opts button[aria-pressed="true"], .abc button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.opts .mini-cmd{border:1.5px solid var(--border); border-radius:8px; padding:2px 8px; background:var(--card); font-size:.95rem}
+.abc{display:flex; gap:12px; justify-content:center}
+.abc button{min-width:64px; min-height:52px; font-weight:800; font-size:1.3rem}
+.legend{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; font-size:.95rem; color:var(--muted)}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="robot-steps">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-2/">כיתה ב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-2/#cs-puzzles-2">חידות וחשיבה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מובילים את הרובוט: הוראות צעד אחרי צעד</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ב · חידות וחשיבה</div>
+  <h1>מובילים את הרובוט <span class="slogan">הוראות צעד אחרי צעד</span></h1>
+  <p class="lead">הרובוט רוצה להגיע לכוכב. הוא לא יודע לבד איך. אתם כותבים לו הוראות: קדימה, ימינה, שמאלה. ואז מפעילים ובודקים אם הוא הגיע.</p>
+  <p class="text">לפני הנושא הזה כדאי לנסות את <a href="../sequence-puzzles/">חידות סדר</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">טיפים</a><a href="#example">דוגמה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>⬆ קדימה</h3>
+      <p>הרובוט זז משבצת אחת.</p>
+      <p>הוא זז לכיוון שהוא מסתכל אליו.</p>
+    </div>
+    <div class="mini">
+      <h3>↻ ימינה, ↺ שמאלה</h3>
+      <p>הרובוט מסתובב במקום.</p>
+      <p>הוא לא זז משבצת. רק הכיוון משתנה.</p>
+    </div>
+    <div class="mini">
+      <h3>🤖 רק מה שכתוב</h3>
+      <p>הרובוט לא מנחש.</p>
+      <p>הוא עושה בדיוק מה שכתבתם, לפי הסדר.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>תוכנית</strong> היא רשימה של הוראות לפי הסדר. כך עובד כל מחשב: הוא עושה בדיוק את מה שכתוב בתוכנית.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: המבוך של הרובוט</h2></div>
+  <p class="text">בחרו שלב. לחצו על פקודות כדי לבנות תוכנית. לחיצה על פקודה בתוכנית מוחקת אותה. ואז לחצו ▶ הפעילו.</p>
+  <div class="levels" id="levels"><strong>שלב:</strong></div>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="board" id="labBoard" role="img" aria-label="לוח המבוך"></div>
+      <div class="legend"><span>🤖 הרובוט</span><span>⭐ המטרה</span><span>🧱 קיר</span><span>▲ לאן הוא מסתכל</span></div>
+    </div>
+    <div class="ctrl">
+      <div class="cmds" id="cmds">
+        <button data-c="F">⬆ קדימה</button>
+        <button data-c="R">↻ ימינה</button>
+        <button data-c="L">↺ שמאלה</button>
+      </div>
+      <div class="prog" id="prog" aria-label="התוכנית"></div>
+      <div class="runrow">
+        <button id="run" class="primary">▶ הפעילו</button>
+        <button id="stop" disabled>⏹ עצרו</button>
+        <button id="clear">🧹 מחקו הכל</button>
+      </div>
+      <label class="slider" for="speed"><span>מהירות</span><span id="speedV"></span></label>
+      <input type="range" id="speed" min="1" max="5" step="1" value="3">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button data-p="0|RRRR">סיבוב שלם</button>
+          <button data-p="0|RRF">חצי סיבוב</button>
+          <button data-p="3|FFRFF">באג עם קיר</button>
+          <button data-p="2|FFFFRFFFF">פתרון לשלב 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טיפים וטעויות נפוצות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>ימינה של מי?</h3>
+      <p>ימינה זה ימינה של <strong>הרובוט</strong>, לא שלכם.</p>
+      <p>טיפ: סובבו את הראש כמו הרובוט, או סובבו את הדף.</p>
+    </div>
+    <div class="mini">
+      <h3>סיבוב לא מזיז</h3>
+      <p>אחרי ימינה הרובוט עדיין באותה משבצת.</p>
+      <p>כדי לזוז צריך גם קדימה.</p>
+    </div>
+    <div class="mini">
+      <h3>סופרים משבצות</h3>
+      <p>לפני שכותבים, סופרים כמה משבצות יש עד הפנייה.</p>
+      <p>כל קדימה זה משבצת אחת בדיוק.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>נתקעתם?</strong> מפעילים לאט ועוקבים עם האצבע. איפה הרובוט עשה משהו שלא רציתם? שם צריך לתקן.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">איך מביאים את הרובוט לכוכב?</p>
+    <div class="board sm" id="exBoard" role="img" aria-label="לוח הדוגמה"></div>
+    <div class="prog static" id="exProg" aria-label="התוכנית של הדוגמה"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="q" id="prQ"></p>
+  <div class="board sm" id="prBoard" role="img" aria-label="לוח התרגיל"></div>
+  <div class="prog static" id="prProg" aria-label="התוכנית של התרגיל"></div>
+  <div id="prOpts"></div>
+  <div class="row" style="justify-content:center"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שהורים שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה ללמד ילד בכיתה ב לתת הוראות לרובוט?</h3>
+    <p>כך מתחילה חשיבה של מתכנתים: לפרק דרך לצעדים קטנים, לכתוב אותם לפי הסדר ולבדוק. אין צורך במחשב או בשפת תכנות. <a href="#lab">נסו את המעבדה יחד</a>.</p>
+    <h3>הילד מתבלבל בין ימינה לשמאלה. מה עושים?</h3>
+    <p>זה רגיל מאוד. בקשו ממנו לעמוד ולהסתובב כמו הרובוט, או לסובב את הטלפון כך שהרובוט מסתכל למעלה. אחרי כמה פעמים זה נהיה קל.</p>
+    <h3>איך מתרגלים בלי מסך?</h3>
+    <p>מציירים לוח משבצות על דף או על הרצפה. ילד אחד הוא הרובוט, והשני כותב חצים על פתקים. מפעילים, ואם הרובוט נתקע מחפשים יחד את הפתק השגוי.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/sequence-puzzles/">מה קודם ומה אחר כך: חידות סדר</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/pattern-next/"><small>→ הנושא הקודם</small>מה בא אחר כך? חידות דפוסים</a><a class="next" href="../../cs/sorting-groups/"><small>הנושא הבא ←</small>ממיינים לקבוצות</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/sound.js"></script>
+<script src="../../assets/sfx.js"></script>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const DR=[-1,0,1,0], DC=[0,1,0,-1];
+const DIRW=['למעלה','ימינה','למטה','שמאלה'], ARR=['⬆','➡','⬇','⬅'];
+const CMD={F:'⬆ קדימה',R:'↻ ימינה',L:'↺ שמאלה'};
+const N=5, key=(r,c)=>r+','+c, inB=(r,c)=>r>=0&&r<N&&c>=0&&c<N;
+
+/* levels: start [row,col,dir], goal [row,col], walls; row 0 is the top */
+const LV=[
+  {s:[4,0,0],g:[1,0],w:[],best:3},
+  {s:[4,0,0],g:[4,3],w:[],best:4},
+  {s:[4,0,0],g:[0,4],w:[],best:9},
+  {s:[4,0,0],g:[4,2],w:[[4,1],[3,1],[2,1]],best:10},
+  {s:[2,2,0],g:[2,0],w:[[2,1],[3,1]],best:6},
+  {s:[4,4,0],g:[0,0],w:[[3,0],[3,1],[3,2],[3,3],[1,1],[1,2],[1,3],[1,4]],best:10}
+];
+
+/* run a program; returns the states after each command. Stops at a wall or the edge. */
+function sim(lv,prog){
+  let [r,c,d]=lv.s; const walls=new Set(lv.w.map(([a,b])=>key(a,b))), out=[];
+  for(const p of prog){
+    if(p==='R') d=(d+1)%4; else if(p==='L') d=(d+3)%4;
+    else{
+      const nr=r+DR[d], nc=c+DC[d];
+      if(!inB(nr,nc)){ out.push({r,c,d,hit:'edge',at:[nr,nc]}); return out; }
+      if(walls.has(key(nr,nc))){ out.push({r,c,d,hit:'wall',at:[nr,nc]}); return out; }
+      r=nr; c=nc;
+    }
+    out.push({r,c,d});
+  }
+  return out;
+}
+function render(el,lv,st,opt={}){
+  const walls=new Set(lv.w.map(([a,b])=>key(a,b)));
+  let h='';
+  for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+    const k=key(r,c); let cls='cell', inner='';
+    if(walls.has(k)){ cls+=' wall'; inner='🧱'; }
+    if(lv.g&&lv.g[0]===r&&lv.g[1]===c){ cls+=' goal'; inner='⭐'; }
+    if(opt.path&&opt.path.has(k)) cls+=' path';
+    if(opt.bump&&opt.bump[0]===r&&opt.bump[1]===c) cls+=' bump';
+    if(opt.cand&&opt.cand[k]!==undefined){ cls+=' cand'; if(!(st.r===r&&st.c===c)) inner=`<span class="tag">${opt.cand[k]}</span>`; }
+    if(opt.pick&&opt.pick===k) cls+=' pick';
+    if(st.r===r&&st.c===c) inner=`<span class="bot" style="--r:${st.d*90}deg">🤖<i>▲</i></span>`;
+    h+=`<div class="${cls}">${inner}</div>`;
+  }
+  el.innerHTML=h;
+}
+function chips(el,prog,now,cls){
+  el.innerHTML=prog.map((p,i)=>`<button type="button" class="cmd${i===now?' now':''}${now!==undefined&&now>=0&&i<now?' done':''}" data-i="${i}" ${cls?'tabindex="-1"':''}>${CMD[p]}</button>`).join('');
+}
+
+/* ---------- lab ---------- */
+let lv=0, prog=[], runId=0, timer=null;
+const SPEED=[0,1300,1000,700,450,250], SPW=['','לאט מאוד','לאט','רגיל','מהר','מהר מאוד'];
+LV.forEach((_,i)=>$('levels').insertAdjacentHTML('beforeend',`<button type="button" data-l="${i}" aria-pressed="false">${i+1}</button>`));
+function start(){ const [r,c,d]=LV[lv].s; return {r,c,d}; }
+function idle(msg){
+  render($('labBoard'),LV[lv],start());
+  chips($('prog'),prog);
+  $('labTxt').innerHTML=msg||(prog.length?`בתוכנית יש ${prog.length} פקודות. לחצו ▶ הפעילו ובדקו.`:`שלב ${lv+1}: הרובוט מסתכל ${DIRW[LV[lv].s[2]]}. בנו תוכנית שמביאה אותו לכוכב.`);
+}
+function stopRun(){ runId++; clearTimeout(timer); setRunning(false); }
+function setRunning(on){ $('run').disabled=on; $('stop').disabled=!on; $('clear').disabled=on; $('cmds').querySelectorAll('button').forEach(b=>b.disabled=on); }
+function setLv(i){
+  stopRun(); lv=i; prog=[];
+  $('levels').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.l===lv));
+  idle();
+}
+$('levels').addEventListener('click',e=>{ const b=e.target.closest('button[data-l]'); if(b) setLv(+b.dataset.l); });
+$('cmds').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-c]'); if(!b||$('run').disabled) return;
+  if(prog.length>=20){ $('labTxt').innerHTML='התוכנית ארוכה מאוד. נסו לקצר אותה.'; return; }
+  prog.push(b.dataset.c); idle();
+});
+$('prog').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-i]'); if(!b||$('run').disabled) return;
+  prog.splice(+b.dataset.i,1); idle(prog.length?'מחקתם פקודה. אפשר להוסיף פקודה אחרת.':undefined);
+});
+$('clear').onclick=()=>{ stopRun(); prog=[]; idle(); };
+$('stop').onclick=()=>{ stopRun(); idle('עצרתם. הרובוט חזר להתחלה.'); };
+function speedLbl(){ $('speedV').textContent=SPW[+$('speed').value]; }
+$('speed').addEventListener('input',speedLbl); speedLbl();
+$('run').onclick=()=>{
+  if(!prog.length){ idle('התוכנית ריקה. הוסיפו קודם פקודות.'); return; }
+  stopRun(); const my=++runId; setRunning(true);
+  const L=LV[lv], steps=sim(L,prog), path=new Set([key(L.s[0],L.s[1])]);
+  let i=0;
+  render($('labBoard'),L,start(),{path}); chips($('prog'),prog,0);
+  const tick=()=>{
+    if(my!==runId) return;
+    const st=steps[i];
+    if(st.hit){
+      render($('labBoard'),L,st,{path,bump:inB(st.at[0],st.at[1])?st.at:null}); chips($('prog'),prog,i);
+      $('labTxt').innerHTML=st.hit==='wall'
+        ?`אוי! בפקודה ${i+1} כתוב קדימה, אבל מול הרובוט יש קיר 🧱. הרובוט עושה רק מה שכתוב, אז הוא נתקע. תקנו את הפקודה הזאת.`
+        :`אוי! בפקודה ${i+1} כתוב קדימה, אבל הרובוט בקצה הלוח ומסתכל ${DIRW[st.d]}. הוא לא יכול לצאת מהלוח.`;
+      setRunning(false); return;
+    }
+    path.add(key(st.r,st.c));
+    render($('labBoard'),L,st,{path}); chips($('prog'),prog,i);
+    $('labTxt').innerHTML=`פקודה ${i+1}: ${CMD[prog[i]]}. ${prog[i]==='F'?'הרובוט זז משבצת.':'הרובוט הסתובב במקום.'} עכשיו הוא מסתכל ${DIRW[st.d]}.`;
+    i++;
+    if(i<steps.length){ timer=setTimeout(tick,SPEED[+$('speed').value]); return; }
+    setRunning(false); chips($('prog'),prog,steps.length);
+    const atGoal=st.r===L.g[0]&&st.c===L.g[1], passed=!atGoal&&steps.some(s=>s.r===L.g[0]&&s.c===L.g[1]);
+    if(atGoal) $('labTxt').innerHTML=`הגעתם לכוכב! ⭐ התוכנית שלכם: ${prog.length} פקודות.${prog.length>L.best?` אפשר גם ב-${L.best} פקודות. מצליחים לקצר?`:' זו התוכנית הקצרה ביותר. כל הכבוד!'}${lv<LV.length-1?' עברו לשלב הבא.':''}`;
+    else if(passed) $('labTxt').innerHTML='הרובוט עבר דרך הכוכב, אבל המשיך הלאה. צריך לעצור עליו. מחקו את הפקודות שאחרי הכוכב.';
+    else $('labTxt').innerHTML='התוכנית נגמרה, והרובוט עוד לא על הכוכב. הוסיפו פקודות או תקנו אותן.';
+  };
+  timer=setTimeout(tick,Math.min(500,SPEED[+$('speed').value]));
+};
+$('tries').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-p]'); if(!b) return;
+  const [l,p]=b.dataset.p.split('|'); setLv(+l); prog=p.split('');
+  idle({RRRR:'ארבע פעמים ימינה. מה יקרה? לחצו הפעילו וגלו.',RRF:'שתי פעמים ימינה ואז קדימה. לאן הרובוט יילך?',FFRFF:'בתוכנית הזאת יש באג. הפעילו ומצאו איפה הרובוט נתקע.',FFFFRFFFF:'קודם עולים עד למעלה, מסתובבים ימינה, וממשיכים עד הכוכב.'}[p]);
+});
+setLv(0);
+
+/* ---------- worked example ---------- */
+const EXL={s:[4,1,0],g:[2,3],w:[]}, EXP=['F','F','R','F','F'];
+const EX=[
+  [0,'הרובוט מסתכל למעלה. הכוכב למעלה ובצד ימין. נתכנן את הדרך בחלקים.'],
+  [2,'קודם עולים. סופרים: שתי משבצות למעלה עד השורה של הכוכב. כותבים קדימה, קדימה.'],
+  [3,'עכשיו הכוכב בדיוק מימין לרובוט. כותבים ימינה. הרובוט לא זז, הוא רק מסתובב.'],
+  [5,'סופרים שוב: שתי משבצות עד הכוכב. כותבים קדימה, קדימה. הגענו! ⭐'],
+  [5,'בודקים: עוקבים עם האצבע על הצבע הצהוב. 5 פקודות, והרובוט עומד על הכוכב.']
+];
+let exI=0;
+function ex(){
+  const [n,t]=EX[exI], steps=sim(EXL,EXP.slice(0,n)), st=n?steps[n-1]:{r:4,c:1,d:0};
+  const path=new Set([key(4,1)]); steps.forEach(s=>path.add(key(s.r,s.c)));
+  render($('exBoard'),EXL,st,exI===EX.length-1?{path}:{});
+  chips($('exProg'),EXP.slice(0,n),-1,true);
+  $('exText').innerHTML=t; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){exI++;ex();} };
+$('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+ex();
+
+/* ---------- practice ---------- */
+const ABC=['א','ב','ג'];
+const rnd=n=>Math.floor(Math.random()*n);
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=rnd(i+1); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const end=(L,p)=>{ const s=sim(L,p); const last=s[s.length-1]; return (!last||last.hit)?null:last; };
+const swapT=p=>p.map(x=>x==='R'?'L':x==='L'?'R':x);
+let pr=null, sel=null, streak=0, solved=0;
+function genProg(){
+  for(let k=0;k<500;k++){
+    const L={s:[rnd(N),rnd(N),rnd(4)],g:null,w:[]}, len=3+rnd(3), p=[];
+    for(let i=0;i<len;i++) p.push(Math.random()<.6?'F':(Math.random()<.5?'R':'L'));
+    if(!p.includes('R')&&!p.includes('L')) continue;
+    if(p.filter(x=>x==='F').length<2) continue;
+    if(p[p.length-1]!=='F') continue;
+    const e=end(L,p); if(!e) continue;
+    if(e.r===L.s[0]&&e.c===L.s[1]) continue;
+    return {L,p,e};
+  }
+}
+function newPr(){
+  const kind=Math.random()<.5?'where':'which';
+  let g, opts;
+  for(let k=0;k<200;k++){
+    g=genProg(); const {L,p,e}=g, ans=key(e.r,e.c);
+    if(kind==='where'){
+      const c=[{k:ans,t:'ok'}], sw=end(L,swapT(p)), nt=end(L,p.filter(x=>x==='F'));
+      const notStart=o=>!(o.r===L.s[0]&&o.c===L.s[1]);
+      if(sw&&notStart(sw)&&!c.some(x=>x.k===key(sw.r,sw.c))) c.push({k:key(sw.r,sw.c),t:'swap'});
+      if(nt&&notStart(nt)&&!c.some(x=>x.k===key(nt.r,nt.c))) c.push({k:key(nt.r,nt.c),t:'noturn'});
+      let guard=0;
+      while(c.length<3&&guard++<50){ const r=rnd(N),cc=rnd(N),kk=key(r,cc); if(!c.some(x=>x.k===kk)&&!(r===L.s[0]&&cc===L.s[1])) c.push({k:kk,t:'rand'}); }
+      if(c.length<3) continue;
+      opts=shuffle(c.slice(0,3)); break;
+    }else{
+      const fi=p.map((x,i)=>x==='F'?i:-1).filter(i=>i>=0);
+      const minus=p.slice(); minus.splice(fi[rnd(fi.length)],1);
+      const plus=p.slice(); plus.splice(fi[rnd(fi.length)],0,'F');
+      const cand=[{p:swapT(p),t:'swap'},{p:minus,t:'minus'},{p:plus,t:'plus'}].filter(o=>{ const e2=end(L,o.p); return !e2||e2.r!==e.r||e2.c!==e.c; });
+      if(cand.length<2) continue;
+      opts=shuffle([{p,t:'ok'}].concat(shuffle(cand).slice(0,2))); break;
+    }
+  }
+  pr={kind,...g,opts,tries:0,hint:0}; sel=null;
+  drawPr();
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function drawPr(extra){
+  const {L,p,e,kind,opts}=pr, st={r:L.s[0],c:L.s[1],d:L.s[2]};
+  if(kind==='where'){
+    $('prQ').textContent='הרובוט מריץ את התוכנית. באיזו משבצת הוא ייעצר?';
+    const cand={}; opts.forEach((o,i)=>cand[o.k]=ABC[i]);
+    render($('prBoard'),{g:null,w:[]},st,Object.assign({cand},extra||{}));
+    chips($('prProg'),p,-1,true);
+    $('prOpts').innerHTML=`<div class="abc">${opts.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="${sel===i}">${ABC[i]}</button>`).join('')}</div>`;
+  }else{
+    $('prQ').textContent='איזו תוכנית מביאה את הרובוט לכוכב?';
+    render($('prBoard'),{g:[e.r,e.c],w:[]},st,extra||{});
+    $('prProg').innerHTML='';
+    $('prOpts').innerHTML=`<div class="opts">${opts.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="${sel===i}"><strong>${ABC[i]}.</strong> ${o.p.map(x=>`<span class="mini-cmd">${CMD[x]}</span>`).join('')}</button>`).join('')}</div>`;
+  }
+}
+$('prOpts').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-i]'); if(!b||!pr) return;
+  sel=+b.dataset.i; $('prOpts').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+});
+function st(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function pathOf(){ const {L,p}=pr, s=sim(L,p), path=new Set([key(L.s[0],L.s[1])]); s.forEach(x=>path.add(key(x.r,x.c))); return path; }
+function reveal(){
+  const ok=pr.opts.findIndex(o=>o.t==='ok');
+  sel=ok; drawPr({path:pathOf(),pick:pr.kind==='where'?pr.opts[ok].k:null});
+  if(pr.kind==='which') chips($('prProg'),pr.p,-1,true);
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(sel===null){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה אחת.</div>'; return; }
+  const o=pr.opts[sel];
+  if(o.t==='ok'){ streak++; solved++; st(); fb.innerHTML=`<div class="fb ok">נכון! ${pr.kind==='where'?'הרובוט נעצר במשבצת '+ABC[sel]+'.':'תוכנית '+ABC[sel]+' מגיעה בדיוק לכוכב.'} המשבצות הצהובות מראות את הדרך.</div>`; reveal(); return; }
+  streak=0; pr.tries++; st();
+  const M={
+    swap:'בלבלתם בין ימינה לשמאלה. ימינה זה לצד ימין <strong>של הרובוט</strong>. סובבו את הראש כמו שהוא מסתכל.',
+    noturn:'שכחתם את הסיבוב. אחרי ימינה או שמאלה הרובוט ממשיך קדימה לכיוון החדש.',
+    rand:'עוד לא. עקבו אחרי הפקודות אחת אחת עם האצבע.',
+    minus:'בתוכנית הזאת חסרה פקודת קדימה. סופרים: כמה משבצות צריך לזוז?',
+    plus:'בתוכנית הזאת יש קדימה אחד יותר מדי. הרובוט עובר את הכוכב.'
+  };
+  fb.innerHTML=`<div class="fb err">${M[o.t]}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  if(!pr) return;
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  const {L,p,e}=pr;
+  if(pr.hint<2) h=pr.kind==='where'
+    ?`הרובוט מתחיל ומסתכל ${DIRW[L.s[2]]} (לפי החץ ▲). כל קדימה זה משבצת אחת לכיוון שהוא מסתכל.`
+    :`סופרים: הכוכב ${Math.abs(e.r-L.s[0])?Math.abs(e.r-L.s[0])+' משבצות '+(e.r<L.s[0]?'למעלה':'למטה'):''}${Math.abs(e.r-L.s[0])&&Math.abs(e.c-L.s[1])?' ו-':''}${Math.abs(e.c-L.s[1])?Math.abs(e.c-L.s[1])+' משבצות '+(e.c>L.s[1]?'ימינה':'שמאלה'):''} מהרובוט.`;
+  else{
+    const s=sim(L,p);
+    h='אחרי כל פקודה הרובוט מסתכל: '+s.map((x,i)=>`${CMD[p[i]].split(' ')[1]} ${ARR[x.d]}`).join(' · ');
+  }
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{
+  if(!pr) return;
+  const i=pr.opts.findIndex(o=>o.t==='ok');
+  $('prFb').innerHTML=`<div class="fb hint">התשובה היא ${ABC[i]}. עקבו אחרי המשבצות הצהובות: זו הדרך של הרובוט. עכשיו נסו תרגיל חדש.</div>`;
+  reveal();
+};
+$('prNew').onclick=newPr;
+newPr(); st();
+})();
+</script>
+</body>
+</html>

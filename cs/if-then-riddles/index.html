@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>אם... אז... · מדעי המחשב כיתה ג · מירי</title>
+<meta name="description" content="אם יורד גשם אז לוקחים מטרייה: חידות שבהן ההחלטה תלויה בתנאי, ומשחק כללים שבו בונים החלטות בעצמכם. מעבדה ותרגול עם רמזים לכיתה ג.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/if-then-riddles/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אם... אז... · מדעי המחשב כיתה ג · מירי">
+<meta property="og:description" content="אם יורד גשם אז לוקחים מטרייה: חידות שבהן ההחלטה תלויה בתנאי, ומשחק כללים שבו בונים החלטות בעצמכם. מעבדה ותרגול עם רמזים לכיתה ג.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/if-then-riddles/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ג","item":"https://shohamtal.github.io/homework-site/cs/grade-3/"},{"@type":"ListItem","position":4,"name":"חידות וחשיבה","item":"https://shohamtal.github.io/homework-site/cs/grade-3/#cs-puzzles-3"},{"@type":"ListItem","position":5,"name":"אם... אז...: חידות תנאי","item":"https://shohamtal.github.io/homework-site/cs/if-then-riddles/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה ילדים בכיתה ג לומדים תנאים?","acceptedAnswer":{"@type":"Answer","text":"כי זו הדרך שבה כל תוכנה מקבלת החלטות. ילדים כבר חושבים ככה ביום יום: אם קר, לובשים מעיל. כשהם רואים שזה כלל שאפשר לכתוב ולבדוק, קל להם יותר אחר כך בתכנות אמיתי."}},{"@type":"Question","name":"מה ההבדל בין אז לבין אחרת?","acceptedAnswer":{"@type":"Answer","text":"אז הוא מה שעושים כשהתנאי נכון. אחרת הוא מה שעושים כשהתנאי לא נכון. תמיד קורה רק אחד מהם. נסו במכונת הכללים."}},{"@type":"Question","name":"איך אפשר לתרגל את זה בבית?","acceptedAnswer":{"@type":"Answer","text":"משחקים במשחק כללים: אחד ממציא כלל, למשל אם אני מרים יד ימין אז קופצים, אחרת יושבים. השני מבצע. אחר כך מוסיפים כלל שני ובודקים מה קורה כששניהם מתאימים."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אם... אז...: חידות תנאי","description":"אם יורד גשם אז לוקחים מטרייה: חידות שבהן ההחלטה תלויה בתנאי, ומשחק כללים שבו בונים החלטות בעצמכם. מעבדה ותרגול עם רמזים לכיתה ג.","url":"https://shohamtal.github.io/homework-site/cs/if-then-riddles/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ג","about":"אם... אז...: חידות תנאי","teaches":"אם... אז...: חידות תנאי","keywords":"תנאי, אם אז, החלטה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card{font-size:1.12rem}
+.card button{padding:10px 16px; font-size:1.05rem}
+.pick{display:flex; flex-direction:column; gap:6px}
+.pick > b{font-family:var(--f-head); font-size:1.15rem}
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chips button{min-height:46px}
+.chips button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.machine{border:2px solid var(--border); border-radius:14px; background:var(--card); box-shadow:-3px 3px 0 var(--hard); padding:12px; display:flex; flex-direction:column; gap:10px}
+.rule{font-weight:700; font-size:1.15rem; text-align:center}
+.rule .kw{color:var(--line); font-family:var(--f-head)}
+.now{text-align:center; font-size:1.5rem; font-weight:800}
+.branches{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+.branch{border:2px dashed var(--soft); border-radius:12px; padding:10px; text-align:center; opacity:.55; transition:opacity .15s}
+.branch small{display:block; color:var(--muted); font-weight:700}
+.branch .act{font-size:1.15rem; font-weight:800}
+.branch.on{opacity:1; border:2px solid var(--line); background:var(--hint-bg)}
+.branch.none .act{color:var(--muted)}
+.result{text-align:center; font-weight:800; font-size:1.2rem}
+.rlist{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; counter-reset:r}
+.rlist li{border:2px solid var(--border); border-radius:12px; padding:8px 12px; background:var(--card); counter-increment:r}
+.rlist li::before{content:counter(r) ". "; font-weight:800; color:var(--line)}
+.rlist li.hit{border-color:var(--line); background:var(--hint-bg)}
+.rlist li.skip{opacity:.5}
+.rlist li.els::before{content:"↩ "}
+.input{text-align:center; font-size:1.3rem; font-weight:800; border:2px solid var(--border); border-radius:12px; padding:8px; background:var(--paper)}
+.opts{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.opts button{min-width:120px; min-height:52px; font-size:1.15rem}
+.opts button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.q{font-size:1.2rem; font-weight:600; text-align:center}
+.modes{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:12px}
+.modes button[aria-pressed="true"]{background:var(--line); color:#fff}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="if-then-riddles">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-3/">כיתה ג</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-3/#cs-puzzles-3">חידות וחשיבה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">אם... אז...: חידות תנאי</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ג · חידות וחשיבה</div>
+  <h1>אם... אז... <span class="slogan">חידות תנאי</span></h1>
+  <p class="lead">אם יורד גשם, אז לוקחים מטרייה. ככה גם מחשב מחליט מה לעשות: הוא בודק תנאי, ולפי התשובה בוחר דרך. במעבדה בונים כלל משלכם ובודקים אותו, ובחידות מנחשים מה יקרה.</p>
+  <p class="text">כדאי להכיר קודם את <a href="../robot-steps/">הוראות לרובוט</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">טיפים</a><a href="#example">דוגמה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>תנאי</h3>
+      <p>תנאי הוא שאלה שהתשובה עליה היא כן או לא.</p>
+      <p>יורד גשם? כן או לא.</p>
+    </div>
+    <div class="mini">
+      <h3>אם... אז...</h3>
+      <p>אם התשובה היא כן, עושים את מה שכתוב אחרי <strong>אז</strong>.</p>
+      <p>אם יורד גשם, אז לוקחים מטרייה ☂️.</p>
+    </div>
+    <div class="mini">
+      <h3>אחרת</h3>
+      <p>אם התשובה היא לא, עושים את מה שכתוב אחרי <strong>אחרת</strong>.</p>
+      <p>אחרת, הולכים לפארק 🌳.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>ככה מחשב חושב:</strong> הוא לא מנחש. הוא בודק את התנאי, ובוחר רק דרך אחת: אז או אחרת.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מכונת הכללים</h2></div>
+  <div class="modes" role="group" aria-label="מצב המעבדה">
+    <button id="mBuild" aria-pressed="true">בונים כלל</button>
+    <button id="mRiddle" aria-pressed="false">חידות</button>
+  </div>
+
+  <div id="buildPane">
+    <p class="text">בחרו תנאי, מה עושים אם הוא נכון ומה עושים אחרת. אחר כך הזיזו את המחוון ובדקו מה המכונה עושה.</p>
+    <div class="lab">
+      <div class="ctrl">
+        <div class="pick"><b>אם</b><div class="chips" id="cCond"></div></div>
+        <div class="pick"><b>אז</b><div class="chips" id="cThen"></div></div>
+        <div class="pick"><b>אחרת</b><div class="chips" id="cElse"></div></div>
+      </div>
+      <div class="ctrl">
+        <div class="machine">
+          <div class="rule" id="mRule"></div>
+          <label class="slider" for="inp"><span id="inpName">מה קורה עכשיו</span></label>
+          <input type="range" id="inp" min="0" max="1" step="1" value="1">
+          <div class="now" id="mNow"></div>
+          <div class="branches">
+            <div class="branch" id="bThen"><small>אז</small><span class="act"></span></div>
+            <div class="branch" id="bElse"><small>אחרת</small><span class="act"></span></div>
+          </div>
+          <div class="result" id="mRes"></div>
+        </div>
+        <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+        <div>
+          <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+          <div class="tries">
+            <button data-p="rain,0,1,1">גשם ומטרייה</button>
+            <button data-p="even,2,3,7">מספר זוגי</button>
+            <button data-p="sat,4,5,6">יום שבת</button>
+            <button data-p="red,5,-1,1">בלי אחרת</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="riddlePane" hidden>
+    <p class="text">יש כמה כללים. בודקים אותם לפי הסדר, מלמעלה למטה. <strong>הכלל הראשון שמתאים קובע</strong>, ואת השאר כבר לא בודקים. אם אף כלל לא מתאים, הולכים לאחרת.</p>
+    <ol class="rlist" id="rList"></ol>
+    <p class="q" style="margin-top:12px">מה יצא?</p>
+    <div class="input" id="rIn"></div>
+    <div class="opts" id="rOpts" style="margin-top:10px"></div>
+    <div class="row" style="justify-content:center"><button id="rCheck" class="primary">בדיקה</button><button id="rNext">חידה הבאה</button><span class="counter" id="rCount"></span></div>
+    <div id="rFb" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טיפים וטעויות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שכחו את אחרת</h3>
+      <p>בלי אחרת, כשהתנאי לא נכון לא קורה כלום. אם רוצים שמשהו יקרה גם אז, מוסיפים אחרת.</p>
+    </div>
+    <div class="mini">
+      <h3>שני כללים מתאימים</h3>
+      <p>בודקים לפי הסדר. הכלל הראשון שמתאים מנצח, גם אם גם כלל אחר מתאים.</p>
+    </div>
+    <div class="mini">
+      <h3>רק דרך אחת</h3>
+      <p>אף פעם לא עושים גם אז וגם אחרת. או זה, או זה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>איך פותרים חידת תנאי:</strong> קוראים את התנאי, עונים כן או לא, ורק אז בוחרים דרך.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">הכלל: אם המספר זוגי, אז מוחאים כף 👏, אחרת קופצים 🦘. המספר הוא 7. מה עושים?</p>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <ol class="rlist" id="prRules"></ol>
+  <div class="input" id="prIn" style="margin-top:10px"></div>
+  <p class="q">מה יקרה?</p>
+  <div class="opts" id="prOpts"></div>
+  <div class="row" style="justify-content:center"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה ילדים בכיתה ג לומדים תנאים?</h3>
+    <p>כי זו הדרך שבה כל תוכנה מקבלת החלטות. ילדים כבר חושבים ככה ביום יום: אם קר, לובשים מעיל. כשהם רואים שזה כלל שאפשר לכתוב ולבדוק, קל להם יותר אחר כך בתכנות אמיתי.</p>
+    <h3>מה ההבדל בין אז לבין אחרת?</h3>
+    <p>אז הוא מה שעושים כשהתנאי נכון. אחרת הוא מה שעושים כשהתנאי לא נכון. תמיד קורה רק אחד מהם. <a href="#lab">נסו במכונת הכללים</a>.</p>
+    <h3>איך אפשר לתרגל את זה בבית?</h3>
+    <p>משחקים במשחק כללים: אחד ממציא כלל, למשל אם אני מרים יד ימין אז קופצים, אחרת יושבים. השני מבצע. אחר כך מוסיפים כלל שני ובודקים מה קורה כששניהם מתאימים.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/robot-steps/">מובילים את הרובוט: הוראות צעד אחרי צעד</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/sorting-groups/"><small>→ הנושא הקודם</small>ממיינים לקבוצות</a><a class="next" href="../../cs/find-the-bug/"><small>הנושא הבא ←</small>מצאו את הבאג</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/sound.js"></script>
+<script src="../../assets/sfx.js"></script>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const DAYS=['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+const COND={
+  rain:{t:'יורד גשם',name:'מזג האוויר',min:0,max:1,v:1,show:v=>v?'🌧️ יורד גשם':'☀️ יש שמש',test:v=>v===1},
+  sat:{t:'היום שבת',name:'איזה יום היום',min:1,max:7,v:7,show:v=>'📅 יום '+DAYS[v-1],test:v=>v===7},
+  even:{t:'המספר זוגי',name:'המספר',min:0,max:20,v:6,show:v=>'🔢 המספר '+v,test:v=>v%2===0},
+  red:{t:'הכרטיס אדום',name:'צבע הכרטיס',min:0,max:2,v:0,show:v=>['🟥 כרטיס אדום','🟦 כרטיס כחול','🟨 כרטיס צהוב'][v],test:v=>v===0}
+};
+const ACT=['לוקחים מטרייה ☂️','הולכים לפארק 🌳','מוחאים כף 👏','קופצים 🦘','נחים בבית 🛋️','שרים שיר 🎵','מרימים יד ✋','צוחקים 😄'];
+
+/* ---------- build mode ---------- */
+let st={c:'rain',th:0,el:1};
+function chips(el,items,cur,on){
+  el.innerHTML=items.map(([k,t])=>`<button data-k="${k}" aria-pressed="${String(k)===String(cur)}">${t}</button>`).join('');
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>on(b.dataset.k));
+}
+function drawChips(){
+  chips($('cCond'),Object.entries(COND).map(([k,c])=>[k,c.t]),st.c,k=>{ st.c=k; const c=COND[k]; $('inp').min=c.min; $('inp').max=c.max; $('inp').value=c.v; drawChips(); lab(); });
+  chips($('cThen'),ACT.map((a,i)=>[i,a]),st.th,k=>{ st.th=+k; drawChips(); lab(); });
+  chips($('cElse'),[[-1,'בלי אחרת']].concat(ACT.map((a,i)=>[i,a])),st.el,k=>{ st.el=+k; drawChips(); lab(); });
+}
+function lab(){
+  const c=COND[st.c], v=+$('inp').value, ok=c.test(v), hasElse=st.el>=0;
+  $('inpName').textContent=c.name;
+  $('mRule').innerHTML=`<span class="kw">אם</span> ${c.t} <span class="kw">אז</span> ${ACT[st.th]}`+(hasElse?` <span class="kw">אחרת</span> ${ACT[st.el]}`:'');
+  $('mNow').textContent=c.show(v);
+  $('bThen').querySelector('.act').textContent=ACT[st.th];
+  $('bElse').querySelector('.act').textContent=hasElse?ACT[st.el]:'אין אחרת';
+  $('bElse').classList.toggle('none',!hasElse);
+  $('bThen').classList.toggle('on',ok);
+  $('bElse').classList.toggle('on',!ok);
+  const res=ok?ACT[st.th]:hasElse?ACT[st.el]:'לא קורה כלום';
+  $('mRes').textContent='התוצאה: '+res;
+  let t=`בודקים: ${c.t}? עכשיו ${c.show(v).replace(/^\S+ /,'')}, אז התשובה היא <strong>${ok?'כן':'לא'}</strong>. `;
+  if(ok) t+=`התנאי נכון, לכן הולכים לדרך של <strong>אז</strong>: ${ACT[st.th]}.`;
+  else if(hasElse) t+=`התנאי לא נכון, לכן הולכים לדרך של <strong>אחרת</strong>: ${ACT[st.el]}.`;
+  else t+='התנאי לא נכון ואין אחרת, לכן לא קורה כלום. רוצים שמשהו יקרה גם עכשיו? בחרו פעולה באחרת.';
+  if(st.el===st.th) t+=' שימו לב: בחרתם אותה פעולה באז ובאחרת, אז התנאי לא משנה כלום.';
+  $('labTxt').innerHTML=t;
+}
+$('inp').addEventListener('input',lab);
+document.querySelectorAll('#lab .tries button').forEach(b=>b.addEventListener('click',()=>{
+  const [c,th,el,v]=b.dataset.p.split(','); st={c,th:+th,el:+el};
+  $('inp').min=COND[c].min; $('inp').max=COND[c].max; $('inp').value=v; drawChips(); lab();
+}));
+$('inp').min=COND.rain.min; $('inp').max=COND.rain.max; $('inp').value=1;
+drawChips(); lab();
+
+/* ---------- riddle mode ---------- */
+const RID=[
+  {rules:[['המספר גדול מ-10','🔔 פעמון',n=>n>10],['המספר זוגי','⭐ כוכב',n=>n%2===0]],els:'🍎 תפוח',x:7,show:'🔢 המספר 7'},
+  {rules:[['המספר גדול מ-10','🔔 פעמון',n=>n>10],['המספר זוגי','⭐ כוכב',n=>n%2===0]],els:'🍎 תפוח',x:4,show:'🔢 המספר 4'},
+  {rules:[['המספר גדול מ-10','🔔 פעמון',n=>n>10],['המספר זוגי','⭐ כוכב',n=>n%2===0]],els:'🍎 תפוח',x:12,show:'🔢 המספר 12'},
+  {rules:[['החיה עפה','🪽 לשמיים',a=>a.fly],['לחיה יש 4 רגליים','🏡 לבית',a=>a.legs===4]],els:'🌊 לים',x:{fly:false,legs:4},show:'🐱 חתול'},
+  {rules:[['החיה עפה','🪽 לשמיים',a=>a.fly],['לחיה יש 4 רגליים','🏡 לבית',a=>a.legs===4]],els:'🌊 לים',x:{fly:false,legs:0},show:'🐟 דג'},
+  {rules:[['המספר קטן מ-5','🐢 צב',n=>n<5],['המספר אי זוגי','🐇 ארנב',n=>n%2===1],['המספר גדול מ-10','🐘 פיל',n=>n>10]],els:'🦒 ג׳ירפה',x:15,show:'🔢 המספר 15'},
+  {rules:[['המספר קטן מ-5','🐢 צב',n=>n<5],['המספר אי זוגי','🐇 ארנב',n=>n%2===1],['המספר גדול מ-10','🐘 פיל',n=>n>10]],els:'🦒 ג׳ירפה',x:3,show:'🔢 המספר 3'},
+  {rules:[['המספר קטן מ-5','🐢 צב',n=>n<5],['המספר אי זוגי','🐇 ארנב',n=>n%2===1],['המספר גדול מ-10','🐘 פיל',n=>n>10]],els:'🦒 ג׳ירפה',x:8,show:'🔢 המספר 8'}
+];
+/* evaluate: index of first matching rule, or -1 for else */
+const firstHit=r=>r.rules.findIndex(x=>x[2](r.x));
+function drawRules(el,r,mark){
+  el.innerHTML=r.rules.map((x,i)=>{
+    let cls='';
+    if(mark){ const h=firstHit(r); if(i===h) cls='hit'; else if(h>=0&&i>h) cls='skip'; }
+    return `<li class="${cls}"><strong>אם</strong> ${x[0]} <strong>אז</strong> ${x[1]}</li>`;
+  }).join('')+`<li class="els ${mark&&firstHit(r)<0?'hit':''}"><strong>אחרת</strong> ${r.els}</li>`;
+}
+let ri=0, rSel=null;
+function riddle(){
+  const r=RID[ri]; rSel=null; drawRules($('rList'),r,false);
+  $('rIn').textContent=r.show;
+  const outs=r.rules.map(x=>x[1]).concat([r.els]);
+  $('rOpts').innerHTML=outs.map((o,i)=>`<button data-i="${i}" aria-pressed="false">${o}</button>`).join('');
+  $('rOpts').querySelectorAll('button').forEach(b=>b.onclick=()=>{ rSel=+b.dataset.i; $('rOpts').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  $('rFb').innerHTML=''; $('rCount').textContent=`חידה ${ri+1} מתוך ${RID.length}`;
+}
+$('rCheck').onclick=()=>{
+  const r=RID[ri], h=firstHit(r), ans=h<0?r.rules.length:h;
+  if(rSel===null){ $('rFb').innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+  if(rSel===ans){ drawRules($('rList'),r,true); $('rFb').innerHTML=`<div class="fb ok">נכון! ${h<0?'אף כלל לא מתאים, אז הולכים לאחרת.':`כלל ${h+1} הוא הראשון שמתאים.`}</div>`; return; }
+  let m;
+  if(rSel<r.rules.length && r.rules[rSel][2](r.x)) m='גם הכלל הזה מתאים, אבל בודקים לפי הסדר. יש כלל מתאים לפניו, והוא זה שקובע.';
+  else if(rSel<r.rules.length) m=`בדקו שוב: האם "${r.rules[rSel][0]}" נכון כאן? אם לא, ממשיכים לכלל הבא.`;
+  else m='אחד הכללים כן מתאים, אז לא מגיעים לאחרת. עברו על הכללים מלמעלה.';
+  $('rFb').innerHTML=`<div class="fb err">${m}</div>`;
+};
+$('rNext').onclick=()=>{ ri=(ri+1)%RID.length; riddle(); };
+riddle();
+
+function mode(b){ const isB=b==='b'; $('buildPane').hidden=!isB; $('riddlePane').hidden=isB; $('mBuild').setAttribute('aria-pressed',isB); $('mRiddle').setAttribute('aria-pressed',!isB); }
+$('mBuild').onclick=()=>mode('b'); $('mRiddle').onclick=()=>mode('r');
+
+/* ---------- worked example ---------- */
+const EX=[
+  'קוראים את התנאי: <strong>המספר זוגי?</strong> זו שאלה של כן או לא.',
+  'בודקים: 7 אפשר לחלק לזוגות? 3 זוגות ועוד אחד לבד. אז 7 <strong>לא</strong> זוגי.',
+  'התשובה היא לא. לכן לא הולכים לאז. את מחיאת הכף מדלגים.',
+  'הולכים לאחרת: <strong>קופצים 🦘</strong>. זו התשובה.',
+  'בדיקה: אם המספר היה 8, התנאי היה נכון, והיינו מוחאים כף 👏 במקום.'
+];
+let exI=0;
+function ex(){ $('exText').innerHTML=EX[exI]; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){exI++;ex();} }; $('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+ex();
+
+/* ---------- practice ---------- */
+const NUMC=[['המספר זוגי',n=>n%2===0],['המספר אי זוגי',n=>n%2===1],['המספר גדול מ-10',n=>n>10],['המספר קטן מ-5',n=>n<5],['המספר נגמר ב-0',n=>n%10===0]];
+const EMO=['🔔 פעמון','⭐ כוכב','🍎 תפוח','🎈 בלון','🐸 צפרדע','🚀 טיל','🎁 מתנה'];
+const rnd=n=>Math.floor(Math.random()*n);
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=rnd(i+1); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+let pr=null, sel=null, streak=0, solved=0;
+function newPr(){
+  let p;
+  do{
+    if(Math.random()<.5){
+      /* one rule, from the lab conditions */
+      const keys=Object.keys(COND), c=COND[keys[rnd(keys.length)]], v=c.min+rnd(c.max-c.min+1);
+      const [a,b]=shuffle(ACT.map((_,i)=>i)).slice(0,2), hasElse=Math.random()<.75;
+      const ok=c.test(v);
+      p={kind:1,rules:[[c.t,ACT[a]]],els:hasElse?ACT[b]:null,show:c.show(v),hit:ok?0:-1,
+         opts:[ACT[a]].concat(hasElse?[ACT[b]]:[]).concat(['לא קורה כלום'])};
+      p.ans=ok?ACT[a]:hasElse?ACT[b]:'לא קורה כלום';
+      p.key=c.t+v+a+b+hasElse;
+    }else{
+      /* two rules on a number: order matters */
+      const [i,j]=shuffle(NUMC.map((_,k)=>k)).slice(0,2), [e1,e2,e3]=shuffle(EMO.slice()).slice(0,3), n=rnd(21);
+      const rules=[[NUMC[i][0],e1,NUMC[i][1]],[NUMC[j][0],e2,NUMC[j][1]]];
+      const hit=rules.findIndex(x=>x[2](n));
+      p={kind:2,rules,els:e3,show:'🔢 המספר '+n,hit,opts:[e1,e2,e3],ans:hit<0?e3:rules[hit][1],key:''+i+j+n};
+    }
+  }while(pr&&p.key===pr.key);
+  pr=Object.assign(p,{tries:0,hint:0}); sel=null;
+  drawPr(false);
+  $('prIn').textContent=pr.show;
+  $('prOpts').innerHTML=pr.opts.map((o,k)=>`<button data-i="${k}" aria-pressed="false">${o}</button>`).join('');
+  $('prOpts').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prOpts').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function drawPr(mark){
+  const r=pr;
+  $('prRules').innerHTML=r.rules.map((x,i)=>`<li class="${mark?(i===r.hit?'hit':(r.hit>=0&&i>r.hit?'skip':'')):''}"><strong>אם</strong> ${x[0]} <strong>אז</strong> ${x[1]}</li>`).join('')
+    +(r.els?`<li class="els ${mark&&r.hit<0?'hit':''}"><strong>אחרת</strong> ${r.els}</li>`:'');
+}
+function stt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(sel===null){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+  const v=pr.opts[sel];
+  if(v===pr.ans){ streak++; solved++; stt(); drawPr(true); fb.innerHTML=`<div class="fb ok">נכון! ${pr.ans}</div>`; return; }
+  streak=0; pr.tries++; stt();
+  let m;
+  const ruleIdx=pr.rules.findIndex(x=>x[1]===v);
+  if(v==='לא קורה כלום') m=pr.hit===0?'התנאי נכון, אז משהו כן קורה. מה כתוב אחרי אז?':'התנאי לא נכון, אבל יש אחרת. מה כתוב שם?';
+  else if(pr.kind===1&&ruleIdx===0) m='בדקו שוב את התנאי. הוא באמת נכון עכשיו? אם לא, לא הולכים לאז.';
+  else if(pr.kind===1) m=pr.els===null?'':'התנאי נכון עכשיו, אז הולכים לאז ולא לאחרת.';
+  else if(ruleIdx>=0&&pr.rules[ruleIdx][2]&&pr.rules[ruleIdx][2](+pr.show.replace(/\D/g,''))) m='גם הכלל הזה מתאים, אבל יש כלל מתאים לפניו. הראשון שמתאים קובע.';
+  else if(ruleIdx>=0) m=`האם "${pr.rules[ruleIdx][0]}" נכון כאן? בדקו שוב.`;
+  else m='אחד הכללים כן מתאים, אז לא מגיעים לאחרת.';
+  if(!m) m='בדקו שוב: האם התנאי נכון עכשיו?';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.kind===1) h=pr.hint<2?`קודם בודקים את התנאי: ${pr.rules[0][0]}? ענו כן או לא.`:(pr.hit===0?'התנאי נכון, אז הולכים לאז.':pr.els?'התנאי לא נכון, אז הולכים לאחרת.':'התנאי לא נכון ואין אחרת.');
+  else h=pr.hint<2?'בודקים את הכללים לפי הסדר, מלמעלה למטה, ועוצרים בראשון שמתאים.':(pr.hit<0?'אף כלל לא מתאים, אז הולכים לאחרת.':`כלל ${pr.hit+1} הוא הראשון שמתאים.`);
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ drawPr(true); $('prFb').innerHTML=`<div class="fb hint">התשובה: ${pr.ans}. ${pr.hit<0?(pr.els?'אף כלל לא מתאים, אז הולכים לאחרת.':'התנאי לא נכון ואין אחרת.'):`כלל ${pr.hit+1} הוא הראשון שמתאים.`} עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); stt();
+})();
+</script>
+</body>
+</html>

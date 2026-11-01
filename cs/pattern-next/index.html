@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מה בא אחר כך? חידות דפוסים · מדעי המחשב כיתה א · מירי</title>
+<meta name="description" content="צורות, צבעים וצלילים שחוזרים על עצמם: מוצאים את החוק, ממשיכים את הדפוס ומתקנים דפוס שנשבר. מעבדה ותרגול עם רמזים לכיתה א.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/pattern-next/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מה בא אחר כך? חידות דפוסים · מדעי המחשב כיתה א · מירי">
+<meta property="og:description" content="צורות, צבעים וצלילים שחוזרים על עצמם: מוצאים את החוק, ממשיכים את הדפוס ומתקנים דפוס שנשבר. מעבדה ותרגול עם רמזים לכיתה א.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/pattern-next/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה א","item":"https://shohamtal.github.io/homework-site/cs/grade-1/"},{"@type":"ListItem","position":4,"name":"חידות וחשיבה","item":"https://shohamtal.github.io/homework-site/cs/grade-1/#cs-puzzles-1"},{"@type":"ListItem","position":5,"name":"מה בא אחר כך? חידות דפוסים","item":"https://shohamtal.github.io/homework-site/cs/pattern-next/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה הקשר בין דפוסים לחשיבה ממוחשבת?","acceptedAnswer":{"@type":"Answer","text":"חשיבה ממוחשבת מתחילה בלשים לב למה שחוזר. ילד שמוצא את החלק שחוזר בשורת תמונות לומד לחפש חוקיות, וזה מה שעוזר אחר כך לפתור בעיות בדרך מסודרת."}},{"@type":"Question","name":"איך זה קשור לתכנות בהמשך?","acceptedAnswer":{"@type":"Answer","text":"בתכנות, מה שחוזר על עצמו כותבים פעם אחת בתוך לולאה. מי שמזהה דפוס בכיתה א יבין בקלות לולאות בחידות של כיתה ה ובפייתון בכיתה ח."}},{"@type":"Question","name":"איך משחקים בזה בבית?","acceptedAnswer":{"@type":"Answer","text":"סדרו כפיות ומזלגות, או מחאו כפיים ורקעו ברגליים בדפוס, ותנו לילדים להמשיך. אחר כך תנו להם להמציא דפוס ואתם תנחשו. אפשר להכניס טעות בכוונה ולבקש שימצאו אותה. נסו את המעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מה בא אחר כך? חידות דפוסים","description":"צורות, צבעים וצלילים שחוזרים על עצמם: מוצאים את החוק, ממשיכים את הדפוס ומתקנים דפוס שנשבר. מעבדה ותרגול עם רמזים לכיתה א.","url":"https://shohamtal.github.io/homework-site/cs/pattern-next/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה א","about":"מה בא אחר כך? חידות דפוסים","teaches":"מה בא אחר כך? חידות דפוסים","keywords":"דפוס, חוקיות, חזרה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card{font-size:1.12rem}
+.card button{padding:10px 16px; font-size:1.05rem}
+.q{font-size:1.25rem; font-weight:600; text-align:center}
+.strip,.choices,.palette,.unit{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.tile{min-width:56px; min-height:60px; padding:4px 6px; border:2px solid var(--border); border-radius:12px; background:var(--card); display:flex; align-items:center; justify-content:center; font-size:2rem; line-height:1; color:var(--ink)}
+.tile.u1{background:var(--paper)}
+.tile.u2{background:var(--hint-bg)}
+.tile.gap{border-style:dashed; border-color:var(--line); color:var(--line); font:800 1.8rem var(--f-body)}
+.tile.small{font-size:1.15rem; letter-spacing:-2px}
+button.tile{cursor:pointer; box-shadow:var(--hard)}
+button.tile[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 3px var(--line); background:var(--hint-bg)}
+.tile.ok{border-color:var(--ok); background:var(--ok-bg)}
+.tile.bad{border-color:var(--err); background:var(--err-bg)}
+.choices button.tile{min-width:72px; min-height:72px}
+.modes{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.modes button[aria-pressed="true"]{background:var(--hl); border-color:var(--border)}
+.labrow{display:flex; flex-direction:column; gap:16px}
+.lbl{font-weight:700; text-align:center}
+.unit{min-height:64px; padding:6px; border:2px dashed var(--soft); border-radius:12px}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="pattern-next">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-1/">כיתה א</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-1/#cs-puzzles-1">חידות וחשיבה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מה בא אחר כך? חידות דפוסים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה א · חידות וחשיבה</div>
+  <h1>מה בא אחר כך? <span class="slogan">חידות דפוסים</span></h1>
+  <p class="lead">🍎🍌🍎🍌... מה בא עכשיו? מוצאים את החלק שחוזר, ממשיכים את הדפוס, מתקנים דפוס שנשבר ובונים דפוס משלכם. מחשבים אוהבים דפוסים, כי מה שחוזר אפשר לכתוב פעם אחת.</p>
+  <p class="text small">להורים: לא צריך לקרוא. קראו את ההוראה בקול, והילדים לוחצים על התמונות. אחרי זה אפשר לנסות גם את <a href="../sequence-puzzles/">חידות הסדר</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#tips">טיפים</a><a href="#example">דוגמה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>משהו חוזר</h3>
+      <div class="strip" aria-hidden="true"><span class="tile u1">🔴</span><span class="tile u1">🔵</span><span class="tile u2">🔴</span><span class="tile u2">🔵</span><span class="tile u1">🔴</span><span class="tile u1">🔵</span></div>
+      <p>אדום, כחול, ושוב אדום, כחול.</p>
+    </div>
+    <div class="mini">
+      <h3>החלק שחוזר</h3>
+      <div class="strip" aria-hidden="true"><span class="tile u1">🐶</span><span class="tile u1">🐶</span><span class="tile u1">🐱</span><span class="tile u2">🐶</span><span class="tile u2">🐶</span><span class="tile u2">🐱</span></div>
+      <p>כאן החלק שחוזר הוא כלב, כלב, חתול.</p>
+    </div>
+    <div class="mini">
+      <h3>דפוס שגדל</h3>
+      <div class="strip" aria-hidden="true"><span class="tile small">⭐</span><span class="tile small">⭐⭐</span><span class="tile small">⭐⭐⭐</span></div>
+      <p>יש דפוסים שבכל פעם מוסיפים עוד אחד.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מה בא אחר כך?</h2></div>
+  <div class="labrow">
+    <div class="modes" id="labModes">
+      <button data-m="next" aria-pressed="true">❓ מה בא אחר כך</button>
+      <button data-m="fix" aria-pressed="false">🔧 תקנו את הדפוס</button>
+      <button data-m="make" aria-pressed="false">🎨 בנו דפוס</button>
+    </div>
+    <div>
+      <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+      <div class="tries" id="labKinds">
+        <button data-k="AB">🍎🍌 שניים</button>
+        <button data-k="AAB">🐶🐶🐱 שניים ואחד</button>
+        <button data-k="ABC">🔺🟦🟡 שלושה</button>
+        <button data-k="ABB">👏🦶🦶 מחיאה ורקיעה</button>
+        <button data-k="GROW">⭐ דפוס שגדל</button>
+      </div>
+    </div>
+    <div id="labLen">
+      <label class="slider" for="labN" style="display:flex; justify-content:space-between; font-weight:700"><span>כמה תמונות רואים?</span><span id="labNv"></span></label>
+      <input type="range" id="labN" min="3" max="9" step="1" value="6">
+    </div>
+    <div id="labMake" hidden>
+      <p class="lbl">הורים: לחצו על תמונות כדי לבנות את החלק שחוזר (עד 4).</p>
+      <div class="palette" id="labPal"></div>
+      <div class="unit" id="labUnit" aria-label="החלק שחוזר"></div>
+      <div class="row" style="justify-content:center"><button id="labUndo">מחקו אחרון</button><button id="labGo" class="primary">צרו חידה</button></div>
+    </div>
+    <div class="strip" id="labStrip" aria-live="polite"></div>
+    <div class="choices" id="labCh"></div>
+    <div class="row" style="justify-content:center"><button id="labNew">עוד אחת</button></div>
+    <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="card" id="tips">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טיפים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אומרים בקול</h3>
+      <p>תפוח, בננה, תפוח, בננה... כשאומרים בקול, שומעים את הדפוס.</p>
+    </div>
+    <div class="mini">
+      <h3>מוצאים את ההתחלה</h3>
+      <p>מחפשים איפה הדפוס מתחיל שוב. מה שבאמצע הוא החלק שחוזר.</p>
+    </div>
+    <div class="mini">
+      <h3>בודקים עם האצבע</h3>
+      <p>מצביעים על כל תמונה ובודקים שהיא מתאימה לחלק שחוזר. ככה מוצאים גם תמונה שלא שייכת.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>להורים:</strong> למצוא את החלק שחוזר זה בדיוק מה שמתכנתים עושים כשהם כותבים לולאה: את מה שחוזר כותבים פעם אחת ואומרים למחשב לחזור עליו.</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">מה בא אחר כך?</p>
+    <div class="strip" id="exStrip"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="q" id="prQ"></p>
+  <div class="strip" id="prStrip"></div>
+  <div class="choices" id="prCh"></div>
+  <div class="row" style="justify-content:center"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">חידה חדשה</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שהורים שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה הקשר בין דפוסים לחשיבה ממוחשבת?</h3>
+    <p>חשיבה ממוחשבת מתחילה בלשים לב למה שחוזר. ילד שמוצא את החלק שחוזר בשורת תמונות לומד לחפש חוקיות, וזה מה שעוזר אחר כך לפתור בעיות בדרך מסודרת.</p>
+    <h3>איך זה קשור לתכנות בהמשך?</h3>
+    <p>בתכנות, מה שחוזר על עצמו כותבים פעם אחת בתוך לולאה. מי שמזהה דפוס בכיתה א יבין בקלות לולאות בחידות של כיתה ה ובפייתון בכיתה ח.</p>
+    <h3>איך משחקים בזה בבית?</h3>
+    <p>סדרו כפיות ומזלגות, או מחאו כפיים ורקעו ברגליים בדפוס, ותנו לילדים להמשיך. אחר כך תנו להם להמציא דפוס ואתם תנחשו. אפשר להכניס טעות בכוונה ולבקש שימצאו אותה. <a href="#lab">נסו את המעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/sequence-puzzles/">מה קודם ומה אחר כך: חידות סדר</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/sequence-puzzles/"><small>→ הנושא הקודם</small>מה קודם ומה אחר כך: חידות סדר</a><a class="next" href="../../cs/robot-steps/"><small>הנושא הבא ←</small>מובילים את הרובוט: הוראות צעד אחרי צעד</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/sound.js"></script>
+<script src="../../assets/sfx.js"></script>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const THEMES={AB:['🍎','🍌','🍇'],AAB:['🐶','🐱','🐭'],ABC:['🔺','🟦','🟡'],ABB:['👏','🦶','🎵']};
+const UNIT={AB:[0,1],AAB:[0,0,1],ABC:[0,1,2],ABB:[0,1,1]};
+const NAME={AB:'שתי תמונות שמתחלפות',AAB:'שתיים שוות ואחת אחרת',ABC:'שלוש תמונות שונות',ABB:'אחת ואחריה שתיים שוות',GROW:'בכל פעם מוסיפים כוכב אחד'};
+const PAL=['🍎','🍌','🍇','🐶','🐱','🔴','🔵','🟡','⭐','🌙'];
+const stars=n=>'⭐'.repeat(n);
+const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+
+/* a pattern = a function from position to item; for repeating ones also the unit */
+function makePattern(kind,unitItems){
+  if(kind==='GROW') return {kind, at:i=>stars(i+1), unit:null, len:1};
+  const u=unitItems||UNIT[kind].map(j=>THEMES[kind][j]);
+  return {kind, unit:u, at:i=>u[i%u.length], len:u.length};
+}
+function choicesFor(p,pos){
+  const right=p.at(pos);
+  if(p.kind==='GROW') return shuffle([right,stars(pos),stars(pos+2)].filter((x,i,a)=>a.indexOf(x)===i));
+  const others=[...new Set(p.unit.concat(PAL))].filter(x=>x!==right);
+  const near=p.unit.filter(x=>x!==right);
+  const w1=near.length?pick(near):pick(others), w2=pick(others.filter(x=>x!==w1));
+  return shuffle([right,w1,w2]);
+}
+const tileCls=(p,i)=>`tile${p.kind==='GROW'?' small':' u'+(Math.floor(i/p.len)%2+1)}`;
+function stripHTML(p,n,opts={}){
+  let h='';
+  for(let i=0;i<n;i++){
+    const item=opts.broken&&i===opts.broken.i?opts.broken.item:p.at(i);
+    h+=opts.tap?`<button class="${tileCls(p,i)}" data-i="${i}" aria-label="תמונה ${i+1}">${item}</button>`:`<span class="${tileCls(p,i)}">${item}</span>`;
+  }
+  if(opts.gap) h+=`<span class="tile gap">?</span>`;
+  return h;
+}
+function rule(p){ return p.kind==='GROW'?NAME.GROW:`החלק שחוזר: ${p.unit.join('')}${NAME[p.kind]?` (${NAME[p.kind]})`:''}.`; }
+
+/* lab */
+let mode='next', kind='AB', P=null, made=[], run=0, broken=null;
+function setMode(m){
+  mode=m; document.querySelectorAll('#labModes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));
+  $('labMake').hidden=m!=='make'; $('labLen').hidden=m==='make'; $('labKinds').parentElement.hidden=m==='make';
+  if(m==='make'){ made=[]; drawMade(); $('labStrip').innerHTML=''; $('labCh').innerHTML=''; $('labTxt').innerHTML='בנו את החלק שחוזר מהתמונות למעלה, ואז לחצו על צרו חידה. הילדים ימשיכו את הדפוס.'; return; }
+  labNew();
+}
+function labNew(){
+  run++; const n=+$('labN').value; $('labNv').textContent=n;
+  if(mode==='make'){ if(made.length>=2) makeGo(); return; }
+  P=makePattern(kind); broken=null;
+  if(mode==='next'){
+    const L=kind==='GROW'?Math.min(n,5):n;
+    $('labStrip').innerHTML=stripHTML(P,L,{gap:true});
+    $('labCh').innerHTML=choicesFor(P,L).map(c=>`<button class="tile${kind==='GROW'?' small':''}" data-c="${c}">${c}</button>`).join('');
+    P.pos=L; $('labTxt').innerHTML='מה בא במקום סימן השאלה? לחצו על התמונה הנכונה.';
+  }else{
+    if(kind==='GROW'){ kind='AB'; markKind(); P=makePattern(kind); }
+    const L=Math.max(n,P.len*2); const i=1+Math.floor(Math.random()*(L-1)); const wrong=pick([...new Set(THEMES[kind].concat(['🌙','⭐']))].filter(x=>x!==P.at(i)));
+    broken={i,item:wrong};
+    $('labStrip').innerHTML=stripHTML(P,L,{tap:true,broken}); $('labCh').innerHTML='';
+    $('labTxt').innerHTML='תמונה אחת לא שייכת לדפוס. לחצו עליה.';
+  }
+}
+function markKind(){ document.querySelectorAll('#labKinds button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===kind)); }
+$('labCh').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b||!P) return; const right=P.at(P.pos);
+  if(b.dataset.c===right){
+    const gap=$('labStrip').querySelector('.gap'); if(gap){ gap.className=tileCls(P,P.pos)+' ok'; gap.textContent=right; }
+    $('labCh').innerHTML=''; $('labTxt').innerHTML=`נכון! ${rule(P)} לחצו על עוד אחת, או הזיזו את המחוון.`;
+  }else{ b.classList.add('bad'); b.disabled=true; $('labTxt').innerHTML=`לא בדיוק. ${P.kind==='GROW'?'כמה כוכבים יש בתמונה האחרונה? כמה יהיו בבאה?':'אמרו את הדפוס בקול מההתחלה, והמשיכו עוד צעד אחד.'}`; }
+});
+$('labStrip').addEventListener('click',e=>{
+  const b=e.target.closest('button.tile'); if(!b||mode!=='fix'||!broken) return; const i=+b.dataset.i;
+  if(i===broken.i){ b.classList.add('ok'); b.textContent=P.at(i); $('labTxt').innerHTML=`מצאתם! במקום ${broken.item} צריך ${P.at(i)}. ${rule(P)}`; broken=null; $('labStrip').querySelectorAll('button').forEach(x=>x.disabled=true); }
+  else{ b.classList.add('bad'); $('labTxt').innerHTML=`${b.textContent} מתאימה לדפוס. בדקו עם האצבע כל תמונה לפי החלק שחוזר.`; }
+});
+function drawMade(){
+  $('labPal').innerHTML=PAL.map(x=>`<button class="tile" data-x="${x}" aria-label="הוסיפו ${x}">${x}</button>`).join('');
+  $('labUnit').innerHTML=made.length?made.map(x=>`<span class="tile">${x}</span>`).join(''):'<span class="lbl" style="align-self:center; color:var(--muted)">כאן יופיע החלק שחוזר</span>';
+}
+$('labPal').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b||made.length>=4) return; made.push(b.dataset.x); drawMade(); });
+$('labUndo').onclick=()=>{ made.pop(); drawMade(); };
+function makeGo(){
+  run++;
+  if(made.length<2||new Set(made).size<2){ $('labTxt').innerHTML='צריך לפחות שתי תמונות, ולפחות שתיים שונות, כדי שיהיה דפוס.'; return; }
+  P=makePattern('MAKE',made.slice()); const L=made.length*2+Math.floor(Math.random()*made.length);
+  $('labStrip').innerHTML=stripHTML(P,L,{gap:true}); P.pos=L;
+  $('labCh').innerHTML=choicesFor(P,L).map(c=>`<button class="tile" data-c="${c}">${c}</button>`).join('');
+  $('labTxt').innerHTML='החידה מוכנה. עכשיו הילדים בוחרים מה בא במקום סימן השאלה.';
+}
+$('labGo').onclick=makeGo;
+document.querySelectorAll('#labModes button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
+document.querySelectorAll('#labKinds button').forEach(b=>b.addEventListener('click',()=>{ kind=b.dataset.k; markKind(); if(mode==='fix'&&kind==='GROW'){ $('labTxt').innerHTML='בדפוס שגדל נשחק במצב מה בא אחר כך.'; setMode('next'); return; } labNew(); }));
+$('labN').addEventListener('input',labNew);
+$('labNew').onclick=()=>mode==='make'?makeGo():labNew();
+markKind(); labNew();
+
+/* worked example: 🔴🔵🔵🔴🔵🔵🔴 ? */
+const EXP=makePattern('MAKE',['🔴','🔵','🔵']);
+const EX=[
+  [7,false,'יש שורה של עיגולים: אדום, כחול, כחול, אדום, כחול, כחול, אדום. מה בא עכשיו?'],
+  [7,false,'אומרים בקול: אדום, כחול, כחול... ושוב אדום. הדפוס מתחיל מחדש אחרי שלוש תמונות.'],
+  [7,true,'החלק שחוזר הוא אדום, כחול, כחול. צבענו כל חזרה ברקע אחר כדי לראות אותה.'],
+  [7,true,'האדום האחרון פותח חזרה חדשה. אחרי אדום, בחלק שחוזר, בא כחול.'],
+  [8,true,'התשובה: 🔵. בודקים עם האצבע מההתחלה, והכל מתאים.']
+];
+let exI=0;
+function ex(){
+  const [n,col,t]=EX[exI];
+  let h=''; for(let i=0;i<n;i++) h+=`<span class="tile${col?' u'+(Math.floor(i/3)%2+1):''}${exI===EX.length-1&&i===7?' ok':''}">${EXP.at(i)}</span>`;
+  if(n===7) h+='<span class="tile gap">?</span>';
+  $('exStrip').innerHTML=h; $('exText').innerHTML=t; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice: what comes next, or which one does not belong */
+let pr={}, sel=null, streak=0, solved=0;
+const KINDS=['AB','AAB','ABC','ABB','GROW'];
+function themed(k){ /* a fresh unit from a random theme so practice is not the same as the lab */
+  if(k==='GROW') return makePattern('GROW');
+  const th=shuffle(pick([['🍎','🍌','🍇'],['🐶','🐱','🐭'],['🔴','🔵','🟡'],['🌙','⭐','☀️'],['🚗','🚲','🚌']]));
+  const p=makePattern(k,UNIT[k].map(j=>th[j])); p.name=k; return p;
+}
+function newPr(){
+  let k,type; do{ k=pick(KINDS); type=k==='GROW'||Math.random()<.6?'next':'fix'; }while(k===pr.k&&type===pr.type);
+  const p=themed(k); pr={k,type,p,tries:0,hint:0}; sel=null;
+  if(type==='next'){
+    const L=k==='GROW'?3+Math.floor(Math.random()*2):p.len*2+Math.floor(Math.random()*p.len);
+    pr.L=L; pr.ans=p.at(L); pr.opts=choicesFor(p,L);
+    $('prQ').textContent='מה בא במקום סימן השאלה?';
+    $('prStrip').innerHTML=stripHTML(p,L,{gap:true});
+    $('prCh').innerHTML=pr.opts.map(c=>`<button class="tile${k==='GROW'?' small':''}" data-c="${c}" aria-pressed="false">${c}</button>`).join('');
+  }else{
+    const L=Math.max(p.len*2+1,6), i=1+Math.floor(Math.random()*(L-1));
+    const wrong=pick(p.unit.concat(['⭐','🌙']).filter(x=>x!==p.at(i)));
+    pr.L=L; pr.i=i; pr.wrong=wrong; pr.ans=String(i);
+    $('prQ').textContent='איזו תמונה לא שייכת לדפוס? לחצו עליה ואז על בדיקה.';
+    $('prStrip').innerHTML=stripHTML(p,L,{tap:true,broken:{i,item:wrong}});
+    $('prCh').innerHTML='';
+  }
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function choose(b,v){ sel=v; document.querySelectorAll('#prCh button, #prStrip button').forEach(x=>x.setAttribute('aria-pressed',x===b)); }
+$('prCh').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) choose(b,b.dataset.c); });
+$('prStrip').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b&&pr.type==='fix') choose(b,b.dataset.i); });
+function st(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function solution(){ const {p,type}=pr; return type==='next'?`בא ${pr.ans}. ${rule(p)}`:`התמונה ${pr.wrong} במקום ${pr.i+1} לא שייכת. שם צריך ${p.at(pr.i)}. ${rule(p)}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(sel===null){ fb.innerHTML=`<div class="fb err">${pr.type==='next'?'בחרו קודם תמונה אחת.':'לחצו קודם על התמונה שלא שייכת.'}</div>`; return; }
+  if(sel===pr.ans){ streak++; solved++; st(); fb.innerHTML=`<div class="fb ok">נכון! ${solution()}</div>`; $('prShow').disabled=true; return; }
+  streak=0; pr.tries++; st();
+  let m;
+  if(pr.type==='fix') m=`התמונה הזו מתאימה לדפוס. אמרו את החלק שחוזר ובדקו כל תמונה עם האצבע.`;
+  else if(pr.k==='GROW') m='ספרו את הכוכבים בכל תמונה. בכמה זה גדל כל פעם?';
+  else m='אמרו את הדפוס בקול מההתחלה, והמשיכו עוד צעד אחד.';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); const {p,k}=pr; let h;
+  if(pr.hint<2) h=k==='GROW'?'ספרו כמה כוכבים יש בכל תמונה.':'מצאו איפה הדפוס מתחיל שוב.';
+  else h=k==='GROW'?`בתמונה האחרונה יש ${pr.L} כוכבים.`:`החלק שחוזר הוא ${p.unit.join('')}.`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${solution()} עכשיו נסו חידה חדשה.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); st();
+})();
+</script>
+</body>
+</html>

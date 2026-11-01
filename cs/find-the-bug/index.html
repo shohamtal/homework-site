@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מצאו את הבאג · מדעי המחשב כיתה ג · מירי</title>
+<meta name="description" content="הרובוט לא הגיע לפרס? מריצים את ההוראות לאט, מוצאים את השלב השגוי ומתקנים. כך מתכנתים מחפשים באגים. מעבדה ותרגול עם רמזים לכיתה ג.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/find-the-bug/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מצאו את הבאג · מדעי המחשב כיתה ג · מירי">
+<meta property="og:description" content="הרובוט לא הגיע לפרס? מריצים את ההוראות לאט, מוצאים את השלב השגוי ומתקנים. כך מתכנתים מחפשים באגים. מעבדה ותרגול עם רמזים לכיתה ג.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/find-the-bug/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ג","item":"https://shohamtal.github.io/homework-site/cs/grade-3/"},{"@type":"ListItem","position":4,"name":"חידות וחשיבה","item":"https://shohamtal.github.io/homework-site/cs/grade-3/#cs-puzzles-3"},{"@type":"ListItem","position":5,"name":"מצאו את הבאג","item":"https://shohamtal.github.io/homework-site/cs/find-the-bug/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה זה נקרא באג?","acceptedAnswer":{"@type":"Answer","text":"באג באנגלית זה חרק. מספרים שפעם מצאו עש אמיתי בתוך מחשב ענק שהפסיק לעבוד, והשם נשאר. היום כל טעות בתוכנה נקראת באג, ולחיפוש שלה קוראים ניפוי באגים."}},{"@type":"Question","name":"הילד מתעצבן כשהתוכנית לא עובדת. מה עושים?","acceptedAnswer":{"@type":"Answer","text":"אומרים לו שזה בדיוק מה שמתכנתים עושים כל יום. מציעים לעבור להרצה צעד אחרי צעד ולשאול בכל צעד: הרובוט עדיין בדרך? כשמוצאים את המקום, התיקון קל."}},{"@type":"Question","name":"איך מתרגלים את זה בלי מחשב?","acceptedAnswer":{"@type":"Answer","text":"כותבים הוראות להגיע מהמטבח לחדר, עם טעות אחת בכוונה. הילד מבצע אותן בדיוק, צעד אחרי צעד, ומגלה איפה הטעות. אחר כך מחליפים תפקידים."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מצאו את הבאג","description":"הרובוט לא הגיע לפרס? מריצים את ההוראות לאט, מוצאים את השלב השגוי ומתקנים. כך מתכנתים מחפשים באגים. מעבדה ותרגול עם רמזים לכיתה ג.","url":"https://shohamtal.github.io/homework-site/cs/find-the-bug/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ג","about":"מצאו את הבאג","teaches":"מצאו את הבאג","keywords":"באג, ניפוי, בדיקה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.card{font-size:1.12rem}
+.card button{padding:10px 16px; font-size:1.05rem}
+.board{display:grid; grid-template-columns:repeat(5,1fr); gap:4px; width:100%; max-width:300px; margin-inline:auto; direction:ltr}
+.board.mini{max-width:220px}
+.cell{aspect-ratio:1; border:2px solid var(--border); border-radius:8px; background:var(--card); display:flex; align-items:center; justify-content:center; font-size:1.6rem; position:relative}
+.board.mini .cell{font-size:1.15rem; border-width:1.5px}
+.cell.trail{background:var(--hint-bg)}
+.cell.plan::after{content:""; position:absolute; width:22%; height:22%; border-radius:50%; background:var(--line); opacity:.55}
+.cell.bad{background:#ffd9d9}
+.prog{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; direction:ltr; min-height:56px}
+.prog button{min-width:52px; min-height:52px; font-size:1.5rem; padding:4px 8px; position:relative}
+.prog button small{position:absolute; top:1px; left:4px; font-size:.65rem; color:var(--muted)}
+.prog button.cur{background:var(--hl)}
+.prog button.sel{border-color:var(--line); box-shadow:0 0 0 3px var(--line)}
+.prog.static span{display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; font-size:1.3rem; border:2px solid var(--border); border-radius:10px; background:var(--card); position:relative}
+.prog.static span small{position:absolute; top:0; left:3px; font-size:.6rem; color:var(--muted)}
+.prog.static span.cur{background:var(--hl)}
+.tools{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.tools button{min-height:48px}
+.tools .arr{font-size:1.4rem; min-width:52px; direction:ltr}
+.runrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.runrow button{min-height:50px}
+.lvls{display:flex; flex-wrap:wrap; gap:6px; justify-content:center}
+.lvls button{min-width:46px; min-height:46px}
+.lvls button[aria-pressed="true"]{background:var(--line); color:#fff}
+.lvls button.won::after{content:" ✓"}
+.q{font-size:1.2rem; font-weight:600; text-align:center}
+.opts{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.opts button{min-width:64px; min-height:52px; font-size:1.1rem}
+.opts button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.legend{text-align:center; color:var(--muted); font-size:.95rem}
+.lab-col{display:flex; flex-direction:column; gap:12px}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="find-the-bug">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-3/">כיתה ג</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-3/#cs-puzzles-3">חידות וחשיבה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מצאו את הבאג</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ג · חידות וחשיבה</div>
+  <h1>מצאו את הבאג <span class="slogan">הרובוט לא הגיע? בודקים צעד אחרי צעד</span></h1>
+  <p class="lead">באג הוא טעות בהוראות. הרובוט עושה בדיוק מה שכתוב, גם כשזה לא מה שהתכוונו. במעבדה מקבלים תוכנית עם באג אחד, מריצים לאט, מוצאים את הצעד השגוי ומתקנים.</p>
+  <p class="text">עוד לא כתבתם הוראות לרובוט? התחילו ב<a href="../robot-steps/">מובילים את הרובוט</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">טיפים</a><a href="#example">דוגמה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מה זה באג?</h3>
+      <p>טעות קטנה בהוראות.</p>
+      <p>המחשב לא מתקן לבד. הוא עושה בדיוק מה שכתוב.</p>
+    </div>
+    <div class="mini">
+      <h3>ארבעה סוגי באגים</h3>
+      <p>פנייה לכיוון הלא נכון.</p>
+      <p>צעד חסר, או צעד מיותר.</p>
+      <p>שני צעדים בסדר הפוך.</p>
+    </div>
+    <div class="mini">
+      <h3>איך מוצאים?</h3>
+      <p>מריצים לאט, צעד אחרי צעד.</p>
+      <p>עוצרים במקום שבו הרובוט יוצא מהדרך.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>מתכנתים אמיתיים</strong> מבלים הרבה זמן בחיפוש באגים. זה לא כישלון, זה חלק מהעבודה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: תקנו את הרובוט</h2></div>
+  <p class="text">בכל שלב יש תוכנית עם באג אחד. לחצו ▶ כדי להריץ, או צעד כדי להתקדם לאט. כדי לתקן: לחצו על החץ השגוי ובחרו מה לעשות איתו.</p>
+  <div class="lvls" id="lvls" role="group" aria-label="שלבים"></div>
+  <div class="lab">
+    <div class="lab-col">
+      <div class="board" id="board" role="img" aria-label="לוח 5 על 5 עם רובוט וכוכב"></div>
+      <p class="legend">🤖 הרובוט · ⭐ הפרס · 🪨 סלע</p>
+    </div>
+    <div class="lab-col">
+      <p class="q" id="lvlTitle"></p>
+      <div class="prog" id="prog" aria-label="התוכנית"></div>
+      <div class="tools" id="tools">
+        <button class="arr" data-a="U">⬆</button><button class="arr" data-a="D">⬇</button><button class="arr" data-a="L">⬅</button><button class="arr" data-a="R">➡</button>
+        <button id="tDel">🗑 מחיקה</button><button id="tAdd">➕ הוספה אחרי</button><button id="tSwap">⇄ החלפה עם הבא</button>
+      </div>
+      <div class="runrow">
+        <button id="bRun" class="primary">▶ הרצה</button><button id="bStep">צעד</button><button id="bReset">↺ התחלה</button><button id="bUndo">ביטול התיקונים</button>
+      </div>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טיפים וטעויות</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מריצים לאט</h3>
+      <p>הרצה מהירה מראה רק שמשהו לא עבד. צעד אחרי צעד מראה איפה.</p>
+    </div>
+    <div class="mini">
+      <h3>מתקנים דבר אחד בכל פעם</h3>
+      <p>משנים צעד אחד ומריצים שוב. אם משנים הרבה ביחד, לא יודעים מה עזר.</p>
+    </div>
+    <div class="mini">
+      <h3>הבאג לא תמיד בסוף</h3>
+      <p>הרובוט נתקע בצעד 4? לפעמים הטעות הייתה כבר בצעד 2. בודקים מההתחלה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>שאלת הזהב של המתכנת:</strong> מה ציפיתי שיקרה בצעד הזה, ומה קרה באמת?</div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה, צעד אחרי צעד</h2></div>
+  <div class="stepper">
+    <p class="q">הרובוט צריך להגיע לכוכב. התוכנית: ⬆ ⬆ ➡ ➡ ➡. איפה הבאג?</p>
+    <div class="board mini" id="exBoard"></div>
+    <div class="prog static" id="exProg"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">הנקודות הוורודות הן הדרך שהרובוט היה צריך לעבור. בתוכנית יש באג אחד.</p>
+  <div class="board mini" id="prBoard"></div>
+  <div class="prog static" id="prProg" style="margin-top:10px"></div>
+  <p class="q" id="prQ"></p>
+  <div class="opts" id="prOpts"></div>
+  <div class="row" style="justify-content:center"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+  <div id="prFb" aria-live="polite"></div>
+  <p class="counter" id="prStreak"></p>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה זה נקרא באג?</h3>
+    <p>באג באנגלית זה חרק. מספרים שפעם מצאו עש אמיתי בתוך מחשב ענק שהפסיק לעבוד, והשם נשאר. היום כל טעות בתוכנה נקראת באג, ולחיפוש שלה קוראים ניפוי באגים.</p>
+    <h3>הילד מתעצבן כשהתוכנית לא עובדת. מה עושים?</h3>
+    <p>אומרים לו שזה בדיוק מה שמתכנתים עושים כל יום. מציעים לעבור ל<a href="#lab">הרצה צעד אחרי צעד</a> ולשאול בכל צעד: הרובוט עדיין בדרך? כשמוצאים את המקום, התיקון קל.</p>
+    <h3>איך מתרגלים את זה בלי מחשב?</h3>
+    <p>כותבים הוראות להגיע מהמטבח לחדר, עם טעות אחת בכוונה. הילד מבצע אותן בדיוק, צעד אחרי צעד, ומגלה איפה הטעות. אחר כך מחליפים תפקידים.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/robot-steps/">מובילים את הרובוט: הוראות צעד אחרי צעד</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/if-then-riddles/"><small>→ הנושא הקודם</small>אם... אז...: חידות תנאי</a><a class="next" href="../../cs/algorithms-recipes/"><small>הנושא הבא ←</small>אלגוריתם הוא מתכון</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/sound.js"></script>
+<script src="../../assets/sfx.js"></script>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const ARR={U:'⬆',D:'⬇',L:'⬅',R:'➡'};
+const MOVE={U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
+const NAME={U:'למעלה',D:'למטה',L:'שמאלה',R:'ימינה'};
+const key=(x,y)=>x+','+y;
+
+/* run a program; returns the list of positions and how it ended */
+function simulate(lv,prog){
+  let [x,y]=lv.s; const path=[[x,y]], rocks=new Set((lv.rocks||[]).map(r=>key(...r)));
+  for(let i=0;i<prog.length;i++){
+    const [dx,dy]=MOVE[prog[i]]; const nx=x+dx, ny=y+dy;
+    if(nx<0||nx>4||ny<0||ny>4) return {path,end:'out',at:i};
+    if(rocks.has(key(nx,ny))) return {path,end:'rock',at:i,hit:[nx,ny]};
+    x=nx; y=ny; path.push([x,y]);
+  }
+  return {path,end:(x===lv.g[0]&&y===lv.g[1])?'win':'short',at:prog.length};
+}
+function drawBoard(el,lv,opt){
+  opt=opt||{}; const rocks=new Set((lv.rocks||[]).map(r=>key(...r)));
+  const trail=new Set((opt.trail||[]).map(p=>key(...p))), plan=new Set((opt.plan||[]).map(p=>key(...p)));
+  const r=opt.robot||lv.s; let h='';
+  for(let y=0;y<5;y++) for(let x=0;x<5;x++){
+    const k=key(x,y); let c='', cls='cell';
+    if(trail.has(k)) cls+=' trail';
+    if(plan.has(k)) cls+=' plan';
+    if(opt.bad&&opt.bad[0]===x&&opt.bad[1]===y) cls+=' bad';
+    if(rocks.has(k)) c='🪨';
+    else if(x===r[0]&&y===r[1]) c='🤖';
+    else if(x===lv.g[0]&&y===lv.g[1]) c='⭐';
+    h+=`<div class="${cls}">${c}</div>`;
+  }
+  el.innerHTML=h;
+}
+
+/* ---------- lab levels (x: left to right, y: top to bottom) ---------- */
+const LV=[
+  {t:'פנייה שגויה',s:[0,2],g:[4,2],rocks:[],bug:['R','R','U','R']},
+  {t:'צעד חסר',s:[0,4],g:[2,1],rocks:[[1,0]],bug:['U','U','R','R']},
+  {t:'צעד מיותר',s:[1,0],g:[1,3],rocks:[[1,4]],bug:['D','D','D','D']},
+  {t:'סדר הפוך',s:[0,0],g:[2,2],rocks:[[1,0],[2,1]],bug:['R','D','D','R']},
+  {t:'פנייה שגויה',s:[0,4],g:[4,0],rocks:[[1,3],[3,3],[3,2]],bug:['R','R','R','U','U','U','U','R']},
+  {t:'צעד חסר',s:[4,4],g:[0,1],rocks:[[1,2],[2,3]],bug:['L','L','L','U','U','U']}
+];
+let addMode=false;
+let li=0, prog=[], selI=-1, pos=0, run=0, timer=null, won=new Set(), sim=null;
+function stop(){ run++; if(timer){ clearTimeout(timer); timer=null; } }
+function drawLvls(){
+  $('lvls').innerHTML=LV.map((l,i)=>`<button data-i="${i}" aria-pressed="${i===li}" class="${won.has(i)?'won':''}">${i+1}</button>`).join('');
+  $('lvls').querySelectorAll('button').forEach(b=>b.onclick=()=>load(+b.dataset.i));
+}
+function drawProg(cur){
+  $('prog').innerHTML=prog.map((a,i)=>`<button data-i="${i}" class="${i===cur?'cur':''} ${i===selI?'sel':''}" aria-label="צעד ${i+1}: ${NAME[a]}"><small>${i+1}</small>${ARR[a]}</button>`).join('')||'<span class="legend">התוכנית ריקה</span>';
+  $('prog').querySelectorAll('button').forEach(b=>b.onclick=()=>{ stop(); addMode=false; const i=+b.dataset.i; selI=selI===i?-1:i; reset(); });
+  const has=selI>=0;
+  $('tools').querySelectorAll('button').forEach(b=>b.disabled=!has&&b.id!=='tAdd');
+  $('tAdd').disabled=!has&&prog.length>0;
+  $('tSwap').disabled=!has||selI>=prog.length-1;
+}
+function load(i){ stop(); addMode=false; li=i; prog=LV[i].bug.slice(); selI=-1; drawLvls(); reset();
+  $('lvlTitle').textContent=`שלב ${i+1}: באג מסוג ${LV[i].t}`;
+  $('labTxt').innerHTML='הריצו את התוכנית וראו איפה הרובוט יוצא מהדרך.'; }
+function reset(){ pos=0; sim=simulate(LV[li],prog); drawBoard($('board'),LV[li],{}); drawProg(-1); }
+function showUpTo(n){
+  /* robot after n commands */
+  const lv=LV[li], p=sim.path, k=Math.min(n,p.length-1);
+  const bad=(n>sim.at&&sim.hit)?sim.hit:null;
+  drawBoard($('board'),lv,{robot:p[k],trail:p.slice(0,k+1),bad});
+}
+function endMsg(){
+  const s=sim;
+  if(s.end==='win'){ won.add(li); drawLvls(); return `<strong>הצלחתם!</strong> הרובוט הגיע לכוכב. ${li<LV.length-1?'עברו לשלב הבא.':'סיימתם את כל השלבים.'}`; }
+  if(s.end==='rock') return `בצעד ${s.at+1} הרובוט נתקע בסלע. הבאג נמצא בצעד הזה או לפניו.`;
+  if(s.end==='out') return `בצעד ${s.at+1} הרובוט יוצא מהלוח. הבאג נמצא בצעד הזה או לפניו.`;
+  return 'התוכנית נגמרה, והרובוט לא על הכוכב. אולי חסר צעד, או שאחד הצעדים פנה לכיוון לא נכון.';
+}
+function step(){
+  /* one command at a time; the extra press after the last command shows the result */
+  const lim=Math.min(prog.length,sim.at+1);
+  if(pos>=lim){ $('labTxt').innerHTML=endMsg(); return false; }
+  pos++; showUpTo(pos); drawProg(pos-1);
+  if(pos-1===sim.at&&sim.end!=='win'&&sim.end!=='short'){ $('labTxt').innerHTML=endMsg(); return false; }
+  if(pos===prog.length){ $('labTxt').innerHTML=endMsg(); return false; }
+  $('labTxt').innerHTML=`צעד ${pos}: ${NAME[prog[pos-1]]}. הרובוט עדיין בדרך הנכונה?`;
+  return true;
+}
+$('bStep').onclick=()=>{ stop(); if(pos===0) selI=-1; step(); };
+$('bRun').onclick=()=>{
+  stop(); selI=-1; reset(); const my=run;
+  const tick=()=>{ if(my!==run) return; if(step()) timer=setTimeout(tick,500); else timer=null; };
+  timer=setTimeout(tick,250);
+};
+$('bReset').onclick=()=>{ stop(); reset(); $('labTxt').innerHTML='חוזרים להתחלה. הריצו שוב.'; };
+$('bUndo').onclick=()=>{ stop(); load(li); };
+$('tools').querySelectorAll('.arr').forEach(b=>b.onclick=()=>{
+  stop(); if(selI<0) return; const a=b.dataset.a;
+  if(addMode){ prog.splice(selI+1,0,a); selI=selI+1; addMode=false; $('labTxt').innerHTML=`הוספתם ${ARR[a]} אחרי צעד ${selI}. הריצו שוב.`; }
+  else{ prog[selI]=a; $('labTxt').innerHTML=`צעד ${selI+1} עכשיו ${ARR[a]}. הריצו שוב ובדקו.`; }
+  reset();
+});
+$('tAdd').onclick=()=>{ stop();
+  if(prog.length===0){ selI=-1; prog=['R']; selI=0; reset(); return; }
+  if(selI<0) return; addMode=true;
+  $('tools').querySelectorAll('.arr').forEach(b=>b.disabled=false);
+  $('labTxt').innerHTML=`בחרו חץ. הוא ייכנס אחרי צעד ${selI+1}.`; };
+$('tDel').onclick=()=>{ stop(); if(selI<0) return; prog.splice(selI,1); $('labTxt').innerHTML=`מחקתם את צעד ${selI+1}. הריצו שוב.`; selI=-1; addMode=false; reset(); };
+$('tSwap').onclick=()=>{ stop(); if(selI<0||selI>=prog.length-1) return; [prog[selI],prog[selI+1]]=[prog[selI+1],prog[selI]]; $('labTxt').innerHTML=`החלפתם את צעד ${selI+1} עם צעד ${selI+2}. הריצו שוב.`; selI=-1; addMode=false; reset(); };
+load(0);
+
+/* ---------- worked example ---------- */
+const EXL={s:[0,4],g:[2,1],rocks:[]}, EXP=['U','U','R','R','R'];
+const EX=[
+  {n:0,t:'מתחילים. הרובוט למטה משמאל. הכוכב שלוש שורות מעליו ושתי עמודות ימינה. אז צריך שלושה ⬆ ושני ➡.'},
+  {n:2,t:'צעדים 1 ו-2: למעלה, למעלה. הרובוט עלה שתי שורות. עדיין בדרך, אבל צריך לעלות עוד שורה.'},
+  {n:3,t:'צעד 3: ימינה. רגע! ציפינו לעוד ⬆, והרובוט זז ימינה. כאן הוא יוצא מהדרך.'},
+  {n:5,t:'צעדים 4 ו-5: ימינה, ימינה. הרובוט נגמר שורה אחת מתחת לכוכב, ועמודה אחת ימינה ממנו.'},
+  {n:5,t:'האבחנה: צעד 3 פונה לכיוון הלא נכון. זה באג מסוג פנייה שגויה: כתוב ➡ במקום ⬆.'},
+  {n:5,t:'התיקון: משנים רק את צעד 3 ל⬆, ומריצים שוב: ⬆ ⬆ ⬆ ➡ ➡. הרובוט מגיע לכוכב ⭐.',fix:true}
+];
+let exI=0;
+function ex(){
+  const e=EX[exI], prg=e.fix?['U','U','U','R','R']:EXP, path=simulate({...EXL,g:[9,9]},prg).path, k=Math.min(e.n,path.length-1);
+  drawBoard($('exBoard'),EXL,{robot:path[k],trail:path.slice(0,k+1)});
+  $('exProg').innerHTML=prg.map((a,i)=>`<span class="${i===e.n-1?'cur':''}"><small>${i+1}</small>${ARR[a]}</span>`).join('');
+  $('exText').innerHTML=e.t; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){exI++;ex();} }; $('exPrev').onclick=()=>{ if(exI>0){exI--;ex();} };
+ex();
+
+/* ---------- practice ---------- */
+const rnd=n=>Math.floor(Math.random()*n);
+const TYPES=['פנייה שגויה','צעד חסר','צעד מיותר','סדר הפוך'];
+function walk(){
+  /* a route of 3 to 5 steps that never leaves the board or visits a cell twice */
+  for(;;){
+    const s=[rnd(5),rnd(5)], len=3+rnd(3), seen=new Set([key(...s)]), steps=[]; let [x,y]=s, ok=true;
+    for(let i=0;i<len;i++){
+      const opts=Object.keys(MOVE).filter(a=>{ const nx=x+MOVE[a][0], ny=y+MOVE[a][1]; return nx>=0&&nx<5&&ny>=0&&ny<5&&!seen.has(key(nx,ny)); });
+      if(!opts.length){ ok=false; break; }
+      const a=opts[rnd(opts.length)]; x+=MOVE[a][0]; y+=MOVE[a][1]; seen.add(key(x,y)); steps.push(a);
+    }
+    if(ok) return {s,g:[x,y],steps};
+  }
+}
+function makeBug(steps,type){
+  const b=steps.slice();
+  if(type===0){ const i=rnd(b.length), o=Object.keys(MOVE).filter(a=>a!==b[i]); b[i]=o[rnd(o.length)]; }
+  else if(type===1){ b.splice(rnd(b.length-1),1); }
+  else if(type===2){ const i=rnd(b.length+1), o=Object.keys(MOVE); b.splice(i,0,o[rnd(4)]); }
+  else{ const pairs=[]; for(let i=0;i<b.length-1;i++) if(b[i]!==b[i+1]) pairs.push(i); if(!pairs.length) return null; const i=pairs[rnd(pairs.length)]; [b[i],b[i+1]]=[b[i+1],b[i]]; }
+  return b;
+}
+let pr=null, sel=null, streak=0, solved=0;
+function newPr(){
+  let p;
+  for(;;){
+    const w=walk(), type=rnd(4), bug=makeBug(w.steps,type);
+    if(!bug) continue;
+    let first=0; while(first<bug.length&&bug[first]===w.steps[first]) first++;
+    if(first>=bug.length) continue;
+    /* an extra step that repeats its neighbour has two right answers; skip it */
+    if(type===2&&first>0&&bug[first]===bug[first-1]) continue;
+    const kind=Math.random()<.5?'where':'type';
+    p={...w,type,bug,first,kind,tries:0,hint:0,id:bug.join('')+w.s};
+    if(!pr||p.id!==pr.id) break;
+  }
+  pr=p; sel=null;
+  const lv={s:pr.s,g:pr.g,rocks:[]}, plan=simulate({...lv,g:[9,9]},pr.steps).path.slice(1);
+  drawBoard($('prBoard'),lv,{plan});
+  $('prProg').innerHTML=pr.bug.map((a,i)=>`<span data-i="${i}"><small>${i+1}</small>${ARR[a]}</span>`).join('');
+  const opts=pr.kind==='where'?pr.bug.map((_,i)=>'צעד '+(i+1)):TYPES;
+  $('prQ').textContent=pr.kind==='where'?'באיזה צעד הרובוט יוצא לראשונה מהדרך?':'איזה סוג באג יש בתוכנית?';
+  $('prOpts').innerHTML=opts.map((o,i)=>`<button data-i="${i}" aria-pressed="false">${o}</button>`).join('');
+  $('prOpts').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prOpts').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+const ans=()=>pr.kind==='where'?pr.first:pr.type;
+function mark(){ $('prProg').querySelectorAll('span').forEach((s,i)=>s.classList.toggle('cur',i===pr.first)); }
+function why(){
+  const i=pr.first+1;
+  return ['צעד '+i+' פונה לכיוון הלא נכון.','בצעד '+i+' היה צריך להיות צעד שחסר בתוכנית.','צעד '+i+' מיותר, בלעדיו הרובוט היה בדרך.','צעדים '+i+' ו '+(i+1)+' כתובים בסדר הפוך.'][pr.type];
+}
+function stt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb');
+  if(sel===null){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+  if(sel===ans()){ streak++; solved++; stt(); mark(); fb.innerHTML=`<div class="fb ok">נכון! ${why()}</div>`; return; }
+  streak=0; pr.tries++; stt();
+  let m;
+  if(pr.kind==='where') m=sel>pr.first?'הרובוט כבר יצא מהדרך לפני הצעד הזה. התחילו מצעד 1 ועקבו אחרי הנקודות.':'בצעד הזה הרובוט עוד על הנקודות. המשיכו לצעד הבא.';
+  else if(sel===3||pr.type===3) m='בדקו אם יש שני צעדים שנראים נכונים אבל מופיעים בסדר הפוך.';
+  else if(pr.bug.length<pr.steps.length) m='ספרו את הנקודות ואת החצים. יש פחות חצים מנקודות?';
+  else if(pr.bug.length>pr.steps.length) m='ספרו את הנקודות ואת החצים. יש יותר חצים מנקודות?';
+  else m='יש בדיוק חץ לכל נקודה. אז אולי אחד החצים פשוט מצביע לכיוון אחר?';
+  fb.innerHTML=`<div class="fb err">${m}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2);
+  const h=pr.hint<2?'עקבו עם האצבע: מתחילים ב🤖, ובכל חץ זזים משבצת אחת. האם הגעתם לנקודה הבאה?'
+    :(pr.first===0?'כבר הצעד הראשון לא מגיע לנקודה הראשונה.':`עד צעד ${pr.first} הכל נכון. מה קורה בצעד ${pr.first+1}?`);
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ mark(); $('prFb').innerHTML=`<div class="fb hint">${pr.kind==='where'?'התשובה: צעד '+(pr.first+1):'התשובה: '+TYPES[pr.type]}. ${why()} התוכנית הנכונה: <span dir="ltr">${pr.steps.map(a=>ARR[a]).join(' ')}</span>. עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); stt();
+})();
+</script>
+</body>
+</html>

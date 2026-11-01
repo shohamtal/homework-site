@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>אלגוריתם הוא מתכון · מדעי המחשב כיתה ד · מירי</title>
+<meta name="description" content="מה הופך הוראות לאלגוריתם: סדר ברור, צעדים מדויקים וסוף. כותבים אלגוריתם להכנת כריך ובודקים אם מחשב היה מבין. מעבדה ותרגול עם רמזים לכיתה ד.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/algorithms-recipes/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אלגוריתם הוא מתכון · מדעי המחשב כיתה ד · מירי">
+<meta property="og:description" content="מה הופך הוראות לאלגוריתם: סדר ברור, צעדים מדויקים וסוף. כותבים אלגוריתם להכנת כריך ובודקים אם מחשב היה מבין. מעבדה ותרגול עם רמזים לכיתה ד.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/algorithms-recipes/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ד","item":"https://shohamtal.github.io/homework-site/cs/grade-4/"},{"@type":"ListItem","position":4,"name":"חשיבה ממוחשבת","item":"https://shohamtal.github.io/homework-site/cs/grade-4/#cs-puzzles-4"},{"@type":"ListItem","position":5,"name":"אלגוריתם הוא מתכון","item":"https://shohamtal.github.io/homework-site/cs/algorithms-recipes/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה אלגוריתם, במילים פשוטות?","acceptedAnswer":{"@type":"Answer","text":"אלגוריתם הוא רשימה של הוראות שפותרת בעיה: מסודרת, מדויקת ועם סוף. מתכון הוא אלגוריתם, וגם הוראות הרכבה של צעצוע. מחשבים עובדים רק לפי אלגוריתמים, ולכן מי שמבין אלגוריתם מבין את הבסיס של התכנות. נסו את הרובוט השף."}},{"@type":"Question","name":"איך מתרגלים את זה בבית בלי מחשב?","acceptedAnswer":{"@type":"Answer","text":"משחק \"הרובוט המציק\": ילד כותב הוראות להכנת שוקו או לקשירת שרוך, ומבוגר מבצע אותן בדיוק כפי שנכתבו, בלי להשלים כלום. כל טעות מצחיקה מראה איפה חסר דיוק, סדר או סוף. אחר כך מתקנים ומנסים שוב."}},{"@type":"Question","name":"למה ילדים בכיתה ד צריכים ללמוד את זה?","acceptedAnswer":{"@type":"Answer","text":"כי זו דרך חשיבה, לא רק מחשבים. מי שמפרק משימה לצעדים ברורים מתכנן טוב יותר שיעורי בית, פותר בעיות בחשבון ומסביר את עצמו טוב יותר. בכיתות הגבוהות אותו רעיון הופך לתכנות של ממש."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אלגוריתם הוא מתכון","description":"מה הופך הוראות לאלגוריתם: סדר ברור, צעדים מדויקים וסוף. כותבים אלגוריתם להכנת כריך ובודקים אם מחשב היה מבין. מעבדה ותרגול עם רמזים לכיתה ד.","url":"https://shohamtal.github.io/homework-site/cs/algorithms-recipes/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ד","about":"אלגוריתם הוא מתכון","teaches":"אלגוריתם הוא מתכון","keywords":"אלגוריתם, דיוק, צעדים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.row button,.tries button,.choices button,.pool button,.algs button{min-height:46px}
+.pool{display:flex; flex-wrap:wrap; gap:8px}
+.pool button{flex:1 1 140px; text-align:right; font:500 .98rem var(--f-body); line-height:1.35; padding:8px 10px}
+.pool button:disabled{opacity:.35}
+.prec{display:flex; flex-direction:column; gap:6px}
+.prec .lvl{display:flex; justify-content:space-between; font-size:.85rem; color:var(--muted)}
+.prec .now{font-weight:700}
+ol.alg{margin:0; padding:0 1.6em 0 0; display:flex; flex-direction:column; gap:6px; min-height:3em}
+ol.alg li{border:1.5px solid var(--soft); border-radius:10px; padding:6px 10px; background:var(--card); cursor:pointer}
+ol.alg li:hover{border-color:var(--line)}
+ol.alg li.end{border-style:dashed}
+ol.alg:empty::before{content:"עדיין אין הוראות. לחצו על כרטיס כדי להוסיף אותו."; color:var(--muted); font-size:.95rem}
+.log{display:flex; flex-direction:column; gap:6px}
+.log div{padding:6px 10px; border-radius:10px; border:1.5px solid var(--soft); background:var(--paper)}
+.log .good{border-color:var(--ok); background:var(--ok-bg)}
+.log .bad{border-color:var(--err); background:var(--err-bg)}
+.verdict{font-weight:700}
+.cardsrow{display:flex; gap:6px; justify-content:center; flex-wrap:wrap}
+.cardsrow span{font:1.5rem var(--f-math); min-width:2.2em; text-align:center; padding:10px 4px; border:2px solid var(--border); border-radius:10px; background:var(--card); box-shadow:2px 2px 0 var(--hard)}
+.cardsrow span.cur{background:var(--hl)}
+.cardsrow span.done{opacity:.5}
+.memo{text-align:center; font-weight:700}
+.memo .box{display:inline-block; min-width:2.2em; font:1.4rem var(--f-math); border:2px dashed var(--line); border-radius:10px; padding:2px 8px; margin-inline-start:6px; background:var(--paper)}
+.algs{display:flex; flex-direction:column; gap:8px}
+.algs button{text-align:right; font:500 .98rem var(--f-body); line-height:1.4; padding:8px 12px}
+.algs button[aria-pressed="true"],.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.algs ol{margin:4px 1.2em 0 0; padding:0}
+.choices{display:flex; flex-direction:column; gap:8px}
+.choices button{text-align:right; font:500 1rem var(--f-body); line-height:1.4; padding:8px 12px}
+.showalg{border:1.5px solid var(--soft); border-radius:12px; padding:10px 14px; background:var(--paper)}
+.showalg ol{margin:0; padding:0 1.4em 0 0}
+.score{color:var(--muted); text-align:center}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="algorithms-recipes">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-4/">כיתה ד</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-4/#cs-puzzles-4">חשיבה ממוחשבת</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">אלגוריתם הוא מתכון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ד · חשיבה ממוחשבת</div>
+  <h1>אלגוריתם הוא מתכון <span class="slogan">הוראות שגם רובוט מבין</span></h1>
+  <p class="lead">אם תגידו לחבר "תכין לי כריך", הוא יבין. רובוט לא יבין. הוא עושה בדיוק מה שכתוב, ולא שום דבר אחר. כאן לומדים לכתוב אלגוריתם: רשימת הוראות מסודרת, מדויקת ועם סוף. במעבדה יש רובוט שף שעושה בדיוק מה שאתם כותבים, גם כשזה מצחיק.</p>
+  <p class="text">כדאי להכיר קודם את <a href="../sequence-puzzles/">חידות הסדר</a> ואת <a href="../if-then-riddles/">חידות אם... אז...</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text"><strong>אלגוריתם</strong> הוא רשימה של הוראות שפותרת בעיה. מתכון של עוגה הוא אלגוריתם. גם הדרך מהבית לבית הספר היא אלגוריתם. מחשב עובד רק לפי אלגוריתמים, ולכן הם צריכים להיות טובים במיוחד. לאלגוריתם טוב יש שלוש תכונות:</p>
+  <div class="two">
+    <div class="mini">
+      <h3>1. סדר ברור</h3>
+      <p>כל הוראה באה במקום שלה. קודם פותחים את הדלת, ורק אחר כך נכנסים.</p>
+    </div>
+    <div class="mini">
+      <h3>2. צעדים מדויקים</h3>
+      <p>בלי מילים כמו "קצת", "שם" או "תסתדרו". כמה? איפה? עם מה? הכל כתוב.</p>
+    </div>
+    <div class="mini">
+      <h3>3. סוף מוגדר</h3>
+      <p>האלגוריתם אומר מתי עוצרים. בלי סוף, הרובוט ממשיך ומחכה לנצח.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>בדיקת הרובוט:</strong> קראו כל הוראה ושאלו: "רובוט שלא יודע כלום, היה מבין בדיוק מה לעשות?" אם לא, צריך לדייק.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: הרובוט השף</h2></div>
+  <p class="text">בנו אלגוריתם להכנת כריך גבינה. לחצו על כרטיסים כדי להוסיף אותם לפי הסדר. לחיצה על הוראה ברשימה מוחקת אותה. בסרגל בוחרים כמה מדויקות ההוראות. אחר כך מריצים את הרובוט ורואים מה הוא עושה.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="prec">
+        <label for="prec" style="font-weight:700">כמה מדויקות ההוראות?</label>
+        <input type="range" id="prec" min="0" max="2" step="1" value="0" aria-describedby="precName">
+        <div class="lvl"><span data-l="0">כמו לחבר</span><span data-l="1">קצת יותר מדויק</span><span data-l="2">מדויק לרובוט</span></div>
+        <div class="counter" id="precName" aria-live="polite"></div>
+      </div>
+      <p style="font-weight:700; margin:10px 0 6px">כרטיסי הוראות:</p>
+      <div class="pool" id="pool"></div>
+      <p style="font-weight:700; margin:12px 0 6px">האלגוריתם שלכם:</p>
+      <ol class="alg" id="alg" aria-live="polite"></ol>
+      <div class="row" style="margin-top:10px"><button id="run" class="primary">הריצו את הרובוט</button><button id="clear">מחקו הכל</button></div>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div class="log" id="log"></div>
+      <p style="font-weight:700; margin:10px 0 6px">נסו את אלה:</p>
+      <div class="tries">
+        <button data-p="mess">הכל מבולגן</button>
+        <button data-p="human">סדר נכון, מילים של בני אדם</button>
+        <button data-p="noend">מדויק, אבל בלי סוף</button>
+        <button data-p="perfect">אלגוריתם מושלם</button>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:22px">מעבדה קטנה: מי הקלף הגדול?</h3>
+  <p class="text">יש שורה של קלפים עם מספרים. בחרו אלגוריתם למציאת הקלף הגדול ביותר, והריצו אותו צעד אחרי צעד. אחר כך בדקו אותו על שורות חדשות. אלגוריתם טוב צודק <strong>בכל</strong> שורה, לא רק פעם אחת.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="algs" id="algs"></div>
+    </div>
+    <div class="ctrl">
+      <div class="cardsrow" id="row" aria-label="שורת הקלפים"></div>
+      <p class="memo" id="memo"></p>
+      <div class="row"><button id="bStep" class="primary">צעד</button><button id="bAll">הריצו עד הסוף</button><button id="bNew">שורה חדשה</button></div>
+      <div class="explain fb hint" id="bTxt" aria-live="polite"></div>
+      <p class="score" id="bScore"></p>
+      <p style="font-weight:700; margin:10px 0 6px">נסו את אלה:</p>
+      <div class="tries">
+        <button data-r="18,3,7,2,9">הגדול ראשון</button>
+        <button data-r="4,6,1,8,19">הגדול אחרון</button>
+        <button data-r="3,5,17,2,8">הגדול באמצע</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מילים מעורפלות</h3>
+      <p>"שימו קצת סוכר". כמה זה קצת? כפית אחת? שתיים? רובוט צריך מספר: "שימו כפית אחת של סוכר".</p>
+    </div>
+    <div class="mini">
+      <h3>סדר הפוך</h3>
+      <p>"מרחו חמאה" לפני "הוציאו לחם". אנחנו מבינים מה התכוונו. הרובוט מורח על הצלחת.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את הסוף</h3>
+      <p>"ערבבו". עד מתי? בלי "עד שהבצק חלק" או "דקה אחת", הרובוט מערבב לנצח.</p>
+    </div>
+    <div class="mini">
+      <h3>"הוא כבר יבין"</h3>
+      <p>אנחנו משלימים בראש דברים שלא נכתבו. רובוט לא משלים כלום. מה שלא כתוב, לא קורה.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">נכתוב אלגוריתם לרובוט שמשקה עציץ. מתחילים מהוראה של בני אדם ומשפרים אותה.</p>
+  <div class="stepper">
+    <div class="showalg" id="exAlg"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="showalg" id="prAlg" hidden></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה אלגוריתם, במילים פשוטות?</h3>
+    <p>אלגוריתם הוא רשימה של הוראות שפותרת בעיה: מסודרת, מדויקת ועם סוף. מתכון הוא אלגוריתם, וגם הוראות הרכבה של צעצוע. מחשבים עובדים רק לפי אלגוריתמים, ולכן מי שמבין אלגוריתם מבין את הבסיס של התכנות. <a href="#lab">נסו את הרובוט השף</a>.</p>
+    <h3>איך מתרגלים את זה בבית בלי מחשב?</h3>
+    <p>משחק "הרובוט המציק": ילד כותב הוראות להכנת שוקו או לקשירת שרוך, ומבוגר מבצע אותן בדיוק כפי שנכתבו, בלי להשלים כלום. כל טעות מצחיקה מראה איפה חסר דיוק, סדר או סוף. אחר כך מתקנים ומנסים שוב.</p>
+    <h3>למה ילדים בכיתה ד צריכים ללמוד את זה?</h3>
+    <p>כי זו דרך חשיבה, לא רק מחשבים. מי שמפרק משימה לצעדים ברורים מתכנן טוב יותר שיעורי בית, פותר בעיות בחשבון ומסביר את עצמו טוב יותר. בכיתות הגבוהות אותו רעיון הופך לתכנות של ממש.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/sequence-puzzles/">מה קודם ומה אחר כך: חידות סדר</a> · <a href="../../cs/if-then-riddles/">אם... אז...: חידות תנאי</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/find-the-bug/"><small>→ הנושא הקודם</small>מצאו את הבאג</a><a class="next" href="../../cs/binary-light/"><small>הנושא הבא ←</small>כן או לא: שפת המחשב</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+/* ---------- lab 1: the robot chef ---------- */
+const STEPS=[
+  {id:'bread', lv:['קחו לחם.','פתחו את שקית הלחם והוציאו שתי פרוסות.','פתחו את שקית הלחם. הוציאו 2 פרוסות. הניחו אותן על הצלחת, זו ליד זו.'],
+   oops:['הרובוט לוקח את כל הכיכר, עם השקית, ומניח אותה על הצלחת.','הרובוט מוציא שתי פרוסות ומחזיק אותן ביד. איפה לשים אותן? לא כתוב, אז הוא עומד ומחכה.'],
+   ok:'שתי פרוסות מונחות על הצלחת.', needs:[]},
+  {id:'knife', lv:['קחו סכין.','קחו סכין מהמגירה.','פתחו את המגירה העליונה. הוציאו סכין מריחה אחת. סגרו את המגירה.'],
+   oops:['הרובוט מביא את הסכין הכי גדולה במטבח, סכין של קצב.','הרובוט פותח את כל המגירות במטבח עד שהוא מוצא סכין, ומשאיר את כולן פתוחות.'],
+   ok:'יש סכין מריחה ביד.', needs:[]},
+  {id:'butter', lv:['שימו חמאה.','מרחו חמאה על הלחם.','פתחו את קופסת החמאה. קחו בסכין כמות קטנה. מרחו שכבה דקה על פרוסה אחת.'],
+   oops:['הרובוט שם את כל קופסת החמאה על הלחם. סגורה.','הרובוט מורח חמאה על שתי הפרוסות, משני הצדדים, וגם על הצלחת.'],
+   ok:'על פרוסה אחת יש שכבה דקה של חמאה.', needs:['bread','knife'],
+   order:'אין לחם או אין סכין. הרובוט מורח את החמאה באצבע, ישר על השיש.'},
+  {id:'cheese', lv:['תוסיפו גבינה.','שימו גבינה על הלחם.','קחו פרוסת גבינה אחת מהאריזה. הניחו אותה על הפרוסה עם החמאה.'],
+   oops:['הרובוט מוסיף את כל אריזת הגבינה, עם הניילון.','הרובוט שם את כל הגבינה מהאריזה, שמונה פרוסות, על פרוסה אחת.'],
+   ok:'פרוסת גבינה אחת מונחת על החמאה.', needs:['butter'],
+   order:'עוד אין פרוסה עם חמאה. הרובוט מניח את הגבינה על השיש.'},
+  {id:'close', lv:['תסגרו את הכריך.','שימו את הפרוסה השנייה.','הרימו את הפרוסה השנייה. הניחו אותה על הגבינה.'],
+   oops:['הרובוט שומע "תסגרו" והולך לסגור את דלת המטבח.','הרובוט מניח את הפרוסה השנייה על הצלחת, ליד הכריך. לא נאמר על מה לשים אותה.'],
+   ok:'הפרוסה השנייה מכסה את הגבינה. יש כריך!', needs:['cheese'],
+   order:'אין עדיין גבינה. הרובוט סוגר כריך ריק.'},
+  {id:'end', lv:['זהו.','הכריך מוכן.','סיימתם. הגישו את הצלחת ועצרו.'], end:true,
+   oops:['"זהו" מה? הרובוט לא בטוח שזה הסוף, אז הוא מחכה להוראה נוספת.',null],
+   ok:'הרובוט עוצר. סוף האלגוריתם.', needs:[]}
+];
+const BY=Object.fromEntries(STEPS.map(s=>[s.id,s]));
+const NAMES=['כמו שמדברים עם חבר','קצת יותר מדויק','מדויק כמו שרובוט צריך'];
+let level=0, alg=[], poolOrder=shuffle(STEPS.map(s=>s.id)), runTok=0;
+
+function drawLab(){
+  $('precName').textContent='עכשיו: '+NAMES[level];
+  document.querySelectorAll('.prec .lvl span').forEach(s=>s.classList.toggle('now',+s.dataset.l===level));
+  $('pool').innerHTML=poolOrder.map(id=>`<button type="button" data-id="${id}" ${alg.includes(id)?'disabled':''}>${BY[id].lv[level]}</button>`).join('');
+  $('alg').innerHTML=alg.map(id=>`<li data-id="${id}" class="${BY[id].end?'end':''}" title="לחצו כדי למחוק">${BY[id].lv[level]}</li>`).join('');
+  $('labTxt').innerHTML=alg.length
+    ? `באלגוריתם יש ${alg.length} הוראות. ${level<2?'ההוראות עדיין לא מדויקות לרובוט. מה יקרה?':'ההוראות מדויקות. האם הסדר נכון ויש סוף?'} לחצו "הריצו את הרובוט".`
+    : 'לחצו על כרטיסים כדי לבנות את האלגוריתם, לפי הסדר.';
+}
+function stopRun(){ runTok++; $('log').innerHTML=''; }
+$('pool').addEventListener('click',e=>{ const b=e.target.closest('button[data-id]'); if(!b||b.disabled) return; stopRun(); alg.push(b.dataset.id); drawLab(); });
+$('alg').addEventListener('click',e=>{ const li=e.target.closest('li[data-id]'); if(!li) return; stopRun(); alg=alg.filter(x=>x!==li.dataset.id); drawLab(); });
+$('prec').addEventListener('input',()=>{ level=+$('prec').value; stopRun(); drawLab(); });
+$('clear').onclick=()=>{ stopRun(); alg=[]; poolOrder=shuffle(poolOrder); drawLab(); };
+
+function simulate(){
+  const lines=[], done=new Set(); let ended=false, bad={order:0,prec:0,end:0};
+  for(const id of alg){
+    const s=BY[id], txt=s.lv[level];
+    if(ended){ lines.push({t:`"${txt}" אחרי הסוף: הרובוט כבר עצר, ההוראה הזו לא קורית.`,ok:false}); bad.order++; continue; }
+    if(s.needs.some(n=>!done.has(n))){ lines.push({t:`"${txt}" ${s.order}`,ok:false}); bad.order++; done.add(id); continue; }
+    const o=level<2?s.oops[level]:null;
+    if(o){ lines.push({t:`"${txt}" ${o}`,ok:false}); bad.prec++; }
+    else lines.push({t:`"${txt}" ${s.ok}`,ok:true});
+    done.add(id);
+    if(s.end) ended=true;
+  }
+  const missing=STEPS.filter(s=>!s.end&&!done.has(s.id));
+  if(!done.has('end')){ lines.push({t:'אין הוראה של סוף. הרובוט עומד ומחכה להוראה הבאה, לנצח.',ok:false}); bad.end++; }
+  if(missing.length) lines.push({t:`חסרות הוראות: ${missing.map(s=>'"'+s.lv[2].split('.')[0]+'"').join(', ')}. בלעדיהן אין כריך שלם.`,ok:false});
+  const probs=[];
+  if(bad.order) probs.push('הסדר');
+  if(bad.prec) probs.push('הדיוק');
+  if(bad.end) probs.push('הסוף');
+  if(missing.length) probs.push('הוראות שחסרות');
+  const verdict=probs.length?`<div class="verdict">צריך לתקן: ${probs.join(', ')}.</div>${bad.prec?'<div>הזיזו את הסרגל לכיוון "מדויק לרובוט" ונסו שוב.</div>':''}`
+    :'<div class="verdict">מושלם! סדר ברור, צעדים מדויקים וסוף. זה אלגוריתם אמיתי.</div>';
+  return {lines,verdict};
+}
+$('run').onclick=()=>{
+  if(!alg.length){ $('labTxt').innerHTML='אין עדיין הוראות. הוסיפו כרטיסים קודם.'; return; }
+  const tok=++runTok, {lines,verdict}=simulate();
+  $('log').innerHTML=''; $('labTxt').innerHTML='הרובוט עובד...';
+  let i=0;
+  (function next(){
+    if(tok!==runTok) return;
+    if(i<lines.length){ const d=document.createElement('div'); d.className=lines[i].ok?'good':'bad'; d.textContent=(lines[i].ok?'✓ ':'✗ ')+lines[i].t; $('log').appendChild(d); i++; setTimeout(next,320); }
+    else $('labTxt').innerHTML=verdict;
+  })();
+};
+const PRESETS={
+  mess:{level:0, alg:['butter','close','bread','cheese']},
+  human:{level:0, alg:['bread','knife','butter','cheese','close','end']},
+  noend:{level:2, alg:['bread','knife','butter','cheese','close']},
+  perfect:{level:2, alg:['bread','knife','butter','cheese','close','end']}
+};
+document.querySelectorAll('#lab .tries button[data-p]').forEach(b=>b.addEventListener('click',()=>{
+  const p=PRESETS[b.dataset.p]; stopRun(); level=p.level; $('prec').value=level; alg=p.alg.slice(); drawLab(); $('run').click();
+}));
+drawLab();
+
+/* ---------- lab 2: find the biggest card ---------- */
+const ALGS=[
+  {id:'a', name:'הקלף הראשון', steps:['הסתכלו על הקלף הראשון.','אמרו את המספר שעליו. סוף.']},
+  {id:'b', name:'זוכרים את הגדול', steps:['זכרו את המספר בקלף הראשון.','עברו על כל הקלפים, אחד אחרי השני.','אם המספר בקלף גדול מהמספר שזכרתם, זכרו אותו במקומו.','כשנגמרים הקלפים, אמרו את המספר שזכרתם. סוף.']},
+  {id:'c', name:'שני הראשונים', steps:['השוו בין שני הקלפים הראשונים.','אמרו את הגדול מביניהם. סוף.']},
+  {id:'d', name:'גדול מ-10', steps:['עברו על הקלפים, אחד אחרי השני.','כשמוצאים קלף גדול מ-10, אמרו אותו. סוף.','אם לא מצאתם, אמרו "אין". סוף.']}
+];
+let cur='b', row=[5,12,3,9,7], trace=[], tI=0, score={};
+function makeTrace(){
+  const t=[], n=row.length;
+  if(cur==='a'){ t.push({c:0,m:row[0],x:`מסתכלים על הקלף הראשון: ${row[0]}.`}); t.push({c:0,m:row[0],x:`אומרים ${row[0]}.`,ans:row[0]}); }
+  if(cur==='b'){ let m=row[0]; t.push({c:0,m,x:`זוכרים את הקלף הראשון: ${m}.`});
+    for(let i=1;i<n;i++){ if(row[i]>m){ m=row[i]; t.push({c:i,m,x:`${row[i]} גדול מהמספר שזכרנו, אז זוכרים ${m} במקומו.`}); } else t.push({c:i,m,x:`${row[i]} לא גדול מ-${m}. ממשיכים.`}); }
+    t.push({c:-1,m,x:`הקלפים נגמרו. אומרים ${m}.`,ans:m}); }
+  if(cur==='c'){ const g=Math.max(row[0],row[1]); t.push({c:1,m:g,x:`משווים ${row[0]} ו-${row[1]}. הגדול הוא ${g}.`}); t.push({c:1,m:g,x:`אומרים ${g}. לשאר הקלפים לא הסתכלנו בכלל.`,ans:g}); }
+  if(cur==='d'){ let found=null;
+    for(let i=0;i<n;i++){ if(row[i]>10){ found=row[i]; t.push({c:i,m:found,x:`${row[i]} גדול מ-10. אומרים ${found} ועוצרים.`,ans:found}); break; } t.push({c:i,m:'',x:`${row[i]} לא גדול מ-10. ממשיכים.`}); }
+    if(found===null) t.push({c:-1,m:'',x:'לא מצאנו קלף גדול מ-10. אומרים "אין".',ans:'אין'}); }
+  return t;
+}
+function drawAlgs(){
+  $('algs').innerHTML=ALGS.map(a=>`<button type="button" data-a="${a.id}" aria-pressed="${a.id===cur}"><strong>${a.name}</strong><ol>${a.steps.map(s=>`<li>${s}</li>`).join('')}</ol></button>`).join('');
+}
+function drawRun(){
+  const st=tI>0?trace[tI-1]:null;
+  $('row').innerHTML=row.map((v,i)=>`<span class="${st&&st.c===i?'cur':''}">${v}</span>`).join('');
+  $('memo').innerHTML=`הרובוט זוכר: <span class="box">${st&&st.m!==''&&st.m!=null?st.m:'&nbsp;'}</span>`;
+  const real=Math.max(...row);
+  if(!st) $('bTxt').innerHTML='לחצו "צעד" כדי להריץ את האלגוריתם לאט.';
+  else if(st.ans!==undefined){
+    const ok=st.ans===real;
+    if(ok){ const k=cur+'|'+row.join(); score[k]=true; }
+    $('bTxt').innerHTML=`${st.x}<div><strong>${ok?'✓ צדק!':'✗ טעה.'}</strong> הקלף הגדול באמת הוא ${real}.${ok&&cur!=='b'?' הפעם יצא נכון במזל. נסו שורה חדשה.':''}</div>`;
+    tested(ok);
+  } else $('bTxt').innerHTML=st.x;
+  $('bStep').disabled=tI>=trace.length; $('bAll').disabled=tI>=trace.length;
+}
+let tests={};
+function tested(ok){ const t=tests[cur]||(tests[cur]={n:0,ok:0,seen:new Set()}); const k=row.join(); if(t.seen.has(k)) return; t.seen.add(k); t.n++; if(ok) t.ok++; showScore(); }
+function showScore(){ const t=tests[cur]; const a=ALGS.find(x=>x.id===cur); $('bScore').textContent=t?`האלגוריתם "${a.name}" צדק ב-${t.ok} מתוך ${t.n} שורות שבדקתם.`:''; }
+function reset(){ trace=makeTrace(); tI=0; drawRun(); showScore(); }
+function newRow(){ const s=new Set(); while(s.size<5) s.add(1+Math.floor(Math.random()*20)); row=[...s]; reset(); }
+$('algs').addEventListener('click',e=>{ const b=e.target.closest('button[data-a]'); if(!b) return; cur=b.dataset.a; drawAlgs(); reset(); });
+$('bStep').onclick=()=>{ if(tI<trace.length){ tI++; drawRun(); } };
+$('bAll').onclick=()=>{ tI=trace.length; drawRun(); };
+$('bNew').onclick=newRow;
+document.querySelectorAll('#lab .tries button[data-r]').forEach(b=>b.addEventListener('click',()=>{ row=b.dataset.r.split(',').map(Number); reset(); }));
+drawAlgs(); reset();
+
+/* ---------- worked example: watering a plant ---------- */
+const EX=[
+  {a:['תשקו את העציץ.'], t:'מתחילים ממה שהיינו אומרים לבן אדם: "תשקו את העציץ". לבן אדם זה מספיק. לרובוט? חסר הכל: במה משקים? כמה מים? מתי עוצרים?'},
+  {a:['קחו את הכוס הכחולה מהמדף.','מלאו אותה במים מהברז.','שפכו את המים על האדמה בעציץ.'], t:'מפרקים לצעדים ומדייקים: איזו כוס, מאיפה המים, ולאן לשפוך. "על האדמה" ולא סתם "על העציץ", כדי שהרובוט לא ישפוך על העלים.'},
+  {a:['קחו את הכוס הכחולה מהמדף.','מלאו אותה במים מהברז, עד חצי.','שפכו את המים על האדמה בעציץ.'], t:'כמה מים? "מלאו" יכול להיות כוס מלאה עד שהיא נשפכת. מדייקים: "עד חצי".'},
+  {a:['קחו את הכוס הכחולה מהמדף.','מלאו אותה במים מהברז, עד חצי.','שפכו את המים על האדמה בעציץ.','געו באדמה. אם היא עדיין יבשה, חזרו לצעד 2.','החזירו את הכוס למדף. סוף.'], t:'מוסיפים סוף ברור: בודקים את האדמה, ואם היא יבשה חוזרים לצעד 2. כשהיא רטובה, מחזירים את הכוס ועוצרים. עכשיו יש לאלגוריתם סוף מוגדר.'},
+  {a:['קחו את הכוס הכחולה מהמדף.','מלאו אותה במים מהברז, עד חצי.','שפכו את המים על האדמה בעציץ.','געו באדמה. אם היא עדיין יבשה, חזרו לצעד 2.','החזירו את הכוס למדף. סוף.'], t:'בודקים את הסדר: קודם כוס, אחר כך מים, ורק אז שופכים. סדר ✓, דיוק ✓, סוף ✓. זה אלגוריתם שגם רובוט יכול לבצע.'}
+];
+let exI=0;
+function ex(){
+  const s=EX[exI];
+  $('exAlg').innerHTML=`<ol>${s.a.map(x=>`<li>${x}</li>`).join('')}</ol>`;
+  $('exText').innerHTML=s.t;
+  $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`;
+  $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* ---------- practice ---------- */
+const Q=[
+  /* which instruction is exact enough */
+  {k:'prec', ask:'איזו הוראה מדויקת מספיק בשביל רובוט?', opts:[
+    {t:'שימו קצת מלח במרק.', w:'כמה זה "קצת"? רובוט לא יודע. חפשו הוראה עם כמות.'},
+    {t:'שימו חצי כפית מלח במרק.', ok:true},
+    {t:'תבלו את המרק כמו שאתם אוהבים.', w:'"כמו שאתם אוהבים" זה לא הוראה לרובוט. אין לו טעם משלו.'}],
+   h:['שאלו על כל הוראה: הרובוט יודע בדיוק כמה לשים?','הוראה מדויקת כוללת מספר או מידה.'], why:'יש כאן כמות מדויקת: חצי כפית.'},
+  {k:'prec', ask:'איזו הוראה מדויקת מספיק בשביל רובוט שמנקה חדר?', opts:[
+    {t:'סדרו את החדר.', w:'מה בדיוק עושים? "לסדר" זה הרבה פעולות ביחד.'},
+    {t:'הרימו מהרצפה את כל הספרים, ושימו אותם על המדף העליון.', ok:true},
+    {t:'שימו את הדברים במקום.', w:'איזה דברים? ואיזה מקום? הרובוט לא יודע.'}],
+   h:['חפשו הוראה שאומרת מה מרימים ולאן שמים.','מילים כמו "דברים" ו"במקום" לא ברורות לרובוט.'], why:'כתוב בדיוק מה מרימים, מאיפה ולאן.'},
+  {k:'prec', ask:'איזו הוראה מדויקת מספיק בשביל רובוט שמכין שוקו?', opts:[
+    {t:'שפכו חלב לכוס, עד הקו המסומן.', ok:true},
+    {t:'שפכו חלב.', w:'לאן שופכים? וכמה? הרובוט עלול לשפוך את כל הקרטון על השולחן.'},
+    {t:'תכינו שוקו טעים.', w:'"טעים" זה לא צעד. זה מה שאנחנו רוצים בסוף.'}],
+   h:['הוראה טובה אומרת לאן ועד כמה.','חפשו את ההוראה עם "עד".'], why:'יש מקום (הכוס) וכמות (עד הקו).'},
+  /* missing property */
+  {k:'prop', ask:'מה חסר באלגוריתם הזה?', alg:['קחו מברשת שיניים.','שימו עליה משחה.','צחצחו.'], opts:[
+    {t:'סדר ברור', w:'הסדר דווקא נכון: מברשת, משחה, צחצוח. חפשו משהו אחר.'},
+    {t:'סוף מוגדר', ok:true},
+    {t:'שום דבר, הוא מושלם', w:'עד מתי מצחצחים? נסו לבצע אותו בדיוק כמו רובוט.'}],
+   h:['בצעו בראש את האלגוריתם כמו רובוט. מתי עוצרים?','"צחצחו" בלי זמן או סימן לסיום.'], why:'אין סוף: לא כתוב כמה זמן לצחצח, למשל "במשך 2 דקות", ומתי עוצרים.'},
+  {k:'prop', ask:'מה חסר באלגוריתם הזה?', alg:['נעלו את הנעליים.','גרבו גרביים.','קשרו את השרוכים. סוף.'], opts:[
+    {t:'סדר ברור', ok:true},
+    {t:'סוף מוגדר', w:'יש "סוף" בהוראה האחרונה. בדקו את הסדר.'},
+    {t:'צעדים מדויקים', w:'אפשר לדייק עוד, אבל יש בעיה גדולה יותר. מה קודם: נעליים או גרביים?'}],
+   h:['קראו את ההוראות לפי הסדר. מה קורה אחרי הצעד הראשון?','אפשר לגרוב גרביים מעל נעליים?'], why:'הסדר הפוך: קודם גרביים, ורק אחר כך נעליים.'},
+  {k:'prop', ask:'מה חסר באלגוריתם הזה?', alg:['קחו כמה עפרונות.','חדדו אותם קצת.','שימו אותם איפשהו. סוף.'], opts:[
+    {t:'סוף מוגדר', w:'יש "סוף" בסוף. חפשו משהו אחר.'},
+    {t:'סדר ברור', w:'הסדר הגיוני: לוקחים, מחדדים, שמים.'},
+    {t:'צעדים מדויקים', ok:true}],
+   h:['חפשו מילים שרובוט לא יבין.','"כמה", "קצת" ו"איפשהו" הן מילים מעורפלות.'], why:'"כמה", "קצת" ו"איפשהו" לא מדויקים. צריך: "קחו 3 עפרונות", "חדדו עד שיש חוד", "שימו אותם בקלמר".'},
+  /* order */
+  {k:'order', ask:'הרובוט צריך לשלוח מכתב. איזה צעד בא ראשון?', opts:[
+    {t:'שימו את המעטפה בתיבת הדואר.', w:'אפשר לשים מעטפה בתיבה לפני שיש בה מכתב?'},
+    {t:'כתבו את המכתב.', ok:true},
+    {t:'הדביקו בול על המעטפה.', w:'בול זה חשוב, אבל קודם צריך שיהיה מה לשלוח.'}],
+   h:['מה חייב להיות מוכן לפני כל השאר?','בלי מכתב אין מה לשלוח.'], why:'קודם כותבים את המכתב. אחר כך מעטפה, בול, ורק בסוף תיבת הדואר.'},
+  {k:'order', ask:'באלגוריתם לשתילת זרע, איזה צעד בא אחרון?', opts:[
+    {t:'הכניסו זרע לגומה.', w:'אחרי שמכניסים את הזרע, עוד צריך לכסות ולהשקות.'},
+    {t:'חפרו גומה קטנה באדמה.', w:'זה דווקא אחד הצעדים הראשונים.'},
+    {t:'השקו את האדמה ועצרו.', ok:true}],
+   h:['סדרו בראש: חופרים, מכניסים זרע, מכסים, ואז?','הצעד האחרון כולל גם את המילה "עצרו".'], why:'חופרים, מכניסים זרע, מכסים, ובסוף משקים ועוצרים.'},
+  {k:'order', ask:'הרובוט עובר את הכביש. איזה צעד חייב לבוא לפני "חצו את הכביש"?', opts:[
+    {t:'הגיעו למדרכה בצד השני.', w:'זה קורה אחרי החצייה, לא לפני.'},
+    {t:'חכו שהרמזור יהיה ירוק.', ok:true},
+    {t:'המשיכו ללכת הביתה.', w:'זה קורה הרבה אחרי.'}],
+   h:['מה בודקים לפני שיורדים לכביש?','חשבו על הרמזור.'], why:'מחכים לירוק, ורק אז חוצים. סדר נכון כאן הוא גם עניין של בטיחות.'}
+];
+let pr=null, sel=null, streak=0, solved=0, last=-1;
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function newPr(){
+  let i; do{ i=Math.floor(Math.random()*Q.length); } while(i===last); last=i;
+  const q=Q[i]; pr={q, opts:shuffle(q.opts), tries:0, hint:0}; sel=null;
+  $('prAsk').textContent=q.ask;
+  $('prAlg').hidden=!q.alg; if(q.alg) $('prAlg').innerHTML=`<ol>${q.alg.map(s=>`<li>${s}</li>`).join('')}</ol>`;
+  $('prCh').innerHTML=pr.opts.map((o,k)=>`<button type="button" data-k="${k}" aria-pressed="false">${o.t}</button>`).join('');
+  $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCh').addEventListener('click',e=>{ const b=e.target.closest('button[data-k]'); if(!b||!pr) return; sel=+b.dataset.k; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+$('prCheck').onclick=()=>{
+  if(!pr) return;
+  if(sel===null){ $('prFb').innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+  const o=pr.opts[sel];
+  if(o.ok){ streak++; solved++; streakTxt(); $('prFb').innerHTML=`<div class="fb ok">נכון! ${pr.q.why}</div>`; return; }
+  streak=0; pr.tries++; streakTxt();
+  $('prFb').innerHTML=`<div class="fb err">${o.w}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ if(!pr) return; pr.hint=Math.min(pr.hint+1,2); $('prFb').innerHTML=`<div class="fb hint">${pr.q.h[pr.hint-1]}</div>`; };
+$('prShow').onclick=()=>{ if(!pr) return; const r=pr.opts.find(o=>o.ok); $('prFb').innerHTML=`<div class="fb hint">התשובה: "${r.t}". ${pr.q.why} עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

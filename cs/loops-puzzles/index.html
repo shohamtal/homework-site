@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>לולאות · מדעי המחשב כיתה ה · מירי</title>
+<meta name="description" content="במקום לכתוב &quot;קדימה&quot; עשר פעמים כותבים &quot;חזרו 10 פעמים&quot;. מקצרים הוראות בעזרת לולאות ומוצאים את החלק שחוזר. מעבדה ותרגול עם רמזים לכיתה ה.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/loops-puzzles/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="לולאות · מדעי המחשב כיתה ה · מירי">
+<meta property="og:description" content="במקום לכתוב &quot;קדימה&quot; עשר פעמים כותבים &quot;חזרו 10 פעמים&quot;. מקצרים הוראות בעזרת לולאות ומוצאים את החלק שחוזר. מעבדה ותרגול עם רמזים לכיתה ה.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/loops-puzzles/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ה","item":"https://shohamtal.github.io/homework-site/cs/grade-5/"},{"@type":"ListItem","position":4,"name":"חשיבה ממוחשבת","item":"https://shohamtal.github.io/homework-site/cs/grade-5/#cs-puzzles-5"},{"@type":"ListItem","position":5,"name":"לולאות: חוזרים על זה כמה פעמים","item":"https://shohamtal.github.io/homework-site/cs/loops-puzzles/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זו לולאה בתכנות, במילים פשוטות?","acceptedAnswer":{"@type":"Answer","text":"לולאה היא הוראה לחזור על אותן פקודות כמה פעמים. במקום לכתוב חמש פעמים \"צעד ימינה\", כותבים \"חזרו 5 פעמים: צעד ימינה\". בכל שפת תכנות יש לולאות, גם בבלוקים וגם בפייתון. נסו במעבדה."}},{"@type":"Question","name":"איך אפשר לתרגל לולאות בלי מחשב?","acceptedAnswer":{"@type":"Answer","text":"משחקים ברובוט: ילד אחד נותן הוראות וילד אחר מבצע. נסו לתת את אותן הוראות פעם אחת ארוכות ופעם עם \"חזרו 3 פעמים\". גם שירים עם בתים שחוזרים וריקודים עם צעדים שחוזרים הם לולאות."}},{"@type":"Question","name":"מה הקשר בין לולאות לחידות דפוסים?","acceptedAnswer":{"@type":"Answer","text":"דפוס הוא משהו שחוזר, ולולאה היא הדרך לכתוב אותו בקצרה. מי שמוצא מהר את החלק שחוזר בדפוס, מוצא מהר גם את גוף הלולאה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"לולאות: חוזרים על זה כמה פעמים","description":"במקום לכתוב \"קדימה\" עשר פעמים כותבים \"חזרו 10 פעמים\". מקצרים הוראות בעזרת לולאות ומוצאים את החלק שחוזר. מעבדה ותרגול עם רמזים לכיתה ה.","url":"https://shohamtal.github.io/homework-site/cs/loops-puzzles/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ה","about":"לולאות: חוזרים על זה כמה פעמים","teaches":"לולאות: חוזרים על זה כמה פעמים","keywords":"לולאה, חזרה, קיצור","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.arr{display:inline-block; direction:ltr; unicode-bidi:isolate; font-weight:800}
+.board{display:grid; grid-template-columns:repeat(6,1fr); gap:3px; width:min(100%,300px); margin:0 auto; direction:ltr}
+.board div{aspect-ratio:1; border:1.5px solid var(--soft); border-radius:8px; background:var(--card); display:flex; align-items:center; justify-content:center; font-size:1.3rem; position:relative}
+.board div.tg{border:2px dashed var(--line)}
+.board div.tr{background:var(--hint-bg)}
+.board div.pt{background:var(--line); border-color:var(--line)}
+.board div.bad{background:var(--err-bg); border-color:var(--err)}
+.board div.bump{box-shadow:0 0 0 3px var(--err)}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px; min-width:46px; font-size:1.2rem}
+.prog{display:flex; flex-wrap:wrap; gap:6px; align-items:center; min-height:52px; padding:8px; border:1.5px solid var(--soft); border-radius:12px; background:var(--paper); direction:ltr}
+.prog .c{display:inline-flex; align-items:center; justify-content:center; min-width:34px; height:34px; border:2px solid var(--border); border-radius:8px; background:var(--card); font-weight:800}
+.prog .c.now{background:var(--hl)}
+.prog .lp{display:inline-flex; flex-wrap:wrap; align-items:center; gap:5px; padding:4px 6px; border:2px solid var(--line); border-radius:10px; background:var(--card); direction:rtl}
+.prog .lp.open{border-style:dashed; background:var(--hint-bg)}
+.prog .lp .in{display:inline-flex; gap:5px; direction:ltr; flex-wrap:wrap}
+.prog .empty{color:var(--muted); font-size:.95rem; direction:rtl}
+.lvls{display:flex; flex-wrap:wrap; gap:6px; justify-content:center}
+.lvls button[aria-pressed="true"],.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.score{text-align:center; font-weight:700}
+.rowq{direction:ltr; text-align:center; font-size:1.5rem; letter-spacing:.15em; word-break:break-all}
+.choices{display:flex; flex-direction:column; gap:8px; align-items:stretch; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.05rem var(--f-body)}
+.ansrow{display:flex; justify-content:center}
+.ansrow input{font:1.3rem var(--f-math); width:5em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.code{direction:ltr; text-align:center; font-size:1.25rem}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="loops-puzzles">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-5/">כיתה ה</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-5/#cs-puzzles-5">חשיבה ממוחשבת</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">לולאות: חוזרים על זה כמה פעמים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ה · חשיבה ממוחשבת</div>
+  <h1>לולאות <span class="slogan">חוזרים על זה כמה פעמים</span></h1>
+  <p class="lead">צריך ללכת חמישה צעדים ימינה? אפשר לכתוב חמש פעמים <span class="arr">→</span>, ואפשר לכתוב פעם אחת "חזרו 5 פעמים". זו לולאה. כאן מקצרים תוכניות לרובוט, מוצאים את החלק שחוזר ומציירים בעזרת לולאות. כדאי להכיר קודם את <a href="../robot-steps/">ההוראות לרובוט</a> ואת <a href="../pattern-next/">חידות הדפוסים</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">מחשב לא מתעייף. אם אומרים לו לחזור על משהו מאה פעמים, הוא יחזור מאה פעמים בדיוק. לולאה אומרת לו: "את מה שבתוך הסוגריים, עשו כמה פעמים".</p>
+  <div class="two">
+    <div class="mini">
+      <h3>מה זו לולאה</h3>
+      <p>לולאה בנויה משני חלקים: <strong>כמה פעמים</strong>, ו<strong>מה עושים</strong> בכל פעם. החלק שבפנים נקרא גוף הלולאה.</p>
+      <p class="code"><span class="arr">→ → → → →</span></p>
+      <p>זה בדיוק כמו: חזרו 5 פעמים [ <span class="arr">→</span> ]</p>
+    </div>
+    <div class="mini">
+      <h3>מוצאים את החלק שחוזר</h3>
+      <p class="code"><span class="arr">→ ↑ → ↑ → ↑</span></p>
+      <p>הזוג <span class="arr">→ ↑</span> חוזר 3 פעמים. אז כותבים: חזרו 3 פעמים [ <span class="arr">→ ↑</span> ].</p>
+    </div>
+    <div class="mini">
+      <h3>סופרים צעדים</h3>
+      <p>בכל חזרה עושים את כל הגוף. אם בגוף יש 2 פקודות וחוזרים 3 פעמים, הרובוט עושה <span class="eq">3 × 2 = 6</span> צעדים.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>למה זה חשוב?</strong> תוכנית קצרה קל יותר לקרוא, לבדוק ולתקן. אם צריך לשנות את מספר הצעדים, משנים מספר אחד במקום להוסיף ולמחוק חצים.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: רובוט עם לולאות</h2></div>
+  <p class="text">בחרו שלב. בנו תוכנית בעזרת החצים והלולאה, ולחצו "הריצו". בשלבים 1 עד 4 מביאים את הרובוט לכוכב. בשלבים 5 ו-6 הרובוט מצייר: צריך לצבוע בדיוק את המשבצות המקווקוות. נסו להגיע עם כמה שפחות פקודות.</p>
+  <div class="lvls" id="lvls"></div>
+  <p class="text" id="lvlTxt" style="text-align:center; font-weight:700"></p>
+  <div class="board" id="board" aria-label="לוח הרובוט"></div>
+  <p class="score" id="score"></p>
+  <div class="prog" id="prog" aria-label="התוכנית"></div>
+  <div class="ctrl">
+    <div class="pad">
+      <button type="button" data-d="U" aria-label="למעלה"><span class="arr">↑</span></button>
+      <button type="button" data-d="D" aria-label="למטה"><span class="arr">↓</span></button>
+      <button type="button" data-d="L" aria-label="שמאלה"><span class="arr">←</span></button>
+      <button type="button" data-d="R" aria-label="ימינה"><span class="arr">→</span></button>
+    </div>
+    <label>מספר חזרות בלולאה: <strong id="nOut">3</strong>
+      <input type="range" id="nIn" min="2" max="9" value="3" aria-label="מספר חזרות"></label>
+    <div class="pad">
+      <button type="button" id="addLoop">➕ לולאה</button>
+      <button type="button" id="closeLoop">סגרו לולאה</button>
+      <button type="button" id="undo">⌫ מחקו אחרון</button>
+      <button type="button" id="clear">נקו הכל</button>
+    </div>
+    <div class="pad">
+      <button type="button" class="primary" id="run">▶ הריצו</button>
+      <button type="button" id="step">צעד אחד</button>
+    </div>
+    <label>מהירות: <input type="range" id="spd" min="1" max="5" value="3" aria-label="מהירות הרובוט"></label>
+  </div>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+    <div class="ctrl">
+      <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+      <div class="tries" id="tries">
+        <button type="button" data-t="0">חמישה חצים</button>
+        <button type="button" data-t="1">אותו דבר בלולאה</button>
+        <button type="button" data-t="2">מספר חזרות לא נכון</button>
+        <button type="button" data-t="3">מדרגות</button>
+        <button type="button" data-t="4">צעד בתוך הלולאה בטעות</button>
+        <button type="button" data-t="5">שתי לולאות</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מספר חזרות לא נכון</h3>
+      <p>חזרו 4 פעמים [ <span class="arr">→</span> ] במקום 5. הרובוט נעצר צעד אחד לפני הכוכב. סופרים את הצעדים לפני שקובעים את המספר.</p>
+    </div>
+    <div class="mini">
+      <h3>צעד שנכנס ללולאה בטעות</h3>
+      <p>רוצים 5 צעדים למטה ואז 5 ימינה. כתבו חזרו 5 פעמים [ <span class="arr">↓ →</span> ]? יצא מדרגות, לא פינה. צריך שתי לולאות נפרדות.</p>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את מה שבחוץ</h3>
+      <p>פקודה לפני הלולאה או אחריה רצה פעם אחת בלבד. כשסופרים צעדים, מוסיפים אותה פעם אחת, לא בכל חזרה.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">נקצר את התוכנית: <span class="arr">↓ → → → ↓ → → →</span></p>
+  <div class="stepper">
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="rowq" id="prQ"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" inputmode="numeric" autocomplete="off" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זו לולאה בתכנות, במילים פשוטות?</h3>
+    <p>לולאה היא הוראה לחזור על אותן פקודות כמה פעמים. במקום לכתוב חמש פעמים "צעד ימינה", כותבים "חזרו 5 פעמים: צעד ימינה". בכל שפת תכנות יש לולאות, גם בבלוקים וגם בפייתון. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך אפשר לתרגל לולאות בלי מחשב?</h3>
+    <p>משחקים ברובוט: ילד אחד נותן הוראות וילד אחר מבצע. נסו לתת את אותן הוראות פעם אחת ארוכות ופעם עם "חזרו 3 פעמים". גם שירים עם בתים שחוזרים וריקודים עם צעדים שחוזרים הם לולאות.</p>
+    <h3>מה הקשר בין לולאות לחידות דפוסים?</h3>
+    <p>דפוס הוא משהו שחוזר, ולולאה היא הדרך לכתוב אותו בקצרה. מי שמוצא מהר את החלק שחוזר בדפוס, מוצא מהר גם את גוף הלולאה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/robot-steps/">מובילים את הרובוט: הוראות צעד אחרי צעד</a> · <a href="../../cs/pattern-next/">מה בא אחר כך? חידות דפוסים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/binary-light/"><small>→ הנושא הקודם</small>כן או לא: שפת המחשב</a><a class="next" href="../../cs/variables-boxes/"><small>הנושא הבא ←</small>משתנים: קופסאות עם שם</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const AR={U:'↑',D:'↓',L:'←',R:'→'}, MV={U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
+const NAME={U:'למעלה',D:'למטה',L:'שמאלה',R:'ימינה'};
+const A=s=>`<span class="arr">${s}</span>`;
+const arrs=b=>b.map(d=>AR[d]).join(' ');
+const loopTxt=(n,b)=>`חזרו ${n} פעמים [ ${A(arrs(b))} ]`;
+
+/* levels: star levels end on the star; paint levels must paint exactly the target cells */
+function paintOf(start,prog){ const s=new Set([start.join()]); let [x,y]=start; flat(prog).forEach(st=>{ x+=MV[st.d][0]; y+=MV[st.d][1]; s.add(x+','+y); }); return s; }
+const LV=[
+  {t:'שלב 1: הביאו את הרובוט לכוכב, בדרך הישרה.', start:[0,2], star:[5,2], best:2},
+  {t:'שלב 2: מדרגות עד הכוכב.', start:[0,5], star:[4,1], best:3},
+  {t:'שלב 3: למטה עד הסוף, ואז ימינה עד הסוף.', start:[0,0], star:[5,5], best:4},
+  {t:'שלב 4: שני צעדים ימינה ואחד למעלה, שוב ושוב.', start:[0,5], star:[4,3], best:4},
+  {t:'שלב 5: ציירו מדרגות על המשבצות המקווקוות.', start:[0,0], paintProg:[{n:5,body:['R','D']}], best:3},
+  {t:'שלב 6: ציירו ריבוע על המשבצות המקווקוות.', start:[1,1], paintProg:[{n:3,body:['R']},{n:3,body:['D']},{n:3,body:['L']},{n:3,body:['U']}], best:8}
+];
+LV.forEach(l=>{ if(l.paintProg) l.target=paintOf(l.start,l.paintProg); });
+
+let lv=0, prog=[], open=null, runId=0, st=null;
+function flat(p){ const out=[]; p.forEach((it,i)=>{ if(typeof it==='string') out.push({d:it,i,j:-1}); else for(let r=0;r<it.n;r++) it.body.forEach((d,j)=>out.push({d,i,j,r})); }); return out; }
+const count=p=>p.reduce((s,it)=>s+(typeof it==='string'?1:1+it.body.length),0);
+function reset(){ runId++; const L=LV[lv]; st={x:L.start[0],y:L.start[1],k:0,steps:flat(prog),trail:new Set([L.start.join()]),bump:false,done:false}; }
+
+function drawBoard(){
+  const L=LV[lv]; let h='';
+  for(let y=0;y<6;y++) for(let x=0;x<6;x++){
+    const key=x+','+y, cls=[];
+    if(L.target){ if(L.target.has(key)) cls.push('tg'); if(st.trail.has(key)) cls.push(L.target.has(key)?'pt':'bad'); }
+    else if(st.trail.has(key)) cls.push('tr');
+    let c='';
+    if(st.x===x&&st.y===y){ c='🤖'; if(st.bump) cls.push('bump'); }
+    else if(L.star&&L.star[0]===x&&L.star[1]===y) c='⭐';
+    h+=`<div class="${cls.join(' ')}">${c}</div>`;
+  }
+  $('board').innerHTML=h;
+}
+function drawProg(cur){
+  if(!prog.length){ $('prog').innerHTML='<span class="empty">התוכנית ריקה. הקישו על חץ או על "לולאה".</span>'; return; }
+  $('prog').innerHTML=prog.map((it,i)=>{
+    if(typeof it==='string') return `<span class="c${cur&&cur.i===i?' now':''}">${AR[it]}</span>`;
+    const body=it.body.map((d,j)=>`<span class="c${cur&&cur.i===i&&cur.j===j?' now':''}">${AR[d]}</span>`).join('')||'<span class="empty">ריק</span>';
+    return `<span class="lp${it===open?' open':''}">חזרו ${it.n} פעמים${cur&&cur.i===i?` (חזרה ${cur.r+1})`:''} <span class="in">${body}</span></span>`;
+  }).join('');
+}
+function explain(){
+  const L=LV[lv], f=flat(prog), n=count(prog);
+  $('score').innerHTML=`פקודות: ${n} · צעדים שהרובוט יעשה: ${f.length} · הכי קצר אפשרי: ${L.best}`;
+  const tx=[];
+  if(!prog.length) tx.push('<div>בנו תוכנית. חץ מוסיף פקודה. "לולאה" פותחת קופסה, והחצים הבאים נכנסים לתוכה עד "סגרו לולאה".</div>');
+  else tx.push(`<div>התוכנית במילים: ${f.length?A(f.map(s=>AR[s.d]).join(' ')):'אין צעדים'}${f.length>12?'':''}</div>`);
+  if(open) tx.push(`<div>הלולאה פתוחה: החצים שתקישו ייכנסו לתוכה. המחוון קובע כמה פעמים היא חוזרת (עכשיו ${open.n}).</div>`);
+  if(prog.length && !prog.some(it=>typeof it!=='string') && f.length>=4) tx.push('<div>אין כאן לולאה. יש חלק שחוזר? נסו לקצר.</div>');
+  $('labTxt').innerHTML=tx.join('');
+}
+function result(){
+  const L=LV[lv], n=count(prog); let m;
+  if(st.bump) m=`<div class="fb err">בום! הרובוט נתקע בקיר בצעד ${st.k}. אולי יש יותר מדי חזרות, או חץ בכיוון לא נכון?</div>`;
+  else if(L.star){
+    const dx=L.star[0]-st.x, dy=L.star[1]-st.y;
+    if(!dx&&!dy) m=`<div class="fb ok">הגעתם לכוכב! ${n} פקודות. ${n>L.best?`אפשר גם ב-${L.best}. יש חלק שחוזר?`:'זו הדרך הכי קצרה!'}</div>`;
+    else { const p=[]; if(dx) p.push(`${Math.abs(dx)} ${dx>0?'ימינה':'שמאלה'}`); if(dy) p.push(`${Math.abs(dy)} ${dy>0?'למטה':'למעלה'}`);
+      m=`<div class="fb err">הרובוט נעצר, והכוכב עוד ${p.join(' ו-')}. ${prog.some(it=>typeof it!=='string')?'אולי מספר החזרות קטן או גדול מדי?':'חסרים צעדים.'}</div>`; }
+  } else {
+    const miss=[...L.target].filter(k=>!st.trail.has(k)).length, extra=[...st.trail].filter(k=>!L.target.has(k)).length;
+    if(!miss&&!extra) m=`<div class="fb ok">ציור מושלם! ${n} פקודות. ${n>L.best?`אפשר גם ב-${L.best}.`:'זו הדרך הכי קצרה!'}</div>`;
+    else m=`<div class="fb err">${miss?`חסרות ${miss} משבצות. `:''}${extra?`נצבעו ${extra} משבצות מחוץ לציור (באדום). `:''}בדקו את מספר החזרות ואת מה שבתוך הלולאה.</div>`;
+  }
+  $('labTxt').insertAdjacentHTML('beforeend',m);
+}
+function stepOnce(){
+  if(st.done) return false;
+  if(st.k>=st.steps.length){ st.done=true; drawProg(null); result(); return false; }
+  const s=st.steps[st.k], nx=st.x+MV[s.d][0], ny=st.y+MV[s.d][1];
+  st.k++;
+  if(nx<0||ny<0||nx>5||ny>5){ st.bump=true; st.done=true; drawBoard(); drawProg(s); result(); return false; }
+  st.x=nx; st.y=ny; st.trail.add(nx+','+ny); drawBoard(); drawProg(s);
+  if(st.k>=st.steps.length){ st.done=true; result(); return false; }
+  return true;
+}
+function edited(){ reset(); drawBoard(); drawProg(null); explain(); }
+function add(d){ if(open){ if(open.body.length>=6) return; open.body.push(d); } else { if(prog.length>=14) return; prog.push(d); } edited(); }
+document.querySelectorAll('.pad button[data-d]').forEach(b=>b.onclick=()=>add(b.dataset.d));
+$('nIn').oninput=()=>{ $('nOut').textContent=$('nIn').value; const t=open||[...prog].reverse().find(it=>typeof it!=='string'); if(t){ t.n=+$('nIn').value; edited(); } };
+$('addLoop').onclick=()=>{ if(prog.length>=14) return; open={n:+$('nIn').value,body:[]}; prog.push(open); edited(); };
+$('closeLoop').onclick=()=>{ if(open&&!open.body.length){ prog.pop(); } open=null; edited(); };
+$('undo').onclick=()=>{ if(open&&open.body.length) open.body.pop(); else if(prog.length){ const it=prog.pop(); if(it===open) open=null; else if(typeof it!=='string'&&it.body.length){ it.body.pop(); prog.push(it); open=it; } } edited(); };
+$('clear').onclick=()=>{ prog=[]; open=null; edited(); };
+$('run').onclick=()=>{
+  if(!prog.length) return;
+  open=null; reset(); drawBoard(); drawProg(null); explain();
+  const id=runId, ms=[700,500,350,220,120][+$('spd').value-1];
+  const tick=()=>{ if(id!==runId) return; if(stepOnce()) setTimeout(tick,ms); };
+  setTimeout(tick,ms);
+};
+$('step').onclick=()=>{ if(!prog.length) return; if(st.done){ reset(); drawBoard(); explain(); } runId++; stepOnce(); };
+function setLv(i){ lv=i; document.querySelectorAll('#lvls button').forEach((b,k)=>b.setAttribute('aria-pressed',k===i)); $('lvlTxt').textContent=LV[i].t; edited(); }
+$('lvls').innerHTML=LV.map((l,i)=>`<button type="button" aria-pressed="false">שלב ${i+1}</button>`).join('');
+document.querySelectorAll('#lvls button').forEach((b,i)=>b.onclick=()=>{ prog=[]; open=null; setLv(i); });
+const TRY=[
+  [0,['R','R','R','R','R']],[0,[{n:5,body:['R']}]],[0,[{n:4,body:['R']}]],
+  [1,[{n:4,body:['R','U']}]],[2,[{n:5,body:['D','R']}]],[2,[{n:5,body:['D']},{n:5,body:['R']}]]
+];
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{
+  const [l,p]=TRY[+b.dataset.t]; prog=p.map(it=>typeof it==='string'?it:{n:it.n,body:[...it.body]}); open=null; setLv(l);
+  const L=prog.find(it=>typeof it!=='string'); if(L){ $('nIn').value=L.n; $('nOut').textContent=L.n; }
+});
+setLv(0);
+
+/* worked example */
+const EX=[
+  'מסתכלים על התוכנית: '+A('↓ → → → ↓ → → →')+'. יש בה 8 פקודות.',
+  'מחפשים חלק שחוזר. אחרי '+A('↓')+' באים שלושה '+A('→')+', ואז שוב '+A('↓')+' ושלושה '+A('→')+'.',
+  'החלק שחוזר הוא '+A('↓ → → →')+', והוא חוזר 2 פעמים.',
+  'בתוך החלק הזה יש עוד חזרה: שלושה '+A('→')+' הם חזרו 3 פעמים [ '+A('→')+' ]. אבל בכיתה ה מספיקה לנו לולאה אחת.',
+  'כותבים: חזרו 2 פעמים [ '+A('↓ → → →')+' ]. זה 1 + 4 = 5 פקודות במקום 8.',
+  'בודקים: בכל חזרה הרובוט עושה 4 צעדים, ובשתי חזרות <span class="eq">2 × 4 = 8</span> צעדים. בדיוק כמו בתוכנית הארוכה ✓'
+];
+let exI=0;
+function ex(){ $('exText').innerHTML=EX[exI]; $('exCount').textContent=`צעד ${exI+1} מתוך ${EX.length}`; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+let pr={}, sel=-1, streak=0, solved=0;
+const rb=k=>{ const ds=['U','D','L','R'], b=[]; while(b.length<k){ const d=pick(ds); if(b[b.length-1]!==d) b.push(d); } if(k>1&&b[0]===b[k-1]&&k===2) b[1]=pick(ds.filter(x=>x!==b[0])); return b; };
+function newPr(){
+  const kind=pick(['part','part','steps','steps','n']);
+  sel=-1; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prCh').hidden=kind!=='part'; $('prIn').hidden=kind==='part';
+  if(kind==='part'){
+    const k=pick([2,3]), n=ri(3,4), body=rb(k);
+    const row=[]; for(let r=0;r<n;r++) row.push(...body);
+    const opts=[
+      {t:loopTxt(n,body),ok:true},
+      {t:loopTxt(n*k,body),why:`בכל חזרה עושים את כל הגוף, ${k} פקודות. אז צריך רק ${n} חזרות, לא ${n*k}.`},
+      {t:loopTxt(n+1,body),why:'ספרו שוב כמה פעמים החלק חוזר בשורה.'},
+      {t:loopTxt(n*k,[body[0]]),why:`בגוף יש רק ${A(AR[body[0]])}. אבל בשורה יש גם ${A(arrs(body.slice(1)))}.`}
+    ].sort(()=>Math.random()-.5);
+    pr={kind,body,n,opts,row};
+    $('prAsk').textContent='איזו לולאה עושה בדיוק את השורה הזו?';
+    $('prQ').innerHTML=A(arrs(row));
+    $('prCh').innerHTML=opts.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${o.t}</button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  } else if(kind==='steps'){
+    const pre=ri(0,2), suf=ri(0,1), k=ri(1,3), n=ri(2,5), body=rb(k);
+    const P=rb(pre), S=rb(suf);
+    pr={kind,pre,suf,k,n,ans:pre+n*k+suf};
+    $('prAsk').textContent='כמה צעדים הרובוט יעשה בסך הכל?';
+    $('prQ').innerHTML=[pre?A(arrs(P)):'',loopTxt(n,body),suf?A(arrs(S)):''].filter(Boolean).join(' ⬅ ');
+  } else {
+    const k=pick([1,2,3]), n=ri(2,5), d=pick(['R','D','U','L']);
+    const body=k===1?[d]:k===2?[d,d]:[d,d,d];
+    pr={kind,k,n,ans:n,total:n*k,d};
+    $('prAsk').textContent=`הרובוט צריך ללכת ${n*k} צעדים ${NAME[d]}. כמה חזרות צריך לכתוב בלולאה?`;
+    $('prQ').innerHTML=`חזרו ? פעמים [ ${A(arrs(body))} ]`;
+  }
+  pr.tries=0; pr.hint=0;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+function okMsg(){
+  if(pr.kind==='part') return `החלק ${A(arrs(pr.body))} חוזר ${pr.n} פעמים.`;
+  if(pr.kind==='steps') return `${pr.pre?pr.pre+' צעדים לפני הלולאה, ':''}${pr.n} חזרות של ${pr.k} צעדים הם ${pr.n*pr.k}${pr.suf?', ועוד צעד אחד אחרי':''}. בסך הכל ${pr.ans}.`;
+  return `בכל חזרה ${pr.k} צעדים. <span class="eq">${pr.total} : ${pr.k} = ${pr.n}</span> חזרות.`;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(pr.kind==='part'){
+    if(sel<0){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=!!pr.opts[sel].ok; if(!right) msg=pr.opts[sel].why;
+  } else {
+    const v=parseInt($('prN').value,10);
+    if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; $('prN').focus(); return; }
+    right=v===pr.ans;
+    if(!right&&pr.kind==='steps'){
+      if(v===pr.n*pr.k&&(pr.pre||pr.suf)) msg='את הלולאה ספרתם נכון. ומה עם הצעדים שמחוץ ללולאה?';
+      else if(v===pr.pre+pr.n+pr.suf&&pr.k>1) msg=`בכל חזרה הרובוט עושה את כל הגוף, ${pr.k} צעדים, לא צעד אחד.`;
+      else if(v===pr.pre+pr.k+pr.suf) msg=`הגוף לא רץ פעם אחת. הוא חוזר ${pr.n} פעמים.`;
+      else if(v===pr.pre+pr.n+pr.k+pr.suf) msg='לא מחברים את מספר החזרות ואת הגוף. כופלים: חזרות × צעדים בגוף.';
+    }
+    if(!right&&pr.kind==='n'){
+      if(v===pr.total&&pr.k>1) msg=`בגוף יש ${pr.k} צעדים, אז כל חזרה מקדמת ${pr.k}. לא צריך ${pr.total} חזרות.`;
+      else if(v*pr.k>pr.total) msg='יותר מדי חזרות: הרובוט ילך רחוק מדי.';
+      else msg='מעט מדי חזרות: הרובוט ייעצר לפני הסוף.';
+    }
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${okMsg()}</div>`; return; }
+  streak=0; pr.tries++; streakTxt(); fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{
+  pr.hint=Math.min(pr.hint+1,2); let h;
+  if(pr.kind==='part') h=pr.hint<2?'מצאו את החלק הקצר ביותר שחוזר מההתחלה.':`החלק שחוזר הוא ${A(arrs(pr.body))}. כמה פעמים הוא מופיע?`;
+  else if(pr.kind==='steps') h=pr.hint<2?'צעדים בלולאה = מספר החזרות × מספר החצים בגוף.':`בלולאה: <span class="eq">${pr.n} × ${pr.k}</span>. אחר כך הוסיפו את החצים שבחוץ.`;
+  else h=pr.hint<2?`כל חזרה מקדמת את הרובוט ${pr.k} צעדים.`:`כמה פעמים ${pr.k} נכנס ב-${pr.total}?`;
+  $('prFb').innerHTML=`<div class="fb hint">${h}</div>`;
+};
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${okMsg()} עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

@@ -86,7 +86,7 @@ function jsonLd(pg, m) {
     out.push({'@context': 'https://schema.org', '@type': 'LearningResource', name: pg.topic.title, description: m.description, url,
       inLanguage: 'he', isAccessibleForFree: true,
       learningResourceType: pg.subj.id === 'english' ? ['interactive activity', 'שיר', 'תרגול'] : ['הסבר', 'מעבדה אינטראקטיבית', 'דוגמה פתורה', 'תרגול'],
-      educationalLevel: pg.chapter.grade, about: pg.subj.id === 'english' ? pg.topic.title : pg.chapter.name, teaches: pg.topic.title, keywords: pg.topic.tags.join(', '),
+      educationalLevel: pg.chapter.grade, about: ['english', 'cs'].includes(pg.subj.id) ? pg.topic.title : pg.chapter.name, teaches: pg.topic.title, keywords: pg.topic.tags.join(', '),
       audience: {'@type': 'EducationalAudience', educationalRole: 'student'},
       isPartOf: {'@type': 'WebSite', name: cfg.name, url: BASE}});
   }
@@ -140,7 +140,7 @@ const CARDS = pg => ['topic', 'grade', 'subject'].includes(pg.kind);
 /* the next grade of the same subject that has pages, for the "ממשיכים ל…" link on grade hubs */
 const nextGrade = pg => { const gs = gradesWithTopics(pg.subj), i = gs.findIndex(g => g.id === pg.grade.id); return i >= 0 ? gs[i + 1] : null; };
 /* math topics for grades 1 to 3 get small success and try-again sounds (assets/sfx.js) */
-const YOUNG_MATH = pg => pg.kind === 'topic' && pg.subj.id === 'math' && ['כיתה א', 'כיתה ב', 'כיתה ג'].includes(pg.chapter.grade);
+const YOUNG_MATH = pg => pg.kind === 'topic' && ['math', 'cs'].includes(pg.subj.id) && ['כיתה א', 'כיתה ב', 'כיתה ג'].includes(pg.chapter.grade);
 
 /* the visible "שאלות שכולם שואלים" section: <h3> question + <p> answer pairs, as plain text */
 const text = h => h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
@@ -219,7 +219,7 @@ for (const pg of pages) {
   if (pg.kind === 'grade') {
     html = region(html, 'gradehead', `<header class="page">
   <div class="eyebrow">${pg.subj.name}</div>
-  <h1>${pg.subj.name} ${pg.grade.name}</h1>
+  <h1>${pg.subj.id === 'cs' && parseInt(pg.grade.id.slice(6)) <= 6 ? 'חידות וחשיבה ממוחשבת' : pg.subj.name} ${pg.grade.name}</h1>
   <p class="lead">${pg.subj.id === 'english'
     ? 'בחרו נושא. בכל נושא שומעים, שרים ומשחקים, ובתרגול מירי נותנת רמז במקום תשובה. לוחצים פעם אחת על "הקשיבו" כדי להפעיל את הצלילים.'
     : 'בחרו נושא. בכל נושא יש הסבר, מעבדה שאפשר להזיז ותרגול שבו מירי נותנת רמז במקום תשובה. כדאי ללמוד לפי הסדר, כי כל נושא נשען על הקודם.'}</p>

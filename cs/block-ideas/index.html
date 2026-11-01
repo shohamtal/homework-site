@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>תכנות בבלוקים · מדעי המחשב כיתה ו · מירי</title>
+<meta name="description" content="אירוע, פעולה, לולאה ותנאי: מרכיבים בלוקים לתוכנית קטנה ורואים מה כל בלוק עושה, לפני שעוברים לשפת תכנות. מעבדה ותרגול עם רמזים לכיתה ו.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/block-ideas/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="תכנות בבלוקים · מדעי המחשב כיתה ו · מירי">
+<meta property="og:description" content="אירוע, פעולה, לולאה ותנאי: מרכיבים בלוקים לתוכנית קטנה ורואים מה כל בלוק עושה, לפני שעוברים לשפת תכנות. מעבדה ותרגול עם רמזים לכיתה ו.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/block-ideas/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ו","item":"https://shohamtal.github.io/homework-site/cs/grade-6/"},{"@type":"ListItem","position":4,"name":"חשיבה ממוחשבת","item":"https://shohamtal.github.io/homework-site/cs/grade-6/#cs-puzzles-6"},{"@type":"ListItem","position":5,"name":"תכנות בבלוקים: הרעיונות","item":"https://shohamtal.github.io/homework-site/cs/block-ideas/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"תכנות בבלוקים הוא תכנות אמיתי?","acceptedAnswer":{"@type":"Answer","text":"כן. אירוע, לולאה, תנאי ומשתנה הם בדיוק הרעיונות של כל שפת תכנות. הבלוקים רק חוסכים את ההקלדה ואת שגיאות הכתיב, כך שאפשר להתרכז בחשיבה. בכיתה ז אותם רעיונות נכתבים במילים, בפייתון."}},{"@type":"Question","name":"צריך להתקין משהו כדי לתרגל בבית?","acceptedAnswer":{"@type":"Answer","text":"לא. המעבדה כאן רצה בדפדפן. מי שרוצה ללכת רחוק יותר יכול להשתמש בכלי חינמי לתכנות בבלוקים, כמו Scratch, שעובד בדפדפן. כדאי לשבת יחד בפעם הראשונה ולבנות משהו קטן."}},{"@type":"Question","name":"מה עושים כשהתוכנית לא עובדת?","acceptedAnswer":{"@type":"Answer","text":"מריצים לאט ומסתכלים איזה בלוק רץ עכשיו. שואלים: מה ציפיתי שיקרה, ומה קרה באמת? בדרך כלל הבלוק נמצא במקום הלא נכון, למשל מחוץ ללולאה. נסו את הבאג במעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"תכנות בבלוקים: הרעיונות","description":"אירוע, פעולה, לולאה ותנאי: מרכיבים בלוקים לתוכנית קטנה ורואים מה כל בלוק עושה, לפני שעוברים לשפת תכנות. מעבדה ותרגול עם רמזים לכיתה ו.","url":"https://shohamtal.github.io/homework-site/cs/block-ideas/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ו","about":"תכנות בבלוקים: הרעיונות","teaches":"תכנות בבלוקים: הרעיונות","keywords":"בלוקים, אירוע, תוכנית","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.row button,.tries button{min-height:44px}
+/* block families: colors only from tokens */
+.f-ev{--fc:var(--hl)}
+.f-mv{--fc:var(--blue)}
+.f-lk{--fc:var(--line)}
+.f-ct{--fc:var(--green)}
+.f-if{--fc:color-mix(in srgb, var(--hl) 45%, var(--line))}
+.f-vr{--fc:color-mix(in srgb, var(--line) 45%, var(--blue))}
+.blk{display:inline-flex; align-items:center; gap:6px; border:2px solid var(--border); border-inline-start:8px solid var(--fc); border-radius:10px; padding:4px 10px; background:color-mix(in srgb, var(--fc) 16%, var(--card)); font-weight:700; font-size:.95rem; box-shadow:-2px 2px 0 var(--hard); color:var(--ink)}
+.chip{display:inline-block; border:1.5px solid var(--border); border-inline-start:6px solid var(--fc); border-radius:8px; padding:0 8px; background:color-mix(in srgb, var(--fc) 16%, var(--card)); font-weight:700; font-size:.9rem}
+.palette{display:flex; flex-direction:column; gap:10px}
+.palette .grp{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.palette .grp>span{font-size:.85rem; color:var(--muted); font-weight:700; min-width:4.2em}
+.palette button.blk{min-height:40px; cursor:pointer}
+.script{border:2px dashed var(--border); border-radius:12px; background:var(--paper); padding:10px; min-height:8em; display:flex; flex-direction:column; gap:4px; align-items:flex-start}
+.script .blk{cursor:pointer; box-shadow:none}
+.script .blk.now{outline:3px solid var(--line); outline-offset:1px}
+.script .end{border-inline-start-width:8px}
+.script .caret{color:var(--line); font-size:.9rem}
+.script .empty{color:var(--muted)}
+/* the stage: a track of 10 squares with the cat */
+.stage{border:2px solid var(--border); border-radius:12px; background:var(--card); padding:10px; display:flex; flex-direction:column; gap:8px}
+.track{direction:ltr; display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:2px}
+.track div{aspect-ratio:1; border:1.5px solid var(--soft); border-radius:6px; display:grid; place-items:center; font-size:1.2rem; position:relative}
+.track div.edge{border-color:var(--muted); border-style:dashed}
+.cat{border:0; padding:0; background:transparent; box-shadow:none; font-size:1.35rem; line-height:1; border-radius:50%; width:100%; height:100%; display:grid; place-items:center}
+.cat:hover{background:transparent}
+.cat.c1{background:color-mix(in srgb, var(--hl) 70%, var(--card))}
+.cat.c2{background:color-mix(in srgb, var(--blue) 35%, var(--card))}
+.cat.c3{background:color-mix(in srgb, var(--line) 35%, var(--card))}
+.cat.c4{background:color-mix(in srgb, var(--green) 35%, var(--card))}
+.cat.flip{transform:scaleX(-1)}
+.bubble{min-height:1.6em; text-align:center; font-weight:700}
+.stagebar{display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; font-weight:700; color:var(--muted); font-size:.95rem}
+pre.py{direction:ltr; text-align:left; margin:0; background:var(--paper); border:1.5px solid var(--soft); border-radius:10px; padding:10px 12px; font:600 .95rem ui-monospace, Menlo, Consolas, monospace; white-space:pre-wrap; overflow-wrap:anywhere}
+.challenges button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices{display:flex; flex-direction:column; gap:10px}
+.choices button{text-align:right; font-weight:600}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center}
+.ansrow input{font:1.3rem var(--f-math); width:4em; padding:6px 8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.stack{display:flex; flex-direction:column; gap:4px; align-items:flex-start}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="block-ideas">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-6/">כיתה ו</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-6/#cs-puzzles-6">חשיבה ממוחשבת</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">תכנות בבלוקים: הרעיונות</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ו · חשיבה ממוחשבת</div>
+  <h1>תכנות בבלוקים <span class="slogan">מרכיבים תוכנית כמו לגו</span></h1>
+  <p class="lead">בתכנות בבלוקים לא מקלידים מילים. מחברים בלוקים צבעוניים אחד מתחת לשני, וכל בלוק הוא פקודה. ככה עובדים כלים חינמיים כמו Scratch שילדים רבים מכירים. כאן מכירים את משפחות הבלוקים, מרכיבים תוכנית לחתול על במה ורואים אותה רצה.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">לכל משפחה של בלוקים יש צבע משלה. הצבע עוזר לדעת מה הבלוק עושה עוד לפני שקוראים אותו.</p>
+  <div class="two">
+    <div class="mini f-ev"><h3><span class="chip">אירוע</span></h3><p>מתי התוכנית מתחילה. למשל "כשלוחצים על הדגל" או "כשלוחצים על החתול". בלי אירוע, התוכנית לא תרוץ אף פעם.</p></div>
+    <div class="mini f-mv"><h3><span class="chip">תנועה</span></h3><p>מזיזים את הדמות: צעד קדימה, או הסתובבות לכיוון השני.</p></div>
+    <div class="mini f-lk"><h3><span class="chip">מראה</span></h3><p>משנים איך הדמות נראית ומה היא אומרת: צבע חדש, בועת דיבור.</p></div>
+    <div class="mini f-ct"><h3><span class="chip">לולאה</span></h3><p>"חזרו 10 פעמים" חוזר מספר קבוע של פעמים. "לעולמים" חוזר בלי סוף, עד שעוצרים אותו.</p></div>
+    <div class="mini f-if"><h3><span class="chip">תנאי</span></h3><p>"אם נוגעים בקצה" בודק משהו, ורק אם זה נכון מריץ את מה שבפנים. כך התוכנית מגיבה למה שקורה.</p></div>
+    <div class="mini f-vr"><h3><span class="chip">משתנה</span></h3><p>קופסה עם שם ששומרת מספר, כמו מונה של נקודות. אפשר להגדיל אותו, לאפס אותו ולהציג אותו.</p></div>
+  </div>
+  <div class="callout"><strong>חשוב על "לעולמים":</strong> לולאה כזו לא נגמרת לבד. לכן בתוכה צריך משהו שמגיב, כמו תנאי, ולפעמים גם דרך לעצור, כמו "עצרו הכל". רוצים לחזור על לולאות ותנאים? יש <a href="../loops-puzzles/">לולאות בחידות</a> ו<a href="../if-then-riddles/">חידות אם אז</a>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: במה וחתול</h2></div>
+  <p class="text">לחצו על בלוק כדי להוסיף אותו לתוכנית. לולאה ותנאי פותחים "פה", וכל מה שתוסיפו נכנס פנימה עד שתלחצו "סגרו". לחיצה על בלוק בתוכנית מוחקת אותו. בחרו אתגר למעלה, או בנו מה שבא לכם.</p>
+  <div class="row challenges" id="chs" role="group" aria-label="אתגרים"></div>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="palette" id="pal"></div>
+      <div class="script" id="scr" aria-live="polite"></div>
+      <div class="row"><button type="button" id="cls">סגרו את הפה ⤶</button><button type="button" id="clr">נקו הכל</button></div>
+    </div>
+    <div class="ctrl">
+      <div class="stage">
+        <div class="stagebar"><span id="cnt">מונה: 0</span><span id="clk"></span></div>
+        <div class="bubble" id="bub" aria-live="polite"></div>
+        <div class="track" id="trk"></div>
+      </div>
+      <label class="slider" for="spd"><span>מהירות</span><span id="spdV"></span></label>
+      <input type="range" id="spd" min="1" max="5" value="3">
+      <div class="row"><button type="button" class="primary" id="flag">🚩 הדגל</button><button type="button" id="stop">⏹ עצרו</button></div>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="mini">
+    <h3>אותה תוכנית, במילים של שפת תכנות</h3>
+    <p>כשתגיעו לכיתה ז תכתבו פייתון. כך תיראה התוכנית שלכם בערך, בשפה דומה:</p>
+    <pre class="py" id="py" lang="en"></pre>
+  </div>
+  <div class="ctrl">
+    <p style="font-weight:700">נסו את אלה:</p>
+    <div class="tries" id="tries">
+      <button type="button" data-t="0">פתרון: הולכים וחוזרים</button>
+      <button type="button" data-t="1">פתרון: צבע לעולמים</button>
+      <button type="button" data-t="2">פתרון: סופרים לחיצות</button>
+      <button type="button" data-t="3">פתרון: עוצרים בקצה</button>
+      <button type="button" data-t="4">באג: לעולמים בלי תנאי</button>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini"><h3>שכחו את האירוע</h3><p>בונים תוכנית יפה ולוחצים על הדגל, ולא קורה כלום. חסר בלוק אירוע בראש: "כשלוחצים על הדגל". הוא אומר למחשב מתי להתחיל.</p></div>
+    <div class="mini"><h3>לעולמים שלא נעצר</h3><p>"לעולמים" עם צעד בפנים יביא את החתול לקצה, ושם הוא ינסה ללכת שוב ושוב. שימו בפנים תנאי שמגיב לקצה.</p></div>
+    <div class="mini"><h3>בלוק מחוץ ללולאה</h3><p>אם "החליפו צבע" נמצא אחרי הלולאה ולא בתוכה, הוא יקרה פעם אחת בלבד, אחרי שהלולאה תיגמר. בדקו מה בתוך הפה.</p></div>
+    <div class="mini"><h3>מהר מדי לראות</h3><p>מחשב מהיר מאוד. שינוי צבע בלי "חכו רגע" קורה כל כך מהר שלא רואים אותו. "חכו" עוזר לעין לראות.</p></div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">המטרה: החתול הולך ימינה, ובקצה מסתובב וחוזר, בלי סוף. בונים את התוכנית בלוק אחרי בלוק.</p>
+  <div class="stepper">
+    <div class="stack" id="exScr"></div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div class="stack" id="prScr"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" inputmode="numeric" maxlength="3" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>תכנות בבלוקים הוא תכנות אמיתי?</h3>
+    <p>כן. אירוע, לולאה, תנאי ומשתנה הם בדיוק הרעיונות של כל שפת תכנות. הבלוקים רק חוסכים את ההקלדה ואת שגיאות הכתיב, כך שאפשר להתרכז בחשיבה. בכיתה ז אותם רעיונות נכתבים במילים, בפייתון.</p>
+    <h3>צריך להתקין משהו כדי לתרגל בבית?</h3>
+    <p>לא. המעבדה כאן רצה בדפדפן. מי שרוצה ללכת רחוק יותר יכול להשתמש בכלי חינמי לתכנות בבלוקים, כמו Scratch, שעובד בדפדפן. כדאי לשבת יחד בפעם הראשונה ולבנות משהו קטן.</p>
+    <h3>מה עושים כשהתוכנית לא עובדת?</h3>
+    <p>מריצים לאט ומסתכלים איזה בלוק רץ עכשיו. שואלים: מה ציפיתי שיקרה, ומה קרה באמת? בדרך כלל הבלוק נמצא במקום הלא נכון, למשל מחוץ ללולאה. <a href="#lab">נסו את הבאג במעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/loops-puzzles/">לולאות: חוזרים על זה כמה פעמים</a> · <a href="../../cs/if-then-riddles/">אם... אז...: חידות תנאי</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/grid-robot-code/"><small>→ הנושא הקודם</small>רובוט על לוח משבצות</a><a class="next" href="../../cs/"><small>סיימתם את הפרק ←</small>לכל הנושאים במדעי המחשב</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const E=v=>`<span class="eq">${v}</span>`;
+/* block kinds: label, family, python, container? */
+const K={
+  flag:{t:'כשלוחצים על הדגל 🚩',f:'ev',py:'# when the flag is clicked',hat:1},
+  tap:{t:'כשלוחצים על החתול',f:'ev',py:'# when the cat is clicked',hat:1},
+  move:{t:'זוזו צעד אחד',f:'mv',py:'move(1)'},
+  turn:{t:'הסתובבו לכיוון השני',f:'mv',py:'turn_around()'},
+  color:{t:'החליפו צבע',f:'lk',py:'next_color()'},
+  hi:{t:'אמרו "שלום!"',f:'lk',py:'say("Hello!")'},
+  say:{t:'אמרו את המונה',f:'lk',py:'say(counter)'},
+  wait:{t:'חכו רגע',f:'ct',py:'wait(0.5)'},
+  rep:{t:'חזרו 10 פעמים',f:'ct',py:'for i in range(10):',box:1},
+  ever:{t:'לעולמים',f:'ct',py:'while True:',box:1},
+  edge:{t:'אם נוגעים בקצה',f:'if',py:'if touching_edge():',box:1},
+  halt:{t:'עצרו הכל',f:'ct',py:'stop_all()'},
+  inc:{t:'הגדילו את המונה ב-1',f:'vr',py:'counter += 1'},
+  zero:{t:'אפסו את המונה',f:'vr',py:'counter = 0'}
+};
+const FAM={ev:'אירוע',mv:'תנועה',lk:'מראה',ct:'לולאה',if:'תנאי',vr:'משתנה'};
+const PAL=[['ev',['flag','tap']],['mv',['move','turn']],['lk',['color','hi','say']],['ct',['rep','ever','wait','halt']],['if',['edge']],['vr',['inc','zero']]];
+const blkHtml=(k,extra='')=>`<span class="blk f-${K[k].f}"${extra}>${K[k].t}${K[k].box?' {':''}</span>`;
+$('pal').innerHTML=PAL.map(([f,ks])=>`<div class="grp"><span>${FAM[f]}</span>${ks.map(k=>`<button type="button" class="blk f-${K[k].f}" data-k="${k}">${K[k].t}</button>`).join('')}</div>`).join('');
+
+/* program tree: [{k, body?}] */
+const N=(k,...b)=>K[k].box?{k,body:b}:{k};
+let prog=[], stack=[prog];
+function flat(list,d=0,out=[],par=null){
+  list.forEach((n,i)=>{ out.push({n,d,list,i}); if(n.body){ flat(n.body,d+1,out); out.push({close:true,n,d}); } });
+  return out;
+}
+let curNode=null;
+function showScr(){
+  const L=flat(prog), open=stack[stack.length-1];
+  let h=L.map((l,j)=>l.close?`<span class="blk f-${K[l.n.k].f} end" style="margin-inline-start:${l.d*1.4}em; font-weight:500">}</span>`
+    :`<span class="blk f-${K[l.n.k].f}${l.n===curNode?' now':''}" data-j="${j}" role="button" tabindex="0" style="margin-inline-start:${l.d*1.4}em" title="לחצו כדי למחוק">${K[l.n.k].t}${l.n.body?' {':''}</span>`);
+  if(!running) h.push(`<span class="caret" style="margin-inline-start:${(stack.length-1)*1.4}em">▌ הבלוק הבא ייכנס לכאן</span>`);
+  $('scr').innerHTML=prog.length?h.join(''):'<span class="empty">התוכנית ריקה. התחילו מבלוק אירוע.</span>';
+  $('scr').querySelectorAll('[data-j]').forEach(el=>{ const del=()=>{ if(running) return; const l=L[+el.dataset.j]; l.list.splice(l.i,1); stack=[prog]; showAll(); };
+    el.onclick=del; el.onkeydown=e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); del(); } }; });
+  $('py').textContent=py();
+}
+function py(){
+  if(!prog.length) return '# empty program';
+  const out=['counter = 0'];
+  (function w(list,d){ for(const n of list){ out.push('    '.repeat(d)+K[n.k].py); if(n.body){ w(n.body,d+1); if(!n.body.length) out.push('    '.repeat(d+1)+'pass'); } } })(prog,0);
+  return out.join('\n');
+}
+$('pal').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  if(running) stopRun();
+  const k=b.dataset.k, n=N(k), top=stack[stack.length-1];
+  if(K[k].hat && (top!==prog || prog.length)){ say(top===prog?'בלוק אירוע תמיד בא ראשון, בראש התוכנית. נקו והתחילו ממנו.':'בלוק אירוע לא נכנס לתוך לולאה. הוא תמיד בראש התוכנית.'); return; }
+  top.push(n); if(n.body) stack.push(n.body);
+  showAll();
+});
+$('cls').onclick=()=>{ if(stack.length>1){ stack.pop(); showAll(); } else say('אין פה פתוח לסגור.'); };
+$('clr').onclick=()=>{ stopRun(); prog=[]; stack=[prog]; resetStage(); showAll(); say('התוכנית נוקתה.'); };
+function say(t){ $('labTxt').innerHTML=`<div>${t}</div>`; }
+
+/* stage */
+let st, running=false, token=0, timer=null;
+function resetStage(){ st={pos:1,dir:1,col:0,cnt:0,bub:'',ticks:0,bounces:0,colors:0,halted:false,taps:0}; drawStage(); }
+function drawStage(){
+  let h=''; for(let i=0;i<10;i++){ h+=`<div class="${i===0||i===9?'edge':''}">${i===st.pos?`<button type="button" class="cat c${st.col}${st.dir<0?' flip':''}" id="cat" aria-label="החתול. לחצו עליו">🐱</button>`:''}</div>`; }
+  $('trk').innerHTML=h; $('cnt').textContent=`מונה: ${st.cnt}`; $('bub').textContent=st.bub;
+  $('clk').textContent=st.taps?`לחיצות על החתול: ${st.taps}`:'';
+  const c=$('cat'); if(c) c.onclick=tapCat;
+}
+const delay=()=>[0,700,450,280,160,80][+$('spd').value];
+$('spd').addEventListener('input',()=>{ $('spdV').textContent=['','איטי מאוד','איטי','רגיל','מהיר','מהיר מאוד'][+$('spd').value]; });
+$('spd').dispatchEvent(new Event('input'));
+/* the interpreter is a generator: one yield per block, so the page can show it running */
+function* exec(list){
+  for(const n of list){
+    if(st.halted) return;
+    curNode=n;
+    switch(n.k){
+      case 'move': { const nx=st.pos+st.dir; if(nx<0||nx>9){ yield 'החתול בקצה ולא יכול לזוז. אולי צריך תנאי שיסובב אותו?'; } else { st.pos=nx; yield `זז צעד. עכשיו במשבצת ${st.pos+1}.`; } break; }
+      case 'turn': st.dir*=-1; st.bounces++; yield 'הסתובב. עכשיו פונה '+(st.dir>0?'ימינה':'שמאלה')+'.'; break;
+      case 'color': st.col=(st.col+1)%5; st.colors++; yield 'החליף צבע.'; break;
+      case 'hi': st.bub='שלום!'; yield 'אמר שלום.'; break;
+      case 'say': st.bub=String(st.cnt); yield `אמר את המונה: ${st.cnt}.`; break;
+      case 'wait': yield 'חיכה רגע.'; break;
+      case 'inc': st.cnt++; yield `המונה גדל ל-${st.cnt}.`; break;
+      case 'zero': st.cnt=0; yield 'המונה התאפס.'; break;
+      case 'halt': st.halted=true; yield 'עצרו הכל: התוכנית נעצרה.'; return;
+      case 'rep': for(let i=1;i<=10&&!st.halted;i++){ curNode=n; yield `לולאה: סיבוב ${i} מתוך 10.`; yield* exec(n.body); } break;
+      case 'ever': for(let i=1;!st.halted;i++){ curNode=n; st.ticks++; if(st.ticks>40){ yield 'הלולאה "לעולמים" רצה 40 פעמים, ועצרנו אותה כאן כדי שלא תרוץ לנצח.'; st.halted=true; st.capped=true; return; } yield `לעולמים: עוד סיבוב (${i}).`; yield* exec(n.body); } break;
+      case 'edge': { const at=st.pos===(st.dir>0?9:0); curNode=n; yield 'תנאי: נוגעים בקצה? '+(at?'כן, אז מריצים את מה שבפנים.':'לא, אז מדלגים.'); if(at) yield* exec(n.body); break; }
+      default: break;
+    }
+  }
+}
+function startRun(hat){
+  stopRun();
+  if(!prog.length){ say('התוכנית ריקה. התחילו מבלוק אירוע.'); return; }
+  if(!K[prog[0].k].hat){ say('לחצתם, אבל לא קרה כלום: אין בלוק אירוע בראש התוכנית. הוסיפו "כשלוחצים על הדגל".'); return; }
+  if(prog[0].k!==hat){ say(hat==='flag'?'התוכנית מתחילה "כשלוחצים על החתול", לא על הדגל. לחצו על החתול על הבמה.':'התוכנית מתחילה בדגל. לחיצה על החתול לא מפעילה אותה.'); return; }
+  st.halted=false; st.capped=false; st.ticks=0;
+  const g=exec(prog.slice(1)), my=++token; running=true; $('flag').disabled=false;
+  const step=()=>{
+    if(my!==token) return;
+    const r=g.next();
+    if(r.done){ running=false; curNode=null; drawStage(); showScr(); finish(); return; }
+    drawStage(); showScr();
+    /* a challenge can be met while a forever loop is still running: say so right away */
+    say((CH[chI].ok()?`<strong>אתגר ${chI+1} הצליח! 🎉</strong> אפשר לעצור או להמשיך לראות. `:'')+r.value);
+    timer=setTimeout(step,delay());
+  };
+  step();
+}
+function stopRun(){ token++; clearTimeout(timer); timer=null; running=false; curNode=null; }
+function tapCat(){ st.taps++; drawStage(); if(prog.length&&prog[0].k==='tap') startRun('tap'); }
+$('flag').onclick=()=>{ resetStage(); startRun('flag'); };
+$('stop').onclick=()=>{ stopRun(); showScr(); say('עצרתם את התוכנית.'); };
+
+/* challenges */
+const CH=[
+  {name:'הולכים וחוזרים',goal:'החתול הולך, ובכל קצה מסתובב וחוזר. צריך לפחות 2 הסתובבויות.',ok:()=>st.bounces>=2,
+   sol:()=>[N('flag'),N('ever',N('move'),N('edge',N('turn')))]},
+  {name:'צבע לעולמים',goal:'החתול מחליף צבע שוב ושוב, ורואים כל צבע. לפחות 5 החלפות.',ok:()=>st.colors>=5,
+   sol:()=>[N('flag'),N('ever',N('color'),N('wait'))]},
+  {name:'סופרים לחיצות',goal:'בכל לחיצה על החתול המונה גדל, והחתול אומר את המספר. לחצו על החתול 3 פעמים.',ok:()=>st.cnt>=3&&st.bub===String(st.cnt),
+   sol:()=>[N('tap'),N('inc'),N('say')]},
+  {name:'עוצרים בקצה',goal:'החתול הולך עד הקצה ונעצר שם, והתוכנית נגמרת לבד.',ok:()=>st.halted&&!st.capped&&(st.pos===9||st.pos===0),
+   sol:()=>[N('flag'),N('ever',N('move'),N('edge',N('halt')))]}
+];
+let chI=0;
+$('chs').innerHTML=CH.map((c,i)=>`<button type="button" data-c="${i}" aria-pressed="${i===0}">אתגר ${i+1}: ${c.name}</button>`).join('');
+$('chs').querySelectorAll('button').forEach(b=>b.onclick=()=>{ chI=+b.dataset.c; $('chs').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); stopRun(); resetStage(); showScr(); say(`<strong>אתגר ${chI+1}:</strong> ${CH[chI].goal}`); });
+function finish(){
+  const c=CH[chI];
+  if(c.ok()) say(`<strong>אתגר ${chI+1} הצליח! 🎉</strong> ${chI<CH.length-1?'נסו את האתגר הבא.':'עברתם את כל האתגרים.'}`);
+  else if(st.capped) say('הלולאה "לעולמים" רצה 40 פעמים ועצרנו אותה. '+(c.ok()?'':`האתגר עוד לא הושלם: ${c.goal}`));
+  else say(`התוכנית הסתיימה. האתגר עוד לא הושלם: ${c.goal}`);
+}
+function showAll(){ showScr(); drawStage(); }
+const TRY=[
+  {c:0,p:()=>CH[0].sol(),t:'לעולמים: זזים, ואם נוגעים בקצה מסתובבים. לחצו על הדגל.'},
+  {c:1,p:()=>CH[1].sol(),t:'בלי "חכו רגע" הצבעים מתחלפים מהר מדי לעין. לחצו על הדגל.'},
+  {c:2,p:()=>CH[2].sol(),t:'האירוע כאן הוא לחיצה על החתול. לחצו על החתול על הבמה, שלוש פעמים.'},
+  {c:3,p:()=>CH[3].sol(),t:'"עצרו הכל" בתוך התנאי עוצר את הלולאה שלא נגמרת. לחצו על הדגל.'},
+  {c:0,p:()=>[N('flag'),N('ever',N('move'))],t:'כאן יש באג: לעולמים עם צעד בלבד. מה קורה כשהחתול מגיע לקצה? לחצו על הדגל ומצאו מה חסר.'}
+];
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{
+  const T=TRY[+b.dataset.t]; chI=T.c; $('chs').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.c===chI));
+  stopRun(); prog=T.p(); stack=[prog]; resetStage(); showScr(); say(T.t);
+});
+resetStage(); showScr(); say(`<strong>אתגר 1:</strong> ${CH[0].goal}`);
+
+/* worked example */
+const EXS=[
+  {n:1,t:'בלוק אירוע ראשון: "כשלוחצים על הדגל". בלי אותו התוכנית לא תתחיל אף פעם.'},
+  {n:2,t:'החתול צריך ללכת בלי סוף, אז לולאה "לעולמים". כל מה שבתוכה יחזור שוב ושוב.'},
+  {n:3,t:'בתוך הלולאה: "זוזו צעד אחד". כבר עכשיו החתול הולך, אבל בקצה הוא ייתקע.'},
+  {n:4,t:'מוסיפים תנאי בתוך הלולאה: "אם נוגעים בקצה". בכל סיבוב החתול בודק אם הגיע לקצה.'},
+  {n:5,t:'בתוך התנאי: "הסתובבו לכיוון השני". עכשיו בכל קצה החתול מסתובב וממשיך ללכת לצד השני.'},
+  {n:5,t:'בודקים: בכל סיבוב יש צעד ובדיקה. הסדר חשוב, כי קודם זזים ורק אחר כך בודקים אם הגענו לקצה. נסו את זה במעבדה בכפתור "פתרון: הולכים וחוזרים".'}
+];
+const EXB=[['flag',0],['ever',0],['move',1],['edge',1],['turn',2]];
+let exI=0;
+function ex(){ const s=EXS[exI];
+  $('exScr').innerHTML=EXB.slice(0,s.n).map(([k,d],i)=>blkHtml(k,` style="margin-inline-start:${d*1.4}em${i===s.n-1&&exI<EXS.length-1?'; outline:3px solid var(--line)':''}"`)).join('');
+  $('exText').innerHTML=s.t; $('exCount').textContent=`צעד ${exI+1} מתוך ${EXS.length}`; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EXS.length-1; }
+$('exNext').onclick=()=>{ if(exI<EXS.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+let pr={}, sel=null, streak=0, solved=0;
+const stackHtml=rows=>rows.map(([k,d,label])=>label?`<span class="blk f-${K[k].f}" style="margin-inline-start:${d*1.4}em">${label}</span>`:blkHtml(k,` style="margin-inline-start:${d*1.4}em"`)).join('');
+const Q=[
+  ()=>{ const a=ri(2,5), b=ri(2,4);
+    return {kind:'num',ask:`המונה מתחיל ב-0. כמה יהיה במונה בסוף?`,rows:[['flag',0],['zero',0],['rep',0,`חזרו ${a} פעמים {`],['rep',1,`חזרו ${b} פעמים {`],['inc',2]],ans:a*b,
+      wrong:{[a+b]:'חיברתם את מספרי הסיבובים. אבל הלולאה הפנימית רצה מחדש בכל סיבוב של החיצונית, אז כופלים.',[a]:'זה רק מספר הסיבובים של הלולאה החיצונית. בכל אחד מהם הפנימית רצה כמה פעמים?',[b]:'זה רק סיבוב אחד של הלולאה החיצונית. היא חוזרת כמה פעמים?'},
+      hints:['לולאה בתוך לולאה: בכל סיבוב של החיצונית, הפנימית רצה מההתחלה.',`בכל סיבוב חיצוני המונה גדל ב-${b}. כמה סיבובים חיצוניים יש?`],sol:`${a} סיבובים חיצוניים, ובכל אחד ${b} הגדלות: ${E(a+' × '+b+' = '+a*b)}.`}; },
+  ()=>{ const a=ri(2,5);
+    return {kind:'num',ask:'המונה מתחיל ב-0. כמה יהיה במונה בסוף?',rows:[['flag',0],['zero',0],['rep',0,`חזרו ${a} פעמים {`],['move',1],['inc',0]],ans:1,
+      wrong:{[a]:'שימו לב איפה "הגדילו" נמצא: הוא אחרי הסוגר, כלומר מחוץ ללולאה. הוא רץ פעם אחת בלבד.'},
+      hints:['בדקו מה בתוך הפה של הלולאה ומה אחריה.','רק "זוזו" בתוך הלולאה. "הגדילו" רץ אחרי שהלולאה נגמרת.'],sol:'"הגדילו" נמצא מחוץ ללולאה, אז הוא רץ פעם אחת: המונה הוא 1.'}; },
+  ()=>({kind:'ch',ask:'לוחצים על הדגל. מה יקרה?',rows:[['ever',0],['move',1],['edge',1],['turn',2]],
+      opts:[['לא יקרה כלום, כי אין בלוק אירוע בראש התוכנית.',null],['החתול ילך וחוזר בין הקצוות.','זה מה שהיה קורה אילו היה בלוק אירוע. מה חסר בראש התוכנית?'],['החתול ייתקע בקצה.','יש כאן תנאי שמסובב אותו, אז הוא לא ייתקע. אבל האם התוכנית בכלל מתחילה?']],
+      hints:['מה אומר למחשב מתי להתחיל?','לכל תוכנית צריך אירוע בראש, כמו "כשלוחצים על הדגל".'],sol:'אין בלוק אירוע, אז הלחיצה על הדגל לא מפעילה שום דבר.'}),
+  ()=>({kind:'ch',ask:'לוחצים על הדגל. מה יקרה?',rows:[['flag',0],['ever',0],['move',1]],
+      opts:[['החתול ילך עד הקצה וייתקע שם, והלולאה תמשיך לרוץ.',null],['החתול ילך ויחזור בלי סוף.','כדי לחזור הוא צריך תנאי ש"מסובב" אותו בקצה. יש כזה כאן?'],['החתול יזוז צעד אחד וייעצר.','"לעולמים" חוזר שוב ושוב, לא פעם אחת.']],
+      hints:['מה קורה כשמגיעים לקצה ואין שום בלוק שמגיב לזה?','"לעולמים" לא נגמר לבד, ואין כאן תנאי.'],sol:'החתול הולך עד הקצה ונתקע. הלולאה ממשיכה לנסות לזוז לנצח. זה באג.'}),
+  ()=>({kind:'ch',ask:'רוצים שהחתול יחליף צבע 10 פעמים, וכל צבע ייראה. איזו תוכנית מתאימה?',rows:[],
+      opts:[[stackHtml([['flag',0],['rep',0],['color',1],['wait',1]]),null],[stackHtml([['flag',0],['rep',0],['color',1]]),'הצבע מתחלף, אבל מהר מדי לעין. מה חסר בתוך הלולאה?'],[stackHtml([['flag',0],['rep',0],['wait',1],['color',0]]),'"החליפו צבע" נמצא מחוץ ללולאה, אז הוא יקרה רק פעם אחת.']],
+      hints:['בדקו מה נמצא בתוך הלולאה ומה מחוץ לה.','צריך גם החלפת צבע וגם המתנה, ושתיהן בתוך הלולאה.'],sol:'התוכנית הנכונה: בתוך "חזרו 10 פעמים" יש "החליפו צבע" ו"חכו רגע".'}),
+  ()=>({kind:'ch',ask:'לאיזו משפחה שייך הבלוק הזה?',rows:[[pick(['edge','inc','tap','turn','wait','color']),0]],fam:true})
+];
+function newPr(){
+  const q=pick(Q)(); sel=null;
+  if(q.fam){ const k=q.rows[0][0], right=K[k].f; const fams=[right,...Object.keys(FAM).filter(f=>f!==right).sort(()=>Math.random()-.5).slice(0,2)].sort(()=>Math.random()-.5);
+    q.opts=fams.map(f=>[`<span class="chip f-${f}">${FAM[f]}</span>`,f===right?null:{ev:'בלוק אירוע מתחיל תוכנית. הבלוק הזה עושה משהו אחר.',mv:'תנועה מזיזה את הדמות. האם הבלוק הזה מזיז?',lk:'מראה משנה איך הדמות נראית או מה היא אומרת.',ct:'לולאה חוזרת על בלוקים. האם זה מה שהבלוק עושה?',if:'תנאי בודק משהו לפני שעושים.',vr:'משתנה שומר מספר.'}[f]]);
+    q.hints=['הסתכלו על הצבע של הבלוק ועל מה שכתוב בו.',`הבלוק הזה ${K[k].f==='if'?'בודק משהו':K[k].f==='vr'?'שומר מספר':K[k].f==='ev'?'מתחיל תוכנית':K[k].f==='mv'?'מזיז את הדמות':K[k].f==='lk'?'משנה מראה':'שולט על הזרימה, כמו לולאה או המתנה'}.`];
+    q.sol=`הבלוק שייך למשפחת ${FAM[right]}.`; }
+  pr=q; pr.tries=0; pr.hl=0;
+  $('prAsk').textContent=q.ask; $('prScr').innerHTML=stackHtml(q.rows);
+  $('prCh').hidden=q.kind==='num'; $('prIn').hidden=q.kind!=='num';
+  if(q.kind!=='num'){ const order=q.opts.map((o,i)=>i).sort(()=>Math.random()-.5);
+    $('prCh').innerHTML=order.map(i=>`<button type="button" data-i="${i}" aria-pressed="false"><div class="stack">${q.opts[i][0]}</div></button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); }); }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+function streakTxt(){ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; }
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(pr.kind==='num'){ const v=parseInt($('prN').value,10); if(isNaN(v)){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; return; }
+    right=v===pr.ans; if(!right) msg=pr.wrong[v]||'עקבו אחרי התוכנית לאט, בלוק אחרי בלוק, וכתבו כמה יש במונה אחרי כל סיבוב.'; }
+  else { if(sel===null){ fb.innerHTML='<div class="fb err">בחרו תשובה.</div>'; return; }
+    right=pr.opts[sel][1]===null; if(!right) msg=pr.opts[sel][1]; }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${pr.sol}</div>`; return; }
+  streak=0; pr.tries++; streakTxt(); fb.innerHTML=`<div class="fb err">${msg}</div>`;
+  if(pr.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ pr.hl=Math.min(pr.hl+1,2); $('prFb').innerHTML=`<div class="fb hint">${pr.hints[pr.hl-1]}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${pr.sol} עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>
