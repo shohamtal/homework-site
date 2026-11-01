@@ -468,6 +468,18 @@
 - [Opinion Essay באנגלית: חיבור טיעון](https://shohamtal.github.io/homework-site/english/opinion-essay/): מביעים עמדה ומנמקים: פתיחה עם טענה, שתי סיבות עם דוגמאות, טיעון נגדי וסיכום. בונים חיבור שלם עם משוב. הסבר, צלילים ותרגול עם רמזים לכיתה י.
 - [אוצר מילים באנגלית לבגרות](https://shohamtal.github.io/homework-site/english/vocabulary-bagrut/): מילים שחוזרות בבגרות לפי משפחות: prefixes, suffixes, word families ומילים מבלבלות. שומעים, ממיינים ומתרגלים. הסבר, צלילים ותרגול עם רמזים לכיתה י.
 
+## אנגלית כיתה יא · דקדוק מתקדם
+
+- [Mixed Conditionals באנגלית](https://shohamtal.github.io/homework-site/english/mixed-conditionals/): If I had slept, I would be fresh now: תנאי שמערבב עבר והווה. מתי משלבים את המבנים ואיך לא להתבלבל. הסבר, צלילים ותרגול עם רמזים לכיתה יא.
+- [should have, might have ו-must have באנגלית](https://shohamtal.github.io/homework-site/english/modal-perfects/): חרטה, השערה ומסקנה על העבר: you should have called, she might have missed the bus, he must have been tired. הסבר, צלילים ותרגול עם רמזים לכיתה יא.
+- [Reported Speech מתקדם באנגלית](https://shohamtal.github.io/homework-site/english/reported-speech-advanced/): מעבירים שאלות, בקשות והוראות: He asked if I was ready, she told me to wait. פעלי דיווח כמו suggest ו-explain. הסבר, צלילים ותרגול עם רמזים לכיתה יא.
+
+## אנגלית כיתה יא · ספרות, קריאה וכתיבה
+
+- [ספרות באנגלית: שירים, סיפורים וחשיבה מסדר גבוה](https://shohamtal.github.io/homework-site/english/literature-hots/): מנתחים שיר וסיפור קצר מקוריים בעזרת כישורי HOTS: השוואה, הסבר סיבה ותוצאה, קישור לחיים ופרשנות. הסבר, צלילים ותרגול עם רמזים לכיתה יא.
+- [Unseen באנגלית לכיתה יא](https://shohamtal.github.io/homework-site/english/unseen-grade-11/): קטעי unseen מקוריים ארוכים יותר ברמת כיתה יא, עם שאלות בגרות: כוונת הכותב, טון, השוואה בין חלקים ותשובות במילים שלכם. הסבר, צלילים ותרגול עם רמזים.
+- [מכתב רשמי באנגלית: Formal Letter](https://shohamtal.github.io/homework-site/english/formal-letter/): איך כותבים מכתב רשמי: פתיחה, מטרה, פירוט, בקשה וסיום. מתי Dear Sir ומתי Yours sincerely, ומה הטון הנכון. הסבר, צלילים ותרגול עם רמזים לכיתה יא.
+
 ## עמודים נוספים
 
 - [מתמטיקה](https://shohamtal.github.io/homework-site/math/): הסברים, מעבדות אינטראקטיביות ותרגול עם רמזים במתמטיקה לפי תוכנית הלימודים, מכיתה א ועד כיתה יב. בחרו כיתה.
@@ -494,4 +506,5 @@
 - [אנגלית כיתה ח](https://shohamtal.github.io/homework-site/english/grade-8/): אנגלית לכיתה ח עם צלילים ותרגול: Present Perfect, Past Progressive, must ו-should, First Conditional, מילות יחס, קריאה וחיבור.
 - [אנגלית כיתה ט](https://shohamtal.github.io/homework-site/english/grade-9/): אנגלית לכיתה ט עם צלילים ותרגול: Passive, Second Conditional, Reported Speech, Relative Clauses, ing ו-to, מילות קישור וקריאה.
 - [אנגלית כיתה י](https://shohamtal.github.io/homework-site/english/grade-10/): אנגלית לכיתה י: Past Perfect, Third Conditional, phrasal verbs, unseen לבגרות, חיבור טיעון ואוצר מילים לבגרות. הסבר, צלילים ותרגול.
+- [אנגלית כיתה יא](https://shohamtal.github.io/homework-site/english/grade-11/): אנגלית לכיתה יא: Mixed Conditionals, should have ו-must have, דיבור עקיף מתקדם, ספרות HOTS, unseen ומכתב רשמי.
 - [בקשות נושאים והצבעות](https://shohamtal.github.io/homework-site/requests/): חסר לכם נושא? בקשו אותו או הצביעו לנושא שמישהו אחר כבר ביקש. הנושאים עם הכי הרבה קולות עולים לאתר ראשונים.

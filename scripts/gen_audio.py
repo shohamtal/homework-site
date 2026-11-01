@@ -12,7 +12,7 @@ After generating, every word clip (not ph_*) is transcribed with faster-whisper 
 Setup once (any Python 3.11 venv works):
   uv venv -p 3.11 .venv && uv pip install -p .venv/bin/python kokoro soundfile faster-whisper
   # if espeak complains about .../espeakng_loader/phontab, symlink espeak-ng-data/* into the espeakng_loader folder
-Run:  .venv/bin/python scripts/gen_audio.py [--no-check | --check (re-check every clip)]
+Run:  .venv/bin/python scripts/gen_audio.py [--no-check | --check (re-check every clip) | --check=mc_,fl_ (re-check ids with these prefixes)]
 """
 import glob, hashlib, json, os, re, subprocess, sys, tempfile
 
@@ -61,7 +61,8 @@ def main():
             os.remove(os.path.join(OUT, f)); print('removed', f)
     json.dump(manifest, open(os.path.join(OUT, 'manifest.json'), 'w'), indent=0, sort_keys=True)
     print(f'{len(manifest)} clips, {len(todo)} new')
-    if '--no-check' in sys.argv or not (todo or '--check' in sys.argv):
+    pre = next((a[8:].split(',') for a in sys.argv if a.startswith('--check=')), None)
+    if '--no-check' in sys.argv or not (todo or '--check' in sys.argv or pre):
         return
     from faster_whisper import WhisperModel
     m = WhisperModel('base.en', device='cpu', compute_type='int8')
@@ -75,7 +76,7 @@ def main():
         return words
     bad = 0
     h_skip = lambda k: k.startswith('l_') or len(lines[k].strip(' .!?')) <= 2  # whisper cannot judge a lone letter
-    for k in (lines if '--check' in sys.argv else todo):
+    for k in ([k for k in lines if k.startswith(tuple(pre))] if pre else lines if '--check' in sys.argv else todo):
         if k.startswith('ph_') or h_skip(k):
             continue
         # whisper guesses wildly on half-second clips, so it listens to a copy with a second of silence around it

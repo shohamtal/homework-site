@@ -270,7 +270,7 @@ textarea.oa{display:block; width:100%; box-sizing:border-box; font:inherit; font
 </section>
 
 <!-- build:topicnav -->
-<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../english/reading-grade-9/">הבנת הנקרא באנגלית לכיתה ט</a></p>
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../english/reading-grade-9/">הבנת הנקרא באנגלית לכיתה ט</a> · <a href="../../english/unseen-grade-11/">Unseen באנגלית לכיתה יא</a></p>
 <nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../english/phrasal-verbs/"><small>→ הנושא הקודם</small>Phrasal Verbs באנגלית: look up, give up</a><a class="next" href="../../english/opinion-essay/"><small>הנושא הבא ←</small>Opinion Essay באנגלית: חיבור טיעון</a></nav>
 <!-- /build:topicnav -->
 <!-- build:footer -->
@@ -429,13 +429,13 @@ async function readFrom(i){
 $('picker').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) pick(+b.dataset.t); });
 $('readGo').onclick=()=>{ if(alone){ run++; idx=0; mark(cur,0); $('readTurn').textContent=`משפט 1 מתוך ${sents(cur).length}. קראו אותו בקול.`; } else readFrom(idx); };
 $('readNext').onclick=()=>{
-  const n=sents(cur).length; idx=Math.min(n-1,idx+(sents(cur)[idx].classList.contains('now')?1:0));
+  const n=sents(cur).length; idx=Math.min(n-1,idx); idx=Math.min(n-1,idx+(sents(cur)[idx].classList.contains('now')?1:0));
   if(alone){ run++; mark(cur,idx); $('readTurn').textContent=`משפט ${idx+1} מתוך ${n}. קראו אותו בקול.`; }
   else { run++; S.stop(); mark(cur,idx); S.say(sents(cur)[idx].dataset.id,{rate:rate()}); $('readTurn').textContent=`משפט ${idx+1} מתוך ${n}`; }
 };
 $('readStop').onclick=()=>{ run++; S.stop(); mark(cur,-1); $('readTurn').textContent=''; };
 $('readAlone').onclick=()=>{ alone=!alone; $('readAlone').setAttribute('aria-pressed',alone); run++; S.stop(); $('readGo').textContent=alone?'▶ מתחילים':'▶ קראו לי'; $('readTurn').textContent=alone?'מצב קוראים לבד: בלי קול. לחיצה על משפט עדיין משמיעה אותו.':''; };
-function sentTap(s){ const st=s.closest('.story'); if(!st) return; run++; S.stop(); idx=sents(+st.dataset.t).indexOf(s); mark(+st.dataset.t,idx); S.say(s.dataset.id,{rate:rate()}); }
+function sentTap(s){ const st=s.closest('.story'); if(!st) return; if(+st.dataset.t!==cur) pick(+st.dataset.t); run++; S.stop(); idx=sents(+st.dataset.t).indexOf(s); mark(+st.dataset.t,idx); S.say(s.dataset.id,{rate:rate()}); }
 document.querySelectorAll('#lab .rtext .s').forEach(s=>{
   s.addEventListener('click',e=>{ if(!e.target.closest('.hw')) sentTap(s); });
   s.addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ') && !e.target.closest('.hw')){ e.preventDefault(); sentTap(s); } });

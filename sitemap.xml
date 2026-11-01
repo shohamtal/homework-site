@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://shohamtal.github.io/homework-site/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/grade-1/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/math/grade-2/</loc><lastmod>2026-11-01</lastmod></url>
@@ -169,6 +169,7 @@
   <url><loc>https://shohamtal.github.io/homework-site/english/grade-8/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/grade-9/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/grade-10/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/grade-11/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/abc-song/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/letters-intro/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/hello-goodbye/</loc><lastmod>2026-10-28</lastmod></url>
@@ -217,25 +218,31 @@
   <url><loc>https://shohamtal.github.io/homework-site/english/countable-uncountable/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/reading-grade-7/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/paragraph-writing/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/english/present-perfect/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/present-perfect/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/past-progressive/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/modals/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/first-conditional/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/prepositions-time/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/reading-grade-8/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/english/short-essay/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/short-essay/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/passive-voice/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/english/second-conditional/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/second-conditional/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/reported-speech/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/relative-clauses/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/gerund-infinitive/</loc><lastmod>2026-10-29</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/linking-words/</loc><lastmod>2026-10-29</lastmod></url>
-  <url><loc>https://shohamtal.github.io/homework-site/english/reading-grade-9/</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/reading-grade-9/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/past-perfect/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/third-conditional/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/phrasal-verbs/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/unseen-grade-10/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/opinion-essay/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/english/vocabulary-bagrut/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/mixed-conditionals/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/modal-perfects/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/reported-speech-advanced/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/literature-hots/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/unseen-grade-11/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://shohamtal.github.io/homework-site/english/formal-letter/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://shohamtal.github.io/homework-site/requests/</loc><lastmod>2026-10-27</lastmod></url>
 </urlset>
