@@ -175,3 +175,18 @@ h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
 .crumbs{font-size:1rem; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:4px 14px}
 .related{margin:0}
 .sfx-mute{display:inline-block; margin-top:10px; min-height:40px; padding:6px 14px; font-size:.95rem}
+/* card / step view on phones (assets/cards.js adds body.cards-on; without JS the page stays one long page) */
+.cards-on .wrap > section.card:not(.card-on){display:none}
+.cards-on .wrap > section.card.card-on{margin-bottom:84px}
+.cards-top{position:sticky; top:0; z-index:5; background:var(--paper); padding:8px 2px 10px; margin-bottom:8px}
+.cards-meta{display:flex; justify-content:space-between; gap:10px; font-weight:700; font-size:.95rem; margin-bottom:6px}
+.cards-title{color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.cards-bar{height:10px; border:2px solid var(--border); border-radius:99px; background:var(--card); overflow:hidden}
+.cards-bar span{display:block; height:100%; width:0; background:var(--line); transition:width .25s}
+@media (prefers-reduced-motion: reduce){.cards-bar span{transition:none}}
+.cards-nav{position:fixed; bottom:0; inset-inline:0; z-index:6; display:flex; gap:10px; padding:10px 16px calc(10px + env(safe-area-inset-bottom)); background:var(--paper); border-top:2px solid var(--border)}
+.cards-nav button{flex:1; min-height:52px; font-size:1.1rem}
+.cards-on:not(.cards-last) .topic-nav, .cards-on:not(.cards-last) .related, .cards-on:not(.cards-last) footer.site{display:none}
+.cards-resume{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.done-mark{color:var(--green); font-weight:800}
+.progress-reset{margin-top:12px}
