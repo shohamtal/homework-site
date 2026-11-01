@@ -125,6 +125,8 @@ function head(pg, root) {
     `<link rel="stylesheet" href="${fonts}" media="print" onload="this.media='all'">`,
     `<noscript><link rel="stylesheet" href="${fonts}"></noscript>`,
     `<script data-goatcounter="${cfg.goatcounter}" async src="${root}assets/goatcounter.js?v=${GC_V}"></script>`,
+    // phones: hide all cards but the first before the first paint, so the long page doesn't flash and then collapse (cards.js takes over; dropped on load if it never ran)
+    ...(CARDS(pg) && pg.kind === 'topic' ? [`<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>`] : []),
     jsonLd(pg, m)
   ].join('\n');
 }
@@ -134,8 +136,7 @@ const footer = (pg, root) => `<footer class="site">${cfg.name} · ${cfg.slogan}$
   ? `\n<script src="${root}assets/sound.js"></script>\n<script src="${root}assets/sfx.js"></script>` : ''}${CARDS(pg)
   ? `\n<script src="${root}assets/cards.js"></script>` : ''}`;
 /* card / step view with progress (issue #10): pilot topic pages, plus grade and subject pages for the ✓ marks */
-const CARDS_PILOT = ['math/linear-equations/', 'english/present-simple/'];
-const CARDS = pg => (pg.kind === 'topic' && CARDS_PILOT.includes(pg.p)) || pg.kind === 'grade' || pg.kind === 'subject';
+const CARDS = pg => ['topic', 'grade', 'subject'].includes(pg.kind);
 /* the next grade of the same subject that has pages, for the "ממשיכים ל…" link on grade hubs */
 const nextGrade = pg => { const gs = gradesWithTopics(pg.subj), i = gs.findIndex(g => g.id === pg.grade.id); return i >= 0 ? gs[i + 1] : null; };
 /* math topics for grades 1 to 3 get small success and try-again sounds (assets/sfx.js) */

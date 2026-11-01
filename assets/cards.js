@@ -73,7 +73,7 @@
   }
   function off(){
     if(!b.classList.contains('cards-on')) return;
-    b.classList.remove('cards-on','cards-last'); top.remove(); nav.remove();
+    b.classList.remove('cards-on','cards-last'); document.documentElement.classList.remove('cards-pre'); top.remove(); nav.remove();
     cards.forEach(c=>c.classList.remove('card-on'));
   }
   nav.querySelector('.cards-prev').onclick=()=>show(cur-1);
@@ -89,6 +89,9 @@
     const k=cards.findIndex(c=>c.id===a.getAttribute('href').slice(1)); if(k<0) return;
     e.preventDefault(); show(k);
   });
+  /* the phone keyboard pushes the fixed bar over the input: hide the bar while typing */
+  document.addEventListener('focusin',e=>{ if(e.target.matches('input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea,select')) b.classList.add('cards-typing'); });
+  document.addEventListener('focusout',()=>b.classList.remove('cards-typing'));
   /* a right answer in practice counts toward finishing the page */
   if(practice>=0) new MutationObserver(()=>{
     if(!me.practiced && cards[practice].querySelector('.fb.ok')){ me.practiced=true; mark(); }

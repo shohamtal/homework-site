@@ -177,6 +177,8 @@ h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
 .sfx-mute{display:inline-block; margin-top:10px; min-height:40px; padding:6px 14px; font-size:.95rem}
 /* card / step view on phones (assets/cards.js adds body.cards-on; without JS the page stays one long page) */
 .cards-on .wrap > section.card:not(.card-on){display:none}
+.cards-pre body:not(.cards-on) .wrap > section.card ~ section.card{display:none}
+.cards-typing .cards-nav{display:none}
 .cards-on .wrap > section.card.card-on{margin-bottom:84px}
 .cards-top{position:sticky; top:0; z-index:5; background:var(--paper); padding:8px 2px 10px; margin-bottom:8px}
 .cards-meta{display:flex; justify-content:space-between; gap:10px; font-weight:700; font-size:.95rem; margin-bottom:6px}
