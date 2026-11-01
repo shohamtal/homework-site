@@ -456,6 +456,18 @@
 
 - [הבנת הנקרא באנגלית לכיתה ט](https://shohamtal.github.io/homework-site/english/reading-grade-9/): מאמר מידע, כתבה, מאמר דעה וסיפור: ארבעה קטעי unseen מקוריים לכיתה ט, עם passive, תנאים ומילות קישור, הקראה ושאלות פתוחות. הסבר, צלילים ותרגול.
 
+## אנגלית כיתה י · דקדוק
+
+- [Past Perfect באנגלית: had done](https://shohamtal.github.io/homework-site/english/past-perfect/): When I arrived, the film had started: מה קרה לפני משהו אחר בעבר. had עם צורה שלישית, ובניית רצף אירועים. הסבר, צלילים ותרגול עם רמזים לכיתה י.
+- [Third Conditional באנגלית](https://shohamtal.github.io/homework-site/english/third-conditional/): If I had studied, I would have passed: תנאי על עבר שלא קרה. החרטה, הדמיון והמבנה המלא. הסבר, צלילים ותרגול עם רמזים לכיתה י.
+- [Phrasal Verbs באנגלית: look up, give up](https://shohamtal.github.io/homework-site/english/phrasal-verbs/): פעלים עם מילת יחס שמשנים משמעות: look after, give up, find out. לומדים לפי נושאים ושומעים במשפטים. הסבר, צלילים ותרגול עם רמזים לכיתה י.
+
+## אנגלית כיתה י · בגרות: קריאה, כתיבה ואוצר מילים
+
+- [Unseen באנגלית לכיתה י: הבנת הנקרא לבגרות](https://shohamtal.github.io/homework-site/english/unseen-grade-10/): קטעי unseen מקוריים ברמת כיתה י, עם שאלות בסגנון בגרות: מטרת הכותב, הסקה, מילות התייחסות ושאלות פתוחות. הסבר, צלילים ותרגול עם רמזים לכיתה י.
+- [Opinion Essay באנגלית: חיבור טיעון](https://shohamtal.github.io/homework-site/english/opinion-essay/): מביעים עמדה ומנמקים: פתיחה עם טענה, שתי סיבות עם דוגמאות, טיעון נגדי וסיכום. בונים חיבור שלם עם משוב. הסבר, צלילים ותרגול עם רמזים לכיתה י.
+- [אוצר מילים באנגלית לבגרות](https://shohamtal.github.io/homework-site/english/vocabulary-bagrut/): מילים שחוזרות בבגרות לפי משפחות: prefixes, suffixes, word families ומילים מבלבלות. שומעים, ממיינים ומתרגלים. הסבר, צלילים ותרגול עם רמזים לכיתה י.
+
 ## עמודים נוספים
 
 - [מתמטיקה](https://shohamtal.github.io/homework-site/math/): הסברים, מעבדות אינטראקטיביות ותרגול עם רמזים במתמטיקה לפי תוכנית הלימודים, מכיתה א ועד כיתה יב. בחרו כיתה.
@@ -471,7 +483,7 @@
 - [מתמטיקה כיתה י](https://shohamtal.github.io/homework-site/math/grade-10/): כל נושאי המתמטיקה לכיתה י: אי-שוויון ריבועי, פונקציות, הנדסה אנליטית, טריגונומטריה, סדרות והסתברות. הסבר, מעבדה ותרגול עם רמזים.
 - [מתמטיקה כיתה יא](https://shohamtal.github.io/homework-site/math/grade-11/): כל נושאי המתמטיקה לכיתה יא: נגזרות, חקירת פונקציות, בעיות קיצון, סדרה הנדסית, טריגונומטריה והתפלגויות. הסבר, מעבדה ותרגול עם רמזים.
 - [מתמטיקה כיתה יב](https://shohamtal.github.io/homework-site/math/grade-12/): כל נושאי המתמטיקה לכיתה יב: אינטגרלים, מעריכיות ולוגריתמים, גדילה ודעיכה, וקטורים, מרוכבים ואינדוקציה. הסבר, מעבדה ותרגול עם רמזים.
-- [אנגלית](https://shohamtal.github.io/homework-site/english/): אנגלית לכיתות א עד ט עם שירים, צלילים ומשחקים: מילים ראשונות, אותיות, משפטים, זמנים, קריאה וכתיבה. בלי דפי עבודה.
+- [אנגלית](https://shohamtal.github.io/homework-site/english/): אנגלית לכיתות א עד יב עם שירים, צלילים ומשחקים: מילים ראשונות, אותיות, משפטים, זמנים, קריאה, כתיבה והכנה לבגרות.
 - [אנגלית כיתה א](https://shohamtal.github.io/homework-site/english/grade-1/): אנגלית לכיתה א בשירים וצלילים: שיר ה-ABC, האותיות, ברכות, צבעים, מספרים 1–10, חלקי הגוף, חיות, משפחה ופעולות. להקשיב, לשיר ולשחק.
 - [אנגלית כיתה ב](https://shohamtal.github.io/homework-site/english/grade-2/): אנגלית לכיתה ב בשירים וצלילים: היכרות, מספרים 11–20, אוכל, בגדים, חפצים בכיתה, רגשות, מזג אוויר, ימי השבוע, צלילים וחרוזים.
 - [אנגלית כיתה ג](https://shohamtal.github.io/homework-site/english/grade-3/): אנגלית לכיתה ג: אותיות גדולות וקטנות, צלילי האותיות, תנועות קצרות, קריאת מילים קצרות, sh ch th ומשפטים ראשונים.
@@ -481,4 +493,5 @@
 - [אנגלית כיתה ז](https://shohamtal.github.io/homework-site/english/grade-7/): אנגלית לכיתה ז עם צלילים ותרגול: Past Simple לא רגיל, will ו-going to, השוואות, much ו-many, הבנת הנקרא וכתיבת פסקה.
 - [אנגלית כיתה ח](https://shohamtal.github.io/homework-site/english/grade-8/): אנגלית לכיתה ח עם צלילים ותרגול: Present Perfect, Past Progressive, must ו-should, First Conditional, מילות יחס, קריאה וחיבור.
 - [אנגלית כיתה ט](https://shohamtal.github.io/homework-site/english/grade-9/): אנגלית לכיתה ט עם צלילים ותרגול: Passive, Second Conditional, Reported Speech, Relative Clauses, ing ו-to, מילות קישור וקריאה.
+- [אנגלית כיתה י](https://shohamtal.github.io/homework-site/english/grade-10/): אנגלית לכיתה י: Past Perfect, Third Conditional, phrasal verbs, unseen לבגרות, חיבור טיעון ואוצר מילים לבגרות. הסבר, צלילים ותרגול.
 - [בקשות נושאים והצבעות](https://shohamtal.github.io/homework-site/requests/): חסר לכם נושא? בקשו אותו או הצביעו לנושא שמישהו אחר כבר ביקש. הנושאים עם הכי הרבה קולות עולים לאתר ראשונים.
