@@ -39,7 +39,7 @@
     if(b.dataset.grade&&toc&&total){
       const d=document.createElement('div'); d.className='prog-sum';
       d.innerHTML='<p><strong>ההתקדמות שלכם בכיתה הזאת:</strong> סיימתם '+done+' מתוך '+total+' נושאים</p><div class="cards-bar" role="progressbar" aria-valuemin="0" aria-valuemax="'+total+'" aria-valuenow="'+done+'"><span style="width:'+(done/total*100)+'%"></span></div>';
-      toc.before(d);
+      toc.after(d); /* below the content, so nothing above it moves (CLS) */
     }
     /* subject and home tiles: "✓ 3" on each grade or subject that has finished topics */
     document.querySelectorAll('#grades a.subject, #subjects a.subject').forEach(a=>{
@@ -57,15 +57,15 @@
       const recent=ids.filter(k=>topicOf[k]&&p[k].t&&!p[k].done&&(!subj||topicOf[k].s.id===subj)).sort((x,y)=>p[y].t-p[x].t).slice(0,3);
       if(recent.length&&!document.querySelector('.prog-recent')){
         const sec=document.createElement('section'); sec.className='card prog-recent';
-        sec.innerHTML='<h2>ממשיכים מאיפה שעצרתם</h2><ul class="prog-list"></ul>';
+        sec.innerHTML='<p class="prog-h">ממשיכים מאיפה שעצרתם</p><ul class="prog-list"></ul>';
         recent.forEach(k=>{ const e=topicOf[k], li=document.createElement('li'), a=document.createElement('a');
           a.href=root+k+'/'; a.textContent=e.t.title; li.append(a);
           const sm=document.createElement('small'); sm.textContent=' · '+(S.subjects.length>1&&!subj?e.s.name+' · ':'')+e.g; li.append(sm);
           sec.querySelector('ul').append(li); });
-        anchor.closest('section').before(sec);
+        anchor.closest('section').after(sec);
       }
     }
-    tools(b.dataset.grade?toc:anchor||toc);
+    tools(b.dataset.grade?document.querySelector('.prog-sum')||toc:anchor||toc);
   }
   /* reset, and a backup file so progress can move to another device or browser */
   function tools(where){

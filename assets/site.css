@@ -193,7 +193,7 @@ h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
 .done-mark{color:var(--green); font-weight:800}
 .progress-reset{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--muted)}
 .prog-mark{color:var(--blue); font-weight:800}
-.prog-sum{margin:0 0 14px} .prog-sum p{margin:0 0 6px}
+.prog-sum{margin:14px 0 0} .prog-h{font-family:var(--f-display); font-weight:700; font-size:1.25rem; margin:0 0 6px} .prog-sum p{margin:0 0 6px}
 .tile-prog{color:var(--green); font-weight:700}
 .prog-list{margin:0; padding-inline-start:1.2em} .prog-list li{margin:4px 0} .prog-list small{color:var(--muted)}
 
