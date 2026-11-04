@@ -150,11 +150,16 @@ function faqOf(html) {
   return [...sec[1].matchAll(/<h3>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/g)].map(m => ({q: text(m[1]), a: text(m[2])}));
 }
 
-/* "כדאי לחזור גם על": related topics, then prev/next */
+/* "כדאי לחזור גם על": related topics; "בכיתה X ממשיכים ל": later-grade topics that list this one as related */
 function related(pg, root) {
-  const all = pg.subj.chapters.flatMap(c => c.topics), rel = (pg.topic.related || []).map(r => all.find(t => t.slug === r)).filter(Boolean);
-  if (!rel.length) return '';
-  return `<p class="related text"><strong>כדאי לחזור גם על:</strong> ${rel.map(t => `<a href="${root}${pg.subj.id}/${t.slug}/">${t.title}</a>`).join(' · ')}</p>\n`;
+  const chs = pg.subj.chapters, all = chs.flatMap(c => c.topics), link = t => `<a href="${root}${pg.subj.id}/${t.slug}/">${t.title}</a>`;
+  const gi = g => pg.subj.grades.findIndex(x => x.name === g), here = gi(pg.chapter.grade);
+  const rel = (pg.topic.related || []).map(r => all.find(t => t.slug === r)).filter(Boolean);
+  const fwd = chs.filter(c => gi(c.grade) > here).flatMap(c => c.topics.filter(t => (t.related || []).includes(pg.topic.slug)).map(t => ({t, g: c.grade})));
+  let out = '';
+  if (rel.length) out += `<p class="related text"><strong>כדאי לחזור גם על:</strong> ${rel.map(link).join(' · ')}</p>\n`;
+  for (const g of [...new Set(fwd.map(f => f.g))]) out += `<p class="related text"><strong>ב${g} ממשיכים ל:</strong> ${fwd.filter(f => f.g === g).map(f => link(f.t)).join(' · ')}</p>\n`;
+  return out;
 }
 
 function region(html, name, content, file) {

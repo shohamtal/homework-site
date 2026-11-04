@@ -1059,7 +1059,7 @@ window.SITE={
           ] },
         { id:'he-lashon-8', name:'לשון', grade:'כיתה ח',
           topics:[
-            { slug:'binyanim-vegzarot', related:['binyanim','gzarot'], title:'בניינים וגזרות: זיהוי וניתוח', aka:['בניינים וגזרות'],
+            { slug:'binyanim-vegzarot', related:['binyanim','gzarot'], title:'בניינים וגזרות: ניתוח מלא (מתקדם)', aka:['בניינים וגזרות'],
               desc:'מנתחים פועל עד הסוף: שורש, בניין, גזרה, זמן וגוף. כולל נחי ל"י, נחי ע"ו וכפולים.',
               tags:['ניתוח פועל','נחי ל"י','נחי ע"ו'] },
             { slug:'tzerufim', related:['smichut'], title:'צירופים', aka:['צירופים'],
@@ -1176,7 +1176,7 @@ window.SITE={
             { slug:'algorithms-recipes', related:['sequence-puzzles','if-then-riddles'], title:'אלגוריתם הוא מתכון', aka:['אלגוריתמים כמתכונים'],
               desc:'מה הופך הוראות לאלגוריתם: סדר ברור, צעדים מדויקים וסוף. כותבים אלגוריתם להכנת כריך ובודקים אם מחשב היה מבין.',
               tags:['אלגוריתם','דיוק','צעדים'] },
-            { slug:'binary-light', title:'כן או לא: שפת המחשב', aka:['שפת המחשב: 0 ו-1'],
+            { slug:'binary-light', title:'בינארי: כן או לא, שפת המחשב', aka:['שפת המחשב: 0 ו-1'],
               desc:'מנורה דולקת או כבויה, 1 או 0: מגלים איך מחשב סופר ושומר מידע רק בעזרת שני מצבים.',
               tags:['בינארי','0 ו-1','ביט'] }
           ] },
