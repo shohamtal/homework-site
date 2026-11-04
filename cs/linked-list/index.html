@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>רשימה מקושרת בפייתון · מדעי המחשב כיתה יא · מירי</title>
+<meta name="description" content="רשימה מקושרת בפייתון: מחלקת Node עם value ו-next, מעבר על השרשרת, הוספה ומחיקה של חוליה, והשוואה לרשימה רגילה. מעבדה עם חיצים ותרגול לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/linked-list/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="רשימה מקושרת בפייתון · מדעי המחשב כיתה יא · מירי">
+<meta property="og:description" content="רשימה מקושרת בפייתון: מחלקת Node עם value ו-next, מעבר על השרשרת, הוספה ומחיקה של חוליה, והשוואה לרשימה רגילה. מעבדה עם חיצים ותרגול לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/linked-list/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/cs/grade-11/"},{"@type":"ListItem","position":4,"name":"מחלקות ומבני נתונים","item":"https://shohamtal.github.io/homework-site/cs/grade-11/#cs-hs-11"},{"@type":"ListItem","position":5,"name":"רשימה מקושרת: חוליות ומצביעים","item":"https://shohamtal.github.io/homework-site/cs/linked-list/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זו רשימה מקושרת?","acceptedAnswer":{"@type":"Answer","text":"מבנה נתונים שבנוי משרשרת של חוליות. בכל חוליה יש ערך ומצביע לחוליה הבאה, ובחוליה האחרונה המצביע הוא None. המשתנה head מצביע על החוליה הראשונה. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין רשימה מקושרת לרשימה רגילה בפייתון?","acceptedAnswer":{"@type":"Answer","text":"ברשימה של פייתון מגיעים מיד לכל מקום לפי אינדקס, אבל הוספה בהתחלה מזיזה את כל הערכים. ברשימה מקושרת הוספה ומחיקה הן רק שינוי של חיצים, אבל כדי להגיע לחוליה צריך ללכת אליה מ-head."}},{"@type":"Question","name":"למה מקבלים AttributeError: 'NoneType' object has no attribute 'next'?","acceptedAnswer":{"@type":"Answer","text":"כי הלכתם צעד אחד יותר מדי. אחרי החוליה האחרונה המשתנה הוא None, ול-None אין next. בדקו את התנאי של הלולאה, או כמה צעדים אתם הולכים. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"רשימה מקושרת: חוליות ומצביעים","description":"רשימה מקושרת בפייתון: מחלקת Node עם value ו-next, מעבר על השרשרת, הוספה ומחיקה של חוליה, והשוואה לרשימה רגילה. מעבדה עם חיצים ותרגול לכיתה יא.","url":"https://shohamtal.github.io/homework-site/cs/linked-list/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"רשימה מקושרת: חוליות ומצביעים","teaches":"רשימה מקושרת: חוליות ומצביעים","keywords":"חוליה, next, שרשרת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:10px auto 0; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace tr.now td{background:var(--hl); font-weight:800}
+.trace tr.later td{color:var(--muted); opacity:.55}
+.num{font-family:var(--f-math); font-size:1.1rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, Menlo, Consolas, monospace; width:14em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.pair{display:grid; grid-template-columns:minmax(0,1fr); gap:6px}
+.pair pre.code{margin:0; font-size:.88rem}
+.pair .tag{font-weight:800; font-size:.9rem; margin-bottom:2px}
+.pair .bad{color:var(--err)} .pair .good{color:var(--ok)}
+.q-code{max-width:460px; margin:0 auto 10px}
+</style>
+<style>
+.chain{direction:ltr; margin:8px 0 12px; min-height:90px}
+.crow{display:flex; flex-wrap:wrap; align-items:flex-end; gap:4px 0; justify-content:center; margin-bottom:8px}
+.cn{display:flex; flex-direction:column; align-items:center}
+.cn .pt{font:700 .78rem ui-monospace, Menlo, Consolas, monospace; color:var(--line); min-height:1.1em; white-space:nowrap}
+.nd{display:flex; border:2px solid var(--border); border-radius:8px; background:var(--card); box-shadow:2px 2px 0 var(--hard); font:1.1rem ui-monospace, Menlo, Consolas, monospace}
+.nd .v{padding:4px 8px; border-right:2px solid var(--border)}
+.nd .p{padding:4px 5px; color:var(--muted)}
+.cn.on .nd{background:var(--hl)}
+.cn.gone .nd{opacity:.45; border-style:dashed; box-shadow:none}
+.ar{font:1.1rem ui-monospace, Menlo, Consolas, monospace; padding:0 2px 6px; color:var(--ink)}
+.nn{font:1rem ui-monospace, Menlo, Consolas, monospace; color:var(--muted); padding-bottom:8px}
+.crow .cap{font:.8rem var(--f-body); color:var(--muted); direction:rtl; padding:0 8px 10px}
+.cmp{border-collapse:collapse; width:100%; font-size:.95rem; margin-top:8px}
+.cmp td,.cmp th{border-bottom:1.5px solid var(--soft); padding:6px 4px; text-align:right; vertical-align:top}
+.cmp th{color:var(--muted)}
+.pt-vars th{width:auto; overflow-wrap:normal}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="linked-list">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/#cs-hs-11">מחלקות ומבני נתונים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">רשימה מקושרת: חוליות ומצביעים</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · מחלקות ומבני נתונים</div>
+  <h1>רשימה מקושרת <span class="slogan">חוליות ומצביעים</span></h1>
+  <p class="lead">רשימה מקושרת היא שרשרת של חוליות. בכל חוליה יש ערך, ומצביע לחוליה הבאה. כדי להגיע לחוליה השלישית הולכים לאורך השרשרת, צעד אחרי צעד. כאן מוסיפים ומוחקים חוליות, ורואים בדיוק אילו חיצים משתנים. החוליה היא עצם, אז כדאי לחזור קודם על <a href="../classes-objects/">מחלקות ועצמים</a>. אחר כך אפשר להמשיך ל<a href="../binary-trees/">עצים בינאריים</a>, שם לכל חוליה יש שני מצביעים.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <pre class="code" dir="ltr" lang="en">class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+head = Node(4)
+head.next = Node(7)          # 4 -> 7 -> None</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>חוליה ו-head</h3>
+      <p>לכל חוליה יש <code dir="ltr" lang="en">value</code> ו-<code dir="ltr" lang="en">next</code>. המשתנה <code dir="ltr" lang="en">head</code> מצביע על החוליה הראשונה. ב-next של האחרונה יש <code dir="ltr" lang="en">None</code>: כאן השרשרת נגמרת.</p>
+    </div>
+    <div class="mini">
+      <h3>מעבר על השרשרת</h3>
+      <p>מתחילים ב-head, ובכל צעד עוברים ל-<code dir="ltr" lang="en">node.next</code>, עד שמגיעים ל-None. אין קפיצה ישירה לחוליה מספר 5.</p>
+    </div>
+    <div class="mini">
+      <h3>הוספה ומחיקה</h3>
+      <p>מוסיפים חוליה בשינוי של שני חיצים, ומוחקים בשינוי של חץ אחד: מדלגים מעליה. אין צורך להזיז את כל שאר הערכים.</p>
+    </div>
+  </div>
+  <table class="cmp" aria-label="השוואה לרשימה של פייתון">
+    <tr><th>פעולה</th><th>רשימה של פייתון</th><th>רשימה מקושרת</th></tr>
+    <tr><td>להגיע לערך במקום k</td><td>מיד: <code dir="ltr" lang="en">a[k]</code></td><td>הולכים k צעדים מ-head</td></tr>
+    <tr><td>להוסיף בהתחלה</td><td>כל הערכים זזים מקום אחד</td><td>מיד: שני חיצים</td></tr>
+    <tr><td>למחוק מהאמצע, כשכבר עומדים שם</td><td>כל הערכים שאחריו זזים</td><td>מיד: חץ אחד</td></tr>
+  </table>
+  <div class="callout"><strong>לזכור:</strong> בהוספה, קודם מחברים את החוליה החדשה להמשך השרשרת, ורק אחר כך מכוונים אליה את החץ הקודם. בסדר ההפוך החלק שאחריה הולך לאיבוד.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מזיזים חיצים</h2></div>
+  <p class="text">בהתחלה השרשרת היא <bdi dir="ltr">4 → 7 → 9</bdi>. בחרו פעולה, ערך ומקום. לחצו "שורה הבאה" וראו את החוליות והחיצים משתנים. שמות המשתנים מופיעים מעל החוליה שהם מצביעים עליה.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sO"><span>פעולה</span><span id="sOv"></span></label>
+      <input type="range" id="sO" min="0" max="2" step="1" value="1">
+      <label class="slider" for="sV"><span>הערך של החוליה החדשה</span><span class="eq" id="sVv"></span></label>
+      <input type="range" class="hl" id="sV" min="1" max="20" step="1" value="5">
+      <label class="slider" for="sP"><span>כמה צעדים cur הולך מ-head</span><span class="eq" id="sPv"></span></label>
+      <input type="range" class="blue" id="sP" min="0" max="3" step="1" value="1">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="0,1,0">הוספה בהתחלה</button>
+          <button type="button" data-p="1,5,1">הוספה באמצע</button>
+          <button type="button" data-p="1,12,2">הוספה בסוף</button>
+          <button type="button" data-p="2,5,0">מחיקה מהאמצע</button>
+          <button type="button" data-p="1,5,3">יותר מדי צעדים</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chain" id="chain" aria-label="השרשרת"></div>
+  <div id="labPT"></div>
+  <h3 style="margin-top:18px">הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הסדר בהוספה</h3>
+      <p>אם קודם מכוונים את cur.next לחוליה החדשה, כבר אין דרך להגיע לחוליה שהייתה אחריו.</p>
+      <div class="pair"><div><p class="tag bad">✗ ההמשך אבד</p><pre class="code" dir="ltr" lang="en">cur.next = new
+new.next = cur.next</pre></div><div><p class="tag good">✓ קודם מחברים</p><pre class="code" dir="ltr" lang="en">new.next = cur.next
+cur.next = new</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>הולכים מעבר לסוף</h3>
+      <p>אחרי החוליה האחרונה מגיעים ל-None. ל-None אין next, ומקבלים AttributeError.</p>
+      <div class="pair"><div><p class="tag bad">✗ AttributeError</p><pre class="code" dir="ltr" lang="en">while True:
+    node = node.next</pre></div><div><p class="tag good">✓ עוצרים ב-None</p><pre class="code" dir="ltr" lang="en">while node is not None:
+    node = node.next</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מאבדים את head</h3>
+      <p>אם עוברים על השרשרת עם head עצמו, בסוף head הוא None, וכל השרשרת אבדה. משתמשים במשתנה עזר.</p>
+      <div class="pair"><div><p class="tag bad">✗ head נהרס</p><pre class="code" dir="ltr" lang="en">while head is not None:
+    head = head.next</pre></div><div><p class="tag good">✓ משתנה עזר</p><pre class="code" dir="ltr" lang="en">node = head
+while node is not None:
+    node = node.next</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מחיקת החוליה הראשונה</h3>
+      <p>לחוליה הראשונה אין חוליה לפניה. כדי למחוק אותה מזיזים את head עצמו.</p>
+      <div class="pair"><div><p class="tag bad">✗ מוחק את השנייה</p><pre class="code" dir="ltr" lang="en">head.next = head.next.next</pre></div><div><p class="tag good">✓ מוחק את הראשונה</p><pre class="code" dir="ltr" lang="en">head = head.next</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: בונים מההתחלה וסוכמים</h2></div>
+  <p class="text">מכניסים את 3, 8, 5 לשרשרת, כל אחד <strong>בהתחלה</strong>. אחר כך עוברים על השרשרת וסוכמים. שימו לב לסדר שיוצא: הוספה בהתחלה הופכת את הסדר.</p>
+  <div class="stepper"><div class="chain" id="exChain"></div><div id="exPT"></div></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code q-code" id="prQ" dir="ltr" lang="en"></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn"><input id="prN" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זו רשימה מקושרת?</h3>
+    <p>מבנה נתונים שבנוי משרשרת של חוליות. בכל חוליה יש ערך ומצביע לחוליה הבאה, ובחוליה האחרונה המצביע הוא None. המשתנה head מצביע על החוליה הראשונה. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין רשימה מקושרת לרשימה רגילה בפייתון?</h3>
+    <p>ברשימה של פייתון מגיעים מיד לכל מקום לפי אינדקס, אבל הוספה בהתחלה מזיזה את כל הערכים. ברשימה מקושרת הוספה ומחיקה הן רק שינוי של חיצים, אבל כדי להגיע לחוליה צריך ללכת אליה מ-head.</p>
+    <h3>למה מקבלים AttributeError: 'NoneType' object has no attribute 'next'?</h3>
+    <p>כי הלכתם צעד אחד יותר מדי. אחרי החוליה האחרונה המשתנה הוא None, ול-None אין next. בדקו את התנאי של הלולאה, או כמה צעדים אתם הולכים. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/classes-objects/">מחלקות ועצמים בפייתון</a> · <a href="../../cs/stack-queue/">מחסנית ותור</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/stack-queue/"><small>→ הנושא הקודם</small>מחסנית ותור</a><a class="next" href="../../cs/binary-trees/"><small>הנושא הבא ←</small>עצים בינאריים ועץ חיפוש</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const C=s=>`<code dir="ltr" lang="en">${s}</code>`;
+/*GEN*/
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const NODE='class Node:\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n';
+/* a small heap of nodes: N[id]={v,n}; pointers P[name]=id or null */
+function world(){
+  const N=[], P={}, other={};
+  return {N,P,other,
+    mk(v){ N.push({v,n:null}); return N.length-1; },
+    vars(){ const o={}; Object.keys(P).forEach(k=>{ const id=P[k]; if(id===null) o[k]=null; else o[k+'.value']=N[id].v; }); return Object.assign(o,other); },
+    viz(hot){ return {N:N.map(x=>({...x})),P:{...P},hot}; }};
+}
+const ERR=(line,src)=>`Traceback (most recent call last):\n  File "main.py", line ${line}, in <module>\n    ${src}\nAttributeError: 'NoneType' object has no attribute 'next'\n`;
+function buildLab(op,V,Pn){
+  const ops=[[`new = Node(${V})`,'new.next = head','head = new'],
+    [`new = Node(${V})`,'cur = head',`for i in range(${Pn}):`,'    cur = cur.next','new.next = cur.next','cur.next = new'],
+    ['cur = head',`for i in range(${Pn}):`,'    cur = cur.next','cur.next = cur.next.next']][op];
+  const L0=9, tail=L0+ops.length;
+  const code=NODE+'\nhead = Node(4)\nhead.next = Node(7)\nhead.next.next = Node(9)\n'+ops.join('\n')+'\nnode = head\nwhile node is not None:\n    print(node.value, end=" -> ")\n    node = node.next\nprint("None")';
+  const W=world(), steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה".',viz:W.viz()}]; let out='', err=false;
+  const push=(line,note,hot)=>steps.push({line,vars:W.vars(),out,note,viz:W.viz(hot)});
+  const N=W.N, P=W.P;
+  push(1,'מגדירים את המחלקה Node: לכל חוליה value ו-next.');
+  const a=W.mk(4); P.head=a; push(6,'head מצביע על חוליה חדשה עם 4. ה-next שלה None.',a);
+  const b=W.mk(7); N[a].n=b; push(7,'head.next מצביע על חוליה עם 7.',b);
+  const c=W.mk(9); N[b].n=c; push(8,'head.next.next מצביע על חוליה עם 9. השרשרת: 4 → 7 → 9.',c);
+  let ln=L0;
+  if(op===0){
+    const x=W.mk(V); P.new=x; push(ln++,`יוצרים חוליה חדשה עם ${V}. היא עוד לא מחוברת לשרשרת.`,x);
+    N[x].n=P.head; push(ln++,'new.next מצביע על החוליה ש-head מצביע עליה. עכשיו החדשה מחוברת להמשך.',x);
+    P.head=x; push(ln++,`head עובר לחוליה החדשה. ${V} הוא עכשיו הראשון. רק שני חיצים השתנו.`,x);
+  } else {
+    if(op===1){ const x=W.mk(V); P.new=x; push(ln++,`יוצרים חוליה חדשה עם ${V}.`,x); }
+    P.cur=P.head; push(ln++,'cur מתחיל ב-head.',P.cur);
+    const forL=ln++, bodyL=ln++;
+    for(let i=0;i<Pn;i++){
+      W.other.i=i; push(forL,`צעד ${i+1} מתוך ${Pn}.`);
+      if(P.cur===null){ out+=ERR(bodyL,'cur = cur.next'); err=true; push(bodyL,'שגיאה! cur כבר None, ול-None אין next.'); break; }
+      P.cur=N[P.cur].n; push(bodyL,P.cur===null?'cur עבר מעבר לחוליה האחרונה. עכשיו cur הוא None!':`cur זז לחוליה הבאה, עם ${N[P.cur].v}.`,P.cur);
+    }
+    if(!err&&!Pn) push(forL,'range(0) ריק: cur נשאר ב-head.',P.cur);
+    if(!err&&op===1){
+      if(P.cur===null){ out+=ERR(ln,'new.next = cur.next'); err=true; push(ln,'שגיאה! cur הוא None: הלכנו יותר צעדים ממה שיש חוליות. ל-None אין next, ופייתון עוצרת עם AttributeError.'); }
+      else{
+        const x=P.new; N[x].n=N[P.cur].n; push(ln++,`קודם: new.next מצביע על מה שאחרי cur (${N[x].n===null?'None':N[N[x].n].v}).`,x);
+        N[P.cur].n=x; push(ln++,`ורק אז: cur.next מצביע על החדשה. ${V} נכנס אחרי ${N[P.cur].v}.`,x);
+      }
+    }
+    if(!err&&op===2){
+      if(P.cur===null){ out+=ERR(ln,'cur.next = cur.next.next'); err=true; push(ln,'שגיאה! cur הוא None, ול-None אין next.'); }
+      else if(N[P.cur].n===null){ out+=ERR(ln,'cur.next = cur.next.next'); err=true; push(ln,`שגיאה! cur הוא החוליה האחרונה (${N[P.cur].v}). cur.next הוא None, ול-None אין next. אין חוליה אחרי האחרונה למחוק.`); }
+      else{ const d=N[P.cur].n; N[P.cur].n=N[d].n; push(ln++,`מדלגים על החוליה עם ${N[d].v}: cur.next מצביע ישר על מה שאחריה. היא כבר לא בשרשרת.`,P.cur); }
+    }
+  }
+  if(!err){
+    let t=tail; P.node=P.head; push(t,'node מתחיל ב-head. עוברים על השרשרת.',P.node);
+    while(true){
+      if(P.node===null){ push(t+1,'node הוא None: הגענו לסוף. יוצאים מהלולאה.'); break; }
+      push(t+1,`node לא None, ממשיכים.`,P.node);
+      out+=N[P.node].v+' -> '; push(t+2,`מדפיסים ${N[P.node].v} ואחריו חץ.`,P.node);
+      P.node=N[P.node].n; push(t+3,P.node===null?'node.next הוא None.':`node עובר ל-${N[P.node].v}.`,P.node);
+    }
+    out+='None\n'; push(t+4,'מדפיסים None בסוף השרשרת.');
+  }
+  return {code,steps,noVars:err};
+}
+const PRESETS=[[0,1,0],[1,5,1],[1,12,2],[2,5,0],[1,5,3]];
+function buildEx(){
+  const code=NODE+'\nhead = None\nfor v in [3, 8, 5]:\n    new = Node(v)\n    new.next = head\n    head = new\ntotal = 0\nnode = head\nwhile node is not None:\n    total = total + node.value\n    node = node.next\nprint("total:", total)';
+  const W=world(), N=W.N, P=W.P, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה".',viz:W.viz()}]; let out='';
+  const push=(line,note,hot)=>steps.push({line,vars:W.vars(),out,note,viz:W.viz(hot)});
+  push(1,'מגדירים את Node.');
+  P.head=null; push(6,'השרשרת ריקה: head הוא None.');
+  [3,8,5].forEach(v=>{
+    W.other.v=v; push(7,`v = ${v}.`);
+    const x=W.mk(v); P.new=x; push(8,`חוליה חדשה עם ${v}.`,x);
+    N[x].n=P.head; push(9,P.head===null?'new.next = head, שהוא None.':`new.next מצביע על הראש הנוכחי, ${N[P.head].v}.`,x);
+    P.head=x; push(10,`head עובר ל-${v}. ${v} הוא עכשיו הראשון.`,x);
+  });
+  W.other.total=0; push(11,'השרשרת: 5 → 8 → 3. הסדר הפוך מסדר ההכנסה. total מתחיל ב-0.');
+  P.node=P.head; push(12,'node מתחיל ב-head.',P.node);
+  while(P.node!==null){
+    push(13,'node לא None.',P.node);
+    const t=W.other.total; W.other.total=t+N[P.node].v; push(14,`total = ${t} + ${N[P.node].v} = ${W.other.total}.`,P.node);
+    P.node=N[P.node].n; push(15,P.node===null?'node.next הוא None.':`node עובר ל-${N[P.node].v}.`,P.node);
+  }
+  push(13,'node הוא None. יוצאים.');
+  out='total: 16\n'; push(16,'הסכום הוא 16.');
+  return {code,steps};
+}
+function LABCASES(){
+  const cs=[]; for(let op=0;op<3;op++) for(let p=0;p<=3;p++) for(const V of [1,5,20]) cs.push(Object.assign(buildLab(op,V,p),{name:[op,V,p].join(',')}));
+  cs.push(Object.assign(buildEx(),{name:'example'}));
+  return cs;
+}
+const NODE2='class Node:\n    def __init__(self, value, next=None):\n        self.value = value\n        self.next = next\n';
+function rvals(k){ const a=[]; while(a.length<k){ const x=ri(1,30); if(!a.includes(x)) a.push(x); } return a; }
+const nest=a=>a.reduceRight((s,x)=>s?`Node(${x}, ${s})`:`Node(${x})`,'');
+function genQ(){
+  const kind=pick(['walk','front','after','del','count']);
+  if(kind==='walk'){
+    const a=rvals(4), k=ri(1,3), ans=a[k];
+    return {kind,vk:'last',ans,code:NODE2+`\nhead = ${nest(a)}\nprint(head${'.next'.repeat(k)}.value)`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a[k-1],'head עצמו הוא החוליה הראשונה. כל .next הוא צעד אחד קדימה.'],[a[k+1],'ספרו את ה-.next שוב.']].filter(d=>d[0]!==undefined),
+      hints:['Node(a, Node(b)) פירושו: חוליה עם a, וה-next שלה הוא חוליה עם b.',`השרשרת: ${a.join(' → ')}. כמה פעמים כתוב .next?`],
+      sol:`השרשרת: ${a.join(' → ')}. ${k} צעדי next מ-head מגיעים ל-${ans}.`};
+  }
+  if(kind==='front'){
+    const a=rvals(3);
+    return {kind,vk:'last',ans:a[2],code:NODE2+`\nhead = None\nfor v in [${a.join(', ')}]:\n    head = Node(v, head)\nprint(head.value)`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a[0],'כל חוליה חדשה נכנסת בהתחלה, לפני head. מי נכנס אחרון?']],
+      hints:['Node(v, head) היא חוליה חדשה שה-next שלה הוא הראש הקודם.',`אחרי הסיבוב הראשון: ${a[0]}. אחרי השני: ${a[1]} → ${a[0]}.`],
+      sol:`כל ערך נכנס בהתחלה. השרשרת בסוף: ${a[2]} → ${a[1]} → ${a[0]}. head.value הוא ${a[2]}.`};
+  }
+  if(kind==='after'){
+    const a=rvals(3), x=ri(31,50);
+    return {kind,vk:'last',ans:x,code:NODE2+`\nhead = ${nest(a)}\nhead.next = Node(${x}, head.next)\nprint(head.next.value)`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a[1],`החוליה החדשה נכנסה בין ${a[0]} ל-${a[1]}.`],[a[0],'head לא השתנה, אבל head.next כן.']],
+      hints:['Node(x, head.next): חוליה חדשה שמצביעה על מה שהיה אחרי head.',`השרשרת אחרי השינוי: ${a[0]} → ${x} → ${a[1]} → ${a[2]}.`],
+      sol:`החוליה עם ${x} נכנסת אחרי head. השרשרת: ${a[0]} → ${x} → ${a[1]} → ${a[2]}, ו-head.next.value הוא ${x}.`};
+  }
+  if(kind==='del'){
+    const a=rvals(4);
+    return {kind,vk:'last',ans:a[2],code:NODE2+`\nhead = ${nest(a)}\nhead.next = head.next.next\nprint(head.next.value)`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a[1],`הדילוג מחק את ${a[1]} מהשרשרת.`],[a[3],'מדלגים רק על חוליה אחת.']],
+      hints:['head.next.next הוא החוליה השלישית.',`אחרי השורה, head.next מצביע ישר על ${a[2]}.`],
+      sol:`head.next מקבל את החוליה השלישית, ${a[2]}. החוליה עם ${a[1]} נמחקה מהשרשרת.`};
+  }
+  const a=rvals(ri(3,5)), add=ri(0,2), del=ri(0,1);
+  let lines=NODE2+`\nhead = ${nest(a)}\n`; for(let i=0;i<add;i++) lines+=`head = Node(${ri(31,50)}, head)\n`; if(del) lines+='head.next = head.next.next\n';
+  const ans=a.length+add-del;
+  return {kind,vk:'last',ans,code:lines+'count = 0\nnode = head\nwhile node is not None:\n    count = count + 1\n    node = node.next\nprint(count)',ask:'מה התוכנית מדפיסה?',
+    diag:[[a.length,'בדקו את השורות שמשנות את השרשרת לפני הספירה.'],[ans+1,'הלולאה נעצרת כש-node הוא None. None הוא לא חוליה.']].filter(d=>d[0]!==ans),
+    hints:['כמה חוליות יש בהתחלה? כל Node(..., head) מוסיף אחת, וכל דילוג מוריד אחת.',`בהתחלה ${a.length}, נוספו ${add}, נמחקו ${del}.`],
+    sol:`${a.length} חוליות בהתחלה, ועוד ${add}, פחות ${del}: ${ans}.`};
+}
+/*END*/
+
+function drawChain(el,st){
+  const z=st.viz, N=z.N, P=z.P, labels=id=>Object.keys(P).filter(k=>P[k]===id).join(' ');
+  if(!N.length){ el.innerHTML='<div class="crow"><span class="cap">עוד אין חוליות</span></div>'; return; }
+  const seen=new Set(), row=[]; let id=P.head;
+  while(id!==null&&id!==undefined&&!seen.has(id)){ seen.add(id); row.push(id); id=N[id].n; }
+  const nd=(i,gone)=>`<div class="cn${z.hot===i?' on':''}${gone?' gone':''}"><span class="pt">${labels(i)}</span><div class="nd"><span class="v">${N[i].v}</span><span class="p">${N[i].n===null?'∅':'•'}</span></div></div>`;
+  let h='<div class="crow">'+row.map(i=>nd(i)+'<span class="ar">→</span>').join('')+(P.head===undefined&&!row.length?'':'<span class="nn">None</span>')+'</div>';
+  const rest=N.map((_,i)=>i).filter(i=>!seen.has(i));
+  if(rest.length) h+='<div class="crow"><span class="cap">מחוץ לשרשרת:</span>'+rest.map(i=>nd(i,P.new!==i&&!labels(i))+(N[i].n===null?'':`<span class="ar">→ ${N[N[i].n].v}</span>`)).join('')+'</div>';
+  el.innerHTML=h;
+}
+function follow(el,steps,draw){ const f=()=>draw(steps[el.ptStep||0]); el.onclick=e=>{ if(e.target.closest('button')) f(); }; f(); }
+
+/* lab */
+const sO=$('sO'), sV=$('sV'), sP=$('sP'), OPN=['הוספה בהתחלה','הוספה אחרי cur','מחיקה של החוליה שאחרי cur'];
+function lab(){
+  const op=+sO.value, V=+sV.value, P=+sP.value;
+  $('sOv').textContent=OPN[op]; $('sVv').textContent=V; $('sPv').textContent=P;
+  sV.disabled=op===2; sP.disabled=op===0;
+  const cur=buildLab(op,V,P);
+  PT.mount($('labPT'),{code:cur.code,steps:cur.steps}); follow($('labPT'),cur.steps,s=>drawChain($('chain'),s));
+  $('labRun').value=cur.code;
+  const A=[4,7,9]; let h;
+  if(op===0) h=`<div>החוליה ${V} נכנסת לפני 4, ו-head עובר אליה. השרשרת: <bdi dir="ltr">${V} → 4 → 7 → 9</bdi>.</div><div>בפעולה הזו מספר הצעדים לא משנה.</div>`;
+  else if(op===1) h=P<=2?`<div>cur הולך ${P===1?'צעד אחד':P+' צעדים'} ומגיע ל-${A[P]}. ${V} נכנס אחריו: <bdi dir="ltr">${[...A.slice(0,P+1),V,...A.slice(P+1)].join(' → ')}</bdi>.</div>`
+    :`<div>אחרי 3 צעדים cur הוא None: יש רק 3 חוליות. בשורה 13 מקבלים ${C('AttributeError')}.</div>`;
+  else h=P<=1?`<div>cur מגיע ל-${A[P]}, ומדלגים על ${A[P+1]}: <bdi dir="ltr">${A.filter((_,i)=>i!==P+1).join(' → ')}</bdi>.</div><div>בפעולה הזו הערך של החוליה החדשה לא משנה.</div>`
+    :`<div>${P===2?'cur מגיע ל-9, החוליה האחרונה. אין אחריה חוליה למחוק':'cur הולך מעבר לסוף ונהיה None'}, ומקבלים ${C('AttributeError')}.</div>`;
+  $('labTxt').innerHTML=h;
+}
+[sO,sV,sP].forEach(x=>x.addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const p=b.dataset.p.split(','); sO.value=p[0]; sV.value=p[1]; sP.value=p[2]; lab(); });
+lab();
+
+/* worked example */
+const ex=buildEx(); PT.mount($('exPT'),{code:ex.code,steps:ex.steps}); follow($('exPT'),ex.steps,s=>drawChain($('exChain'),s));
+
+/* practice */
+let q=null, sel=-1, streak=0, solved=0;
+const norm=s=>String(s).replace(/[\s,]+/g,' ').trim();
+function newQ(){
+  q=genQ(); q.tries=0; q.h=0; sel=-1;
+  $('prAsk').textContent=q.ask; $('prQ').textContent=q.code; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prCh').hidden=!q.mc; $('prIn').hidden=!!q.mc;
+  if(q.mc){ $('prCh').innerHTML=q.mc.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="false" dir="ltr">${o}</button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); }); }
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let v;
+  if(q.mc){ if(sel<0){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; } v=norm(q.mc[sel]); }
+  else{ v=norm($('prN').value); if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; } }
+  if(v===norm(q.ans)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! התשובה היא <code dir="ltr" lang="en">${String(q.ans).replace(/</g,'&lt;')}</code>.</div>`; return; }
+  streak=0; q.tries++; streakTxt();
+  const d=(q.diag||[]).find(x=>norm(x[0])===v);
+  fb.innerHTML=`<div class="fb err">${d?d[1]:'עוד לא. עקבו אחרי הקוד שורה אחרי שורה ונסו שוב.'}</div>`;
+  if(q.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ q.h=Math.min(q.h+1,q.hints.length); $('prFb').innerHTML=`<div class="fb hint">${q.hints.slice(0,q.h).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${q.sol}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newQ;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newQ(); streakTxt();
+})();
+</script>
+</body>
+</html>

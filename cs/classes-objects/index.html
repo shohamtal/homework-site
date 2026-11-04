@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מחלקות ועצמים בפייתון · מדעי המחשב כיתה יא · מירי</title>
+<meta name="description" content="מחלקות בפייתון: class, __init__, self, תכונות ופעולות. בונים חשבון בנק עם הפקדה ומשיכה, ורואים שלכל עצם מצב משלו. מעבדה עם מעקב ותרגול לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/classes-objects/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מחלקות ועצמים בפייתון · מדעי המחשב כיתה יא · מירי">
+<meta property="og:description" content="מחלקות בפייתון: class, __init__, self, תכונות ופעולות. בונים חשבון בנק עם הפקדה ומשיכה, ורואים שלכל עצם מצב משלו. מעבדה עם מעקב ותרגול לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/classes-objects/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/cs/grade-11/"},{"@type":"ListItem","position":4,"name":"מחלקות ומבני נתונים","item":"https://shohamtal.github.io/homework-site/cs/grade-11/#cs-hs-11"},{"@type":"ListItem","position":5,"name":"מחלקות ועצמים בפייתון","item":"https://shohamtal.github.io/homework-site/cs/classes-objects/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין מחלקה לעצם?","acceptedAnswer":{"@type":"Answer","text":"מחלקה היא תבנית, כמו שרטוט של בית. עצם הוא בית אחד שנבנה לפי השרטוט. מאותה מחלקה אפשר ליצור הרבה עצמים, ולכל אחד יש ערכים משלו. נסו במעבדה."}},{"@type":"Question","name":"למה צריך self בפייתון?","acceptedAnswer":{"@type":"Answer","text":"פעולה אחת משרתת את כל העצמים. self אומר לה על איזה עצם היא עובדת עכשיו. כשכותבים acc1.deposit(30), פייתון שולחת את acc1 בתור self, ולכן משתנה acc1.balance ולא acc2.balance."}},{"@type":"Question","name":"מה עושה __init__?","acceptedAnswer":{"@type":"Answer","text":"__init__ היא פעולה מיוחדת שרצה לבד בכל פעם שיוצרים עצם חדש, למשל Account(\"Club\", 20). בה נותנים לעצם את התכונות ההתחלתיות שלו. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מחלקות ועצמים בפייתון","description":"מחלקות בפייתון: class, __init__, self, תכונות ופעולות. בונים חשבון בנק עם הפקדה ומשיכה, ורואים שלכל עצם מצב משלו. מעבדה עם מעקב ותרגול לכיתה יא.","url":"https://shohamtal.github.io/homework-site/cs/classes-objects/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"מחלקות ועצמים בפייתון","teaches":"מחלקות ועצמים בפייתון","keywords":"class, עצם, self","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:10px auto 0; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace tr.now td{background:var(--hl); font-weight:800}
+.trace tr.later td{color:var(--muted); opacity:.55}
+.num{font-family:var(--f-math); font-size:1.1rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, Menlo, Consolas, monospace; width:14em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.pair{display:grid; grid-template-columns:minmax(0,1fr); gap:6px}
+.pair pre.code{margin:0; font-size:.88rem}
+.pair .tag{font-weight:800; font-size:.9rem; margin-bottom:2px}
+.pair .bad{color:var(--err)} .pair .good{color:var(--ok)}
+.q-code{max-width:460px; margin:0 auto 10px}
+</style>
+<style>
+.objs{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; direction:ltr; margin:8px 0 12px; min-height:96px}
+.obj{border:2px solid var(--border); border-radius:12px; background:var(--card); box-shadow:3px 3px 0 var(--hard); padding:6px 10px; min-width:150px; font-family:ui-monospace, Menlo, Consolas, monospace; font-size:.95rem}
+.obj .nm{font-weight:800; border-bottom:1.5px solid var(--soft); margin-bottom:4px; padding-bottom:2px}
+.obj .nm small{color:var(--muted); font-weight:400}
+.obj.on{border-color:var(--line); box-shadow:0 0 0 2px var(--line), 3px 3px 0 var(--hard)}
+.obj .ch{background:var(--hl); border-radius:4px}
+.objs .none{color:var(--muted); direction:rtl; font-family:var(--f-body); align-self:center}
+.pt-vars th{width:auto; overflow-wrap:normal}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="classes-objects">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/#cs-hs-11">מחלקות ומבני נתונים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מחלקות ועצמים בפייתון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · מחלקות ומבני נתונים</div>
+  <h1>מחלקות ועצמים בפייתון <span class="slogan">תבנית אחת, הרבה עצמים</span></h1>
+  <p class="lead">מחלקה היא תבנית: היא אומרת אילו נתונים יש לכל עצם ומה אפשר לעשות איתו. עצם הוא דבר אחד שנבנה מהתבנית, עם מצב משלו. כאן בונים מחלקה של חשבון בנק, יוצרים שני חשבונות, ורואים שהפקדה לאחד לא משנה את השני. כדאי לחזור קודם על <a href="../functions/">פונקציות בפייתון</a>, ואחר כך להמשיך ל<a href="../linked-list/">רשימה מקושרת</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <pre class="code" dir="ltr" lang="en">class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance = self.balance + amount
+
+acc = Account("Bakery", 50)
+acc.deposit(20)
+print(acc.balance)    # 70</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>class ו-__init__</h3>
+      <p><code dir="ltr" lang="en">class</code> מגדיר תבנית. <code dir="ltr" lang="en">__init__</code> רץ לבד בכל פעם שיוצרים עצם חדש, ונותן לו ערכים התחלתיים.</p>
+    </div>
+    <div class="mini">
+      <h3>self ותכונות</h3>
+      <p><code dir="ltr" lang="en">self</code> הוא העצם שעליו עובדים עכשיו. <code dir="ltr" lang="en">self.balance</code> היא <strong>תכונה</strong>: משתנה ששייך לעצם, ונשמר כל עוד העצם קיים.</p>
+    </div>
+    <div class="mini">
+      <h3>פעולות (מתודות)</h3>
+      <p>פונקציה בתוך מחלקה היא <strong>פעולה</strong>. ב-<code dir="ltr" lang="en">acc.deposit(20)</code> פייתון שולחת את acc בתור self, ואת 20 בתור amount.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> לכל עצם יש תכונות משלו. <code dir="ltr" lang="en">acc1.balance</code> ו-<code dir="ltr" lang="en">acc2.balance</code> הם שני משתנים נפרדים, גם אם נבנו מאותה מחלקה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: שני חשבונות, מחלקה אחת</h2></div>
+  <p class="text">בחשבון acc1 יש בהתחלה 50, וב-acc2 יש 20. הזיזו את המחוונים כדי לבחור כמה מפקידים ל-acc1 וכמה מושכים ממנו. לחצו "שורה הבאה" וראו איך התוכנית קופצת לתוך הפעולות. הכרטיסים מראים את התכונות של כל עצם.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sD"><span>הפקדה ל-acc1</span><span class="eq" id="sDv"></span></label>
+      <input type="range" id="sD" min="0" max="100" step="10" value="30">
+      <label class="slider" for="sW"><span>משיכה מ-acc1</span><span class="eq" id="sWv"></span></label>
+      <input type="range" class="hl" id="sW" min="0" max="150" step="10" value="40">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="30,40">הפקדה ומשיכה</button>
+          <button type="button" data-p="0,60">משיכה גדולה מדי</button>
+          <button type="button" data-p="0,50">מושכים הכל</button>
+          <button type="button" data-p="100,150">בדיוק מספיק</button>
+          <button type="button" data-p="20,0">משיכה של 0</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="objs" id="objs" aria-label="העצמים"></div>
+  <div id="labPT"></div>
+  <h3 style="margin-top:18px">הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את self</h3>
+      <p>כל פעולה מקבלת את self כפרמטר ראשון. בלי self, הקריאה <code dir="ltr" lang="en">acc.deposit(5)</code> נותנת TypeError.</p>
+      <div class="pair"><div><p class="tag bad">✗ TypeError</p><pre class="code" dir="ltr" lang="en">def deposit(amount):
+    ...</pre></div><div><p class="tag good">✓ עם self</p><pre class="code" dir="ltr" lang="en">def deposit(self, amount):
+    ...</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>משתנה מקומי במקום תכונה</h3>
+      <p>בלי <code dir="ltr" lang="en">self.</code> נוצר משתנה מקומי שנמחק בסוף הפעולה, והתכונה לא משתנה.</p>
+      <div class="pair"><div><p class="tag bad">✗ לא נשמר</p><pre class="code" dir="ltr" lang="en">balance = balance + amount</pre></div><div><p class="tag good">✓ נשמר בעצם</p><pre class="code" dir="ltr" lang="en">self.balance = self.balance + amount</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>השמה לא מעתיקה עצם</h3>
+      <p><code dir="ltr" lang="en">b = a</code> לא יוצר חשבון חדש. שני השמות מצביעים על אותו עצם, ושינוי דרך אחד נראה דרך השני.</p>
+      <div class="pair"><div><p class="tag bad">✗ אותו עצם</p><pre class="code" dir="ltr" lang="en">acc2 = acc1</pre></div><div><p class="tag good">✓ עצם חדש</p><pre class="code" dir="ltr" lang="en">acc2 = Account("Club", 50)</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מדפיסים עצם בלי __str__</h3>
+      <p>בלי <code dir="ltr" lang="en">__str__</code>, ההדפסה נראית כמו <code dir="ltr" lang="en">&lt;__main__.Account object at 0x...&gt;</code>. מגדירים __str__ שמחזיר מחרוזת.</p>
+      <div class="pair"><div><p class="tag bad">✗ מחזיר מספר</p><pre class="code" dir="ltr" lang="en">def __str__(self):
+    return self.balance</pre></div><div><p class="tag good">✓ מחזיר מחרוזת</p><pre class="code" dir="ltr" lang="en">def __str__(self):
+    return str(self.balance)</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: שני רובוטים על קו</h2></div>
+  <p class="text">כל רובוט מתחיל במקום 0, והפעולה <code dir="ltr" lang="en">move</code> מזיזה אותו קדימה. יוצרים שני רובוטים ומזיזים כל אחד בנפרד. עקבו אחרי <code dir="ltr" lang="en">r1.x</code> ו-<code dir="ltr" lang="en">r2.x</code>.</p>
+  <div class="stepper"><div id="exPT"></div></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code q-code" id="prQ" dir="ltr" lang="en"></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn"><input id="prN" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין מחלקה לעצם?</h3>
+    <p>מחלקה היא תבנית, כמו שרטוט של בית. עצם הוא בית אחד שנבנה לפי השרטוט. מאותה מחלקה אפשר ליצור הרבה עצמים, ולכל אחד יש ערכים משלו. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>למה צריך self בפייתון?</h3>
+    <p>פעולה אחת משרתת את כל העצמים. self אומר לה על איזה עצם היא עובדת עכשיו. כשכותבים acc1.deposit(30), פייתון שולחת את acc1 בתור self, ולכן משתנה acc1.balance ולא acc2.balance.</p>
+    <h3>מה עושה __init__?</h3>
+    <p>__init__ היא פעולה מיוחדת שרצה לבד בכל פעם שיוצרים עצם חדש, למשל Account("Club", 20). בה נותנים לעצם את התכונות ההתחלתיות שלו. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/functions/">פונקציות בפייתון</a> · <a href="../../cs/dictionaries/">מילונים בפייתון: מפתח וערך</a></p>
+<p class="related text"><strong>בכיתה יב ממשיכים ל:</strong> <a href="../../cs/bagrut-cs-problems/">בעיות בסגנון בגרות במדעי המחשב</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/complexity/"><small>→ הנושא הקודם</small>סיבוכיות זמן: כמה צעדים?</a><a class="next" href="../../cs/stack-queue/"><small>הנושא הבא ←</small>מחסנית ותור</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const C=s=>`<code dir="ltr" lang="en">${s}</code>`;
+/*GEN*/
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const ACC=`class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance = self.balance + amount
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Not enough money")
+            return False
+        self.balance = self.balance - amount
+        return True
+
+    def __str__(self):
+        return self.owner + ": " + str(self.balance)
+`;
+/* a tiny object model: objs[name] = {attr: value}; loc = locals of the running method */
+function tracer(first){
+  const steps=[{line:0,vars:{},out:'',note:first}], objs={}, glob={}; let loc=null, out='', hot=null;
+  const st={steps,objs,glob,
+    set loc(v){ loc=v; }, get loc(){ return loc; },
+    print(s){ out+=s+'\n'; },
+    push(line,note,h){ const v={}; Object.keys(objs).forEach(o=>Object.keys(objs[o]).forEach(a=>v[o+'.'+a]=objs[o][a])); Object.assign(v,glob);
+      if(loc) Object.keys(loc.v).forEach(k=>v[k+' ('+loc.f+')']=loc.v[k]);
+      steps.push({line,vars:v,out,note,hot:h||null}); }};
+  return st;
+}
+const me=n=>({py:n});
+function buildLab(D,W){
+  const code=ACC+`\nacc1 = Account("Bakery", 50)\nacc2 = Account("Club", 20)\nacc1.deposit(${D})\nok = acc1.withdraw(${W})\nprint(acc1)\nprint(acc2)\nprint(ok)`;
+  const T=tracer('לחצו "שורה הבאה". שימו לב: שורות 1 עד 17 רק מגדירות את המחלקה.');
+  T.push(1,'מגדירים את המחלקה Account: תבנית לחשבון. עוד לא נוצר אף חשבון.');
+  function make(line,name,owner,bal,full){
+    T.push(line,`יוצרים עצם חדש מהמחלקה Account. פייתון קוראת לבד ל-__init__ עם "${owner}" ו-${bal}.`);
+    T.loc={f:'__init__',v:{owner,balance:bal}}; T.push(2,full?'בתוך __init__: self הוא העצם החדש, owner ו-balance הם הפרמטרים.':`__init__ שוב, הפעם עם "${owner}" ו-${bal}.`);
+    T.loc.v['self.owner']=owner; T.push(3,`התכונה self.owner של העצם החדש מקבלת "${owner}".`);
+    T.loc.v['self.balance']=bal; T.push(4,`התכונה self.balance מקבלת ${bal}.`);
+    T.loc=null; T.objs[name]={owner,balance:bal}; T.push(line,`${name} מצביע על העצם החדש. יש לו תכונות משלו: ${name}.owner ו-${name}.balance.`,name);
+  }
+  make(19,'acc1','Bakery',50,true);
+  make(20,'acc2','Club',20,false);
+  const a=T.objs.acc1;
+  T.push(21,`קוראים לפעולה deposit של acc1. פייתון שולחת את acc1 בתור self, ואת ${D} בתור amount.`,'acc1');
+  T.loc={f:'deposit',v:{self:me('acc1'),amount:D}}; T.push(6,'בתוך deposit: self הוא acc1.','acc1');
+  const b0=a.balance; a.balance+=D; T.push(7,`self.balance הוא acc1.balance: ${b0} + ${D} = ${a.balance}. ל-acc2 לא קרה כלום.`,'acc1');
+  T.loc=null; T.push(21,'deposit נגמרה וחוזרים. היא לא מחזירה ערך, וזה בסדר.','acc1');
+  T.push(22,`קוראים ל-withdraw של acc1 עם ${W}.`,'acc1');
+  T.loc={f:'withdraw',v:{self:me('acc1'),amount:W}}; T.push(9,'בתוך withdraw: self הוא acc1.','acc1');
+  let ok;
+  if(W>a.balance){
+    T.push(10,`בודקים: האם ${W} גדול מ-${a.balance}? כן. אין מספיק כסף.`,'acc1');
+    T.print('Not enough money'); T.push(11,'מדפיסים הודעה.','acc1');
+    ok=false; T.push(12,'return False: הפעולה נגמרת כאן. שורה 13 לא רצה, והיתרה לא השתנתה.','acc1');
+  } else {
+    T.push(10,`בודקים: האם ${W} גדול מ-${a.balance}? לא. יש מספיק כסף.`,'acc1');
+    const b1=a.balance; a.balance-=W; T.push(13,`${b1} פחות ${W} = ${a.balance}.`,'acc1');
+    ok=true; T.push(14,'return True: המשיכה הצליחה.','acc1');
+  }
+  T.loc=null; T.glob.ok=ok; T.push(22,`ok מקבל ${ok?'True':'False'}.`);
+  [['acc1',23],['acc2',24]].forEach(([n,line])=>{
+    const o=T.objs[n], s=o.owner+': '+o.balance;
+    T.push(line,`print על עצם קורא לפעולה __str__ של ${n}.`,n);
+    T.loc={f:'__str__',v:{self:me(n)}}; T.push(16,`בתוך __str__: self הוא ${n}.`,n);
+    T.push(17,`מחזירים את המחרוזת "${s}".`,n);
+    T.loc=null; T.print(s); T.push(line,`מודפס ${s}.`,n);
+  });
+  T.print(ok?'True':'False'); T.push(25,`מדפיסים את ok: ${ok?'True':'False'}.`);
+  return {code,steps:T.steps};
+}
+const PRESETS=[[30,40],[0,60],[0,50],[100,150],[20,0]];
+function buildEx(){
+  const code='class Robot:\n    def __init__(self, name):\n        self.name = name\n        self.x = 0\n\n    def move(self, steps):\n        self.x = self.x + steps\n\nr1 = Robot("R1")\nr2 = Robot("R2")\nr1.move(3)\nr2.move(5)\nr1.move(2)\nprint(r1.name, r1.x)\nprint(r2.name, r2.x)';
+  const T=tracer('לחצו "שורה הבאה".');
+  T.push(1,'מגדירים את המחלקה Robot.');
+  [['r1','R1',9],['r2','R2',10]].forEach(([n,nm,line])=>{
+    T.push(line,`יוצרים רובוט חדש בשם "${nm}".`);
+    T.loc={f:'__init__',v:{name:nm}}; T.push(2,'__init__ רץ לבד.');
+    T.loc.v['self.name']=nm; T.push(3,`self.name מקבל "${nm}".`);
+    T.loc.v['self.x']=0; T.push(4,'כל רובוט מתחיל במקום 0.');
+    T.loc=null; T.objs[n]={name:nm,x:0}; T.push(line,`${n} הוא רובוט עם name ו-x משלו.`,n);
+  });
+  [['r1',3,11],['r2',5,12],['r1',2,13]].forEach(([n,s,line])=>{
+    T.push(line,`קוראים ל-move של ${n} עם ${s}.`,n);
+    T.loc={f:'move',v:{self:me(n),steps:s}}; T.push(6,`self הוא ${n}.`,n);
+    const x0=T.objs[n].x; T.objs[n].x+=s; T.push(7,`${n}.x: ${x0} + ${s} = ${T.objs[n].x}.`,n);
+    T.loc=null; T.push(line,'חוזרים מהפעולה.',n);
+  });
+  T.print('R1 5'); T.push(14,'r1 זז פעמיים: 3 ועוד 2. הוא במקום 5.','r1');
+  T.print('R2 5'); T.push(15,'r2 זז פעם אחת, 5 צעדים. גם הוא במקום 5, אבל כל אחד הגיע לשם בדרך משלו.','r2');
+  return {code,steps:T.steps};
+}
+function LABCASES(){
+  const cs=PRESETS.map(p=>Object.assign(buildLab(...p),{name:p.join(',')}));
+  for(let k=0;k<20;k++){ const p=[ri(0,10)*10,ri(0,15)*10]; cs.push(Object.assign(buildLab(...p),{name:p.join(',')})); }
+  cs.push(Object.assign(buildEx(),{name:'example'}));
+  return cs;
+}
+const BOX='class Box:\n    def __init__(self, value):\n        self.value = value\n\n    def add(self, n):\n        self.value = self.value + n\n';
+function genQ(){
+  const kind=pick(['two','alias','loop','withdraw','str']);
+  if(kind==='two'){
+    const a=ri(1,9), b=ri(1,9), c=ri(2,9), which=pick(['b1','b2']), ans=which==='b1'?a+c:b;
+    return {kind,vk:'last',ans,code:BOX+`\nb1 = Box(${a})\nb2 = Box(${b})\nb1.add(${c})\nprint(${which}.value)`,ask:'מה התוכנית מדפיסה?',
+      diag:which==='b2'?[[b+c,'add נקראה רק על b1. ל-b2 יש value משלו.']]:[[a,`b1.add(${c}) משנה את b1.value.`],[b+c,'הוספנו ל-b1, לא ל-b2.']],
+      hints:['לכל עצם יש value משלו. כתבו שתי שורות: b1.value ו-b2.value.',`אחרי היצירה: b1.value = ${a}, b2.value = ${b}. על מי קראו ל-add?`],
+      sol:`b1.value מתחיל ב-${a} ו-b2.value ב-${b}. רק b1 קיבל add(${c}), ולכן b1.value = ${a+c} ו-b2.value = ${b}. מודפס ${ans}.`};
+  }
+  if(kind==='alias'){
+    const a=ri(1,9), c=ri(2,9);
+    return {kind,vk:'last',ans:a+c,code:BOX+`\nb1 = Box(${a})\nb2 = b1\nb2.add(${c})\nprint(b1.value)`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a,'b2 = b1 לא יוצר עצם חדש. b1 ו-b2 הם שני שמות לאותו עצם.']],
+      hints:['כמה פעמים כתוב כאן Box(...)? כל פעם כזו יוצרת עצם אחד.','יש רק עצם אחד, ולו שני שמות.'],
+      sol:`נוצר רק עצם אחד. b2 = b1 נותן לו שם נוסף. add(${c}) דרך b2 משנה את אותו עצם, ולכן b1.value = ${a+c}.`};
+  }
+  if(kind==='loop'){
+    const a=ri(0,9), c=ri(2,5), k=ri(2,4), ans=a+k*c;
+    return {kind,vk:'last',ans,code:BOX+`\nb = Box(${a})\nfor i in range(${k}):\n    b.add(${c})\nprint(b.value)`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a+c,`הלולאה רצה ${k} פעמים, ובכל פעם add מוסיף ${c}.`],[k*c,`b.value לא מתחיל ב-0, אלא ב-${a}.`]].filter(d=>d[0]!==ans),
+      hints:['התכונה value נשמרת בין קריאה לקריאה.',`${k} סיבובים, ובכל סיבוב עוד ${c}.`],sol:`${a} + ${k} כפול ${c} = ${ans}.`};
+  }
+  if(kind==='withdraw'){
+    const a=ri(3,9)*10, w1=ri(1,a/10-1)*10, w2=ri(a/10-w1/10+1,a/10+4)*10, ans=a-w1;
+    return {kind,vk:'last',ans,code:ACC+`\nacc = Account("Shop", ${a})\nacc.withdraw(${w1})\nacc.withdraw(${w2})\nprint(acc.balance)`,ask:'מה התוכנית מדפיסה בשורה האחרונה?',
+      diag:[[a-w1-w2,`המשיכה השנייה גדולה מהיתרה, ולכן withdraw מחזירה False ולא מורידה כלום.`],[a,'המשיכה הראשונה הצליחה.']],
+      hints:['בדקו כל משיכה: האם amount גדול מ-self.balance?',`אחרי המשיכה הראשונה נשארו ${a-w1}. האם אפשר למשוך ${w2}?`],
+      sol:`${a} פחות ${w1} = ${ans}. המשיכה של ${w2} גדולה מ-${ans}, ולכן מודפס Not enough money והיתרה נשארת ${ans}.`};
+  }
+  const nm=pick(['R7','Bot','X1']), a=ri(1,9), b=ri(1,9), s=`${nm} at ${a+b}`;
+  return {kind,vk:'last',ans:s,code:`class Robot:\n    def __init__(self, name):\n        self.name = name\n        self.x = 0\n\n    def move(self, steps):\n        self.x = self.x + steps\n\n    def __str__(self):\n        return self.name + " at " + str(self.x)\n\nr = Robot("${nm}")\nr.move(${a})\nr.move(${b})\nprint(r)`,ask:'מה התוכנית מדפיסה? כתבו את השורה בדיוק.',
+    diag:[[`${nm} at ${b}`,'move מוסיף ל-x, לא מחליף אותו.'],[`${nm} at ${a}`,'היו שתי קריאות ל-move.'],[String(a+b),'print על עצם מדפיס את מה ש-__str__ מחזיר: גם השם.']],
+    hints:['print(r) מדפיס את המחרוזת ש-__str__ מחזירה.',`r.x בסוף הוא ${a} + ${b}.`],sol:`r.x = ${a} + ${b} = ${a+b}. __str__ מחזיר "${s}".`};
+}
+/*END*/
+
+/* draw the objects of the current step */
+function drawObjs(st){
+  const v=st.vars, names=[...new Set(Object.keys(v).filter(k=>/^\w+\.\w+$/.test(k)&&!k.startsWith('self.')).map(k=>k.split('.')[0]))];
+  $('objs').innerHTML=names.length?names.map(n=>`<div class="obj${st.hot===n?' on':''}"><div class="nm">${n} <small>Account</small></div>${Object.keys(v).filter(k=>k.startsWith(n+'.')).map(k=>`<div>${k.split('.')[1]} = ${PT.repr(v[k])}</div>`).join('')}</div>`).join(''):'<span class="none">עוד לא נוצר אף עצם</span>';
+}
+function follow(el,steps,draw){ const f=()=>draw(steps[el.ptStep||0]); el.onclick=e=>{ if(e.target.closest('button')) f(); }; f(); }
+
+/* lab */
+const sD=$('sD'), sW=$('sW');
+function lab(){
+  const D=+sD.value, W=+sW.value;
+  $('sDv').textContent=D; $('sWv').textContent=W;
+  const cur=buildLab(D,W);
+  PT.mount($('labPT'),{code:cur.code,steps:cur.steps});
+  follow($('labPT'),cur.steps,drawObjs);
+  $('labRun').value=cur.code;
+  const b=50+D;
+  $('labTxt').innerHTML=`<div>אחרי ההפקדה ב-acc1 יש ${b}.</div>`+(W>b
+    ?`<div>מנסים למשוך ${W}, יותר ממה שיש. withdraw מדפיסה Not enough money, מחזירה False, והיתרה נשארת ${b}.</div>`
+    :`<div>מושכים ${W}, ונשארים ${b-W}. withdraw מחזירה True.</div>`)+`<div>acc2 נשאר עם 20 כל הזמן: לכל עצם מצב משלו.</div>`;
+}
+[sD,sW].forEach(x=>x.addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const p=b.dataset.p.split(','); sD.value=p[0]; sW.value=p[1]; lab(); });
+lab();
+
+/* worked example */
+const ex=buildEx(); PT.mount($('exPT'),{code:ex.code,steps:ex.steps});
+
+/* practice */
+let q=null, sel=-1, streak=0, solved=0;
+const norm=s=>String(s).replace(/[\s,]+/g,' ').trim();
+function newQ(){
+  q=genQ(); q.tries=0; q.h=0; sel=-1;
+  $('prAsk').textContent=q.ask; $('prQ').textContent=q.code; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prCh').hidden=!q.mc; $('prIn').hidden=!!q.mc;
+  if(q.mc){ $('prCh').innerHTML=q.mc.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="false" dir="ltr">${o}</button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); }); }
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let v;
+  if(q.mc){ if(sel<0){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; } v=norm(q.mc[sel]); }
+  else{ v=norm($('prN').value); if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; } }
+  if(v===norm(q.ans)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! התשובה היא <code dir="ltr" lang="en">${String(q.ans).replace(/</g,'&lt;')}</code>.</div>`; return; }
+  streak=0; q.tries++; streakTxt();
+  const d=(q.diag||[]).find(x=>norm(x[0])===v);
+  fb.innerHTML=`<div class="fb err">${d?d[1]:'עוד לא. עקבו אחרי הקוד שורה אחרי שורה ונסו שוב.'}</div>`;
+  if(q.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ q.h=Math.min(q.h+1,q.hints.length); $('prFb').innerHTML=`<div class="fb hint">${q.hints.slice(0,q.h).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${q.sol}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newQ;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newQ(); streakTxt();
+})();
+</script>
+</body>
+</html>

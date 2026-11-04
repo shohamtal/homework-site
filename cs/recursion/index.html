@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>רקורסיה בפייתון · מדעי המחשב כיתה י · מירי</title>
+<meta name="description" content="רקורסיה בפייתון: מקרה בסיס, צעד רקורסיבי ומחסנית קריאות, עם עצרת, חזקה וסכום ספרות. רואים גם RecursionError כשאין בסיס. מעבדה ותרגול לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/recursion/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="רקורסיה בפייתון · מדעי המחשב כיתה י · מירי">
+<meta property="og:description" content="רקורסיה בפייתון: מקרה בסיס, צעד רקורסיבי ומחסנית קריאות, עם עצרת, חזקה וסכום ספרות. רואים גם RecursionError כשאין בסיס. מעבדה ותרגול לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/recursion/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://shohamtal.github.io/homework-site/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"רקורסיה: פונקציה שקוראת לעצמה","item":"https://shohamtal.github.io/homework-site/cs/recursion/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה רקורסיה בפייתון?","acceptedAnswer":{"@type":"Answer","text":"פונקציה שקוראת לעצמה עם בעיה קטנה יותר, עד שמגיעים למקרה בסיס שהתשובה שלו ידועה. אז התשובות חוזרות אחורה, וכל קריאה משלימה את החישוב שלה. נסו במעבדה."}},{"@type":"Question","name":"מה זה RecursionError: maximum recursion depth exceeded?","acceptedAnswer":{"@type":"Answer","text":"פייתון מרשה בערך 1000 קריאות שמחכות זו לזו. אם הרקורסיה לא מגיעה למקרה הבסיס, המחסנית מתמלאת והתוכנית עוצרת עם השגיאה הזו. בודקים שיש מקרה בסיס ושכל קריאה מתקרבת אליו."}},{"@type":"Question","name":"רקורסיה או לולאה?","acceptedAnswer":{"@type":"Answer","text":"כל רקורסיה אפשר לכתוב גם בלולאה. רקורסיה קצרה וברורה כשהבעיה בנויה מבעיות קטנות מאותו סוג, כמו עץ תיקיות או חיפוש בינארי. לולאה חוסכת זיכרון, כי אין מחסנית של קריאות. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"רקורסיה: פונקציה שקוראת לעצמה","description":"רקורסיה בפייתון: מקרה בסיס, צעד רקורסיבי ומחסנית קריאות, עם עצרת, חזקה וסכום ספרות. רואים גם RecursionError כשאין בסיס. מעבדה ותרגול לכיתה י.","url":"https://shohamtal.github.io/homework-site/cs/recursion/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"רקורסיה: פונקציה שקוראת לעצמה","teaches":"רקורסיה: פונקציה שקוראת לעצמה","keywords":"מקרה בסיס, מחסנית קריאות, עצרת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:14em; max-width:100%; box-sizing:border-box; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices button code{font-weight:400}
+.mini pre.code{margin:0}
+.tag-bad, .tag-good{font-weight:700; font-size:.92rem}
+.tag-bad{color:var(--err)} .tag-good{color:var(--ok)}
+#labPT, #exPT{margin-top:14px}
+#prCode{max-width:520px; margin:10px auto}
+code[dir=ltr]{unicode-bidi:isolate}
+.stackbox{border:2px solid var(--border); border-radius:12px; background:var(--card); padding:10px 12px; margin:12px 0; box-shadow:3px 3px 0 var(--hard)}
+.stackbox h3{margin:0 0 6px; font-size:1rem}
+.stack{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px}
+.stack li{display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 10px; border:1.5px solid var(--soft); border-radius:8px; padding:4px 10px; background:var(--paper)}
+.stack li code{font-weight:700}
+.stack li.top{border:2px solid var(--line); background:var(--hl)}
+.stack li.dots{justify-content:center; color:var(--muted)}
+.stack li small{color:var(--muted)}
+.stack .empty{color:var(--muted); border:0; background:none}
+
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="recursion">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/#cs-hs-10">מבני נתונים ואלגוריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">רקורסיה: פונקציה שקוראת לעצמה</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · מבני נתונים ואלגוריתמים</div>
+  <h1>רקורסיה <span class="slogan">פונקציה שקוראת לעצמה</span></h1>
+  <p class="lead">רקורסיה היא פונקציה שפותרת בעיה בעזרת גרסה קטנה יותר של אותה בעיה. כדי לחשב 4 עצרת, מספיק לדעת 3 עצרת. כדי לדעת 3 עצרת, מספיק לדעת 2 עצרת. וכך הלאה, עד מקרה שקל לפתור לבד. כאן עוקבים אחרי <strong>מחסנית הקריאות</strong> ורואים מה קורה כששוכחים את מקרה הבסיס. כדאי להכיר קודם <a href="../functions/">פונקציות בפייתון</a>. אחר כך ממשיכים ל<a href="../complexity/">סיבוכיות</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <pre class="code" dir="ltr" lang="en">def fact(n):
+    if n == 0:            # base case
+        return 1
+    return n * fact(n - 1)   # recursive step
+
+print(fact(4))            # 24</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>מקרה בסיס</h3>
+      <p>המקרה הקטן ביותר, שהתשובה שלו ידועה בלי עוד קריאה. אצל עצרת: <span class="eq">0! = 1</span>. בלי מקרה בסיס, הפונקציה קוראת לעצמה בלי סוף.</p>
+    </div>
+    <div class="mini">
+      <h3>צעד רקורסיבי</h3>
+      <p>הפונקציה קוראת לעצמה עם בעיה <strong>קטנה יותר</strong>, ומשתמשת בתשובה: <span class="eq">4! = 4 · 3!</span>. כל קריאה חייבת להתקרב למקרה הבסיס.</p>
+    </div>
+    <div class="mini">
+      <h3>מחסנית הקריאות</h3>
+      <p>כל קריאה מחכה לקריאה שמתחתיה. המחשב שומר אותן אחת על השנייה, כמו ערימת צלחות. כשמגיעים לבסיס, התשובות חוזרות מלמעלה למטה, וכל קריאה יורדת מהערימה.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> לכל פונקציה רקורסיבית שתי שאלות: מה מקרה הבסיס? והאם כל קריאה מתקרבת אליו? אם התשובה לשנייה היא לא, תקבלו <code dir="ltr" lang="en">RecursionError</code>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מחסנית הקריאות</h2></div>
+  <p class="text">בחרו פונקציה ומספר. לחצו "שורה הבאה" ועקבו אחרי המחסנית: בכל קריאה נוספת שורה למעלה, וכשקריאה מחזירה תשובה, היא יורדת. נסו גם את הפונקציה בלי מקרה בסיס.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="prog"><span>הפונקציה</span><span id="progv" dir="ltr"></span></label>
+      <input type="range" id="prog" min="0" max="3" step="1" value="0">
+      <label class="slider" for="n"><span id="nlab">n</span><span id="nv" dir="ltr"></span></label>
+      <input type="range" class="hl" id="n" min="0" max="6" step="1" value="4">
+      <label class="slider" for="b"><span>בסיס החזקה b (רק ב-power)</span><span id="bv" dir="ltr"></span></label>
+      <input type="range" class="blue" id="b" min="2" max="4" step="1" value="2">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries"></div>
+      </div>
+    </div>
+  </div>
+  <div class="stackbox"><h3>מחסנית הקריאות (למעלה: הקריאה שרצה עכשיו)</h3><ul class="stack" id="stack" dir="ltr"></ul></div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labPy" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אין מקרה בסיס</h3>
+      <p>הפונקציה קוראת לעצמה שוב ושוב. אחרי בערך 1000 קריאות פייתון עוצר אותה עם <code dir="ltr" lang="en">RecursionError</code>.</p>
+      <span class="tag-bad">✗ RecursionError</span><pre class="code" dir="ltr" lang="en">def fact(n):
+    return n * fact(n - 1)</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">def fact(n):
+    if n == 0:
+        return 1
+    return n * fact(n - 1)</pre>
+    </div>
+    <div class="mini">
+      <h3>מתרחקים מהבסיס</h3>
+      <p>יש מקרה בסיס, אבל לא מגיעים אליו. עם <code dir="ltr" lang="en">n + 1</code> המספר רק גדל, ו-<code dir="ltr" lang="en">fact(-1)</code> מדלג מעל 0.</p>
+      <span class="tag-bad">✗ לא נגמר</span><pre class="code" dir="ltr" lang="en">    return n * fact(n + 1)
+print(fact(-1))</pre>
+      <span class="tag-good">✓ מתקרבים ל-0</span><pre class="code" dir="ltr" lang="en">    return n * fact(n - 1)
+print(fact(4))</pre>
+    </div>
+    <div class="mini">
+      <h3>שוכחים return</h3>
+      <p>בלי <code dir="ltr" lang="en">return</code>, הפונקציה מחשבת ולא מחזירה כלום, כלומר <code dir="ltr" lang="en">None</code>. הקריאה שמעליה מנסה להכפיל ב-None ונופלת.</p>
+      <span class="tag-bad">✗ TypeError</span><pre class="code" dir="ltr" lang="en">    if n == 0:
+        return 1
+    n * fact(n - 1)</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">    if n == 0:
+        return 1
+    return n * fact(n - 1)</pre>
+    </div>
+    <div class="mini">
+      <h3>ערך בסיס לא נכון</h3>
+      <p>אם מקרה הבסיס מחזיר 0, כל המכפלה מתאפסת. בכפל הבסיס הוא 1, ובחיבור הוא 0.</p>
+      <span class="tag-bad">✗ fact(4) = 0</span><pre class="code" dir="ltr" lang="en">    if n == 0:
+        return 0</pre>
+      <span class="tag-good">✓ fact(4) = 24</span><pre class="code" dir="ltr" lang="en">    if n == 0:
+        return 1</pre>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: ספירה לאחור</h2></div>
+  <p class="text">הפונקציה מדפיסה מספר, ואז קוראת לעצמה עם מספר קטן ב-1. כשמגיעים ל-0 היא מדפיסה Go! ועוצרת. עקבו אחרי המחסנית: היא גדלה עד הבסיס, ואז מתרוקנת.</p>
+  <div class="stackbox"><h3>מחסנית הקריאות</h3><ul class="stack" id="exstack" dir="ltr"></ul></div>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code" id="prCode" dir="ltr" lang="en" hidden></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prA" dir="ltr" lang="en" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה רקורסיה בפייתון?</h3>
+    <p>פונקציה שקוראת לעצמה עם בעיה קטנה יותר, עד שמגיעים למקרה בסיס שהתשובה שלו ידועה. אז התשובות חוזרות אחורה, וכל קריאה משלימה את החישוב שלה. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה זה RecursionError: maximum recursion depth exceeded?</h3>
+    <p>פייתון מרשה בערך 1000 קריאות שמחכות זו לזו. אם הרקורסיה לא מגיעה למקרה הבסיס, המחסנית מתמלאת והתוכנית עוצרת עם השגיאה הזו. בודקים שיש מקרה בסיס ושכל קריאה מתקרבת אליו.</p>
+    <h3>רקורסיה או לולאה?</h3>
+    <p>כל רקורסיה אפשר לכתוב גם בלולאה. רקורסיה קצרה וברורה כשהבעיה בנויה מבעיות קטנות מאותו סוג, כמו עץ תיקיות או חיפוש בינארי. לולאה חוסכת זיכרון, כי אין מחסנית של קריאות. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/functions/">פונקציות בפייתון</a></p>
+<p class="related text"><strong>בכיתה יא ממשיכים ל:</strong> <a href="../../cs/binary-trees/">עצים בינאריים ועץ חיפוש</a></p>
+<p class="related text"><strong>בכיתה יב ממשיכים ל:</strong> <a href="../../cs/merge-quick-sort/">מיון מיזוג ומיון מהיר</a> · <a href="../../cs/bagrut-cs-problems/">בעיות בסגנון בגרות במדעי המחשב</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/lists-2d/"><small>→ הנושא הקודם</small>רשימה דו-ממדית: טבלה ולוח</a><a class="next" href="../../cs/complexity/"><small>הנושא הבא ←</small>סיבוכיות זמן: כמה צעדים?</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const shuffle=a=>{a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const codeHTML=code=>code.replace(/\n$/,'').split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('');
+const squash=s=>String(s).trim().replace(/\s+/g,'').toLowerCase();
+/* PT.mount plus a callback on every step change (fn(step, index)), for visuals next to the tracer */
+function mountWatch(el,o,fn){
+  PT.mount(el,o); if(!fn) return;
+  const f=()=>fn(o.steps[el.ptStep]||o.steps[0],el.ptStep);
+  if(el._mo) el._mo.disconnect();
+  el._mo=new MutationObserver(f); el._mo.observe(el.querySelector('.pt-count'),{childList:true,characterData:true,subtree:true}); f();
+}
+/* lab: sliders (LAB.ids, label spans id+'v') + "נסו את אלה" presets + tracer + Pyodide box */
+function lab(o){
+  const tries=$('tries');
+  tries.innerHTML=LAB.presets.map((t,i)=>'<button type="button" data-i="'+i+'">'+t.label+'</button>').join('');
+  const get=()=>{ const p={}; LAB.ids.forEach(id=>p[id]=+$(id).value); return p; };
+  function draw(){
+    if(o&&o.before) o.before(); const p=get();
+    LAB.ids.forEach(id=>{ const f=o&&o.fmt&&o.fmt[id]; $(id+'v').textContent=f?f(p[id]):p[id]; });
+    const r=LAB.build(p);
+    mountWatch($('labPT'),{code:r.code,steps:r.steps,input:r.input},o&&o.step?s=>o.step(s,p,r):null);
+    $('labTxt').innerHTML=r.explain; $('labPy').value=r.code;
+    if(o&&o.after) o.after(p,r);
+  }
+  LAB.ids.forEach(id=>$(id).addEventListener('input',draw));
+  tries.querySelectorAll('button').forEach(b=>b.onclick=()=>{ LAB.presets[+b.dataset.i].p.forEach((v,i)=>{ $(LAB.ids[i]).value=v; }); draw(); });
+  draw();
+  return {draw,get};
+}
+/* practice: gen() returns {ask, code?, type:'num'|'text'|'mc', ans, accept?, opts?[{t,ok,why}], diag?(raw,num), hints[], sol, ok?} */
+function practice(gen){
+  let q, sel=-1, tries=0, hint=0, streak=0, solved=0, done=false;
+  const fb=h=>{ $('prFb').innerHTML=h; };
+  const st=()=>{ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; };
+  function fresh(){
+    q=gen(); sel=-1; tries=0; hint=0; done=false;
+    $('prAsk').innerHTML=q.ask;
+    $('prCode').hidden=!q.code; $('prCode').innerHTML=q.code?codeHTML(q.code):'';
+    const mc=q.type==='mc'; $('prCh').hidden=!mc; $('prIn').hidden=mc; $('prA').value='';
+    $('prA').setAttribute('inputmode',q.type==='num'?'decimal':'text');
+    if(mc){
+      $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+o.t+'</button>').join('');
+      $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+    }
+    $('prShow').disabled=true; fb('');
+  }
+  $('prCheck').onclick=()=>{
+    if(done){ fb('<div class="fb ok">כבר פתרתם את זה. לחצו "תרגיל חדש".</div>'); return; }
+    let right, msg=null, note='';
+    if(q.type==='mc'){
+      if(sel<0){ fb('<div class="fb err">בחרו קודם תשובה.</div>'); return; }
+      right=!!q.opts[sel].ok; msg=q.opts[sel].why||null;
+    } else {
+      const raw=$('prA').value;
+      if(!raw.trim()){ fb('<div class="fb err">כתבו תשובה.</div>'); $('prA').focus(); return; }
+      if(q.type==='num'){
+        const v=parseFloat(raw.replace(',','.').replace(/\s/g,''));
+        if(isNaN(v)){ fb('<div class="fb err">כתבו מספר.</div>'); return; }
+        right=Math.abs(v-q.ans)<1e-9; if(!right&&q.diag) msg=q.diag(raw,v);
+      } else {
+        const a=squash(raw), bare=a.replace(/^["']+|["']+$/g,''), all=[q.ans].concat(q.accept||[]).map(squash);
+        right=all.includes(a)||all.includes(bare);
+        if(right&&!all.includes(a)) note=' המרכאות לא מודפסות, הן רק מסמנות איפה הטקסט מתחיל ונגמר.';
+        if(!right&&q.diag) msg=q.diag(raw);
+      }
+    }
+    if(right){ done=true; streak++; solved++; st(); fb('<div class="fb ok">נכון! '+(q.ok||'')+note+'</div>'); return; }
+    streak=0; tries++; st();
+    fb('<div class="fb err">'+(msg||'עוד לא. נסו שוב, או לחצו על רמז.')+'</div>');
+    if(tries>=2) $('prShow').disabled=false;
+  };
+  $('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); fb('<div class="fb hint">'+q.hints[hint-1]+'</div>'); };
+  $('prShow').onclick=()=>{ fb('<div class="fb hint">'+q.sol+'<br>עכשיו נסו תרגיל חדש.</div>'); };
+  $('prNew').onclick=fresh;
+  $('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  fresh(); st();
+}
+
+/*LAB*/
+const NUMS=[7,42,305,1234,9081,47126,123456];
+const PROGS=['fact','power','digit_sum','fact בלי בסיס'];
+const LAB={ids:['prog','n','b'], ranges:[[0,3,1],[0,6,1],[2,4,1]],
+  presets:[{label:'עצרת של 4',p:[0,4,2]},{label:'<span dir="ltr">fact(0)</span> ישר לבסיס',p:[0,0,2]},{label:'2 בחזקת 5',p:[1,5,2]},{label:'סכום ספרות של 1234',p:[2,3,2]},{label:'בלי מקרה בסיס',p:[3,3,2]}]};
+const TB=(c,call)=>'Traceback (most recent call last):\n  File "main.py", line 4, in <module>\n    result = '+call+'\n  File "main.py", line 2, in fact\n    return n * fact(n - 1)\n  [Previous line repeated 996 more times]\nRecursionError: maximum recursion depth exceeded\n';
+LAB.build=function(p){
+  const kind=p.prog, N=p.n, B=p.b;
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.',stack:[]}]; let out='', stack=[];
+  const go=(line,vars,note,x)=>steps.push({line,vars,out,note,stack:stack.map(f=>({...f})),x:x||undefined});
+  if(kind===3){
+    const call='fact('+N+')';
+    const code=['def fact(n):','    return n * fact(n - 1)','','result = '+call,'print(result)'].join('\n');
+    go(1,{},'def רק מגדיר את הפונקציה. היא עוד לא רצה.');
+    go(4,{},'קוראים ל-'+call+'.');
+    let k=N;
+    for(let d=0;d<6;d++){
+      stack.push({call:'fact('+k+')',st:'מחכה ל-fact('+(k-1)+')'});
+      go(2,{n:k},'n = '+k+'. אין כאן if, אין מקרה בסיס. כדי לחשב '+k+' * fact('+(k-1)+') קוראים שוב לפונקציה.'+(k<=0?' n כבר '+(k<0?'שלילי':'0')+', וזה לא עוצר כלום.':''));
+      k--;
+    }
+    stack.push({dots:true});
+    go(2,{n:k},'וכך הלאה: fact('+k+'), fact('+(k-1)+')... המחסנית רק גדלה, ואף קריאה לא מחזירה תשובה.',true);
+    out=TB(0,call);
+    go(2,{},'פייתון עוצר אחרי בערך 1000 קריאות. הפלט קוצר: בפייתון אמיתי מופיעות כמה שורות File נוספות. השורה האחרונה היא העיקר: RecursionError, עומק הרקורסיה עבר את המותר. התיקון: להוסיף מקרה בסיס, if n == 0: return 1.',true);
+    const explain='<div><b>אין מקרה בסיס.</b> כל קריאה ל-fact קוראת לעוד fact, גם כש-n שלילי.</div><div>המחסנית מתמלאת אחרי כ-1000 קריאות, ופייתון עוצר עם <span dir="ltr">RecursionError</span>. אף ערך לא חוזר, ו-result לא נוצר.</div>';
+    return {code, steps, explain, error:'RecursionError: maximum recursion depth exceeded', tb:out};
+  }
+  const F=[
+    {name:'fact',head:'def fact(n):',test:'    if n == 0:',base:'        return 1',rec:'    return n * fact(n - 1)',call:'fact('+N+')',arg:N,
+     isBase:a=>a===0,baseVal:()=>1,next:a=>a-1,label:a=>'fact('+a+')',vars:a=>({n:a}),comb:(a,r)=>[a*r,a+' * '+r],testTxt:a=>a+' == 0'},
+    {name:'power',head:'def power(b, e):',test:'    if e == 0:',base:'        return 1',rec:'    return b * power(b, e - 1)',call:'power('+B+', '+N+')',arg:N,
+     isBase:a=>a===0,baseVal:()=>1,next:a=>a-1,label:a=>'power('+B+', '+a+')',vars:a=>({b:B,e:a}),comb:(a,r)=>[B*r,B+' * '+r],testTxt:a=>a+' == 0'},
+    {name:'digit_sum',head:'def digit_sum(n):',test:'    if n < 10:',base:'        return n',rec:'    return n % 10 + digit_sum(n // 10)',call:'digit_sum('+NUMS[N]+')',arg:NUMS[N],
+     isBase:a=>a<10,baseVal:a=>a,next:a=>Math.floor(a/10),label:a=>'digit_sum('+a+')',vars:a=>({n:a}),comb:(a,r)=>[a%10+r,(a%10)+' + '+r],testTxt:a=>a+' < 10'}][kind];
+  const code=[F.head,F.test,F.base,F.rec,'','result = '+F.call,'print(result)'].join('\n');
+  go(1,{},'def רק מגדיר את הפונקציה '+F.name+'. היא עוד לא רצה.');
+  go(6,{},'קוראים ל-'+F.call+'. הקריאה הראשונה נכנסת למחסנית.');
+  let calls=0;
+  function rec(a){
+    calls++;
+    stack.push({call:F.label(a),st:'רצה'});
+    const base=F.isBase(a);
+    go(2,F.vars(a),'בודקים את מקרה הבסיס: '+F.testTxt(a)+'? '+(base?'True.':'False.'));
+    if(base){ const r=F.baseVal(a); stack[stack.length-1].st='מחזירה '+r; go(3,F.vars(a),'מקרה בסיס! '+F.label(a)+' מחזירה '+r+' בלי לקרוא לעצמה. מכאן התשובות חוזרות.'); stack.pop(); return r; }
+    const nx=F.next(a); stack[stack.length-1].st='מחכה ל-'+F.label(nx);
+    go(4,F.vars(a),'צעד רקורסיבי: כדי לסיים, '+F.label(a)+' צריכה את '+F.label(nx)+'. היא מחכה, וקריאה חדשה נכנסת למחסנית.');
+    const r=rec(nx), [val,txt]=F.comb(a,r);
+    stack[stack.length-1].st='מחזירה '+val;
+    go(4,F.vars(a),F.label(nx)+' החזירה '+r+'. עכשיו '+F.label(a)+' מחשבת '+txt+' = '+val+' ומחזירה.',true);
+    stack.pop(); return val;
+  }
+  const res=rec(F.arg);
+  go(6,{result:res},'המחסנית ריקה. התשובה הסופית נשמרת ב-result.',true);
+  out=res+'\n'; go(7,{result:res},'מדפיסים: '+res+'.');
+  const explain='<div><span dir="ltr">'+F.call+' = <b>'+res+'</b></span></div><div>'+calls+' קריאות לפונקציה, והמחסנית הגיעה לגובה '+calls+'. '+(calls===1?'הקריאה הראשונה כבר הייתה מקרה הבסיס.':'הקריאה האחרונה, '+F.label((function(){let a=F.arg; while(!F.isBase(a)) a=F.next(a); return a;})())+', היא מקרה הבסיס.')+'</div>';
+  return {code, steps, explain};
+};
+LAB.countdown=function(n){
+  const code=['def countdown(n):','    if n == 0:','        print("Go!")','        return','    print(n)','    countdown(n - 1)','','countdown('+n+')'].join('\n');
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.',stack:[]}]; let out='', stack=[];
+  const go=(line,vars,note,x)=>steps.push({line,vars,out,note,stack:stack.map(f=>({...f})),x:x||undefined});
+  go(1,{},'מגדירים את countdown. עוד לא רצה.');
+  go(8,{},'קוראים ל-countdown('+n+').');
+  for(let k=n;;k--){
+    if(stack.length) stack[stack.length-1].st='מחכה ל-countdown('+k+')';
+    stack.push({call:'countdown('+k+')',st:'רצה'});
+    go(2,{n:k},k+' == 0? '+(k===0?'True: זה מקרה הבסיס.':'False.'));
+    if(k===0){ out+='Go!\n'; go(3,{n:0},'מדפיסים Go!'); stack[stack.length-1].st='חוזרת'; go(4,{n:0},'return: הבסיס נגמר. עכשיו כל הקריאות שחיכו חוזרות אחת אחרי השנייה, ואין להן עוד מה לעשות.'); break; }
+    out+=k+'\n'; go(5,{n:k},'מדפיסים '+k+'.');
+    go(6,{n:k},'קוראים לעצמנו עם '+(k-1)+'. countdown('+k+') מחכה.');
+  }
+  stack=[]; go(8,{},'כל הקריאות חזרו, והמחסנית ריקה. התוכנית נגמרת.',true);
+  return {code, steps};
+};
+LAB.examples=[LAB.countdown(3),LAB.countdown(0)];
+/*/LAB*/
+function sview(el,s){
+  const st=(s.stack||[]).slice().reverse();
+  el.innerHTML=st.length?st.map((f,i)=>f.dots?'<li class="dots">⋮ ועוד מאות קריאות</li>':'<li'+(i===0?' class="top"':'')+'><code>'+esc(f.call)+'</code><small dir="rtl">'+esc(f.st)+'</small></li>').join(''):'<li class="empty" dir="rtl">המחסנית ריקה</li>';
+}
+lab({fmt:{prog:i=>PROGS[i]}, step:s=>sview($('stack'),s), after:p=>{ const ds=p.prog===2; $('nlab').textContent=ds?'המספר':p.prog===1?'המעריך e':'n'; $('nv').textContent=ds?NUMS[p.n]:p.n; }});
+mountWatch($('exPT'),LAB.examples[0],s=>sview($('exstack'),s));
+
+/* practice */
+const FN=[
+  {code:'def f(n):\n    if n == 0:\n        return 0\n    return n + f(n - 1)', f:n=>n*(n+1)/2, r:[1,8], name:'סכום 1 עד n', wrong:(n,v)=>v===n*(n-1)/2?'שכחתם את n עצמו בחיבור.':null},
+  {code:'def f(n):\n    if n == 0:\n        return 1\n    return n * f(n - 1)', f:n=>{let x=1; for(let i=2;i<=n;i++) x*=i; return x;}, r:[1,5], name:'עצרת', wrong:(n,v)=>v===0?'מקרה הבסיס מחזיר 1, לא 0.':null},
+  {code:'def f(n):\n    if n < 10:\n        return 1\n    return 1 + f(n // 10)', f:n=>String(n).length, r:[5,99999], name:'מספר ספרות', wrong:(n,v)=>v===String(n).length-1?'גם הקריאה האחרונה, מקרה הבסיס, מחזירה 1.':null},
+  {code:'def f(n):\n    if n < 10:\n        return n\n    return n % 10 + f(n // 10)', f:n=>String(n).split('').reduce((a,b)=>a+ +b,0), r:[12,9999], name:'סכום ספרות', wrong:()=>null},
+  {code:'def f(n):\n    if n == 0:\n        return 1\n    return 2 * f(n - 1)', f:n=>2**n, r:[1,8], name:'חזקה של 2', wrong:(n,v)=>v===2*n?'זו לא הכפלה של n ב-2. כל קריאה מכפילה ב-2 את התשובה של הקריאה שמתחתיה.':v===2**(n-1)?'גם f(0) נספר: הוא מחזיר 1, ואז מכפילים n פעמים.':null}];
+function qValue(){
+  const F=pick(FN), n=ri(F.r[0],F.r[1]), ans=F.f(n);
+  return {ask:'מה התוכנית מדפיסה?', code:F.code+'\n\nprint(f('+n+'))', type:'num', ans,
+    diag:(r,v)=>F.wrong(n,v),
+    hints:['התחילו מלמטה: מה מחזיר מקרה הבסיס?','כתבו את שרשרת הקריאות: f('+n+') צריכה את f('+(F.code.includes('// 10')?Math.floor(n/10):n-1)+'), וכך הלאה.'],
+    sol:'הפונקציה מחשבת '+F.name+'. f('+n+') = '+ans+'.', ok:'f('+n+') = '+ans+'.'};
+}
+function qCalls(){
+  const n=ri(2,7);
+  return {ask:'כמה פעמים בסך הכל נקראת הפונקציה fact, כולל הקריאה הראשונה?', code:'def fact(n):\n    if n == 0:\n        return 1\n    return n * fact(n - 1)\n\nprint(fact('+n+'))', type:'num', ans:n+1,
+    diag:(r,v)=>v===n?'גם fact(0) היא קריאה: מקרה הבסיס.':v===n-1?'ספרו את כל הקריאות: מ-fact('+n+') ועד fact(0).':null,
+    hints:['רשמו את הקריאות: fact('+n+'), fact('+(n-1)+'), ...','האחרונה היא fact(0). כמה מספרים יש מ-'+n+' עד 0?'], sol:'fact('+n+') עד fact(0): '+(n+1)+' קריאות.', ok:'כולל מקרה הבסיס.'};
+}
+function qOrder(){
+  const n=ri(3,6), before=Math.random()<.5;
+  const code='def show(n):\n    if n == 0:\n        return\n'+(before?'    print(n)\n    show(n - 1)':'    show(n - 1)\n    print(n)')+'\n\nshow('+n+')';
+  return {ask:'מה השורה <b>הראשונה</b> שהתוכנית מדפיסה?', code, type:'num', ans:before?n:1,
+    diag:(r,v)=>before&&v===1?'כאן print בא לפני הקריאה לעצמנו, ולכן כל קריאה מדפיסה לפני שהיא ממשיכה.':!before&&v===n?'כאן print בא אחרי הקריאה. show('+n+') מחכה שכל הקריאות שמתחתיה ייגמרו, ורק אז מדפיסה.':v===0?'כש-n == 0 יש return בלי הדפסה.':null,
+    hints:['מה קודם בתוך הפונקציה: print או הקריאה לעצמה?',before?'show('+n+') מדפיסה מיד, ורק אז קוראת ל-show('+(n-1)+').':'show('+n+') קוראת קודם ל-show('+(n-1)+') ומחכה. מי הראשונה שמגיעה ל-print?'],
+    sol:before?'print לפני הקריאה: הפלט '+Array.from({length:n},(_,i)=>n-i).join(', ')+'. הראשון: '+n+'.':'print אחרי הקריאה: הפלט '+Array.from({length:n},(_,i)=>i+1).join(', ')+'. הראשון: 1.', ok:before?'מדפיסים בדרך למטה.':'מדפיסים בדרך חזרה.'};
+}
+const ENDS=[
+  ['def f(n):\n    if n == 0:\n        return 0\n    return 1 + f(n - 1)\n\nprint(f(5))',true,'כל קריאה מקטינה את n ב-1, ומ-5 מגיעים ל-0.'],
+  ['def f(n):\n    if n == 0:\n        return 0\n    return 1 + f(n - 1)\n\nprint(f(-2))',false,'מ-‎-2 יורדים ל-‎-3, ‎-4... ולא פוגשים את 0.'],
+  ['def f(n):\n    if n == 0:\n        return 0\n    return 1 + f(n + 1)\n\nprint(f(3))',false,'n + 1 מגדיל את n, ומתרחקים מ-0.'],
+  ['def f(n):\n    if n <= 0:\n        return 0\n    return 1 + f(n - 2)\n\nprint(f(7))',true,'7, 5, 3, 1, ‎-1. בסוף n <= 0 מתקיים.'],
+  ['def f(n):\n    if n == 0:\n        return 0\n    return 1 + f(n - 2)\n\nprint(f(7))',false,'7, 5, 3, 1, ‎-1: מדלגים מעל 0, ו-n == 0 אף פעם לא True.'],
+  ['def f(n):\n    if n == 1:\n        return 1\n    return n * f(n // 2)\n\nprint(f(8))',true,'8, 4, 2, 1. חלוקה ב-2 מגיעה ל-1.']];
+function qEnds(){
+  const [code,ok,why]=pick(ENDS);
+  return {ask:'האם התוכנית תסתיים, או תעצור עם RecursionError?', code, type:'mc',
+    opts:[{t:'תסתיים ותדפיס תשובה',ok:ok,why:ok?'':why},{t:'RecursionError: לא מגיעים לבסיס',ok:!ok,why:ok?why:''}].map(o=>({...o,why:o.why||'בדקו שוב את סדרת הערכים של n.'})),
+    hints:['כתבו את הערכים של n בקריאות הראשונות.','האם אחד מהם מקיים את תנאי הבסיס בדיוק?'], sol:why, ok:why};
+}
+practice(()=>pick([qValue,qValue,qValue,qCalls,qOrder,qOrder,qEnds,qEnds])());
+
+})();
+</script>
+</body>
+</html>

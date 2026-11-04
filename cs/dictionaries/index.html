@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מילון בפייתון: dict, מפתח וערך · מדעי המחשב כיתה י · מירי</title>
+<meta name="description" content="dict בפייתון: מפתח וערך, get, in, update ולולאה על items, וספירת מופעים של אותיות ומילים. מעבדה עם מעקב שורה אחרי שורה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/dictionaries/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מילון בפייתון: dict, מפתח וערך · מדעי המחשב כיתה י · מירי">
+<meta property="og:description" content="dict בפייתון: מפתח וערך, get, in, update ולולאה על items, וספירת מופעים של אותיות ומילים. מעבדה עם מעקב שורה אחרי שורה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/dictionaries/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://shohamtal.github.io/homework-site/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"מילונים בפייתון: מפתח וערך","item":"https://shohamtal.github.io/homework-site/cs/dictionaries/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מתי משתמשים במילון ומתי ברשימה?","acceptedAnswer":{"@type":"Answer","text":"רשימה מתאימה לסדר: תור, ציונים לפי סדר המבחנים. מילון מתאים לחיפוש לפי שם: מלאי לפי מוצר, ציון לפי מקצוע, מספר מופעים לפי מילה. חיפוש במילון לפי מפתח מהיר מאוד, גם כשיש בו מיליון זוגות. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין d[key] לבין d.get(key)?","acceptedAnswer":{"@type":"Answer","text":"כשהמפתח קיים, שניהם מחזירים את אותו ערך. כשהוא חסר, d[key] עוצר עם KeyError, ו-d.get(key) מחזיר None. עם d.get(key, 0) מקבלים 0, וזה נוח במיוחד לספירה."}},{"@type":"Question","name":"מה יכול להיות מפתח במילון?","acceptedAnswer":{"@type":"Answer","text":"מחרוזת, מספר או אמת ושקר. רשימה לא יכולה להיות מפתח, כי אפשר לשנות אותה. ערך, לעומת זאת, יכול להיות כל דבר: גם רשימה או מילון אחר. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מילונים בפייתון: מפתח וערך","description":"dict בפייתון: מפתח וערך, get, in, update ולולאה על items, וספירת מופעים של אותיות ומילים. מעבדה עם מעקב שורה אחרי שורה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/cs/dictionaries/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"מילונים בפייתון: מפתח וערך","teaches":"מילונים בפייתון: מפתח וערך","keywords":"dict, מפתח, ספירה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:14em; max-width:100%; box-sizing:border-box; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices button code{font-weight:400}
+.mini pre.code{margin:0}
+.tag-bad, .tag-good{font-weight:700; font-size:.92rem}
+.tag-bad{color:var(--err)} .tag-good{color:var(--ok)}
+#labPT, #exPT{margin-top:14px}
+#prCode{max-width:520px; margin:10px auto}
+code[dir=ltr]{unicode-bidi:isolate}
+.dview{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; direction:ltr; margin:12px 0; min-height:62px}
+.dview .kv{display:flex; border:2px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); box-shadow:3px 3px 0 var(--hard); font:1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.dview .kv b{padding:6px 10px; background:var(--paper); border-right:2px solid var(--border); font-weight:700}
+.dview .kv span{padding:6px 12px; min-width:1.5em; text-align:center}
+.dview .kv.on{border-color:var(--line); box-shadow:0 0 0 2px var(--line)} .dview .kv.on span{background:var(--hl)}
+.dview .empty{color:var(--muted); font-family:var(--f-body); direction:rtl}
+.dview-h{text-align:center; color:var(--muted); font-size:.9rem; margin:0}
+
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="dictionaries">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/#cs-hs-10">מבני נתונים ואלגוריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מילונים בפייתון: מפתח וערך</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · מבני נתונים ואלגוריתמים</div>
+  <h1>מילונים בפייתון <span class="slogan">מפתח וערך</span></h1>
+  <p class="lead">ברשימה מוצאים ערך לפי המקום שלו: 0, 1, 2. במילון מוצאים ערך לפי <strong>שם</strong>: כמה תפוחים יש במלאי? מה הציון של "math"? כאן יוצרים <code dir="ltr" lang="en">dict</code>, מוסיפים ומעדכנים מפתחות, עוברים עליו בלולאה וסופרים מופעים של אותיות ומילים. כדאי להכיר קודם <a href="../lists/">רשימות</a> ו<a href="../strings/">מחרוזות</a>. בהמשך משתמשים במילונים גם ב<a href="../lists-2d/">רשימה דו-ממדית</a> וב<a href="../complexity/">סיבוכיות</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">מילון הוא אוסף של זוגות: <strong>מפתח</strong> ו<strong>ערך</strong>. כמו בספר טלפונים: מחפשים לפי השם ומקבלים את המספר. המפתחות לא חוזרים על עצמם, ולכל מפתח יש ערך אחד.</p>
+  <pre class="code" dir="ltr" lang="en">stock = {"apple": 3, "pear": 1}
+print(stock["apple"])     # 3
+stock["kiwi"] = 5         # new key
+stock["apple"] = 4        # change a value
+print(stock)              # {'apple': 4, 'pear': 1, 'kiwi': 5}</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>קוראים ומשנים</h3>
+      <p><code dir="ltr" lang="en">d[key]</code> מחזיר את הערך. <code dir="ltr" lang="en">d[key] = value</code> מוסיף מפתח חדש, או מחליף ערך של מפתח שכבר קיים. <code dir="ltr" lang="en">d.update(other)</code> מוסיף כמה זוגות בבת אחת.</p>
+    </div>
+    <div class="mini">
+      <h3>בודקים בזהירות</h3>
+      <p>מפתח שלא קיים גורם לשגיאה <code dir="ltr" lang="en">KeyError</code>. לכן בודקים קודם עם <code dir="ltr" lang="en">key in d</code>, או משתמשים ב-<code dir="ltr" lang="en">d.get(key, 0)</code>, שמחזיר 0 כשהמפתח חסר.</p>
+    </div>
+    <div class="mini">
+      <h3>עוברים בלולאה</h3>
+      <p><code dir="ltr" lang="en">for k in d</code> עובר על המפתחות. <code dir="ltr" lang="en">for k, v in d.items()</code> עובר על הזוגות. <code dir="ltr" lang="en">len(d)</code> הוא מספר המפתחות.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> לספירת מופעים יש שורה אחת שכדאי לזכור: <code dir="ltr" lang="en">counts[x] = counts.get(x, 0) + 1</code>. בפעם הראשונה <code dir="ltr" lang="en">get</code> נותן 0, ובכל פעם נוספת מוסיפים 1.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מלאי של דוכן פירות</h2></div>
+  <p class="text">בדוכן יש 3 תפוחים ואגס אחד. בחרו במחוונים איזה פרי מגיע ובאיזו כמות. אם הפרי כבר במילון, התוכנית מעדכנת אותו. אם לא, היא מוסיפה מפתח חדש. לחצו "שורה הבאה" ועקבו אחרי המילון.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="item"><span>איזה פרי מגיע</span><span id="itemv" dir="ltr"></span></label>
+      <input type="range" id="item" min="0" max="3" step="1" value="2">
+      <label class="slider" for="amount"><span>כמה יחידות</span><span id="amountv" dir="ltr"></span></label>
+      <input type="range" class="hl" id="amount" min="0" max="5" step="1" value="2">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+    <div class="ctrl">
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries"></div>
+      </div>
+    </div>
+  </div>
+  <p class="dview-h">המילון stock בשלב הנוכחי:</p>
+  <div class="dview" id="dview" aria-live="off"></div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labPy" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מפתח שלא קיים</h3>
+      <p>קריאה של מפתח חסר עוצרת את התוכנית עם <code dir="ltr" lang="en">KeyError</code>. <code dir="ltr" lang="en">get</code> מחזיר ערך ברירת מחדל במקום.</p>
+      <span class="tag-bad">✗ KeyError: 'plum'</span><pre class="code" dir="ltr" lang="en">stock = {"apple": 3}
+print(stock["plum"])</pre>
+      <span class="tag-good">✓ מדפיס 0</span><pre class="code" dir="ltr" lang="en">stock = {"apple": 3}
+print(stock.get("plum", 0))</pre>
+    </div>
+    <div class="mini">
+      <h3>במילון אין מקום 0</h3>
+      <p>מילון לא ממוספר כמו רשימה. <code dir="ltr" lang="en">d[0]</code> מחפש מפתח שהוא המספר 0, ולא "הראשון".</p>
+      <span class="tag-bad">✗ KeyError: 0</span><pre class="code" dir="ltr" lang="en">grades = {"math": 90, "art": 85}
+print(grades[0])</pre>
+      <span class="tag-good">✓ מדפיס 90</span><pre class="code" dir="ltr" lang="en">grades = {"math": 90, "art": 85}
+print(grades["math"])</pre>
+    </div>
+    <div class="mini">
+      <h3>in בודק מפתחות, לא ערכים</h3>
+      <p><code dir="ltr" lang="en">in</code> על מילון שואל רק על המפתחות. כדי לחפש ערך, שואלים את <code dir="ltr" lang="en">d.values()</code>.</p>
+      <span class="tag-bad">✗ False</span><pre class="code" dir="ltr" lang="en">ages = {"cat": 4, "dog": 7}
+print(7 in ages)</pre>
+      <span class="tag-good">✓ True</span><pre class="code" dir="ltr" lang="en">ages = {"cat": 4, "dog": 7}
+print(7 in ages.values())</pre>
+    </div>
+    <div class="mini">
+      <h3>אותו מפתח פעמיים</h3>
+      <p>מפתח מופיע במילון פעם אחת בלבד. השמה שנייה לאותו מפתח מחליפה את הערך, לא מוסיפה זוג.</p>
+      <span class="tag-bad">✗ "יש 2 זוגות"</span><pre class="code" dir="ltr" lang="en">d = {"a": 1}
+d["a"] = 5
+print(len(d))      # 1, not 2</pre>
+      <span class="tag-good">✓ סופרים בלי למחוק</span><pre class="code" dir="ltr" lang="en">d = {"a": 1}
+d["a"] = d["a"] + 5
+print(d)           # {'a': 6}</pre>
+    </div>
+    <div class="mini">
+      <h3>לולאה על מילון נותנת מפתחות</h3>
+      <p><code dir="ltr" lang="en">for x in d</code> נותן רק מפתחות. כדי לקבל גם ערך, משתמשים ב-<code dir="ltr" lang="en">items()</code>.</p>
+      <span class="tag-bad">✗ רק apple, pear</span><pre class="code" dir="ltr" lang="en">for x in stock:
+    print(x)</pre>
+      <span class="tag-good">✓ apple 3, pear 1</span><pre class="code" dir="ltr" lang="en">for k, v in stock.items():
+    print(k, v)</pre>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: סופרים אותיות</h2></div>
+  <p class="text">כמה פעמים מופיעה כל אות במילה banana? עוברים על האותיות אחת אחת, ולכל אות מוסיפים 1 במילון. אות שעוד לא ראינו מתחילה מ-0 בזכות <code dir="ltr" lang="en">get</code>.</p>
+  <p class="dview-h">המילון counts בשלב הנוכחי:</p>
+  <div class="dview" id="exview" aria-live="off"></div>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code" id="prCode" dir="ltr" lang="en" hidden></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prA" dir="ltr" lang="en" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מתי משתמשים במילון ומתי ברשימה?</h3>
+    <p>רשימה מתאימה לסדר: תור, ציונים לפי סדר המבחנים. מילון מתאים לחיפוש לפי שם: מלאי לפי מוצר, ציון לפי מקצוע, מספר מופעים לפי מילה. חיפוש במילון לפי מפתח מהיר מאוד, גם כשיש בו מיליון זוגות. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין d[key] לבין d.get(key)?</h3>
+    <p>כשהמפתח קיים, שניהם מחזירים את אותו ערך. כשהוא חסר, d[key] עוצר עם KeyError, ו-d.get(key) מחזיר None. עם d.get(key, 0) מקבלים 0, וזה נוח במיוחד לספירה.</p>
+    <h3>מה יכול להיות מפתח במילון?</h3>
+    <p>מחרוזת, מספר או אמת ושקר. רשימה לא יכולה להיות מפתח, כי אפשר לשנות אותה. ערך, לעומת זאת, יכול להיות כל דבר: גם רשימה או מילון אחר. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/lists/">רשימות בפייתון</a> · <a href="../../cs/strings/">מחרוזות בפייתון</a></p>
+<p class="related text"><strong>בכיתה יא ממשיכים ל:</strong> <a href="../../cs/classes-objects/">מחלקות ועצמים בפייתון</a></p>
+<p class="related text"><strong>בכיתה יב ממשיכים ל:</strong> <a href="../../cs/databases-intro/">מבוא למסדי נתונים ו-SQL</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/cyber-safety/"><small>→ הנושא הקודם</small>סייבר ובטיחות ברשת</a><a class="next" href="../../cs/lists-2d/"><small>הנושא הבא ←</small>רשימה דו-ממדית: טבלה ולוח</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const shuffle=a=>{a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const codeHTML=code=>code.replace(/\n$/,'').split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('');
+const squash=s=>String(s).trim().replace(/\s+/g,'').toLowerCase();
+/* PT.mount plus a callback on every step change (fn(step, index)), for visuals next to the tracer */
+function mountWatch(el,o,fn){
+  PT.mount(el,o); if(!fn) return;
+  const f=()=>fn(o.steps[el.ptStep]||o.steps[0],el.ptStep);
+  if(el._mo) el._mo.disconnect();
+  el._mo=new MutationObserver(f); el._mo.observe(el.querySelector('.pt-count'),{childList:true,characterData:true,subtree:true}); f();
+}
+/* lab: sliders (LAB.ids, label spans id+'v') + "נסו את אלה" presets + tracer + Pyodide box */
+function lab(o){
+  const tries=$('tries');
+  tries.innerHTML=LAB.presets.map((t,i)=>'<button type="button" data-i="'+i+'">'+t.label+'</button>').join('');
+  const get=()=>{ const p={}; LAB.ids.forEach(id=>p[id]=+$(id).value); return p; };
+  function draw(){
+    if(o&&o.before) o.before(); const p=get();
+    LAB.ids.forEach(id=>{ const f=o&&o.fmt&&o.fmt[id]; $(id+'v').textContent=f?f(p[id]):p[id]; });
+    const r=LAB.build(p);
+    mountWatch($('labPT'),{code:r.code,steps:r.steps,input:r.input},o&&o.step?s=>o.step(s,p,r):null);
+    $('labTxt').innerHTML=r.explain; $('labPy').value=r.code;
+    if(o&&o.after) o.after(p,r);
+  }
+  LAB.ids.forEach(id=>$(id).addEventListener('input',draw));
+  tries.querySelectorAll('button').forEach(b=>b.onclick=()=>{ LAB.presets[+b.dataset.i].p.forEach((v,i)=>{ $(LAB.ids[i]).value=v; }); draw(); });
+  draw();
+  return {draw,get};
+}
+/* practice: gen() returns {ask, code?, type:'num'|'text'|'mc', ans, accept?, opts?[{t,ok,why}], diag?(raw,num), hints[], sol, ok?} */
+function practice(gen){
+  let q, sel=-1, tries=0, hint=0, streak=0, solved=0, done=false;
+  const fb=h=>{ $('prFb').innerHTML=h; };
+  const st=()=>{ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; };
+  function fresh(){
+    q=gen(); sel=-1; tries=0; hint=0; done=false;
+    $('prAsk').innerHTML=q.ask;
+    $('prCode').hidden=!q.code; $('prCode').innerHTML=q.code?codeHTML(q.code):'';
+    const mc=q.type==='mc'; $('prCh').hidden=!mc; $('prIn').hidden=mc; $('prA').value='';
+    $('prA').setAttribute('inputmode',q.type==='num'?'decimal':'text');
+    if(mc){
+      $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+o.t+'</button>').join('');
+      $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+    }
+    $('prShow').disabled=true; fb('');
+  }
+  $('prCheck').onclick=()=>{
+    if(done){ fb('<div class="fb ok">כבר פתרתם את זה. לחצו "תרגיל חדש".</div>'); return; }
+    let right, msg=null, note='';
+    if(q.type==='mc'){
+      if(sel<0){ fb('<div class="fb err">בחרו קודם תשובה.</div>'); return; }
+      right=!!q.opts[sel].ok; msg=q.opts[sel].why||null;
+    } else {
+      const raw=$('prA').value;
+      if(!raw.trim()){ fb('<div class="fb err">כתבו תשובה.</div>'); $('prA').focus(); return; }
+      if(q.type==='num'){
+        const v=parseFloat(raw.replace(',','.').replace(/\s/g,''));
+        if(isNaN(v)){ fb('<div class="fb err">כתבו מספר.</div>'); return; }
+        right=Math.abs(v-q.ans)<1e-9; if(!right&&q.diag) msg=q.diag(raw,v);
+      } else {
+        const a=squash(raw), bare=a.replace(/^["']+|["']+$/g,''), all=[q.ans].concat(q.accept||[]).map(squash);
+        right=all.includes(a)||all.includes(bare);
+        if(right&&!all.includes(a)) note=' המרכאות לא מודפסות, הן רק מסמנות איפה הטקסט מתחיל ונגמר.';
+        if(!right&&q.diag) msg=q.diag(raw);
+      }
+    }
+    if(right){ done=true; streak++; solved++; st(); fb('<div class="fb ok">נכון! '+(q.ok||'')+note+'</div>'); return; }
+    streak=0; tries++; st();
+    fb('<div class="fb err">'+(msg||'עוד לא. נסו שוב, או לחצו על רמז.')+'</div>');
+    if(tries>=2) $('prShow').disabled=false;
+  };
+  $('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); fb('<div class="fb hint">'+q.hints[hint-1]+'</div>'); };
+  $('prShow').onclick=()=>{ fb('<div class="fb hint">'+q.sol+'<br>עכשיו נסו תרגיל חדש.</div>'); };
+  $('prNew').onclick=fresh;
+  $('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  fresh(); st();
+}
+
+/*LAB*/
+const dr=pairs=>({py:'{'+pairs.map(([k,v])=>PT.repr(k)+': '+PT.repr(v)).join(', ')+'}'});
+const FRUITS=['apple','pear','kiwi','plum'];
+const LAB={ids:['item','amount'], ranges:[[0,3,1],[0,5,1]],
+  presets:[{label:'מגיע פרי חדש',p:[2,2]},{label:'עוד תפוחים',p:[0,2]},{label:'שזיפים: get מוצא',p:[3,4]},{label:'כמות 0',p:[3,0]},{label:'אגסים',p:[1,5]}]};
+LAB.build=function(p){
+  const item=FRUITS[p.item], amount=p.amount, pairs=[['apple',3],['pear',1]];
+  const code=['stock = {"apple": 3, "pear": 1}','item = "'+item+'"','amount = '+amount,'if item in stock:','    stock[item] = stock[item] + amount','else:','    stock[item] = amount','print(stock)','print("plums:", stock.get("plum", 0))','for name, count in stock.items():','    print(name, count)','print(len(stock), "kinds")'].join('\n');
+  const v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.',d:[]}]; let out='';
+  const go=(line,note,hk)=>{ v.stock=dr(pairs); steps.push({line,vars:{...v},out,note,d:pairs.map(x=>x.slice()),hk}); };
+  go(1,'יוצרים מילון עם שני זוגות: המפתח "apple" עם הערך 3, והמפתח "pear" עם הערך 1.');
+  v.item=item; go(2,'item הוא שם הפרי שמגיע: "'+item+'".');
+  v.amount=amount; go(3,'amount = '+amount+'.');
+  const idx=pairs.findIndex(x=>x[0]===item), has=idx>=0;
+  go(4,'in בודק אם "'+item+'" הוא מפתח במילון. '+(has?'כן, True. נכנסים לעדכון.':'לא, False. ממשיכים ל-else.'),has?item:null);
+  if(has){ const old=pairs[idx][1]; pairs[idx][1]=old+amount; go(5,'קוראים את הערך הישן, '+old+', מוסיפים '+amount+' ושומרים '+(old+amount)+' באותו מפתח. לא נוסף זוג חדש.',item); }
+  else { pairs.push([item,amount]); go(7,'מפתח חדש: stock["'+item+'"] = '+amount+'. עכשיו יש במילון '+pairs.length+' זוגות.',item); }
+  out+=PT.repr(dr(pairs))+'\n'; go(8,'print על מילון מראה את כל הזוגות, לפי הסדר שבו נוספו.');
+  const plum=(pairs.find(x=>x[0]==='plum')||[0,null])[1];
+  out+='plums: '+(plum===null?0:plum)+'\n'; go(9,plum===null?'אין מפתח "plum". במקום KeyError, get מחזיר את ברירת המחדל 0.':'יש מפתח "plum", לכן get מחזיר את הערך שלו: '+plum+'.','plum');
+  pairs.forEach(([k,c])=>{ v.name=k; v.count=c; go(10,'items() נותן את הזוג הבא: name = "'+k+'", count = '+c+'.',k); out+=k+' '+c+'\n'; go(11,'מדפיסים את המפתח ואת הערך.',k); });
+  go(10,'אין עוד זוגות. הלולאה נגמרת.');
+  out+=pairs.length+' kinds\n'; go(12,'len על מילון סופר מפתחות: '+pairs.length+'.');
+  const explain='<div>'+(has?'"'+item+'" כבר היה במילון, אז הערך שלו <b>עודכן</b>. מספר המפתחות לא השתנה.':'"'+item+'" לא היה במילון, אז נוסף <b>מפתח חדש</b>.'+(amount===0?' גם ערך 0 הוא ערך: המפתח קיים עכשיו.':''))+'</div>'
+    +'<div>בסוף: <span class="eq">'+PT.repr(dr(pairs)).replace(/</g,'&lt;')+'</span></div><div>'+pairs.length+' מפתחות. get("plum", 0) נתן '+(plum===null?'0 כי המפתח חסר':plum)+'.</div>';
+  return {code, steps, explain};
+};
+LAB.count=function(word){
+  const code=['word = "'+word+'"','counts = {}','for ch in word:','    counts[ch] = counts.get(ch, 0) + 1','print(counts)'].join('\n');
+  const pairs=[], v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.',d:[]}]; let out='';
+  const go=(line,note,hk)=>steps.push({line,vars:{...v},out,note,d:pairs.map(x=>x.slice()),hk});
+  v.word=word; go(1,'המילה שסופרים בה אותיות.');
+  v.counts=dr(pairs); go(2,'מתחילים ממילון ריק.');
+  for(const ch of word){
+    v.ch=ch; go(3,'האות הבאה: ch = "'+ch+'".',ch);
+    const i=pairs.findIndex(x=>x[0]===ch), old=i<0?0:pairs[i][1];
+    if(i<0) pairs.push([ch,1]); else pairs[i][1]++;
+    v.counts=dr(pairs); go(4,'counts.get("'+ch+'", 0) נותן '+old+(i<0?' (אות חדשה)':'')+'. ועוד 1: עכשיו counts["'+ch+'"] = '+(old+1)+'.',ch);
+  }
+  go(3,'אין עוד אותיות. הלולאה נגמרת.');
+  out+=PT.repr(dr(pairs))+'\n'; go(5,'המילון מראה כמה פעמים הופיעה כל אות. '+pairs.length+' אותיות שונות מתוך '+word.length+'.');
+  return {code, steps, pairs};
+};
+LAB.examples=[LAB.count('banana'),LAB.count('letter'),LAB.count('a')];
+/*/LAB*/
+function dview(el,s){
+  el.innerHTML=s.d&&s.d.length?s.d.map(([k,c])=>'<div class="kv'+(k===s.hk?' on':'')+'"><b>'+esc(PT.repr(k))+'</b><span>'+esc(PT.repr(c))+'</span></div>').join(''):'<span class="empty">המילון עוד ריק</span>';
+}
+lab({fmt:{item:i=>'"'+FRUITS[i]+'"'},step:s=>dview($('dview'),s)});
+mountWatch($('exPT'),LAB.examples[0],s=>dview($('exview'),s));
+
+/* practice */
+const NAMES=['math','art','music','sport','history'];
+function qUpdate(){
+  const ks=shuffle(NAMES).slice(0,2), a=ri(50,90), b=ri(50,90), add=ri(2,9), target=pick(ks), newk=shuffle(NAMES.filter(x=>!ks.includes(x)))[0];
+  const ops=shuffle([target+'|add',newk+'|set']);
+  const lines=['grades = {"'+ks[0]+'": '+a+', "'+ks[1]+'": '+b+'}'];
+  const val={[ks[0]]:a,[ks[1]]:b}, setv=ri(60,99);
+  ops.forEach(o=>{ const [k,t]=o.split('|'); if(t==='add'){ lines.push('grades["'+k+'"] = grades["'+k+'"] + '+add); val[k]+=add; } else { lines.push('grades["'+k+'"] = '+setv); val[k]=setv; } });
+  const ask=pick([target,'len']);
+  if(ask==='len') return {ask:'מה '+C('len(grades)')+' בסוף?', code:lines.join('\n'), type:'num', ans:3,
+    diag:(r,v)=>v===4?'grades["'+target+'"] לא מוסיף זוג: המפתח כבר קיים, ולכן רק הערך שלו משתנה.':v===2?'"'+newk+'" הוא מפתח חדש, ולכן נוסף זוג.':null,
+    hints:['len סופר מפתחות. אילו מפתחות יש בסוף?','"'+target+'" כבר היה. "'+newk+'" חדש.'], sol:'המפתחות: '+[ks[0],ks[1],newk].join(', ')+'. שלושה.', ok:'שלושה מפתחות.'};
+  const orig=target===ks[0]?a:b;
+  return {ask:'מה '+C('grades["'+target+'"]')+' בסוף?', code:lines.join('\n'), type:'num', ans:val[target],
+    diag:(r,v)=>v===orig?'הערך עודכן: לקחו את '+orig+' והוסיפו '+add+'.':v===add?'לא מחליפים ב-'+add+'. מוסיפים אותו לערך הישן.':null,
+    hints:['כתבו את המילון אחרי כל שורה.','בהתחלה grades["'+target+'"] = '+orig+'.'], sol:orig+' + '+add+' = '+val[target]+'.', ok:'המילון עודכן נכון.'};
+}
+function qCount(){
+  const w=pick(['banana','pepper','coffee','letter','mississippi','success','tomato','parrot']), r=LAB.count(w), pr=pick(r.pairs);
+  return {ask:'מה '+C('counts["'+pr[0]+'"]')+' בסוף?', code:r.code.split('\n').slice(0,4).join('\n'), type:'num', ans:pr[1],
+    diag:(x,v)=>v===w.length?'זה אורך המילה כולה. סופרים רק את האות "'+pr[0]+'".':v===pr[1]-1?'בפעם הראשונה get נותן 0, ואז מוסיפים 1. לכן כל מופע נספר.':null,
+    hints:['בכל פעם שהלולאה פוגשת את "'+pr[0]+'", הערך שלה עולה ב-1.','ספרו כמה פעמים "'+pr[0]+'" מופיעה ב-'+w+'.'], sol:'"'+pr[0]+'" מופיעה ב-'+w+' '+pr[1]+' פעמים. המילון בסוף: '+C(PT.repr({py:'{'+r.pairs.map(([k,c])=>"'"+k+"': "+c).join(', ')+'}'})), ok:'כל מופע הוסיף 1.'};
+}
+function qIn(){
+  const a=ri(2,9), b=ri(10,20), d='ages = {"cat": '+a+', "dog": '+b+'}';
+  const Q=pick([['"cat" in ages',true,''],['"cow" in ages',false,''],[a+' in ages',false,'in על מילון בודק רק מפתחות. '+a+' הוא ערך.'],[b+' in ages.values()',true,''],['"dog" in ages.values()',false,'"dog" הוא מפתח, לא ערך.']]);
+  return {ask:'מה התוכנית מדפיסה?', code:d+'\nprint('+Q[0]+')', type:'mc',
+    opts:[true,false].map(t=>({t:C(t?'True':'False'),ok:t===Q[1],why:Q[2]||'בדקו: האם השאלה היא על המפתחות או על הערכים?'})),
+    hints:['המפתחות הם "cat" ו-"dog". הערכים הם '+a+' ו-'+b+'.','in לבד בודק מפתחות. in עם values() בודק ערכים.'], sol:C(Q[0])+' הוא '+(Q[1]?'True':'False')+'. '+(Q[2]||'in על מילון בודק מפתחות, ו-values() הם הערכים.'), ok:Q[2]||'in על מילון בודק מפתחות.'};
+}
+function qGet(){
+  const n=ri(2,9), k=pick(['plum','lemon','mango']);
+  const Q=pick([['print(stock.get("'+k+'", 0))','0'],['print(stock.get("'+k+'"))','None'],['print(stock.get("apple", 0))',String(n)]]);
+  return {ask:'מה התוכנית מדפיסה?', code:'stock = {"apple": '+n+'}\n'+Q[0], type:'text', ans:Q[1],
+    diag:r=>/error/i.test(r)?'get לא עוצר עם שגיאה. זה כל היתרון שלו על פני סוגריים מרובעים.':Q[1]==='None'&&squash(r)==='0'?'בלי ערך ברירת מחדל, get מחזיר None.':null,
+    hints:['האם המפתח קיים במילון?','כשהמפתח חסר, get מחזיר את הערך השני שנתתם לו. אם לא נתתם, הוא מחזיר None.'], sol:'הפלט: '+C(Q[1])+'.', ok:'get מחזיר ערך גם כשהמפתח חסר.'};
+}
+const BUGS=[
+  [['stock = {"apple": 3}','stock["pear"] = 2','print(stock["plum"])'],3,'אין מפתח "plum". זה KeyError. אפשר stock.get("plum", 0).'],
+  [['grades = {"math": 90, "art": 85}','total = grades["math"] + grades["art"]','print(grades[0])'],3,'במילון אין מקום 0. זה KeyError: 0.'],
+  [['stock = {"apple": 3}','stock.append("kiwi")','print(stock)'],2,'למילון אין append. מוסיפים כך: stock["kiwi"] = 1.'],
+  [['counts = {}','for ch in "abc":','    counts[ch] = counts[ch] + 1'],3,'בפעם הראשונה counts[ch] עוד לא קיים. צריך counts.get(ch, 0) + 1.']];
+function qBug(){
+  const [lines,k,why]=pick(BUGS);
+  return {ask:'התוכנית תעצור עם שגיאה. באיזו שורה? כתבו את מספר השורה.', code:lines.join('\n'), type:'num', ans:k,
+    diag:(r,v)=>v>=1&&v<=lines.length?'שורה '+v+' רצה בלי בעיה. חפשו קריאה של מפתח שלא קיים, או פעולה שאין למילון.':'יש בתוכנית רק '+lines.length+' שורות.',
+    hints:['בכל שורה שקוראת d[key], שאלו: האם המפתח הזה כבר קיים ברגע הזה?',why.split('.')[0]+'.'], sol:'שורה '+k+': '+C(lines[k-1])+'. '+why, ok:why};
+}
+practice(()=>pick([qUpdate,qUpdate,qCount,qCount,qIn,qGet,qBug])());
+
+})();
+</script>
+</body>
+</html>

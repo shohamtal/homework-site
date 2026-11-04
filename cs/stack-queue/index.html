@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מחסנית ותור בפייתון · מדעי המחשב כיתה יא · מירי</title>
+<meta name="description" content="מחסנית ותור בפייתון: push ו-pop, LIFO מול FIFO, deque, ובדיקת סוגריים מאוזנים עם מחסנית. מעבדה עם קופסאות שזזות, מעקב ותרגול לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/stack-queue/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מחסנית ותור בפייתון · מדעי המחשב כיתה יא · מירי">
+<meta property="og:description" content="מחסנית ותור בפייתון: push ו-pop, LIFO מול FIFO, deque, ובדיקת סוגריים מאוזנים עם מחסנית. מעבדה עם קופסאות שזזות, מעקב ותרגול לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/stack-queue/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/cs/grade-11/"},{"@type":"ListItem","position":4,"name":"מחלקות ומבני נתונים","item":"https://shohamtal.github.io/homework-site/cs/grade-11/#cs-hs-11"},{"@type":"ListItem","position":5,"name":"מחסנית ותור","item":"https://shohamtal.github.io/homework-site/cs/stack-queue/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין מחסנית לתור?","acceptedAnswer":{"@type":"Answer","text":"במחסנית האחרון שנכנס יוצא ראשון (LIFO), כמו ערימת צלחות. בתור הראשון שנכנס יוצא ראשון (FIFO), כמו תור לקופה. אם מכניסים 10, 20, 30, מחסנית תוציא קודם 30 ותור יוציא קודם 10. נסו במעבדה."}},{"@type":"Question","name":"איך בודקים סוגריים מאוזנים עם מחסנית?","acceptedAnswer":{"@type":"Answer","text":"עוברים על התווים. סוגר פותח דוחפים למחסנית. סוגר סוגר משווים לראש המחסנית: אם הם זוג מתאים מוציאים, ואם לא, הביטוי לא מאוזן. בסוף המחסנית צריכה להיות ריקה."}},{"@type":"Question","name":"למה להשתמש ב-deque ולא ברשימה רגילה לתור?","acceptedAnswer":{"@type":"Answer","text":"ברשימה, pop(0) מזיז את כל הערכים שאחרי הראשון, וזה לוקח זמן כשהרשימה ארוכה. deque בנוי כך שאפשר להוסיף ולהוציא משני הצדדים מהר. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מחסנית ותור","description":"מחסנית ותור בפייתון: push ו-pop, LIFO מול FIFO, deque, ובדיקת סוגריים מאוזנים עם מחסנית. מעבדה עם קופסאות שזזות, מעקב ותרגול לכיתה יא.","url":"https://shohamtal.github.io/homework-site/cs/stack-queue/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"מחסנית ותור","teaches":"מחסנית ותור","keywords":"push ו-pop, LIFO, FIFO","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:10px auto 0; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace tr.now td{background:var(--hl); font-weight:800}
+.trace tr.later td{color:var(--muted); opacity:.55}
+.num{font-family:var(--f-math); font-size:1.1rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, Menlo, Consolas, monospace; width:14em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.pair{display:grid; grid-template-columns:minmax(0,1fr); gap:6px}
+.pair pre.code{margin:0; font-size:.88rem}
+.pair .tag{font-weight:800; font-size:.9rem; margin-bottom:2px}
+.pair .bad{color:var(--err)} .pair .good{color:var(--ok)}
+.q-code{max-width:460px; margin:0 auto 10px}
+</style>
+<style>
+.sq{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:14px; align-items:end; margin:8px 0 12px}
+@media (max-width: 560px){.sq{grid-template-columns:minmax(0,1fr)}}
+.sq h4{margin:0 0 6px; text-align:center; font-size:1rem}
+.pile{display:flex; flex-direction:column; align-items:center; gap:4px; min-height:60px; justify-content:flex-end; border:2px solid var(--border); border-top:0; border-radius:0 0 12px 12px; padding:6px; width:110px; margin:0 auto}
+.row1{display:flex; gap:4px; direction:ltr; align-items:center; justify-content:center; flex-wrap:wrap; min-height:60px; border-top:2px solid var(--border); border-bottom:2px solid var(--border); padding:6px}
+.it{width:52px; height:36px; border:2px solid var(--border); border-radius:8px; background:var(--card); box-shadow:2px 2px 0 var(--hard); display:flex; align-items:center; justify-content:center; font:1.1rem ui-monospace, Menlo, Consolas, monospace}
+.it.new{background:var(--hl)}
+.it.out{opacity:.45; border-style:dashed; box-shadow:none}
+.tagl{font-size:.8rem; color:var(--muted); text-align:center}
+.sq .lbl{display:flex; justify-content:space-between; direction:ltr; font-size:.8rem; color:var(--muted)}
+.exstr{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:8px}
+.exstr button{font-family:ui-monospace, Menlo, Consolas, monospace; direction:ltr}
+.exstr button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.pt-vars th{width:auto; overflow-wrap:normal}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="stack-queue">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/#cs-hs-11">מחלקות ומבני נתונים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מחסנית ותור</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · מחלקות ומבני נתונים</div>
+  <h1>מחסנית ותור <span class="slogan">מי יוצא ראשון?</span></h1>
+  <p class="lead">מחסנית היא כמו ערימת צלחות: מניחים למעלה ולוקחים מלמעלה. תור הוא כמו תור לקופה: מי שהגיע ראשון יוצא ראשון. כאן מכניסים ומוציאים ערכים משניהם באותו זמן ורואים את ההבדל, ובסוף בודקים סוגריים מאוזנים בעזרת מחסנית. כדאי לחזור קודם על <a href="../lists/">רשימות בפייתון</a> ועל <a href="../classes-objects/">מחלקות ועצמים</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מחסנית: LIFO</h3>
+      <p>Last In, First Out: האחרון שנכנס יוצא ראשון. ברשימה של פייתון, <code dir="ltr" lang="en">append</code> דוחף לסוף ו-<code dir="ltr" lang="en">pop()</code> מוציא מהסוף.</p>
+      <pre class="code" dir="ltr" lang="en">stack = []
+stack.append(1)
+stack.append(2)
+print(stack.pop())   # 2</pre>
+    </div>
+    <div class="mini">
+      <h3>תור: FIFO</h3>
+      <p>First In, First Out: הראשון שנכנס יוצא ראשון. <code dir="ltr" lang="en">deque</code> מ-collections מוציא מההתחלה מהר, עם <code dir="ltr" lang="en">popleft()</code>.</p>
+      <pre class="code" dir="ltr" lang="en">from collections import deque
+queue = deque()
+queue.append(1)
+queue.append(2)
+print(queue.popleft())   # 1</pre>
+    </div>
+    <div class="mini">
+      <h3>איפה משתמשים בהם</h3>
+      <p>מחסנית: כפתור "בטל" בעורך, חזרה אחורה בדפדפן, בדיקת סוגריים, קריאות לפונקציות. תור: הדפסות שמחכות למדפסת, תור של שחקנים למשחק, הודעות שמחכות לטיפול.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> במחסנית יש רק "ראש" אחד: נכנסים ויוצאים באותו צד. בתור יש שני צדדים: נכנסים מהסוף ויוצאים מההתחלה.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: אותם ערכים, סדר יציאה אחר</h2></div>
+  <p class="text">התוכנית מכניסה את אותם מספרים גם למחסנית וגם לתור, ואז מוציאה מכל אחד. הזיזו את המחוונים כדי לבחור כמה מכניסים וכמה מוציאים. לחצו "שורה הבאה" וראו את הקופסאות זזות.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sN"><span>כמה מכניסים</span><span class="eq" id="sNv"></span></label>
+      <input type="range" id="sN" min="0" max="6" step="1" value="4">
+      <label class="slider" for="sK"><span>כמה מוציאים</span><span class="eq" id="sKv"></span></label>
+      <input type="range" class="hl" id="sK" min="0" max="6" step="1" value="2">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="4,2">4 פנימה, 2 החוצה</button>
+          <button type="button" data-p="3,1">רק אחד יוצא</button>
+          <button type="button" data-p="5,5">מרוקנים הכל</button>
+          <button type="button" data-p="3,4">pop ממחסנית ריקה</button>
+          <button type="button" data-p="1,1">ערך אחד בלבד</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sq" id="sqViz" aria-label="המחסנית והתור"></div>
+  <div id="labPT"></div>
+  <h3 style="margin-top:18px">הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3><code dir="ltr" lang="en">pop</code> ממחסנית ריקה</h3>
+      <p>pop על רשימה ריקה נותן <code dir="ltr" lang="en">IndexError: pop from empty list</code>. בודקים לפני שמוציאים.</p>
+      <div class="pair"><div><p class="tag bad">✗ עלול להיכשל</p><pre class="code" dir="ltr" lang="en">top = stack.pop()</pre></div><div><p class="tag good">✓ בודקים קודם</p><pre class="code" dir="ltr" lang="en">if stack:
+    top = stack.pop()</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>בתור: <code dir="ltr" lang="en">pop(0)</code>, לא <code dir="ltr" lang="en">pop()</code></h3>
+      <p>תור ברשימה רגילה צריך להוציא מההתחלה. <code dir="ltr" lang="en">pop()</code> בלי מספר מוציא מהסוף, וזו כבר מחסנית.</p>
+      <div class="pair"><div><p class="tag bad">✗ זו מחסנית</p><pre class="code" dir="ltr" lang="en">first = line.pop()</pre></div><div><p class="tag good">✓ תור</p><pre class="code" dir="ltr" lang="en">first = line.pop(0)</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3><code dir="ltr" lang="en">pop(0)</code> איטי ברשימות ארוכות</h3>
+      <p>pop(0) מזיז את כל שאר הערכים מקום אחד. בתור ארוך עדיף deque, שמוציא מההתחלה בלי להזיז כלום.</p>
+      <div class="pair"><div><p class="tag bad">✗ איטי</p><pre class="code" dir="ltr" lang="en">line = []
+first = line.pop(0)</pre></div><div><p class="tag good">✓ מהיר</p><pre class="code" dir="ltr" lang="en">line = deque()
+first = line.popleft()</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>סוגריים: לא מספיק לספור</h3>
+      <p>ב-<code dir="ltr" lang="en">([)]</code> יש מספר שווה של פותחים וסוגרים, אבל הסדר שגוי. רק מחסנית תופסת את זה.</p>
+      <div class="pair"><div><p class="tag bad">✗ רק סופרים</p><pre class="code" dir="ltr" lang="en">ok = text.count("(") == text.count(")")</pre></div><div><p class="tag good">✓ מחסנית</p><pre class="code" dir="ltr" lang="en">ok = balanced(text)</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: סוגריים מאוזנים</h2></div>
+  <p class="text">כל סוגר פותח נכנס למחסנית. כל סוגר סוגר צריך להתאים לפותח שבראש המחסנית, ואז מוציאים אותו. בסוף המחסנית צריכה להיות ריקה. בחרו מחרוזת ועברו צעד אחרי צעד.</p>
+  <div class="exstr" id="exStr"></div>
+  <div class="stepper"><div class="sq" id="exViz" style="grid-template-columns:minmax(0,1fr)"></div><div id="exPT"></div></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code q-code" id="prQ" dir="ltr" lang="en"></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn"><input id="prN" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין מחסנית לתור?</h3>
+    <p>במחסנית האחרון שנכנס יוצא ראשון (LIFO), כמו ערימת צלחות. בתור הראשון שנכנס יוצא ראשון (FIFO), כמו תור לקופה. אם מכניסים 10, 20, 30, מחסנית תוציא קודם 30 ותור יוציא קודם 10. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך בודקים סוגריים מאוזנים עם מחסנית?</h3>
+    <p>עוברים על התווים. סוגר פותח דוחפים למחסנית. סוגר סוגר משווים לראש המחסנית: אם הם זוג מתאים מוציאים, ואם לא, הביטוי לא מאוזן. בסוף המחסנית צריכה להיות ריקה.</p>
+    <h3>למה להשתמש ב-deque ולא ברשימה רגילה לתור?</h3>
+    <p>ברשימה, pop(0) מזיז את כל הערכים שאחרי הראשון, וזה לוקח זמן כשהרשימה ארוכה. deque בנוי כך שאפשר להוסיף ולהוציא משני הצדדים מהר. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/lists/">רשימות בפייתון</a> · <a href="../../cs/classes-objects/">מחלקות ועצמים בפייתון</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/classes-objects/"><small>→ הנושא הקודם</small>מחלקות ועצמים בפייתון</a><a class="next" href="../../cs/linked-list/"><small>הנושא הבא ←</small>רשימה מקושרת: חוליות ומצביעים</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const C=s=>`<code dir="ltr" lang="en">${s}</code>`;
+/*GEN*/
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const dq=a=>({py:'deque(['+a.join(', ')+'])'});
+function buildLab(N,K){
+  const code=`from collections import deque\n\nstack = []\nqueue = deque()\nfor i in range(1, ${N} + 1):\n    stack.append(i * 10)\n    queue.append(i * 10)\nfor k in range(${K}):\n    print("stack:", stack.pop(), "queue:", queue.popleft())\nprint("left in stack:", stack)\nprint("left in queue:", list(queue))`;
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה".',viz:{s:[],q:[]}}], S=[], Q=[], v={}; let out='', err=false;
+  const push=(line,note,viz)=>{ v.stack=S.slice(); v.queue=dq(Q); steps.push({line,vars:{...v},out,note,viz:Object.assign({s:S.slice(),q:Q.slice()},viz||{})}); };
+  const push0=(line,note)=>steps.push({line,vars:{...v},out,note,viz:{s:[],q:[]}});
+  push0(1,'מייבאים את deque, מבנה שטוב לתורים.');
+  v.stack=[]; push0(3,'מחסנית ריקה: רשימה רגילה.');
+  push(4,'תור ריק: deque.');
+  for(let i=1;i<=N;i++){
+    v.i=i; push(5,`i = ${i}.`);
+    S.push(i*10); push(6,`דוחפים ${i*10} לראש המחסנית.`,{ns:true});
+    Q.push(i*10); push(7,`מכניסים ${i*10} לסוף התור.`,{nq:true});
+  }
+  if(!N) push(5,'range(1, 1) ריק: לא מכניסים כלום.');
+  for(let k=0;k<K;k++){
+    v.k=k; push(8,`סיבוב הוצאה ${k+1}.`);
+    if(!S.length){
+      out+=`Traceback (most recent call last):\n  File "main.py", line 9, in <module>\n    print("stack:", stack.pop(), "queue:", queue.popleft())\nIndexError: pop from empty list\n`; err=true;
+      push(9,'שגיאה! המחסנית ריקה, ואין מה להוציא. pop על רשימה ריקה נותן IndexError, והתוכנית נעצרת.'); break;
+    }
+    const a=S.pop(), b=Q.shift(); out+=`stack: ${a} queue: ${b}\n`;
+    push(9,`מהמחסנית יוצא ${a}, האחרון שנכנס. מהתור יוצא ${b}, הראשון שנכנס.`,{os:a,oq:b});
+  }
+  if(!err){
+    if(!K) push(8,'range(0) ריק: לא מוציאים כלום.');
+    out+=`left in stack: [${S.join(', ')}]\n`; push(10,`במחסנית נשארו הערכים הראשונים: ${S.join(', ')||'כלום'}.`);
+    out+=`left in queue: [${Q.join(', ')}]\n`; push(11,`בתור נשארו הערכים האחרונים: ${Q.join(', ')||'כלום'}.`);
+  }
+  return {code,steps,noVars:err};
+}
+const PRESETS=[[4,2],[3,1],[5,5],[3,4],[1,1]];
+const EXSTR=['(a[b]c)','([)]','((x)','x)(','{[()]}'];
+const BAL=`def balanced(text):
+    pairs = {")": "(", "]": "[", "}": "{"}
+    stack = []
+    for ch in text:
+        if ch in "([{":
+            stack.append(ch)
+        elif ch in ")]}":
+            if not stack or stack.pop() != pairs[ch]:
+                return False
+    return len(stack) == 0
+`;
+const OPEN={')':'(',']':'[','}':'{'};
+function balancedJS(t){ const s=[]; for(const ch of t){ if('([{'.includes(ch)) s.push(ch); else if(')]}'.includes(ch)){ if(!s.length||s.pop()!==OPEN[ch]) return false; } } return !s.length; }
+function buildEx(t){
+  const code=BAL+`\nprint(balanced("${t}"))`;
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה".',viz:{s:[]}}], S=[]; let out='', loc={};
+  const P={py:'{\')\': \'(\', \']\': \'[\', \'}\': \'{\'}'};
+  const push=(line,note,x)=>{ const v={}; Object.keys(loc).forEach(k=>v[k+' (balanced)']=loc[k]); steps.push({line,vars:v,out,note,viz:Object.assign({s:S.slice()},x||{})}); };
+  push(12,`קוראים ל-balanced עם "${t}".`);
+  loc={text:t}; push(1,'נכנסים לפונקציה.');
+  loc.pairs=P; push(2,'מילון שאומר לכל סוגר סוגר מה הפותח שלו.');
+  loc.stack=[]; push(3,'מחסנית ריקה.');
+  let res=null;
+  for(const ch of t){
+    loc.ch=ch; push(4,`התו הבא: ${ch}`);
+    if('([{'.includes(ch)){ push(5,`${ch} הוא סוגר פותח.`); S.push(ch); loc.stack=S.slice(); push(6,`דוחפים ${ch} למחסנית.`,{ns:true}); continue; }
+    push(5,`${ch} הוא לא סוגר פותח.`);
+    if(!')]}'.includes(ch)){ push(7,`${ch} הוא גם לא סוגר סוגר. מדלגים עליו.`); continue; }
+    push(7,`${ch} הוא סוגר סוגר. צריך שבראש המחסנית יחכה ${OPEN[ch]}.`);
+    if(!S.length){ push(8,'המחסנית ריקה: אין פותח שמחכה לסוגר הזה.'); res=false; push(9,'מחזירים False.'); break; }
+    const top=S.pop(); loc.stack=S.slice();
+    if(top!==OPEN[ch]){ push(8,`מוציאים ${top} מהראש, אבל ל-${ch} מתאים ${OPEN[ch]}. לא מתאים!`,{os:top}); res=false; push(9,'מחזירים False.'); break; }
+    push(8,`מוציאים ${top} מהראש. הוא מתאים ל-${ch}.`,{os:top});
+  }
+  if(res===null){ res=!S.length; push(10,S.length?`נגמרו התווים, אבל במחסנית נשארו ${S.join(' ')}. יש פותח שאף אחד לא סגר. מחזירים False.`:'נגמרו התווים והמחסנית ריקה. מחזירים True.'); }
+  loc={}; out+=(res?'True':'False')+'\n'; push(12,`מודפס ${res?'True':'False'}.`);
+  return {code,steps};
+}
+function LABCASES(){
+  const cs=[]; for(let N=0;N<=6;N++) for(let K=0;K<=6;K++) cs.push(Object.assign(buildLab(N,K),{name:N+','+K}));
+  EXSTR.forEach(t=>cs.push(Object.assign(buildEx(t),{name:'ex '+t})));
+  return cs;
+}
+function ops(){ /* random push/pop list that never pops an empty structure */
+  const L=[]; let size=0; const n=ri(4,6);
+  for(let i=0;i<n;i++){ if(size>1&&Math.random()<.4){ L.push(null); size--; } else { L.push(ri(1,9)); size++; } }
+  if(!size){ L.push(ri(1,9)); }
+  return L;
+}
+function genQ(){
+  const kind=pick(['stack','queue','len','bal']);
+  if(kind==='stack'||kind==='queue'){
+    const L=ops(), A=[]; L.forEach(x=>{ if(x===null){ kind==='stack'?A.pop():A.shift(); } else A.push(x); });
+    const ans=kind==='stack'?A[A.length-1]:A[0], other=kind==='stack'?A[0]:A[A.length-1];
+    const body=kind==='stack'?L.map(x=>x===null?'s.pop()':`s.append(${x})`).join('\n')+'\nprint(s.pop())'
+      :L.map(x=>x===null?'q.popleft()':`q.append(${x})`).join('\n')+'\nprint(q.popleft())';
+    return {kind,vk:'last',ans,code:(kind==='stack'?'s = []\n':'from collections import deque\nq = deque()\n')+body,ask:'מה מודפס בשורה האחרונה?',
+      diag:other!==ans?[[other,kind==='stack'?'זה הערך שבתחתית. pop מוציא מהראש, האחרון שנכנס.':'זה הערך האחרון בתור. popleft מוציא מההתחלה, הראשון שנכנס.']]:[],
+      hints:['ציירו את המבנה וכתבו אותו אחרי כל שורה.',`לפני השורה האחרונה יש בו: ${A.join(', ')} (משמאל: ${kind==='stack'?'התחתית':'ההתחלה'}).`],
+      sol:`לפני ההדפסה המבנה הוא ${A.join(', ')}. ${kind==='stack'?`pop מוציא את האחרון: ${ans}.`:`popleft מוציא את הראשון: ${ans}.`}`};
+  }
+  if(kind==='len'){
+    const L=ops(), A=[]; L.forEach(x=>{ if(x===null) A.pop(); else A.push(x); });
+    const pushes=L.filter(x=>x!==null).length;
+    return {kind,vk:'last',ans:A.length,code:'s = []\n'+L.map(x=>x===null?'s.pop()':`s.append(${x})`).join('\n')+'\nprint(len(s))',ask:'מה מודפס?',
+      diag:[[pushes,'כל pop מוציא ערך אחד מהמחסנית.'],[L.length,'pop לא מוסיף ערך, הוא מוציא.']].filter(d=>d[0]!==A.length),
+      hints:['כל append מוסיף 1 וכל pop מוריד 1.',`יש ${pushes} פעולות append ו-${L.length-pushes} פעולות pop.`],sol:`${pushes} פחות ${L.length-pushes} = ${A.length}.`};
+  }
+  const t=pick(['(a)[b]','([a)]','((b)','{[x]}','a)(b','[(c)]{}','(((x)))','{(})']), r=balancedJS(t)?'True':'False';
+  return {kind,vk:'last',ans:r,mc:['True','False'],vcode:BAL+`\nprint(balanced("${t}"))`,code:`print(balanced("${t}"))`,ask:'balanced היא הפונקציה מהדוגמה הפתורה. מה מודפס?',
+    hints:['עברו תו אחרי תו. פותח נכנס למחסנית, סוגר צריך להתאים לראש.','בסוף המחסנית צריכה להיות ריקה.'],
+    sol:r==='True'?'כל סוגר סוגר מתאים לפותח שבראש המחסנית, ובסוף היא ריקה. True.':'באחד הצעדים הסוגר לא מתאים לראש המחסנית, או שבסוף נשאר בה פותח. False.'};
+}
+/*END*/
+
+function box(x,cls){ return `<div class="it${cls?' '+cls:''}">${x}</div>`; }
+function drawLab(st){
+  const z=st.viz;
+  const sHtml=z.s.slice().reverse().map((x,i)=>box(x,i===0&&z.ns?'new':'')).join('');
+  const qHtml=z.q.map((x,i)=>box(x,i===z.q.length-1&&z.nq?'new':'')).join('');
+  $('sqViz').innerHTML=`<div><h4>מחסנית</h4><p class="tagl">↓ נכנסים ויוצאים מלמעלה</p><div class="pile">${z.os!==undefined?box(z.os,'out'):''}${sHtml}</div></div>`
+    +`<div><h4>תור</h4><div class="lbl"><span>← יוצאים</span><span>נכנסים ←</span></div><div class="row1">${z.oq!==undefined?box(z.oq,'out'):''}${qHtml}</div></div>`;
+}
+function drawEx(st){
+  const z=st.viz;
+  $('exViz').innerHTML=`<div><h4>המחסנית</h4><div class="pile">${z.os!==undefined?box(z.os,'out'):''}${z.s.slice().reverse().map((x,i)=>box(x,i===0&&z.ns?'new':'')).join('')}</div></div>`;
+}
+function follow(el,steps,draw){ const f=()=>draw(steps[el.ptStep||0]); el.onclick=e=>{ if(e.target.closest('button')) f(); }; f(); }
+
+/* lab */
+const sN=$('sN'), sK=$('sK');
+function lab(){
+  const N=+sN.value, K=+sK.value;
+  $('sNv').textContent=N; $('sKv').textContent=K;
+  const cur=buildLab(N,K);
+  PT.mount($('labPT'),{code:cur.code,steps:cur.steps}); follow($('labPT'),cur.steps,drawLab);
+  $('labRun').value=cur.code;
+  const vals=Array.from({length:N},(_,i)=>(i+1)*10);
+  $('labTxt').innerHTML=`<div>נכנסים: ${vals.join(', ')||'כלום'}.</div>`+(K>N
+    ?`<div>מוציאים ${K}, אבל יש רק ${N}. בסיבוב ${N+1} המחסנית ריקה, ו-pop נותן ${C('IndexError')}.</div>`
+    :`<div>מהמחסנית יוצאים ${vals.slice(N-K).reverse().join(', ')||'כלום'}: מהסוף להתחלה.</div><div>מהתור יוצאים ${vals.slice(0,K).join(', ')||'כלום'}: לפי סדר ההגעה.</div>`);
+}
+[sN,sK].forEach(x=>x.addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const p=b.dataset.p.split(','); sN.value=p[0]; sK.value=p[1]; lab(); });
+lab();
+
+/* worked example */
+$('exStr').innerHTML=EXSTR.map((t,i)=>`<button type="button" data-i="${i}" aria-pressed="${i===0}">${t}</button>`).join('');
+function ex(i){ const e=buildEx(EXSTR[i]); PT.mount($('exPT'),{code:e.code,steps:e.steps}); follow($('exPT'),e.steps,drawEx);
+  $('exStr').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===i)); }
+$('exStr').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) ex(+b.dataset.i); });
+ex(0);
+
+/* practice */
+let q=null, sel=-1, streak=0, solved=0;
+const norm=s=>String(s).replace(/[\s,]+/g,' ').trim();
+function newQ(){
+  q=genQ(); q.tries=0; q.h=0; sel=-1;
+  $('prAsk').textContent=q.ask; $('prQ').textContent=q.code; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prCh').hidden=!q.mc; $('prIn').hidden=!!q.mc;
+  if(q.mc){ $('prCh').innerHTML=q.mc.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="false" dir="ltr">${o}</button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); }); }
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let v;
+  if(q.mc){ if(sel<0){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; } v=norm(q.mc[sel]); }
+  else{ v=norm($('prN').value); if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; } }
+  if(v===norm(q.ans)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! התשובה היא <code dir="ltr" lang="en">${String(q.ans).replace(/</g,'&lt;')}</code>.</div>`; return; }
+  streak=0; q.tries++; streakTxt();
+  const d=(q.diag||[]).find(x=>norm(x[0])===v);
+  fb.innerHTML=`<div class="fb err">${d?d[1]:'עוד לא. עקבו אחרי הקוד שורה אחרי שורה ונסו שוב.'}</div>`;
+  if(q.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ q.h=Math.min(q.h+1,q.hints.length); $('prFb').innerHTML=`<div class="fb hint">${q.hints.slice(0,q.h).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${q.sol}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newQ;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newQ(); streakTxt();
+})();
+</script>
+</body>
+</html>

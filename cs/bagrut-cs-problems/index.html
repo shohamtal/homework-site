@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>בעיות בסגנון בגרות · מדעי המחשב כיתה יב · מירי</title>
+<meta name="description" content="בעיות מקוריות בסגנון בגרות במדעי המחשב: מעקב אחרי קוד, כתיבת פונקציה, סיבוכיות ומחסנית. שיטת עבודה בחמישה צעדים, פתרונות לדוגמה ותרגול מעקב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/bagrut-cs-problems/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="בעיות בסגנון בגרות · מדעי המחשב כיתה יב · מירי">
+<meta property="og:description" content="בעיות מקוריות בסגנון בגרות במדעי המחשב: מעקב אחרי קוד, כתיבת פונקציה, סיבוכיות ומחסנית. שיטת עבודה בחמישה צעדים, פתרונות לדוגמה ותרגול מעקב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/bagrut-cs-problems/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://shohamtal.github.io/homework-site/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"בעיות בסגנון בגרות במדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/bagrut-cs-problems/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מתכוננים לבגרות במדעי המחשב?","acceptedAnswer":{"@type":"Answer","text":"מתרגלים כל יום קצת מכל סוג שאלה: מעקב, כתיבת פונקציה, סיבוכיות ומבני נתונים. פותרים על דף, בלי מחשב, כמו בבחינה, ורק אחר כך בודקים בהרצה. עובדים תמיד באותה שיטה: דרישה, דוגמאות, תכנון, קוד, מעקב. נסו במעבדה."}},{"@type":"Question","name":"איך עושים טבלת מעקב?","acceptedAnswer":{"@type":"Answer","text":"פותחים עמודה לכל משתנה ועמודה לפלט. בכל פעם ששורה משנה משתנה, כותבים את הערך החדש בשורה חדשה בטבלה. בלולאות כותבים גם את תנאי הלולאה ואם הוא נכון. בסוף, הערך האחרון בכל עמודה הוא הערך הסופי."}},{"@type":"Question","name":"איך יודעים מה הסיבוכיות של קוד?","acceptedAnswer":{"@type":"Answer","text":"סופרים כמה פעמים השורה הפנימית ביותר רצה, כפונקציה של גודל הקלט n. לולאה אחת על n איברים היא O(n). לולאה בתוך לולאה היא בדרך כלל O(n²). לולאה שחוצה את n בכל סיבוב היא O(log n). תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"בעיות בסגנון בגרות במדעי המחשב","description":"בעיות מקוריות בסגנון בגרות במדעי המחשב: מעקב אחרי קוד, כתיבת פונקציה, סיבוכיות ומחסנית. שיטת עבודה בחמישה צעדים, פתרונות לדוגמה ותרגול מעקב.","url":"https://shohamtal.github.io/homework-site/cs/bagrut-cs-problems/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"בעיות בסגנון בגרות במדעי המחשב","teaches":"בעיות בסגנון בגרות במדעי המחשב","keywords":"בגרות, מעקב, כתיבת פונקציה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:12em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:480px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body); white-space:normal}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.method{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:6px; justify-content:center; counter-reset:st}
+.method li{counter-increment:st; border:2px solid var(--border); border-radius:10px; padding:5px 10px; background:var(--card); font-weight:700; font-size:.95rem}
+.method li::before{content:counter(st) ". "; color:var(--line)}
+.method li.on{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.spec{border:2px solid var(--border); border-radius:14px; background:var(--card); padding:10px 14px; box-shadow:3px 3px 0 var(--hard); margin:10px 0}
+.spec h3{margin:0 0 4px}
+.spec p{margin:4px 0}
+.spec .tag{display:inline-block; background:var(--hl); border:2px solid var(--border); border-radius:8px; padding:0 8px; font-size:.85rem; font-weight:800; margin-inline-end:6px}
+.tt{border-collapse:collapse; font-size:.92rem; direction:ltr; margin:6px auto}
+.tt td,.tt th{border:2px solid var(--border); padding:3px 8px; text-align:center; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.tt th{background:var(--card)}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="bagrut-cs-problems">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/#cs-hs-12">הכנה לבגרות ונושאים מתקדמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">בעיות בסגנון בגרות במדעי המחשב</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · הכנה לבגרות</div>
+  <h1>בעיות בסגנון בגרות <span class="slogan">שיטת עבודה שמחזיקה בלחץ</span></h1>
+  <p class="lead">בבחינת הבגרות במדעי המחשב חוזרים כמה סוגי שאלות: מעקב אחרי קטע קוד, כתיבת פונקציה לפי דרישה, ניתוח סיבוכיות, ושאלה על מבנה נתונים כמו מחסנית, תור או רשימה דו-ממדית. כאן כל הבעיות מקוריות, בסגנון הבחינה, עם פתרון לדוגמה שאפשר להריץ שורה אחרי שורה. כדאי לחזור גם על <a href="../recursion/">רקורסיה</a> ועל <a href="../lists-2d/">רשימות דו-ממדיות</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">לכל שאלה עובדים באותם חמישה צעדים:</p>
+  <ol class="method"><li>קוראים את הדרישה</li><li>כותבים דוגמאות</li><li>מתכננים</li><li>כותבים קוד</li><li>עוקבים</li></ol>
+  <div class="two">
+    <div class="mini">
+      <h3>קוראים ומבינים</h3>
+      <p>מסמנים מה הפונקציה <strong>מקבלת</strong> ומה היא <strong>מחזירה</strong>. מחזירה, לא מדפיסה. אחר כך כותבים 2 או 3 דוגמאות קטנות, כולל מקרה קצה: רשימה ריקה, איבר אחד, ערך שלא קיים.</p>
+    </div>
+    <div class="mini">
+      <h3>מתכננים וכותבים</h3>
+      <p>במשפט אחד: "עוברים על כל איבר, ובודקים…". רק אחר כך קוד. שמות משתנים ברורים, הזחה מסודרת, ו-return בסוף כל מסלול.</p>
+    </div>
+    <div class="mini">
+      <h3>עוקבים ובודקים</h3>
+      <p>מריצים את הקוד בראש על הדוגמאות עם <strong>טבלת מעקב</strong>: עמודה לכל משתנה, שורה לכל צעד. אם התוצאה לא כמו בדוגמה, מוצאים את השורה שבה זה השתבש.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> טבלת מעקב היא הכלי הכי חזק בבחינה. היא תופסת טעויות של אחד מעבר לגבול (off-by-one), לולאות שלא נגמרות ו-return במקום הלא נכון.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: ארבע בעיות, צעד אחרי צעד</h2></div>
+  <p class="text">בחרו בעיה במחוון הראשון ואת הקלט במחוון השני. קראו את הדרישה, נחשו את התשובה, ורק אז הריצו את הפתרון לדוגמה שורה אחרי שורה.</p>
+  <div class="spec" id="spec"></div>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sp"><span>בעיה</span><span class="eq" id="spv"></span></label>
+      <input type="range" id="sp" min="1" max="4" step="1" value="1">
+      <label class="slider" for="sx"><span id="sxl">קלט</span><span class="eq" id="sxv"></span></label>
+      <input type="range" class="blue" id="sx" min="1" max="40" step="1" value="13">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="1,13">מעקב: n = 13</button>
+          <button type="button" data-p="2,3">פסגות: רשימה של 1</button>
+          <button type="button" data-p="2,4">פסגות: רמה שטוחה</button>
+          <button type="button" data-p="3,0">סיבוכיות: n = 0</button>
+          <button type="button" data-p="4,2">מחסנית: נסגר מוקדם</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מדפיסים במקום להחזיר</h3>
+      <p>"כתבו פונקציה שמחזירה" פירושו return. פונקציה שמדפיסה מחזירה None, ומי שקרא לה לא יכול להשתמש בתוצאה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">print(count)</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">return count</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>חורגים מהרשימה</h3>
+      <p>כשבודקים שכנים <code dir="ltr" lang="en">nums[i + 1]</code>, הלולאה חייבת לעצור איבר אחד לפני הסוף.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">for i in range(len(nums)):</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">for i in range(len(nums) - 1):</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>return בתוך הלולאה, מוקדם מדי</h3>
+      <p>"אם לא מצאנו, החזירו False" צריך לבוא <strong>אחרי</strong> הלולאה. בתוך הלולאה הוא עוצר כבר באיבר הראשון.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">for x in nums:
+    if x == t:
+        return True
+    else:
+        return False</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">for x in nums:
+    if x == t:
+        return True
+return False</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>pop ממחסנית ריקה</h3>
+      <p>לפני <code dir="ltr" lang="en">pop()</code> בודקים שהמחסנית לא ריקה. אחרת התוכנית נעצרת בשגיאה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">stack.pop()</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">if len(stack) == 0:
+    return False
+stack.pop()</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: חמשת הצעדים</h2></div>
+  <div class="stepper">
+    <ol class="method" id="exM"><li>קוראים את הדרישה</li><li>כותבים דוגמאות</li><li>מתכננים</li><li>כותבים קוד</li><li>עוקבים</li></ol>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div id="exBody"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול: מעקב אחרי קוד</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מתכוננים לבגרות במדעי המחשב?</h3>
+    <p>מתרגלים כל יום קצת מכל סוג שאלה: מעקב, כתיבת פונקציה, סיבוכיות ומבני נתונים. פותרים על דף, בלי מחשב, כמו בבחינה, ורק אחר כך בודקים בהרצה. עובדים תמיד באותה שיטה: דרישה, דוגמאות, תכנון, קוד, מעקב. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך עושים טבלת מעקב?</h3>
+    <p>פותחים עמודה לכל משתנה ועמודה לפלט. בכל פעם ששורה משנה משתנה, כותבים את הערך החדש בשורה חדשה בטבלה. בלולאות כותבים גם את תנאי הלולאה ואם הוא נכון. בסוף, הערך האחרון בכל עמודה הוא הערך הסופי.</p>
+    <h3>איך יודעים מה הסיבוכיות של קוד?</h3>
+    <p>סופרים כמה פעמים השורה הפנימית ביותר רצה, כפונקציה של גודל הקלט n. לולאה אחת על n איברים היא O(n). לולאה בתוך לולאה היא בדרך כלל O(n²). לולאה שחוצה את n בכל סיבוב היא O(log n). <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/lists-2d/">רשימה דו-ממדית: טבלה ולוח</a> · <a href="../../cs/classes-objects/">מחלקות ועצמים בפייתון</a> · <a href="../../cs/recursion/">רקורסיה: פונקציה שקוראת לעצמה</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/merge-quick-sort/"><small>→ הנושא הקודם</small>מיון מיזוג ומיון מהיר</a><a class="next" href="../../cs/databases-intro/"><small>הנושא הבא ←</small>מבוא למסדי נתונים ו-SQL</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const pick=a=>a[Math.floor(Math.random()*a.length)], ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+  const L=a=>'['+a.join(', ')+']', R=v=>PT.repr(v);
+  const PEAKS=[[1,3,2,5,4],[5,4,3,2],[2,7,2,7,2,7],[4],[1,2,2,1]];
+  const PARENS=['(())','()()','())(','(()',''];
+  const RANGE={1:[1,40],2:[0,4],3:[0,6],4:[0,4]};
+  function build(p,x){
+    const st=[{line:0,vars:{},out:''}]; let out='';
+    const add=(line,v,note)=>st.push({line,vars:{...v},out,note});
+    let code, info={};
+    if(p===1){
+      code=['n = '+x,'total = 0','k = n','while k > 0:','    if k % 2 == 1:','        total = total + k','    k = k // 2','print(total)'].join('\n');
+      const v={}; v.n=x; add(1,v,'n = '+x+'.'); v.total=0; add(2,v,'total מתחיל ב-0.'); v.k=x; add(3,v,'k מתחיל מ-n.');
+      while(true){
+        if(!(v.k>0)){ add(4,v,'k = 0, התנאי k > 0 לא מתקיים. יוצאים.'); break; }
+        add(4,v,'k = '+v.k+' > 0, נכנסים.');
+        if(v.k%2===1){ add(5,v,v.k+' % 2 = 1, k אי-זוגי.'); v.total+=v.k; add(6,v,'מוסיפים: total = '+v.total+'.'); }
+        else add(5,v,v.k+' % 2 = 0, k זוגי. מדלגים.');
+        const old=v.k; v.k=Math.floor(v.k/2); add(7,v,old+' // 2 = '+v.k+'. חלוקה שלמה, בלי שארית.');
+      }
+      out+=v.total+'\n'; add(8,v,'מדפיסים '+v.total+'.'); info={ans:v.total};
+    } else if(p===2){
+      const a=PEAKS[x];
+      code=['def count_peaks(nums):','    count = 0','    for i in range(1, len(nums) - 1):','        if nums[i] > nums[i - 1] and nums[i] > nums[i + 1]:','            count = count + 1','    return count','','print(count_peaks('+L(a)+'))'].join('\n');
+      add(1,{},'מגדירים את הפונקציה.'); const v={nums:a}; add(8,v,'קוראים ל-count_peaks. nums = '+L(a)+'.');
+      v.count=0; add(2,v,'count מתחיל ב-0.');
+      for(let i=1;i<a.length-1;i++){ v.i=i; add(3,v,'i = '+i+'. בודקים את '+a[i]+' מול השכנים '+a[i-1]+' ו-'+a[i+1]+'.');
+        if(a[i]>a[i-1]&&a[i]>a[i+1]){ add(4,v,a[i]+' גדול משני השכנים. זו פסגה!'); v.count++; add(5,v,'count = '+v.count+'.'); }
+        else add(4,v,a[i]+' לא גדול משני השכנים'+(a[i]===a[i-1]||a[i]===a[i+1]?' (שווה לא נחשב גדול)':'')+'.'); }
+      add(3,v,a.length<3?'range(1, '+(a.length-1)+') ריק: אין אף איבר עם שני שכנים.':'סיימנו את כל האיברים שיש להם שני שכנים.');
+      add(6,v,'מחזירים '+v.count+'.'); out+=v.count+'\n'; add(8,{},'print מדפיס את מה שהפונקציה החזירה.'); info={ans:v.count,a};
+    } else if(p===3){
+      code=['def pairs(n):','    count = 0','    for i in range(n):','        for j in range(i + 1, n):','            count = count + 1','    return count','','print(pairs('+x+'))'].join('\n');
+      add(1,{},'מגדירים את הפונקציה.'); const v={n:x}; add(8,v,'קוראים ל-pairs('+x+').'); v.count=0; add(2,v,'count מתחיל ב-0.');
+      for(let i=0;i<x;i++){ v.i=i; add(3,v,'הלולאה החיצונית: i = '+i+'.');
+        for(let j=i+1;j<x;j++){ v.j=j; add(4,v,'הפנימית: j = '+j+'.'); v.count++; add(5,v,'זוג ('+i+', '+j+'). count = '+v.count+'.'); }
+        add(4,v,i+1<x?'הפנימית נגמרה.':'range('+(i+1)+', '+x+') ריק. הפנימית לא רצה.'); }
+      add(3,v,x?'החיצונית נגמרה.':'range(0) ריק. אף לולאה לא רצה.'); add(6,v,'מחזירים '+v.count+'.'); out+=v.count+'\n'; add(8,{},'מדפיסים.'); info={ans:v.count};
+    } else {
+      const s=PARENS[x];
+      code=['def balanced(s):','    stack = []','    for ch in s:','        if ch == "(":','            stack.append(ch)','        elif ch == ")":','            if len(stack) == 0:','                return False','            stack.pop()','    return len(stack) == 0','','print(balanced("'+s+'"))'].join('\n');
+      add(1,{},'מגדירים את הפונקציה.'); const v={s}; add(12,v,'קוראים ל-balanced('+R(s)+').'); v.stack=[]; add(2,v,'מחסנית ריקה.');
+      let res=null;
+      for(const ch of s){ v.ch=ch; add(3,v,'התו הבא: '+R(ch)+'.');
+        if(ch==='('){ add(4,v,'סוגר פותח.'); v.stack=v.stack.concat(['(']); add(5,v,'דוחפים למחסנית. יש בה '+v.stack.length+'.'); }
+        else { add(4,v,'לא פותח.'); add(6,v,'סוגר סוגר.');
+          if(v.stack.length===0){ add(7,v,'המחסנית ריקה: אין פותח שמתאים לסוגר הזה.'); add(8,v,'מחזירים False מיד.'); res=false; break; }
+          add(7,v,'יש פותח שמחכה.'); v.stack=v.stack.slice(0,-1); add(9,v,'מוציאים אותו. נשארו '+v.stack.length+'.'); } }
+      if(res===null){ add(3,v,s?'עברנו על כל התווים.':'המחרוזת ריקה, הלולאה לא רצה.'); res=v.stack.length===0; add(10,v,res?'המחסנית ריקה: כל פותח נסגר. True.':'נשארו '+v.stack.length+' פותחים בלי סוגר. False.'); }
+      out+=(res?'True':'False')+'\n'; add(12,{},'מדפיסים.'); info={ans:res,s};
+    }
+    return {code,steps:st,info};
+  }
+  const EXC=['def last_index(nums, x):','    for i in range(len(nums) - 1, -1, -1):','        if nums[i] == x:','            return i','    return -1','','print(last_index([4, 7, 4, 9], 4))','print(last_index([4, 7, 4, 9], 5))','print(last_index([], 4))'].join('\n');
+  /* practice: every generated program prints its own answer (q.py) */
+  function gen(){
+    const kind=pick(['digits','range','stack','queue','grid','nested','nested','minfun','complex']), q={kind,type:'text'};
+    if(kind==='digits'){
+      const n=ri(100,9999), op=pick(['sum','count','rev']);
+      const body=op==='sum'?['n = '+n,'s = 0','while n > 0:','    s = s + n % 10','    n = n // 10','print(s)']:op==='count'?['n = '+n,'c = 0','while n > 0:','    if n % 10 % 2 == 0:','        c = c + 1','    n = n // 10','print(c)']:['n = '+n,'r = 0','while n > 0:','    r = r * 10 + n % 10','    n = n // 10','print(r)'];
+      const d=String(n).split('').map(Number);
+      q.ans=String(op==='sum'?d.reduce((a,b)=>a+b,0):op==='count'?d.filter(x=>x%2===0).length:+d.slice().reverse().join(''));
+      q.hints=['n % 10 היא הספרה האחרונה, ו-n // 10 מוחק אותה.','כתבו טבלה: n ו-'+(op==='sum'?'s':op==='count'?'c':'r')+' אחרי כל סיבוב.'];
+      q.sol=op==='sum'?'סכום הספרות של '+n+' הוא '+q.ans+'.':op==='count'?'יש ב-'+n+' '+q.ans+' ספרות זוגיות.':'הלולאה הופכת את סדר הספרות: '+q.ans+'.';
+      q.diag=op==='rev'?(v=>v===String(n)?'הספרות נבנות מהסוף להתחלה. r מתחיל מהספרה האחרונה.':null):null;
+      q.code=body.join('\n');
+    } else if(kind==='range'){
+      const a=ri(0,5), c=pick([1,2,3]), b=a+c*ri(2,5)+ri(0,c-1), xs=[]; for(let i=a;i<b;i+=c) xs.push(i);
+      q.code='total = 0\nfor i in range('+a+', '+b+(c>1?', '+c:'')+'):\n    total = total + i\nprint(total)'; q.ans=String(xs.reduce((s,x)=>s+x,0));
+      const withEnd=(b-a)%c===0?xs.concat([b]).reduce((s,x)=>s+x,0):null;
+      q.diag=v=>withEnd!==null&&v===String(withEnd)?'הוספתם גם את '+b+'. range עוצר לפני הסוף.':null;
+      q.hints=['range('+a+', '+b+(c>1?', '+c:'')+') מתחיל ב-'+a+', קופץ ב-'+c+', ועוצר לפני '+b+'.','הערכים: '+xs.slice(0,2).join(', ')+', …'];
+      q.sol='i עובר על '+xs.join(', ')+'. הסכום: '+q.ans+'.';
+    } else if(kind==='stack'){
+      const ops=[], st=[]; let k=ri(1,9);
+      for(let t=0;t<ri(5,7);t++){ if(st.length&&Math.random()<.4){ ops.push('stack.pop()'); st.pop(); } else { const x=k++*3%20+1; ops.push('stack.append('+x+')'); st.push(x); } }
+      const top=Math.random()<.5&&st.length; q.code='stack = []\n'+ops.join('\n')+'\nprint('+(top?'stack[-1]':'stack')+')'; q.ans=top?String(st[st.length-1]):L(st);
+      q.diag=v=>top&&v===String(st[0])?'זה התחתון. במחסנית האחרון שנכנס הוא העליון.':null;
+      q.hints=['מחסנית: האחרון שנכנס יוצא ראשון (LIFO). pop מוציא מהסוף.','כתבו את המחסנית אחרי כל שורה.'];
+      q.sol='בסוף המחסנית היא '+L(st)+(top?', והעליון הוא '+st[st.length-1]:'')+'.';
+    } else if(kind==='queue'){
+      const ops=[], qu=[]; let k=ri(1,9);
+      for(let t=0;t<ri(5,7);t++){ if(qu.length&&Math.random()<.4){ ops.push('queue.pop(0)'); qu.shift(); } else { const x=k++*7%30+2; ops.push('queue.append('+x+')'); qu.push(x); } }
+      const front=Math.random()<.5&&qu.length; q.code='queue = []\n'+ops.join('\n')+'\nprint('+(front?'queue[0]':'queue')+')'; q.ans=front?String(qu[0]):L(qu);
+      q.diag=v=>front&&v===String(qu[qu.length-1])?'זה האחרון בתור. pop(0) מוציא מההתחלה, אז הראשון הוא queue[0].':null;
+      q.hints=['תור: הראשון שנכנס יוצא ראשון (FIFO). pop(0) מוציא מההתחלה.','כתבו את התור אחרי כל שורה.'];
+      q.sol='בסוף התור הוא '+L(qu)+(front?', והראשון בו הוא '+qu[0]:'')+'.';
+    } else if(kind==='grid'){
+      const g=[0,1,2].map(()=>[0,1,2].map(()=>ri(1,9))), op=pick(['row','col','diag','cell']), r=ri(0,2);
+      const G='grid = [\n'+g.map(row=>'    '+L(row)).join(',\n')+'\n]';
+      if(op==='row'){ q.code=G+'\nprint(sum(grid['+r+']))'; q.ans=String(g[r].reduce((a,b)=>a+b,0)); q.sol='שורה '+r+' היא '+L(g[r])+', הסכום '+q.ans+'.'; q.diag=v=>v===String(g[0][r]+g[1][r]+g[2][r])?'חישבתם עמודה. grid['+r+'] היא שורה.':null; }
+      else if(op==='col'){ q.code=G+'\ns = 0\nfor row in grid:\n    s = s + row['+r+']\nprint(s)'; q.ans=String(g[0][r]+g[1][r]+g[2][r]); q.sol='לוקחים מכל שורה את האיבר באינדקס '+r+': '+g.map(x=>x[r]).join(' + ')+' = '+q.ans+'.'; q.diag=v=>v===String(g[r].reduce((a,b)=>a+b,0))?'חישבתם שורה. row['+r+'] לוקח איבר אחד מכל שורה, כלומר עמודה.':null; }
+      else if(op==='diag'){ q.code=G+'\ns = 0\nfor i in range(3):\n    s = s + grid[i][i]\nprint(s)'; q.ans=String(g[0][0]+g[1][1]+g[2][2]); q.sol='האלכסון: '+g[0][0]+' + '+g[1][1]+' + '+g[2][2]+' = '+q.ans+'.'; q.diag=v=>v===String(g[0][2]+g[1][1]+g[2][0])?'זה האלכסון השני. grid[i][i] הוא מהפינה השמאלית העליונה.':null; }
+      else { const c=ri(0,2); q.code=G+'\nprint(grid['+r+']['+c+'])'; q.ans=String(g[r][c]); q.sol='שורה '+r+', עמודה '+c+': '+q.ans+'.'; q.diag=v=>v===String(g[c][r])&&g[c][r]!==g[r][c]?'הפכתם: המספר הראשון הוא השורה, השני העמודה.':null; }
+      q.hints=['grid[r] היא שורה r. grid[r][c] הוא האיבר בשורה r ובעמודה c. סופרים מ-0.','סמנו על הטבלה את האיברים שהקוד לוקח.'];
+    } else if(kind==='nested'){
+      const a=ri(2,6), b=ri(2,5), t=pick(['rect','tri','half']);
+      if(t==='rect'){ q.code='count = 0\nfor i in range('+a+'):\n    for j in range('+b+'):\n        count = count + 1\nprint(count)'; q.ans=String(a*b); q.sol='הפנימית רצה '+b+' פעמים בכל אחד מ-'+a+' הסיבובים: '+a+' × '+b+' = '+q.ans+'.'; q.diag=v=>v===String(a+b)?'לולאה בתוך לולאה כופלת, לא מחברת.':null; }
+      else if(t==='tri'){ q.code='count = 0\nfor i in range('+a+'):\n    for j in range(i):\n        count = count + 1\nprint(count)'; q.ans=String(a*(a-1)/2); q.sol='הפנימית רצה 0, 1, … , '+(a-1)+' פעמים. סך הכול '+q.ans+'.'; q.diag=v=>v===String(a*a)?'הפנימית לא רצה '+a+' פעמים בכל סיבוב. range(i) תלוי ב-i.':null; }
+      else { const n=pick([8,16,20,32,50,64,100]); let c=0,m=n; while(m>1){ m=Math.floor(m/2); c++; } q.code='n = '+n+'\ncount = 0\nwhile n > 1:\n    n = n // 2\n    count = count + 1\nprint(count)'; q.ans=String(c); q.sol='חוצים את '+n+' עד 1: '+c+' פעמים. זה O(log n).'; q.diag=v=>v===String(n/2)?'n לא קטן ב-1 בכל סיבוב. הוא נחצה.':null; }
+      q.hints=['כמה פעמים רצה הלולאה הפנימית בכל סיבוב של החיצונית?','כתבו את i ואת מספר הסיבובים הפנימיים בטבלה, וחברו.'];
+    } else if(kind==='minfun'){
+      const a=[0,1,2,3,4].map(()=>ri(1,30)), op=pick(['min','idx','cnt']), t=ri(8,20);
+      if(op==='min'){ q.code='def f(nums):\n    m = nums[0]\n    for x in nums:\n        if x < m:\n            m = x\n    return m\n\nprint(f('+L(a)+'))'; q.ans=String(Math.min(...a)); q.sol='f מחזירה את הקטן ביותר: '+q.ans+'.'; }
+      else if(op==='idx'){ q.code='def f(nums):\n    best = 0\n    for i in range(1, len(nums)):\n        if nums[i] > nums[best]:\n            best = i\n    return best\n\nprint(f('+L(a)+'))'; const mx=Math.max(...a); q.ans=String(a.indexOf(mx)); q.sol='הגדול ביותר הוא '+mx+', והוא מופיע לראשונה באינדקס '+q.ans+'. f מחזירה אינדקס, לא ערך.'; q.diag=v=>v===String(mx)?'f מחזירה את best, שהוא אינדקס, לא את הערך עצמו.':null; }
+      else { q.code='def f(nums, t):\n    c = 0\n    for x in nums:\n        if x > t:\n            c = c + 1\n    return c\n\nprint(f('+L(a)+', '+t+'))'; q.ans=String(a.filter(x=>x>t).length); q.sol='המספרים הגדולים מ-'+t+': '+(a.filter(x=>x>t).join(', ')||'אין')+'. סך הכול '+q.ans+'.'; q.diag=v=>v===String(a.filter(x=>x>=t).length)&&a.includes(t)?'> לא כולל את '+t+' עצמו.':null; }
+      q.hints=['הבינו קודם מה הפונקציה עושה במילים.','עקבו אחרי המשתנה שהיא מחזירה, איבר אחרי איבר.'];
+    } else {
+      q.type='choice'; q.py=null;
+      const c=pick([
+        {code:'for i in range(n):\n    print(i)',ok:'O(n)'},
+        {code:'for i in range(n):\n    for j in range(n):\n        print(i, j)',ok:'O(n²)'},
+        {code:'while n > 1:\n    n = n // 2',ok:'O(log n)'},
+        {code:'print(nums[0])',ok:'O(1)'}
+      ]);
+      q.code=c.code; q.ask='מה הסיבוכיות של הקטע, כפונקציה של n?';
+      q.opts=['O(1)','O(log n)','O(n)','O(n²)'].map(t=>({t,ok:t===c.ok,ltr:true,why:t==='O(n²)'?'יש כאן לולאה מקוננת? ספרו כמה פעמים השורה הפנימית רצה.':t==='O(1)'?'יש כאן לולאה שתלויה ב-n.':'ספרו כמה פעמים הלולאה רצה כש-n גדל פי 2.'}));
+      q.hints=['כמה פעמים רצה השורה הפנימית ביותר?','אם n גדל פי 2, האם העבודה גדלה פי 2, פי 4, בצעד אחד, או בכלל לא?'];
+      q.sol='התשובה: '+c.ok+'.';
+      return q;
+    }
+    q.ask='מה התוכנית מדפיסה?'; q.py=q.code; return q;
+  }
+  const P=[[1,13],[2,3],[2,4],[3,0],[4,2],[1,1],[1,40],[2,0],[2,1],[2,2],[3,4],[3,6],[4,0],[4,1],[4,3],[4,4]];
+  return {build,RANGE,PEAKS,PARENS,EXC,gen,presets:P,extra:[()=>({code:EXC,steps:[{line:0,vars:{},out:'2\n-1\n-1\n'}]})]};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const SPEC={
+  1:{tag:'מעקב',t:'מה מדפיס הקטע?',d:'עקבו אחרי הקטע עבור n שבמחוון. מה הוא מדפיס? מה הוא מחשב במילים?',plan:'טבלה עם עמודות k ו-total. בכל סיבוב: אם k אי-זוגי מוסיפים אותו, ואז חוצים.',lbl:'n'},
+  2:{tag:'כתיבת פונקציה',t:'count_peaks(nums)',d:'כתבו פונקציה שמקבלת רשימת מספרים ומחזירה כמה "פסגות" יש בה. פסגה היא איבר שגדול משני השכנים שלו. לאיבר הראשון ולאחרון אין שני שכנים, אז הם לא פסגות.',plan:'עוברים על האינדקסים 1 עד len − 2 בלבד, ובודקים את שני השכנים. סופרים.',lbl:'רשימה מספר'},
+  3:{tag:'סיבוכיות',t:'pairs(n)',d:'כמה פעמים רצה השורה count = count + 1 כפונקציה של n? מה הסיבוכיות?',plan:'בכל i הפנימית רצה n − 1 − i פעמים. מחברים.',lbl:'n'},
+  4:{tag:'מבנה נתונים: מחסנית',t:'balanced(s)',d:'כתבו פונקציה שמקבלת מחרוזת של סוגריים ומחזירה True אם כל סוגר פותח נסגר בסדר הנכון, אחרת False.',plan:'כל "(" נדחף למחסנית. כל ")" מוציא אחד. אם אין מה להוציא, או שבסוף נשאר משהו, זה לא מאוזן.',lbl:'מחרוזת מספר'}
+};
+function lab(fromP){
+  const p=+$('sp').value, rg=LAB.RANGE[p];
+  if(fromP){ $('sx').min=rg[0]; $('sx').max=rg[1]; if(+$('sx').value>rg[1]||+$('sx').value<rg[0]) $('sx').value=p===1?13:rg[0]; }
+  const x=+$('sx').value, s=SPEC[p], r=LAB.build(p,x);
+  $('spv').textContent=p; $('sxl').textContent=s.lbl; $('sxv').textContent=x;
+  let ex='';
+  if(p===2) ex='<p>הקלט: '+C(PT.repr(LAB.PEAKS[x]))+'</p>';
+  if(p===4) ex='<p>הקלט: '+C(PT.repr(LAB.PARENS[x]))+(LAB.PARENS[x]===''?' (מחרוזת ריקה)':'')+'</p>';
+  $('spec').innerHTML='<h3><span class="tag">'+s.tag+'</span><span dir="ltr" lang="en">'+esc(s.t)+'</span></h3><p>'+s.d+'</p>'+ex+'<p><strong>תכנון:</strong> '+s.plan+'</p>';
+  PT.mount($('labPT'),{code:r.code,steps:r.steps}); $('labRun').value=r.code;
+  const a=r.info.ans; let t='<div>התשובה: '+C(PT.repr(a))+'.</div>';
+  if(p===1){ const odd=[]; for(let k=x;k>0;k=Math.floor(k/2)) if(k%2) odd.push(k); t+='<div>k עובר על '+(()=>{const ks=[];for(let k=x;k>0;k=Math.floor(k/2)) ks.push(k);return ks.join(', ');})()+'. האי-זוגיים: '+odd.join(' + ')+' = '+a+'.</div><div>הלולאה חוצה את k בכל סיבוב, אז היא רצה בערך log₂n פעמים: O(log n).</div>'; }
+  if(p===2) t+=x===3?'<div>מקרה קצה: ברשימה של איבר אחד אין לאף איבר שני שכנים. range(1, 0) ריק, והתשובה 0. בדקו שהקוד שלכם לא נופל כאן.</div>':x===4?'<div>מקרה קצה: 2 ו-2 שווים. "גדול מ" לא כולל שווה, אז אין פסגה.</div>':'<div>הלולאה עוברת פעם אחת על הרשימה: O(n).</div>';
+  if(p===3) t+='<div>'+(x?'הנוסחה: <span class="eq">n(n−1)/2 = '+x+'·'+(x-1)+'/2 = '+a+'</span>.':'n = 0: אף לולאה לא רצה, count נשאר 0.')+'</div><div>זה בערך <span class="eq">n²/2</span>, לכן הסיבוכיות O(n²).</div>';
+  if(p===4) t+=x===2?'<div>הסוגר הראשון ")" מגיע כשהמחסנית ריקה. מחזירים False מיד, בלי להמשיך.</div>':x===3?'<div>הגענו לסוף ועדיין נשאר "(" במחסנית. False.</div>':x===4?'<div>מחרוזת ריקה: אין מה לסגור, המחסנית ריקה, True.</div>':'<div>כל "(" מצא את ה-")" שלו. כל תו נבדק פעם אחת: O(n).</div>';
+  $('labTxt').innerHTML=t;
+}
+$('sp').addEventListener('input',()=>lab(true)); $('sx').addEventListener('input',()=>lab(false));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const [p,x]=b.dataset.p.split(','); $('sp').value=p; lab(true); $('sx').value=x; lab(false); });
+lab(true);
+
+/* worked example: the five steps */
+const EX=[
+  {t:'<strong>קוראים את הדרישה.</strong> "כתבו פונקציה last_index(nums, x) שמחזירה את האינדקס האחרון שבו x מופיע ברשימה nums. אם x לא מופיע, היא מחזירה ‎-1." מסמנים: מקבלת רשימה וערך, <strong>מחזירה</strong> מספר.'},
+  {t:'<strong>כותבים דוגמאות.</strong> לפחות אחת רגילה, אחת בלי x, ומקרה קצה.',html:'<table class="tt"><tr><th>nums</th><th>x</th><th>return</th></tr><tr><td>[4, 7, 4, 9]</td><td>4</td><td>2</td></tr><tr><td>[4, 7, 4, 9]</td><td>5</td><td>-1</td></tr><tr><td>[]</td><td>4</td><td>-1</td></tr></table>'},
+  {t:'<strong>מתכננים.</strong> מחפשים את האחרון, אז נוח לעבור מהסוף להתחלה. הראשון שנמצא בדרך הזו הוא האחרון ברשימה, ומחזירים אותו מיד. אם הלולאה נגמרה בלי למצוא, מחזירים ‎-1, <strong>אחרי</strong> הלולאה.'},
+  {t:'<strong>כותבים קוד.</strong> range(len(nums) − 1, −1, −1) עובר על האינדקסים מהאחרון עד 0.',code:LAB.EXC.split('\n').slice(0,5).join('\n')},
+  {t:'<strong>עוקבים.</strong> על הדוגמה הראשונה: i = 3, nums[3] = 9, לא. i = 2, nums[2] = 4, כן! מחזירים 2. הדוגמה השנייה עוברת על כל האינדקסים ומחזירה ‎-1. ברשימה ריקה range(−1, −1, −1) ריק, ומחזירים ‎-1. שלוש הדוגמאות מתאימות.',html:'<table class="tt"><tr><th>i</th><th>nums[i]</th><th>== 4?</th></tr><tr><td>3</td><td>9</td><td>False</td></tr><tr><td>2</td><td>4</td><td>True → return 2</td></tr></table>',code:LAB.EXC}
+];
+let exI=0;
+function ex(){ const e=EX[exI]; $('exM').querySelectorAll('li').forEach((l,i)=>l.classList.toggle('on',i===exI)); $('exText').innerHTML=e.t; $('exBody').innerHTML=(e.html||'')+(e.code?'<pre class="code" dir="ltr" lang="en">'+esc(e.code)+'</pre>':''); $('exCount').textContent='צעד '+(exI+1)+' מתוך '+EX.length; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+const nrm=s=>String(s).trim().replace(/^["']+|["']+$/g,'').replace(/\s+/g,'');
+function numbered(code){ return '<pre class="code pt-code" dir="ltr" lang="en">'+code.split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('')+'</pre>'; }
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=LAB.gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=q.code?numbered(q.code):'';
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button"'+(o.ltr?' dir="ltr" lang="en"':'')+' data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב, עם טבלת מעקב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why||msg;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו מה מודפס.</div>'; $('prN').focus(); return; }
+    right=v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

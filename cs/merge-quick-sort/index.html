@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מיון מיזוג ומיון מהיר · מדעי המחשב כיתה יב · מירי</title>
+<meta name="description" content="הפרד ומשול: מיון מיזוג ומיון מהיר בפייתון, עם ספירת השוואות מול מיון בועות. מעבדה עם שלבי חלוקה ומיזוג, מעקב שורה אחרי שורה ותרגול לבגרות.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/merge-quick-sort/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מיון מיזוג ומיון מהיר · מדעי המחשב כיתה יב · מירי">
+<meta property="og:description" content="הפרד ומשול: מיון מיזוג ומיון מהיר בפייתון, עם ספירת השוואות מול מיון בועות. מעבדה עם שלבי חלוקה ומיזוג, מעקב שורה אחרי שורה ותרגול לבגרות.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/merge-quick-sort/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://shohamtal.github.io/homework-site/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"מיון מיזוג ומיון מהיר","item":"https://shohamtal.github.io/homework-site/cs/merge-quick-sort/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך עובד מיון מיזוג?","acceptedAnswer":{"@type":"Answer","text":"מחלקים את הרשימה לשני חצאים, ממיינים כל חצי באותה שיטה (ברקורסיה), ואז ממזגים: משווים את האיבר הראשון שנשאר בכל חצי ומעבירים את הקטן לתוצאה. רשימה של איבר אחד כבר ממוינת, ושם הרקורסיה עוצרת. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין מיון מיזוג למיון מהיר?","acceptedAnswer":{"@type":"Answer","text":"במיון מיזוג החלוקה פשוטה (באמצע) והעבודה היא במיזוג. במיון מהיר העבודה היא בחלוקה סביב ציר, והחיבור פשוט. מיון מיזוג תמיד בערך n·log n השוואות. מיון מהיר בדרך כלל מהיר מאוד, אבל עם ציר גרוע הוא עלול להגיע ל-n²/2."}},{"@type":"Question","name":"למה n·log n טוב יותר מ-n²?","acceptedAnswer":{"@type":"Answer","text":"ברשימה של 1000 איברים, n² הוא מיליון, ו-n·log₂n הוא בערך 10,000. פי מאה פחות עבודה. וככל שהרשימה גדלה, הפער גדל עוד יותר. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מיון מיזוג ומיון מהיר","description":"הפרד ומשול: מיון מיזוג ומיון מהיר בפייתון, עם ספירת השוואות מול מיון בועות. מעבדה עם שלבי חלוקה ומיזוג, מעקב שורה אחרי שורה ותרגול לבגרות.","url":"https://shohamtal.github.io/homework-site/cs/merge-quick-sort/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מיון מיזוג ומיון מהיר","teaches":"מיון מיזוג ומיון מהיר","keywords":"הפרד ומשול, מיזוג, ציר","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:12em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:480px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body); white-space:normal}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.seg{display:flex; gap:8px; flex-wrap:wrap}
+.seg button[aria-pressed="true"]{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.tree{display:flex; flex-direction:column; gap:6px; margin:10px 0}
+.lvl{display:flex; align-items:flex-end; gap:6px; direction:ltr; justify-content:center; flex-wrap:wrap}
+.lvl-h{font-size:.85rem; color:var(--muted); font-weight:700; text-align:center; margin-top:4px}
+.grp{display:flex; align-items:flex-end; gap:2px; border:2px solid var(--border); border-radius:8px; padding:3px; background:var(--card)}
+.grp.mg{border-color:var(--line)}
+.sb{width:min(20px,5vw); display:flex; flex-direction:column; align-items:center; justify-content:flex-end}
+.sb i{display:block; width:100%; background:var(--blue); border-radius:3px 3px 0 0}
+.mg .sb i{background:var(--line)}
+.sb b{font:600 .62rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.meters{display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:6px 10px; align-items:center; font-weight:700}
+.meters .mb{height:16px; border:2px solid var(--border); border-radius:8px; background:var(--card); overflow:hidden}
+.meters .mb span{display:block; height:100%; background:var(--line)}
+.meters .mb.b2 span{background:var(--blue)} .meters .mb.b3 span{background:#C99A00}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="merge-quick-sort">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/#cs-hs-12">הכנה לבגרות ונושאים מתקדמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מיון מיזוג ומיון מהיר</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · הכנה לבגרות</div>
+  <h1>מיון מיזוג ומיון מהיר <span class="slogan">הפרד ומשול</span></h1>
+  <p class="lead">מיון בועות פשוט, אבל ברשימה של מיליון איברים הוא איטי מאוד. מיון מיזוג ומיון מהיר משתמשים ברעיון אחר: מפרקים את הבעיה לבעיות קטנות, פותרים כל אחת, ומחברים. כאן סופרים השוואות ורואים למה זה משתלם. כדאי להכיר קודם את <a href="../search-and-sort-intro/">חיפוש ומיון: מבוא</a> ואת <a href="../recursion/">רקורסיה</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הפרד ומשול</h3>
+      <p>בעיה גדולה מחלקים לשתי בעיות קטנות מאותו סוג. ממשיכים לחלק עד שהבעיה קטנה כל כך שהיא כבר פתורה: רשימה של איבר אחד תמיד ממוינת. אחר כך מחברים את הפתרונות. זו רקורסיה.</p>
+    </div>
+    <div class="mini">
+      <h3>מיון מיזוג</h3>
+      <p>חוצים את הרשימה לשני חצאים, ממיינים כל חצי (באותה שיטה), ו<strong>ממזגים</strong>: משווים את הראשון בכל חצי ולוקחים את הקטן. החלוקה קלה, וכל העבודה היא במיזוג.</p>
+    </div>
+    <div class="mini">
+      <h3>מיון מהיר</h3>
+      <p>בוחרים איבר <strong>ציר</strong> (pivot). שמים משמאלו את כל הקטנים ממנו ומימינו את הגדולים. ממיינים כל צד באותה שיטה. כאן כל העבודה היא בחלוקה, והחיבור קל.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> מיון בועות עושה בערך <span class="eq">n²/2</span> השוואות. מיון מיזוג עושה תמיד בערך <span class="eq">n·log₂n</span>. מיון מהיר בדרך כלל גם הוא <span class="eq">n·log₂n</span>, אבל ברשימה שכבר ממוינת (עם ציר אחרון) הוא נופל ל-<span class="eq">n²/2</span>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מפרקים וממזגים</h2></div>
+  <p class="text">בחרו סוג רשימה ואורך. למעלה רואים את החלוקה לחצאים (כחול) ואת המיזוג בחזרה (ורוד), שלב אחרי שלב. מתחת: כמה השוואות עשה כל מיון. התוכנית במעקב היא המיזוג האחרון, של שני החצאים הממוינים.</p>
+  <div class="seg" id="kind" role="group" aria-label="סוג הרשימה">
+    <button type="button" data-k="mix" aria-pressed="true">מעורבבת</button>
+    <button type="button" data-k="sorted" aria-pressed="false">ממוינת</button>
+    <button type="button" data-k="rev" aria-pressed="false">הפוכה</button>
+    <button type="button" data-k="dups" aria-pressed="false">עם חזרות</button>
+  </div>
+  <div class="tree" id="tree" aria-label="שלבי החלוקה והמיזוג"></div>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sn"><span>אורך הרשימה n</span><span class="eq" id="snv"></span></label>
+      <input type="range" id="sn" min="2" max="12" step="1" value="8">
+      <div class="meters" id="meters"></div>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="8,mix">8 מעורבבים</button>
+          <button type="button" data-p="12,mix">12 מעורבבים</button>
+          <button type="button" data-p="12,sorted">כבר ממוינת</button>
+          <button type="button" data-p="12,rev">הפוכה</button>
+          <button type="button" data-p="2,mix">רק 2 איברים</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות. בתיבה יש את שלושת המיונים עם מוני השוואות, על הרשימה מהמחוונים.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון" style="min-height:240px"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את מקרה הבסיס</h3>
+      <p>בלי תנאי עצירה הרקורסיה ממשיכה לחלק לנצח, עד שגיאת RecursionError.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">def merge_sort(a):
+    mid = len(a) // 2
+    ...</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">def merge_sort(a):
+    if len(a) &lt;= 1:
+        return a
+    mid = len(a) // 2</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>שוכחים את השאריות במיזוג</h3>
+      <p>כשאחד החצאים נגמר, בחצי השני עוד נשארו איברים. צריך להוסיף אותם לסוף.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">return result</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">return result + left[i:] + right[j:]</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>הציר נכנס פעמיים</h3>
+      <p>במיון מהיר עוברים על כל האיברים <strong>חוץ</strong> מהציר. אם גם הציר נכנס ל-smaller, הוא יופיע פעמיים, ואולי הרקורסיה לא תיגמר.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">for x in a:</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">for x in a[:-1]:</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>"מהיר" זה תמיד מהיר</h3>
+      <p>מיון מהיר עם הציר האחרון על רשימה ממוינת מחלק כל פעם לחלק ריק ולחלק עם כל השאר. זה המקרה הגרוע: בערך <span class="eq">n²/2</span> השוואות. בדקו במעבדה.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: חלוקה סביב ציר</h2></div>
+  <p class="text">הצעד הראשון של מיון מהיר על ציוני מבחן. הציר הוא האיבר האחרון, 61. עוברים על כל השאר ומחלקים לשתי רשימות. אחר כך ממיינים כל רשימה באותה דרך, ומחברים: <code dir="ltr" lang="en">smaller + [pivot] + bigger</code>.</p>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך עובד מיון מיזוג?</h3>
+    <p>מחלקים את הרשימה לשני חצאים, ממיינים כל חצי באותה שיטה (ברקורסיה), ואז ממזגים: משווים את האיבר הראשון שנשאר בכל חצי ומעבירים את הקטן לתוצאה. רשימה של איבר אחד כבר ממוינת, ושם הרקורסיה עוצרת. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין מיון מיזוג למיון מהיר?</h3>
+    <p>במיון מיזוג החלוקה פשוטה (באמצע) והעבודה היא במיזוג. במיון מהיר העבודה היא בחלוקה סביב ציר, והחיבור פשוט. מיון מיזוג תמיד בערך n·log n השוואות. מיון מהיר בדרך כלל מהיר מאוד, אבל עם ציר גרוע הוא עלול להגיע ל-n²/2.</p>
+    <h3>למה n·log n טוב יותר מ-n²?</h3>
+    <p>ברשימה של 1000 איברים, n² הוא מיליון, ו-n·log₂n הוא בערך 10,000. פי מאה פחות עבודה. וככל שהרשימה גדלה, הפער גדל עוד יותר. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/recursion/">רקורסיה: פונקציה שקוראת לעצמה</a> · <a href="../../cs/complexity/">סיבוכיות זמן: כמה צעדים?</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/binary-trees/"><small>→ הנושא הקודם</small>עצים בינאריים ועץ חיפוש</a><a class="next" href="../../cs/bagrut-cs-problems/"><small>הנושא הבא ←</small>בעיות בסגנון בגרות במדעי המחשב</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const pick=a=>a[Math.floor(Math.random()*a.length)], ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+  const BASE=[38,12,55,7,91,23,64,30,77,5,49,16], L=a=>'['+a.join(', ')+']';
+  function list(n,kind){ let a=BASE.slice(0,n); if(kind==='sorted') a.sort((x,y)=>x-y); else if(kind==='rev') a.sort((x,y)=>y-x); else if(kind==='dups') a=a.map(x=>[20,50,80][x%3]); return a; }
+  let mc=0;
+  function merge(l,r){ const res=[]; let i=0,j=0; while(i<l.length&&j<r.length){ mc++; if(l[i]<=r[j]) res.push(l[i++]); else res.push(r[j++]); } return res.concat(l.slice(i),r.slice(j)); }
+  function tree(a){ if(a.length<=1) return {a,s:a,leaf:true}; const m=a.length>>1, L1=tree(a.slice(0,m)), R1=tree(a.slice(m)); return {a,L:L1,R:R1,s:merge(L1.s,R1.s)}; }
+  function mergeCount(a){ mc=0; const t=tree(a); return {t,c:mc,s:t.s}; }
+  function quickCount(a){ let c=0; const q=a=>{ if(a.length<=1) return a; const p=a[a.length-1], sm=[], bg=[]; for(const x of a.slice(0,-1)){ c++; (x<=p?sm:bg).push(x); } return q(sm).concat([p],q(bg)); }; const s=q(a); return {c,s}; }
+  function bubbleCount(a0){ const a=a0.slice(), n=a.length; let c=0; for(let p=0;p<n-1;p++){ let sw=0; for(let i=0;i<n-1-p;i++){ c++; if(a[i]>a[i+1]){ [a[i],a[i+1]]=[a[i+1],a[i]]; sw++; } } if(!sw) break; } return {c,s:a}; }
+  const MERGE=['def merge(left, right):','    result = []','    i = 0','    j = 0','    while i < len(left) and j < len(right):','        if left[i] <= right[j]:','            result.append(left[i])','            i = i + 1','        else:','            result.append(right[j])','            j = j + 1','    result = result + left[i:] + right[j:]','    return result'];
+  function build(n,kind){
+    const a=list(n,kind), m=n>>1, left=mergeCount(a.slice(0,m)).s, right=mergeCount(a.slice(m)).s;
+    const code=MERGE.concat(['','left = '+L(left),'right = '+L(right),'merged = merge(left, right)','print(merged)']).join('\n');
+    const st=[{line:0,vars:{},out:''}]; let out='';
+    const add=(line,vars,note)=>st.push({line,vars:{...vars},out,note});
+    add(1,{},'מגדירים את merge. היא עוד לא רצה.');
+    add(15,{left},'החצי השמאלי, אחרי שכבר מוין.');
+    add(16,{left,right},'החצי הימני, גם הוא ממוין.');
+    const v={left,right}; add(17,{left,right},'קוראים ל-merge. קופצים לתוך הפונקציה.');
+    v.result=[]; add(2,v,'התוצאה מתחילה ריקה.'); v.i=0; add(3,v,'i מצביע על האיבר הבא בשמאל.'); v.j=0; add(4,v,'j מצביע על האיבר הבא בימין.');
+    let c=0;
+    while(true){
+      if(!(v.i<left.length&&v.j<right.length)){ add(5,v,(v.i>=left.length?'השמאלי נגמר':'הימני נגמר')+'. יוצאים מהלולאה.'); break; }
+      add(5,v,'בשני החצאים עוד יש איברים.'); c++;
+      if(left[v.i]<=right[v.j]){ add(6,v,'השוואה '+c+': '+left[v.i]+' <= '+right[v.j]+'? כן.'); v.result=v.result.concat([left[v.i]]); add(7,v,'לוקחים '+left[v.i]+' מהשמאלי.'); v.i++; add(8,v,'i זז ל-'+v.i+'.'); }
+      else { add(6,v,'השוואה '+c+': '+left[v.i]+' <= '+right[v.j]+'? לא.'); v.result=v.result.concat([right[v.j]]); add(10,v,'לוקחים '+right[v.j]+' מהימני.'); v.j++; add(11,v,'j זז ל-'+v.j+'.'); }
+    }
+    const rest=left.slice(v.i).concat(right.slice(v.j));
+    v.result=v.result.concat(rest); add(12,v,rest.length?'מוסיפים את מה שנשאר: '+L(rest)+'. אין צורך להשוות, הוא כבר ממוין.':'לא נשאר כלום להוסיף.');
+    add(13,v,'מחזירים רשימה ממוינת. היו '+c+' השוואות במיזוג הזה.');
+    const merged=v.result; add(17,{left,right,merged},'חזרנו: merged מקבל את התוצאה.');
+    out+=L(merged)+'\n'; add(18,{left,right,merged},'מדפיסים.');
+    return {code,steps:st,a,full:full(a),c};
+  }
+  function full(a){
+    return ['mc = 0','qc = 0','bc = 0','','def merge(left, right):','    global mc','    result = []','    i = 0','    j = 0','    while i < len(left) and j < len(right):','        mc = mc + 1','        if left[i] <= right[j]:','            result.append(left[i])','            i = i + 1','        else:','            result.append(right[j])','            j = j + 1','    return result + left[i:] + right[j:]','','def merge_sort(a):','    if len(a) <= 1:','        return a','    mid = len(a) // 2','    return merge(merge_sort(a[:mid]), merge_sort(a[mid:]))','',
+      'def quick_sort(a):','    global qc','    if len(a) <= 1:','        return a','    pivot = a[-1]','    smaller = []','    bigger = []','    for x in a[:-1]:','        qc = qc + 1','        if x <= pivot:','            smaller.append(x)','        else:','            bigger.append(x)','    return quick_sort(smaller) + [pivot] + quick_sort(bigger)','',
+      'def bubble_sort(a):','    global bc','    a = a[:]','    n = len(a)','    for p in range(n - 1):','        swaps = 0','        for i in range(n - 1 - p):','            bc = bc + 1','            if a[i] > a[i + 1]:','                a[i], a[i + 1] = a[i + 1], a[i]','                swaps = swaps + 1','        if swaps == 0:','            break','    return a','',
+      'nums = '+L(a),'print(merge_sort(nums))','print(quick_sort(nums))','print(bubble_sort(nums))','print("merge:", mc, "quick:", qc, "bubble:", bc)'].join('\n');
+  }
+  function fullCase(n,kind){ const a=list(n,kind), s=L(a.slice().sort((x,y)=>x-y)); return {code:full(a),steps:[{line:0,vars:{},out:s+'\n'+s+'\n'+s+'\nmerge: '+mergeCount(a).c+' quick: '+quickCount(a).c+' bubble: '+bubbleCount(a).c+'\n'}]}; }
+  const EXA=[72,45,90,61], EXA2=[72,45,90,38,61];
+  function exSteps(){
+    const a=EXA2, code=['nums = '+L(a),'pivot = nums[-1]','smaller = []','bigger = []','for x in nums[:-1]:','    if x <= pivot:','        smaller.append(x)','    else:','        bigger.append(x)','print(smaller, pivot, bigger)'].join('\n');
+    const st=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה". לפני כל השוואה נחשו לאן ילך המספר.'}], v={};
+    const add=(line,note,out)=>st.push({line,vars:JSON.parse(JSON.stringify(v)),out:out||'',note});
+    v.nums=a; add(1,'חמישה ציונים לא ממוינים.'); v.pivot=61; add(2,'nums[-1] הוא האיבר האחרון: הציר הוא 61.');
+    v.smaller=[]; add(3,'כאן יהיו הקטנים מהציר.'); v.bigger=[]; add(4,'וכאן הגדולים ממנו.');
+    for(const x of a.slice(0,-1)){ v.x=x; add(5,'עוברים לאיבר הבא, בלי הציר עצמו: x = '+x+'.');
+      if(x<=61){ add(6,x+' <= 61? כן.'); v.smaller=v.smaller.concat([x]); add(7,x+' נכנס ל-smaller.'); }
+      else { add(6,x+' <= 61? לא.'); v.bigger=v.bigger.concat([x]); add(9,x+' נכנס ל-bigger.'); } }
+    add(5,'עברנו על כולם. 4 השוואות.');
+    add(10,'הציר כבר במקום הסופי שלו: כל מה שמשמאלו קטן ממנו, וכל מה שמימינו גדול. עכשיו ממיינים כל צד באותה שיטה.','[45, 38] 61 [72, 90]\n');
+    return {code,steps:st};
+  }
+  /* practice */
+  const srt=a=>a.slice().sort((x,y)=>x-y), uniq=(n,lo,hi)=>{ const s=new Set(); while(s.size<n) s.add(ri(lo,hi)); return [...s]; };
+  const PYM=MERGE.join('\n');
+  function gen(){
+    const kind=pick(['merge','merge','mcount','part','part','levels','bubsorted','split','worst']), q={kind,type:'text'};
+    if(kind==='merge'){
+      const all=uniq(ri(4,6),1,40), k=ri(1,all.length-1), l=srt(all.slice(0,k)), r=srt(all.slice(k)), ans=L(srt(all));
+      q.code='print(merge('+L(l)+', '+L(r)+'))'; q.ask='merge היא הפונקציה מהמעבדה. מה התוכנית מדפיסה? כתבו רשימה עם סוגריים מרובעים.'; q.ans=ans; q.py=PYM+'\n'+q.code;
+      q.diag=v=>v===(L(l.concat(r))).replace(/\s/g,'')?'רק הדבקתם את שתי הרשימות. merge משווה ולוקחת כל פעם את הקטן.':null;
+      q.hints=['משווים את הראשון בכל רשימה ולוקחים את הקטן מביניהם.','כשרשימה אחת נגמרת, מוסיפים את כל מה שנשאר בשנייה.'];
+      q.sol='המיזוג נותן '+ans+'.';
+    } else if(kind==='mcount'){
+      const all=uniq(ri(4,6),1,40), k=ri(1,all.length-1), l=srt(all.slice(0,k)), r=srt(all.slice(k));
+      mc=0; merge(l,r); const c=mc;
+      q.code='left = '+L(l)+'\nright = '+L(r); q.ask='כמה השוואות (left[i] <= right[j]) עושה merge(left, right)?'; q.ans=String(c);
+      q.py=PYM.replace('        if left[i] <= right[j]:','        cnt[0] += 1\n        if left[i] <= right[j]:')+'\ncnt = [0]\nmerge('+L(l)+', '+L(r)+')\nprint(cnt[0])';
+      q.diag=v=>v===String(l.length+r.length)?'לא כל איבר צריך השוואה. כשרשימה אחת נגמרת, השאר נכנס בלי השוואות.':v===String(l.length*r.length)?'לא משווים כל זוג. כל השוואה מכניסה איבר אחד לתוצאה.':null;
+      q.hints=['כל השוואה מכניסה בדיוק איבר אחד לתוצאה.','עקבו: מתי אחת הרשימות נגמרת? מאז אין יותר השוואות.'];
+      q.sol='היו '+c+' השוואות. אחרי שאחת הרשימות נגמרה, השאר נוסף בלי השוואות.';
+    } else if(kind==='part'){
+      const a=uniq(ri(4,6),1,60), p=a[a.length-1], sm=a.slice(0,-1).filter(x=>x<=p), bg=a.slice(0,-1).filter(x=>x>p), which=Math.random()<.5?'smaller':'bigger';
+      const body='nums = '+L(a)+'\npivot = nums[-1]\nsmaller = []\nbigger = []\nfor x in nums[:-1]:\n    if x <= pivot:\n        smaller.append(x)\n    else:\n        bigger.append(x)\nprint('+which+')';
+      q.code=body; q.py=body; q.ask='מה התוכנית מדפיסה?'; q.ans=L(which==='smaller'?sm:bg);
+      q.diag=v=>v===L(srt(which==='smaller'?sm:bg)).replace(/\s/g,'')&&q.ans.replace(/\s/g,'')!==v?'החלוקה לא ממיינת. המספרים נשארים בסדר שבו הופיעו.':v===L(which==='smaller'?bg:sm).replace(/\s/g,'')?'זו הרשימה השנייה. בדקו שוב את הסימן <=.':null;
+      q.hints=['הציר הוא האחרון: '+p+'. משווים אליו כל אחד מהאחרים.','סדר המספרים ברשימה נשמר, לפי הסדר שבו עוברים עליהם.'];
+      q.sol='הציר '+p+'. smaller = '+L(sm)+', bigger = '+L(bg)+'.';
+    } else if(kind==='levels'){
+      const n=pick([2,4,8,16,32,64]), k=Math.log2(n);
+      q.ask='מיון מיזוג על רשימה של '+n+' איברים. כמה פעמים חוצים עד שכל חלק הוא איבר אחד (כמה רמות חלוקה)?'; q.code=''; q.ans=String(k);
+      q.py='n = '+n+'\nk = 0\nwhile n > 1:\n    n = n // 2\n    k = k + 1\nprint(k)';
+      q.diag=v=>v===String(n/2)||v===String(n-1)?'כל רמה חוצה את כל החלקים בבת אחת. כמה פעמים אפשר לחצות את '+n+' עד 1?':null;
+      q.hints=[''+n+' → '+(n/2)+' → … → 1. ספרו את החיצים.','זה log₂ של '+n+'.'];
+      q.sol=n+' = 2 בחזקת '+k+', לכן '+k+' רמות חלוקה.';
+    } else if(kind==='bubsorted'){
+      const n=ri(5,20); q.ask='מיון בועות עם עצירה מוקדמת (כמו בדף החיפוש והמיון) על רשימה ממוינת של '+n+' איברים. כמה השוואות?'; q.code=''; q.ans=String(n-1);
+      q.py='a = list(range('+n+'))\nc = 0\nfor p in range(len(a) - 1):\n    swaps = 0\n    for i in range(len(a) - 1 - p):\n        c = c + 1\n        if a[i] > a[i + 1]:\n            a[i], a[i + 1] = a[i + 1], a[i]\n            swaps = swaps + 1\n    if swaps == 0:\n        break\nprint(c)';
+      q.diag=v=>v===String(n*(n-1)/2)?'זה בלי עצירה מוקדמת. אחרי מעבר אחד בלי החלפות עוצרים.':null;
+      q.hints=['במעבר הראשון משווים כל זוג שכנים פעם אחת.','ברשימה ממוינת אין אף החלפה, אז עוצרים אחרי המעבר הראשון.'];
+      q.sol='מעבר אחד: '+(n-1)+' השוואות, אפס החלפות, ועוצרים.';
+    } else if(kind==='split'){
+      const a=uniq(ri(5,9),1,60), m=a.length>>1, side=Math.random()<.5;
+      q.code='a = '+L(a)+'\nmid = len(a) // 2\nprint(a['+(side?':mid':'mid:')+'])'; q.py=q.code; q.ask='זו החלוקה הראשונה של מיון מיזוג. מה התוכנית מדפיסה?'; q.ans=L(side?a.slice(0,m):a.slice(m));
+      q.diag=v=>v===L(side?a.slice(0,m+1):a.slice(m+1)).replace(/\s/g,'')?'בדקו את mid: '+a.length+' // 2 = '+m+'.':null;
+      q.hints=['mid = '+a.length+' // 2 = '+m+'.',side?'a[:mid] הם האינדקסים 0 עד '+(m-1)+'.':'a[mid:] מתחיל באינדקס '+m+' ועד הסוף.'];
+      q.sol='mid = '+m+', ו'+(side?'a[:'+m+']':'a['+m+':]')+' = '+q.ans+'.';
+    } else {
+      q.type='choice'; q.code=''; q.ask='באיזו רשימה מיון מהיר (עם הציר האחרון) עושה הכי הרבה השוואות?';
+      q.opts=[{t:'רשימה שכבר ממוינת',ok:true},{t:'רשימה מעורבבת',why:'במעורבבת הציר בדרך כלל מחלק לשני חלקים דומים. זה המקרה הטוב.'},{t:'זה תמיד אותו מספר',why:'מיון מיזוג תמיד דומה. מיון מהיר תלוי בציר. נסו במעבדה "כבר ממוינת".'}].sort(()=>Math.random()-.5);
+      q.hints=['מה קורה כשהציר הוא הגדול ביותר?','אם הציר הכי גדול, כל השאר נכנסים ל-smaller, ו-bigger ריק.'];
+      q.sol='ברשימה ממוינת הציר האחרון הוא הגדול ביותר. כל חלוקה מורידה רק איבר אחד, ויוצא n²/2 השוואות.';
+    }
+    return q;
+  }
+  const P=[[8,'mix'],[12,'mix'],[12,'sorted'],[12,'rev'],[2,'mix'],[7,'dups'],[3,'rev']];
+  return {build,list,mergeCount,quickCount,bubbleCount,exSteps,gen,presets:P,extra:P.map(p=>()=>fullCase(...p)).concat([exSteps])};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let kind='mix';
+const grp=(a,mg)=>'<div class="grp'+(mg?' mg':'')+'">'+a.map(x=>'<div class="sb"><i style="height:'+Math.round(6+x*0.42)+'px"></i><b>'+x+'</b></div>').join('')+'</div>';
+function rows(t,d,key){ if(d===0||t.leaf) return [t[key]]; return rows(t.L,d-1,key).concat(rows(t.R,d-1,key)); }
+function depth(t){ return t.leaf?0:1+Math.max(depth(t.L),depth(t.R)); }
+function lab(){
+  const n=+$('sn').value; $('snv').textContent=n;
+  $('kind').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===kind));
+  const r=LAB.build(n,kind), m=LAB.mergeCount(r.a), q=LAB.quickCount(r.a), b=LAB.bubbleCount(r.a), D=depth(m.t);
+  let h='<p class="lvl-h">חלוקה</p>';
+  for(let d=0;d<=D;d++) h+='<div class="lvl">'+rows(m.t,d,'a').map(a=>grp(a,false)).join('')+'</div>';
+  h+='<p class="lvl-h">מיזוג</p>';
+  for(let d=D-1;d>=0;d--) h+='<div class="lvl">'+rows(m.t,d,'s').map(a=>grp(a,true)).join('')+'</div>';
+  $('tree').innerHTML=h;
+  PT.mount($('labPT'),{code:r.code,steps:r.steps});
+  $('labRun').value=r.full;
+  const mx=Math.max(m.c,q.c,b.c,1);
+  $('meters').innerHTML=[['מיזוג',m.c,''],['מהיר',q.c,' b2'],['בועות',b.c,' b3']].map(x=>'<span>'+x[0]+'</span><span class="mb'+x[2]+'"><span style="width:'+(100*x[1]/mx)+'%"></span></span><span>'+x[1]+'</span>').join('');
+  let t='<div>'+D+' רמות חלוקה, כי '+n+' אפשר לחצות '+D+' פעמים עד שנשארים חלקים של איבר אחד.</div><div>השוואות: מיזוג '+m.c+', מהיר '+q.c+', בועות '+b.c+'. המיזוג האחרון לבדו עשה '+r.c+'.</div>';
+  if(kind==='sorted') t+='<div>רשימה ממוינת: מיון בועות עוצר אחרי מעבר אחד ('+b.c+' השוואות), אבל מיון מהיר עם ציר אחרון נופל למקרה הגרוע: '+q.c+' השוואות, כמו <span class="eq">n(n−1)/2</span>.</div>';
+  else if(kind==='rev') t+='<div>רשימה הפוכה היא המקרה הגרוע של מיון בועות: '+b.c+' השוואות. גם מיון מהיר סובל, כי הציר האחרון הוא תמיד הקטן ביותר.</div>';
+  else if(n<=3) t+='<div>ברשימות קטנות כמעט אין הבדל. היתרון של הפרד ומשול מופיע ברשימות ארוכות.</div>';
+  else t+='<div>מיון מיזוג עושה תמיד בערך <span class="eq">n·log₂n</span>. ברשימה מעורבבת גם מיון מהיר קרוב לזה.</div>';
+  $('labTxt').innerHTML=t;
+}
+$('sn').addEventListener('input',lab);
+$('kind').querySelectorAll('button').forEach(b=>b.onclick=()=>{ kind=b.dataset.k; lab(); });
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const [n,k]=b.dataset.p.split(','); $('sn').value=n; kind=k; lab(); });
+lab();
+const E=LAB.exSteps(); PT.mount($('exPT'),{code:E.code,steps:E.steps});
+
+/* practice */
+const nrm=s=>String(s).trim().replace(/^["']+|["']+$/g,'').replace(/\s+/g,'');
+function numbered(code){ return '<pre class="code pt-code" dir="ltr" lang="en">'+code.split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('')+'</pre>'; }
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=LAB.gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=q.code?numbered(q.code):'';
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why||msg;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; }
+    right=v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

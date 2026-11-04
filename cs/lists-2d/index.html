@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>רשימה דו-ממדית בפייתון · מדעי המחשב כיתה י · מירי</title>
+<meta name="description" content="רשימה של רשימות כטבלה: grid[r][c], לולאה כפולה, סכום שורה וסכום עמודה ולוח איקס עיגול. מעבדה עם טבלה צבעונית, מעקב ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/lists-2d/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="רשימה דו-ממדית בפייתון · מדעי המחשב כיתה י · מירי">
+<meta property="og:description" content="רשימה של רשימות כטבלה: grid[r][c], לולאה כפולה, סכום שורה וסכום עמודה ולוח איקס עיגול. מעבדה עם טבלה צבעונית, מעקב ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/lists-2d/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://shohamtal.github.io/homework-site/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"רשימה דו-ממדית: טבלה ולוח","item":"https://shohamtal.github.io/homework-site/cs/lists-2d/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה רשימה דו-ממדית בפייתון?","acceptedAnswer":{"@type":"Answer","text":"רשימה שכל איבר בה הוא רשימה בעצמו. כל רשימה פנימית היא שורה, וביחד הן טבלה. ניגשים לתא עם שני אינדקסים: grid[שורה][עמודה]. נסו במעבדה."}},{"@type":"Question","name":"איך מחשבים סכום של עמודה?","acceptedAnswer":{"@type":"Answer","text":"עמודה היא לא רשימה אחת, אלא תא אחד מכל שורה. לכן עוברים על השורות ומוסיפים מכל אחת את התא באותה עמודה: col_sum = col_sum + grid[i][c]."}},{"@type":"Question","name":"כמה פעמים רצה לולאה כפולה?","acceptedAnswer":{"@type":"Answer","text":"מספר השורות כפול מספר העמודות. בטבלה של 10 על 10 זה 100 פעמים, ובלוח של 1000 על 1000 זה מיליון. בגלל זה לולאה כפולה היא דוגמה ל-O(n²) בסיבוכיות. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"רשימה דו-ממדית: טבלה ולוח","description":"רשימה של רשימות כטבלה: grid[r][c], לולאה כפולה, סכום שורה וסכום עמודה ולוח איקס עיגול. מעבדה עם טבלה צבעונית, מעקב ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/cs/lists-2d/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"רשימה דו-ממדית: טבלה ולוח","teaches":"רשימה דו-ממדית: טבלה ולוח","keywords":"מטריצה, לולאה כפולה, שורה ועמודה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:14em; max-width:100%; box-sizing:border-box; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices button code{font-weight:400}
+.mini pre.code{margin:0}
+.tag-bad, .tag-good{font-weight:700; font-size:.92rem}
+.tag-bad{color:var(--err)} .tag-good{color:var(--ok)}
+#labPT, #exPT{margin-top:14px}
+#prCode{max-width:520px; margin:10px auto}
+code[dir=ltr]{unicode-bidi:isolate}
+.gview{display:flex; justify-content:center; margin:12px 0; direction:ltr}
+.gview table{border-collapse:separate; border-spacing:4px; font:1.15rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.gview th{font:600 .8rem var(--f-body); color:var(--muted); padding:0 4px}
+.gview td{width:44px; height:44px; text-align:center; border:2px solid var(--border); border-radius:8px; background:var(--card)}
+.gview td.row{background:var(--hint-bg)}
+.gview td.col{background:var(--hint-bg)}
+.gview td.tgt{box-shadow:0 0 0 3px var(--blue)}
+.gview td.now{background:var(--hl); border-color:var(--line); box-shadow:0 0 0 3px var(--line); font-weight:800}
+.gview .sum{font:700 .95rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--line); padding:0 6px}
+.glegend{text-align:center; color:var(--muted); font-size:.9rem; margin:0}
+@media (max-width:380px){.gview td{width:36px; height:38px} .gview table{font-size:1rem}}
+
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="lists-2d">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/#cs-hs-10">מבני נתונים ואלגוריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">רשימה דו-ממדית: טבלה ולוח</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · מבני נתונים ואלגוריתמים</div>
+  <h1>רשימה דו-ממדית <span class="slogan">טבלה, לוח ושורה ועמודה</span></h1>
+  <p class="lead">לוח של איקס עיגול, גיליון ציונים, מפה במשחק: כולם טבלאות. בפייתון טבלה היא <strong>רשימה של רשימות</strong>. כל רשימה פנימית היא שורה, ו-<code dir="ltr" lang="en">grid[r][c]</code> הוא התא בשורה <code dir="ltr" lang="en">r</code> ובעמודה <code dir="ltr" lang="en">c</code>. כאן ניגשים לתאים, עוברים על הטבלה בלולאה כפולה ומחשבים סכומים. כדאי להכיר קודם <a href="../lists/">רשימות</a> ו<a href="../loops/">לולאות</a>. גם <a href="../dictionaries/">מילונים</a> עוזרים לשמור מידע על לוח.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <pre class="code" dir="ltr" lang="en">grid = [
+    [3, 1, 4],     # row 0
+    [1, 5, 9],     # row 1
+]
+print(grid[1])      # [1, 5, 9]
+print(grid[1][2])   # 9
+print(len(grid), len(grid[0]))   # 2 3</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>קודם שורה, אחר כך עמודה</h3>
+      <p><code dir="ltr" lang="en">grid[1]</code> הוא שורה שלמה: רשימה. <code dir="ltr" lang="en">grid[1][2]</code> לוקח מהשורה הזו את המקום 2. גם השורות וגם העמודות מתחילות מ-0.</p>
+    </div>
+    <div class="mini">
+      <h3>גודל הטבלה</h3>
+      <p><code dir="ltr" lang="en">len(grid)</code> הוא מספר השורות. <code dir="ltr" lang="en">len(grid[0])</code> הוא מספר העמודות, כלומר האורך של שורה אחת.</p>
+    </div>
+    <div class="mini">
+      <h3>לולאה כפולה</h3>
+      <p>הלולאה החיצונית עוברת על השורות, והפנימית על התאים בכל שורה. בטבלה של 3 שורות ו-4 עמודות, השורה הפנימית רצה 3 כפול 4, כלומר 12 פעמים.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> <code dir="ltr" lang="en">grid[row][col]</code>, שורה ראשונה ועמודה שנייה. השורה האחרונה היא <code dir="ltr" lang="en">len(grid) - 1</code>, לא <code dir="ltr" lang="en">len(grid)</code>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: עוברים על הטבלה תא אחרי תא</h2></div>
+  <p class="text">בחרו גודל לטבלה ותא מטרה. התוכנית מדפיסה את תא המטרה, מחשבת סכום לכל שורה בלולאה כפולה, ואז סכום של עמודת המטרה. לחצו "שורה הבאה": התא שהתוכנית קוראת עכשיו נצבע בצהוב.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="rows"><span>שורות</span><span id="rowsv" dir="ltr"></span></label>
+      <input type="range" id="rows" min="2" max="4" step="1" value="2">
+      <label class="slider" for="cols"><span>עמודות</span><span id="colsv" dir="ltr"></span></label>
+      <input type="range" class="hl" id="cols" min="2" max="5" step="1" value="3">
+      <label class="slider" for="r"><span>שורת המטרה r</span><span id="rv" dir="ltr"></span></label>
+      <input type="range" class="blue" id="r" min="0" max="3" step="1" value="1">
+      <label class="slider" for="c"><span>עמודת המטרה c</span><span id="cv" dir="ltr"></span></label>
+      <input type="range" class="blue" id="c" min="0" max="4" step="1" value="2">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries"></div>
+      </div>
+    </div>
+  </div>
+  <div class="gview" id="gview"></div>
+  <p class="glegend">צהוב: התא שנקרא עכשיו · מסגרת כחולה: תא המטרה <span dir="ltr">grid[r][c]</span> · בצד: סכומי השורות שכבר חושבו</p>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labPy" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הפכו שורה ועמודה</h3>
+      <p>הסדר הוא תמיד שורה ואז עמודה. בטבלה של 2 שורות ו-3 עמודות, <code dir="ltr" lang="en">grid[2][1]</code> כבר מחוץ לטבלה.</p>
+      <span class="tag-bad">✗ IndexError</span><pre class="code" dir="ltr" lang="en">grid = [[3, 1, 4], [1, 5, 9]]
+print(grid[2][1])</pre>
+      <span class="tag-good">✓ שורה 1, עמודה 2: 9</span><pre class="code" dir="ltr" lang="en">grid = [[3, 1, 4], [1, 5, 9]]
+print(grid[1][2])</pre>
+    </div>
+    <div class="mini">
+      <h3>אחד יותר מדי</h3>
+      <p>יש <code dir="ltr" lang="en">len(grid)</code> שורות, ממוספרות מ-0. לכן <code dir="ltr" lang="en">range(len(grid))</code> מספיק בדיוק. עוד 1 יוצא מהטבלה.</p>
+      <span class="tag-bad">✗ IndexError</span><pre class="code" dir="ltr" lang="en">for i in range(len(grid) + 1):
+    print(grid[i])</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">for i in range(len(grid)):
+    print(grid[i])</pre>
+    </div>
+    <div class="mini">
+      <h3>שורות מועתקות</h3>
+      <p><code dir="ltr" lang="en">[[0] * 3] * 2</code> לא יוצר שתי שורות. הוא יוצר שורה אחת, ושני שמות שמצביעים עליה. שינוי אחד משנה "את שתיהן".</p>
+      <span class="tag-bad">✗ [[5, 0, 0], [5, 0, 0]]</span><pre class="code" dir="ltr" lang="en">g = [[0] * 3] * 2
+g[0][0] = 5
+print(g)</pre>
+      <span class="tag-good">✓ [[5, 0, 0], [0, 0, 0]]</span><pre class="code" dir="ltr" lang="en">g = [[0] * 3 for i in range(2)]
+g[0][0] = 5
+print(g)</pre>
+    </div>
+    <div class="mini">
+      <h3>הסכום מתאפס במקום הלא נכון</h3>
+      <p>לסכום של כל שורה, מאפסים את <code dir="ltr" lang="en">s</code> בתוך הלולאה החיצונית, לפני הפנימית. אם מאפסים פעם אחת בחוץ, כל "סכום שורה" כולל גם את השורות שלפניה.</p>
+      <span class="tag-bad">✗ סכום מצטבר</span><pre class="code" dir="ltr" lang="en">s = 0
+for row in grid:
+    for x in row:
+        s = s + x
+    print(s)</pre>
+      <span class="tag-good">✓ סכום לכל שורה</span><pre class="code" dir="ltr" lang="en">for row in grid:
+    s = 0
+    for x in row:
+        s = s + x
+    print(s)</pre>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: לוח איקס עיגול</h2></div>
+  <p class="text">הלוח הוא 3 שורות של 3 תאים. התוכנית שמה O בתא אחד, מדפיסה את הלוח שורה אחרי שורה, ובודקת אם יש ל-X אלכסון מלא.</p>
+  <div class="gview" id="exview"></div>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code" id="prCode" dir="ltr" lang="en" hidden></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prA" dir="ltr" lang="en" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה רשימה דו-ממדית בפייתון?</h3>
+    <p>רשימה שכל איבר בה הוא רשימה בעצמו. כל רשימה פנימית היא שורה, וביחד הן טבלה. ניגשים לתא עם שני אינדקסים: grid[שורה][עמודה]. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך מחשבים סכום של עמודה?</h3>
+    <p>עמודה היא לא רשימה אחת, אלא תא אחד מכל שורה. לכן עוברים על השורות ומוסיפים מכל אחת את התא באותה עמודה: col_sum = col_sum + grid[i][c].</p>
+    <h3>כמה פעמים רצה לולאה כפולה?</h3>
+    <p>מספר השורות כפול מספר העמודות. בטבלה של 10 על 10 זה 100 פעמים, ובלוח של 1000 על 1000 זה מיליון. בגלל זה לולאה כפולה היא דוגמה ל-O(n²) ב<a href="../complexity/">סיבוכיות</a>. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/lists/">רשימות בפייתון</a> · <a href="../../cs/loops/">לולאות בפייתון: for ו-while</a></p>
+<p class="related text"><strong>בכיתה יב ממשיכים ל:</strong> <a href="../../cs/bagrut-cs-problems/">בעיות בסגנון בגרות במדעי המחשב</a> · <a href="../../cs/databases-intro/">מבוא למסדי נתונים ו-SQL</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/dictionaries/"><small>→ הנושא הקודם</small>מילונים בפייתון: מפתח וערך</a><a class="next" href="../../cs/recursion/"><small>הנושא הבא ←</small>רקורסיה: פונקציה שקוראת לעצמה</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const shuffle=a=>{a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const codeHTML=code=>code.replace(/\n$/,'').split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('');
+const squash=s=>String(s).trim().replace(/\s+/g,'').toLowerCase();
+/* PT.mount plus a callback on every step change (fn(step, index)), for visuals next to the tracer */
+function mountWatch(el,o,fn){
+  PT.mount(el,o); if(!fn) return;
+  const f=()=>fn(o.steps[el.ptStep]||o.steps[0],el.ptStep);
+  if(el._mo) el._mo.disconnect();
+  el._mo=new MutationObserver(f); el._mo.observe(el.querySelector('.pt-count'),{childList:true,characterData:true,subtree:true}); f();
+}
+/* lab: sliders (LAB.ids, label spans id+'v') + "נסו את אלה" presets + tracer + Pyodide box */
+function lab(o){
+  const tries=$('tries');
+  tries.innerHTML=LAB.presets.map((t,i)=>'<button type="button" data-i="'+i+'">'+t.label+'</button>').join('');
+  const get=()=>{ const p={}; LAB.ids.forEach(id=>p[id]=+$(id).value); return p; };
+  function draw(){
+    if(o&&o.before) o.before(); const p=get();
+    LAB.ids.forEach(id=>{ const f=o&&o.fmt&&o.fmt[id]; $(id+'v').textContent=f?f(p[id]):p[id]; });
+    const r=LAB.build(p);
+    mountWatch($('labPT'),{code:r.code,steps:r.steps,input:r.input},o&&o.step?s=>o.step(s,p,r):null);
+    $('labTxt').innerHTML=r.explain; $('labPy').value=r.code;
+    if(o&&o.after) o.after(p,r);
+  }
+  LAB.ids.forEach(id=>$(id).addEventListener('input',draw));
+  tries.querySelectorAll('button').forEach(b=>b.onclick=()=>{ LAB.presets[+b.dataset.i].p.forEach((v,i)=>{ $(LAB.ids[i]).value=v; }); draw(); });
+  draw();
+  return {draw,get};
+}
+/* practice: gen() returns {ask, code?, type:'num'|'text'|'mc', ans, accept?, opts?[{t,ok,why}], diag?(raw,num), hints[], sol, ok?} */
+function practice(gen){
+  let q, sel=-1, tries=0, hint=0, streak=0, solved=0, done=false;
+  const fb=h=>{ $('prFb').innerHTML=h; };
+  const st=()=>{ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; };
+  function fresh(){
+    q=gen(); sel=-1; tries=0; hint=0; done=false;
+    $('prAsk').innerHTML=q.ask;
+    $('prCode').hidden=!q.code; $('prCode').innerHTML=q.code?codeHTML(q.code):'';
+    const mc=q.type==='mc'; $('prCh').hidden=!mc; $('prIn').hidden=mc; $('prA').value='';
+    $('prA').setAttribute('inputmode',q.type==='num'?'decimal':'text');
+    if(mc){
+      $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+o.t+'</button>').join('');
+      $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+    }
+    $('prShow').disabled=true; fb('');
+  }
+  $('prCheck').onclick=()=>{
+    if(done){ fb('<div class="fb ok">כבר פתרתם את זה. לחצו "תרגיל חדש".</div>'); return; }
+    let right, msg=null, note='';
+    if(q.type==='mc'){
+      if(sel<0){ fb('<div class="fb err">בחרו קודם תשובה.</div>'); return; }
+      right=!!q.opts[sel].ok; msg=q.opts[sel].why||null;
+    } else {
+      const raw=$('prA').value;
+      if(!raw.trim()){ fb('<div class="fb err">כתבו תשובה.</div>'); $('prA').focus(); return; }
+      if(q.type==='num'){
+        const v=parseFloat(raw.replace(',','.').replace(/\s/g,''));
+        if(isNaN(v)){ fb('<div class="fb err">כתבו מספר.</div>'); return; }
+        right=Math.abs(v-q.ans)<1e-9; if(!right&&q.diag) msg=q.diag(raw,v);
+      } else {
+        const a=squash(raw), bare=a.replace(/^["']+|["']+$/g,''), all=[q.ans].concat(q.accept||[]).map(squash);
+        right=all.includes(a)||all.includes(bare);
+        if(right&&!all.includes(a)) note=' המרכאות לא מודפסות, הן רק מסמנות איפה הטקסט מתחיל ונגמר.';
+        if(!right&&q.diag) msg=q.diag(raw);
+      }
+    }
+    if(right){ done=true; streak++; solved++; st(); fb('<div class="fb ok">נכון! '+(q.ok||'')+note+'</div>'); return; }
+    streak=0; tries++; st();
+    fb('<div class="fb err">'+(msg||'עוד לא. נסו שוב, או לחצו על רמז.')+'</div>');
+    if(tries>=2) $('prShow').disabled=false;
+  };
+  $('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); fb('<div class="fb hint">'+q.hints[hint-1]+'</div>'); };
+  $('prShow').onclick=()=>{ fb('<div class="fb hint">'+q.sol+'<br>עכשיו נסו תרגיל חדש.</div>'); };
+  $('prNew').onclick=fresh;
+  $('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  fresh(); st();
+}
+
+/*LAB*/
+const VAL=(i,j)=>((i*7+j*3+2)%9)+1;
+const LAB={ids:['rows','cols','r','c'], ranges:[[2,4,1],[2,5,1],[0,3,1],[0,4,1]],
+  presets:[{label:'2 על 3',p:[2,3,1,2]},{label:'פינה ראשונה',p:[3,3,0,0]},{label:'התא האחרון',p:[4,5,3,4]},{label:'3 על 4',p:[3,4,2,1]},{label:'הכי קטן',p:[2,2,1,0]}]};
+LAB.build=function(p){
+  const R=p.rows, Cn=p.cols, r=Math.min(p.r,R-1), c=Math.min(p.c,Cn-1);
+  const grid=Array.from({length:R},(_,i)=>Array.from({length:Cn},(_,j)=>VAL(i,j)));
+  const L=['grid = ['].concat(grid.map(row=>'    ['+row.join(', ')+'],'),[']','r = '+r,'c = '+c,'print("Cell:", grid[r][c])','row_sums = []','for i in range(len(grid)):','    s = 0','    for j in range(len(grid[i])):','        s = s + grid[i][j]','    row_sums.append(s)','print("Row sums:", row_sums)','col_sum = 0','for i in range(len(grid)):','    col_sum = col_sum + grid[i][c]','print("Column", c, "sum:", col_sum)']);
+  const o=R+3; /* line of "r = " */
+  const v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.'}]; let out='', sums=[];
+  const go=(line,note,cell,extra)=>steps.push(Object.assign({line,vars:{...v},out,note,cell,sums:sums.slice()},extra||{}));
+  grid.forEach((row,i)=>go(i+2,'פייתון בונה את שורה '+i+': '+PT.repr(row)+'.',null,{row:i}));
+  v.grid=grid; go(1,'כל השורות מוכנות. grid היא רשימה של '+R+' רשימות, ובכל אחת '+Cn+' מספרים.');
+  v.r=r; go(o,'r היא שורת המטרה: '+r+'.');
+  v.c=c; go(o+1,'c היא עמודת המטרה: '+c+'.');
+  out+='Cell: '+grid[r][c]+'\n'; go(o+2,'grid['+r+'] היא השורה '+PT.repr(grid[r])+', ומתוכה לוקחים את המקום '+c+': '+grid[r][c]+'.',[r,c]);
+  v.row_sums=[]; go(o+3,'רשימה ריקה לסכומי השורות.');
+  for(let i=0;i<R;i++){
+    v.i=i;
+    go(o+4,'הלולאה החיצונית: שורה i = '+i+'.',null,{row:i});
+    v.s=0; go(o+5,'מאפסים את s לפני כל שורה.',null,{row:i});
+    for(let j=0;j<Cn;j++){
+      v.j=j; go(o+6,'הלולאה הפנימית: עמודה j = '+j+'.',[i,j],{row:i});
+      const old=v.s; v.s=old+grid[i][j]; go(o+7,'s = '+old+' + grid['+i+']['+j+'] = '+old+' + '+grid[i][j]+' = '+v.s+'.',[i,j],{row:i});
+    }
+    go(o+6,'אין עוד עמודות בשורה '+i+'. הלולאה הפנימית נגמרת.',null,{row:i});
+    sums.push(v.s); v.row_sums=sums.slice(); go(o+8,'מוסיפים את סכום שורה '+i+', '+v.s+', לרשימה.',null,{row:i});
+  }
+  go(o+4,'אין עוד שורות. הלולאה החיצונית נגמרת.');
+  out+='Row sums: '+PT.repr(sums)+'\n'; go(o+9,'הדפסנו סכום לכל שורה.');
+  v.col_sum=0; go(o+10,'עכשיו סכום של עמודה '+c+'. עמודה היא תא אחד מכל שורה.',null,{col:true});
+  let cs=0;
+  for(let i=0;i<R;i++){
+    v.i=i; go(o+11,'שורה i = '+i+'.',[i,c],{col:true});
+    const old=cs; cs+=grid[i][c]; v.col_sum=cs; go(o+12,'col_sum = '+old+' + grid['+i+']['+c+'] = '+cs+'.',[i,c],{col:true});
+  }
+  go(o+11,'עברנו על כל השורות.',null,{col:true});
+  out+='Column '+c+' sum: '+cs+'\n'; go(o+13,'הסכום של עמודה '+c+' הוא '+cs+'.',null,{col:true});
+  const explain='<div>טבלה של '+R+' שורות ו-'+Cn+' עמודות: <span dir="ltr">len(grid) = '+R+', len(grid[0]) = '+Cn+'</span>.</div>'
+    +'<div>תא המטרה: <span dir="ltr">grid['+r+']['+c+'] = <b>'+grid[r][c]+'</b></span>.</div>'
+    +'<div>השורה הפנימית רצה '+R+' כפול '+Cn+' = '+(R*Cn)+' פעמים. סכום עמודה '+c+': '+cs+'.</div>'
+    +(p.r>R-1||p.c>Cn-1?'<div>המטרה זזה לתוך הטבלה: אין שורה '+p.r+' או עמודה '+p.c+' בטבלה הזו.</div>':'');
+  return {code:L.join('\n'), steps, explain, grid, r, c};
+};
+LAB.board=function(){
+  const b=[['X','O','X'],['.','X','O'],['O','.','X']], v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.',g:b.map(r=>r.slice())}]; let out='';
+  const go=(line,note,cell)=>steps.push({line,vars:{...v},out,note,cell,g:b.map(r=>r.slice())});
+  const code=['board = [','    ["X", "O", "X"],','    [".", "X", "O"],','    ["O", ".", "X"],',']','board[1][0] = "O"','for row in board:','    print(" ".join(row))','win = board[0][0] == board[1][1] == board[2][2] == "X"','print("X wins:", win)'].join('\n');
+  for(let i=0;i<3;i++) go(i+2,'פייתון בונה את שורה '+i+' של הלוח.',null);
+  v.board=b.map(r=>r.slice()); go(1,'הלוח מוכן: 3 שורות, ובכל אחת 3 תאים. נקודה היא תא ריק.');
+  b[1][0]='O'; v.board=b.map(r=>r.slice()); go(6,'שורה 1, עמודה 0: התא הראשון בשורה האמצעית. היה בו ".", עכשיו "O".',[1,0]);
+  b.forEach((row,i)=>{ v.row=row.slice(); go(7,'row היא שורה '+i+' כולה: רשימה של 3 תאים.',null); out+=row.join(' ')+'\n'; go(8,'join מחבר את התאים עם רווח, ומדפיסים שורה של הלוח.',null); });
+  go(7,'עברנו על 3 השורות.');
+  v.win=true; go(9,'האלכסון: [0][0], [1][1], [2][2]. בשלושתם יש X, ולכן win = True.',[1,1]);
+  out+='X wins: True\n'; go(10,'ל-X יש אלכסון מלא.');
+  return {code, steps};
+};
+LAB.examples=[LAB.board()];
+/*/LAB*/
+function gview(el,g,s,o){
+  o=o||{}; const sums=s.sums||[];
+  el.innerHTML='<table aria-label="הטבלה"><tr><th></th>'+g[0].map((_,j)=>'<th>'+j+'</th>').join('')+'<th></th></tr>'+g.map((row,i)=>'<tr><th>'+i+'</th>'+row.map((x,j)=>{
+    const cl=[]; if(s.cell&&s.cell[0]===i&&s.cell[1]===j) cl.push('now'); if(o.r===i&&o.c===j) cl.push('tgt'); if(s.row===i) cl.push('row'); if(s.col&&o.c===j) cl.push('col');
+    return '<td'+(cl.length?' class="'+cl.join(' ')+'"':'')+'>'+esc(x)+'</td>'; }).join('')+'<td class="sum" style="border:0;background:none">'+(i<sums.length?'Σ '+sums[i]:'')+'</td></tr>').join('')+'</table>';
+}
+function clamp(){
+  const R=+$('rows').value, Cn=+$('cols').value;
+  $('r').max=R-1; $('c').max=Cn-1;
+  if(+$('r').value>R-1) $('r').value=R-1; if(+$('c').value>Cn-1) $('c').value=Cn-1;
+}
+lab({before:clamp, step:(s,p,r)=>gview($('gview'),r.grid,s,{r:r.r,c:r.c})});
+mountWatch($('exPT'),LAB.examples[0],s=>gview($('exview'),s.g,s));
+
+/* practice */
+const mk=(R,Cn)=>Array.from({length:R},()=>Array.from({length:Cn},()=>ri(1,9)));
+const gcode=g=>'grid = [\n'+g.map(r=>'    ['+r.join(', ')+'],').join('\n')+'\n]';
+function qCell(){
+  const g=mk(3,4), a=ri(0,2), b=ri(0,3);
+  return {ask:'מה התוכנית מדפיסה?', code:gcode(g)+'\nprint(grid['+a+']['+b+'])', type:'num', ans:g[a][b],
+    diag:(r,v)=>b<3&&a<4&&g[b]&&v===g[b][a]?'הפכתם: לקחתם שורה '+b+' ועמודה '+a+'. המספר הראשון הוא השורה.':a>0&&b>0&&v===g[a-1][b-1]?'ספרתם מ-1. בפייתון השורה הראשונה היא 0.':null,
+    hints:['קודם מוצאים את השורה grid['+a+']. השורה הראשונה היא 0.','grid['+a+'] = '+PT.repr(g[a])+'. עכשיו קחו ממנה את המקום '+b+'.'], sol:'grid['+a+'] = '+PT.repr(g[a])+', ובמקום '+b+' יש '+g[a][b]+'.', ok:'שורה '+a+', עמודה '+b+'.'};
+}
+function qLen(){
+  const R=ri(2,4), Cn=ri(2,5), g=mk(R,Cn), w=pick(['len(grid)','len(grid[0])']), ans=w==='len(grid)'?R:Cn;
+  return {ask:'מה התוכנית מדפיסה?', code:gcode(g)+'\nprint('+w+')', type:'num', ans,
+    diag:(r,v)=>v===(ans===R?Cn:R)&&R!==Cn?(ans===R?'len(grid) סופר את השורות, לא את התאים בשורה.':'grid[0] היא שורה אחת. len שלה הוא מספר העמודות.'):v===R*Cn?'len לא סופר את כל התאים. הוא סופר רק איברים ברמה אחת.':null,
+    hints:['grid היא רשימה של שורות. grid[0] היא שורה אחת.',w==='len(grid)'?'כמה רשימות פנימיות יש?':'כמה מספרים יש בשורה הראשונה?'], sol:w+' = '+ans+'.', ok:w+' = '+ans+'.'};
+}
+function qSum(){
+  const g=mk(3,3), col=Math.random()<.5, k=ri(0,2);
+  const code=gcode(g)+'\n'+(col?'total = 0\nfor row in grid:\n    total = total + row['+k+']\nprint(total)':'print(sum(grid['+k+']))');
+  const rs=g[k].reduce((a,b)=>a+b,0), cs=g.reduce((a,r)=>a+r[k],0), ans=col?cs:rs;
+  return {ask:'מה התוכנית מדפיסה?', code, type:'num', ans,
+    diag:(r,v)=>col&&v===rs&&rs!==cs?'חיברתם את שורה '+k+'. row['+k+'] הוא תא אחד מכל שורה, כלומר עמודה '+k+'.':!col&&v===cs&&rs!==cs?'חיברתם עמודה. grid['+k+'] היא שורה שלמה.':null,
+    hints:[col?'בכל סיבוב row היא שורה אחרת, ולוקחים ממנה רק את המקום '+k+'.':'grid['+k+'] היא רשימה אחת: השורה '+k+'.',col?'התאים: '+g.map(r=>r[k]).join(', ')+'.':'השורה: '+PT.repr(g[k])+'.'],
+    sol:col?'עמודה '+k+': '+g.map(r=>r[k]).join(' + ')+' = '+cs+'.':'שורה '+k+': '+g[k].join(' + ')+' = '+rs+'.', ok:col?'זה סכום של עמודה.':'זה סכום של שורה.'};
+}
+function qInner(){
+  const R=ri(2,6), Cn=ri(2,6);
+  return {ask:'כמה פעמים רצה השורה '+C('count = count + 1')+'? כלומר, מה מודפס?', code:'count = 0\nfor i in range('+R+'):\n    for j in range('+Cn+'):\n        count = count + 1\nprint(count)', type:'num', ans:R*Cn,
+    diag:(r,v)=>v===R+Cn?'הלולאות מקוננות, לא אחת אחרי השנייה. על כל i, כל הלולאה הפנימית רצה מחדש.':v===Cn||v===R?'זה רק סיבוב אחד של לולאה. כמה פעמים רצה הלולאה הפנימית כולה?':null,
+    hints:['כמה פעמים רצה הפנימית בכל סיבוב של החיצונית?','החיצונית '+R+' פעמים, ובכל פעם הפנימית '+Cn+' פעמים.'], sol:R+' כפול '+Cn+' = '+(R*Cn)+'.', ok:'שורות כפול עמודות.'};
+}
+function qAlias(){
+  const R=ri(2,3), Cn=ri(2,3), bad=Math.random()<.6, x=ri(2,9);
+  const row0=[x].concat(Array(Cn-1).fill(0)), z=Array(Cn).fill(0);
+  const right=PT.repr(Array.from({length:R},(_,i)=>bad||i===0?row0:z)), wrong=PT.repr(Array.from({length:R},(_,i)=>bad?(i===0?row0:z):row0));
+  return {ask:'מה התוכנית מדפיסה?', code:(bad?'g = [[0] * '+Cn+'] * '+R:'g = [[0] * '+Cn+' for i in range('+R+')]')+'\ng[0][0] = '+x+'\nprint(g)', type:'mc',
+    opts:shuffle([{t:C(right),ok:true},{t:C(wrong),ok:false,why:bad?'* '+R+' לא יוצר שורות חדשות. כל השורות הן אותה רשימה, ולכן השינוי רואים בכולן.':'כאן כל סיבוב יוצר שורה חדשה, ולכן רק שורה 0 משתנה.'}]),
+    hints:['שאלו: האם יש כאן '+R+' רשימות שונות, או רשימה אחת עם כמה שמות?',bad?'כפל של רשימה החיצונית מעתיק את ההפניה לאותה שורה.':'for בתוך הסוגריים בונה רשימה חדשה בכל סיבוב.'], sol:'הפלט: '+C(right)+'. '+(bad?'כל השורות הן אותה רשימה.':'כל שורה היא רשימה נפרדת.'), ok:bad?'שורות מועתקות הן אותה רשימה.':'כל שורה נפרדת.'};
+}
+const BUGS=[
+  [['grid = [[1, 2, 3], [4, 5, 6]]','print(grid[1][2])','print(grid[2][1])'],3,'יש רק שורות 0 ו-1. grid[2] יוצא מהטבלה: IndexError.'],
+  [['grid = [[1, 2], [3, 4], [5, 6]]','for i in range(len(grid) + 1):','    print(grid[i][0])'],3,'range(len(grid) + 1) מגיע ל-3, ואין שורה 3. השגיאה קורית כשמנסים לקרוא grid[3].'],
+  [['grid = [[1, 2, 3], [4, 5, 6]]','total = grid[0][0] + grid[1][1]','print(grid[0][3])'],3,'בכל שורה יש עמודות 0, 1, 2. אין עמודה 3.']];
+function qBug(){
+  const [lines,k,why]=pick(BUGS);
+  return {ask:'התוכנית תעצור עם שגיאה. באיזו שורה? כתבו את מספר השורה.', code:lines.join('\n'), type:'num', ans:k,
+    diag:(r,v)=>v>=1&&v<=lines.length?'שורה '+v+' לא יוצאת מהטבלה. בדקו כמה שורות ועמודות יש, ומה האינדקס הגדול ביותר.':'יש בתוכנית רק '+lines.length+' שורות.',
+    hints:['ספרו שורות ועמודות. האינדקס הגדול ביותר הוא אחד פחות מהמספר.',why.split('.')[0]+'.'], sol:'שורה '+k+': '+C(lines[k-1])+'. '+why, ok:why};
+}
+practice(()=>pick([qCell,qCell,qLen,qSum,qSum,qInner,qAlias,qBug])());
+
+})();
+</script>
+</body>
+</html>

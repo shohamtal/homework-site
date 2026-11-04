@@ -214,7 +214,7 @@ pre.code{background:var(--card); border:2px solid var(--border); border-radius:1
 .pt-h{font-weight:700; margin:0 0 4px}
 .pt-vars{width:100%; border-collapse:collapse; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.95rem}
 .pt-vars th, .pt-vars td{border:2px solid var(--border); padding:4px 8px; text-align:left; overflow-wrap:anywhere}
-.pt-vars th{width:35%; background:var(--card)} .pt-vars tr.ch td{background:var(--hl)}
+.pt-vars th{width:auto; background:var(--card)} .pt-vars tr.ch td{background:var(--hl)}
 .pt-vars .pt-empty{color:var(--muted); font-family:var(--f-body); text-align:right; direction:rtl}
 .pt-out{margin:0; min-height:3em; border:2px dashed var(--soft); border-radius:12px; padding:8px 12px; white-space:pre-wrap; overflow-wrap:anywhere; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
 .pt-in{margin:0 0 4px; font-size:.9rem; color:var(--muted)}

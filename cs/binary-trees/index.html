@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>עץ חיפוש בינארי בפייתון · מדעי המחשב כיתה יא · מירי</title>
+<meta name="description" content="עץ חיפוש בינארי בפייתון: הכנסה, חיפוש וספירת בדיקות, וסריקה תוכית, תחילית וסופית ברקורסיה. מעבדה עם עץ מצויר, מעקב צעד אחרי צעד ותרגול לכיתה יא.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/binary-trees/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="עץ חיפוש בינארי בפייתון · מדעי המחשב כיתה יא · מירי">
+<meta property="og:description" content="עץ חיפוש בינארי בפייתון: הכנסה, חיפוש וספירת בדיקות, וסריקה תוכית, תחילית וסופית ברקורסיה. מעבדה עם עץ מצויר, מעקב צעד אחרי צעד ותרגול לכיתה יא.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/binary-trees/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/cs/grade-11/"},{"@type":"ListItem","position":4,"name":"מחלקות ומבני נתונים","item":"https://shohamtal.github.io/homework-site/cs/grade-11/#cs-hs-11"},{"@type":"ListItem","position":5,"name":"עצים בינאריים ועץ חיפוש","item":"https://shohamtal.github.io/homework-site/cs/binary-trees/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה עץ חיפוש בינארי?","acceptedAnswer":{"@type":"Answer","text":"עץ שבו לכל צומת יש עד שני בנים, וכל הערכים בתת העץ השמאלי קטנים ממנו, וכל הערכים בתת העץ הימני גדולים ממנו. הכלל הזה מאפשר לחפש מהר: בכל צעד הולכים רק לצד אחד. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין סריקה תחילית, תוכית וסופית?","acceptedAnswer":{"@type":"Answer","text":"בכולן מבקרים בכל הצמתים, וההבדל הוא מתי מטפלים בצומת עצמו. תחילית: קודם הצומת ואחר כך הבנים. תוכית: שמאל, צומת, ימין. סופית: קודם שני הבנים ואחר כך הצומת."}},{"@type":"Question","name":"למה סריקה תוכית של עץ חיפוש יוצאת ממוינת?","acceptedAnswer":{"@type":"Answer","text":"כי בכל צומת קודם מדפיסים את כל מה שמשמאל, שכולו קטן ממנו, אחר כך את הצומת, ואחר כך את כל מה שמימין, שכולו גדול ממנו. כך זה בכל רמה בעץ. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"עצים בינאריים ועץ חיפוש","description":"עץ חיפוש בינארי בפייתון: הכנסה, חיפוש וספירת בדיקות, וסריקה תוכית, תחילית וסופית ברקורסיה. מעבדה עם עץ מצויר, מעקב צעד אחרי צעד ותרגול לכיתה יא.","url":"https://shohamtal.github.io/homework-site/cs/binary-trees/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"עצים בינאריים ועץ חיפוש","teaches":"עצים בינאריים ועץ חיפוש","keywords":"עץ חיפוש, סריקה, עלה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:10px auto 0; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace tr.now td{background:var(--hl); font-weight:800}
+.trace tr.later td{color:var(--muted); opacity:.55}
+.num{font-family:var(--f-math); font-size:1.1rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, Menlo, Consolas, monospace; width:14em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.pair{display:grid; grid-template-columns:minmax(0,1fr); gap:6px}
+.pair pre.code{margin:0; font-size:.88rem}
+.pair .tag{font-weight:800; font-size:.9rem; margin-bottom:2px}
+.pair .bad{color:var(--err)} .pair .good{color:var(--ok)}
+.q-code{max-width:460px; margin:0 auto 10px}
+</style>
+<style>
+.tree{display:block; width:100%; max-width:560px; margin:6px auto 12px; height:auto}
+.tree line{stroke:var(--border); stroke-width:2}
+.tree line.path{stroke:var(--line); stroke-width:3.5}
+.tree circle{fill:var(--card); stroke:var(--border); stroke-width:2}
+.tree .vis circle{fill:var(--hl)}
+.tree .cur circle{stroke:var(--line); stroke-width:4}
+.tree .hit circle{fill:var(--ok-bg); stroke:var(--ok); stroke-width:4}
+.tree text{font:700 15px ui-monospace, Menlo, Consolas, monospace; fill:var(--ink); text-anchor:middle; dominant-baseline:central}
+.tree .ord{font:700 11px var(--f-body); fill:var(--line)}
+.tree .ghost circle{fill:none; stroke:var(--muted); stroke-dasharray:4 3}
+.tree .ghost text{fill:var(--muted)}
+.trv{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:8px}
+.trv button{font-family:ui-monospace, Menlo, Consolas, monospace; direction:ltr}
+.trv button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line)}
+.pt-vars th{width:auto; overflow-wrap:normal}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="binary-trees">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/">כיתה יא</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-11/#cs-hs-11">מחלקות ומבני נתונים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">עצים בינאריים ועץ חיפוש</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יא · מחלקות ומבני נתונים</div>
+  <h1>עצים בינאריים ועץ חיפוש <span class="slogan">שמאלה קטן, ימינה גדול</span></h1>
+  <p class="lead">בעץ בינארי לכל צומת יש עד שני בנים: שמאלי וימני. בעץ חיפוש בינארי יש עוד כלל: כל מה שמשמאל קטן מהצומת, וכל מה שמימין גדול ממנו. בזכות הכלל הזה מוצאים ערך בכמה בדיקות בלבד. כאן בונים עץ, מחפשים בו וסופרים בדיקות, ובסוף סורקים אותו ברקורסיה. כדאי להכיר קודם את <a href="../linked-list/">הרשימה המקושרת</a> ואת <a href="../recursion/">הרקורסיה</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <pre class="code" dir="ltr" lang="en">class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>שורש, בנים ועלים</h3>
+      <p>הצומת העליון הוא <strong>השורש</strong>. לכל צומת יש <code dir="ltr" lang="en">left</code> ו-<code dir="ltr" lang="en">right</code>. צומת בלי בנים הוא <strong>עלה</strong>. בבן שחסר יש None.</p>
+    </div>
+    <div class="mini">
+      <h3>הכנסה וחיפוש</h3>
+      <p>מתחילים בשורש. קטן מהצומת? הולכים שמאלה. גדול? ימינה. בהכנסה ממשיכים עד מקום ריק. בחיפוש עוצרים כשמוצאים, או כשמגיעים ל-None.</p>
+    </div>
+    <div class="mini">
+      <h3>שלוש סריקות</h3>
+      <p>תחילית (preorder): צומת, שמאל, ימין. תוכית (inorder): שמאל, צומת, ימין. סופית (postorder): שמאל, ימין, צומת. בעץ חיפוש הסריקה התוכית יוצאת ממוינת.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> בכל בדיקה בחיפוש מוותרים על צד שלם של העץ. בעץ מאוזן עם 1000 ערכים מספיקות בערך 10 בדיקות. בעץ שנבנה מערכים ממוינים הוא נראה כמו שרשרת, וצריך עד 1000.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים עץ ומחפשים</h2></div>
+  <p class="text">התוכנית מכניסה ערכים לעץ, אחד אחרי השני, ואז מחפשת ערך. הזיזו את המחוונים. לחצו "שורה הבאה": בזמן החיפוש הצמתים שנבדקו נצבעים בצהוב, והצומת הנוכחי מסומן במסגרת.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sN"><span>כמה ערכים מכניסים</span><span class="eq" id="sNv"></span></label>
+      <input type="range" id="sN" min="1" max="9" step="1" value="7">
+      <label class="slider" for="sT"><span>הערך שמחפשים</span><span class="eq" id="sTv"></span></label>
+      <input type="range" class="hl" id="sT" min="5" max="95" step="5" value="60">
+      <label class="slider" for="sO"><span>סדר ההכנסה</span><span id="sOv"></span></label>
+      <input type="range" class="blue" id="sO" min="0" max="1" step="1" value="0">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="7,60,0">מוצאים 60</button>
+          <button type="button" data-p="7,50,0">מחפשים את השורש</button>
+          <button type="button" data-p="7,45,0">ערך שאין בעץ</button>
+          <button type="button" data-p="9,65,0">עמוק בעץ</button>
+          <button type="button" data-p="9,80,1">ערכים ממוינים</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="tree" id="tree" role="img" aria-label="העץ"></svg>
+  <div id="labPT"></div>
+  <h3 style="margin-top:18px">הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את התנאי לעצירה</h3>
+      <p>בלי בדיקת None, הרקורסיה מגיעה לבן שחסר ומנסה לקרוא node.left של None.</p>
+      <div class="pair"><div><p class="tag bad">✗ AttributeError</p><pre class="code" dir="ltr" lang="en">def inorder(node):
+    inorder(node.left)
+    ...</pre></div><div><p class="tag good">✓ עוצרים ב-None</p><pre class="code" dir="ltr" lang="en">def inorder(node):
+    if node is None:
+        return
+    inorder(node.left)</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>לא שומרים את מה ש-insert מחזיר</h3>
+      <p>insert מחזיר את השורש. אם לא מציבים אותו בחזרה, הצומת החדש לא מתחבר לעץ.</p>
+      <div class="pair"><div><p class="tag bad">✗ העץ נשאר ריק</p><pre class="code" dir="ltr" lang="en">insert(root, v)</pre></div><div><p class="tag good">✓ מתחבר</p><pre class="code" dir="ltr" lang="en">root = insert(root, v)</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מחפשים בשני הצדדים</h3>
+      <p>בעץ חיפוש יודעים לאן ללכת. חיפוש בשני הצדדים עובד, אבל מבזבז את כל היתרון.</p>
+      <div class="pair"><div><p class="tag bad">✗ בודק הכל</p><pre class="code" dir="ltr" lang="en">return find(node.left, t) or find(node.right, t)</pre></div><div><p class="tag good">✓ צד אחד</p><pre class="code" dir="ltr" lang="en">if t &lt; node.value:
+    return find(node.left, t)
+return find(node.right, t)</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מבלבלים בין הסריקות</h3>
+      <p>מה שקובע הוא איפה נמצאת שורת ההדפסה: לפני שתי הקריאות, ביניהן, או אחריהן.</p>
+      <div class="pair"><div><p class="tag bad">✗ זו תחילית</p><pre class="code" dir="ltr" lang="en">print(node.value)
+inorder(node.left)
+inorder(node.right)</pre></div><div><p class="tag good">✓ תוכית</p><pre class="code" dir="ltr" lang="en">inorder(node.left)
+print(node.value)
+inorder(node.right)</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: סריקה ברקורסיה</h2></div>
+  <p class="text">עץ קטן עם 5 צמתים. בחרו סריקה ועברו צעד אחרי צעד. כל קריאה לפונקציה עם None חוזרת מיד. המספר הקטן ליד כל צומת אומר באיזה סדר הוא הודפס.</p>
+  <div class="trv" id="trv"><button type="button" data-k="0" aria-pressed="true">inorder</button><button type="button" data-k="1" aria-pressed="false">preorder</button><button type="button" data-k="2" aria-pressed="false">postorder</button></div>
+  <div class="stepper"><svg class="tree" id="exTree" role="img" aria-label="עץ הדוגמה"></svg><div id="exPT"></div></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code q-code" id="prQ" dir="ltr" lang="en"></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn"><input id="prN" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה עץ חיפוש בינארי?</h3>
+    <p>עץ שבו לכל צומת יש עד שני בנים, וכל הערכים בתת העץ השמאלי קטנים ממנו, וכל הערכים בתת העץ הימני גדולים ממנו. הכלל הזה מאפשר לחפש מהר: בכל צעד הולכים רק לצד אחד. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין סריקה תחילית, תוכית וסופית?</h3>
+    <p>בכולן מבקרים בכל הצמתים, וההבדל הוא מתי מטפלים בצומת עצמו. תחילית: קודם הצומת ואחר כך הבנים. תוכית: שמאל, צומת, ימין. סופית: קודם שני הבנים ואחר כך הצומת.</p>
+    <h3>למה סריקה תוכית של עץ חיפוש יוצאת ממוינת?</h3>
+    <p>כי בכל צומת קודם מדפיסים את כל מה שמשמאל, שכולו קטן ממנו, אחר כך את הצומת, ואחר כך את כל מה שמימין, שכולו גדול ממנו. כך זה בכל רמה בעץ. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/recursion/">רקורסיה: פונקציה שקוראת לעצמה</a> · <a href="../../cs/linked-list/">רשימה מקושרת: חוליות ומצביעים</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/linked-list/"><small>→ הנושא הקודם</small>רשימה מקושרת: חוליות ומצביעים</a><a class="next" href="../../cs/merge-quick-sort/"><small>הנושא הבא ←</small>מיון מיזוג ומיון מהיר</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const C=s=>`<code dir="ltr" lang="en">${s}</code>`;
+/*GEN*/
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const ORDERS=[[50,30,70,20,40,60,80,35,65],[20,30,35,40,50,60,65,70,80]];
+/* JS twin of the Python BST */
+function bstInsert(root,v){ if(!root) return {v,l:null,r:null}; let n=root, path=[]; while(true){ path.push(n.v); if(v<n.v){ if(!n.l){ n.l={v,l:null,r:null}; break; } n=n.l; } else { if(!n.r){ n.r={v,l:null,r:null}; break; } n=n.r; } } root.path=path; return root; }
+function build(vals){ let root=null; const paths=[]; vals.forEach(v=>{ if(!root){ root={v,l:null,r:null}; paths.push([]); } else { bstInsert(root,v); paths.push(root.path); } }); return {root,paths}; }
+function walk(n,kind,out){ if(!n) return out; if(kind==='pre') out.push(n.v); walk(n.l,kind,out); if(kind==='in') out.push(n.v); walk(n.r,kind,out); if(kind==='post') out.push(n.v); return out; }
+const NODE='class Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n';
+const INSERT='def insert(root, value):\n    if root is None:\n        return Node(value)\n    if value < root.value:\n        root.left = insert(root.left, value)\n    else:\n        root.right = insert(root.right, value)\n    return root\n';
+const SEARCH='def search(root, target):\n    count = 0\n    node = root\n    while node is not None:\n        count = count + 1\n        if target == node.value:\n            print("found", target, "after", count, "checks")\n            return True\n        if target < node.value:\n            node = node.left\n        else:\n            node = node.right\n    print(target, "not found after", count, "checks")\n    return False\n';
+const pathTxt=(p,v)=>p.map(x=>v<x?`קטן מ-${x}, שמאלה`:`גדול מ-${x}, ימינה`).join('. ');
+function buildLab(n,T,o){
+  const vals=ORDERS[o].slice(0,n), {root,paths}=build(vals);
+  const code=NODE+'\n'+INSERT+'\n'+SEARCH+`\nroot = None\nfor v in [${vals.join(', ')}]:\n    root = insert(root, v)\nfound = search(root, ${T})`;
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה". שורות 1 עד 29 רק מגדירות.',viz:{have:[]}}], g={}; let out='', loc=null;
+  const push=(line,note,viz)=>{ const v={...g}; if(loc) Object.keys(loc).forEach(k=>v[k+' (search)']=loc[k]); steps.push({line,vars:v,out,note,viz:Object.assign({have:viz&&viz.have||have.slice()},viz||{})}); };
+  const have=[];
+  push(1,'מגדירים את Node, את insert ואת search.');
+  g.root=null; push(31,'העץ ריק: root הוא None.');
+  vals.forEach((v,i)=>{
+    g.v=v; push(32,`v = ${v}.`);
+    have.push(v); if(i===0) g['root.value']=vals[0], delete g.root;
+    push(33,i===0?`העץ היה ריק, ולכן ${v} נהיה השורש.`:`insert מכניס את ${v}: ${pathTxt(paths[i],v)}. שם יש מקום ריק.`,{have:have.slice(),vis:paths[i].slice(),cur:v,ins:true});
+  });
+  push(34,`קוראים ל-search עם ${T}.`);
+  loc={target:T}; push(16,'נכנסים לפונקציה search.');
+  loc.count=0; push(17,'count יספור כמה צמתים בדקנו.');
+  let node=root; const vis=[]; loc['node.value']=node.v; push(18,'node מתחיל בשורש.',{vis:[],cur:node.v});
+  let found=false;
+  while(true){
+    if(!node){ push(19,'node הוא None: הגענו למקום ריק. הערך לא בעץ.',{vis:vis.slice()}); break; }
+    push(19,'node לא None, ממשיכים.',{vis:vis.slice(),cur:node.v});
+    loc.count++; vis.push(node.v); push(20,`בדיקה מספר ${loc.count}: מסתכלים על ${node.v}.`,{vis:vis.slice(),cur:node.v});
+    if(T===node.v){ push(21,`${T} שווה ל-${node.v}. מצאנו!`,{vis:vis.slice(),hit:node.v}); out+=`found ${T} after ${loc.count} checks\n`; push(22,`מדפיסים: נמצא אחרי ${loc.count} בדיקות.`,{vis:vis.slice(),hit:node.v}); found=true; push(23,'מחזירים True.',{vis:vis.slice(),hit:node.v}); break; }
+    push(21,`${T} לא שווה ל-${node.v}.`,{vis:vis.slice(),cur:node.v});
+    if(T<node.v){ push(24,`${T} קטן מ-${node.v}: כל מה שמימין גדול מדי, הולכים שמאלה.`,{vis:vis.slice(),cur:node.v}); node=node.l; }
+    else { push(24,`${T} לא קטן מ-${node.v}.`,{vis:vis.slice(),cur:node.v}); push(26,'אז הולכים ימינה.',{vis:vis.slice(),cur:node.v}); node=node.r; }
+    if(node) loc['node.value']=node.v; else { delete loc['node.value']; loc.node=null; }
+    push(T<vis[vis.length-1]?25:27,node?`node עובר ל-${node.v}.`:`אין שם בן: node הוא None.`,{vis:vis.slice(),cur:node?node.v:undefined});
+  }
+  if(!found){ out+=`${T} not found after ${loc.count} checks\n`; push(28,`מדפיסים: לא נמצא אחרי ${loc.count} בדיקות.`,{vis:vis.slice()}); push(29,'מחזירים False.',{vis:vis.slice()}); }
+  loc=null; g.found=found; push(34,`found = ${found?'True':'False'}.`,{vis:vis.slice(),hit:found?T:undefined});
+  return {code,steps,vals,checks:vis.length,found,vis};
+}
+const PRESETS=[[7,60,0],[7,50,0],[7,45,0],[9,65,0],[9,80,1]];
+const EXV=[50,30,70,20,40];
+const KINDS=['inorder','preorder','postorder'];
+function buildEx(k){
+  const name=KINDS[k], body=[[`    ${name}(node.left)`,'    print(node.value, end=" ")',`    ${name}(node.right)`],['    print(node.value, end=" ")',`    ${name}(node.left)`,`    ${name}(node.right)`],[`    ${name}(node.left)`,`    ${name}(node.right)`,'    print(node.value, end=" ")']][k];
+  const code='class Node:\n    def __init__(self, value, left=None, right=None):\n        self.value = value\n        self.left = left\n        self.right = right\n\nroot = Node(50, Node(30, Node(20), Node(40)), Node(70))\n\n'+`def ${name}(node):\n    if node is None:\n        return\n`+body.join('\n')+`\n\n${name}(root)\nprint()`;
+  const {root}=build(EXV);
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה".',viz:{have:EXV,order:[]}}], stack=[], order=[]; let out='';
+  const push=(line,note,cur)=>{ const v={'root.value':50}; if(stack.length){ const t=stack[stack.length-1]; if(t===null) v['node (call '+stack.length+')']=null; else v['node.value (call '+stack.length+')']=t.v; v['call stack']={py:stack.map(s=>`${name}(${s?s.v:'None'})`).join(' > ')}; }
+    steps.push({line,vars:v,out,note,viz:{have:EXV,order:order.slice(),cur}}); };
+  push(1,'מגדירים את Node.');
+  push(7,'בונים את העץ: 50 בשורש, 30 ו-70 בניו, 20 ו-40 הבנים של 30.');
+  push(9,`מגדירים את ${name}.`);
+  const L={left:0,print:0,right:0}; body.forEach((b,i)=>{ L[b.includes('print')?'print':b.includes('left')?'left':'right']=12+i; });
+  function call(n,from){
+    stack.push(n); push(9,n?`קריאה ל-${name} עם ${n.v}.`:`קריאה עם None (בן שחסר ל-${from}).`,n?n.v:undefined);
+    if(!n){ push(10,'node הוא None.'); push(11,'חוזרים מיד, בלי לעשות כלום.'); stack.pop(); return; }
+    push(10,`node הוא ${n.v}, לא None.`,n.v);
+    for(const b of body){
+      if(b.includes('print')){ out+=n.v+' '; order.push(n.v); push(L.print,`מדפיסים ${n.v}.`,n.v); }
+      else if(b.includes('left')){ push(L.left,`עוברים לבן השמאלי של ${n.v}.`,n.v); call(n.l,n.v); push(L.left,`חזרנו ל-${n.v} מהבן השמאלי.`,n.v); }
+      else { push(L.right,`עוברים לבן הימני של ${n.v}.`,n.v); call(n.r,n.v); push(L.right,`חזרנו ל-${n.v} מהבן הימני.`,n.v); }
+    }
+    stack.pop();
+  }
+  push(16,`קוראים ל-${name} עם השורש.`);
+  call(root,null);
+  out+='\n'; push(17,`סיימנו. הסדר: ${order.join(' ')}.`);
+  return {code,steps,order};
+}
+function LABCASES(){
+  const cs=[];
+  for(let o=0;o<2;o++) for(let n=1;n<=9;n++) for(const T of [5,20,35,45,50,65,80,95]) cs.push(Object.assign(buildLab(n,T,o),{name:[n,T,o].join(',')}));
+  for(let k=0;k<3;k++) cs.push(Object.assign(buildEx(k),{name:'ex '+KINDS[k]}));
+  return cs;
+}
+const TRAV={in:'def inorder(node):\n    if node is None:\n        return\n    inorder(node.left)\n    print(node.value, end=" ")\n    inorder(node.right)\n',
+  pre:'def preorder(node):\n    if node is None:\n        return\n    print(node.value, end=" ")\n    preorder(node.left)\n    preorder(node.right)\n',
+  post:'def postorder(node):\n    if node is None:\n        return\n    postorder(node.left)\n    postorder(node.right)\n    print(node.value, end=" ")\n'};
+function rvals(k){ const a=[]; while(a.length<k){ const x=ri(1,9)*10+ri(0,1)*5; if(!a.includes(x)) a.push(x); } return a; }
+function genQ(){
+  const kind=pick(['in','pre','post','checks','left']), vals=rvals(ri(5,6)), {root}=build(vals);
+  const head=`root = None\nfor v in [${vals.join(', ')}]:\n    root = insert(root, v)\n`, defs=NODE+'\n'+INSERT+'\n';
+  if(kind==='in'||kind==='pre'||kind==='post'){
+    const nm={in:'inorder',pre:'preorder',post:'postorder'}[kind], ans=walk(root,kind,[]).join(' '), inord=walk(root,'in',[]).join(' ');
+    return {kind,vk:'last',ans,code:head+`${nm}(root)`,vcode:defs+TRAV[kind]+'\n'+head+`${nm}(root)\nprint()`,ask:`insert ו-${nm} הן הפונקציות מהעמוד. מה מודפס? כתבו את המספרים עם רווח ביניהם.`,
+      diag:[[vals.join(' '),kind==='in'?'זה סדר ההכנסה. בעץ חיפוש הסריקה התוכית יוצאת ממוינת.':'זה סדר ההכנסה. ציירו את העץ קודם.'],[inord,'זו הסריקה התוכית. בדקו איפה נמצאת שורת ההדפסה.'],[walk(root,kind==='pre'?'post':'pre',[]).join(' '),'זו סריקה אחרת. בדקו איפה נמצאת שורת ההדפסה.']].filter(d=>d[0]!==ans),
+      hints:[`ציירו את העץ: ${vals[0]} בשורש, ואת כל ערך הכניסו שמאלה אם הוא קטן וימינה אם הוא גדול.`,{in:'שמאל, צומת, ימין: התוצאה ממוינת.',pre:'צומת, שמאל, ימין: מתחילים בשורש.',post:'שמאל, ימין, צומת: השורש מודפס אחרון.'}[kind]],
+      sol:`סריקה ${{in:'תוכית',pre:'תחילית',post:'סופית'}[kind]}: ${ans}.`};
+  }
+  if(kind==='checks'){
+    const T=pick([...vals,vals[0]+5,ri(1,9)*10+5].filter((x,i,a)=>a.indexOf(x)===i)), path=[]; let n=root;
+    while(n){ path.push(n.v); if(T===n.v) break; n=T<n.v?n.l:n.r; }
+    const f=vals.includes(T), line=f?`found ${T} after ${path.length} checks`:`${T} not found after ${path.length} checks`;
+    return {kind,vk:'last',ans:path.length,vans:line,code:head+`search(root, ${T})`,vcode:defs+SEARCH+'\n'+head+`search(root, ${T})`,ask:'search היא הפונקציה מהמעבדה. כמה בדיקות היא עושה? כתבו מספר.',
+      diag:[[vals.indexOf(T)+1,'זה המקום של הערך ברשימה. אבל search הולכת בעץ, מהשורש למטה.'],[vals.length,'search לא בודקת את כל הצמתים: בכל צעד היא בוחרת צד אחד.']].filter(d=>d[0]>0&&d[0]!==path.length),
+      hints:['ציירו את העץ, ואז לכו מהשורש: קטן שמאלה, גדול ימינה.',`המסלול מתחיל ב-${path.slice(0,2).join(', ')}…`],
+      sol:`המסלול: ${path.join(', ')}. ${f?`ב-${T} עוצרים`:'אחרי זה מגיעים ל-None'}. ${path.length} בדיקות.`};
+  }
+  const L=root.l, ans=L?L.v:'None';
+  return {kind,vk:'last',ans,code:head+'print(root.left.value if root.left else None)',vcode:defs+head+'print(root.left.value if root.left else None)',ask:'מה מודפס? (אם אין בן שמאלי, מודפס None)',
+    diag:[[vals[1],vals[1]>vals[0]?`${vals[1]} גדול מהשורש, ולכן הוא הולך ימינה.`:'ערכים נוספים יכולים להיכנס מתחת, אבל הבן השמאלי הוא הראשון שהגיע שמאלה.']].filter(d=>String(d[0])!==String(ans)),
+    hints:[`השורש הוא ${vals[0]}, הערך הראשון.`,`הבן השמאלי הוא הערך הראשון ברשימה שקטן מ-${vals[0]}.`],
+    sol:L?`הערך הראשון שקטן מ-${vals[0]} הוא ${L.v}, והוא נהיה הבן השמאלי של השורש.`:`אין ברשימה ערך שקטן מ-${vals[0]}, ולכן אין בן שמאלי.`};
+}
+/*END*/
+
+/* SVG tree drawn from the values present at this step */
+function drawTree(svg,vals,z){
+  const {root}=build(vals.slice()), pos={}, sorted=walk(root,'in',[]); let maxd=0;
+  (function lay(n,d){ if(!n) return; pos[n.v]={x:40+sorted.indexOf(n.v)*48,y:28+d*56}; maxd=Math.max(maxd,d); lay(n.l,d+1); lay(n.r,d+1); })(root,0);
+  const W=Math.max(200,sorted.length*48+32), H=maxd*56+60; svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const vis=z.vis||[], ord=z.order||[]; let h='';
+  (function edges(n){ if(!n) return; [n.l,n.r].forEach(c=>{ if(c){ const on=vis.includes(n.v)&&(vis.includes(c.v)||z.cur===c.v||z.hit===c.v); h+=`<line class="${on?'path':''}" x1="${pos[n.v].x}" y1="${pos[n.v].y}" x2="${pos[c.v].x}" y2="${pos[c.v].y}"/>`; edges(c); } }); })(root);
+  sorted.forEach(v=>{ const p=pos[v], cls=[z.hit===v?'hit':'',vis.includes(v)||ord.includes(v)?'vis':'',z.cur===v?'cur':''].join(' ');
+    h+=`<g class="${cls}"><circle cx="${p.x}" cy="${p.y}" r="18"/><text x="${p.x}" y="${p.y}">${v}</text>${ord.includes(v)?`<text class="ord" x="${p.x+20}" y="${p.y-16}">${ord.indexOf(v)+1}</text>`:''}</g>`; });
+  if(!sorted.length) h='<text x="100" y="30" style="font-family:var(--f-body)">העץ ריק</text>';
+  svg.innerHTML=h;
+}
+function follow(el,steps,draw){ const f=()=>draw(steps[el.ptStep||0]); el.onclick=e=>{ if(e.target.closest('button')) f(); }; f(); }
+
+/* lab */
+const sN=$('sN'), sT=$('sT'), sO=$('sO');
+function lab(){
+  const n=+sN.value, T=+sT.value, o=+sO.value;
+  $('sNv').textContent=n; $('sTv').textContent=T; $('sOv').textContent=o?'ממוין':'מעורבב';
+  const cur=buildLab(n,T,o);
+  PT.mount($('labPT'),{code:cur.code,steps:cur.steps}); follow($('labPT'),cur.steps,s=>drawTree($('tree'),s.viz.have,s.viz));
+  $('labRun').value=cur.code;
+  $('labTxt').innerHTML=`<div>מכניסים: <bdi dir="ltr">${cur.vals.join(', ')}</bdi>.</div><div>${cur.found?`${T} נמצא אחרי ${cur.checks} בדיקות`:`${T} לא בעץ. יודעים את זה אחרי ${cur.checks} בדיקות`}: <bdi dir="ltr">${cur.vis.join(' → ')}</bdi>.</div>`
+    +(o?`<div>הערכים נכנסו ממוינים, ולכן כל אחד הלך ימינה: העץ נראה כמו שרשרת, והחיפוש איטי.</div>`:`<div>בעץ יש ${n} צמתים, אבל בדקנו רק ${cur.checks}.</div>`);
+}
+[sN,sT,sO].forEach(x=>x.addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const p=b.dataset.p.split(','); sN.value=p[0]; sT.value=p[1]; sO.value=p[2]; lab(); });
+lab();
+
+/* worked example */
+function ex(k){ const e=buildEx(k); PT.mount($('exPT'),{code:e.code,steps:e.steps}); follow($('exPT'),e.steps,s=>drawTree($('exTree'),EXV,s.viz));
+  $('trv').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.k===k)); }
+$('trv').addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) ex(+b.dataset.k); });
+ex(0);
+
+/* practice */
+let q=null, sel=-1, streak=0, solved=0;
+const norm=s=>String(s).replace(/[\s,]+/g,' ').trim();
+function newQ(){
+  q=genQ(); q.tries=0; q.h=0; sel=-1;
+  $('prAsk').textContent=q.ask; $('prQ').textContent=q.code; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prCh').hidden=!q.mc; $('prIn').hidden=!!q.mc;
+  if(q.mc){ $('prCh').innerHTML=q.mc.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="false" dir="ltr">${o}</button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); }); }
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let v;
+  if(q.mc){ if(sel<0){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; } v=norm(q.mc[sel]); }
+  else{ v=norm($('prN').value); if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; } }
+  if(v===norm(q.ans)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! התשובה היא <code dir="ltr" lang="en">${String(q.ans).replace(/</g,'&lt;')}</code>.</div>`; return; }
+  streak=0; q.tries++; streakTxt();
+  const d=(q.diag||[]).find(x=>norm(x[0])===v);
+  fb.innerHTML=`<div class="fb err">${d?d[1]:'עוד לא. עקבו אחרי הקוד שורה אחרי שורה ונסו שוב.'}</div>`;
+  if(q.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ q.h=Math.min(q.h+1,q.hints.length); $('prFb').innerHTML=`<div class="fb hint">${q.hints.slice(0,q.h).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${q.sol}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newQ;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newQ(); streakTxt();
+})();
+</script>
+</body>
+</html>

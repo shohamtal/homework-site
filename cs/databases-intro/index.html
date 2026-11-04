@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מבוא ל-SQL ומסדי נתונים · מדעי המחשב כיתה יב · מירי</title>
+<meta name="description" content="מה זה מסד נתונים ואיך כותבים שאילתות SQL: SELECT, WHERE, ORDER BY, COUNT ומפתח ראשי. בונים שאילתות בלחיצות ורואים את התוצאה מיד. לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/databases-intro/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מבוא ל-SQL ומסדי נתונים · מדעי המחשב כיתה יב · מירי">
+<meta property="og:description" content="מה זה מסד נתונים ואיך כותבים שאילתות SQL: SELECT, WHERE, ORDER BY, COUNT ומפתח ראשי. בונים שאילתות בלחיצות ורואים את התוצאה מיד. לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/databases-intro/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://shohamtal.github.io/homework-site/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"מבוא למסדי נתונים ו-SQL","item":"https://shohamtal.github.io/homework-site/cs/databases-intro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה SQL?","acceptedAnswer":{"@type":"Answer","text":"SQL היא שפה לשאילת שאלות על טבלאות במסד נתונים. כותבים מה רוצים לקבל, למשל \"את השמות של כל הספרים עם יותר מ-300 עמודים, מהעבה לדקה\", ומסד הנתונים מוצא את זה בעצמו. היא נמצאת כמעט בכל אפליקציה ואתר. נסו במעבדה."}},{"@type":"Question","name":"מה זה מפתח ראשי?","acceptedAnswer":{"@type":"Answer","text":"עמודה שהערך בה שונה בכל שורה, כמו מספר ספר בספרייה. בעזרתה אפשר להצביע על שורה אחת בדיוק, גם אם יש שני ספרים עם אותו שם. שם או סוג לא מתאימים, כי הם יכולים לחזור."}},{"@type":"Question","name":"מה ההבדל בין WHERE ל-ORDER BY?","acceptedAnswer":{"@type":"Answer","text":"WHERE מחליט אילו שורות נשארות, ו-ORDER BY רק מסדר את מה שנשאר. WHERE משנה את מספר השורות בתוצאה, ORDER BY לא משנה אותו לעולם. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מבוא למסדי נתונים ו-SQL","description":"מה זה מסד נתונים ואיך כותבים שאילתות SQL: SELECT, WHERE, ORDER BY, COUNT ומפתח ראשי. בונים שאילתות בלחיצות ורואים את התוצאה מיד. לכיתה יב.","url":"https://shohamtal.github.io/homework-site/cs/databases-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מבוא למסדי נתונים ו-SQL","teaches":"מבוא למסדי נתונים ו-SQL","keywords":"SQL, טבלה, שאילתה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:12em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:520px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1rem var(--f-body); white-space:normal}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.seg{display:flex; gap:6px; flex-wrap:wrap; align-items:center}
+.seg .lb{font-weight:800; min-width:5.2em}
+.seg button{min-height:40px; padding:4px 10px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.9rem}
+.seg button[aria-pressed="true"]{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.tw{overflow-x:auto; max-width:100%; margin:8px 0}
+.db{border-collapse:collapse; direction:ltr; font-size:.88rem; margin:0 auto; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.db th,.db td{border:2px solid var(--border); padding:3px 7px; text-align:left; white-space:nowrap}
+.db th{background:var(--card)}
+.db th.pk{background:var(--hl)}
+.db tr.in td{background:var(--hint-bg)}
+.db tr.out td{opacity:.35}
+.db td.empty{color:var(--muted); font-family:var(--f-body); direction:rtl; text-align:center}
+.cap{text-align:center; font-weight:700; margin:6px 0 0; font-size:.95rem}
+pre.sql{white-space:pre-wrap; overflow-wrap:anywhere; font-size:1rem}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0; white-space:pre-wrap}
+.qorder{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:6px; justify-content:center; direction:ltr}
+.qorder li{border:2px solid var(--border); border-radius:10px; padding:4px 10px; background:var(--card); font:700 .9rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.qorder li.on{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="databases-intro">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/#cs-hs-12">הכנה לבגרות ונושאים מתקדמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מבוא למסדי נתונים ו-SQL</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · הכנה לבגרות</div>
+  <h1>מבוא למסדי נתונים ו-SQL <span class="slogan">שואלים את הטבלה שאלות</span></h1>
+  <p class="lead">ספרייה של בית ספר, טבלת שיאים במשחק, מלאי של חנות: כל אלה שמורים במסד נתונים, בטבלאות. כדי לשלוף מהן מידע כותבים שאילתה בשפה בשם SQL. כאן בונים שאילתות בלחיצות ורואים מיד מה חוזר. כדאי להכיר <a href="../dictionaries/">מילונים</a> ו<a href="../lists-2d/">רשימות דו-ממדיות</a>, כי טבלה היא בעצם רשימה של שורות.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>טבלה, שורה, עמודה</h3>
+      <p>בטבלה <code dir="ltr" lang="en">books</code> כל <strong>שורה</strong> היא ספר אחד, וכל <strong>עמודה</strong> היא תכונה: שם, סוג, מספר עמודים. לעמודה <code dir="ltr" lang="en">id</code> יש תפקיד מיוחד: היא <strong>מפתח ראשי</strong>, מספר שונה לכל שורה, כך שאפשר להצביע על ספר אחד בדיוק.</p>
+    </div>
+    <div class="mini">
+      <h3>SELECT ו-WHERE</h3>
+      <p><code dir="ltr" lang="en">SELECT</code> אומר אילו עמודות רוצים לראות (<code dir="ltr" lang="en">*</code> זה הכול). <code dir="ltr" lang="en">WHERE</code> משאיר רק שורות שעונות על תנאי, למשל <code dir="ltr" lang="en">pages &gt; 300</code>.</p>
+    </div>
+    <div class="mini">
+      <h3>ORDER BY ו-COUNT</h3>
+      <p><code dir="ltr" lang="en">ORDER BY loans DESC</code> מסדר את התוצאה מהגדול לקטן (בלי DESC, מהקטן לגדול). <code dir="ltr" lang="en">COUNT(*)</code> מחזיר רק מספר: כמה שורות עברו את התנאי.</p>
+    </div>
+  </div>
+  <pre class="code" dir="ltr" lang="en">SELECT title, pages FROM books WHERE pages &gt; 300 ORDER BY pages DESC;</pre>
+  <div class="callout"><strong>לזכור:</strong> המחשב מבצע את השאילתה בסדר אחר מזה שכותבים: קודם FROM (איזו טבלה), אחר כך WHERE (אילו שורות), אחר כך ORDER BY (סדר), ובסוף SELECT (אילו עמודות להראות).</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בונים שאילתה</h2></div>
+  <p class="text">זו טבלת הספרים של ספריית בית ספר דמיונית. בחרו עמודות, תנאי וסדר. השאילתה נכתבת למטה, השורות שעוברות את התנאי מסומנות בטבלה, והתוצאה מופיעה מתחת.</p>
+  <div class="tw"><table class="db" id="full"></table></div>
+  <div class="lab">
+    <div class="ctrl">
+      <div class="seg" id="cols" role="group" aria-label="עמודות"><span class="lb">SELECT</span></div>
+      <div class="seg" id="wcol" role="group" aria-label="עמודה לתנאי"><span class="lb">WHERE</span></div>
+      <div class="seg" id="wop" role="group" aria-label="סוג ההשוואה"><span class="lb">השוואה</span></div>
+      <label class="slider" for="sv"><span>ערך בתנאי</span><span class="eq" id="svv"></span></label>
+      <input type="range" id="sv" min="0" max="450" step="10" value="300">
+      <div class="seg" id="ocol" role="group" aria-label="סדר"><span class="lb">ORDER BY</span></div>
+    </div>
+    <div class="ctrl">
+      <pre class="code sql" id="sql" dir="ltr" lang="en"></pre>
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-t="0">כל הטבלה</button>
+          <button type="button" data-t="1">ספרים עבים</button>
+          <button type="button" data-t="2">הכי מושאלים</button>
+          <button type="button" data-t="3">כמה ספרי מדע?</button>
+          <button type="button" data-t="4">אין אף תוצאה</button>
+          <button type="button" data-t="5">שווה בדיוק</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="cap">התוצאה</p>
+  <div class="tw"><table class="db" id="res"></table></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>טקסט בלי גרשיים</h3>
+      <p>ערך טקסט כותבים בתוך גרשיים בודדים. בלי גרשיים, SQL חושב ש-comics הוא שם של עמודה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">WHERE genre = comics</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">WHERE genre = 'comics'</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>== במקום =</h3>
+      <p>בפייתון משווים עם ==. ב-SQL משווים עם = אחד.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">WHERE year == 2016</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">WHERE year = 2016</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>סדר החלקים</h3>
+      <p>WHERE בא לפני ORDER BY. בסדר הפוך השאילתה לא תרוץ.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">SELECT * FROM books
+ORDER BY year
+WHERE pages &gt; 200;</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">SELECT * FROM books
+WHERE pages &gt; 200
+ORDER BY year;</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>&gt; או &gt;=</h3>
+      <p><code dir="ltr" lang="en">loans &gt; 20</code> לא כולל ספר שהושאל בדיוק 20 פעמים. אם "לפחות 20", כותבים <code dir="ltr" lang="en">&gt;=</code>. בדקו במעבדה עם 20.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: איך המחשב מריץ שאילתה</h2></div>
+  <p class="text">השאלה: "אילו ספרי הרפתקאות הכי מושאלים?" השאילתה:</p>
+  <pre class="code" dir="ltr" lang="en">SELECT title, loans FROM books WHERE genre = 'adventure' ORDER BY loans DESC;</pre>
+  <div class="stepper">
+    <ol class="qorder" id="exO"><li>FROM</li><li>WHERE</li><li>ORDER BY</li><li>SELECT</li></ol>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="tw"><table class="db" id="exT"></table></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text">כל השאלות על הטבלה books מהמעבדה. אפשר לגלול למעלה ולהציץ בה.</p>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה SQL?</h3>
+    <p>SQL היא שפה לשאילת שאלות על טבלאות במסד נתונים. כותבים מה רוצים לקבל, למשל "את השמות של כל הספרים עם יותר מ-300 עמודים, מהעבה לדקה", ומסד הנתונים מוצא את זה בעצמו. היא נמצאת כמעט בכל אפליקציה ואתר. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה זה מפתח ראשי?</h3>
+    <p>עמודה שהערך בה שונה בכל שורה, כמו מספר ספר בספרייה. בעזרתה אפשר להצביע על שורה אחת בדיוק, גם אם יש שני ספרים עם אותו שם. שם או סוג לא מתאימים, כי הם יכולים לחזור.</p>
+    <h3>מה ההבדל בין WHERE ל-ORDER BY?</h3>
+    <p>WHERE מחליט אילו שורות נשארות, ו-ORDER BY רק מסדר את מה שנשאר. WHERE משנה את מספר השורות בתוצאה, ORDER BY לא משנה אותו לעולם. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/dictionaries/">מילונים בפייתון: מפתח וערך</a> · <a href="../../cs/lists-2d/">רשימה דו-ממדית: טבלה ולוח</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/bagrut-cs-problems/"><small>→ הנושא הקודם</small>בעיות בסגנון בגרות במדעי המחשב</a><a class="next" href="../../cs/crypto-basics/"><small>הנושא הבא ←</small>הצפנה בסיסית: מצופן קיסר עד מפתחות</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const pick=a=>a[Math.floor(Math.random()*a.length)], ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+  const COLS=['id','title','genre','pages','year','loans'];
+  const ROWS=[
+    [1,'The Silver Map','adventure',320,2015,14],[2,'Robots of Mars','science',180,2019,22],[3,'Cat Detective','comics',64,2021,31],
+    [4,'Old Bridges','history',250,2008,5],[5,'Ocean Engines','science',210,2017,9],[6,'Dragon Lake','adventure',410,2012,18],
+    [7,'Pixel Heroes','comics',96,2023,27],[8,'The Ancient Road','history',380,2010,3],[9,'Stars and Atoms','science',150,2020,12],
+    [10,'Jungle Run','adventure',270,2016,20]].map(r=>Object.fromEntries(COLS.map((c,i)=>[c,r[i]])));
+  const GENRES=['adventure','comics','history','science'];
+  const RANGE={pages:[0,450,10],year:[2005,2025,1],loans:[0,35,1],genre:[0,3,1]};
+  /* state: {cols:[], count:bool, wcol:null|col, op:'>'|'>='|'<'|'=', val:number, ocol:null|col, desc:bool} */
+  const lit=(c,v)=>c==='genre'?"'"+GENRES[v]+"'":String(v);
+  function sql(s){
+    let t='SELECT '+(s.count?'COUNT(*)':(s.cols.length?s.cols.join(', '):'*'))+' FROM books';
+    if(s.wcol) t+='\nWHERE '+s.wcol+' '+(s.wcol==='genre'?'=':s.op)+' '+lit(s.wcol,s.val);
+    if(s.ocol&&!s.count) t+='\nORDER BY '+s.ocol+(s.desc?' DESC':'');
+    return t+';';
+  }
+  function test(r,s){ if(!s.wcol) return true; const v=s.wcol==='genre'?GENRES[s.val]:s.val, x=r[s.wcol], op=s.wcol==='genre'?'=':s.op; return op==='>'?x>v:op==='>='?x>=v:op==='<'?x<v:x===v; }
+  function run(s){
+    let rows=ROWS.filter(r=>test(r,s));
+    const matched=rows.map(r=>r.id);
+    if(s.count) return {cols:['COUNT(*)'],rows:[[rows.length]],matched};
+    if(s.ocol){ rows=rows.slice().sort((a,b)=>{ const x=a[s.ocol], y=b[s.ocol]; const c=x<y?-1:x>y?1:0; return s.desc?-c:c; }); }
+    const cols=s.cols.length?s.cols:COLS;
+    return {cols,rows:rows.map(r=>cols.map(c=>r[c])),matched};
+  }
+  const PRE=[
+    {cols:[],count:false,wcol:null,op:'>',val:300,ocol:null,desc:false},
+    {cols:['title','pages'],count:false,wcol:'pages',op:'>',val:300,ocol:'pages',desc:true},
+    {cols:['title','loans'],count:false,wcol:null,op:'>',val:20,ocol:'loans',desc:true},
+    {cols:[],count:true,wcol:'genre',op:'=',val:3,ocol:null,desc:false},
+    {cols:[],count:false,wcol:'pages',op:'>',val:450,ocol:null,desc:false},
+    {cols:['id','title','year'],count:false,wcol:'year',op:'=',val:2016,ocol:null,desc:false}
+  ];
+  function randState(){
+    const wcol=pick([null,'pages','year','loans','genre']), rg=wcol?RANGE[wcol]:null;
+    return {cols:COLS.filter(()=>Math.random()<.35),count:Math.random()<.2,wcol,op:pick(['>','>=','<','=']),val:rg?rg[0]+rg[2]*ri(0,(rg[1]-rg[0])/rg[2]):0,ocol:pick([null,'title','pages','year','loans']),desc:Math.random()<.5};
+  }
+  /* practice */
+  function gen(){
+    const kind=pick(['rows','rows','count','first','first','clause','pk','which']), q={kind,type:'text'};
+    if(kind==='rows'||kind==='count'){
+      const c=pick(['pages','year','loans']), rg=RANGE[c], op=pick(['>','>=','<']);
+      const pool=ROWS.map(r=>r[c]); const val=Math.random()<.4?pick(pool):(c==='pages'?10*ri(10,40):c==='year'?ri(2008,2023):ri(3,30));
+      const s={cols:kind==='count'?[]:['title'],count:kind==='count',wcol:c,op,val,ocol:null,desc:false}, r=run(s);
+      q.sql=sql(s); q.code=q.sql; q.mode=kind==='count'?'scalar':'nrows'; q.ans=String(kind==='count'?r.rows[0][0]:r.rows.length);
+      q.ask=kind==='count'?'מה השאילתה מחזירה?':'כמה שורות תחזיר השאילתה?';
+      const alt=ROWS.filter(x=>op==='>'?x[c]>=val:op==='>='?x[c]>val:x[c]<=val).length;
+      q.diag=v=>v===String(alt)&&alt!==+q.ans?(op==='>'?'> לא כולל את '+val+' עצמו.':op==='>='?'>= כולל גם את '+val+' עצמו.':'< לא כולל את '+val+' עצמו.'):null;
+      q.hints=['מסתכלים רק על העמודה '+c+' בטבלה.','עוברים שורה שורה ושואלים: האם '+c+' '+op+' '+val+'?'];
+      q.sol='השורות עם '+c+' '+op+' '+val+': '+(r.matched.map(id=>ROWS[id-1][c]).join(', ')||'אין')+'. סך הכול '+r.matched.length+'.';
+    } else if(kind==='first'){
+      const oc=pick(['pages','year','loans']), desc=Math.random()<.5, wc=Math.random()<.5?'genre':null, g=ri(0,3);
+      const s={cols:['title'],count:false,wcol:wc,op:'=',val:g,ocol:oc,desc}, r=run(s);
+      q.sql=sql(s)+'\n-- first row'; q.code=sql(s); q.mode='first'; q.ans=r.rows[0][0];
+      q.ask='מה ה-title בשורה הראשונה של התוצאה? כתבו אותו באנגלית.'; q.ci=true;
+      const rev=run({...s,desc:!desc}).rows[0][0];
+      q.diag=v=>v.toLowerCase()===rev.replace(/\s/g,'').toLowerCase()?(desc?'DESC מסדר מהגדול לקטן.':'בלי DESC הסדר הוא מהקטן לגדול.'):null;
+      q.hints=[wc?'קודם משאירים רק ספרים מסוג '+GENRES[g]+'.':'אין WHERE, כל הספרים בתמונה.',(desc?'מחפשים את הגדול ביותר':'מחפשים את הקטן ביותר')+' בעמודה '+oc+'.'];
+      q.sol='אחרי הסינון והמיון, הראשון הוא '+q.ans+'.';
+    } else if(kind==='clause'){
+      q.type='choice'; const c=pick([{d:'להשאיר רק ספרים מסוג comics',a:'WHERE'},{d:'לסדר את התוצאה לפי שנה',a:'ORDER BY'},{d:'לבחור אילו עמודות יופיעו',a:'SELECT'},{d:'לדעת כמה ספרים יש, בלי לראות אותם',a:'COUNT(*)'}]);
+      q.ask='איזה חלק של SQL מתאים כדי '+c.d+'?';
+      q.opts=['SELECT','WHERE','ORDER BY','COUNT(*)'].map(t=>({t,ok:t===c.a,ltr:true,why:t==='WHERE'?'WHERE מסנן שורות לפי תנאי.':t==='ORDER BY'?'ORDER BY רק מסדר, לא מסנן.':t==='SELECT'?'SELECT בוחר עמודות, לא שורות.':'COUNT(*) מחזיר רק מספר.'}));
+      q.hints=['מסננים שורות, מסדרים, בוחרים עמודות, או סופרים?','קראו שוב את כרטיסי הרעיון.'];
+      q.sol='התשובה: '+c.a+'.';
+    } else if(kind==='pk'){
+      q.type='choice'; q.ask='איזו עמודה בטבלה books מתאימה להיות מפתח ראשי?';
+      q.opts=[{t:'id',ok:true,ltr:true},{t:'genre',ltr:true,why:'סוג חוזר בהרבה שורות. מפתח ראשי חייב להיות שונה בכל שורה.'},{t:'title',ltr:true,why:'כרגע השמות שונים, אבל מחר יכול להגיע ספר נוסף עם אותו שם.'},{t:'pages',ltr:true,why:'שני ספרים יכולים להיות עם אותו מספר עמודים.'}].sort(()=>Math.random()-.5);
+      q.hints=['מפתח ראשי חייב להיות שונה בכל שורה, גם בעתיד.','איזו עמודה נוצרה בדיוק בשביל זה?'];
+      q.sol='id: מספר שהספרייה נותנת לכל ספר, ואף פעם לא חוזר.';
+    } else {
+      q.type='choice'; q.ask='"הראו את השמות של ספרי המדע, מהחדש לישן." איזו שאילתה עושה את זה?';
+      q.opts=[{t:"SELECT title FROM books WHERE genre = 'science' ORDER BY year DESC;",ok:true},
+        {t:"SELECT title FROM books WHERE genre = 'science' ORDER BY year;",why:'בלי DESC זה מהישן לחדש.'},
+        {t:"SELECT * FROM books ORDER BY year DESC;",why:'חסר WHERE: יופיעו גם ספרים שאינם ספרי מדע, ועם כל העמודות.'},
+        {t:"SELECT title FROM books WHERE genre = science ORDER BY year DESC;",why:"science בלי גרשיים נקרא כשם של עמודה. צריך 'science'."}].map(o=>({...o,ltr:true})).sort(()=>Math.random()-.5);
+      q.hints=['צריך: רק שמות, רק מדע, וסדר מהחדש לישן.','מהחדש לישן זה מהשנה הגדולה לקטנה.'];
+      q.sol="SELECT title FROM books WHERE genre = 'science' ORDER BY year DESC;";
+    }
+    return q;
+  }
+  return {COLS,ROWS,GENRES,RANGE,sql,run,PRE,randState,gen};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+let S=JSON.parse(JSON.stringify(LAB.PRE[1]));
+function table(el,cols,rows,cls){ el.innerHTML='<tr>'+cols.map(c=>'<th'+(c==='id'?' class="pk" title="מפתח ראשי"':'')+'>'+esc(c)+(c==='id'?' 🔑':'')+'</th>').join('')+'</tr>'+(rows.length?rows.map((r,i)=>'<tr'+(cls?' class="'+cls[i]+'"':'')+'>'+r.map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>').join(''):'<tr><td class="empty" colspan="'+cols.length+'">אין שורות</td></tr>'); }
+function segs(){
+  const mk=(id,items,isOn,click)=>{ const el=$(id); el.querySelectorAll('button').forEach(b=>b.remove()); items.forEach(it=>{ const b=document.createElement('button'); b.type='button'; b.textContent=it.t; if(it.t!=='בלי') b.dir='ltr'; b.setAttribute('aria-pressed',isOn(it.v)); b.onclick=()=>{ click(it.v); lab(); }; el.appendChild(b); }); };
+  mk('cols',[{t:'*',v:'*'}].concat(LAB.COLS.map(c=>({t:c,v:c}))).concat([{t:'COUNT(*)',v:'#'}]),v=>v==='#'?S.count:v==='*'?!S.count&&!S.cols.length:!S.count&&S.cols.includes(v),
+    v=>{ if(v==='#') S.count=!S.count; else { S.count=false; if(v==='*') S.cols=[]; else S.cols=S.cols.includes(v)?S.cols.filter(c=>c!==v):LAB.COLS.filter(c=>c===v||S.cols.includes(c)); } });
+  mk('wcol',[{t:'בלי',v:null},{t:'pages',v:'pages'},{t:'year',v:'year'},{t:'loans',v:'loans'},{t:'genre',v:'genre'}],v=>S.wcol===v,v=>{ if(S.wcol!==v){ S.wcol=v; if(v){ const r=LAB.RANGE[v]; S.val=v==='pages'?300:v==='year'?2015:v==='loans'?20:0; } } });
+  mk('wop',(S.wcol==='genre'?['=']:['>','>=','<','=']).map(o=>({t:o,v:o})),v=>S.wcol==='genre'?true:S.op===v,v=>{ if(S.wcol!=='genre') S.op=v; });
+  mk('ocol',[{t:'בלי',v:null},{t:'title',v:'title'},{t:'pages',v:'pages'},{t:'year',v:'year'},{t:'loans',v:'loans'},{t:'DESC',v:'DESC'}],v=>v==='DESC'?S.desc:S.ocol===v,v=>{ if(v==='DESC') S.desc=!S.desc; else S.ocol=v; });
+}
+function lab(){
+  segs();
+  const sv=$('sv'), on=!!S.wcol;
+  sv.disabled=!on; $('wop').querySelectorAll('button').forEach(b=>b.disabled=!on);
+  if(on){ const r=LAB.RANGE[S.wcol]; sv.min=r[0]; sv.max=r[1]; sv.step=r[2]; sv.value=S.val; }
+  $('svv').textContent=on?(S.wcol==='genre'?LAB.GENRES[S.val]:S.val):'';
+  $('ocol').querySelectorAll('button').forEach(b=>b.disabled=S.count);
+  const r=LAB.run(S), q=LAB.sql(S);
+  $('sql').textContent=q;
+  table($('full'),LAB.COLS,LAB.ROWS.map(x=>LAB.COLS.map(c=>x[c])),LAB.ROWS.map(x=>!S.wcol?'':r.matched.includes(x.id)?'in':'out'));
+  table($('res'),r.cols,r.rows);
+  const n=r.matched.length; let t='';
+  t+=S.wcol?'<div>'+n+' מתוך 10 שורות עוברות את התנאי '+C(q.split('\n').find(l=>l.startsWith('WHERE')).slice(6))+'.</div>':'<div>אין WHERE, אז כל 10 השורות נשארות.</div>';
+  if(S.count) t+='<div>COUNT(*) לא מחזיר את השורות עצמן, רק מספר: '+n+'.</div>';
+  else {
+    if(S.ocol) t+='<div>הסדר: לפי '+C(S.ocol)+' '+(S.desc?'מהגדול לקטן (DESC)':'מהקטן לגדול')+(S.ocol==='title'?', לפי סדר האלפבית':'')+'.</div>';
+    else if(S.desc) t+='<div>DESC לבד לא עושה כלום. בחרו עמודה ל-ORDER BY.</div>';
+    t+='<div>'+(S.cols.length?'רואים רק את העמודות '+C(S.cols.join(', '))+'.':'* מציג את כל העמודות.')+'</div>';
+    if(!n) t+='<div>אף שורה לא עברה את התנאי. התוצאה ריקה, וזה לא שגיאה.</div>';
+  }
+  if(S.wcol&&S.wcol!=='genre'&&S.op==='='&&!n) t+='<div>עם = צריך ערך מדויק. הזיזו את המחוון לערך שמופיע בטבלה.</div>';
+  $('labTxt').innerHTML=t;
+}
+$('sv').addEventListener('input',()=>{ S.val=+$('sv').value; lab(); });
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ S=JSON.parse(JSON.stringify(LAB.PRE[+b.dataset.t])); lab(); });
+lab();
+
+/* worked example */
+const R=LAB.ROWS, ADV=R.filter(r=>r.genre==='adventure'), SORT=ADV.slice().sort((a,b)=>b.loans-a.loans);
+const all=r=>LAB.COLS.map(c=>r[c]);
+const EX=[
+  {o:0,t:'<strong>FROM books.</strong> מתחילים מכל הטבלה: 10 שורות, 6 עמודות.',cols:LAB.COLS,rows:R.map(all)},
+  {o:1,t:"<strong>WHERE genre = 'adventure'.</strong> בודקים כל שורה. רק 3 שורות עונות על התנאי. השאר נזרקות.",cols:LAB.COLS,rows:R.map(all),cls:R.map(r=>r.genre==='adventure'?'in':'out')},
+  {o:2,t:'<strong>ORDER BY loans DESC.</strong> מסדרים את 3 השורות שנשארו לפי loans, מהגדול לקטן: 20, 18, 14.',cols:LAB.COLS,rows:SORT.map(all)},
+  {o:3,t:'<strong>SELECT title, loans.</strong> מכל שורה משאירים רק את שתי העמודות שביקשנו. זו התוצאה: Jungle Run הוא ספר ההרפתקאות הכי מושאל.',cols:['title','loans'],rows:SORT.map(r=>[r.title,r.loans])}
+];
+let exI=0;
+function ex(){ const e=EX[exI]; $('exO').querySelectorAll('li').forEach((l,i)=>l.classList.toggle('on',i===e.o)); $('exText').innerHTML=e.t; table($('exT'),e.cols,e.rows,e.cls); $('exCount').textContent='צעד '+(exI+1)+' מתוך '+EX.length; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+const nrm=s=>String(s).trim().replace(/^["']+|["']+$/g,'').replace(/\s+/g,'');
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=LAB.gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=q.code?'<pre class="code sql" dir="ltr" lang="en">'+esc(q.code)+'</pre>':'';
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button"'+(o.ltr?' dir="ltr" lang="en"':'')+' data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why||msg;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; }
+    right=q.ci?v.toLowerCase()===nrm(q.ans).toLowerCase():v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

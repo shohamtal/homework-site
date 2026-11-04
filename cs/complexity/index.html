@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>סיבוכיות זמן ו-O גדול · מדעי המחשב כיתה י · מירי</title>
+<meta name="description" content="סיבוכיות זמן בלי פחד: סופרים צעדים של O(1), O(n), O(n²) ו-O(log n), משווים בגרף חי ומזהים סיבוכיות של לולאות. מעבדה ותרגול עם רמזים לכיתה י.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/complexity/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="סיבוכיות זמן ו-O גדול · מדעי המחשב כיתה י · מירי">
+<meta property="og:description" content="סיבוכיות זמן בלי פחד: סופרים צעדים של O(1), O(n), O(n²) ו-O(log n), משווים בגרף חי ומזהים סיבוכיות של לולאות. מעבדה ותרגול עם רמזים לכיתה י.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/complexity/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://shohamtal.github.io/homework-site/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"סיבוכיות זמן: כמה צעדים?","item":"https://shohamtal.github.io/homework-site/cs/complexity/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה סיבוכיות זמן?","acceptedAnswer":{"@type":"Answer","text":"מדד לכמה צעדים אלגוריתם עושה, כתלות בגודל הקלט n. כותבים אותה ב-O גדולה: O(1) קבוע, O(log n) לוגריתמי, O(n) לינארי, O(n²) ריבועי. היא אומרת מה קורה כש-n גדל, ולא כמה שניות התוכנית רצה. נסו במעבדה."}},{"@type":"Question","name":"למה חיפוש בינארי הוא O(log n)?","acceptedAnswer":{"@type":"Answer","text":"כי בכל בדיקה הוא זורק חצי מהרשימה. מ-1000 נשארים 500, 250, 125 וכך הלאה, ואחרי כ-10 בדיקות נשאר איבר אחד. חיפוש לינארי צריך עד 1000 בדיקות לאותה רשימה."}},{"@type":"Question","name":"איך מזהים סיבוכיות של קוד?","acceptedAnswer":{"@type":"Answer","text":"מסתכלים על הלולאות. לולאה אחת עד n: O(n). לולאה בתוך לולאה, שתיהן עד n: O(n²). n שנחצה בכל סיבוב: O(log n). בלי לולאות בכלל: O(1). ושימו לב לפעולות כמו in על רשימה, שהן לולאה מוסתרת. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סיבוכיות זמן: כמה צעדים?","description":"סיבוכיות זמן בלי פחד: סופרים צעדים של O(1), O(n), O(n²) ו-O(log n), משווים בגרף חי ומזהים סיבוכיות של לולאות. מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/cs/complexity/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"סיבוכיות זמן: כמה צעדים?","teaches":"סיבוכיות זמן: כמה צעדים?","keywords":"O גדול, יעילות, לולאה מקוננת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:14em; max-width:100%; box-sizing:border-box; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices button code{font-weight:400}
+.mini pre.code{margin:0}
+.tag-bad, .tag-good{font-weight:700; font-size:.92rem}
+.tag-bad{color:var(--err)} .tag-good{color:var(--ok)}
+#labPT, #exPT{margin-top:14px}
+#prCode{max-width:520px; margin:10px auto}
+code[dir=ltr]{unicode-bidi:isolate}
+.bars{display:flex; flex-direction:column; gap:8px; margin:12px 0}
+.cbar{display:grid; grid-template-columns:5.5em minmax(0,1fr) 4.2em; gap:8px; align-items:center}
+.cbar .nm{font:700 .95rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; direction:ltr; text-align:left}
+.cbar .track{height:22px; border:2px solid var(--border); border-radius:8px; background:var(--paper); overflow:hidden; direction:ltr}
+.cbar .fill{height:100%; background:var(--blue); transition:width .2s}
+.cbar.sel .fill{background:var(--line)} .cbar.sel .nm{color:var(--line)}
+.cbar .cnt{font:700 1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; direction:ltr; text-align:left}
+@media (prefers-reduced-motion: reduce){.cbar .fill{transition:none}}
+.big{width:100%; border-collapse:collapse; font-size:.95rem; margin-top:8px}
+.big th,.big td{border-bottom:1.5px solid var(--soft); padding:5px 6px; text-align:center}
+.big td{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; direction:ltr}
+.bigwrap{overflow-x:auto; max-width:100%}
+.big th,.big td{padding:5px 3px}
+.big th{font-size:.85rem}
+
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="complexity">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/">כיתה י</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-10/#cs-hs-10">מבני נתונים ואלגוריתמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">סיבוכיות זמן: כמה צעדים?</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה י · מבני נתונים ואלגוריתמים</div>
+  <h1>סיבוכיות זמן <span class="slogan">כמה צעדים?</span></h1>
+  <p class="lead">שתי תוכניות נותנות אותה תשובה, אבל אחת מסיימת מיד והשנייה רצה דקות. מה ההבדל? סופרים <strong>צעדים</strong>, לא שניות, ושואלים: מה קורה כשהקלט גדל? כאן משווים ארבע תוכניות קטנות: <span dir="ltr">O(1), O(n), O(n²), O(log n)</span>. כדאי להכיר קודם את <a href="../search-and-sort-intro/">חיפוש ומיון</a>, <a href="../lists-2d/">לולאה כפולה</a> ו<a href="../recursion/">רקורסיה</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">n הוא גודל הקלט: כמה איברים ברשימה, כמה תלמידים, כמה שורות. סיבוכיות היא התשובה לשאלה "אם n גדל פי 10, כמה יותר צעדים?". מסמנים אותה ב-O גדולה.</p>
+  <div class="two">
+    <div class="mini">
+      <h3><span dir="ltr">O(1)</span> ו-<span dir="ltr">O(n)</span></h3>
+      <p><span dir="ltr">O(1)</span>: מספר קבוע של צעדים, לא משנה כמה גדול n. למשל <code dir="ltr" lang="en">nums[0]</code>. <span dir="ltr">O(n)</span>: לולאה אחת על כל האיברים. פי 10 איברים, פי 10 צעדים.</p>
+    </div>
+    <div class="mini">
+      <h3><span dir="ltr">O(n²)</span></h3>
+      <p>לולאה בתוך לולאה, שתיהן עד n. על כל איבר עוברים שוב על כולם. פי 10 איברים, פי 100 צעדים. עם 1000 איברים זה כבר מיליון.</p>
+    </div>
+    <div class="mini">
+      <h3><span dir="ltr">O(log n)</span></h3>
+      <p>בכל צעד הבעיה נחצית. מ-1000 מגיעים ל-1 בערך ב-10 צעדים. כך עובד <a href="../search-and-sort-intro/">חיפוש בינארי</a>, ולכן הוא כל כך מהיר.</p>
+    </div>
+  </div>
+  <div class="bigwrap"><table class="big" aria-label="מספר צעדים לפי n">
+    <tr><th>n</th><th dir="ltr">O(1)</th><th dir="ltr">O(log n)</th><th dir="ltr">O(n)</th><th dir="ltr">O(n²)</th></tr>
+    <tr><td>10</td><td>1</td><td>3</td><td>10</td><td>100</td></tr>
+    <tr><td>10³</td><td>1</td><td>9</td><td>10³</td><td>10⁶</td></tr>
+    <tr><td>10⁶</td><td>1</td><td>19</td><td>10⁶</td><td>10¹²</td></tr>
+  </table></div>
+  <div class="callout"><strong>לזכור:</strong> מה שקובע הוא הצורה, לא המספרים הקטנים. <span dir="ltr">3n</span> ו-<span dir="ltr">n + 5</span> הם שניהם <span dir="ltr">O(n)</span>. אבל ההבדל בין <span dir="ltr">O(n)</span> ל-<span dir="ltr">O(n²)</span> הוא ההבדל בין שנייה לשבוע.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: סופרים צעדים</h2></div>
+  <p class="text">כל אחת מארבע התוכניות סופרת את הצעדים שלה במשתנה <code dir="ltr" lang="en">steps</code>. הזיזו את n וראו איך הפסים משתנים. בחרו תוכנית למעקב, ולחצו "שורה הבאה" או "עד הסוף": הפס שלה מתמלא בזמן הריצה.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="n"><span>n, גודל הקלט</span><span id="nv" dir="ltr"></span></label>
+      <input type="range" id="n" min="1" max="16" step="1" value="8">
+      <label class="slider" for="prog"><span>התוכנית במעקב</span><span id="progv" dir="ltr"></span></label>
+      <input type="range" class="hl" id="prog" min="0" max="3" step="1" value="1">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+    <div class="ctrl">
+      <div class="bars" id="bars" aria-label="מספר הצעדים של כל תוכנית"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries"></div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labPy" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שתי לולאות זו אחרי זו</h3>
+      <p>לולאה ואחריה עוד לולאה זה <span dir="ltr">n + n = 2n</span> צעדים, כלומר <span dir="ltr">O(n)</span>. רק לולאה <strong>בתוך</strong> לולאה נותנת <span dir="ltr">O(n²)</span>.</p>
+      <span class="tag-good">✓ O(n), לא O(n²)</span><pre class="code" dir="ltr" lang="en">for x in nums:
+    print(x)
+for x in nums:
+    print(x * 2)</pre>
+    </div>
+    <div class="mini">
+      <h3>לולאה פנימית קבועה</h3>
+      <p>אם הלולאה הפנימית רצה תמיד 3 פעמים, זה <span dir="ltr">3n</span>, כלומר <span dir="ltr">O(n)</span>. שואלים: האם גם היא גדלה עם n?</p>
+      <span class="tag-good">✓ O(n)</span><pre class="code" dir="ltr" lang="en">for x in nums:
+    for k in range(3):
+        print(x + k)</pre>
+    </div>
+    <div class="mini">
+      <h3>לולאה שמסתתרת</h3>
+      <p><code dir="ltr" lang="en">x in nums</code>, <code dir="ltr" lang="en">nums.index(x)</code>, <code dir="ltr" lang="en">sum(nums)</code> ו-<code dir="ltr" lang="en">max(nums)</code> עוברים על כל הרשימה. בתוך לולאה הם הופכים אותה ל-<span dir="ltr">O(n²)</span>.</p>
+      <span class="tag-bad">✗ נראה O(n), בפועל O(n²)</span><pre class="code" dir="ltr" lang="en">for x in nums:
+    if x * 2 in nums:
+        print(x)</pre>
+    </div>
+    <div class="mini">
+      <h3>מודדים בשעון</h3>
+      <p>זמן בשניות תלוי במחשב. סיבוכיות סופרת צעדים, ולכן היא נכונה בכל מחשב. מחשב מהיר פי 10 לא מציל <span dir="ltr">O(n²)</span> כש-n גדל פי 1000.</p>
+      <span class="tag-good">✓ סופרים צעדים</span><pre class="code" dir="ltr" lang="en">steps = 0
+for x in nums:
+    steps = steps + 1
+print(steps)    # n</pre>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: כמה צעדים לחיפוש?</h2></div>
+  <p class="text">מחפשים את 56 ברשימה ממוינת של 8 מספרים, בחיפוש לינארי: בודקים אחד אחד מההתחלה. 56 הוא האחרון, וזה המקרה הגרוע ביותר. סופרים כמה בדיקות צריך.</p>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code" id="prCode" dir="ltr" lang="en" hidden></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prA" dir="ltr" lang="en" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה סיבוכיות זמן?</h3>
+    <p>מדד לכמה צעדים אלגוריתם עושה, כתלות בגודל הקלט n. כותבים אותה ב-O גדולה: O(1) קבוע, O(log n) לוגריתמי, O(n) לינארי, O(n²) ריבועי. היא אומרת מה קורה כש-n גדל, ולא כמה שניות התוכנית רצה. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>למה חיפוש בינארי הוא O(log n)?</h3>
+    <p>כי בכל בדיקה הוא זורק חצי מהרשימה. מ-1000 נשארים 500, 250, 125 וכך הלאה, ואחרי כ-10 בדיקות נשאר איבר אחד. חיפוש לינארי צריך עד 1000 בדיקות לאותה רשימה.</p>
+    <h3>איך מזהים סיבוכיות של קוד?</h3>
+    <p>מסתכלים על הלולאות. לולאה אחת עד n: O(n). לולאה בתוך לולאה, שתיהן עד n: O(n²). n שנחצה בכל סיבוב: O(log n). בלי לולאות בכלל: O(1). ושימו לב לפעולות כמו in על רשימה, שהן לולאה מוסתרת. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/search-and-sort-intro/">חיפוש ומיון: מבוא</a> · <a href="../../cs/loops/">לולאות בפייתון: for ו-while</a></p>
+<p class="related text"><strong>בכיתה יב ממשיכים ל:</strong> <a href="../../cs/merge-quick-sort/">מיון מיזוג ומיון מהיר</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/recursion/"><small>→ הנושא הקודם</small>רקורסיה: פונקציה שקוראת לעצמה</a><a class="next" href="../../cs/classes-objects/"><small>הנושא הבא ←</small>מחלקות ועצמים בפייתון</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const shuffle=a=>{a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const codeHTML=code=>code.replace(/\n$/,'').split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('');
+const squash=s=>String(s).trim().replace(/\s+/g,'').toLowerCase();
+/* PT.mount plus a callback on every step change (fn(step, index)), for visuals next to the tracer */
+function mountWatch(el,o,fn){
+  PT.mount(el,o); if(!fn) return;
+  const f=()=>fn(o.steps[el.ptStep]||o.steps[0],el.ptStep);
+  if(el._mo) el._mo.disconnect();
+  el._mo=new MutationObserver(f); el._mo.observe(el.querySelector('.pt-count'),{childList:true,characterData:true,subtree:true}); f();
+}
+/* lab: sliders (LAB.ids, label spans id+'v') + "נסו את אלה" presets + tracer + Pyodide box */
+function lab(o){
+  const tries=$('tries');
+  tries.innerHTML=LAB.presets.map((t,i)=>'<button type="button" data-i="'+i+'">'+t.label+'</button>').join('');
+  const get=()=>{ const p={}; LAB.ids.forEach(id=>p[id]=+$(id).value); return p; };
+  function draw(){
+    if(o&&o.before) o.before(); const p=get();
+    LAB.ids.forEach(id=>{ const f=o&&o.fmt&&o.fmt[id]; $(id+'v').textContent=f?f(p[id]):p[id]; });
+    const r=LAB.build(p);
+    mountWatch($('labPT'),{code:r.code,steps:r.steps,input:r.input},o&&o.step?s=>o.step(s,p,r):null);
+    $('labTxt').innerHTML=r.explain; $('labPy').value=r.code;
+    if(o&&o.after) o.after(p,r);
+  }
+  LAB.ids.forEach(id=>$(id).addEventListener('input',draw));
+  tries.querySelectorAll('button').forEach(b=>b.onclick=()=>{ LAB.presets[+b.dataset.i].p.forEach((v,i)=>{ $(LAB.ids[i]).value=v; }); draw(); });
+  draw();
+  return {draw,get};
+}
+/* practice: gen() returns {ask, code?, type:'num'|'text'|'mc', ans, accept?, opts?[{t,ok,why}], diag?(raw,num), hints[], sol, ok?} */
+function practice(gen){
+  let q, sel=-1, tries=0, hint=0, streak=0, solved=0, done=false;
+  const fb=h=>{ $('prFb').innerHTML=h; };
+  const st=()=>{ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; };
+  function fresh(){
+    q=gen(); sel=-1; tries=0; hint=0; done=false;
+    $('prAsk').innerHTML=q.ask;
+    $('prCode').hidden=!q.code; $('prCode').innerHTML=q.code?codeHTML(q.code):'';
+    const mc=q.type==='mc'; $('prCh').hidden=!mc; $('prIn').hidden=mc; $('prA').value='';
+    $('prA').setAttribute('inputmode',q.type==='num'?'decimal':'text');
+    if(mc){
+      $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+o.t+'</button>').join('');
+      $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+    }
+    $('prShow').disabled=true; fb('');
+  }
+  $('prCheck').onclick=()=>{
+    if(done){ fb('<div class="fb ok">כבר פתרתם את זה. לחצו "תרגיל חדש".</div>'); return; }
+    let right, msg=null, note='';
+    if(q.type==='mc'){
+      if(sel<0){ fb('<div class="fb err">בחרו קודם תשובה.</div>'); return; }
+      right=!!q.opts[sel].ok; msg=q.opts[sel].why||null;
+    } else {
+      const raw=$('prA').value;
+      if(!raw.trim()){ fb('<div class="fb err">כתבו תשובה.</div>'); $('prA').focus(); return; }
+      if(q.type==='num'){
+        const v=parseFloat(raw.replace(',','.').replace(/\s/g,''));
+        if(isNaN(v)){ fb('<div class="fb err">כתבו מספר.</div>'); return; }
+        right=Math.abs(v-q.ans)<1e-9; if(!right&&q.diag) msg=q.diag(raw,v);
+      } else {
+        const a=squash(raw), bare=a.replace(/^["']+|["']+$/g,''), all=[q.ans].concat(q.accept||[]).map(squash);
+        right=all.includes(a)||all.includes(bare);
+        if(right&&!all.includes(a)) note=' המרכאות לא מודפסות, הן רק מסמנות איפה הטקסט מתחיל ונגמר.';
+        if(!right&&q.diag) msg=q.diag(raw);
+      }
+    }
+    if(right){ done=true; streak++; solved++; st(); fb('<div class="fb ok">נכון! '+(q.ok||'')+note+'</div>'); return; }
+    streak=0; tries++; st();
+    fb('<div class="fb err">'+(msg||'עוד לא. נסו שוב, או לחצו על רמז.')+'</div>');
+    if(tries>=2) $('prShow').disabled=false;
+  };
+  $('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); fb('<div class="fb hint">'+q.hints[hint-1]+'</div>'); };
+  $('prShow').onclick=()=>{ fb('<div class="fb hint">'+q.sol+'<br>עכשיו נסו תרגיל חדש.</div>'); };
+  $('prNew').onclick=fresh;
+  $('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  fresh(); st();
+}
+
+/*LAB*/
+const BIG=['O(1)','O(n)','O(n²)','O(log n)'];
+const LAB={ids:['n','prog'],
+  presets:[{label:'לינארי, <span dir="ltr">n = 8</span>',p:[8,1]},{label:'לולאה כפולה, <span dir="ltr">n = 8</span>',p:[8,2]},{label:'חציה, <span dir="ltr">n = 16</span>',p:[16,3]},{label:'נוסחה, <span dir="ltr">n = 16</span>',p:[16,0]},{label:'<span dir="ltr">n = 1</span>',p:[1,2]}],
+  all:()=>{ const a=[]; for(let n=1;n<=16;n++) for(let k=0;k<4;k++) a.push([n,k]); return a; }};
+const LOG=n=>{ let s=0; while(n>1){ n=Math.floor(n/2); s++; } return s; };
+LAB.counts=n=>[1,n,n*n,LOG(n)];
+LAB.build=function(p){
+  const N=p.n, k=p.prog, v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" או "עד הסוף".',cnt:0}]; let out='', cnt=0;
+  const go=(line,note)=>steps.push({line,vars:{...v},out,note,cnt});
+  let code;
+  v.n=N;
+  if(k===0){
+    code=['n = '+N,'steps = 0','total = n * (n + 1) // 2','steps = steps + 1','print(total, steps)'].join('\n');
+    go(1,'n = '+N+'.'); v.steps=0; go(2,'מונה הצעדים מתחיל ב-0.');
+    const t=N*(N+1)/2; v.total=t; go(3,'נוסחה: n * (n + 1) // 2 = '+t+'. סכום 1 עד '+N+' בחישוב אחד.');
+    cnt=1; v.steps=1; go(4,'צעד אחד. גם אם n היה מיליון, זה היה צעד אחד.');
+    out=t+' 1\n'; go(5,'הסכום '+t+' בצעד 1: O(1).');
+  } else if(k===1){
+    code=['n = '+N,'steps = 0','total = 0','for i in range(1, n + 1):','    total = total + i','    steps = steps + 1','print(total, steps)'].join('\n');
+    go(1,'n = '+N+'.'); v.steps=0; go(2,'מונה הצעדים מתחיל ב-0.'); v.total=0; go(3,'total מתחיל ב-0.');
+    for(let i=1;i<=N;i++){ v.i=i; go(4,'סיבוב '+i+' מתוך '+N+'.'); v.total+=i; go(5,'total = '+v.total+'.'); cnt++; v.steps=cnt; go(6,'צעד '+cnt+'.'); }
+    go(4,'i עבר את כל הערכים. הלולאה נגמרת.');
+    out=v.total+' '+cnt+'\n'; go(7,'אותו סכום כמו בנוסחה, אבל ב-'+cnt+' צעדים: אחד לכל מספר. O(n).');
+  } else if(k===2){
+    code=['n = '+N,'steps = 0','total = 0','for i in range(n):','    for j in range(n):','        total = total + i * j','        steps = steps + 1','print(total, steps)'].join('\n');
+    go(1,'n = '+N+'.'); v.steps=0; go(2,'מונה הצעדים מתחיל ב-0.'); v.total=0; go(3,'total מתחיל ב-0.');
+    for(let i=0;i<N;i++){ v.i=i; go(4,'הלולאה החיצונית: i = '+i+'. עכשיו כל הלולאה הפנימית רצה מחדש.');
+      for(let j=0;j<N;j++){ v.j=j; go(5,'i = '+i+', j = '+j+'.'); v.total+=i*j; go(6,'total = '+v.total+'.'); cnt++; v.steps=cnt; go(7,'צעד '+cnt+'.'); }
+      go(5,'הלולאה הפנימית נגמרה אחרי '+N+' צעדים.'); }
+    go(4,'הלולאה החיצונית נגמרה.');
+    out=v.total+' '+cnt+'\n'; go(8,N+' כפול '+N+' = '+cnt+' צעדים. O(n²).');
+  } else {
+    code=['n = '+N,'steps = 0','while n > 1:','    n = n // 2','    steps = steps + 1','print(n, steps)'].join('\n');
+    go(1,'n = '+N+'.'); v.steps=0; go(2,'מונה הצעדים מתחיל ב-0.');
+    let m=N;
+    while(true){ if(!(m>1)){ go(3,'n = '+m+'. האם n > 1? False. הלולאה נגמרת.'); break; }
+      go(3,'n = '+m+'. האם n > 1? True.'); m=Math.floor(m/2); v.n=m; go(4,'חוצים: n = '+m+'.'); cnt++; v.steps=cnt; go(5,'צעד '+cnt+'.'); }
+    out=m+' '+cnt+'\n'; go(6,'רק '+cnt+' צעדים, כי בכל צעד n נחצה. O(log n).');
+  }
+  const c=LAB.counts(N);
+  const explain='<div>עם <span dir="ltr">n = '+N+'</span>, התוכנית <span dir="ltr">'+BIG[k]+'</span> עושה <b>'+c[k]+'</b> צעדים.</div>'
+    +'<div>ואם n היה 1000? <span dir="ltr">O(1): 1, O(log n): 9, O(n): 1000, O(n²): 1,000,000</span>.</div>'
+    +(N===1?'<div>כש-<span dir="ltr">n = 1</span> כמעט אין הבדל. הסיבוכיות חשובה כשהקלט גדול.</div>':'');
+  return {code, steps, explain};
+};
+LAB.search=function(){
+  const nums=[2,5,8,12,16,23,38,56], v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה".'}]; let out='';
+  const go=(line,note)=>steps.push({line,vars:{...v},out,note});
+  const code=['nums = [2, 5, 8, 12, 16, 23, 38, 56]','target = 56','steps = 0','for x in nums:','    steps = steps + 1','    if x == target:','        break','print("linear:", steps)'].join('\n');
+  v.nums=nums; go(1,'רשימה ממוינת של 8 מספרים.'); v.target=56; go(2,'מחפשים את 56.'); v.steps=0; go(3,'סופרים בדיקות.');
+  for(const x of nums){ v.x=x; go(4,'הבדיקה הבאה: x = '+x+'.'); v.steps++; go(5,'בדיקה מספר '+v.steps+'.');
+    if(x===56){ go(6,x+' == 56? True. מצאנו.'); go(7,'break יוצא מהלולאה מיד.'); break; } go(6,x+' == 56? False. ממשיכים.'); }
+  out='linear: 8\n'; go(8,'8 בדיקות ל-8 מספרים: O(n). חיפוש בינארי היה בודק את האמצע וזורק חצי בכל פעם: 3 בדיקות בלבד, כי 8, 4, 2, 1. עם מיליון מספרים: מיליון בדיקות מול 20.');
+  return {code, steps};
+};
+LAB.examples=[LAB.search()];
+/*/LAB*/
+function bars(p,cur){
+  const c=LAB.counts(p.n), mx=Math.max(...c);
+  $('bars').innerHTML=c.map((x,i)=>{ const val=i===p.prog&&cur!=null?cur:x;
+    return '<div class="cbar'+(i===p.prog?' sel':'')+'"><span class="nm">'+BIG[i]+'</span><span class="track"><span class="fill" style="display:block;width:'+Math.max(val?2:0,100*val/mx)+'%"></span></span><span class="cnt">'+val+'</span></div>'; }).join('');
+}
+lab({fmt:{prog:i=>BIG[i]}, step:(s,p)=>bars(p,s.cnt)});
+PT.mount($('exPT'),LAB.examples[0]);
+
+/* practice */
+const FR=[
+  ['first = nums[0]\nlast = nums[-1]\nprint(first + last)','O(1)','אין לולאה. גישה למקום ברשימה היא צעד אחד, לא משנה כמה היא ארוכה.'],
+  ['print(len(nums))','O(1)','len לא סופר מחדש. פייתון שומר את האורך, ולכן זה צעד אחד.'],
+  ['total = 0\nfor x in nums:\n    total = total + x\nprint(total)','O(n)','לולאה אחת שעוברת על כל n האיברים.'],
+  ['for x in nums:\n    print(x)\nfor x in nums:\n    print(x * 2)','O(n)','שתי לולאות זו אחרי זו: n + n = 2n, וזה O(n).'],
+  ['for x in nums:\n    for k in range(3):\n        print(x + k)','O(n)','הלולאה הפנימית תמיד 3 פעמים, לא תלויה ב-n: 3n, כלומר O(n).'],
+  ['if target in nums:\n    print("found")','O(n)','in על רשימה בודק איבר אחרי איבר: לולאה מוסתרת.'],
+  ['for x in nums:\n    for y in nums:\n        if x + y == 10:\n            print(x, y)','O(n²)','לולאה בתוך לולאה, שתיהן על כל n האיברים: n כפול n.'],
+  ['for i in range(n):\n    for j in range(n):\n        grid[i][j] = 0','O(n²)','טבלה של n על n: n² תאים.'],
+  ['for x in nums:\n    if x * 2 in nums:\n        print(x)','O(n²)','in בתוך לולאה: n פעמים לולאה מוסתרת של n.'],
+  ['steps = 0\nwhile n > 1:\n    n = n // 2\n    steps = steps + 1','O(log n)','n נחצה בכל סיבוב, ולכן מספר הסיבובים הוא log n.'],
+  ['low, high = 0, len(nums) - 1\nwhile low <= high:\n    mid = (low + high) // 2\n    if nums[mid] == target:\n        break\n    elif nums[mid] < target:\n        low = mid + 1\n    else:\n        high = mid - 1','O(log n)','חיפוש בינארי: בכל סיבוב חצי מהרשימה נזרק.'],
+  ['i = 1\nwhile i < n:\n    print(i)\n    i = i * 2','O(log n)','i מוכפל בכל סיבוב: 1, 2, 4, 8... ומגיע ל-n אחרי log n סיבובים.']];
+const OPTS=['O(1)','O(log n)','O(n)','O(n²)'];
+const WHY={'O(1)':'O(1) הוא מספר קבוע של צעדים. יש כאן משהו שגדל עם n?','O(log n)':'O(log n) מופיע כשמשהו נחצה או מוכפל בכל סיבוב. זה קורה כאן?','O(n)':'O(n) הוא לולאה אחת על n, או כמה לולאות זו אחרי זו. בדקו אם יש לולאה בתוך לולאה, או לולאה מוסתרת.','O(n²)':'O(n²) צריך לולאה בתוך לולאה, ששתיהן גדלות עם n. האם הפנימית באמת תלויה ב-n?'};
+function qBig(){
+  const [code,ans,why]=pick(FR);
+  return {ask:'מה הסיבוכיות של הקוד? (nums היא רשימה של n מספרים)', code, type:'mc',
+    opts:OPTS.map(o=>({t:'<span dir="ltr">'+o+'</span>',ok:o===ans,why:WHY[o]})),
+    hints:['ספרו לולאות. האם יש לולאה בתוך לולאה? האם משהו נחצה בכל סיבוב? האם יש in, sum או max על רשימה?',why.split(':')[0].split('.')[0]+'.'],
+    sol:'<span dir="ltr">'+ans+'</span>. '+why, ok:why};
+}
+function qSteps(){
+  const n=pick([4,5,6,8,10,16,32,64]), T=pick([
+    ['for i in range('+n+'):\n    count = count + 1',n,'לולאה אחת: '+n+' סיבובים.',v=>null],
+    ['for i in range('+n+'):\n    for j in range('+n+'):\n        count = count + 1',n*n,n+' כפול '+n+' = '+(n*n)+'.',v=>v===2*n?'הלולאות מקוננות, לא אחת אחרי השנייה. כופלים.':null],
+    ['for i in range('+n+'):\n    count = count + 1\nfor j in range('+n+'):\n    count = count + 1',2*n,n+' ועוד '+n+' = '+(2*n)+'.',v=>v===n*n?'הלולאות אחת אחרי השנייה, לא אחת בתוך השנייה. מחברים.':null],
+    ['for i in range('+n+'):\n    for j in range(3):\n        count = count + 1',3*n,n+' כפול 3 = '+(3*n)+'.',v=>v===n*n?'הלולאה הפנימית היא range(3), לא range('+n+').':null],
+    ['m = '+n+'\nwhile m > 1:\n    m = m // 2\n    count = count + 1',LOG(n),'חוצים: '+(function(){let a=[n],m=n; while(m>1){m=Math.floor(m/2); a.push(m);} return a.join(', ');})()+'. '+LOG(n)+' חציות.',v=>v===n/2?'לא חוצים פעם אחת. חוצים שוב ושוב עד שמגיעים ל-1.':null]]);
+  return {ask:'מה הערך של '+C('count')+' בסוף?', code:'count = 0\n'+T[0], type:'num', ans:T[1], diag:(r,v)=>T[3](v),
+    hints:['כמה פעמים רצה כל לולאה? האם יש לולאה בתוך לולאה?',T[0].includes('while')?'כתבו את הערכים של m אחרי כל חציה.':'כופלים לולאות מקוננות, ומחברים לולאות שבאות זו אחרי זו.'], sol:T[2], ok:T[2]};
+}
+practice(()=>pick([qBig,qBig,qBig,qSteps,qSteps])());
+
+})();
+</script>
+</body>
+</html>

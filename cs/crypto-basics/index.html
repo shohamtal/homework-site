@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>צופן קיסר והצפנה · מדעי המחשב כיתה יב · מירי</title>
+<meta name="description" content="מצפינים בצופן קיסר בפייתון, שוברים אותו לפי שכיחות אותיות ובכוח גס, ומבינים בלי נוסחאות איך עובד מפתח ציבורי. מעבדה ותרגול לכיתה יב.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/crypto-basics/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="צופן קיסר והצפנה · מדעי המחשב כיתה יב · מירי">
+<meta property="og:description" content="מצפינים בצופן קיסר בפייתון, שוברים אותו לפי שכיחות אותיות ובכוח גס, ומבינים בלי נוסחאות איך עובד מפתח ציבורי. מעבדה ותרגול לכיתה יב.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/crypto-basics/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://shohamtal.github.io/homework-site/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"הצפנה בסיסית: מצופן קיסר עד מפתחות","item":"https://shohamtal.github.io/homework-site/cs/crypto-basics/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה צופן קיסר?","acceptedAnswer":{"@type":"Answer","text":"שיטת הצפנה שבה מזיזים כל אות מספר קבוע של מקומות באלפבית. עם מפתח 3, HELLO הופכת ל-KHOOR. כדי לפענח, מזיזים אחורה באותו מספר. הוא נקרא על שם יוליוס קיסר, שלפי המסורת השתמש בו. נסו במעבדה."}},{"@type":"Question","name":"איך שוברים צופן קיסר?","acceptedAnswer":{"@type":"Answer","text":"שתי דרכים. כוח גס: מנסים את כל 26 המפתחות ובוחרים את התוצאה שנראית כמו מילים. שכיחות: סופרים אותיות בהודעה המוצפנת. האות הכי שכיחה היא כנראה E, וההפרש בינה לבין E הוא המפתח. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"מה ההבדל בין מפתח ציבורי למפתח פרטי?","acceptedAnswer":{"@type":"Answer","text":"את המפתח הציבורי נותנים לכולם, ואיתו אפשר רק לנעול (להצפין). המפתח הפרטי נשאר רק אצלכם, ורק הוא פותח (מפענח). כך כל אחד יכול לשלוח לכם הודעה סודית, בלי שתיפגשו קודם. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"הצפנה בסיסית: מצופן קיסר עד מפתחות","description":"מצפינים בצופן קיסר בפייתון, שוברים אותו לפי שכיחות אותיות ובכוח גס, ומבינים בלי נוסחאות איך עובד מפתח ציבורי. מעבדה ותרגול לכיתה יב.","url":"https://shohamtal.github.io/homework-site/cs/crypto-basics/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"הצפנה בסיסית: מצופן קיסר עד מפתחות","teaches":"הצפנה בסיסית: מצופן קיסר עד מפתחות","keywords":"צופן קיסר, מפתח, פענוח","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:12em; max-width:100%; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr; text-transform:uppercase}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:500px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body); white-space:normal}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.seg{display:flex; gap:6px; flex-wrap:wrap}
+.seg button{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.abc{overflow-x:auto; max-width:100%; margin:8px 0}
+.abc table{border-collapse:collapse; direction:ltr; margin:0 auto; font:700 .85rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.abc td,.abc th{border:1.5px solid var(--border); padding:2px 0; width:1.45em; text-align:center}
+.abc th{background:var(--card); color:var(--muted); font-weight:600; border:0; padding-inline:4px; width:auto}
+.abc tr.c td{background:var(--hint-bg)}
+.abc td.on{background:var(--hl); box-shadow:inset 0 0 0 2px var(--line)}
+.big{font:700 1.15rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; direction:ltr; text-align:center; overflow-wrap:anywhere; margin:6px 0; letter-spacing:.05em}
+.big.ok{color:var(--ok)}
+.freq{display:flex; align-items:flex-end; gap:2px; height:96px; direction:ltr; justify-content:center; margin:8px 0}
+.freq div{flex:1; max-width:18px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%}
+.freq i{display:block; width:100%; background:var(--blue); border-radius:3px 3px 0 0}
+.freq div.top i{background:var(--line)}
+.freq b{font:600 .62rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.brute{max-height:14em; overflow:auto; border:2px solid var(--border); border-radius:12px; background:var(--card); padding:6px 10px; direction:ltr; font:.85rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.brute div{white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:1px 4px; border-radius:6px}
+.brute div.on{background:var(--hl)}
+.lock{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; text-align:center}
+.lock div{border:2px solid var(--border); border-radius:12px; padding:8px; background:var(--card)}
+.lock .e{font-size:1.8rem}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="crypto-basics">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/">כיתה יב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-12/#cs-hs-12">הכנה לבגרות ונושאים מתקדמים</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">הצפנה בסיסית: מצופן קיסר עד מפתחות</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה יב · הכנה לבגרות</div>
+  <h1>הצפנה בסיסית <span class="slogan">מצופן קיסר עד מפתחות</span></h1>
+  <p class="lead">הצפנה הופכת הודעה לג'יבריש שרק מי שיש לו מפתח יכול לקרוא. כאן מצפינים בצופן קיסר, אחד העתיקים בעולם, בפייתון, ואז שוברים אותו בשתי דרכים: לפי שכיחות אותיות, ובניסיון של כל המפתחות. בסוף מבינים, בלי נוסחאות, איך עובד מפתח ציבורי. כדאי להכיר <a href="../strings/">מחרוזות</a> ואת <a href="../cyber-safety/">סייבר ובטיחות ברשת</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>צופן קיסר</h3>
+      <p>מזיזים כל אות קדימה באלפבית מספר קבוע של מקומות, שנקרא <strong>מפתח</strong>. עם מפתח 3, A הופכת ל-D, ו-B ל-E. בסוף האלפבית חוזרים להתחלה: X הופכת ל-A. כדי לפענח, מזיזים אחורה באותו מפתח.</p>
+    </div>
+    <div class="mini">
+      <h3>למה קל לשבור אותו</h3>
+      <p>יש רק 26 מפתחות, אז אפשר פשוט לנסות את כולם. ויש דרך חכמה עוד יותר: באנגלית האות E היא הכי שכיחה. האות שמופיעה הכי הרבה בהודעה המוצפנת היא כנראה E המוזזת.</p>
+    </div>
+    <div class="mini">
+      <h3>מפתח ציבורי</h3>
+      <p>דמיינו מנעולים פתוחים שאתם מחלקים לכולם (המפתח הציבורי). כל אחד יכול לנעול איתם קופסה ולשלוח לכם. אבל רק לכם יש את המפתח שפותח אותם (המפתח הפרטי). כך מאובטח כל אתר עם https.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> הצפנה טובה לא נשענת על סוד השיטה, אלא על סוד המפתח. צופן קיסר נשבר כי יש מעט מדי מפתחות. בהצפנה מודרנית יש יותר מפתחות ממספר האטומים בכדור הארץ.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מצפינים ושוברים</h2></div>
+  <h3>א. מצפינים</h3>
+  <p class="text">בחרו הודעה והזיזו את המפתח. הטבלה מראה לאן הולכת כל אות. הריצו את התוכנית שורה אחרי שורה: האות שמוצפנת עכשיו מסומנת בטבלה.</p>
+  <div class="seg" id="msgs" role="group" aria-label="ההודעה"></div>
+  <div class="abc"><table id="abc" aria-label="האלפבית והאלפבית המוזז"></table></div>
+  <p class="big" id="cipher"></p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sk"><span>המפתח (shift)</span><span class="eq" id="skv"></span></label>
+      <input type="range" id="sk" min="0" max="25" step="1" value="3">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="0,3">מפתח 3</button>
+          <button type="button" data-p="2,3">גלישה מ-Z ל-A</button>
+          <button type="button" data-p="0,0">מפתח 0</button>
+          <button type="button" data-p="1,13">מפתח 13</button>
+          <button type="button" data-p="3,25">מפתח 25</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+
+  <h3>ב. שוברים הודעה שיירטנו</h3>
+  <p class="text">יירטנו הודעה מוצפנת, ואין לנו את המפתח. מתחת: כמה פעמים מופיעה כל אות. הזיזו את מחוון הניחוש עד שההודעה נקראת. רמז: מצאו את העמודה הכי גבוהה, ושאלו איזה מפתח הופך את E לאות הזו.</p>
+  <p class="big" id="intercept"></p>
+  <div class="freq" id="freq" aria-label="שכיחות האותיות בהודעה המוצפנת"></div>
+  <label class="slider" for="sg"><span>הניחוש שלכם למפתח</span><span class="eq" id="sgv"></span></label>
+  <input type="range" class="blue" id="sg" min="0" max="25" step="1" value="0">
+  <p class="big" id="guess"></p>
+  <div class="fb hint" id="brkTxt" aria-live="polite"></div>
+  <p class="text" style="margin-top:10px"><strong>כוח גס:</strong> כל 26 המפתחות בבת אחת. רק שורה אחת נראית כמו אנגלית.</p>
+  <div class="brute" id="brute"></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את % 26</h3>
+      <p>בלי שארית החלוקה, Z עם מפתח 3 יוצאת מהאלפבית לתו מוזר.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">code = ord(ch) - 65 + shift
+# Z, 3 → ']'</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">code = (ord(ch) - 65 + shift) % 26
+# Z, 3 → 'C'</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מצפינים גם רווחים</h3>
+      <p>רק אותיות זזות. רווח, ספרה וסימן נשארים כמו שהם, אחרת הם הופכים לאותיות.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">for ch in text:
+    result += shift_letter(ch)</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">for ch in text:
+    if ch.isalpha():
+        result += shift_letter(ch)
+    else:
+        result += ch</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מפענחים לכיוון הלא נכון</h3>
+      <p>מפענחים עם המפתח ההפוך: <span class="eq">−shift</span>, או <span class="eq">26 − shift</span>. מי שמזיז שוב קדימה רק מצפין פעמיים.</p>
+    </div>
+    <div class="mini">
+      <h3>חושבים שמפתח פרטי משתפים</h3>
+      <p>את המפתח הציבורי (המנעול הפתוח) נותנים לכולם. את המפתח הפרטי לא נותנים לאף אחד, אף פעם.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: שוברים לפי שכיחות</h2></div>
+  <div class="stepper">
+    <p class="big" id="exMsg"></p>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+  <h3 style="margin-top:16px">ואיך עובד מפתח ציבורי?</h3>
+  <div class="lock">
+    <div><div class="e">🔓</div>אתם מחלקים לכולם מנעולים פתוחים. זה המפתח הציבורי.</div>
+    <div><div class="e">📦🔒</div>חבר שם הודעה בקופסה ונועל אותה במנעול שלכם. גם הוא כבר לא יכול לפתוח.</div>
+    <div><div class="e">🔑</div>רק לכם יש את המפתח שפותח. זה המפתח הפרטי, והוא אף פעם לא נשלח.</div>
+  </div>
+  <p class="text">היתרון: לא צריך להיפגש קודם בסוד כדי להחליף מפתח. בצופן קיסר שני הצדדים חייבים לדעת את אותו מפתח, ומי שמיירט אותו בדרך יכול לקרוא הכול.</p>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה צופן קיסר?</h3>
+    <p>שיטת הצפנה שבה מזיזים כל אות מספר קבוע של מקומות באלפבית. עם מפתח 3, HELLO הופכת ל-KHOOR. כדי לפענח, מזיזים אחורה באותו מספר. הוא נקרא על שם יוליוס קיסר, שלפי המסורת השתמש בו. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך שוברים צופן קיסר?</h3>
+    <p>שתי דרכים. כוח גס: מנסים את כל 26 המפתחות ובוחרים את התוצאה שנראית כמו מילים. שכיחות: סופרים אותיות בהודעה המוצפנת. האות הכי שכיחה היא כנראה E, וההפרש בינה לבין E הוא המפתח. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>מה ההבדל בין מפתח ציבורי למפתח פרטי?</h3>
+    <p>את המפתח הציבורי נותנים לכולם, ואיתו אפשר רק לנעול (להצפין). המפתח הפרטי נשאר רק אצלכם, ורק הוא פותח (מפענח). כך כל אחד יכול לשלוח לכם הודעה סודית, בלי שתיפגשו קודם. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/cyber-safety/">סייבר ובטיחות ברשת</a> · <a href="../../cs/strings/">מחרוזות בפייתון</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/databases-intro/"><small>→ הנושא הקודם</small>מבוא למסדי נתונים ו-SQL</a><a class="next" href="../../cs/"><small>סיימתם את הפרק ←</small>לכל הנושאים במדעי המחשב</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const pick=a=>a[Math.floor(Math.random()*a.length)], ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+  const MSGS=['MEET AT NOON','HIDE THE MAP','ZEBRA XRAY','PYTHON 3'];
+  const sh=(c,k)=>/[A-Z]/.test(c)?String.fromCharCode((c.charCodeAt(0)-65+((k%26)+26))%26+65):c;
+  const caesar=(t,k)=>[...t].map(c=>sh(c,k)).join('');
+  function build(m,k){
+    const text=MSGS[m];
+    const code=['text = "'+text+'"','shift = '+k,'result = ""','for ch in text:','    if ch.isalpha():','        code = (ord(ch) - ord("A") + shift) % 26','        result = result + chr(code + ord("A"))','    else:','        result = result + ch','print(result)'].join('\n');
+    const st=[{line:0,vars:{},out:''}], v={}; let out='';
+    const add=(line,note)=>st.push({line,vars:{...v},out,note});
+    v.text=text; add(1,'ההודעה המקורית.'); v.shift=k; add(2,'המפתח: מזיזים כל אות '+k+' מקומות.'); v.result=''; add(3,'התוצאה מתחילה ריקה.');
+    for(const ch of text){
+      v.ch=ch; add(4,'התו הבא: '+PT.repr(ch)+'.');
+      if(/[A-Z]/.test(ch)){ add(5,ch+' היא אות.'); const p=ch.charCodeAt(0)-65; v.code=(p+k)%26; add(6,ch+' היא אות מספר '+p+' (A = 0). '+p+' + '+k+' = '+(p+k)+(p+k>=26?', ו-% 26 מחזיר להתחלה: '+v.code:'')+'.'); v.result+=String.fromCharCode(v.code+65); add(7,'אות מספר '+v.code+' היא '+String.fromCharCode(v.code+65)+'. מוסיפים לתוצאה.'); }
+      else { add(5,PT.repr(ch)+' היא לא אות.'); v.result+=ch; add(9,'מעתיקים אותה כמו שהיא.'); }
+    }
+    add(4,'עברנו על כל התווים.'); out+=v.result+'\n'; add(10,'מדפיסים את ההודעה המוצפנת.');
+    return {code,steps:st,text,res:v.result};
+  }
+  const SECRET='THE SECRET MEETING WILL BE HELD NEAR THE GREEN TREE AT SEVEN', SK=7;
+  const EXP='PLEASE KEEP THESE NOTES SECRET', EXK=10;
+  const WORDS=['CAT','DOG','ROBOT','PIXEL','ZEBRA','QUIZ','MOON','STAR','CODE','PIZZA','LASER','WAVE'];
+  const DEF='def caesar(text, shift):\n    result = ""\n    for ch in text:\n        if ch.isalpha():\n            code = (ord(ch) - ord("A") + shift) % 26\n            result = result + chr(code + ord("A"))\n        else:\n            result = result + ch\n    return result\n';
+  function gen(){
+    const kind=pick(['enc','enc','dec','key','ord','freq','brute','pk']), q={kind,type:'text'};
+    if(kind==='enc'||kind==='dec'){
+      const w=pick(WORDS), k=ri(1,25), c=caesar(w,k), dec=kind==='dec';
+      q.code=dec?'print(caesar("'+c+'", -'+k+'))':'print(caesar("'+w+'", '+k+'))'; q.py=DEF+q.code; q.ans=dec?w:c; q.up=true;
+      q.ask=(dec?'פענחו: ':'הצפינו: ')+'מה התוכנית מדפיסה? (caesar היא הפונקציה של המעבדה)';
+      const wrong=dec?caesar(c,k):caesar(w,-k);
+      q.diag=v=>v===wrong?'הזזתם לכיוון ההפוך. '+(dec?'מפתח שלילי מזיז אחורה.':'מפתח חיובי מזיז קדימה.'):null;
+      q.hints=[(dec?'מזיזים כל אות '+k+' מקומות אחורה.':'מזיזים כל אות '+k+' מקומות קדימה.')+' אחרי Z חוזרים ל-A.','האות הראשונה: '+(dec?c[0]:w[0])+' → '+(dec?w[0]:c[0])+'. המשיכו כך.'];
+      q.sol=(dec?c:w)+' → '+q.ans+'.';
+    } else if(kind==='key'){
+      const a=pick('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')), k=ri(1,25), b=sh(a,k);
+      q.code='a = "'+a+'"\nb = "'+b+'"\nprint((ord(b) - ord(a)) % 26)'; q.py=q.code; q.ans=String(k);
+      q.ask='בהודעה מוצפנת '+a+' הפכה ל-'+b+'. מה המפתח? (התוכנית מחשבת אותו)';
+      q.diag=v=>v===String(26-k)?'זה המפתח לפענוח (אחורה). מהאות '+a+' קדימה עד '+b+' יש '+k+' צעדים.':null;
+      q.hints=['סופרים כמה צעדים קדימה מ-'+a+' עד '+b+'.','אם עוברים את Z, ממשיכים מ-A. זה מה ש-% 26 עושה.'];
+      q.sol='מ-'+a+' ל-'+b+' יש '+k+' צעדים קדימה, אז המפתח '+k+'.';
+    } else if(kind==='ord'){
+      const ch=pick('VWXYZ'.split('')), k=ri(2,9);
+      q.code='ch = "'+ch+'"\nshift = '+k+'\ncode = (ord(ch) - ord("A") + shift) % 26\nprint(code)'; q.py=q.code; const p=ch.charCodeAt(0)-65; q.ans=String((p+k)%26);
+      q.ask='מה התוכנית מדפיסה? (ord("A") הוא 65, ו-'+ch+' היא האות מספר '+p+' אם A = 0)';
+      q.diag=v=>v===String(p+k)?'שכחתם את % 26. '+(p+k)+' גדול מ-25, אז חוזרים להתחלה.':null;
+      q.hints=['ord(ch) - ord("A") נותן את מספר האות: '+ch+' = '+p+'.',p+' + '+k+' = '+(p+k)+'. מה השארית בחלוקה ב-26?'];
+      q.sol='('+p+' + '+k+') % 26 = '+q.ans+', כלומר האות '+String.fromCharCode(+q.ans+65)+'.';
+    } else if(kind==='freq'){
+      const top=pick('HKMQRWX'.split('')), k=(top.charCodeAt(0)-69+26)%26;
+      q.code='counts = {"'+top+'": '+ri(11,16)+', "'+sh('T',k)+'": '+ri(6,9)+', "'+sh('A',k)+'": '+ri(4,5)+'}\nprint((ord("'+top+'") - ord("E")) % 26)'; q.py=q.code; q.ans=String(k);
+      q.ask='בהודעה מוצפנת ארוכה באנגלית האות הכי שכיחה היא '+top+'. אם היא E המוזזת, מה המפתח?';
+      q.diag=v=>v===String(26-k)?'זה המפתח לפענוח. השאלה היא כמה צעדים קדימה מ-E עד '+top+'.':null;
+      q.hints=['באנגלית E היא האות הכי שכיחה.','כמה צעדים קדימה מ-E עד '+top+'?'];
+      q.sol='מ-E עד '+top+' יש '+k+' צעדים, אז המפתח הוא כנראה '+k+'.';
+    } else if(kind==='brute'){
+      q.type='choice'; q.ask='כמה מפתחות שונים צריך לנסות, לכל היותר, כדי לשבור צופן קיסר בכוח גס?';
+      q.opts=[{t:'26 (או 25, כי מפתח 0 לא משנה כלום)',ok:true},{t:'26 בחזקת 26',why:'זה מספר האפשרויות לצופן שבו כל אות מוחלפת בנפרד. בצופן קיסר יש מפתח אחד לכל ההודעה.'},{t:'כמספר האותיות בהודעה',why:'המפתח אחד לכל ההודעה, לא תלוי באורך שלה.'}].sort(()=>Math.random()-.5);
+      q.hints=['המפתח הוא מספר מ-0 עד 25.','כמה מספרים יש מ-0 עד 25?'];
+      q.sol='יש רק 26 מפתחות אפשריים, וזה מה שהופך את קיסר לחלש.';
+    } else {
+      q.type='choice'; q.ask='אתר רוצה שתשלחו לו הודעה מוצפנת. מה הוא שולח לכם קודם?';
+      q.opts=[{t:'את המפתח הציבורי שלו (המנעול הפתוח)',ok:true},{t:'את המפתח הפרטי שלו',why:'מי שיש לו את המפתח הפרטי יכול לפענח הכול. האתר אף פעם לא שולח אותו.'},{t:'את שני המפתחות',why:'הפרטי נשאר רק אצל האתר. מספיק לכם המנעול הפתוח.'},{t:'כלום, הסיסמה שלכם היא המפתח',why:'הסיסמה מזהה אתכם. ההצפנה בדרך נעשית עם המפתח הציבורי של האתר.'}].sort(()=>Math.random()-.5);
+      q.hints=['במה אפשר לנעול, אבל לא לפתוח?','מה קורה אם המפתח הפרטי מגיע למישהו אחר?'];
+      q.sol='האתר שולח את המפתח הציבורי. אתם נועלים איתו, ורק המפתח הפרטי של האתר פותח.';
+    }
+    if(q.type!=='choice'&&!q.ask) q.ask='מה התוכנית מדפיסה?';
+    return q;
+  }
+  const P=[[0,3],[2,3],[0,0],[1,13],[3,25],[3,7],[1,1]];
+  return {build,caesar,sh,MSGS,SECRET,SK,EXP,EXK,gen,presets:P,
+    extra:[()=>({code:DEF+'print(caesar("'+caesar(SECRET,SK)+'", -'+SK+'))\nprint(caesar("'+EXP+'", '+EXK+'))',steps:[{line:0,vars:{},out:SECRET+'\n'+caesar(EXP,EXK)+'\n'}]})]};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const AB='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+let m=0;
+function abc(k,on){ $('abc').innerHTML='<tr><th>רגיל</th>'+AB.map(c=>'<td'+(c===on?' class="on"':'')+'>'+c+'</td>').join('')+'</tr><tr class="c"><th>מוצפן</th>'+AB.map(c=>'<td'+(c===on?' class="on"':'')+'>'+LAB.sh(c,k)+'</td>').join('')+'</tr>'; }
+let R=null;
+function sync(){ const s=R.steps[$('labPT').ptStep||0]; abc(+$('sk').value,s.vars.ch&&/[A-Z]/.test(s.vars.ch)?s.vars.ch:null); }
+function lab(){
+  const k=+$('sk').value; $('skv').textContent=k;
+  $('msgs').innerHTML=LAB.MSGS.map((t,i)=>'<button type="button" dir="ltr" data-m="'+i+'" aria-pressed="'+(i===m)+'">'+esc(t)+'</button>').join('');
+  $('msgs').querySelectorAll('button').forEach(b=>b.onclick=()=>{ m=+b.dataset.m; lab(); });
+  R=LAB.build(m,k); PT.mount($('labPT'),{code:R.code,steps:R.steps}); sync(); $('labRun').value=R.code;
+  $('cipher').textContent=R.text+'  →  '+R.res;
+  let t='<div>'+C(R.text)+' עם מפתח '+k+' הופכת ל-'+C(R.res)+'.</div><div>לפענוח מזיזים אחורה '+k+', שזה כמו קדימה '+((26-k)%26)+'.</div>';
+  if(k===0) t+='<div>מפתח 0 לא מזיז כלום. ההודעה נשארת גלויה.</div>';
+  else if(k===13) t+='<div>מפתח 13 הוא חצי אלפבית: הצפנה פעמיים מחזירה את המקור. לכן ההצפנה והפענוח זהים.</div>';
+  else if(k===25) t+='<div>מפתח 25 הוא בעצם צעד אחד אחורה: כל אות הופכת לזו שלפניה.</div>';
+  if(/[XYZ]/.test(R.text)&&k>0) t+='<div>שימו לב לאותיות בסוף האלפבית: % 26 מחזיר אותן להתחלה.</div>';
+  if(/[^A-Z ]/.test(R.text)) t+='<div>הספרה 3 נשארת כמו שהיא, כי היא לא אות.</div>';
+  $('labTxt').innerHTML=t;
+}
+$('labPT').addEventListener('click',()=>setTimeout(sync));
+$('sk').addEventListener('input',lab);
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const [mm,k]=b.dataset.p.split(','); m=+mm; $('sk').value=k; lab(); });
+lab();
+
+/* breaking */
+const CT=LAB.caesar(LAB.SECRET,LAB.SK);
+$('intercept').textContent=CT;
+const cnt={}; for(const c of CT) if(/[A-Z]/.test(c)) cnt[c]=(cnt[c]||0)+1;
+const mx=Math.max(...Object.values(cnt)), topL=Object.keys(cnt).find(c=>cnt[c]===mx);
+$('freq').innerHTML=AB.map(c=>'<div'+(c===topL?' class="top"':'')+'><i style="height:'+Math.round(70*(cnt[c]||0)/mx)+'px"></i><b>'+c+'</b></div>').join('');
+function brk(){
+  const g=+$('sg').value, d=LAB.caesar(CT,-g); $('sgv').textContent=g; $('guess').textContent=d; $('guess').classList.toggle('ok',g===LAB.SK);
+  $('brkTxt').innerHTML=g===LAB.SK?'<div>שברתם! המפתח הוא '+g+'. האות הכי שכיחה, '+topL+', היא באמת E: מ-E עד '+topL+' יש '+g+' צעדים.</div>':'<div>מפתח '+g+' נותן ג\'יבריש. האות הכי שכיחה בהודעה היא '+topL+'. כמה צעדים יש מ-E עד '+topL+'?</div>';
+  $('brute').innerHTML=AB.map((_,k)=>'<div'+(k===g?' class="on"':'')+'>'+String(k).padStart(2,' ')+': '+esc(LAB.caesar(CT,-k))+'</div>').join('');
+}
+$('sg').addEventListener('input',brk); brk();
+
+/* worked example */
+const EC=LAB.caesar(LAB.EXP,LAB.EXK), ecnt={}; for(const c of EC) if(/[A-Z]/.test(c)) ecnt[c]=(ecnt[c]||0)+1;
+const etop=Object.entries(ecnt).sort((a,b)=>b[1]-a[1]);
+const EX=[
+  {s:EC,t:'יירטנו את ההודעה הזו. אין לנו את המפתח. נשבור אותה לפי שכיחות.'},
+  {s:EC,t:'<strong>סופרים אותיות.</strong> הכי שכיחות: '+etop.slice(0,3).map(e=>e[0]+' ('+e[1]+')').join(', ')+'. האות '+etop[0][0]+' מופיעה הרבה יותר מכל השאר.'},
+  {s:EC,t:'<strong>מניחים ש-'+etop[0][0]+' היא E.</strong> באנגלית E היא האות הכי שכיחה. מ-E עד '+etop[0][0]+' יש '+LAB.EXK+' צעדים קדימה, אז המפתח הוא כנראה '+LAB.EXK+'.'},
+  {s:LAB.caesar(EC,-LAB.EXK),t:'<strong>מפענחים</strong> עם '+LAB.EXK+' אחורה: '+C('caesar(text, -'+LAB.EXK+')')+'.'},
+  {s:LAB.caesar(EC,-LAB.EXK),t:'<strong>בודקים.</strong> יצאו מילים אמיתיות באנגלית, אז המפתח נכון. אם היה יוצא ג\'יבריש, היינו מנסים את האות השנייה בשכיחות בתור E, או פשוט את כל 26 המפתחות.'}
+];
+let exI=0;
+function ex(){ const e=EX[exI]; $('exMsg').textContent=e.s; $('exText').innerHTML=e.t; $('exCount').textContent='צעד '+(exI+1)+' מתוך '+EX.length; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+const nrm=s=>String(s).trim().replace(/^["']+|["']+$/g,'').replace(/\s+/g,'').toUpperCase();
+function numbered(code){ return '<pre class="code pt-code" dir="ltr" lang="en">'+code.split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('')+'</pre>'; }
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=LAB.gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=q.code?numbered(q.code):'';
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why||msg;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; }
+    right=v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>
