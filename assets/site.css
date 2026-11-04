@@ -191,7 +191,11 @@ h1 .slogan{display:block; font-size:.42em; color:var(--line); margin-top:.2em}
 .cards-on:not(.cards-last) .topic-nav, .cards-on:not(.cards-last) .related, .cards-on:not(.cards-last) footer.site{display:none}
 .cards-resume{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center}
 .done-mark{color:var(--green); font-weight:800}
-.progress-reset{margin-top:12px}
+.progress-reset{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--muted)}
+.prog-mark{color:var(--blue); font-weight:800}
+.prog-sum{margin:0 0 14px} .prog-sum p{margin:0 0 6px}
+.tile-prog{color:var(--green); font-weight:700}
+.prog-list{margin:0; padding-inline-start:1.2em} .prog-list li{margin:4px 0} .prog-list small{color:var(--muted)}
 
 /* computer science: code blocks and the optional "הריצו בעצמכם" Python box (assets/pyrun.js) */
 pre.code, .pyrun-code, .pyrun-in, .pyrun-out{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.95rem; line-height:1.5; direction:ltr; text-align:left; unicode-bidi:isolate}

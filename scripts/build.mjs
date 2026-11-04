@@ -136,7 +136,7 @@ const footer = (pg, root) => `<footer class="site">${cfg.name} · ${cfg.slogan}$
   ? `\n<script src="${root}assets/sound.js"></script>\n<script src="${root}assets/sfx.js"></script>` : ''}${CARDS(pg)
   ? `\n<script src="${root}assets/cards.js"></script>` : ''}`;
 /* card / step view with progress (issue #10): pilot topic pages, plus grade and subject pages for the ✓ marks */
-const CARDS = pg => ['topic', 'grade', 'subject'].includes(pg.kind);
+const CARDS = pg => ['topic', 'grade', 'subject', 'home'].includes(pg.kind);
 /* the next grade of the same subject that has pages, for the "ממשיכים ל…" link on grade hubs */
 const nextGrade = pg => { const gs = gradesWithTopics(pg.subj), i = gs.findIndex(g => g.id === pg.grade.id); return i >= 0 ? gs[i + 1] : null; };
 /* math topics for grades 1 to 3 get small success and try-again sounds (assets/sfx.js) */
