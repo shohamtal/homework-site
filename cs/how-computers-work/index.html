@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>איך מחשב עובד ובינארי · מדעי המחשב כיתה ז · מירי</title>
+<meta name="description" content="קלט, עיבוד, פלט וזיכרון, וספירה בבינארי: בונים מספר מ-8 ביטים ומריצים תוכנית פייתון שהופכת מספר לבינארי. מעבדה ותרגול עם רמזים לכיתה ז.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/how-computers-work/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="איך מחשב עובד ובינארי · מדעי המחשב כיתה ז · מירי">
+<meta property="og:description" content="קלט, עיבוד, פלט וזיכרון, וספירה בבינארי: בונים מספר מ-8 ביטים ומריצים תוכנית פייתון שהופכת מספר לבינארי. מעבדה ותרגול עם רמזים לכיתה ז.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/how-computers-work/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ז","item":"https://shohamtal.github.io/homework-site/cs/grade-7/"},{"@type":"ListItem","position":4,"name":"מבוא לתכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-7/#cs-python-7"},{"@type":"ListItem","position":5,"name":"איך מחשב עובד: קלט, עיבוד ופלט","item":"https://shohamtal.github.io/homework-site/cs/how-computers-work/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה מחשבים משתמשים בבינארי ולא בעשרוני?","acceptedAnswer":{"@type":"Answer","text":"כי קל מאוד לבנות מתג עם שני מצבים בלבד: יש חשמל או אין. מתג כזה כמעט לא טועה, וגם זעיר מאוד. במעבד אחד יש מיליארדי מתגים כאלה. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין ביט לבייט?","acceptedAnswer":{"@type":"Answer","text":"ביט הוא ספרה אחת: 0 או 1. בייט הוא 8 ביטים יחד, ובו אפשר לשמור מספר מ-0 עד 255 או אות אחת. קובץ של מגה בייט הוא בערך מיליון בייטים."}},{"@type":"Question","name":"מה ההבדל בין זיכרון לאחסון?","acceptedAnswer":{"@type":"Answer","text":"הזיכרון שומר את מה שהמחשב עובד עליו עכשיו, והוא מהיר מאוד, אבל נמחק כשמכבים. האחסון, כמו כונן או כרטיס זיכרון, שומר קבצים גם בלי חשמל. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"איך מחשב עובד: קלט, עיבוד ופלט","description":"קלט, עיבוד, פלט וזיכרון, וספירה בבינארי: בונים מספר מ-8 ביטים ומריצים תוכנית פייתון שהופכת מספר לבינארי. מעבדה ותרגול עם רמזים לכיתה ז.","url":"https://shohamtal.github.io/homework-site/cs/how-computers-work/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ז","about":"איך מחשב עובד: קלט, עיבוד ופלט","teaches":"איך מחשב עובד: קלט, עיבוד ופלט","keywords":"קלט ופלט, בינארי, זיכרון","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:14em; max-width:100%; box-sizing:border-box; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices button code{font-weight:400}
+.mini pre.code{margin:0}
+.tag-bad, .tag-good{font-weight:700; font-size:.92rem}
+.tag-bad{color:var(--err)} .tag-good{color:var(--ok)}
+#labPT, #exPT{margin-top:14px}
+#prCode{max-width:520px; margin:10px auto}
+code[dir=ltr]{unicode-bidi:isolate}
+.flow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; margin:12px 0}
+.flow span.box{border:2px solid var(--border); border-radius:12px; padding:8px 14px; background:var(--card); box-shadow:3px 3px 0 var(--hard); font-weight:800}
+.flow span.ar{font-size:1.4rem; color:var(--line)}
+.bits{display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:4px; max-width:440px; margin:0 auto 12px; direction:ltr}
+.bits button{display:flex; flex-direction:column; align-items:center; gap:2px; padding:6px 0; min-height:58px; min-width:0; font:1.4rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.bits button small{font:600 .72rem var(--f-body); color:var(--muted)}
+.bits button[aria-pressed="true"]{background:var(--hl); border-color:var(--line)}
+
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="how-computers-work">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-7/">כיתה ז</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-7/#cs-python-7">מבוא לתכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">איך מחשב עובד: קלט, עיבוד ופלט</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ז · מבוא לתכנות בפייתון</div>
+  <h1>איך מחשב עובד <span class="slogan">קלט, עיבוד, פלט ו-0 ו-1</span></h1>
+  <p class="lead">כל מחשב, מהטלפון ועד שרת ענק, עושה ארבעה דברים: מקבל קלט, מעבד אותו, מוציא פלט ושומר בזיכרון. ובפנים הכל כתוב רק ב-0 וב-1. כאן בונים מספר מביטים ומריצים תוכנית פייתון שהופכת מספר לבינארי. כדאי להיזכר קודם ב<a href="../binary-light/">נורות של בינארי</a> וב<a href="../computational-thinking/">חשיבה ממוחשבת</a>. אחר כך ממשיכים ל<a href="../variables-and-types/">משתנים וטיפוסים</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="flow" aria-label="קלט, עיבוד, פלט"><span class="box">קלט</span><span class="ar" aria-hidden="true">←</span><span class="box">עיבוד</span><span class="ar" aria-hidden="true">←</span><span class="box">פלט</span></div>
+  <div class="two">
+    <div class="mini">
+      <h3>קלט ופלט</h3>
+      <p>קלט הוא מה שנכנס למחשב: מקלדת, עכבר, מיקרופון, מצלמה. פלט הוא מה שיוצא: מסך, רמקול, מדפסת. בפייתון <code dir="ltr" lang="en">input()</code> קורא קלט, ו-<code dir="ltr" lang="en">print()</code> מוציא פלט.</p>
+    </div>
+    <div class="mini">
+      <h3>עיבוד וזיכרון</h3>
+      <p>המעבד מחשב: מחבר, משווה, מחליט. מיליארדי פעולות בשנייה. הזיכרון שומר את הנתונים שהתוכנית צריכה עכשיו, והאחסון שומר קבצים גם כשהמחשב כבוי.</p>
+    </div>
+    <div class="mini">
+      <h3>הכל 0 ו-1</h3>
+      <p>בתוך המחשב יש מתגים זעירים: דולק או כבוי. דולק הוא 1, כבוי הוא 0. כל מתג כזה הוא <strong>ביט</strong>. מספרים, אותיות, תמונות ושירים נשמרים כשורות של ביטים.</p>
+    </div>
+  </div>
+  <p class="text">בבינארי כל מקום שווה פי 2 מהמקום שמימינו: 1, 2, 4, 8, 16 וכן הלאה. למשל <span class="eq">1101</span> הוא <span class="eq">8 + 4 + 0 + 1 = 13</span>.</p>
+  <div class="callout"><strong>לזכור:</strong> 8 ביטים הם <strong>בייט</strong>. בבייט אחד אפשר לכתוב 256 מספרים שונים, מ-0 עד 255.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מספר בתוך בייט</h2></div>
+  <p class="text">הזיזו את המחוון או לחצו על הביטים כדי להדליק ולכבות אותם. מתחת יש תוכנית פייתון שהופכת את המספר לבינארי: היא מחלקת ב-2 שוב ושוב, ורושמת את השארית. לחצו "שורה הבאה" ועקבו אחרי <code dir="ltr" lang="en">n</code> ו-<code dir="ltr" lang="en">bits</code>.</p>
+  <div class="bits" id="bits" aria-label="שמונה ביטים"></div>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="num"><span>המספר</span><span id="numv" dir="ltr"></span></label>
+      <input type="range" id="num" min="0" max="255" step="1" value="13">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+    <div class="ctrl">
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries"></div>
+      </div>
+      <p class="text" style="margin:0">בתוכנית יש לולאת <code dir="ltr" lang="en">while</code>: שורות 5 ו-6 חוזרות כל עוד <code dir="ltr" lang="en">n</code> גדול מ-0. את הלולאות נלמד לעומק ב<a href="../loops/">לולאות בפייתון</a>.</p>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labPy" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את הבסיס</h3>
+      <p>בלי 2, פייתון קורא את הספרות כמספר רגיל. כדי לקרוא בינארי צריך לכתוב את הבסיס.</p>
+      <span class="tag-bad">✗ יוצא 101</span><pre class="code" dir="ltr" lang="en">print(int("101"))</pre>
+      <span class="tag-good">✓ יוצא 5</span><pre class="code" dir="ltr" lang="en">print(int("101", 2))</pre>
+    </div>
+    <div class="mini">
+      <h3>קוראים מהצד הלא נכון</h3>
+      <p>הביט הימני שווה 1. כל ביט משמאלו שווה פי 2. לכן <span class="eq">100</span> בבינארי הוא 4, לא 1.</p>
+      <span class="tag-bad">✗ "100 זה 1"</span><pre class="code" dir="ltr" lang="en"># 1 + 0 + 0 = 1 ?</pre>
+      <span class="tag-good">✓ 4 + 0 + 0 = 4</span><pre class="code" dir="ltr" lang="en">print(int("100", 2))   # 4</pre>
+    </div>
+    <div class="mini">
+      <h3>256 לא נכנס בבייט</h3>
+      <p>בבייט יש 256 אפשרויות, אבל הן מתחילות ב-0. לכן הגדול ביותר הוא 255. ל-256 צריך ביט תשיעי.</p>
+      <span class="tag-good">✓ 8 ביטים</span><pre class="code" dir="ltr" lang="en">print(bin(255))   # 0b11111111</pre>
+      <span class="tag-bad">✗ כבר 9 ביטים</span><pre class="code" dir="ltr" lang="en">print(bin(256))   # 0b100000000</pre>
+    </div>
+    <div class="mini">
+      <h3>bin מחזיר טקסט</h3>
+      <p><code dir="ltr" lang="en">bin</code> מחזיר מחרוזת שמתחילה ב-<code dir="ltr" lang="en">0b</code>, לא מספר. אי אפשר לחבר אליה מספר. כדי לחשב, הופכים חזרה עם <code dir="ltr" lang="en">int</code>.</p>
+      <span class="tag-bad">✗ שגיאה</span><pre class="code" dir="ltr" lang="en">print(bin(5) + 1)</pre>
+      <span class="tag-good">✓ יוצא 6</span><pre class="code" dir="ltr" lang="en">print(int(bin(5), 2) + 1)</pre>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">קופה בחנות: מקלידים מחיר של מוצר וכמה יחידות קונים, והקופה מדפיסה את הסכום. בואו נראה איפה בתוכנית יש קלט, איפה עיבוד ואיפה פלט. הקלט כאן: מחיר 12 ו-3 יחידות.</p>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code" id="prCode" dir="ltr" lang="en" hidden></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prA" dir="ltr" lang="en" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה מחשבים משתמשים בבינארי ולא בעשרוני?</h3>
+    <p>כי קל מאוד לבנות מתג עם שני מצבים בלבד: יש חשמל או אין. מתג כזה כמעט לא טועה, וגם זעיר מאוד. במעבד אחד יש מיליארדי מתגים כאלה. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין ביט לבייט?</h3>
+    <p>ביט הוא ספרה אחת: 0 או 1. בייט הוא 8 ביטים יחד, ובו אפשר לשמור מספר מ-0 עד 255 או אות אחת. קובץ של מגה בייט הוא בערך מיליון בייטים.</p>
+    <h3>מה ההבדל בין זיכרון לאחסון?</h3>
+    <p>הזיכרון שומר את מה שהמחשב עובד עליו עכשיו, והוא מהיר מאוד, אבל נמחק כשמכבים. האחסון, כמו כונן או כרטיס זיכרון, שומר קבצים גם בלי חשמל. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/binary-light/">בינארי: כן או לא, שפת המחשב</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/computational-thinking/"><small>→ הנושא הקודם</small>חשיבה ממוחשבת: פירוק, דפוס ואלגוריתם</a><a class="next" href="../../cs/variables-and-types/"><small>הנושא הבא ←</small>משתנים וטיפוסים בפייתון</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const shuffle=a=>{a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const codeHTML=code=>code.replace(/\n$/,'').split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('');
+const squash=s=>String(s).trim().replace(/\s+/g,'').toLowerCase();
+/* lab: sliders (LAB.ids, label spans id+'v') + "נסו את אלה" presets + tracer + Pyodide box */
+function lab(o){
+  const tries=$('tries');
+  tries.innerHTML=LAB.presets.map((t,i)=>'<button type="button" data-i="'+i+'">'+t.label+'</button>').join('');
+  const get=()=>{ const p={}; LAB.ids.forEach(id=>p[id]=+$(id).value); return p; };
+  function draw(){
+    const p=get();
+    LAB.ids.forEach(id=>{ const f=o&&o.fmt&&o.fmt[id]; $(id+'v').textContent=f?f(p[id]):p[id]; });
+    const r=LAB.build(p);
+    PT.mount($('labPT'),{code:r.code,steps:r.steps,input:r.input});
+    $('labTxt').innerHTML=r.explain; $('labPy').value=r.code;
+    if(o&&o.after) o.after(p,r);
+  }
+  LAB.ids.forEach(id=>$(id).addEventListener('input',draw));
+  tries.querySelectorAll('button').forEach(b=>b.onclick=()=>{ LAB.presets[+b.dataset.i].p.forEach((v,i)=>{ $(LAB.ids[i]).value=v; }); draw(); });
+  draw();
+  return {draw,get};
+}
+/* practice: gen() returns {ask, code?, type:'num'|'text'|'mc', ans, accept?, opts?[{t,ok,why}], diag?(raw,num), hints[], sol, ok?} */
+function practice(gen){
+  let q, sel=-1, tries=0, hint=0, streak=0, solved=0, done=false;
+  const fb=h=>{ $('prFb').innerHTML=h; };
+  const st=()=>{ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; };
+  function fresh(){
+    q=gen(); sel=-1; tries=0; hint=0; done=false;
+    $('prAsk').innerHTML=q.ask;
+    $('prCode').hidden=!q.code; $('prCode').innerHTML=q.code?codeHTML(q.code):'';
+    const mc=q.type==='mc'; $('prCh').hidden=!mc; $('prIn').hidden=mc; $('prA').value='';
+    $('prA').setAttribute('inputmode',q.type==='num'?'decimal':'text');
+    if(mc){
+      $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+o.t+'</button>').join('');
+      $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+    }
+    $('prShow').disabled=true; fb('');
+  }
+  $('prCheck').onclick=()=>{
+    if(done){ fb('<div class="fb ok">כבר פתרתם את זה. לחצו "תרגיל חדש".</div>'); return; }
+    let right, msg=null, note='';
+    if(q.type==='mc'){
+      if(sel<0){ fb('<div class="fb err">בחרו קודם תשובה.</div>'); return; }
+      right=!!q.opts[sel].ok; msg=q.opts[sel].why||null;
+    } else {
+      const raw=$('prA').value;
+      if(!raw.trim()){ fb('<div class="fb err">כתבו תשובה.</div>'); $('prA').focus(); return; }
+      if(q.type==='num'){
+        const v=parseFloat(raw.replace(',','.').replace(/\s/g,''));
+        if(isNaN(v)){ fb('<div class="fb err">כתבו מספר.</div>'); return; }
+        right=Math.abs(v-q.ans)<1e-9; if(!right&&q.diag) msg=q.diag(raw,v);
+      } else {
+        const a=squash(raw), bare=a.replace(/^["']+|["']+$/g,''), all=[q.ans].concat(q.accept||[]).map(squash);
+        right=all.includes(a)||all.includes(bare);
+        if(right&&!all.includes(a)) note=' המרכאות לא מודפסות, הן רק מסמנות איפה הטקסט מתחיל ונגמר.';
+        if(!right&&q.diag) msg=q.diag(raw);
+      }
+    }
+    if(right){ done=true; streak++; solved++; st(); fb('<div class="fb ok">נכון! '+(q.ok||'')+note+'</div>'); return; }
+    streak=0; tries++; st();
+    fb('<div class="fb err">'+(msg||'עוד לא. נסו שוב, או לחצו על רמז.')+'</div>');
+    if(tries>=2) $('prShow').disabled=false;
+  };
+  $('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); fb('<div class="fb hint">'+q.hints[hint-1]+'</div>'); };
+  $('prShow').onclick=()=>{ fb('<div class="fb hint">'+q.sol+'<br>עכשיו נסו תרגיל חדש.</div>'); };
+  $('prNew').onclick=fresh;
+  $('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  fresh(); st();
+}
+
+/*LAB*/
+const LAB={ids:['num'],
+  presets:[{label:'13',p:[13]},{label:'0: הכל כבוי',p:[0]},{label:'1',p:[1]},{label:'128',p:[128]},{label:'255: הכל דולק',p:[255]}],
+  all:()=>Array.from({length:256},(_,i)=>[i])};
+LAB.build=function(p){
+  const number=p.num;
+  const code=['number = '+number,'n = number','bits = ""','while n > 0:','    bits = str(n % 2) + bits','    n = n // 2','byte = bits.zfill(8)','print(byte)','print(int(byte, 2))','print(bin(number))'].join('\n');
+  const v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.'}]; let out='';
+  const go=(line,note)=>steps.push({line,vars:{...v},out,note});
+  v.number=number; go(1,'שומרים את המספר '+number+' במשתנה number.');
+  v.n=number; go(2,'מעתיקים אותו ל-n. את n נחלק, ו-number יישאר כמו שהוא.');
+  v.bits=''; go(3,'bits מתחיל כמחרוזת ריקה. כאן נאסוף את הביטים.');
+  let n=number, round=0;
+  while(true){
+    if(!(n>0)){ go(4,'בודקים: n הוא 0, אז n > 0 זה False. יוצאים מהלולאה.'+(round?' עשינו '+round+' סיבובים.':' הלולאה לא רצה אפילו פעם אחת.')); break; }
+    round++;
+    go(4,'בודקים: n הוא '+n+'. האם n > 0? כן, נכנסים לסיבוב '+round+'.');
+    const r=n%2; v.bits=String(r)+v.bits;
+    go(5,n+' % 2 = '+r+'. זו השארית בחלוקה ל-2. מוסיפים את '+r+' משמאל, ועכשיו bits = "'+v.bits+'".');
+    const nn=Math.floor(n/2); v.n=nn;
+    go(6,n+' // 2 = '+nn+'. זו חלוקה ב-2 בלי שארית.');
+    n=nn;
+  }
+  v.byte=v.bits.padStart(8,'0');
+  go(7,'zfill(8) מוסיף אפסים משמאל עד שיש 8 ספרות: "'+v.byte+'". זה בייט שלם.');
+  out+=v.byte+'\n'; go(8,'פלט: הבייט.');
+  out+=number+'\n'; go(9,'int(byte, 2) קורא את הבייט כמספר בינארי, וחוזרים ל-'+number+'.');
+  const b='0b'+number.toString(2); out+=b+'\n'; go(10,'bin עושה את כל העבודה בפקודה אחת: '+b+'. ה-0b רק מסמן שזה בינארי.');
+  const on=[128,64,32,16,8,4,2,1].filter(x=>number&x);
+  const explain='<div><b>'+number+'</b> בבינארי: <span class="eq">'+v.byte+'</span></div>'
+    +(on.length?'<div>הביטים הדולקים שווים <span class="eq">'+on.join(' + ')+' = '+number+'</span>.</div>':'<div>כל הביטים כבויים, וזה 0.</div>')
+    +'<div>'+on.length+' ביטים דולקים מתוך 8. הלולאה רצה '+round+' פעמים.</div>';
+  return {code, steps, explain};
+};
+LAB.examples=[{code:['price = int(input())','count = int(input())','total = price * count','print("Total:", total)','print("In binary:", bin(total))'].join('\n'), input:['12','3'],
+  steps:[{line:0,vars:{},out:'',note:'הקלט מחכה: 12 ואחריו 3. לחצו "שורה הבאה".'},
+    {line:1,vars:{price:12},out:'',note:'קלט: input() קורא את השורה הראשונה, "12". int הופך אותה למספר, והוא נשמר בזיכרון במשתנה price.'},
+    {line:2,vars:{price:12,count:3},out:'',note:'קלט: עוד שורה, "3". עכשיו count = 3.'},
+    {line:3,vars:{price:12,count:3,total:36},out:'',note:'עיבוד: המעבד מכפיל 12 כפול 3 ושומר 36 ב-total. שום דבר עוד לא מודפס.'},
+    {line:4,vars:{price:12,count:3,total:36},out:'Total: 36\n',note:'פלט: print מדפיס את הטקסט ואת הסכום, עם רווח ביניהם.'},
+    {line:5,vars:{price:12,count:3,total:36},out:'Total: 36\nIn binary: 0b100100\n',note:'פלט: אותו 36, כמו שהמחשב שומר אותו בפנים: 100100. כלומר 32 ועוד 4.'}]}];
+/*/LAB*/
+const L8=[128,64,32,16,8,4,2,1];
+$('bits').innerHTML=L8.map(x=>'<button type="button" data-v="'+x+'" aria-pressed="false"><span>0</span><small>'+x+'</small></button>').join('');
+const syncBits=p=>$('bits').querySelectorAll('button').forEach(b=>{ const on=!!(p.num&+b.dataset.v); b.setAttribute('aria-pressed',String(on)); b.firstChild.textContent=on?'1':'0'; b.setAttribute('aria-label','ביט '+b.dataset.v+': '+(on?'דולק':'כבוי')); });
+const L=lab({after:syncBits});
+$('bits').querySelectorAll('button').forEach(b=>b.onclick=()=>{ $('num').value=(+$('num').value)^(+b.dataset.v); L.draw(); });
+PT.mount($('exPT'),LAB.examples[0]);
+
+/* practice */
+const binOf=n=>n.toString(2);
+function qB2D(){
+  const n=ri(5,63), s=binOf(n), rev=parseInt(s.split('').reverse().join(''),2), ones=s.split('').filter(c=>c==='1').length;
+  return {ask:'מה התוכנית מדפיסה?', code:'print(int("'+s+'", 2))', type:'num', ans:n,
+    diag:(r,v)=>v===parseInt(s,10)?'זה אותו רצף כמספר עשרוני. ה-2 אומר לפייתון שהספרות הן בינארי.':v===rev&&rev!==n?'קראתם מהצד הלא נכון. הביט הימני שווה 1, וכל ביט משמאלו שווה פי 2.':v===ones?'ספרתם כמה אחדות יש. כל 1 שווה ערך אחר, לפי המקום שלו.':null,
+    hints:['כתבו מעל כל ספרה את הערך שלה, מימין: 1, 2, 4, 8, 16, 32.','חברו רק את הערכים שמעליהם כתוב 1.'],
+    sol:s.split('').map((c,i)=>c==='1'?2**(s.length-1-i):0).filter(x=>x).join(' + ')+' = '+n+'.', ok:C(s)+' בבינארי הוא '+n+'.'};
+}
+function qBin(){
+  const n=ri(2,40), b='0b'+binOf(n);
+  return {ask:'מה התוכנית מדפיסה? כתבו בדיוק את מה שיופיע.', code:'print(bin('+n+'))', type:'text', ans:b,
+    diag:r=>squash(r)===binOf(n)?'כמעט! bin מוסיף '+C('0b')+' בהתחלה, כדי לסמן שזה בינארי.':squash(r)==='0b'+binOf(n).split('').reverse().join('')||squash(r)===binOf(n).split('').reverse().join('')?'הסדר הפוך. הביט של 1 נמצא בצד ימין.':null,
+    hints:['פרקו את '+n+' לחזקות של 2: 32, 16, 8, 4, 2, 1. התחילו מהגדולה שנכנסת.','בבינארי כותבים 1 לכל חזקה שהשתמשתם בה ו-0 לכל השאר. אל תשכחו את 0b בהתחלה.'],
+    sol:n+' = '+[32,16,8,4,2,1].filter(x=>n&x).join(' + ')+', לכן '+C(b)+'.', ok:'bin מחזיר מחרוזת שמתחילה ב-0b.'};
+}
+function qByte(){
+  const n=ri(3,60), s=binOf(n), byte=s.padStart(8,'0');
+  return {ask:'מה השורה הראשונה שהתוכנית מדפיסה?', code:['number = '+n,'n = number','bits = ""','while n > 0:','    bits = str(n % 2) + bits','    n = n // 2','print(bits.zfill(8))'].join('\n'), type:'text', ans:byte,
+    diag:r=>squash(r)===s?'אלה הביטים הנכונים, אבל חסרים אפסים. zfill(8) משלים ל-8 ספרות.':squash(r)==='0b'+s?'zfill לא מוסיף 0b. הוא רק מוסיף אפסים משמאל.':squash(r).length!==8?'zfill(8) מדפיס בדיוק 8 ספרות.':null,
+    hints:['הלולאה כותבת את '+n+' בבינארי. אפשר גם לפרק לחזקות של 2.',n+' בבינארי הוא '+s+'. עכשיו השלימו באפסים משמאל עד 8 ספרות.'],
+    sol:n+' בבינארי הוא '+s+'. עם zfill(8): '+C(byte)+'.', ok:'8 ספרות, בדיוק בייט.'};
+}
+const PARTS={in:'קלט',proc:'עיבוד',out:'פלט',mem:'זיכרון'};
+const ITEMS=[['מקלדת','in'],['מיקרופון','in'],['מצלמה של הטלפון','in'],['מסך','out'],['רמקול','out'],['מדפסת','out'],['המעבד מחשב את הניקוד במשחק','proc'],['המחשב משווה שני מספרים ובוחר את הגדול','proc'],['שמירה של המשחק כדי להמשיך מחר','mem'],['המחשב זוכר את התוכנית שפתוחה עכשיו','mem'],[C('input()'),'in'],[C('print("Hi")'),'out'],[C('total = price * count'),'proc']];
+const WHY={in:'קלט הוא מה שנכנס למחשב מבחוץ.',out:'פלט הוא מה שהמחשב מוציא החוצה, שאפשר לראות או לשמוע.',proc:'עיבוד הוא חישוב, השוואה או החלטה.',mem:'זיכרון הוא המקום שבו המחשב שומר נתונים.'};
+function qPart(){
+  const [t,k]=pick(ITEMS);
+  return {ask:'מה זה: קלט, עיבוד, פלט או זיכרון?<br><b>'+t+'</b>', type:'mc',
+    opts:Object.keys(PARTS).map(x=>({t:PARTS[x],ok:x===k,why:'לא בדיוק. '+WHY[x]})),
+    hints:['שאלו: זה נכנס למחשב, יוצא ממנו, מחושב בתוכו, או נשמר בו?',WHY[k]], sol:PARTS[k]+'. '+WHY[k], ok:WHY[k]};
+}
+function qCount(){
+  const k=ri(2,8), a=2**k;
+  return {ask:'כמה מספרים שונים אפשר לכתוב עם '+k+' ביטים?', type:'num', ans:a,
+    diag:(r,v)=>v===2*k?'כל ביט חדש מכפיל את מספר האפשרויות, הוא לא רק מוסיף 2.':v===a-1?'זה המספר הגדול ביותר. אבל גם 0 הוא אפשרות, אז יש עוד אחת.':v===k?'זה מספר הביטים. כמה צירופים של 0 ו-1 יש?':null,
+    hints:['עם ביט אחד: 0 או 1, שתי אפשרויות. עם שני ביטים: 00, 01, 10, 11.','כל ביט מכפיל ב-2. כמה זה 2 כפול עצמו '+k+' פעמים?'],
+    sol:'2 בחזקת '+k+' = '+a+'. מ-0 ועד '+(a-1)+'.', ok:'עם '+k+' ביטים: מ-0 עד '+(a-1)+'.'};
+}
+practice(()=>pick([qB2D,qB2D,qBin,qByte,qPart,qPart,qCount])());
+
+})();
+</script>
+</body>
+</html>

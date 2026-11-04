@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פונקציות בפייתון: def ו-return · מדעי המחשב כיתה ח · מירי</title>
+<meta name="description" content="פונקציות בפייתון: def, פרמטרים, return מול print ומשתנים מקומיים. רואים צעד אחרי צעד איך התוכנית קופצת לפונקציה וחוזרת. מעבדה ותרגול לכיתה ח.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/functions/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פונקציות בפייתון: def ו-return · מדעי המחשב כיתה ח · מירי">
+<meta property="og:description" content="פונקציות בפייתון: def, פרמטרים, return מול print ומשתנים מקומיים. רואים צעד אחרי צעד איך התוכנית קופצת לפונקציה וחוזרת. מעבדה ותרגול לכיתה ח.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/functions/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/cs/grade-8/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-8/#cs-python-8"},{"@type":"ListItem","position":5,"name":"פונקציות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/functions/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין return ל-print בפונקציה?","acceptedAnswer":{"@type":"Answer","text":"print מציג ערך על המסך, וזהו. return מחזיר את הערך לשורה שקראה לפונקציה, ושם אפשר לשמור אותו במשתנה, לחבר אותו או לשלוח אותו לפונקציה אחרת. פונקציה בלי return מחזירה None. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין פרמטר לארגומנט?","acceptedAnswer":{"@type":"Answer","text":"פרמטר הוא השם שבתוך ה-def, למשל width. ארגומנט הוא הערך ששולחים בקריאה, למשל 4. בכל קריאה הפרמטר מקבל את הארגומנט שנשלח באותו מקום בסדר."}},{"@type":"Question","name":"למה כדאי לכתוב פונקציות?","acceptedAnswer":{"@type":"Answer","text":"כדי לא לכתוב את אותו קוד שוב ושוב. אם יש טעות, מתקנים במקום אחד. ושם טוב לפונקציה, כמו area או ticket, עוזר להבין מה התוכנית עושה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"פונקציות בפייתון","description":"פונקציות בפייתון: def, פרמטרים, return מול print ומשתנים מקומיים. רואים צעד אחרי צעד איך התוכנית קופצת לפונקציה וחוזרת. מעבדה ותרגול לכיתה ח.","url":"https://shohamtal.github.io/homework-site/cs/functions/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"פונקציות בפייתון","teaches":"פונקציות בפייתון","keywords":"def, פרמטר, return","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:10px auto 0; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace tr.now td{background:var(--hl); font-weight:800}
+.trace tr.later td{color:var(--muted); opacity:.55}
+.num{font-family:var(--f-math); font-size:1.1rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem var(--f-math); width:7em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.pair{display:grid; grid-template-columns:minmax(0,1fr); gap:6px}
+.pair pre.code{margin:0; font-size:.88rem}
+.pair .tag{font-weight:800; font-size:.9rem; margin-bottom:2px}
+.pair .bad{color:var(--err)} .pair .good{color:var(--ok)}
+.q-code{max-width:460px; margin:0 auto 10px}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="functions">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-8/#cs-python-8">תכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">פונקציות בפייתון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · תכנות בפייתון</div>
+  <h1>פונקציות בפייתון <span class="slogan">כותבים פעם אחת, משתמשים הרבה</span></h1>
+  <p class="lead">פונקציה היא קוד שקיבל שם. מגדירים אותה פעם אחת עם <code dir="ltr" lang="en">def</code>, ואז קוראים לה כמה פעמים שרוצים, כל פעם עם ערכים אחרים. כאן רואים בדיוק לאן התוכנית קופצת כשקוראים לפונקציה, ומה <code dir="ltr" lang="en">return</code> מחזיר. כדאי להכיר קודם את <a href="../loops/">הלולאות בפייתון</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">פונקציה היא כמו מכונה: מכניסים לה ערכים, היא עובדת, ומוציאה תוצאה.</p>
+  <pre class="code" dir="ltr" lang="en">def area(width, height):
+    result = width * height
+    return result
+
+print(area(4, 3))</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>def ופרמטרים</h3>
+      <p><code dir="ltr" lang="en">def</code> מגדיר פונקציה. בסוגריים יש <strong>פרמטרים</strong>: שמות לערכים שהפונקציה מקבלת. הגוף מוזז פנימה, ולא רץ עד שקוראים לפונקציה.</p>
+    </div>
+    <div class="mini">
+      <h3>קריאה לפונקציה</h3>
+      <p><code dir="ltr" lang="en">area(4, 3)</code> קורא לפונקציה. 4 נכנס ל-width ו-3 נכנס ל-height, לפי הסדר. אפשר לקרוא שוב עם ערכים אחרים.</p>
+    </div>
+    <div class="mini">
+      <h3>return מחזיר</h3>
+      <p><code dir="ltr" lang="en">return</code> מסיים את הפונקציה ושולח ערך בחזרה לשורה שקראה לה. אפשר לשמור אותו במשתנה ולהמשיך לחשב איתו.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> <code dir="ltr" lang="en">print</code> רק מראה על המסך. <code dir="ltr" lang="en">return</code> מחזיר ערך שאפשר להשתמש בו. פונקציה בלי return מחזירה <code dir="ltr" lang="en">None</code>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: קופצים לתוך הפונקציה וחוזרים</h2></div>
+  <p class="text">הזיזו את המחוונים כדי לשנות את הערכים שנשלחים לפונקציה. לחצו "שורה הבאה" וראו את הקפיצה: משורת הקריאה אל הגוף, ובחזרה עם התוצאה. משתנים מקומיים מסומנים בשם הפונקציה בסוגריים.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sW"><span>הרוחב של החדר</span><span class="eq" id="sWv"></span></label>
+      <input type="range" id="sW" min="1" max="9" step="1" value="4">
+      <label class="slider" for="sH"><span>האורך של החדר</span><span class="eq" id="sHv"></span></label>
+      <input type="range" class="hl" id="sH" min="0" max="9" step="1" value="3">
+      <label class="slider" for="sR"><span>סוף הפונקציה: return או print</span><span id="sRv"></span></label>
+      <input type="range" class="blue" id="sR" min="0" max="1" step="1" value="0">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="4,3,0">חדר 4 על 3</button>
+          <button type="button" data-p="9,9,0">חדר ריבועי</button>
+          <button type="button" data-p="5,0,0">אורך 0</button>
+          <button type="button" data-p="4,3,1">print במקום return</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3 style="margin-top:18px">הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>print במקום return</h3>
+      <p>הפונקציה מדפיסה, אבל מחזירה None. אי אפשר לחשב עם התוצאה.</p>
+      <div class="pair"><div><p class="tag bad">✗ מחזיר None</p><pre class="code" dir="ltr" lang="en">def double(n):
+    print(n * 2)</pre></div><div><p class="tag good">✓ מחזיר ערך</p><pre class="code" dir="ltr" lang="en">def double(n):
+    return n * 2</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>הגדרה בלי קריאה</h3>
+      <p>def רק מגדיר. בלי קריאה עם סוגריים, הגוף לא רץ אף פעם.</p>
+      <div class="pair"><div><p class="tag bad">✗ לא קורה כלום</p><pre class="code" dir="ltr" lang="en">def hello():
+    print("Hi")</pre></div><div><p class="tag good">✓ קוראים לה</p><pre class="code" dir="ltr" lang="en">def hello():
+    print("Hi")
+
+hello()</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>קוראים לפני שמגדירים</h3>
+      <p>פייתון קוראת מלמעלה למטה. קריאה לפני ה-def נותנת <code dir="ltr" lang="en">NameError</code>.</p>
+      <div class="pair"><div><p class="tag bad">✗ NameError</p><pre class="code" dir="ltr" lang="en">print(square(5))
+def square(n):
+    return n * n</pre></div><div><p class="tag good">✓ קודם def</p><pre class="code" dir="ltr" lang="en">def square(n):
+    return n * n
+print(square(5))</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>משתנה מקומי בחוץ</h3>
+      <p>משתנה שנוצר בתוך פונקציה נמחק כשהיא נגמרת. בחוץ משתמשים במה שהיא מחזירה.</p>
+      <div class="pair"><div><p class="tag bad">✗ NameError</p><pre class="code" dir="ltr" lang="en">def total(a, b):
+    s = a + b
+    return s
+total(2, 3)
+print(s)</pre></div><div><p class="tag good">✓ שומרים את ההחזרה</p><pre class="code" dir="ltr" lang="en">def total(a, b):
+    s = a + b
+    return s
+answer = total(2, 3)
+print(answer)</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: מחיר כרטיס</h2></div>
+  <p class="text">בקולנוע כרטיס לילד עד גיל 12 עולה 20, ולכל השאר 35. הפונקציה <code dir="ltr" lang="en">ticket</code> מחזירה את המחיר לפי הגיל. שימו לב: return מסיים את הפונקציה מיד, ולכן השורה שאחריו לא רצה.</p>
+  <div class="stepper"><div id="exPT"></div></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code q-code" id="prQ" dir="ltr" lang="en"></pre>
+  <div class="ctrl">
+    <div class="ansrow"><input id="prN" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין return ל-print בפונקציה?</h3>
+    <p>print מציג ערך על המסך, וזהו. return מחזיר את הערך לשורה שקראה לפונקציה, ושם אפשר לשמור אותו במשתנה, לחבר אותו או לשלוח אותו לפונקציה אחרת. פונקציה בלי return מחזירה None. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין פרמטר לארגומנט?</h3>
+    <p>פרמטר הוא השם שבתוך ה-def, למשל width. ארגומנט הוא הערך ששולחים בקריאה, למשל 4. בכל קריאה הפרמטר מקבל את הארגומנט שנשלח באותו מקום בסדר.</p>
+    <h3>למה כדאי לכתוב פונקציות?</h3>
+    <p>כדי לא לכתוב את אותו קוד שוב ושוב. אם יש טעות, מתקנים במקום אחד. ושם טוב לפונקציה, כמו area או ticket, עוזר להבין מה התוכנית עושה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/loops/">לולאות בפייתון: for ו-while</a></p>
+<p class="related text"><strong>בכיתה ט ממשיכים ל:</strong> <a href="../../cs/plan-a-program/">מתכננים תוכנית: פרויקט קטן</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/loops/"><small>→ הנושא הקודם</small>לולאות בפייתון: for ו-while</a><a class="next" href="../../cs/lists/"><small>הנושא הבא ←</small>רשימות בפייתון</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const C=s=>`<code dir="ltr" lang="en">${s}</code>`;
+/*GEN*/
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+function buildLab(W,H,P){
+  const code=`def area(width, height):\n    result = width * height\n    ${P?'print(result)':'return result'}\n\nroom = area(${W}, ${H})\nprint("room:", room)\nhall = area(2, ${W})\nprint("hall:", hall)\nprint("total:", room + hall)`;
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה". שימו לב לאן התוכנית קופצת.'}]; let g={}, loc={}, out='';
+  const push=(line,note)=>{ const v={...g}; Object.keys(loc).forEach(k=>v[k+' (area)']=loc[k]); steps.push({line,vars:v,out,note}); };
+  push(1,'def מגדיר פונקציה בשם area. הגוף שלה עוד לא רץ. פייתון רק זוכרת אותה ומדלגת עליה.');
+  function call(line,name,w,h){
+    push(line,`קוראים ל-area עם ${w} ו-${h}. התוכנית קופצת לשורה 1, לתוך הפונקציה.`);
+    loc={width:w,height:h}; push(1,`בתוך הפונקציה: width מקבל ${w} ו-height מקבל ${h}. אלה משתנים מקומיים.`);
+    loc.result=w*h; push(2,`result = ${w} * ${h} = ${loc.result}.`);
+    let ret;
+    if(P){ out+=loc.result+'\n'; ret=null; push(3,`print מציג ${loc.result} על המסך. אבל אין return, ולכן הפונקציה נגמרת ומחזירה None.`); }
+    else{ ret=loc.result; push(3,`return מחזיר ${ret} לשורה ${line}, השורה שקראה לפונקציה. הפונקציה נגמרת.`); }
+    loc={}; g[name]=ret; push(line,`חזרנו לשורה ${line}. ${name} מקבל ${ret===null?'None':ret}. המשתנים המקומיים width, height ו-result נמחקו.`);
+    out+=`${name}: ${ret===null?'None':ret}\n`; push(line+1,`מדפיסים את ${name}.`);
+  }
+  call(5,'room',W,H);
+  call(7,'hall',2,W);
+  if(P){
+    out+=`Traceback (most recent call last):\n  File "main.py", line 9, in <module>\n    print("total:", room + hall)\nTypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'\n`;
+    push(9,'שגיאה! room ו-hall הם None, ואי אפשר לחבר None ועוד None. התוכנית נעצרת כאן. התיקון: return במקום print.');
+  } else { out+=`total: ${g.room+g.hall}\n`; push(9,`room ו-hall הם מספרים, אז אפשר לחבר: ${g.room} + ${g.hall} = ${g.room+g.hall}. בשביל זה צריך return.`); }
+  return {code,steps,noVars:!!P};
+}
+const PRESETS=[[4,3,0],[9,9,0],[5,0,0],[4,3,1]];
+function buildEx(){
+  const code='def ticket(age):\n    if age < 12:\n        return 20\n    return 35\n\nkid = ticket(8)\nadult = ticket(40)\nprint("family:", kid * 2 + adult * 2)';
+  const steps=[{line:0,vars:{},out:'',note:'משפחה עם שני ילדים ושני מבוגרים. כמה הם משלמים? לחצו "שורה הבאה".'}]; const g={}; let out='';
+  const push=(line,note,loc)=>{ const v={...g}; if(loc) Object.keys(loc).forEach(k=>v[k+' (ticket)']=loc[k]); steps.push({line,vars:v,out,note}); };
+  push(1,'מגדירים את ticket. עוד לא רץ כלום בתוכה.');
+  push(6,'קוראים ל-ticket עם 8. קופצים לתוך הפונקציה.');
+  push(1,'age מקבל 8.',{age:8});
+  push(2,'בודקים: האם 8 קטן מ-12? כן.',{age:8});
+  push(3,'return 20: הפונקציה נגמרת כאן ומחזירה 20. שורה 4 לא רצה בכלל.',{age:8});
+  g.kid=20; push(6,'חזרנו. kid מקבל 20.');
+  push(7,'קוראים שוב לאותה פונקציה, הפעם עם 40.');
+  push(1,'age מקבל 40. זה age חדש, של הקריאה הזו.',{age:40});
+  push(2,'בודקים: האם 40 קטן מ-12? לא. מדלגים על שורה 3.',{age:40});
+  push(4,'return 35: מחזירים 35.',{age:40});
+  g.adult=35; push(7,'חזרנו. adult מקבל 35.');
+  out='family: 110\n'; push(8,'2 כפול 20 ועוד 2 כפול 35: 40 + 70 = 110. אותה פונקציה, שתי קריאות, שתי תשובות.');
+  return {code,steps};
+}
+function LABCASES(){
+  const cs=PRESETS.map(p=>Object.assign(buildLab(...p),{name:p.join(',')}));
+  for(let k=0;k<20;k++){ const p=[ri(1,9),ri(0,9),ri(0,1)]; cs.push(Object.assign(buildLab(...p),{name:p.join(',')})); }
+  cs.push(Object.assign(buildEx(),{name:'example'}));
+  return cs;
+}
+function genQ(){
+  const kind=pick(['calc','twice','printret','notcalled','params','local']);
+  if(kind==='calc'){
+    const k=ri(2,5), c=ri(1,9), a=ri(2,9), ans=a*k+c;
+    return {kind,vk:'last',ans,code:`def points(n):\n    return n * ${k} + ${c}\n\nprint(points(${a}))`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a*k,`שכחתם להוסיף ${c}.`],[a*(k+c),'כפל קודם לחיבור, כמו במתמטיקה.'],[a,'n מקבל '+a+', אבל מודפס מה שהפונקציה מחזירה, לא n.']].filter(d=>d[0]!==ans),
+      hints:[`בקריאה points(${a}), הפרמטר n מקבל ${a}.`,`חשבו ${a} * ${k} + ${c}.`],sol:`n מקבל ${a}. הפונקציה מחזירה ${a} * ${k} + ${c} = ${ans}, ו-print מדפיס ${ans}.`};
+  }
+  if(kind==='twice'){
+    const a=ri(2,9), ans=a*4;
+    return {kind,vk:'last',ans,code:`def double(n):\n    return n * 2\n\nx = double(${a})\nprint(double(x))`,ask:'מה התוכנית מדפיסה?',
+      diag:[[a*2,`זה x. אבל מדפיסים double(x), כלומר מכפילים שוב.`],[a,'הפונקציה נקראת פעמיים, וכל פעם מכפילה.']],
+      hints:['כמה פעמים קוראים ל-double? מה x אחרי הקריאה הראשונה?',`x הוא ${a*2}. עכשיו double(${a*2}).`],sol:`double(${a}) מחזיר ${a*2}, ולכן x הוא ${a*2}. double(${a*2}) מחזיר ${ans}.`};
+  }
+  if(kind==='printret'){
+    const a=ri(2,9);
+    return {kind,vk:'last',ans:'None',code:`def show(n):\n    print(n + 1)\n\nr = show(${a})\nprint(r)`,ask:'מה השורה האחרונה שהתוכנית מדפיסה? (כתבו בדיוק כמו בפייתון)',
+      diag:[[a+1,`${a+1} מודפס בתוך הפונקציה, בשורה הראשונה. אבל מה r? אין return.`],['none','כמעט! בפייתון כותבים None עם N גדולה.'],[a,'מה הפונקציה מחזירה? חפשו return.']],
+      hints:['יש בפונקציה return?','פונקציה בלי return מחזירה ערך מיוחד. איך קוראים לו?'],sol:`show(${a}) מדפיסה ${a+1}, אבל אין לה return, ולכן היא מחזירה None. r הוא None, והשורה האחרונה היא None.`};
+  }
+  if(kind==='notcalled'){
+    const n=ri(2,3);
+    return {kind,vk:'lines',ans:1,code:`def cheer():\n${'    print("Go team!")\n'.repeat(n)}\nprint("Bye")`,ask:'כמה שורות התוכנית מדפיסה?',
+      diag:[[n+1,'הפונקציה cheer מוגדרת, אבל מישהו קורא לה?'],[n,'הפונקציה לא רצה, כי אף אחד לא קרא לה.']],
+      hints:['חפשו בקוד את המילה cheer עם סוגריים, מחוץ ל-def.','def רק מגדיר. רק השורות שלא מוזזות רצות כאן.'],sol:'def רק מגדיר את cheer, ואף שורה לא קוראת לה. רק print("Bye") רץ, ולכן מודפסת שורה אחת.'};
+  }
+  if(kind==='params'){
+    let x=ri(2,9), y=ri(1,9); if(x===y) y=x+1; const ans=x*2+y;
+    return {kind,vk:'last',ans,code:`def score(stars, bonus):\n    return stars * 2 + bonus\n\nprint(score(${x}, ${y}))`,ask:'מה התוכנית מדפיסה?',
+      diag:[[y*2+x,`החלפתם את הסדר. הערך הראשון, ${x}, נכנס לפרמטר הראשון, stars.`],[x+y,'שכחתם את הכפל ב-2.']],
+      hints:['הערכים נכנסים לפרמטרים לפי הסדר.',`stars הוא ${x} ו-bonus הוא ${y}.`],sol:`stars = ${x}, bonus = ${y}. מחזירים ${x} * 2 + ${y} = ${ans}.`};
+  }
+  const A=ri(1,5), B=ri(6,9);
+  return {kind,vk:'last',ans:A,code:`x = ${A}\n\ndef change():\n    x = ${B}\n    return x\n\ny = change()\nprint(x)`,ask:'מה התוכנית מדפיסה?',
+    diag:[[B,'ה-x שבתוך הפונקציה הוא משתנה מקומי חדש. הוא לא משנה את ה-x שבחוץ.']],
+    hints:['יש כאן שני משתנים בשם x: אחד בחוץ ואחד בתוך הפונקציה.',`y מקבל ${B}. אבל מדפיסים את x שבחוץ.`],sol:`בתוך change נוצר x מקומי עם ${B}, והוא נמחק בסוף. y מקבל ${B}. ה-x שבחוץ לא השתנה, ולכן מודפס ${A}.`};
+}
+/*END*/
+
+/* lab */
+const sW=$('sW'), sH=$('sH'), sR=$('sR');
+function lab(){
+  const W=+sW.value, H=+sH.value, P=+sR.value;
+  $('sWv').textContent=W; $('sHv').textContent=H; $('sRv').innerHTML=C(P?'print':'return');
+  const cur=buildLab(W,H,P);
+  PT.mount($('labPT'),{code:cur.code,steps:cur.steps});
+  $('labRun').value=cur.code;
+  $('labTxt').innerHTML=P
+    ?`<div>הפונקציה מדפיסה ${W*H} ו-${2*W}, אבל לא מחזירה כלום. לכן room ו-hall הם None.</div><div>בשורה 9 מנסים לחבר None ועוד None, ומקבלים ${C('TypeError')}. החזירו את המחוון ל-return.</div>`
+    :`<div>${C(`area(${W}, ${H})`)} מחזירה ${W*H}, ו-${C(`area(2, ${W})`)} מחזירה ${2*W}.</div><div>אותה פונקציה, שתי קריאות, שתי תשובות. בסוף total = ${W*H+2*W}.</div>${H===0?'<div>אורך 0: כל מספר כפול 0 הוא 0, ולכן room הוא 0.</div>':''}`;
+}
+[sW,sH,sR].forEach(x=>x.addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const p=b.dataset.p.split(','); sW.value=p[0]; sH.value=p[1]; sR.value=p[2]; lab(); });
+lab();
+
+/* worked example */
+const ex=buildEx(); PT.mount($('exPT'),{code:ex.code,steps:ex.steps});
+
+/* practice */
+let q=null, streak=0, solved=0;
+const norm=s=>String(s).replace(/\s+/g,'');
+function newQ(){ q=genQ(); q.tries=0; q.h=0; $('prAsk').textContent=q.ask; $('prQ').textContent=q.code; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true; }
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+$('prCheck').onclick=()=>{
+  const v=norm($('prN').value), fb=$('prFb');
+  if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; }
+  if(v===norm(q.ans)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! התשובה היא ${q.ans}.</div>`; return; }
+  const d=q.diag.find(x=>norm(x[0])===v);
+  streak=0; q.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${d?d[1]:'עוד לא. עקבו אחרי הקוד סיבוב אחרי סיבוב ונסו שוב.'}</div>`;
+  if(q.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ q.h=Math.min(q.h+1,q.hints.length); $('prFb').innerHTML=`<div class="fb hint">${q.hints.slice(0,q.h).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${q.sol}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newQ;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newQ(); streakTxt();
+})();
+</script>
+</body>
+</html>

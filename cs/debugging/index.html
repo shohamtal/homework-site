@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>שגיאות בפייתון: מוצאים באגים · מדעי המחשב כיתה ח · מירי</title>
+<meta name="description" content="איך קוראים הודעת שגיאה בפייתון: SyntaxError, NameError, TypeError, IndexError ועוד. מוצאים באגים לוגיים עם מעקב ו-print. מעבדה ותרגול לכיתה ח.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/debugging/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="שגיאות בפייתון: מוצאים באגים · מדעי המחשב כיתה ח · מירי">
+<meta property="og:description" content="איך קוראים הודעת שגיאה בפייתון: SyntaxError, NameError, TypeError, IndexError ועוד. מוצאים באגים לוגיים עם מעקב ו-print. מעבדה ותרגול לכיתה ח.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/debugging/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/cs/grade-8/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-8/#cs-python-8"},{"@type":"ListItem","position":5,"name":"מוצאים באגים בפייתון","item":"https://shohamtal.github.io/homework-site/cs/debugging/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך קוראים הודעת שגיאה בפייתון?","acceptedAnswer":{"@type":"Answer","text":"מלמטה למעלה. בשורה האחרונה יש את סוג השגיאה, למשל NameError, ואחריו הסבר קצר. מעליה כתוב line ומספר: זו השורה שבה פייתון נעצרה, ומתחת מופיעה השורה עצמה. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין שגיאה לבין באג לוגי?","acceptedAnswer":{"@type":"Answer","text":"שגיאה עוצרת את התוכנית ופייתון מודיעה עליה. באג לוגי שקט: התוכנית רצה עד הסוף אבל התוצאה לא נכונה. כדי למצוא אותו בודקים בעזרת דוגמה שיודעים את התשובה שלה, ועוקבים אחרי המשתנים."}},{"@type":"Question","name":"מה עושים כשלא מוצאים את הבאג?","acceptedAnswer":{"@type":"Answer","text":"מוסיפים print באמצע הקוד כדי לראות את ערכי המשתנים, ממלאים טבלת מעקב, ומקצרים את הבעיה: מוחקים זמנית חלקים עד שמוצאים את השורה האשמה. לפעמים עוזר להסביר את הקוד בקול, שורה אחרי שורה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מוצאים באגים בפייתון","description":"איך קוראים הודעת שגיאה בפייתון: SyntaxError, NameError, TypeError, IndexError ועוד. מוצאים באגים לוגיים עם מעקב ו-print. מעבדה ותרגול לכיתה ח.","url":"https://shohamtal.github.io/homework-site/cs/debugging/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"מוצאים באגים בפייתון","teaches":"מוצאים באגים בפייתון","keywords":"שגיאה, מעקב, באג","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:10px auto 0; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace tr.now td{background:var(--hl); font-weight:800}
+.trace tr.later td{color:var(--muted); opacity:.55}
+.num{font-family:var(--f-math); font-size:1.1rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem var(--f-math); width:7em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.pair{display:grid; grid-template-columns:minmax(0,1fr); gap:6px}
+.pair pre.code{margin:0; font-size:.88rem}
+.pair .tag{font-weight:800; font-size:.9rem; margin-bottom:2px}
+.pair .bad{color:var(--err)} .pair .good{color:var(--ok)}
+.q-code{max-width:460px; margin:0 auto 10px}
+</style>
+<style>
+.lnpick{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; direction:ltr}
+.lnpick button{min-width:46px; min-height:46px; font:700 1.05rem ui-monospace, Menlo, Consolas, monospace}
+.errname{font-family:ui-monospace, Menlo, Consolas, monospace; direction:ltr; unicode-bidi:isolate}
+.etable{border-collapse:collapse; width:100%; font-size:.95rem}
+.etable td,.etable th{border-bottom:1.5px solid var(--soft); padding:6px 4px; text-align:right; vertical-align:top}
+.etable th{color:var(--muted)}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="debugging">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-8/#cs-python-8">תכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מוצאים באגים בפייתון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · תכנות בפייתון</div>
+  <h1>מוצאים באגים בפייתון <span class="slogan">קוראים את השגיאה ועוקבים</span></h1>
+  <p class="lead">כל מתכנת כותב באגים. מה שמבדיל מתכנת טוב הוא שהוא יודע למצוא אותם מהר. כאן לומדים לקרוא הודעת שגיאה של פייתון, להבדיל בין שגיאה שעוצרת את התוכנית לבין באג שקט, ולמצוא את השורה האשמה בעזרת מעקב והדפסות. את הרעיון בלי קוד פגשתם ב<a href="../find-the-bug/">מצאו את הבאג</a>. כדאי להכיר את <a href="../loops/">הלולאות</a> ואת <a href="../lists/">הרשימות</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">הודעת שגיאה נראית מפחידה, אבל היא עוזרת. קוראים אותה <strong>מלמטה</strong>: בשורה האחרונה כתוב סוג השגיאה ומה קרה, ומעליה מספר השורה בקוד.</p>
+  <pre class="code" dir="ltr" lang="en">Traceback (most recent call last):
+  File "main.py", line 3, in &lt;module&gt;
+    print(score + bonsu)
+NameError: name 'bonsu' is not defined. Did you mean: 'bonus'?</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>שגיאת תחביר</h3>
+      <p>הקוד לא כתוב לפי הכללים: חסרות נקודתיים, סוגר, או הזחה. פייתון בודקת את כל הקובץ לפני שהיא מתחילה, ולכן <strong>אף שורה לא רצה</strong>.</p>
+    </div>
+    <div class="mini">
+      <h3>שגיאת ריצה</h3>
+      <p>הקוד כתוב נכון, אבל משהו נכשל בזמן הריצה: שם שלא קיים, חילוק ב-0, אינדקס מחוץ לרשימה. השורות שלפני השגיאה כבר רצו.</p>
+    </div>
+    <div class="mini">
+      <h3>באג לוגי</h3>
+      <p>אין שום הודעה. התוכנית רצה עד הסוף, אבל התשובה לא נכונה. מוצאים אותו בעזרת טבלת מעקב או <code dir="ltr" lang="en">print</code> באמצע הקוד.</p>
+    </div>
+  </div>
+  <table class="etable" aria-label="שגיאות נפוצות">
+    <tr><th>השגיאה</th><th>מה היא אומרת</th></tr>
+    <tr><td class="errname">SyntaxError</td><td>הקוד לא כתוב לפי הכללים. למשל חסרות נקודתיים.</td></tr>
+    <tr><td class="errname">IndentationError</td><td>הזחה לא נכונה. למשל גוף של לולאה שלא זז פנימה.</td></tr>
+    <tr><td class="errname">NameError</td><td>שם שפייתון לא מכירה. בדרך כלל שגיאת כתיב.</td></tr>
+    <tr><td class="errname">TypeError</td><td>פעולה על סוג לא מתאים. למשל טקסט ועוד מספר.</td></tr>
+    <tr><td class="errname">IndexError</td><td>אינדקס שאין ברשימה.</td></tr>
+    <tr><td class="errname">ZeroDivisionError</td><td>חילוק ב-0.</td></tr>
+  </table>
+  <div class="callout"><strong>לזכור:</strong> השורה שבהודעה היא המקום שבו פייתון נתקעה. לפעמים הבאג עצמו נמצא בשורה מוקדמת יותר.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: בלשי באגים</h2></div>
+  <p class="text">בחרו תוכנית עם המחוון או מ"נסו את אלה". הריצו אותה שורה אחרי שורה, קראו את הפלט ואת הודעת השגיאה, ואז בחרו את השורה שבה נמצא הבאג.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sP"><span>תוכנית מספר</span><span class="eq" id="sPv"></span></label>
+      <input type="range" id="sP" min="1" max="8" step="1" value="1">
+      <p id="sPname" style="font-weight:700; text-align:center"></p>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="1">חסרות נקודתיים</button>
+          <button type="button" data-p="2">שגיאת כתיב בשם</button>
+          <button type="button" data-p="5">יותר מדי סיבובים</button>
+          <button type="button" data-p="6">חילוק ב-0</button>
+          <button type="button" data-p="7">ממוצע שיצא גדול</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3 style="margin-top:14px">באיזו שורה הבאג?</h3>
+  <div class="lnpick" id="lnPick"></div>
+  <div id="lnFb" aria-live="polite"></div>
+  <h3 style="margin-top:18px">הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות. נסו לתקן את הבאג ולהריץ שוב.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>= במקום ==</h3>
+      <p>= שם ערך. == בודק אם שני ערכים שווים. בתוך if צריך ==.</p>
+      <div class="pair"><div><p class="tag bad">✗ SyntaxError</p><pre class="code" dir="ltr" lang="en">if lives = 0:
+    print("Game over")</pre></div><div><p class="tag good">✓ בדיקה</p><pre class="code" dir="ltr" lang="en">if lives == 0:
+    print("Game over")</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>טקסט ועוד מספר</h3>
+      <p>אי אפשר לחבר מחרוזת ומספר עם +. שימו פסיק ב-print, או המירו עם str.</p>
+      <div class="pair"><div><p class="tag bad">✗ TypeError</p><pre class="code" dir="ltr" lang="en">print("Score: " + 5)</pre></div><div><p class="tag good">✓ עובד</p><pre class="code" dir="ltr" lang="en">print("Score:", 5)
+print("Score: " + str(5))</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מתקנים את השורה הלא נכונה</h3>
+      <p>ב-IndexError השגיאה מופיעה איפה שניגשים לרשימה, אבל לרוב הבאג הוא ב-range שלפני.</p>
+      <div class="pair"><div><p class="tag bad">✗ range ארוך מדי</p><pre class="code" dir="ltr" lang="en">for i in range(4):
+    print(colors[i])</pre></div><div><p class="tag good">✓ לפי האורך</p><pre class="code" dir="ltr" lang="en">for i in range(len(colors)):
+    print(colors[i])</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>אותיות גדולות וקטנות</h3>
+      <p>בפייתון Score ו-score הם שני שמות שונים. גם Print עם P גדולה נותן NameError.</p>
+      <div class="pair"><div><p class="tag bad">✗ NameError</p><pre class="code" dir="ltr" lang="en">score = 3
+Print(Score)</pre></div><div><p class="tag good">✓ תקין</p><pre class="code" dir="ltr" lang="en">score = 3
+print(score)</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: מוצאים באג עם print</h2></div>
+  <p class="text">התוכנית אמורה לחבר את המספרים 1 עד 5, ולהדפיס 15. היא מדפיסה 10, בלי שום הודעת שגיאה. כדי לגלות למה, מוסיפים שורת <code dir="ltr" lang="en">print</code> בתוך הלולאה (שורה 4), שמראה מה קורה בכל סיבוב. עברו צעד אחרי צעד והסתכלו בפלט.</p>
+  <div class="stepper"><div id="exPT"></div></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code q-code" id="prQ" dir="ltr" lang="en"></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn"><input id="prN" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך קוראים הודעת שגיאה בפייתון?</h3>
+    <p>מלמטה למעלה. בשורה האחרונה יש את סוג השגיאה, למשל NameError, ואחריו הסבר קצר. מעליה כתוב line ומספר: זו השורה שבה פייתון נעצרה, ומתחת מופיעה השורה עצמה. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה ההבדל בין שגיאה לבין באג לוגי?</h3>
+    <p>שגיאה עוצרת את התוכנית ופייתון מודיעה עליה. באג לוגי שקט: התוכנית רצה עד הסוף אבל התוצאה לא נכונה. כדי למצוא אותו בודקים בעזרת דוגמה שיודעים את התשובה שלה, ועוקבים אחרי המשתנים.</p>
+    <h3>מה עושים כשלא מוצאים את הבאג?</h3>
+    <p>מוסיפים print באמצע הקוד כדי לראות את ערכי המשתנים, ממלאים טבלת מעקב, ומקצרים את הבעיה: מוחקים זמנית חלקים עד שמוצאים את השורה האשמה. לפעמים עוזר להסביר את הקוד בקול, שורה אחרי שורה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/find-the-bug/">מצאו את הבאג</a> · <a href="../../cs/loops/">לולאות בפייתון: for ו-while</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/lists/"><small>→ הנושא הקודם</small>רשימות בפייתון</a><a class="next" href="../../cs/strings/"><small>הנושא הבא ←</small>מחרוזות בפייתון</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const C=s=>`<code dir="ltr" lang="en">${s}</code>`;
+/*GEN*/
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const TB=(line,src,err)=>`Traceback (most recent call last):\n  File "main.py", line ${line}, in <module>\n    ${src}\n${err}\n`;
+const SYN=(line,src,err)=>`  File "main.py", line ${line}\n    ${src}\n${err}\n`;
+/* each program: name, kind, code, bug lines, error line, fix, steps as [line, vars, printed text, note] */
+const PROGS=[
+  {name:'חסרות נקודתיים', kind:'syntax', bug:[2], err:'SyntaxError',
+   code:'points = 7\nif points > 5\n    print("Great!")\nprint("Done")',
+   fix:'if points > 5:',
+   run:[[2,{},SYN(2,'if points > 5',"SyntaxError: expected ':'"),'פייתון בודקת את כל הקוד לפני שהיא מריצה אותו. בשורה 2 חסרות נקודתיים בסוף ה-if, ולכן אף שורה לא רצה. אפילו לא שורה 1.']]},
+  {name:'שגיאת כתיב בשם', kind:'run', bug:[3], err:'NameError',
+   code:'score = 10\nbonus = 5\nprint(score + bonsu)',
+   fix:'print(score + bonus)',
+   run:[[1,{score:10},'','score מקבל 10.'],[2,{score:10,bonus:5},'','bonus מקבל 5.'],
+        [3,{score:10,bonus:5},TB(3,'print(score + bonsu)',"NameError: name 'bonsu' is not defined. Did you mean: 'bonus'?"),'שגיאה! אין משתנה בשם bonsu. פייתון אפילו מציעה: אולי התכוונתם ל-bonus?']]},
+  {name:'טקסט ועוד מספר', kind:'run', bug:[2], err:'TypeError',
+   code:'age = 13\nprint("Next year: " + age + 1)',
+   fix:'print("Next year:", age + 1)',
+   run:[[1,{age:13},'','age מקבל 13.'],[2,{age:13},TB(2,'print("Next year: " + age + 1)','TypeError: can only concatenate str (not "int") to str'),'שגיאה! פייתון לא יודעת לחבר מחרוזת עם מספר. בהודעה כתוב: אפשר לחבר מחרוזת רק למחרוזת.']]},
+  {name:'גוף בלי הזחה', kind:'syntax', bug:[2], err:'IndentationError',
+   code:'for i in range(3):\nprint("Jump!")',
+   fix:'    print("Jump!")',
+   run:[[2,{},SYN(2,'print("Jump!")',"IndentationError: expected an indented block after 'for' statement on line 1"),'אחרי שורה שנגמרת בנקודתיים חייבת לבוא שורה מוזזת פנימה. גם זו שגיאה שפייתון מוצאת לפני הריצה, ולכן שום דבר לא הודפס.']]},
+  {name:'יותר מדי סיבובים', kind:'run', bug:[2], err:'IndexError',
+   code:'colors = ["red", "green", "blue"]\nfor i in range(4):\n    print(colors[i])',
+   fix:'for i in range(len(colors)):',
+   run:null},
+  {name:'חילוק ב-0', kind:'run', bug:[2], err:'ZeroDivisionError',
+   code:'scores = [80, 90, 70]\ncount = 0\ntotal = sum(scores)\nprint(total / count)',
+   fix:'count = len(scores)',
+   run:[[1,{scores:[80,90,70]},'','רשימה של 3 ציונים.'],[2,{scores:[80,90,70],count:0},'','count מקבל 0. חשוד: כמה ציונים יש באמת?'],
+        [3,{scores:[80,90,70],count:0,total:240},'','sum מחבר את כל הרשימה: 240.'],
+        [4,{scores:[80,90,70],count:0,total:240},TB(4,'print(total / count)','ZeroDivisionError: division by zero'),'שגיאה! מחלקים ב-count שהוא 0. השגיאה בשורה 4, אבל הבאג בשורה 2: count היה צריך להיות len(scores).']]},
+  {name:'ממוצע שיצא גדול', kind:'logic', bug:[3],
+   code:'a = 8\nb = 6\navg = a + b / 2\nprint(avg)',
+   fix:'avg = (a + b) / 2',
+   run:[[1,{a:8},'','a מקבל 8.'],[2,{a:8,b:6},'','b מקבל 6.'],[3,{a:8,b:6,avg:{py:'11.0'}},'','חילוק לפני חיבור! פייתון מחשבת קודם 6 / 2 = 3.0, ורק אחר כך 8 + 3.0 = 11.0.'],
+        [4,{a:8,b:6,avg:{py:'11.0'}},'11.0\n','מודפס 11.0. אבל הממוצע של 8 ו-6 הוא 7. אין הודעת שגיאה, זה באג לוגי.']]},
+  {name:'הסכום חסר מספר', kind:'logic', bug:[2],
+   code:'total = 0\nfor n in range(1, 5):\n    total = total + n\nprint("sum 1 to 5:", total)',
+   fix:'for n in range(1, 6):',
+   run:null}
+];
+function stepsOf(p){
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה". שימו לב לפלט ולמשתנים.'}];
+  if(p.run){ let out=''; p.run.forEach(r=>{ out+=r[2]; steps.push({line:r[0],vars:r[1],out,note:r[3]}); }); return steps; }
+  const v={}; let out='';
+  const push=(line,note)=>steps.push({line,vars:{...v},out,note});
+  if(p.err==='IndexError'){
+    const cs=['red','green','blue']; v.colors=cs.slice(); push(1,'רשימה עם 3 צבעים: אינדקסים 0, 1, 2.');
+    for(let i=0;i<4;i++){
+      v.i=i; push(2,`i מקבל ${i}.`);
+      if(i<3){ out+=cs[i]+'\n'; push(3,`colors[${i}] הוא ${cs[i]}. מדפיסים.`); }
+      else { out+=TB(3,'print(colors[i])','IndexError: list index out of range'); push(3,'שגיאה! אין אינדקס 3 ברשימה של 3 צבעים. השגיאה בשורה 3, אבל הבאג בשורה 2: range(4) נותן סיבוב אחד יותר מדי.'); }
+    }
+    return steps;
+  }
+  v.total=0; push(1,'total מתחיל ב-0.');
+  for(let n=1;n<5;n++){ v.n=n; push(2,`n מקבל ${n}.`); v.total+=n; push(3,`total הוא ${v.total}.`); }
+  push(2,'range(1, 5) נגמר אחרי 4. המספר 5 לא נכנס!');
+  out+=`sum 1 to 5: ${v.total}\n`; push(4,`מודפס ${v.total}, אבל 1 + 2 + 3 + 4 + 5 = 15. אין הודעת שגיאה, זה באג לוגי.`);
+  return steps;
+}
+function buildEx(){
+  const code='total = 0\nfor n in range(1, 5):\n    total = total + n\n    print("n =", n, "total =", total)\nprint("sum 1 to 5:", total)';
+  const steps=[{line:0,vars:{},out:'',note:'שורה 4 היא שורת מעקב שהוספנו. היא לא חלק מהפתרון, רק עוזרת לראות.'}], v={}; let out='';
+  const push=(line,note)=>steps.push({line,vars:{...v},out,note});
+  v.total=0; push(1,'total מתחיל ב-0.');
+  for(let n=1;n<5;n++){
+    v.n=n; push(2,`n מקבל ${n}.`); v.total+=n; push(3,`total הוא ${v.total}.`);
+    out+=`n = ${n} total = ${v.total}\n`; push(4,n<4?'שורת המעקב מדפיסה את n ואת total.':'הדפסה אחרונה: n הגיע רק ל-4! זה הרמז.');
+  }
+  push(2,'אין עוד מספרים ב-range(1, 5). יוצאים.');
+  out+='sum 1 to 5: 10\n'; push(5,'הפלט של שורת המעקב מראה ש-n אף פעם לא היה 5. הבאג בשורה 2: צריך range(1, 6). אחרי התיקון מוחקים את שורה 4.');
+  return {code,steps};
+}
+function LABCASES(){
+  const cs=PROGS.map((p,i)=>({name:'P'+(i+1),code:p.code,steps:stepsOf(p),noVars:!!p.err}));
+  PROGS.forEach((p,i)=>{ const lines=p.code.split('\n'), k=p.bug[0]-1, ind=lines[k].match(/^\s*/)[0];
+    lines[k]=p.fix.match(/^\s/)?p.fix:ind+p.fix; cs.push({name:'fixed P'+(i+1),code:lines.join('\n'),steps:[{line:0,vars:{},out:FIXOUT[i]}],noVars:true}); });
+  cs.push(Object.assign(buildEx(),{name:'example'}));
+  return cs;
+}
+const FIXOUT=['Great!\nDone','15','Next year: 14','Jump!\nJump!\nJump!','red\ngreen\nblue','80.0','7.0','sum 1 to 5: 15'];
+const ERRS=['SyntaxError','IndentationError','NameError','TypeError','IndexError','ZeroDivisionError'];
+function snippet(){
+  const A=ri(2,9), B=ri(2,9), e=pick(ERRS);
+  if(e==='SyntaxError') return {e,line:2,code:`x = ${A}\nif x > ${B}\n    print(x)`,why:'חסרות נקודתיים בסוף שורת ה-if.'};
+  if(e==='IndentationError') return {e,line:2,code:`for i in range(${A}):\nprint(i)`,why:'הגוף של הלולאה לא מוזז פנימה.'};
+  if(e==='NameError') return {e,line:2,code:`apples = ${A}\nprint(apples + aples)`,why:'aples כתוב בשגיאת כתיב, ואין משתנה בשם הזה.'};
+  if(e==='TypeError') return {e,line:2,code:`n = ${A}\nprint("Total: " + n)`,why:'מחברים מחרוזת עם מספר.'};
+  if(e==='IndexError') return {e,line:2,code:`nums = [${A}, ${B}, ${A+B}]\nprint(nums[3])`,why:'ברשימה 3 ערכים, באינדקסים 0 עד 2.'};
+  return {e,line:3,code:`a = ${A*B}\nb = 0\nprint(a / b)`,why:'מחלקים ב-b, שהוא 0.'};
+}
+function genQ(){
+  const kind=pick(['type','type','line','logic']);
+  if(kind==='type'||kind==='line'){
+    const s=snippet();
+    if(kind==='type') return {kind,vk:'err',err:s.e,errLine:s.line,code:s.code,mc:ERRS,ans:s.e,ask:'איזו שגיאה פייתון תדפיס?',
+      hints:['קראו כל שורה: האם היא כתובה לפי הכללים? אם כן, מה יקרה כשהיא תרוץ?',s.why],sol:`${s.why} לכן פייתון מדפיסה ${s.e}.`};
+    return {kind,vk:'err',err:s.e,errLine:s.line,code:s.code,ans:s.line,ask:'באיזו שורה פייתון תדווח על השגיאה? כתבו מספר.',
+      diag:[],hints:['חפשו את השורה שבה משהו לא מסתדר.',s.why],sol:`${s.why} זו שורה ${s.line}, ופייתון תכתוב line ${s.line}.`};
+  }
+  const a=ri(2,9), b=2*ri(1,6), v=a+b/2, good=(a+b)/2;
+  return {kind,vk:'last',ans:v+'.0',code:`a = ${a}\nb = ${b}\nprint(a + b / 2)`,ask:'רצינו להדפיס את הממוצע של a ו-b. מה התוכנית מדפיסה באמת?',
+    diag:[[good,'זה הממוצע שרצינו. אבל פייתון מחלקת לפני שהיא מחברת.'],[String(good)+(Number.isInteger(good)?'.0':''),'זה הממוצע שרצינו. אבל פייתון מחלקת לפני שהיא מחברת.'],[v,`כמעט! חילוק עם / תמיד נותן מספר עשרוני. כתבו ${v}.0.`]],
+    hints:['כמו במתמטיקה: חילוק לפני חיבור.',`קודם ${b} / 2 = ${b/2}.0, ואז ${a} ועוד.`],sol:`${b} / 2 = ${b/2}.0, ואז ${a} + ${b/2}.0 = ${v}.0. התיקון: (a + b) / 2.`};
+}
+/*END*/
+
+/* lab */
+const sP=$('sP'); let P=null;
+function lab(){
+  const i=+sP.value; P=PROGS[i-1];
+  $('sPv').textContent=i; $('sPname').textContent=P.name;
+  PT.mount($('labPT'),{code:P.code,steps:stepsOf(P)});
+  $('labRun').value=P.code;
+  $('labTxt').innerHTML=P.kind==='syntax'?`<div>סוג: <span class="errname">${P.err}</span>, שגיאה שפייתון מוצאת לפני הריצה.</div><div>לחצו "שורה הבאה": שום שורה לא תרוץ, וישר תופיע ההודעה.</div>`
+    :P.kind==='run'?`<div>סוג: <span class="errname">${P.err}</span>, שגיאת ריצה.</div><div>השורות שלפני השגיאה ירוצו. עקבו עד שהתוכנית נעצרת, וקראו את השורה האחרונה בפלט.</div>`
+    :'<div>סוג: באג לוגי. אין הודעת שגיאה!</div><div>עקבו אחרי המשתנים ושאלו: האם זו התשובה שרצינו?</div>';
+  const n=P.code.split('\n').length;
+  $('lnPick').innerHTML=Array.from({length:n},(_,k)=>`<button type="button" data-l="${k+1}">${k+1}</button>`).join('');
+  $('lnFb').innerHTML='';
+}
+$('lnPick').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return; const l=+b.dataset.l;
+  if(P.bug.includes(l)) $('lnFb').innerHTML=`<div class="fb ok">נכון! הבאג בשורה ${l}. התיקון:<pre class="code" dir="ltr" lang="en">${P.fix.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}</pre>נסו לתקן בתיבה "הריצו בעצמכם".</div>`;
+  else{
+    const errL=P.run?P.run[P.run.length-1][0]:3;
+    $('lnFb').innerHTML=`<div class="fb err">${P.kind==='run'&&l===errL&&!P.bug.includes(errL)?`נכון שפייתון נעצרה בשורה ${l}, אבל הבאג התחיל קודם. איזו שורה גרמה לזה?`:'לא בשורה הזו. הריצו שוב עם המעקב וחפשו איפה ההתנהגות שונה ממה שרצינו.'}</div>`;
+  }
+});
+sP.addEventListener('input',lab);
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ sP.value=b.dataset.p; lab(); });
+lab();
+
+/* worked example */
+const ex=buildEx(); PT.mount($('exPT'),{code:ex.code,steps:ex.steps});
+
+/* practice */
+let q=null, sel=-1, streak=0, solved=0;
+const norm=s=>String(s).replace(/\s+/g,'');
+function newQ(){
+  q=genQ(); q.tries=0; q.h=0; sel=-1;
+  $('prAsk').textContent=q.ask; $('prQ').textContent=q.code; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+  $('prCh').hidden=!q.mc; $('prIn').hidden=!!q.mc;
+  if(q.mc){ $('prCh').innerHTML=q.mc.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="false" dir="ltr">${o}</button>`).join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); }); }
+}
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+const WHY={SyntaxError:'SyntaxError היא כשהקוד לא כתוב לפי הכללים, למשל חסרות נקודתיים. כאן כל השורות כתובות נכון?',IndentationError:'IndentationError היא בעיית הזחה. האם יש כאן שורה שהייתה צריכה לזוז פנימה?',NameError:'NameError היא שם שפייתון לא מכירה. בדקו שכל שם כתוב בדיוק כמו כשהוגדר.',TypeError:'TypeError היא פעולה על סוגים שלא מתאימים, כמו טקסט ועוד מספר. יש כאן כזו?',IndexError:'IndexError היא אינדקס שאין ברשימה. יש כאן רשימה בכלל?',ZeroDivisionError:'ZeroDivisionError היא חילוק ב-0. יש כאן חילוק?'};
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let v;
+  if(q.mc){ if(sel<0){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; } v=q.mc[sel]; }
+  else{ v=norm($('prN').value); if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; } }
+  if(norm(v)===norm(q.ans)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! ${q.sol}</div>`; return; }
+  streak=0; q.tries++; streakTxt();
+  const d=q.mc?[null,WHY[v]]:(q.diag||[]).find(x=>norm(x[0])===v);
+  fb.innerHTML=`<div class="fb err">${d&&d[1]?d[1]:'עוד לא. קראו את הקוד שורה אחרי שורה ונסו שוב.'}</div>`;
+  if(q.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ q.h=Math.min(q.h+1,q.hints.length); $('prFb').innerHTML=`<div class="fb hint">${q.hints.slice(0,q.h).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${q.sol}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newQ;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newQ(); streakTxt();
+})();
+</script>
+</body>
+</html>

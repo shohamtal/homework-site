@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>מחרוזות בפייתון: חיתוך ו-len · מדעי המחשב כיתה ט · מירי</title>
+<meta name="description" content="מחרוזות בפייתון לכיתה ט: אינדקסים, len, חיתוך s[a:b], upper ו-lower, in ו-find. מעבדה עם מחוונים, מעקב שורה אחרי שורה ותרגול עם רמזים.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/strings/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מחרוזות בפייתון: חיתוך ו-len · מדעי המחשב כיתה ט · מירי">
+<meta property="og:description" content="מחרוזות בפייתון לכיתה ט: אינדקסים, len, חיתוך s[a:b], upper ו-lower, in ו-find. מעבדה עם מחוונים, מעקב שורה אחרי שורה ותרגול עם רמזים.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/strings/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/cs/grade-9/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-9/#cs-python-9"},{"@type":"ListItem","position":5,"name":"מחרוזות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/strings/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה מחרוזת בפייתון?","acceptedAnswer":{"@type":"Answer","text":"מחרוזת היא טקסט בתוך מירכאות, כמו \"hello\" או \"123\". המחשב שומר אותה כשורה של תווים, ולכל תו יש אינדקס שמתחיל ב-0. אפשר למדוד אותה עם len, לשלוף ממנה אות או חתיכה, ולעבור עליה בלולאה. נסו במעבדה."}},{"@type":"Question","name":"איך עובד חיתוך s[a:b] בפייתון?","acceptedAnswer":{"@type":"Answer","text":"החיתוך לוקח את התווים מאינדקס a ועד לפני אינדקס b. ב-\"watermelon\"[0:5] יוצא \"water\", כי לוקחים את המקומות 0 עד 4. אם משמיטים את a מתחילים מההתחלה, ואם משמיטים את b ממשיכים עד הסוף."}},{"@type":"Question","name":"מה ההבדל בין find לבין in?","acceptedAnswer":{"@type":"Answer","text":"in עונה רק כן או לא (True או False). find מחזיר את האינדקס שבו החלק מתחיל, ו-‎-1 אם הוא לא נמצא. כשרק רוצים לדעת אם משהו קיים, in פשוט יותר. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מחרוזות בפייתון","description":"מחרוזות בפייתון לכיתה ט: אינדקסים, len, חיתוך s[a:b], upper ו-lower, in ו-find. מעבדה עם מחוונים, מעקב שורה אחרי שורה ותרגול עם רמזים.","url":"https://shohamtal.github.io/homework-site/cs/strings/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"מחרוזות בפייתון","teaches":"מחרוזות בפייתון","keywords":"מחרוזת, חיתוך, len","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:9em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.strip{display:flex; direction:ltr; justify-content:center; gap:3px; margin:6px 0 2px}
+.strip .c{width:min(34px,8.4vw); text-align:center}
+.strip .ch{height:40px; border:2px solid var(--border); border-radius:8px; background:var(--card); display:flex; align-items:center; justify-content:center; font:700 1.15rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.strip .on .ch{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.strip .stop .ch{border-style:dashed; border-color:var(--line)}
+.strip .ix{font:600 .85rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--muted)}
+.strip .on .ix{color:var(--ink); font-weight:800}
+.strip .neg{font:.72rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--muted)}
+.legend{text-align:center; color:var(--muted); font-size:.92rem; margin:0}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="strings">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/#cs-python-9">תכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מחרוזות בפייתון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · תכנות בפייתון</div>
+  <h1>מחרוזות בפייתון <span class="slogan">כל אות במקום שלה</span></h1>
+  <p class="lead">שם של שחקן, הודעה בצ'אט, סיסמה: כל טקסט בתוכנית הוא מחרוזת. כאן לומדים למדוד מחרוזת, לשלוף ממנה אות אחת או חתיכה שלמה, להחליף לאותיות גדולות ולחפש בתוכה. מחרוזת דומה מאוד ל<a href="../lists/">רשימה</a>, ועוברים עליה עם <a href="../loops/">לולאה</a> בדיוק כמו שלמדתם.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">מחרוזת היא שורה של תווים בתוך מירכאות, למשל <code dir="ltr" lang="en">"rocket"</code>. לכל תו יש מספר מקום, שנקרא <strong>אינדקס</strong>. הספירה מתחילה ב-0.</p>
+  <div class="strip" id="ideaStrip" aria-label="המילה rocket עם האינדקסים 0 עד 5"></div>
+  <div class="two">
+    <div class="mini">
+      <h3>אורך ואות אחת</h3>
+      <p><code dir="ltr" lang="en">len(s)</code> מחזיר כמה תווים יש. <code dir="ltr" lang="en">s[0]</code> היא האות הראשונה, ו-<code dir="ltr" lang="en">s[-1]</code> היא האחרונה.</p>
+      <pre class="code" dir="ltr" lang="en">s = "rocket"
+print(len(s))   # 6
+print(s[1])     # o
+print(s[-1])    # t</pre>
+    </div>
+    <div class="mini">
+      <h3>חיתוך</h3>
+      <p><code dir="ltr" lang="en">s[a:b]</code> לוקח את התווים מאינדקס a ועד לפני b. הסוף לא נכלל, ולכן האורך הוא <span class="eq">b − a</span>.</p>
+      <pre class="code" dir="ltr" lang="en">s = "rocket"
+print(s[0:4])   # rock
+print(s[2:])    # cket
+print(s[:3])    # roc</pre>
+    </div>
+    <div class="mini">
+      <h3>שינוי וחיפוש</h3>
+      <p><code dir="ltr" lang="en">upper()</code> ו-<code dir="ltr" lang="en">lower()</code> מחזירות עותק באותיות גדולות או קטנות. <code dir="ltr" lang="en">in</code> בודק אם יש חלק כזה, ו-<code dir="ltr" lang="en">find</code> אומר באיזה אינדקס.</p>
+      <pre class="code" dir="ltr" lang="en">s = "rocket"
+print(s.upper())     # ROCKET
+print("ock" in s)    # True
+print(s.find("k"))   # 3
+print(s.find("z"))   # -1</pre>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> האינדקס הראשון הוא 0, והאחרון הוא <code dir="ltr" lang="en">len(s) - 1</code>. בחיתוך <code dir="ltr" lang="en">s[a:b]</code> האות במקום b לא נכנסת.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: חותכים מחרוזת</h2></div>
+  <p class="text">הזיזו את המחוונים כדי לבחור מאיפה מתחילים ואיפה עוצרים. האותיות שנכנסות לחיתוך צבועות בצהוב, והמשבצת המקווקוות היא המקום שבו עוצרים (היא לא נכנסת). אחר כך הריצו את התוכנית שורה אחרי שורה: היא מדפיסה את החתיכה, את האורך שלה, וסופרת בה תנועות.</p>
+  <div class="strip" id="labStrip"></div>
+  <p class="legend">מעל: האות · מתחת: האינדקס, ובקטן האינדקס מהסוף</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sa"><span>התחלה a</span><span class="eq" id="sav"></span></label>
+      <input type="range" id="sa" min="0" max="10" step="1" value="0">
+      <label class="slider" for="sb"><span>סוף b (לא נכלל)</span><span class="eq" id="sbv"></span></label>
+      <input type="range" class="blue" id="sb" min="0" max="10" step="1" value="5">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="0,5">water</button>
+          <button type="button" data-p="5,10">melon</button>
+          <button type="button" data-p="5,9">טעות של אחד</button>
+          <button type="button" data-p="0,10">כל המילה</button>
+          <button type="button" data-p="6,6">חיתוך ריק</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>מתחילים לספור מ-1</h3>
+      <p>האות הראשונה היא במקום 0. מי שכותב <code dir="ltr" lang="en">s[1]</code> מקבל את האות השנייה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">s = "rocket"
+print(s[1])  # o</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">s = "rocket"
+print(s[0])  # r</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>חושבים שהסוף נכלל</h3>
+      <p>רוצים 4 אותיות ראשונות? כותבים <code dir="ltr" lang="en">s[0:4]</code>, לא <code dir="ltr" lang="en">s[0:3]</code>. הסוף עוצר לפני.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">print("rocket"[0:3])
+# roc</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">print("rocket"[0:4])
+# rock</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>אינדקס שלא קיים</h3>
+      <p>במחרוזת של 6 אותיות האינדקס האחרון הוא 5. <code dir="ltr" lang="en">s[6]</code> עוצר את התוכנית עם שגיאה. השתמשו ב-<code dir="ltr" lang="en">s[-1]</code>.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">s = "rocket"
+print(s[len(s)])
+# IndexError</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">s = "rocket"
+print(s[len(s) - 1])
+# t</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>שוכחים לשמור את התוצאה</h3>
+      <p><code dir="ltr" lang="en">upper()</code> לא משנה את המחרוזת עצמה. היא מחזירה מחרוזת חדשה, וצריך לשמור אותה במשתנה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">s = "go"
+s.upper()
+print(s)  # go</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">s = "go"
+s = s.upper()
+print(s)  # GO</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">תוכנית שבודקת שם משתמש למשחק: מודדת את האורך, שולפת את האות הראשונה, מכינה תג באותיות גדולות ובודקת אם יש בשם ספרה. לחצו "שורה הבאה" ועקבו אחרי המשתנים.</p>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זה מחרוזת בפייתון?</h3>
+    <p>מחרוזת היא טקסט בתוך מירכאות, כמו "hello" או "123". המחשב שומר אותה כשורה של תווים, ולכל תו יש אינדקס שמתחיל ב-0. אפשר למדוד אותה עם len, לשלוף ממנה אות או חתיכה, ולעבור עליה בלולאה. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך עובד חיתוך s[a:b] בפייתון?</h3>
+    <p>החיתוך לוקח את התווים מאינדקס a ועד לפני אינדקס b. ב-"watermelon"[0:5] יוצא "water", כי לוקחים את המקומות 0 עד 4. אם משמיטים את a מתחילים מההתחלה, ואם משמיטים את b ממשיכים עד הסוף.</p>
+    <h3>מה ההבדל בין find לבין in?</h3>
+    <p>in עונה רק כן או לא (True או False). find מחזיר את האינדקס שבו החלק מתחיל, ו-‎-1 אם הוא לא נמצא. כשרק רוצים לדעת אם משהו קיים, in פשוט יותר. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/lists/">רשימות בפייתון</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/debugging/"><small>→ הנושא הקודם</small>מוצאים באגים בפייתון</a><a class="next" href="../../cs/search-and-sort-intro/"><small>הנושא הבא ←</small>חיפוש ומיון: מבוא</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const WORD='watermelon', V='aeiou', R=v=>PT.repr(v);
+  function build(a,b){
+    const part=a<b?WORD.slice(a,b):'';
+    const code=['word = "'+WORD+'"','part = word['+a+':'+b+']','print(part)','print(len(part))','count = 0','for ch in part:','    if ch in "aeiou":','        count = count + 1','print("vowels:", count)'].join('\n');
+    const st=[{line:0,vars:{},out:''}]; let out='', vars={};
+    const add=(line,note)=>st.push({line,vars:{...vars},out,note});
+    vars.word=WORD; add(1,'שמים במשתנה word את המחרוזת "'+WORD+'". יש בה '+WORD.length+' אותיות, באינדקסים 0 עד 9.');
+    vars.part=part;
+    add(2,part?'חותכים מאינדקס '+a+' ועד לפני '+b+'. נכנסות '+(b-a)+' אותיות: '+R(part)+'.':(a===b?'ההתחלה והסוף שווים ('+a+'), אז לא נכנסת אף אות. part היא מחרוזת ריקה.':'ההתחלה ('+a+') אחרי הסוף ('+b+'), אז לא נכנסת אף אות. part היא מחרוזת ריקה.'));
+    out+=part+'\n'; add(3,part?'מדפיסים את החתיכה, בלי המירכאות.':'מדפיסים מחרוזת ריקה, ולכן יוצאת שורה ריקה.');
+    out+=part.length+'\n'; add(4,'len סופר את האותיות בחתיכה: '+part.length+'.');
+    vars.count=0; add(5,'מתחילים מונה תנועות מ-0.');
+    for(const ch of part){
+      vars.ch=ch; add(6,'הלולאה לוקחת את האות הבאה: ch = '+R(ch)+'.');
+      if(V.includes(ch)){ add(7,R(ch)+' היא תנועה (יש אותה ב-"aeiou"), אז נכנסים פנימה.'); vars.count++; add(8,'מוסיפים 1. עכשיו count = '+vars.count+'.'); }
+      else add(7,R(ch)+' לא נמצאת ב-"aeiou", אז מדלגים על השורה הבאה.');
+    }
+    add(6,part?'עברנו על כל האותיות, הלולאה נגמרת.':'אין אף אות לעבור עליה, אז הלולאה לא רצה אף פעם.');
+    out+='vowels: '+vars.count+'\n'; add(9,'מדפיסים כמה תנועות נמצאו: '+vars.count+'.');
+    return {code,steps:st,part};
+  }
+  const EX=['name = "Star_Fox7"','size = len(name)','first = name[0]','tag = name[:4].upper()','ok = 3 <= size <= 12','has_digit = "7" in name','print(tag, size, ok, has_digit)'].join('\n');
+  function exSteps(){
+    const name='Star_Fox7', st=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה". נסו לנחש כל ערך לפני שהוא מופיע.'}], v={};
+    const add=(line,note,out)=>st.push({line,vars:{...v},out:out||'',note});
+    v.name=name; add(1,'שם המשתמש נשמר במשתנה name.');
+    v.size=name.length; add(2,'len סופר את כל התווים, גם את הקו התחתון ואת הספרה: 9.');
+    v.first=name[0]; add(3,'האות באינדקס 0 היא הראשונה: S.');
+    v.tag=name.slice(0,4).toUpperCase(); add(4,'name[:4] לוקח את אינדקסים 0 עד 3 ("Star"), ו-upper הופך לאותיות גדולות: STAR.');
+    v.ok=v.size>=3&&v.size<=12; add(5,'בודקים שהאורך בין 3 ל-12. 9 בטווח, אז ok הוא True.');
+    v.has_digit=name.includes('7'); add(6,'"7" נמצא בתוך השם, אז has_digit הוא True.');
+    add(7,'print מדפיס את כל הערכים עם רווח ביניהם.','STAR 9 True True\n');
+    return st;
+  }
+  return {build,EX,exSteps,extra:[()=>({code:EX,steps:exSteps()})],presets:[[0,5],[5,10],[5,9],[0,10],[6,6],[3,3],[8,2]],WORD};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+function strip(el,word,a,b){
+  el.innerHTML=[...word].map((ch,i)=>'<div class="c'+(a!==undefined&&i>=a&&i<b?' on':'')+(i===b&&a<b?' stop':'')+'"><div class="ch">'+esc(ch)+'</div><div class="ix">'+i+'</div><div class="neg">'+(i-word.length)+'</div></div>').join('');
+}
+strip($('ideaStrip'),'rocket');
+
+/* lab */
+const W=LAB.WORD;
+function lab(){
+  const a=+$('sa').value, b=+$('sb').value, r=LAB.build(a,b);
+  $('sav').textContent=a; $('sbv').textContent=b;
+  strip($('labStrip'),W,a,b);
+  PT.mount($('labPT'),{code:r.code,steps:r.steps});
+  $('labRun').value=r.code;
+  const vow=[...r.part].filter(c=>'aeiou'.includes(c)).length;
+  let t;
+  if(!r.part) t='<div>'+C('word['+a+':'+b+']')+' היא מחרוזת ריקה '+C('""')+'. '+(a===b?'כשההתחלה והסוף שווים, אין אף אות ביניהם.':'כשההתחלה אחרי הסוף, פייתון לא מחזירה שגיאה, רק מחרוזת ריקה.')+'</div><div>האורך 0, והלולאה לא רצה אף פעם.</div>';
+  else t='<div>'+C('word['+a+':'+b+']')+' = '+C(PT.repr(r.part))+'</div><div>לוקחים את האינדקסים '+a+' עד '+(b-1)+'. האות במקום '+b+(b<W.length?' ('+W[b]+')':'')+' לא נכנסת.</div><div>האורך: <span class="eq">'+b+' − '+a+' = '+(b-a)+'</span>. תנועות בחתיכה: '+vow+'.</div>'
+    +(a===5&&b===9?'<div><strong>שימו לב:</strong> רצינו "melon" וקיבלנו "melo". כדי לקבל גם את n באינדקס 9, הסוף צריך להיות 10.</div>':'')
+    +(a===0&&b===W.length?'<div>זו כל המילה. אפשר לכתוב את זה גם '+C('word[:]')+'.</div>':'');
+  $('labTxt').innerHTML=t;
+}
+['sa','sb'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const [a,c]=b.dataset.p.split(','); $('sa').value=a; $('sb').value=c; lab(); });
+lab();
+
+/* worked example */
+PT.mount($('exPT'),{code:LAB.EX,steps:LAB.exSteps()});
+
+/* practice */
+const WORDS=['banana','python','rocket','planet','window','garden','pirate','dragon','orange','castle','puzzle','tomato'];
+const nrm=s=>String(s).trim().replace(/^["']+|["']+$/g,'').replace(/\s+/g,'');
+function numbered(code){ return '<pre class="code pt-code" dir="ltr" lang="en">'+code.split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('')+'</pre>'; }
+function gen(){
+  const s=pick(WORDS), n=s.length, kind=pick(['len','index','slice','slice','neg','upper','in','find','count']);
+  const q={kind,type:'text'};
+  if(kind==='len'){
+    q.code='s = "'+s+'"\nprint(len(s))'; q.ans=String(n); q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>v===String(n-1)?'ספרתם עד האינדקס האחרון. len סופר אותיות, והוא תמיד גדול ב-1 מהאינדקס האחרון.':null;
+    q.hints=['len סופר כמה תווים יש במחרוזת.','כתבו את המילה ומתחת לכל אות 1, 2, 3 וכן הלאה.'];
+    q.sol='במילה "'+s+'" יש '+n+' אותיות, לכן מודפס '+n+'.';
+  } else if(kind==='index'){
+    const k=ri(1,n-2); q.code='s = "'+s+'"\nprint(s['+k+'])'; q.ans=s[k]; q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>v===s[k-1]?'זו האות במקום ה-'+k+' אם סופרים מ-1. בפייתון סופרים מ-0.':v===s[k+1]?'הלכתם צעד אחד יותר מדי. האינדקס הראשון הוא 0.':null;
+    q.hints=['האות הראשונה היא s[0].','כתבו מתחת לאותיות 0, 1, 2… וחפשו את '+k+'.'];
+    q.sol='אינדקסים: '+[...s].map((c,i)=>i+'='+c).join(', ')+'. במקום '+k+' יש '+s[k]+'.';
+  } else if(kind==='slice'){
+    const a=ri(0,n-3), b=ri(a+2,n); q.code='s = "'+s+'"\nprint(s['+a+':'+b+'])'; q.ans=s.slice(a,b); q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>v===s.slice(a,b+1)?'כללתם גם את האות במקום '+b+'. בחיתוך הסוף לא נכלל.':(a>0&&v===s.slice(a-1,b-1))?'התחלתם לספור מ-1. האות הראשונה היא באינדקס 0.':(a>0&&v===s.slice(a-1,b))?'האות במקום '+a+' היא '+s[a]+'. ספרו שוב מ-0.':null;
+    q.hints=['s['+a+':'+b+'] לוקח מאינדקס '+a+' ועד לפני '+b+'.','צריך לצאת '+(b-a)+' אותיות, כי '+b+' − '+a+' = '+(b-a)+'.'];
+    q.sol='לוקחים את האינדקסים '+a+' עד '+(b-1)+': '+[...s.slice(a,b)].join(', ')+'. יוצא '+s.slice(a,b)+'.';
+  } else if(kind==='neg'){
+    const k=ri(1,3); q.code='s = "'+s+'"\nprint(s[-'+k+'])'; q.ans=s[n-k]; q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>v===s[k]||v===s[k-1]?'מספר שלילי סופר מהסוף. ‎-1 היא האות האחרונה.':v===s[n-k-1]?'‎-1 היא האות האחרונה עצמה, לא זו שלפניה.':null;
+    q.hints=['s[-1] היא האות האחרונה, s[-2] זו שלפניה.','האות האחרונה ב-"'+s+'" היא '+s[n-1]+'. משם זזים שמאלה.'];
+    q.sol='s[-'+k+'] = s['+(n-k)+'] = '+s[n-k]+'.';
+  } else if(kind==='upper'){
+    const a=ri(0,n-3), b=ri(a+2,n), up=Math.random()<.7;
+    q.code='s = "'+s+'"\nt = s['+a+':'+b+']'+(up?'.upper()':'')+'\n'+(up?'print(t + s[0])':'print(t.upper() + s[-1])'); q.ask='מה התוכנית מדפיסה?';
+    q.ans=up?s.slice(a,b).toUpperCase()+s[0]:s.slice(a,b).toUpperCase()+s[n-1];
+    q.diag=v=>v.toLowerCase()===q.ans.toLowerCase()&&v!==q.ans?'האותיות נכונות, אבל בדקו אילו מהן גדולות. upper משפיע רק על מה שלפניו.':null;
+    q.hints=['קודם חתכו, אחר כך הפכו לאותיות גדולות.','+ מחבר שתי מחרוזות זו אחרי זו, בלי רווח.'];
+    q.sol='s['+a+':'+b+'] = '+s.slice(a,b)+'. באותיות גדולות: '+s.slice(a,b).toUpperCase()+'. מוסיפים '+(up?'את s[0] = '+s[0]:'את s[-1] = '+s[n-1])+' ומקבלים '+q.ans+'.';
+  } else if(kind==='in'){
+    const real=Math.random()<.5, a=ri(0,n-3), part=real?s.slice(a,a+2+ri(0,1)):pick([s.slice(0,2).split('').reverse().join(''),s.slice(1,3).toUpperCase(),s[0]+'z',s.slice(-2)+'s']);
+    const isIn=s.includes(part);
+    q.type='choice'; q.code='s = "'+s+'"\nprint("'+part+'" in s)'; q.ask='מה התוכנית מדפיסה?';
+    q.opts=[{t:'True',ok:isIn,why:'חפשו את "'+part+'" בתוך "'+s+'", אות אחרי אות, באותו סדר.'},{t:'False',ok:!isIn,why:part.toLowerCase()!==part?'פייתון מבדילה בין אות גדולה לקטנה. A ו-a הם תווים שונים.':'"'+part+'" מופיע בתוך "'+s+'". חפשו שוב.'}];
+    q.hints=['in בודק אם החלק מופיע בתוך המחרוזת, צמוד ובאותו סדר.','שימו לב גם לאותיות גדולות וקטנות.'];
+    q.sol='"'+part+'" '+(isIn?'מופיע':'לא מופיע')+' בתוך "'+s+'", לכן מודפס '+(isIn?'True':'False')+'.';
+  } else if(kind==='find'){
+    const miss=Math.random()<.3, ch=miss?pick(['z','q','x','j']).replace(new RegExp('['+s+']'),'q'):s[ri(0,n-1)];
+    const f=s.indexOf(ch); q.code='s = "'+s+'"\nprint(s.find("'+ch+'"))'; q.ans=String(f); q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>f>=0&&v===String(f+1)?'ספרתם מ-1. find מחזיר אינדקס, ואינדקסים מתחילים ב-0.':(f>=0&&v===String(s.lastIndexOf(ch))&&s.lastIndexOf(ch)!==f)?'find מחזיר את המקום של ההופעה הראשונה, לא האחרונה.':(f<0&&(v==='0'||v==='None'))?'כשהחלק לא נמצא, find מחזיר ‎-1.':null;
+    q.hints=['find מחזיר את האינדקס של ההופעה הראשונה.','אם אין כזה חלק, התשובה היא ‎-1.'];
+    q.sol=f<0?'אין "'+ch+'" ב-"'+s+'", לכן find מחזיר ‎-1.':'ההופעה הראשונה של "'+ch+'" היא באינדקס '+f+'.';
+  } else {
+    const ch=pick([...new Set(s)]), cnt=[...s].filter(c=>c===ch).length;
+    q.code='s = "'+s+'"\ncount = 0\nfor ch in s:\n    if ch == "'+ch+'":\n        count = count + 1\nprint(count)'; q.ans=String(cnt); q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>v===String(n)?'זה אורך המחרוזת. count גדל רק כשהאות שווה ל-"'+ch+'".':v===String(s.indexOf(ch))?'זה המקום של האות, לא כמה פעמים היא מופיעה.':null;
+    q.hints=['הלולאה עוברת על כל אות. count גדל ב-1 רק כשהאות היא "'+ch+'".','ספרו כמה פעמים "'+ch+'" מופיעה ב-"'+s+'".'];
+    q.sol='"'+ch+'" מופיעה ב-"'+s+'" '+cnt+' פעמים, לכן count = '+cnt+'.';
+  }
+  return q;
+}
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=numbered(q.code);
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" dir="ltr" data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו מה מודפס.</div>'; $('prN').focus(); return; }
+    right=v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>פרויקט בפייתון: משחק ניחוש · מדעי המחשב כיתה ט · מירי</title>
+<meta name="description" content="מתכננים תוכנית בפייתון מרעיון ועד משחק: מטרה, קלט ופלט, פונקציות, בדיקות ושיפור. בונים משחק ניחוש מספרים עם מעקב שורה אחרי שורה, לכיתה ט.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/plan-a-program/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פרויקט בפייתון: משחק ניחוש · מדעי המחשב כיתה ט · מירי">
+<meta property="og:description" content="מתכננים תוכנית בפייתון מרעיון ועד משחק: מטרה, קלט ופלט, פונקציות, בדיקות ושיפור. בונים משחק ניחוש מספרים עם מעקב שורה אחרי שורה, לכיתה ט.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/plan-a-program/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/cs/grade-9/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-9/#cs-python-9"},{"@type":"ListItem","position":5,"name":"מתכננים תוכנית: פרויקט קטן","item":"https://shohamtal.github.io/homework-site/cs/plan-a-program/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך מתחילים לתכנן תוכנית בפייתון?","acceptedAnswer":{"@type":"Answer","text":"כותבים במשפט אחד מה התוכנית עושה, ואז מחליטים מה הקלט ומה הפלט. אחר כך מפרקים את העבודה למשימות קטנות, וכל משימה הופכת לפונקציה. רק אז מתחילים לכתוב, חלק אחרי חלק, ובודקים כל חלק לבד. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"למה לפרק תוכנית לפונקציות?","acceptedAnswer":{"@type":"Answer","text":"פונקציה קטנה עם שם ברור קל להבין ולבדוק. אם יש טעות, יודעים איפה לחפש. אפשר גם להשתמש באותה פונקציה בכמה מקומות, ולשפר אותה בלי לגעת בשאר התוכנית."}},{"@type":"Question","name":"מה האסטרטגיה הכי טובה במשחק ניחוש מספרים?","acceptedAnswer":{"@type":"Answer","text":"לנחש תמיד את האמצע של הטווח שנשאר. אם התשובה היא \"גבוה יותר\", זורקים את החצי התחתון, ולהפך. כך בין 1 ל-100 מוצאים כל מספר בלא יותר מ-7 ניחושים. נסו במעבדה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מתכננים תוכנית: פרויקט קטן","description":"מתכננים תוכנית בפייתון מרעיון ועד משחק: מטרה, קלט ופלט, פונקציות, בדיקות ושיפור. בונים משחק ניחוש מספרים עם מעקב שורה אחרי שורה, לכיתה ט.","url":"https://shohamtal.github.io/homework-site/cs/plan-a-program/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"מתכננים תוכנית: פרויקט קטן","teaches":"מתכננים תוכנית: פרויקט קטן","keywords":"תכנון, פרויקט, בדיקות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:9em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.plan{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:6px; justify-content:center; counter-reset:st}
+.plan li{counter-increment:st; border:2px solid var(--border); border-radius:10px; padding:5px 10px; background:var(--card); font-weight:700; font-size:.95rem}
+.plan li::before{content:counter(st) ". "; color:var(--line)}
+.plan li.on{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.guesses{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; direction:ltr; margin:8px 0}
+.guesses span{border:2px solid var(--border); border-radius:10px; padding:3px 9px; background:var(--card); font:700 .95rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.guesses span.win{background:var(--ok-bg); border-color:var(--ok); color:var(--ok)}
+.guesses span.unused{opacity:.35}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0}
+.io{width:100%; border-collapse:collapse; font-size:.95rem}
+.io td,.io th{border:2px solid var(--border); padding:4px 8px; text-align:right}
+.io th{background:var(--card)}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="plan-a-program">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/#cs-python-9">תכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">מתכננים תוכנית: פרויקט קטן</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · תכנות בפייתון</div>
+  <h1>מתכננים תוכנית <span class="slogan">מרעיון למשחק שעובד</span></h1>
+  <p class="lead">מתכנתים לא מתחילים להקליד מיד. קודם מחליטים מה התוכנית צריכה לעשות, מפרקים אותה לחלקים קטנים, ורק אז כותבים ובודקים. כאן בונים יחד משחק ניחוש מספרים, צעד אחרי צעד. נשתמש ב<a href="../functions/">פונקציות</a>, בלולאת while ובתנאים, ובטריק החצייה מ<a href="../search-and-sort-intro/">חיפוש בינארי</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">כל פרויקט, קטן או גדול, עובר את אותם שלבים:</p>
+  <ol class="plan"><li>מטרה</li><li>קלט ופלט</li><li>פירוק לפונקציות</li><li>כתיבה</li><li>בדיקה</li><li>שיפור</li></ol>
+  <div class="two">
+    <div class="mini">
+      <h3>מטרה, קלט ופלט</h3>
+      <p>כותבים במשפט אחד מה התוכנית עושה: "המחשב בוחר מספר בין 1 ל-100, והשחקן מנחש". אחר כך מחליטים מה נכנס (ניחוש) ומה יוצא (גבוה יותר, נמוך יותר, צדקת).</p>
+    </div>
+    <div class="mini">
+      <h3>מפרקים לפונקציות</h3>
+      <p>כל משימה קטנה מקבלת פונקציה עם שם ברור. למשל <code dir="ltr" lang="en">check(guess, secret)</code> מחזירה רק את התשובה. כך אפשר לבדוק כל חלק לבד.</p>
+    </div>
+    <div class="mini">
+      <h3>בודקים ומשפרים</h3>
+      <p>מריצים עם כמה מקרים: ניחוש נמוך, גבוה, מדויק, ומקרי קצה כמו 1 ו-100. כשהכול עובד מוסיפים שיפור קטן אחד, למשל הגבלה על מספר הניסיונות.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> קודם תכנון, אחר כך קוד. תוכנית שמפורקת לפונקציות קטנות קל יותר לכתוב, לבדוק ולתקן.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: משחק הניחוש</h2></div>
+  <p class="text">בחרו את המספר הסודי ואת מספר הניסיונות. השחקן במעבדה משחק חכם: הוא תמיד מנחש את האמצע של מה שנשאר, כמו בחיפוש בינארי. הניחושים שלו הם הקלט של התוכנית. הריצו שורה אחרי שורה וראו איך הקפיצה לפונקציה <code dir="ltr" lang="en">check</code> עובדת.</p>
+  <div class="guesses" id="gs" aria-label="הניחושים של השחקן"></div>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="ss"><span>המספר הסודי (secret)</span><span class="eq" id="ssv"></span></label>
+      <input type="range" id="ss" min="1" max="100" step="1" value="37">
+      <label class="slider" for="sm"><span>כמה ניסיונות מותר (max_tries)</span><span class="eq" id="smv"></span></label>
+      <input type="range" class="blue" id="sm" min="0" max="10" step="1" value="5">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="50,5">ניצחון מיד</button>
+          <button type="button" data-p="42,7">מנצחים בדיוק בזמן</button>
+          <button type="button" data-p="1,7">המספר הכי קטן</button>
+          <button type="button" data-p="100,3">נגמרים הניסיונות</button>
+          <button type="button" data-p="20,0">אפס ניסיונות</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות. בתיבה השנייה יש את הניחושים, ניחוש בכל שורה, ואפשר לשנות גם אותם.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <textarea class="pyrun-in" id="labIn" dir="ltr" lang="en" placeholder="קלט: שורה לכל input" aria-label="קלט"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>שוכחים את int</h3>
+      <p><code dir="ltr" lang="en">input()</code> תמיד מחזיר מחרוזת. השוואה בין מחרוזת למספר עם <code dir="ltr" lang="en">&lt;</code> עוצרת את התוכנית בשגיאה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">guess = input()
+if guess &lt; secret:
+# TypeError</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">guess = int(input())
+if guess &lt; secret:</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>לולאה שלא נגמרת</h3>
+      <p>אם שוכחים לקדם את המונה, התנאי של while נשאר נכון לתמיד, והמשחק לא נגמר.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">while tries &lt; max_tries:
+    guess = int(input())</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">while tries &lt; max_tries:
+    guess = int(input())
+    tries = tries + 1</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>print במקום return</h3>
+      <p>פונקציה שרק מדפיסה לא מחזירה כלום (None). הקוד שקרא לה לא יכול לבדוק את התשובה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">def check(guess, secret):
+    if guess == secret:
+        print("correct")</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">def check(guess, secret):
+    if guess == secret:
+        return "correct"</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>בודקים רק מקרה אחד</h3>
+      <p>התוכנית עבדה עם 50? זה לא מספיק. בדקו ניחוש נמוך, גבוה, מדויק, ואת הקצוות 1 ו-100.</p>
+      <div class="wr"><div><p class="bad">✗ לא מספיק</p><pre class="code" dir="ltr" lang="en">print(check(50, 50))</pre></div><div><p class="good">✓ טוב</p><pre class="code" dir="ltr" lang="en">print(check(10, 50))
+print(check(90, 50))
+print(check(50, 50))</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: מתכננים את המשחק</h2></div>
+  <p class="text">עוברים יחד על כל שלבי התכנון. בכל שלב רואים מה החלטנו ואיזה קוד נוסף.</p>
+  <div class="stepper">
+    <ol class="plan" id="exPlan"><li>מטרה</li><li>קלט ופלט</li><li>פירוק לפונקציות</li><li>כתיבה</li><li>בדיקה</li><li>שיפור</li></ol>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div id="exCode"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>איך מתחילים לתכנן תוכנית בפייתון?</h3>
+    <p>כותבים במשפט אחד מה התוכנית עושה, ואז מחליטים מה הקלט ומה הפלט. אחר כך מפרקים את העבודה למשימות קטנות, וכל משימה הופכת לפונקציה. רק אז מתחילים לכתוב, חלק אחרי חלק, ובודקים כל חלק לבד. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>למה לפרק תוכנית לפונקציות?</h3>
+    <p>פונקציה קטנה עם שם ברור קל להבין ולבדוק. אם יש טעות, יודעים איפה לחפש. אפשר גם להשתמש באותה פונקציה בכמה מקומות, ולשפר אותה בלי לגעת בשאר התוכנית.</p>
+    <h3>מה האסטרטגיה הכי טובה במשחק ניחוש מספרים?</h3>
+    <p>לנחש תמיד את האמצע של הטווח שנשאר. אם התשובה היא "גבוה יותר", זורקים את החצי התחתון, ולהפך. כך בין 1 ל-100 מוצאים כל מספר בלא יותר מ-7 ניחושים. <a href="#lab">נסו במעבדה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/functions/">פונקציות בפייתון</a> · <a href="../../cs/computational-thinking/">חשיבה ממוחשבת: פירוק, דפוס ואלגוריתם</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/search-and-sort-intro/"><small>→ הנושא הקודם</small>חיפוש ומיון: מבוא</a><a class="next" href="../../cs/cyber-safety/"><small>הנושא הבא ←</small>סייבר ובטיחות ברשת</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const CHECK=['def check(guess, secret):','    if guess < secret:','        return "higher"','    elif guess > secret:','        return "lower"','    else:','        return "correct"'];
+  /* the smart player: always the middle of what is left */
+  function guesses(secret,max){
+    const g=[]; let lo=1, hi=100;
+    while(g.length<max){ const x=Math.floor((lo+hi)/2); g.push(x); if(x===secret) break; if(x<secret) lo=x+1; else hi=x-1; }
+    return g;
+  }
+  function build(secret,max){
+    const input=guesses(secret,max);
+    const code=CHECK.concat(['','secret = '+secret,'tries = 0','max_tries = '+max,'won = False','while tries < max_tries and not won:','    guess = int(input())','    tries = tries + 1','    answer = check(guess, secret)','    print(answer)','    if answer == "correct":','        won = True','if won:','    print("You won in", tries, "tries")','else:','    print("Game over. The number was", secret)']).join('\n');
+    const st=[{line:0,vars:{},out:''}], v={}; let out='', k=0;
+    const add=(line,note)=>st.push({line,vars:{...v},out,note});
+    add(1,'מגדירים את הפונקציה check. היא עוד לא רצה, רק נשמרת לשימוש אחר כך.');
+    v.secret=secret; add(9,'המספר הסודי הוא '+secret+'.');
+    v.tries=0; add(10,'עוד לא היו ניחושים.');
+    v.max_tries=max; add(11,'מותר '+max+' ניסיונות.');
+    v.won=false; add(12,'עוד לא ניצחנו.');
+    while(true){
+      if(!(v.tries<v.max_tries&&!v.won)){ add(13,v.won?'won הוא True, אז התנאי לא מתקיים. יוצאים מהלולאה.':'tries = '+v.tries+' כבר לא קטן מ-'+v.max_tries+'. אין עוד ניסיונות, יוצאים מהלולאה.'); break; }
+      add(13,'tries = '+v.tries+' קטן מ-'+v.max_tries+' ועוד לא ניצחנו. נכנסים לסיבוב.');
+      const g=input[k++]; v.guess=g; add(14,'קוראים שורת קלט: "'+g+'". int הופך אותה למספר '+g+'.');
+      v.tries++; add(15,'סופרים את הניסיון: tries = '+v.tries+'.');
+      if(g<secret){ add(2,'קפצנו לתוך check. '+g+' < '+secret+'? כן.'); add(3,'מחזירים "higher": צריך לנחש גבוה יותר.'); v.answer='higher'; }
+      else { add(2,'קפצנו לתוך check. '+g+' < '+secret+'? לא.');
+        if(g>secret){ add(4,g+' > '+secret+'? כן.'); add(5,'מחזירים "lower": צריך לנחש נמוך יותר.'); v.answer='lower'; }
+        else { add(4,g+' > '+secret+'? לא. נשאר רק else.'); add(7,'מחזירים "correct": בדיוק!'); v.answer='correct'; } }
+      add(16,'חזרנו מהפונקציה. answer = '+PT.repr(v.answer)+'.');
+      out+=v.answer+'\n'; add(17,'מדפיסים את התשובה לשחקן.');
+      if(v.answer==='correct'){ add(18,'התשובה היא "correct".'); v.won=true; add(19,'won = True. בבדיקה הבאה של while נצא.'); }
+      else add(18,'התשובה לא "correct", אז מדלגים על השורה הבאה.');
+    }
+    if(v.won){ add(20,'won הוא True.'); out+='You won in '+v.tries+' tries\n'; add(21,'מדפיסים הודעת ניצחון עם מספר הניסיונות.'); }
+    else { add(20,'won הוא False, אז הולכים ל-else.'); out+='Game over. The number was '+secret+'\n'; add(23,'מגלים לשחקן מה היה המספר.'); }
+    return {code,steps:st,input,won:v.won,tries:v.tries};
+  }
+  const P=[[50,5],[42,7],[37,5],[1,7],[100,3],[20,0]];
+  const EXT=CHECK.concat(['','print(check(10, 50))','print(check(90, 50))','print(check(50, 50))','print(check(1, 1))']).join('\n');
+  const extra=[()=>{ const st=[{line:0,vars:{},out:''},{line:12,vars:{},out:'higher\nlower\ncorrect\ncorrect\n'}]; return {code:EXT,steps:st}; }];
+  return {build,guesses,CHECK,EXT,presets:P.concat([[100,7],[73,2],[99,10]]),extra};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+
+/* lab */
+function lab(){
+  const s=+$('ss').value, m=+$('sm').value, r=LAB.build(s,m);
+  $('ssv').textContent=s; $('smv').textContent=m;
+  PT.mount($('labPT'),{code:r.code,steps:r.steps,input:r.input.map(String)});
+  $('labRun').value=r.code; $('labIn').value=r.input.join('\n');
+  const all=LAB.guesses(s,10), need=all.length;
+  $('gs').innerHTML=r.input.length?r.input.map(g=>'<span'+(g===s?' class="win"':'')+'>'+g+'</span>').join(''):'<span class="unused">אין ניחושים</span>';
+  let t='<div>הניחושים: '+(r.input.length?C(r.input.join(', ')):'אין')+'.</div>';
+  if(m===0) t+='<div>max_tries = 0, אז התנאי של while לא מתקיים כבר בפעם הראשונה. הלולאה לא רצה בכלל, והמשחק נגמר בלי אף ניחוש.</div>';
+  else if(r.won) t+='<div>השחקן ניצח אחרי '+r.tries+' '+(r.tries===1?'ניחוש':'ניחושים')+'. '+(r.tries===m?'בדיוק בניסיון האחרון!':'נשארו לו '+(m-r.tries)+' ניסיונות.')+'</div>';
+  else t+='<div>אחרי '+m+' ניסיונות השחקן עוד לא מצא. בשיטת האמצע הוא היה צריך '+need+'.</div>';
+  t+='<div>בשיטת האמצע כל מספר בין 1 ל-100 נמצא בלא יותר מ-7 ניחושים, כי כל ניחוש חוצה את הטווח.</div>';
+  $('labTxt').innerHTML=t;
+}
+['ss','sm'].forEach(id=>$(id).addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const [a,c]=b.dataset.p.split(','); $('ss').value=a; $('sm').value=c; lab(); });
+lab();
+
+/* worked example: planning stages */
+const EX=[
+  {t:'<strong>מטרה.</strong> משפט אחד: "המחשב שומר מספר סודי בין 1 ל-100. השחקן מנחש, ומקבל רמז גבוה יותר או נמוך יותר, עד שהוא צודק." עוד אין קוד. קודם יודעים מה בונים.'},
+  {t:'<strong>קלט ופלט.</strong> מה נכנס ומה יוצא בכל סיבוב:',html:'<table class="io"><tr><th>קלט</th><th>פלט</th></tr><tr><td>ניחוש קטן מהסוד</td><td dir="ltr" lang="en">higher</td></tr><tr><td>ניחוש גדול מהסוד</td><td dir="ltr" lang="en">lower</td></tr><tr><td>ניחוש שווה לסוד</td><td dir="ltr" lang="en">correct</td></tr></table>'},
+  {t:'<strong>פירוק לפונקציות.</strong> המשימה "להשוות ניחוש לסוד" מקבלת פונקציה משלה. היא לא קוראת קלט ולא מדפיסה. היא רק מחזירה תשובה.',code:'def check(guess, secret):\n    ...'},
+  {t:'<strong>כתיבה.</strong> ממלאים את הפונקציה. שלושה מקרים, שלוש שורות return.',code:LAB.CHECK.join('\n')},
+  {t:'<strong>בדיקה.</strong> בודקים את הפונקציה לבד, עוד לפני שיש משחק. ארבעה מקרים: נמוך, גבוה, מדויק, וקצה (1). הפלט: higher, lower, correct, correct. הכול כמו בטבלה.',code:LAB.EXT},
+  {t:'<strong>שיפור.</strong> עכשיו בונים סביב הפונקציה את המשחק: לולאת while שקוראת ניחושים, מגבלה של max_tries ניסיונות, והודעת סיום. זו התוכנית שבמעבדה.',code:LAB.build(37,7).code}
+];
+let exI=0;
+function ex(){
+  const e=EX[exI];
+  $('exPlan').querySelectorAll('li').forEach((l,i)=>l.classList.toggle('on',i===exI));
+  $('exText').innerHTML=e.t; $('exCode').innerHTML=(e.html||'')+(e.code?'<pre class="code" dir="ltr" lang="en">'+esc(e.code)+'</pre>':'');
+  $('exCount').textContent='צעד '+(exI+1)+' מתוך '+EX.length; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1;
+}
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+const nrm=s=>String(s).trim().replace(/^["']+|["']+$/g,'').replace(/\s+/g,'');
+function numbered(code){ return '<pre class="code pt-code" dir="ltr" lang="en">'+code.split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('')+'</pre>'; }
+const chk=(g,s)=>g<s?'higher':g>s?'lower':'correct';
+function play(secret,max,gs){ let t=0,won=false; const out=[]; while(t<max&&!won){ const g=gs[t]; t++; const a=chk(g,secret); out.push(a); if(a==='correct') won=true; } out.push(won?'You won in '+t+' tries':'Game over. The number was '+secret); return {out,t,won}; }
+function gen(){
+  const kind=pick(['ret','ret','loops','last','bug','stage','tests']), q={kind,type:'text'};
+  if(kind==='ret'){
+    const s=ri(10,90), g=pick([s,s-ri(1,9),s+ri(1,9)]), a=chk(g,s);
+    q.code=LAB.CHECK.join('\n')+'\n\nprint(check('+g+', '+s+'))'; q.ask='מה התוכנית מדפיסה?'; q.ans=a;
+    q.diag=v=>(a==='higher'&&v==='lower')||(a==='lower'&&v==='higher')?'הפוך. higher אומר לשחקן לנחש גבוה יותר, כי הניחוש קטן מהסוד.':null;
+    q.hints=['הפרמטר הראשון הוא guess = '+g+', השני הוא secret = '+s+'.','האם '+g+' < '+s+'?'];
+    q.sol=g+(g<s?' < ':g>s?' > ':' = ')+s+', לכן check מחזירה "'+a+'".';
+  } else if(kind==='loops'){
+    const s=ri(1,100), m=ri(2,6), gs=LAB.guesses(s,m), r=play(s,m,gs);
+    q.code='secret = '+s+'\nmax_tries = '+m+'\n# guesses: '+gs.join(', '); q.ask='במשחק מהמעבדה, עם הניחושים האלה, כמה פעמים תרוץ הלולאה (מה יהיה tries בסוף)?'; q.ans=String(r.t);
+    q.diag=v=>v===String(m)&&r.t<m?'הלולאה עוצרת מוקדם כשמנצחים, כי won הופך ל-True.':v===String(r.t-1)?'tries גדל ב-1 בכל סיבוב, גם בסיבוב שבו מנצחים.':null;
+    q.hints=['הלולאה רצה כל עוד tries < max_tries ועוד לא ניצחו.','בדקו: באיזה ניחוש מגיעים ל-'+s+', אם בכלל?'];
+    q.sol=r.won?'הניחוש ה-'+r.t+' הוא '+s+'. אחרי הניצחון הלולאה עוצרת, לכן tries = '+r.t+'.':'אף ניחוש לא שווה ל-'+s+', אז הלולאה רצה את כל '+m+' הפעמים.';
+  } else if(kind==='last'){
+    const s=ri(5,95), m=ri(2,4), gs=Array.from({length:m},()=>ri(1,100)).map(x=>x===s?x+1:x);
+    if(Math.random()<.5) gs[ri(0,m-1)]=s;
+    const r=play(s,m,gs);
+    q.code='secret = '+s+'\nmax_tries = '+m+'\n# guesses: '+gs.join(', '); q.type='choice'; q.ask='במשחק מהמעבדה, עם הניחושים האלה, מה השורה האחרונה שהתוכנית מדפיסה?';
+    const opts=new Set([r.out[r.out.length-1],'Game over. The number was '+s,'You won in '+r.t+' tries','You won in '+m+' tries']);
+    q.opts=[...opts].map(t=>({t,ok:t===r.out[r.out.length-1],why:t.startsWith('You won')?(r.won?'השחקן ניצח, אבל בדקו כמה ניסיונות זה לקח. הלולאה עוצרת מיד אחרי הניצחון.':'אף ניחוש לא שווה ל-'+s+'. אין ניצחון.'):'יש ניחוש ששווה ל-'+s+'. חפשו אותו.'})).sort(()=>Math.random()-.5);
+    q.hints=['בדקו כל ניחוש לפי הסדר: האם הוא שווה ל-'+s+'?','אם ניצחו, ההודעה כוללת את מספר הניסיון שבו ניצחו.'];
+    q.sol='הפלט המלא: '+r.out.join(' / ')+'.';
+  } else if(kind==='bug'){
+    const b=pick([
+      {lines:['secret = 42','tries = 0','while tries < 5:','    guess = int(input())','    print(guess == secret)'],ans:'3',why:'הלולאה בשורה 3 לא נגמרת, כי tries לא גדל אף פעם. חסרה שורה tries = tries + 1.',ask:'המשחק לא נגמר אף פעם. איזו שורה צריך לתקן, כי התנאי בה נשאר נכון לתמיד?',hint:'מה צריך להשתנות כדי שתנאי ה-while יהפוך ל-False?'},
+      {lines:['def check(guess, secret):','    if guess < secret:','        return "lower"','    elif guess > secret:','        return "higher"','    return "correct"'],ans:'3',why:'כשהניחוש קטן מהסוד צריך לנחש גבוה יותר, אז מחזירים "higher". שורות 3 ו-5 הפוכות, והראשונה מביניהן היא 3.',ask:'השחקן מקבל רמזים הפוכים. מה השורה הראשונה עם הטעות?',hint:'אם guess < secret, האם צריך לנחש גבוה יותר או נמוך יותר?'},
+      {lines:['secret = 42','guess = input()','if guess == secret:','    print("correct")','else:','    print("wrong")'],ans:'2',why:'input מחזיר מחרוזת. "42" לא שווה ל-42, אז תמיד מודפס wrong. צריך int(input()).',ask:'גם כשמקלידים 42 מודפס wrong. באיזו שורה הבאג?',hint:'מה הסוג של מה ש-input מחזיר?'},
+      {lines:['def check(guess, secret):','    if guess == secret:','        print("correct")','','answer = check(42, 42)','print(answer == "correct")'],ans:'3',why:'הפונקציה מדפיסה במקום להחזיר. answer מקבל None, ולכן בשורה 6 מודפס False. צריך return "correct".',ask:'בסוף מודפס False, למרות שהניחוש נכון. באיזו שורה הבאג?',hint:'מה הפונקציה מחזירה? יש בה return?'}
+    ]);
+    q.code=b.lines.join('\n'); q.ask=b.ask; q.ans=b.ans; q.diag=v=>/^\d+$/.test(v)&&+v>0&&+v<=b.lines.length?'זו לא השורה. קראו שוב כל שורה ושאלו מה היא עושה באמת.':'כתבו מספר שורה.';
+    q.hints=[b.hint,'מספרי השורות כתובים משמאל לקוד.']; q.sol='שורה '+b.ans+'. '+b.why;
+  } else if(kind==='stage'){
+    const S=[
+      {d:'כותבים במשפט אחד מה התוכנית צריכה לעשות.',a:'מטרה'},
+      {d:'מחליטים שהתוכנית מקבלת ניחוש ומדפיסה higher, lower או correct.',a:'קלט ופלט'},
+      {d:'מחליטים שההשוואה בין הניחוש לסוד תהיה בפונקציה נפרדת בשם check.',a:'פירוק לפונקציות'},
+      {d:'מריצים את check עם 10, 90 ו-50 ובודקים שהתשובות נכונות.',a:'בדיקה'},
+      {d:'הכול עובד, ומוסיפים הגבלה של 7 ניסיונות.',a:'שיפור'}
+    ], s=pick(S);
+    q.type='choice'; q.code=''; q.ask='באיזה שלב של התכנון אנחנו? "'+s.d+'"';
+    const names=['מטרה','קלט ופלט','פירוק לפונקציות','בדיקה','שיפור'];
+    q.opts=names.filter(n=>n===s.a||Math.random()<.6).slice(0,4).map(t=>({t,ok:t===s.a,why:'לא בדיוק. חשבו: האם כבר יש קוד? האם מריצים אותו? האם מוסיפים משהו חדש?'}));
+    if(!q.opts.some(o=>o.ok)) q.opts.push({t:s.a,ok:true}); if(q.opts.length<3) q.opts.push(...names.filter(n=>!q.opts.some(o=>o.t===n)).slice(0,3-q.opts.length).map(t=>({t,ok:false,why:'לא בדיוק. חשבו: האם כבר יש קוד? האם מריצים אותו?'})));
+    q.opts.sort(()=>Math.random()-.5);
+    q.hints=['הסדר: מטרה, קלט ופלט, פירוק לפונקציות, כתיבה, בדיקה, שיפור.','שאלו: מה עושים בשלב הזה, מחליטים, כותבים, מריצים או מוסיפים?'];
+    q.sol='זה שלב ה'+s.a+'.';
+  } else {
+    q.type='choice'; q.code=LAB.CHECK.join('\n'); q.ask='רוצים לבדוק שכל שלוש שורות ה-return בפונקציה עובדות. איזו קבוצת בדיקות מספיקה?';
+    q.opts=[{t:'check(10, 50), check(90, 50), check(50, 50)',ok:true},{t:'check(10, 50), check(20, 50), check(30, 50)',why:'כל הבדיקות האלה נמוכות מהסוד. הן בודקות רק את "higher".'},{t:'check(50, 50) בלבד',why:'בדיקה אחת בודקת רק מקרה אחד. מה עם ניחוש נמוך וגבוה?'},{t:'check(90, 50), check(80, 50)',why:'שתיהן גבוהות מהסוד. חסרים ניחוש נמוך ומדויק.'}].sort(()=>Math.random()-.5);
+    q.opts.forEach(o=>o.ltr=true);
+    q.hints=['לכל שורת return צריך לפחות בדיקה אחת שמגיעה אליה.','צריך ניחוש נמוך, ניחוש גבוה וניחוש מדויק.'];
+    q.sol='צריך מקרה לכל ענף: 10 (higher), 90 (lower), 50 (correct).';
+  }
+  return q;
+}
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=q.code?numbered(q.code):'';
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button"'+(o.ltr||/^[A-Za-z]/.test(o.t)?' dir="ltr" lang="en"':'')+' data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why||msg;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; }
+    right=v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

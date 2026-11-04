@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>חיפוש בינארי ומיון בועות · מדעי המחשב כיתה ט · מירי</title>
+<meta name="description" content="חיפוש לינארי מול חיפוש בינארי, וכמה בדיקות כל אחד עושה. מיון בועות צעד אחרי צעד, מעבדה עם מחוונים בפייתון ותרגול עם רמזים לכיתה ט.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="חיפוש בינארי ומיון בועות · מדעי המחשב כיתה ט · מירי">
+<meta property="og:description" content="חיפוש לינארי מול חיפוש בינארי, וכמה בדיקות כל אחד עושה. מיון בועות צעד אחרי צעד, מעבדה עם מחוונים בפייתון ותרגול עם רמזים לכיתה ט.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/cs/grade-9/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-9/#cs-python-9"},{"@type":"ListItem","position":5,"name":"חיפוש ומיון: מבוא","item":"https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין חיפוש לינארי לחיפוש בינארי?","acceptedAnswer":{"@type":"Answer","text":"חיפוש לינארי בודק איבר אחרי איבר מההתחלה, ועובד בכל רשימה. חיפוש בינארי בודק את האמצע וזורק חצי בכל צעד, אבל עובד רק ברשימה ממוינת. ברשימה של 1000 איברים לינארי עלול לבדוק 1000 פעמים, ובינארי לא יותר מ-10. נסו במעבדה."}},{"@type":"Question","name":"איך עובד מיון בועות?","acceptedAnswer":{"@type":"Answer","text":"משווים כל שני שכנים ברשימה ומחליפים אותם אם הם בסדר הפוך. אחרי מעבר אחד האיבר הגדול ביותר מגיע לסוף. חוזרים על המעברים עד שעובר מעבר שלם בלי אף החלפה. השיטה פשוטה להבנה, אבל איטית ברשימות ארוכות."}},{"@type":"Question","name":"למה חיפוש בינארי כל כך מהיר?","acceptedAnswer":{"@type":"Answer","text":"כי כל בדיקה מחלקת את מה שנשאר לשניים. 1000 הופך ל-500, אחר כך 250, 125 וכן הלאה. אחרי כ-10 חלוקות נשאר איבר אחד. גם ברשימה של מיליון איברים מספיקות בערך 20 בדיקות. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חיפוש ומיון: מבוא","description":"חיפוש לינארי מול חיפוש בינארי, וכמה בדיקות כל אחד עושה. מיון בועות צעד אחרי צעד, מעבדה עם מחוונים בפייתון ותרגול עם רמזים לכיתה ט.","url":"https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"חיפוש ומיון: מבוא","teaches":"חיפוש ומיון: מבוא","keywords":"חיפוש בינארי, מיון בועות, השוואות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:9em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.seg{display:flex; gap:8px; flex-wrap:wrap}
+.seg button[aria-pressed="true"]{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.boxes{display:flex; direction:ltr; justify-content:center; flex-wrap:wrap; gap:4px; margin:8px 0}
+.boxes .c{width:40px; text-align:center}
+.boxes .v{height:38px; border:2px solid var(--border); border-radius:8px; background:var(--card); display:flex; align-items:center; justify-content:center; font:700 1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.boxes .ix{font:.8rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--muted)}
+.boxes .seen .v{background:var(--hint-bg)}
+.boxes .out .v{opacity:.35}
+.boxes .now .v{background:var(--hl); box-shadow:2px 2px 0 var(--hard); border-color:var(--line)}
+.boxes .hit .v{background:var(--ok-bg); border-color:var(--ok); color:var(--ok)}
+.vlegend{text-align:center; color:var(--muted); font-size:.9rem; margin:0}
+.meters{display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:6px 10px; align-items:center; font-weight:700}
+.meters .bar{height:16px; border:2px solid var(--border); border-radius:8px; background:var(--card); overflow:hidden}
+.meters .bar span{display:block; height:100%; background:var(--line)}
+.meters .bar.b2 span{background:var(--blue)}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="search-and-sort-intro">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/#cs-python-9">תכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">חיפוש ומיון: מבוא</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · תכנות בפייתון</div>
+  <h1>חיפוש ומיון <span class="slogan">איך מחשב מוצא ומסדר</span></h1>
+  <p class="lead">חנות עם אלף מוצרים, טבלת שיאים במשחק, רשימת ציונים: המחשב צריך למצוא ערך ולסדר רשימות כל הזמן. כאן משווים שתי דרכים לחפש, סופרים כמה בדיקות כל אחת עושה, ומסדרים רשימה במיון בועות. כדאי להכיר קודם <a href="../lists/">רשימות</a> ו<a href="../loops/">לולאות</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חיפוש לינארי</h3>
+      <p>עוברים על הרשימה מההתחלה, איבר אחרי איבר, עד שמוצאים. עובד בכל רשימה, גם לא מסודרת. ברשימה של 1000 איברים זה יכול לקחת 1000 בדיקות.</p>
+    </div>
+    <div class="mini">
+      <h3>חיפוש בינארי</h3>
+      <p>עובד רק ברשימה <strong>ממוינת</strong>. בודקים את האמצע. אם הערך שם, סיימנו. אם הוא גדול יותר, ממשיכים רק בחצי הימני, ואם קטן, בחצי השמאלי. כל בדיקה זורקת חצי. ב-1000 איברים מספיקות 10 בדיקות.</p>
+    </div>
+    <div class="mini">
+      <h3>מיון בועות</h3>
+      <p>עוברים על הרשימה ומשווים כל שני שכנים. אם הם בסדר הפוך, מחליפים ביניהם. אחרי כל מעבר הגדול ביותר "מבעבע" לסוף. חוזרים על זה עד שאין יותר החלפות.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> חיפוש בינארי מהיר מאוד, אבל רק ברשימה ממוינת. לכן קודם ממיינים, ואחר כך אפשר לחפש מהר הרבה פעמים.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: מי מוצא מהר יותר?</h2></div>
+  <p class="text">ברשימה יש מחירים ממוינים של מוצרים בחנות. בחרו שיטת חיפוש, את אורך הרשימה ואת המחיר שמחפשים. הריצו שורה אחרי שורה: הקופסה הצהובה היא האיבר שבודקים עכשיו, והקופסאות החיוורות כבר לא רלוונטיות.</p>
+  <div class="seg" id="algo" role="group" aria-label="שיטת חיפוש">
+    <button type="button" data-a="lin" aria-pressed="false">חיפוש לינארי</button>
+    <button type="button" data-a="bin" aria-pressed="true">חיפוש בינארי</button>
+  </div>
+  <div class="boxes" id="viz"></div>
+  <p class="vlegend">מתחת לכל קופסה: האינדקס שלה</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sn"><span>כמה מחירים ברשימה</span><span class="eq" id="snv"></span></label>
+      <input type="range" id="sn" min="1" max="15" step="1" value="10">
+      <label class="slider" for="st"><span>המחיר שמחפשים (target)</span><span class="eq" id="stv"></span></label>
+      <input type="range" class="blue" id="st" min="1" max="62" step="1" value="27">
+      <div class="meters" id="meters"></div>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="10,3">הראשון ברשימה</button>
+          <button type="button" data-p="10,39">האחרון ברשימה</button>
+          <button type="button" data-p="15,31">בדיוק באמצע</button>
+          <button type="button" data-p="10,20">לא ברשימה</button>
+          <button type="button" data-p="1,7">רשימה של 1</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>חיפוש בינארי ברשימה לא ממוינת</h3>
+      <p>החיפוש זורק חצי לפי ההשוואה לאמצע. אם הרשימה לא ממוינת, הוא עלול לזרוק בדיוק את החצי שבו הערך נמצא.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">nums = [9, 2, 7, 4, 5]
+# binary search for 9
+# → not found!</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">nums = [9, 2, 7, 4, 5]
+nums.sort()
+# [2, 4, 5, 7, 9]</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>high מתחיל ב-len</h3>
+      <p>האינדקס האחרון הוא <code dir="ltr" lang="en">len(nums) - 1</code>. אם high מתחיל ב-<code dir="ltr" lang="en">len(nums)</code>, האמצע עלול לצאת מחוץ לרשימה.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">high = len(nums)</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">high = len(nums) - 1</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>לולאה שלא נגמרת</h3>
+      <p>אחרי בדיקת האמצע חייבים לזוז מעבר לו: <code dir="ltr" lang="en">mid + 1</code> או <code dir="ltr" lang="en">mid - 1</code>. אם כותבים <code dir="ltr" lang="en">low = mid</code>, אפשר להיתקע על אותו איבר לנצח.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">low = mid</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">low = mid + 1</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>החלפה שמוחקת ערך</h3>
+      <p>במיון בועות מחליפים שני שכנים. אם כותבים שתי השמות רגילות, הערך הראשון נדרס. בפייתון מחליפים בשורה אחת.</p>
+      <div class="wr"><div><p class="bad">✗ לא נכון</p><pre class="code" dir="ltr" lang="en">a[i] = a[i + 1]
+a[i + 1] = a[i]</pre></div><div><p class="good">✓ נכון</p><pre class="code" dir="ltr" lang="en">a[i], a[i + 1] = a[i + 1], a[i]</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: מיון בועות</h2></div>
+  <p class="text">ממיינים ארבעה ציונים במבחן מהקטן לגדול. בכל מעבר משווים שכנים ומחליפים אם צריך. שימו לב לשורה <code dir="ltr" lang="en">swaps</code>: היא סופרת כמה החלפות היו במעבר. כשמעבר שלם עובר בלי החלפות, הרשימה ממוינת ועוצרים.</p>
+  <div class="boxes" id="exViz"></div>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין חיפוש לינארי לחיפוש בינארי?</h3>
+    <p>חיפוש לינארי בודק איבר אחרי איבר מההתחלה, ועובד בכל רשימה. חיפוש בינארי בודק את האמצע וזורק חצי בכל צעד, אבל עובד רק ברשימה ממוינת. ברשימה של 1000 איברים לינארי עלול לבדוק 1000 פעמים, ובינארי לא יותר מ-10. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך עובד מיון בועות?</h3>
+    <p>משווים כל שני שכנים ברשימה ומחליפים אותם אם הם בסדר הפוך. אחרי מעבר אחד האיבר הגדול ביותר מגיע לסוף. חוזרים על המעברים עד שעובר מעבר שלם בלי אף החלפה. השיטה פשוטה להבנה, אבל איטית ברשימות ארוכות.</p>
+    <h3>למה חיפוש בינארי כל כך מהיר?</h3>
+    <p>כי כל בדיקה מחלקת את מה שנשאר לשניים. 1000 הופך ל-500, אחר כך 250, 125 וכן הלאה. אחרי כ-10 חלוקות נשאר איבר אחד. גם ברשימה של מיליון איברים מספיקות בערך 20 בדיקות. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/lists/">רשימות בפייתון</a> · <a href="../../cs/loops/">לולאות בפייתון: for ו-while</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/strings/"><small>→ הנושא הקודם</small>מחרוזות בפייתון</a><a class="next" href="../../cs/plan-a-program/"><small>הנושא הבא ←</small>מתכננים תוכנית: פרויקט קטן</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const list=n=>Array.from({length:n},(_,i)=>4*i+3);
+  const L=a=>'['+a.join(', ')+']';
+  function lin(n,t){
+    const nums=list(n);
+    const code=['nums = '+L(nums),'target = '+t,'checks = 0','found = -1','for i in range(len(nums)):','    checks = checks + 1','    if nums[i] == target:','        found = i','        break','print("index:", found)','print("checks:", checks)'].join('\n');
+    const st=[{line:0,vars:{},out:''}], v={}; let out='';
+    const add=(line,note)=>st.push({line,vars:{...v},out,note});
+    v.nums=nums; add(1,'רשימת מחירים ממוינת, '+n+' איברים.');
+    v.target=t; add(2,'מחפשים את המחיר '+t+'.');
+    v.checks=0; add(3,'מונה הבדיקות מתחיל ב-0.');
+    v.found=-1; add(4,'found = -1 אומר "עוד לא מצאנו".');
+    let hit=false;
+    for(let i=0;i<n;i++){
+      v.i=i; add(5,'עוברים לאינדקס '+i+'.');
+      v.checks++; add(6,'בדיקה מספר '+v.checks+'.');
+      if(nums[i]===t){ add(7,'nums['+i+'] = '+nums[i]+', שווה ל-'+t+'. מצאנו!'); v.found=i; add(8,'שומרים את האינדקס: found = '+i+'.'); add(9,'break יוצא מהלולאה מיד. אין טעם להמשיך לחפש.'); hit=true; break; }
+      add(7,'nums['+i+'] = '+nums[i]+', לא שווה ל-'+t+'. ממשיכים.');
+    }
+    if(!hit) add(5,'עברנו על כל הרשימה ולא מצאנו. הלולאה נגמרת.');
+    out+='index: '+v.found+'\n'; add(10,v.found<0?'מדפיסים -1: המחיר לא ברשימה.':'מדפיסים איפה מצאנו.');
+    out+='checks: '+v.checks+'\n'; add(11,'בסך הכול '+v.checks+' בדיקות.');
+    return {code,steps:st,nums,found:v.found,checks:v.checks};
+  }
+  function bin(n,t){
+    const nums=list(n);
+    const code=['nums = '+L(nums),'target = '+t,'checks = 0','found = -1','low = 0','high = len(nums) - 1','while low <= high:','    mid = (low + high) // 2','    checks = checks + 1','    if nums[mid] == target:','        found = mid','        break','    elif nums[mid] < target:','        low = mid + 1','    else:','        high = mid - 1','print("index:", found)','print("checks:", checks)'].join('\n');
+    const st=[{line:0,vars:{},out:''}], v={}; let out='';
+    const add=(line,note)=>st.push({line,vars:{...v},out,note});
+    v.nums=nums; add(1,'רשימת מחירים ממוינת, '+n+' איברים. חיפוש בינארי עובד רק ברשימה ממוינת.');
+    v.target=t; add(2,'מחפשים את המחיר '+t+'.');
+    v.checks=0; add(3,'מונה הבדיקות מתחיל ב-0.');
+    v.found=-1; add(4,'found = -1 אומר "עוד לא מצאנו".');
+    v.low=0; add(5,'low הוא האינדקס הראשון שעוד יכול להיות התשובה.');
+    v.high=n-1; add(6,'high הוא האינדקס האחרון: '+(n-1)+'.');
+    let hit=false;
+    while(true){
+      if(!(v.low<=v.high)){ add(7,'low = '+v.low+' גדול מ-high = '+v.high+'. לא נשאר אף איבר לבדוק, הלולאה נגמרת.'); break; }
+      add(7,'low = '+v.low+', high = '+v.high+'. עוד יש איברים לבדוק ('+(v.high-v.low+1)+').');
+      v.mid=Math.floor((v.low+v.high)/2); add(8,'האמצע: ('+v.low+' + '+v.high+') // 2 = '+v.mid+'.');
+      v.checks++; add(9,'בדיקה מספר '+v.checks+'.');
+      const m=nums[v.mid];
+      if(m===t){ add(10,'nums['+v.mid+'] = '+m+'. זה בדיוק המחיר!'); v.found=v.mid; add(11,'שומרים: found = '+v.mid+'.'); add(12,'יוצאים מהלולאה.'); hit=true; break; }
+      add(10,'nums['+v.mid+'] = '+m+', לא '+t+'.');
+      if(m<t){ add(13,m+' קטן מ-'+t+', אז המחיר נמצא מימין לאמצע.'); v.low=v.mid+1; add(14,'זורקים את החצי השמאלי: low = '+v.low+'.'); }
+      else { add(13,m+' גדול מ-'+t+', אז המחיר נמצא משמאל לאמצע.'); v.high=v.mid-1; add(16,'זורקים את החצי הימני: high = '+v.high+'.'); }
+    }
+    out+='index: '+v.found+'\n'; add(17,v.found<0?'מדפיסים -1: המחיר לא ברשימה.':'מדפיסים איפה מצאנו.');
+    out+='checks: '+v.checks+'\n'; add(18,'בסך הכול '+v.checks+' בדיקות.');
+    return {code,steps:st,nums,found:v.found,checks:v.checks};
+  }
+  const EXA=[72,95,60,88];
+  function bubble(a0){
+    const code=['scores = '+L(a0),'n = len(scores)','for p in range(n - 1):','    swaps = 0','    for i in range(n - 1 - p):','        if scores[i] > scores[i + 1]:','            scores[i], scores[i + 1] = scores[i + 1], scores[i]','            swaps = swaps + 1','    print("pass", p + 1, "swaps:", swaps)','    if swaps == 0:','        break','print(scores)'].join('\n');
+    const st=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה". לפני כל השוואה נסו לנחש אם תהיה החלפה.'}], v={}; let out='';
+    const a=a0.slice(); const add=(line,note)=>st.push({line,vars:{...v,scores:a.slice()},out,note,a:a.slice(),cmp:line>=5&&line<=8?v.i:undefined});
+    add(1,'הרשימה לא ממוינת.');
+    const n=a.length; v.n=n; add(2,'יש '+n+' ציונים. נצטרך לכל היותר '+(n-1)+' מעברים.');
+    let stopped=false;
+    for(let p=0;p<n-1;p++){
+      v.p=p; add(3,'מתחילים מעבר מספר '+(p+1)+'.');
+      v.swaps=0; add(4,'סופרים החלפות במעבר הזה מ-0.');
+      for(let i=0;i<n-1-p;i++){
+        v.i=i; add(5,'משווים את אינדקס '+i+' ו-'+(i+1)+'.');
+        if(a[i]>a[i+1]){ add(6,a[i]+' > '+a[i+1]+'? כן. הם בסדר הפוך.'); [a[i],a[i+1]]=[a[i+1],a[i]]; add(7,'מחליפים ביניהם: עכשיו '+a[i]+' ואחריו '+a[i+1]+'.'); v.swaps++; add(8,'swaps = '+v.swaps+'.'); }
+        else add(6,a[i]+' > '+a[i+1]+'? לא. משאירים.');
+      }
+      st.push({line:5,vars:{...v,scores:a.slice()},out,note:'המעבר נגמר. הגדול ביותר מבין מה שנשאר הגיע לסוף.',a:a.slice()});
+      out+='pass '+(p+1)+' swaps: '+v.swaps+'\n'; add(9,'במעבר '+(p+1)+' היו '+v.swaps+' החלפות.');
+      if(v.swaps===0){ add(10,'לא הייתה אף החלפה, אז הרשימה כבר ממוינת.'); add(11,'break: עוצרים מוקדם.'); stopped=true; break; }
+      add(10,'היו החלפות, אז ממשיכים למעבר הבא.');
+    }
+    if(!stopped) add(3,'סיימנו את כל '+(n-1)+' המעברים.');
+    out+=L(a)+'\n'; add(12,'הרשימה ממוינת מהקטן לגדול.');
+    return {code,steps:st};
+  }
+  return {lin,bin,bubble,EXA,list,build:(alg,n,t)=>alg==='lin'?lin(n,t):bin(n,t),
+    presets:[['bin',10,3],['bin',10,39],['bin',15,31],['bin',10,20],['bin',1,7],['lin',10,3],['lin',10,39],['lin',15,31],['lin',10,20],['lin',1,7],['bin',15,62],['bin',2,1]],
+    extra:[()=>bubble(EXA),()=>bubble([1,2,3,4]),()=>bubble([9,7,5,3,1])]};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+let alg='bin', R=null;
+function viz(){
+  const s=R.steps[$('labPT').ptStep||0].vars, nums=R.nums;
+  $('viz').innerHTML=nums.map((x,i)=>{
+    let c='';
+    if(alg==='lin'){ if(s.found===i) c='hit'; else if(s.i===i) c='now'; else if(s.i!==undefined&&i<s.i) c='seen'; }
+    else { if(s.found===i) c='hit'; else if(s.mid===i&&s.low!==undefined&&s.low<=s.high&&s.mid>=s.low&&s.mid<=s.high) c='now'; else if(s.low!==undefined&&(i<s.low||i>s.high)) c='out'; }
+    return '<div class="c '+c+'"><div class="v">'+x+'</div><div class="ix">'+i+'</div></div>';
+  }).join('');
+}
+function lab(){
+  const n=+$('sn').value, t=+$('st').value;
+  $('snv').textContent=n; $('stv').textContent=t;
+  R=LAB.build(alg,n,t);
+  const el=$('labPT'); PT.mount(el,{code:R.code,steps:R.steps}); viz();
+  $('labRun').value=R.code;
+  const l=LAB.lin(n,t), b=LAB.bin(n,t), mx=Math.max(l.checks,b.checks,1);
+  $('meters').innerHTML='<span>לינארי</span><span class="bar"><span style="width:'+(100*l.checks/mx)+'%"></span></span><span>'+l.checks+'</span><span>בינארי</span><span class="bar b2"><span style="width:'+(100*b.checks/mx)+'%"></span></span><span>'+b.checks+'</span>';
+  const found=R.found>=0;
+  let t2='<div>'+(found?'המחיר '+t+' נמצא באינדקס '+R.found+'.':'המחיר '+t+' לא ברשימה, ולכן מודפס '+C('-1')+'.')+'</div>'
+    +'<div>חיפוש לינארי: '+l.checks+' בדיקות. חיפוש בינארי: '+b.checks+' בדיקות.</div>';
+  if(n===1) t2+='<div>ברשימה של איבר אחד שתי השיטות בודקות פעם אחת בלבד.</div>';
+  else if(l.checks<b.checks) t2+='<div>הפעם הלינארי ניצח: הערך היה ממש בהתחלה. אבל זה מזל. בממוצע הבינארי מהיר בהרבה.</div>';
+  else if(b.checks===1) t2+='<div>הערך היה בדיוק באמצע, אז הבינארי מצא אותו בבדיקה הראשונה.</div>';
+  else if(!found) t2+='<div>כשהערך לא קיים, הלינארי חייב לבדוק את כל '+n+' האיברים. הבינארי עוצר כש-low עובר את high.</div>';
+  else t2+='<div>כל בדיקה של הבינארי זורקת חצי ממה שנשאר. לכן ברשימה של '+n+' מספיקות לו לכל היותר '+Math.ceil(Math.log2(n+1))+' בדיקות.</div>';
+  $('labTxt').innerHTML=t2;
+}
+$('labPT').addEventListener('click',()=>setTimeout(viz));
+['sn','st'].forEach(id=>$(id).addEventListener('input',lab));
+$('algo').querySelectorAll('button').forEach(b=>b.onclick=()=>{ alg=b.dataset.a; $('algo').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); lab(); });
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const [n,t]=b.dataset.p.split(','); $('sn').value=n; $('st').value=t; lab(); });
+lab();
+
+/* worked example */
+const E=LAB.bubble(LAB.EXA);
+function exViz(){ const s=E.steps[$('exPT').ptStep||0], a=s.a||LAB.EXA; $('exViz').innerHTML=a.map((x,i)=>'<div class="c'+(s.cmp!==undefined&&(i===s.cmp||i===s.cmp+1)?' now':'')+'"><div class="v">'+x+'</div><div class="ix">'+i+'</div></div>').join(''); }
+PT.mount($('exPT'),{code:E.code,steps:E.steps}); exViz();
+$('exPT').addEventListener('click',()=>setTimeout(exViz));
+
+/* practice */
+const nrm=s=>String(s).trim().replace(/^["']+|["']+$/g,'').replace(/\s+/g,'');
+function numbered(code){ return '<pre class="code pt-code" dir="ltr" lang="en">'+code.split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('')+'</pre>'; }
+const sorted=n=>{ const a=new Set(); while(a.size<n) a.add(ri(1,60)); return [...a].sort((x,y)=>x-y); };
+function bubblePass(a0){ const a=a0.slice(); let s=0; for(let i=0;i<a.length-1;i++) if(a[i]>a[i+1]){ [a[i],a[i+1]]=[a[i+1],a[i]]; s++; } return {a,s}; }
+function gen(){
+  const kind=pick(['lin','bin','mid','pass','swaps','which','max']), q={kind,type:'text'};
+  if(kind==='lin'){
+    const a=sorted(ri(6,9)).sort(()=>Math.random()-.5), miss=Math.random()<.25, t=miss?61+ri(0,30):pick(a), k=a.indexOf(t);
+    q.code='nums = ['+a.join(', ')+']\ntarget = '+t; q.ask='בחיפוש לינארי מההתחלה, כמה בדיקות יעשו עד שהחיפוש ייגמר?';
+    q.ans=String(miss?a.length:k+1);
+    q.diag=v=>!miss&&v===String(k)?'זה האינדקס. אבל הבדיקה הראשונה היא באינדקס 0, אז יש בדיקה אחת יותר.':miss&&v==='0'?'כדי לדעת שהערך לא קיים צריך לבדוק את כל האיברים.':null;
+    q.hints=['סופרים כל איבר שבודקים, כולל זה שבו מוצאים.',miss?'האם '+t+' בכלל ברשימה?':''+t+' נמצא באינדקס '+k+'.'];
+    q.sol=miss?t+' לא ברשימה, אז בודקים את כל '+a.length+' האיברים.':t+' באינדקס '+k+', אז בודקים את האינדקסים 0 עד '+k+': '+(k+1)+' בדיקות.';
+  } else if(kind==='mid'){
+    const a=sorted(pick([5,7,9,11])); q.code='nums = ['+a.join(', ')+']\nlow = 0\nhigh = len(nums) - 1\nmid = (low + high) // 2\nprint(nums[mid])';
+    const m=Math.floor((a.length-1)/2); q.ans=String(a[m]); q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>v===String(m)?'זה האינדקס של האמצע. print מדפיס את הערך שבמקום הזה.':v===String(a[m+1])?'high הוא '+(a.length-1)+', לא '+a.length+'. חשבו שוב את mid.':null;
+    q.hints=['high = '+(a.length-1)+' כי יש '+a.length+' איברים.','mid = (0 + '+(a.length-1)+') // 2 = '+m+'. מה יש באינדקס '+m+'?'];
+    q.sol='mid = (0 + '+(a.length-1)+') // 2 = '+m+', ו-nums['+m+'] = '+a[m]+'.';
+  } else if(kind==='bin'){
+    const n=pick([7,15]), a=sorted(n), t=pick(a);
+    let lo=0,hi=n-1,c=0; while(lo<=hi){ const m=(lo+hi)>>1; c++; if(a[m]===t) break; if(a[m]<t) lo=m+1; else hi=m-1; }
+    q.code='nums = ['+a.join(', ')+']\ntarget = '+t; q.ask='בחיפוש בינארי, כמה בדיקות (כמה פעמים בודקים אמצע) יעשו עד שמוצאים את '+t+'?'; q.ans=String(c);
+    const k=a.indexOf(t); q.diag=v=>v===String(k+1)?'זה מספר הבדיקות של חיפוש לינארי. בבינארי מתחילים מהאמצע.':null;
+    q.hints=['הבדיקה הראשונה היא באינדקס '+((n-1)>>1)+', ששם יש '+a[(n-1)>>1]+'.','אחרי כל בדיקה זורקים חצי. כתבו בכל צעד את low, high ו-mid.'];
+    let lo2=0,hi2=n-1; const path=[]; while(lo2<=hi2){ const m=(lo2+hi2)>>1; path.push(a[m]); if(a[m]===t) break; if(a[m]<t) lo2=m+1; else hi2=m-1; }
+    q.sol='בודקים את '+path.join(', אחר כך ')+'. סך הכול '+c+' בדיקות.';
+  } else if(kind==='pass'){
+    const a=sorted(5).sort(()=>Math.random()-.5), r=bubblePass(a);
+    q.code='a = ['+a.join(', ')+']\nfor i in range(len(a) - 1):\n    if a[i] > a[i + 1]:\n        a[i], a[i + 1] = a[i + 1], a[i]\nprint(a)';
+    q.ans='['+r.a.join(', ')+']'; q.ask='זה מעבר אחד של מיון בועות. מה התוכנית מדפיסה? כתבו את הרשימה עם סוגריים מרובעים.';
+    const full='['+a.slice().sort((x,y)=>x-y).join(', ')+']';
+    q.diag=v=>v===nrm(full)?'זו הרשימה הממוינת לגמרי. אחרי מעבר אחד בטוח רק שהגדול ביותר בסוף.':null;
+    q.hints=['משווים זוג אחרי זוג משמאל לימין, ומחליפים מיד. הזוג הבא כבר רואה את ההחלפה.','בסוף המעבר המספר הגדול ביותר, '+Math.max(...a)+', חייב להיות אחרון.'];
+    q.sol='אחרי מעבר אחד: '+q.ans+'. היו '+r.s+' החלפות, והגדול ביותר הגיע לסוף.';
+  } else if(kind==='swaps'){
+    const a=sorted(4).sort(()=>Math.random()-.5), r=bubblePass(a);
+    q.code='a = ['+a.join(', ')+']\nswaps = 0\nfor i in range(len(a) - 1):\n    if a[i] > a[i + 1]:\n        a[i], a[i + 1] = a[i + 1], a[i]\n        swaps = swaps + 1\nprint(swaps)';
+    q.ans=String(r.s); q.ask='מה התוכנית מדפיסה?';
+    q.diag=v=>v==='3'&&r.s!==3?'בכל מעבר יש 3 השוואות, אבל swaps גדל רק כשמחליפים.':null;
+    q.hints=['יש 3 השוואות: אינדקסים 0 ו-1, 1 ו-2, 2 ו-3.','אחרי כל החלפה הרשימה משתנה. ההשוואה הבאה משתמשת ברשימה החדשה.'];
+    q.sol='אחרי המעבר: ['+r.a.join(', ')+']. מספר ההחלפות: '+r.s+'.';
+  } else if(kind==='which'){
+    q.type='choice'; const unsorted=Math.random()<.5;
+    q.ask=unsorted?'ברשימת מוצרים שלא ממוינת, איזה חיפוש אפשר להפעיל ישר, בלי למיין קודם?':'ברשימה ממוינת של 1,000,000 שמות משתמשים, איזה חיפוש יסיים מהר יותר?';
+    q.code='';
+    q.opts=unsorted?[{t:'חיפוש לינארי',ok:true},{t:'חיפוש בינארי',why:'בינארי זורק חצי לפי ההשוואה לאמצע. ברשימה לא ממוינת הוא עלול לזרוק את החצי הנכון.'},{t:'שניהם יעבדו אותו דבר',why:'רק אחד מהם לא תלוי בסדר של הרשימה.'}]
+      :[{t:'חיפוש בינארי',ok:true},{t:'חיפוש לינארי',why:'לינארי עלול לבדוק מיליון פעמים. בינארי חוצה כל פעם, ומסתפק בכ-20 בדיקות.'},{t:'אין הבדל',why:'יש הבדל עצום: בערך 20 בדיקות לעומת עד מיליון.'}];
+    q.opts.sort(()=>Math.random()-.5);
+    q.hints=['איזה חיפוש צריך שהרשימה תהיה מסודרת?','חיפוש בינארי חוצה את הרשימה בכל צעד.'];
+    q.sol=unsorted?'חיפוש לינארי עובד בכל רשימה. בינארי דורש רשימה ממוינת.':'חיפוש בינארי: מיליון, חצי מיליון, 250 אלף… אחרי כ-20 חלוקות נשאר איבר אחד.';
+  } else {
+    const n=pick([8,16,32,64,100,1000]), c=Math.ceil(Math.log2(n+1));
+    q.ask='ברשימה ממוינת של '+n+' איברים, כמה בדיקות לכל היותר צריך חיפוש בינארי?'; q.code=''; q.ans=String(c);
+    q.diag=v=>v===String(n)?'זה מספר הבדיקות של חיפוש לינארי במקרה הגרוע.':v===String(n/2)?'הבינארי לא בודק חצי מהאיברים. הוא חוצה את מה שנשאר בכל צעד.':null;
+    q.hints=['בכל בדיקה מה שנשאר קטן בערך לחצי.','חלקו את '+n+' ב-2 שוב ושוב (בלי שארית) עד שנשאר 1, וספרו את החלוקות. הוסיפו עוד בדיקה אחת לאיבר האחרון שנשאר.'];
+    q.sol='כל בדיקה חוצה את מה שנשאר. ב-'+n+' איברים מספיקות לכל היותר '+c+' בדיקות (כי '+(Math.pow(2,c)-1)+' ≥ '+n+').';
+  }
+  return q;
+}
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=q.code?numbered(q.code):'';
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; }
+    right=v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

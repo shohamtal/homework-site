@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>סיסמה חזקה ופישינג · מדעי המחשב כיתה ט · מירי</title>
+<meta name="description" content="איך בוחרים סיסמה חזקה, כמה זמן לוקח לפרוץ אותה (מחשבים בפייתון), איך מזהים הודעת פישינג ולמה צריך אימות דו-שלבי. מעבדה ותרגול לכיתה ט.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/cyber-safety/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="סיסמה חזקה ופישינג · מדעי המחשב כיתה ט · מירי">
+<meta property="og:description" content="איך בוחרים סיסמה חזקה, כמה זמן לוקח לפרוץ אותה (מחשבים בפייתון), איך מזהים הודעת פישינג ולמה צריך אימות דו-שלבי. מעבדה ותרגול לכיתה ט.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/cyber-safety/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/cs/grade-9/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-9/#cs-python-9"},{"@type":"ListItem","position":5,"name":"סייבר ובטיחות ברשת","item":"https://shohamtal.github.io/homework-site/cs/cyber-safety/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זו סיסמה חזקה?","acceptedAnswer":{"@type":"Answer","text":"סיסמה ארוכה, לפחות 12 תווים, שלא קשורה אליכם ולא מופיעה ברשימות של סיסמאות נפוצות. כמה מילים אקראיות יחד עם ספרה או סימן הן דרך טובה לזכור אותה. כל תו נוסף מכפיל את מספר הצירופים שתוקף צריך לנסות. נסו במעבדה."}},{"@type":"Question","name":"איך מזהים הודעת פישינג?","acceptedAnswer":{"@type":"Answer","text":"שואלים ארבע שאלות: האם הכתובת של השולח מוזרה? האם יש לחץ או איום? האם הפרס טוב מדי? האם מבקשים סיסמה, קוד או פרטים אישיים? אם התשובה לאחת מהן היא כן, לא לוחצים על הקישור, נכנסים לאתר או לאפליקציה בעצמכם, ומספרים למבוגר. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"למה כדאי להפעיל אימות דו-שלבי?","acceptedAnswer":{"@type":"Answer","text":"כי סיסמאות לפעמים דולפות. עם אימות דו-שלבי, מי שיש לו את הסיסמה צריך גם קוד שמגיע לטלפון שלכם, ובלעדיו הוא לא נכנס. רק אל תמסרו את הקוד לאף אחד, גם לא למי שאומר שהוא מהתמיכה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סייבר ובטיחות ברשת","description":"איך בוחרים סיסמה חזקה, כמה זמן לוקח לפרוץ אותה (מחשבים בפייתון), איך מזהים הודעת פישינג ולמה צריך אימות דו-שלבי. מעבדה ותרגול לכיתה ט.","url":"https://shohamtal.github.io/homework-site/cs/cyber-safety/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"סייבר ובטיחות ברשת","teaches":"סייבר ובטיחות ברשת","keywords":"סיסמה, פישינג, פרטיות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:9em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:520px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body); text-align:start; white-space:normal}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.toggles{display:flex; flex-wrap:wrap; gap:8px}
+.toggles button{min-height:44px}
+.toggles button[aria-pressed="true"]{background:var(--hl); box-shadow:2px 2px 0 var(--hard)}
+.toggles button[aria-pressed="false"]{opacity:.7; text-decoration:line-through}
+.explain code{overflow-wrap:anywhere}
+.meter{height:18px; border:2px solid var(--border); border-radius:9px; background:var(--card); overflow:hidden}
+.meter span{display:block; height:100%; background:var(--err); transition:width .25s}
+.meter span.mid{background:#C99A00} .meter span.good{background:var(--ok)}
+@media (prefers-reduced-motion: reduce){.meter span{transition:none}}
+.mlabel{display:flex; justify-content:space-between; font-weight:700; font-size:.95rem}
+.sample{font:700 1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; direction:ltr; text-align:center; letter-spacing:.08em; overflow-wrap:anywhere}
+.msg{border:2px solid var(--border); border-radius:14px; background:var(--card); padding:10px 14px; box-shadow:3px 3px 0 var(--hard); max-width:520px; margin:0 auto}
+.msg .from{font-size:.9rem; color:var(--muted); border-bottom:1.5px solid var(--soft); padding-bottom:6px; margin-bottom:6px}
+.msg .lk{direction:ltr; unicode-bidi:isolate; color:var(--blue); text-decoration:underline; overflow-wrap:anywhere}
+.msg .mk{border-radius:6px; transition:background .2s}
+.msg .mk.on{background:var(--hl); box-shadow:0 0 0 2px var(--line)}
+.wr{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+@media (max-width:560px){.wr{grid-template-columns:minmax(0,1fr)}}
+.wr p{margin:0; font-weight:700}
+.wr .bad{color:var(--err)} .wr .good{color:var(--ok)}
+.wr pre.code{margin:4px 0 0}
+.wr .txt{margin:4px 0 0; font-weight:400}
+.pmsgs{display:flex; flex-direction:column; gap:10px}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="cyber-safety">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/">כיתה ט</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-9/#cs-python-9">תכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">סייבר ובטיחות ברשת</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ט · תכנות בפייתון</div>
+  <h1>סייבר ובטיחות ברשת <span class="slogan">חושבים כמו תוקף, מגינים כמו מקצוענים</span></h1>
+  <p class="lead">חשבון במשחק, תיבת מייל, קבוצה בצ'אט: לכל אחד מאיתנו יש מה לשמור. כאן מחשבים בפייתון כמה זמן לוקח לנחש סיסמה, לומדים לזהות הודעת פישינג, ומבינים איזה מידע אישי לא משתפים. כדאי להכיר קודם <a href="../variables-and-types/">משתנים</a> ו<a href="../strings/">מחרוזות</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>סיסמה חזקה</h3>
+      <p>תוקף מנסה סיסמאות במחשב מהיר, מיליארדים בשנייה. קודם הוא מנסה סיסמאות נפוצות כמו 123456, ורק אחר כך את כל הצירופים. סיסמה ארוכה עם כמה סוגי תווים יוצרת כל כך הרבה צירופים, שאין מספיק זמן לנסות את כולם.</p>
+    </div>
+    <div class="mini">
+      <h3>פישינג</h3>
+      <p>"פישינג" זה דיג: הודעה מזויפת שמנסה לגרום לכם להקליד סיסמה או ללחוץ על קישור. סימנים: לחץ ("החשבון יימחק בעוד שעה"), פרס שנשמע טוב מדי, כתובת מוזרה, ובקשה לסיסמה או לקוד.</p>
+    </div>
+    <div class="mini">
+      <h3>פרטיות ואימות דו-שלבי</h3>
+      <p>כתובת, בית ספר, מספר טלפון ותמונות מהבית עוזרים לזרים לדעת עליכם יותר מדי. אימות דו-שלבי (2FA) מוסיף קוד שנשלח לטלפון, כך שגם מי שגנב סיסמה לא נכנס בלי הקוד.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> אף חברה אמיתית לא מבקשת מכם סיסמה או קוד אימות בהודעה. מי שמבקש, הוא כמעט תמיד תוקף. ספרו למבוגר שאתם סומכים עליו.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: כמה זמן לוקח לפרוץ סיסמה?</h2></div>
+  <p class="text">בחרו אורך וסוגי תווים. התוכנית סופרת מכמה תווים בוחרים בכל מקום (pool), מחשבת את מספר הצירופים <span class="eq">pool<sup>length</sup></span>, ומחלקת במהירות של מחשב תוקף: 10 מיליארד ניסיונות בשנייה.</p>
+  <div class="callout"><strong>חשוב:</strong> אל תקלידו כאן, ובשום אתר תרגול, סיסמה אמיתית שלכם. המעבדה לא מבקשת סיסמה בכלל, רק אורך וסוגי תווים.</div>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sl"><span>אורך הסיסמה (length)</span><span class="eq" id="slv"></span></label>
+      <input type="range" id="sl" min="4" max="16" step="1" value="8">
+      <div class="toggles" id="tg" role="group" aria-label="סוגי תווים">
+        <button type="button" data-k="lower" aria-pressed="true">a-z קטנות</button>
+        <button type="button" data-k="upper" aria-pressed="false">A-Z גדולות</button>
+        <button type="button" data-k="digits" aria-pressed="true">0-9 ספרות</button>
+        <button type="button" data-k="symbols" aria-pressed="false">!@# סימנים</button>
+      </div>
+      <p class="sample" id="sample" aria-label="דוגמה לסיסמה בצורה הזו"></p>
+      <div><div class="mlabel"><span>חוזק</span><span id="mtxt"></span></div><div class="meter"><span id="mbar"></span></div></div>
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="6,4">6 ספרות, כמו 123456</button>
+          <button type="button" data-p="8,1">8 אותיות קטנות</button>
+          <button type="button" data-p="8,15">8 מכל הסוגים</button>
+          <button type="button" data-p="12,1">12 אותיות קטנות</button>
+          <button type="button" data-p="16,15">16 מכל הסוגים</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>סיסמה שקל לנחש</h3>
+      <p>שם של חיית מחמד, שנת לידה או מילה מהמילון הם הדבר הראשון שתוקף מנסה. עדיף כמה מילים אקראיות יחד.</p>
+      <div class="wr"><div><p class="bad">✗ חלש</p><pre class="code" dir="ltr" lang="en">rex2011</pre></div><div><p class="good">✓ חזק</p><pre class="code" dir="ltr" lang="en">cloud.pickle.tiger.42</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>אותה סיסמה בכל מקום</h3>
+      <p>אם אתר אחד דולף, התוקף מנסה את אותה סיסמה בכל שאר החשבונות. לכל חשבון סיסמה משלו. מנהל סיסמאות (עם הורה) עוזר לזכור.</p>
+      <div class="wr"><div><p class="bad">✗ מסוכן</p><p class="txt">משחק, מייל ובית ספר עם אותה סיסמה.</p></div><div><p class="good">✓ בטוח</p><p class="txt">סיסמה אחרת לכל חשבון, ו-2FA במייל.</p></div></div>
+    </div>
+    <div class="mini">
+      <h3>קצרה ומסובכת</h3>
+      <p>האורך חשוב יותר מסימנים מוזרים. כל תו נוסף מכפיל את מספר הצירופים. נסו במעבדה: 12 אותיות קטנות חזקות מ-8 תווים מכל הסוגים.</p>
+      <div class="wr"><div><p class="bad">✗ קצר</p><pre class="code" dir="ltr" lang="en">Xy7!</pre></div><div><p class="good">✓ ארוך</p><pre class="code" dir="ltr" lang="en">purpletigerriverlamp</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מוסרים את קוד האימות</h3>
+      <p>קוד שמגיע ב-SMS הוא רק בשבילכם. "נציג תמיכה" שמבקש אותו מנסה להיכנס לחשבון שלכם.</p>
+      <div class="wr"><div><p class="bad">✗ לא</p><p class="txt">"שלחו לי את הקוד שקיבלתם כדי שנאמת אתכם."</p></div><div><p class="good">✓ כן</p><p class="txt">לא עונים, חוסמים, ומספרים למבוגר.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: מנתחים הודעה חשודה</h2></div>
+  <p class="text">ההודעה הזו הגיעה לשחקן במשחק מומצא בשם StarQuest. עוברים עליה צעד אחרי צעד ומחפשים סימני פישינג. החלק שבודקים מסומן בצהוב.</p>
+  <div class="stepper">
+    <div class="msg" id="exMsg">
+      <div class="from">מאת: <span class="mk" data-m="1"><span dir="ltr" lang="en">StarQuest Support &lt;help@starquest-giftz.top&gt;</span></span></div>
+      <p style="margin:0">שלום שחקן! <span class="mk" data-m="2">זכית ב-5000 יהלומים 💎 בחינם!</span> <span class="mk" data-m="3">החשבון שלך יימחק בעוד שעה אם לא תאשר.</span> היכנסו עכשיו: <span class="mk lk" data-m="4" lang="en">starquest.gift-free.top/login</span> <span class="mk" data-m="5">והקלידו שם משתמש וסיסמה.</span></p>
+    </div>
+    <div class="stepbox fb hint" id="exText" aria-live="polite"></div>
+    <div class="row"><button id="exPrev">הצעד הקודם</button><button id="exNext" class="primary">הצעד הבא</button><span class="counter" id="exCount"></span></div>
+  </div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <div id="prCode"></div>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prN" dir="ltr" lang="en" inputmode="numeric" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה זו סיסמה חזקה?</h3>
+    <p>סיסמה ארוכה, לפחות 12 תווים, שלא קשורה אליכם ולא מופיעה ברשימות של סיסמאות נפוצות. כמה מילים אקראיות יחד עם ספרה או סימן הן דרך טובה לזכור אותה. כל תו נוסף מכפיל את מספר הצירופים שתוקף צריך לנסות. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>איך מזהים הודעת פישינג?</h3>
+    <p>שואלים ארבע שאלות: האם הכתובת של השולח מוזרה? האם יש לחץ או איום? האם הפרס טוב מדי? האם מבקשים סיסמה, קוד או פרטים אישיים? אם התשובה לאחת מהן היא כן, לא לוחצים על הקישור, נכנסים לאתר או לאפליקציה בעצמכם, ומספרים למבוגר. <a href="#example">ראו בדוגמה הפתורה</a>.</p>
+    <h3>למה כדאי להפעיל אימות דו-שלבי?</h3>
+    <p>כי סיסמאות לפעמים דולפות. עם אימות דו-שלבי, מי שיש לו את הסיסמה צריך גם קוד שמגיע לטלפון שלכם, ובלעדיו הוא לא נכנס. רק אל תמסרו את הקוד לאף אחד, גם לא למי שאומר שהוא מהתמיכה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/plan-a-program/"><small>→ הנושא הקודם</small>מתכננים תוכנית: פרויקט קטן</a><a class="next" href="../../cs/"><small>סיימתם את הפרק ←</small>לכל הנושאים במדעי המחשב</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+/*CORE*/
+const LAB=(function(){
+  const SIZE={lower:26,upper:26,digits:10,symbols:32}, KEYS=['lower','upper','digits','symbols'], SPEED=10000000000n, YEAR=31536000n;
+  /* mask bits: lower 1, upper 2, digits 4, symbols 8 */
+  function build(len,mask){
+    const on=k=>!!(mask&(1<<KEYS.indexOf(k)));
+    const val={}; KEYS.forEach(k=>val[k]=on(k)?SIZE[k]:0);
+    const code=['length = '+len,'lower = '+val.lower,'upper = '+val.upper,'digits = '+val.digits,'symbols = '+val.symbols,'pool = lower + upper + digits + symbols','combos = pool ** length','speed = 10000000000','seconds = combos // speed','years = seconds // 31536000','print("pool:", pool)','print("combinations:", combos)','print("seconds:", seconds)','print("years:", years)'].join('\n');
+    const st=[{line:0,vars:{},out:''}], v={}; let out='';
+    const add=(line,note)=>st.push({line,vars:{...v},out,note});
+    const HE={lower:'אותיות קטנות',upper:'אותיות גדולות',digits:'ספרות',symbols:'סימנים'};
+    v.length=len; add(1,'הסיסמה באורך '+len+' תווים.');
+    KEYS.forEach((k,i)=>{ v[k]=val[k]; add(2+i,val[k]?HE[k]+': '+val[k]+' אפשרויות לכל תו.':'בלי '+HE[k]+', אז 0.'); });
+    const pool=KEYS.reduce((t,k)=>t+val[k],0); v.pool=pool; add(6,'בכל מקום בסיסמה אפשר לבחור מתוך '+pool+' תווים.');
+    const combos=BigInt(pool)**BigInt(len); v.combos=combos; add(7,'** זו חזקה: '+pool+' בחזקת '+len+'. יוצא מספר עם '+String(combos).length+' ספרות.');
+    v.speed=SPEED; add(8,'התוקף מנסה 10 מיליארד סיסמאות בשנייה.');
+    const seconds=combos/SPEED; v.seconds=seconds; add(9,'// היא חלוקה בלי שארית. כמה שניות לוקח לנסות את כל הצירופים.');
+    const years=seconds/YEAR; v.years=years; add(10,'בשנה יש 31,536,000 שניות. מחלקים ומקבלים שנים.');
+    out+='pool: '+pool+'\n'; add(11,'מדפיסים את גודל המאגר.');
+    out+='combinations: '+combos+'\n'; add(12,'מדפיסים את מספר הצירופים.');
+    out+='seconds: '+seconds+'\n'; add(13,'מדפיסים שניות.');
+    out+='years: '+years+'\n'; add(14,'מדפיסים שנים.');
+    return {code,steps:st,pool,combos,seconds,years};
+  }
+  return {build,KEYS,SIZE,presets:[[6,4],[8,1],[8,15],[12,1],[16,15],[4,0],[8,5],[10,3]]};
+})();
+/*END CORE*/
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const big=n=>BigInt(n).toLocaleString('en-US');
+
+/* lab */
+const CH={lower:'abcdefghijklmnopqrstuvwxyz',upper:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',digits:'0123456789',symbols:'!@#$%^&*?+=_~'};
+let mask=5;
+function human(s,y){
+  if(y>=1000000000000n) return 'יותר מ-'+big(y/1000000000000n)+' טריליון שנים. הרבה יותר מגיל היקום (בערך 14 מיליארד שנים).';
+  if(y>=14000000000n) return 'בערך '+big(y/1000000000n)+' מיליארד שנים. יותר מגיל היקום!';
+  if(y>=1000000000n) return 'בערך '+big(y/1000000000n)+' מיליארד שנים.';
+  if(y>=1000000n) return 'בערך '+big(y/1000000n)+' מיליון שנים.';
+  if(y>=1n) return 'בערך '+big(y)+' '+(y===1n?'שנה':'שנים')+'.';
+  const n=Number(s);
+  if(n<1) return 'פחות משנייה אחת!';
+  if(n<60) return 'בערך '+n+' שניות.';
+  if(n<3600) return 'בערך '+Math.round(n/60)+' דקות.';
+  if(n<86400) return 'בערך '+Math.round(n/3600)+' שעות.';
+  return 'בערך '+Math.round(n/86400)+' ימים.';
+}
+function lab(){
+  const len=+$('sl').value, r=LAB.build(len,mask);
+  $('slv').textContent=len;
+  $('tg').querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',!!(mask&(1<<i))));
+  PT.mount($('labPT'),{code:r.code,steps:r.steps});
+  $('labRun').value=r.code;
+  const chars=LAB.KEYS.filter((k,i)=>mask&(1<<i)).map(k=>CH[k]).join('');
+  /* a fixed, made-up sample of the shape (never a real password) */
+  let sm=''; for(let i=0;i<len;i++) sm+=chars?chars[(i*7+3)%chars.length]:'·';
+  $('sample').textContent=chars?sm:'';
+  const bits=r.pool?Math.log2(r.pool)*len:0, pct=Math.min(100,bits/90*100);
+  $('mbar').style.width=pct+'%'; $('mbar').className=bits<50?'':bits<75?'mid':'good';
+  $('mtxt').textContent=r.pool===0?'אין סיסמה':bits<40?'חלשה מאוד':bits<50?'חלשה':bits<75?'בינונית':'חזקה';
+  let t;
+  if(r.pool===0) t='<div>לא בחרתם אף סוג תווים, אז pool = 0 ואין אף צירוף. בחרו לפחות סוג אחד.</div>';
+  else {
+    t='<div>'+C('pool = '+r.pool)+'</div><div>'+C('combos = '+r.pool+' ** '+len)+'</div><div>מספר הצירופים: '+C(big(r.combos))+'</div><div>לנסות את כולם: '+human(r.seconds,r.years)+'</div>';
+    if(mask===4&&len===6) t+='<div><strong>ו-123456 עוד יותר גרועה:</strong> היא הראשונה בכל רשימת סיסמאות נפוצות, אז תוקף מנחש אותה בניסיון הראשון, בלי לחשב בכלל.</div>';
+    else if(mask===1&&len===12) t+='<div>השוו ל-8 תווים מכל הסוגים: 12 אותיות קטנות בלבד חזקות יותר. האורך מנצח.</div>';
+    else if(len<10) t+='<div>נסו להוסיף תו אחד לאורך. מספר הצירופים יוכפל פי '+r.pool+'.</div>';
+  }
+  $('labTxt').innerHTML=t;
+}
+$('sl').addEventListener('input',lab);
+$('tg').querySelectorAll('button').forEach((b,i)=>b.onclick=()=>{ mask^=(1<<i); lab(); });
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const [l,m]=b.dataset.p.split(','); $('sl').value=l; mask=+m; lab(); });
+lab();
+
+/* worked example */
+const EX=[
+  {m:0,t:'קוראים את ההודעה פעם אחת, לאט, בלי ללחוץ על כלום. נחפש ארבעה סימנים: שולח, פרס, לחץ ובקשה.'},
+  {m:1,t:'<strong>השולח.</strong> הכתובת נגמרת ב-starquest-giftz.top. זה לא האתר של המשחק. כל אחד יכול לכתוב "Support" בשם השולח.'},
+  {m:2,t:'<strong>פרס טוב מדי.</strong> 5000 יהלומים בחינם, בלי סיבה. פרס כזה הוא פיתיון, כמו תולעת על חכה.'},
+  {m:3,t:'<strong>לחץ ואיום.</strong> "יימחק בעוד שעה" נועד לגרום לכם למהר ולא לחשוב. חברה אמיתית לא מוחקת חשבון ככה.'},
+  {m:4,t:'<strong>הקישור.</strong> קוראים את הכתובת עד הלוכסן הראשון: starquest.gift-free.top. האתר האמיתי הוא gift-free.top, ו-starquest הוא רק תחפושת בהתחלה.'},
+  {m:5,t:'<strong>הבקשה.</strong> מבקשים שם משתמש וסיסמה. זה הסימן הכי ברור: אף חברה אמיתית לא מבקשת סיסמה בהודעה.'},
+  {m:0,t:'<strong>מה עושים?</strong> לא לוחצים ולא עונים. אם רוצים לבדוק, פותחים את המשחק בעצמכם, לא דרך הקישור. מדווחים על ההודעה, חוסמים את השולח, ומספרים למבוגר.'}
+];
+let exI=0;
+function ex(){ const e=EX[exI]; $('exMsg').querySelectorAll('.mk').forEach(s=>s.classList.toggle('on',+s.dataset.m===e.m)); $('exText').innerHTML=e.t; $('exCount').textContent='צעד '+(exI+1)+' מתוך '+EX.length; $('exPrev').disabled=exI===0; $('exNext').disabled=exI===EX.length-1; }
+$('exNext').onclick=()=>{ if(exI<EX.length-1){ exI++; ex(); } }; $('exPrev').onclick=()=>{ if(exI>0){ exI--; ex(); } };
+ex();
+
+/* practice */
+const nrm=s=>String(s).trim().replace(/[,\s]/g,'');
+function numbered(code){ return '<pre class="code pt-code" dir="ltr" lang="en">'+code.split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('')+'</pre>'; }
+const GAMES=['StarQuest','BlockTown','SpaceKart','PixelFarm'];
+function gen(){
+  const kind=pick(['phish','phish','sign','strong','strong','combos','pool','privacy','tfa']), q={kind,type:'choice',code:''};
+  if(kind==='phish'){
+    const g=pick(GAMES), d=g.toLowerCase();
+    const real=[
+      'מ-'+d+'.com: עדכון גרסה חדש זמין. אפשר לעדכן מתוך האפליקציה, בהגדרות.',
+      'מ-'+d+'.com: תודה שהשתתפתם בטורניר! התוצאות מחכות לכם בלוח השיאים במשחק.',
+      'מ-'+d+'.com: נכנסתם לחשבון ממכשיר חדש. אם זה לא אתם, החליפו סיסמה דרך האפליקציה.'
+    ];
+    const fake=pick([
+      'מ-'+d+'-gifts.top: זכיתם ב-10,000 מטבעות! שלחו את הסיסמה שלכם תוך 30 דקות כדי לקבל אותם.',
+      'מ-support@'+d+'.free-login.top: החשבון ייחסם היום! היכנסו מיד לקישור והקלידו שם משתמש וסיסמה.',
+      'מ-'+d+'.com.verify-now.top: קיבלתם קוד ב-SMS. שלחו לנו אותו כדי שנאמת שזה אתם.'
+    ]);
+    const two=real.sort(()=>Math.random()-.5).slice(0,2);
+    q.ask='שלוש הודעות הגיעו לשחקן ב-'+g+'. איזו מהן היא פישינג?';
+    q.opts=[{t:fake,ok:true}].concat(two.map(t=>({t,why:'ההודעה הזו לא מבקשת סיסמה או קוד, לא לוחצת עליכם, והכתובת היא של המשחק. חפשו הודעה עם לחץ, פרס או בקשה לסיסמה.'}))).sort(()=>Math.random()-.5);
+    q.hints=['בדקו בכל הודעה: מי שלח (הכתובת), האם יש לחץ, האם מבקשים סיסמה או קוד.','הסיומת .top אחרי שם המשחק היא סימן אזהרה. האתר האמיתי הוא '+d+'.com.'];
+    q.sol='ההודעה המזויפת: "'+fake+'" יש בה כתובת מוזרה, לחץ, ובקשה לסיסמה או לקוד.';
+  } else if(kind==='sign'){
+    q.ask='"שלום! החשבון שלך יימחק בעוד 10 דקות. כדי לשמור עליו, שלח לנו עכשיו את הסיסמה." מה הסימן הכי ברור שזו הודעת פישינג?';
+    q.opts=[{t:'מבקשים את הסיסמה',ok:true},{t:'ההודעה מתחילה ב"שלום"',why:'גם הודעות אמיתיות מתחילות בברכה. זה לא סימן.'},{t:'ההודעה קצרה',why:'אורך ההודעה לא אומר כלום. מה מבקשים מכם?'},{t:'אין בה תמונה',why:'תמונה או לא, זה לא הסימן. חפשו מה ההודעה רוצה שתעשו.'}].sort(()=>Math.random()-.5);
+    q.hints=['יש כאן שני סימנים: לחץ ובקשה. אחד מהם ברור במיוחד.','מה אף חברה אמיתית לא תבקש אף פעם?'];
+    q.sol='בקשה לסיסמה היא הסימן הכי ברור. גם הלחץ ("10 דקות") הוא סימן אזהרה.';
+  } else if(kind==='strong'){
+    const W=['cloud','pickle','tiger','river','lamp','orbit','mango','violin','canyon','pencil'], w=()=>pick(W);
+    const strong=pick([w()+'.'+w()+'.'+w()+'.'+ri(10,99), w()+w()+w()+w(), w().toUpperCase()+'-'+w()+'-'+ri(100,999)+'!']);
+    const weak=[pick(['123456','password','qwerty','111111','abc123']),pick(['Xy7!','k9#Q','Ab1$']),pick(['tiger2011','mango1234','pencil12'])];
+    q.ask='איזו סיסמה הכי חזקה?';
+    q.opts=[{t:strong,ok:true,ltr:true},{t:weak[0],ltr:true,why:'זו אחת הסיסמאות הנפוצות בעולם. תוקף מנסה אותה ראשונה.'},{t:weak[1],ltr:true,why:'יש בה כמה סוגי תווים, אבל רק 4 תווים. זה מעט מדי צירופים.'},{t:weak[2],ltr:true,why:'מילה מהמילון ומספר פשוט. תוקפים מנסים צירופים כאלה מוקדם.'}].sort(()=>Math.random()-.5);
+    q.hints=['מה חשוב יותר, אורך או סימנים מוזרים?','האם הסיסמה מופיעה ברשימות נפוצות, או שהיא מילה ושנה?'];
+    q.sol=strong+' הכי חזקה: היא ארוכה ולא צפויה. כל תו נוסף מכפיל את מספר הצירופים.';
+  } else if(kind==='combos'){
+    const c=pick([{d:'קוד של 4 ספרות',p:10,l:4},{d:'קוד של 3 ספרות',p:10,l:3},{d:'סיסמה של 2 אותיות קטנות באנגלית',p:26,l:2},{d:'סיסמה של 3 אותיות קטנות באנגלית',p:26,l:3},{d:'קוד של 6 ספרות',p:10,l:6}]);
+    const ans=Math.pow(c.p,c.l); q.type='num';
+    q.ask='כמה צירופים אפשריים יש ל'+c.d+'?'; q.code='pool = '+c.p+'\nlength = '+c.l+'\nprint(pool ** length)'; q.ans=String(ans);
+    q.diag=v=>v===String(c.p*c.l)?'כפלתם '+c.p+' ב-'+c.l+'. אבל בכל מקום יש '+c.p+' אפשרויות, ולכן כופלים '+c.p+' בעצמו '+c.l+' פעמים.':v===String(Math.pow(c.l,c.p))?'הפוך: הבסיס הוא מספר האפשרויות ('+c.p+'), והחזקה היא האורך ('+c.l+').':null;
+    q.hints=['בכל מקום יש '+c.p+' אפשרויות, ויש '+c.l+' מקומות.','מחשבים '+c.p+' ** '+c.l+': '+Array(c.l).fill(c.p).join(' × ')+'.'];
+    q.sol=Array(c.l).fill(c.p).join(' × ')+' = '+ans.toLocaleString('en-US')+'.';
+  } else if(kind==='pool'){
+    const on=[Math.random()<.8,Math.random()<.5,Math.random()<.6,Math.random()<.4]; if(!on.some(x=>x)) on[0]=true;
+    const v=LAB.KEYS.map((k,i)=>on[i]?LAB.SIZE[k]:0), pool=v.reduce((a,b)=>a+b,0);
+    q.type='num'; q.ask='מה התוכנית מדפיסה?'; q.code='lower = '+v[0]+'\nupper = '+v[1]+'\ndigits = '+v[2]+'\nsymbols = '+v[3]+'\npool = lower + upper + digits + symbols\nprint(pool)'; q.ans=String(pool);
+    q.diag=x=>x===String(v.filter(Boolean).length)?'ספרתם כמה סוגים יש. צריך לחבר את הערכים עצמם.':null;
+    q.hints=['מחברים את ארבעת הערכים.',v.join(' + ')+' = ?'];
+    q.sol=v.join(' + ')+' = '+pool+'.';
+  } else if(kind==='privacy'){
+    const ok=pick(['תמונה של ציור שציירתם','הקבוצה האהובה עליכם בכדורגל','המלצה על ספר שאהבתם']);
+    q.ask='איזה פרט אפשר לפרסם בפרופיל ציבורי בלי סיכון?';
+    q.opts=[{t:ok,ok:true},{t:'הכתובת של הבית',why:'כתובת מגלה לזרים איפה אתם גרים. היא נשארת פרטית.'},{t:'שם בית הספר והכיתה',why:'זה מגלה איפה אפשר למצוא אתכם כל יום.'},{t:'מספר הטלפון שלכם',why:'מספר טלפון מאפשר לזרים לפנות אליכם ישירות, ולפעמים גם לשחזר חשבונות.'}].sort(()=>Math.random()-.5);
+    q.hints=['שאלו: האם הפרט עוזר למצוא אותי או להתחזות אליי?','כתובת, בית ספר וטלפון מובילים אליכם בעולם האמיתי.'];
+    q.sol=ok+' לא מגלה איפה אתם ולא איך להשיג אתכם. כתובת, בית ספר וטלפון נשארים פרטיים.';
+  } else {
+    q.ask='קיבלתם SMS עם קוד אימות, אף שלא ניסיתם להתחבר. רגע אחר כך מישהו כותב: "שלחתי לך קוד בטעות, תעביר לי אותו?" מה עושים?';
+    q.opts=[{t:'לא מעבירים, מחליפים סיסמה, ומספרים למבוגר',ok:true},{t:'מעבירים, כי זו הייתה טעות שלו',why:'הקוד הגיע אליכם כי מישהו מנסה להיכנס לחשבון שלכם. אם תעבירו, הוא ייכנס.'},{t:'מתעלמים, וזהו',why:'לא להעביר זה נכון, אבל מישהו כבר יודע את הסיסמה שלכם. צריך גם להחליף אותה.'}].sort(()=>Math.random()-.5);
+    q.hints=['למה הגיע אליכם קוד אם לא ניסיתם להתחבר?','מי שמבקש את הקוד כנראה כבר יודע את הסיסמה.'];
+    q.sol='הקוד הוא רק שלכם. אם הוא הגיע בלי שביקשתם, מישהו יודע את הסיסמה: מחליפים אותה ומספרים למבוגר.';
+  }
+  return q;
+}
+let q=null, sel=-1, tries=0, hint=0, streak=0, solved=0;
+function streakTxt(){ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; }
+function newPr(){
+  q=gen(); sel=-1; tries=0; hint=0;
+  $('prAsk').textContent=q.ask; $('prCode').innerHTML=q.code?numbered(q.code):'';
+  $('prCh').hidden=q.type!=='choice'; $('prIn').hidden=q.type==='choice'; $('prCh').innerHTML='';
+  if(q.type==='choice'){
+    $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button"'+(o.ltr?' dir="ltr" lang="en"':'')+' data-i="'+i+'" aria-pressed="false">'+esc(o.t)+'</button>').join('');
+    $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b)); });
+  }
+  $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true;
+}
+$('prCheck').onclick=()=>{
+  const fb=$('prFb'); let right, msg='עוד לא. נסו שוב.';
+  if(q.type==='choice'){
+    if(sel<0||!q.opts[sel]){ fb.innerHTML='<div class="fb err">בחרו קודם תשובה.</div>'; return; }
+    right=q.opts[sel].ok; if(!right) msg=q.opts[sel].why||msg;
+  } else {
+    const v=nrm($('prN').value);
+    if(!v){ fb.innerHTML='<div class="fb err">כתבו מספר.</div>'; $('prN').focus(); return; }
+    right=v===nrm(q.ans); if(!right) msg=(q.diag&&q.diag(v))||msg;
+  }
+  if(right){ streak++; solved++; streakTxt(); fb.innerHTML='<div class="fb ok">נכון! '+esc(q.sol)+'</div>'; return; }
+  streak=0; tries++; streakTxt(); fb.innerHTML='<div class="fb err">'+esc(msg)+'</div>';
+  if(tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); $('prFb').innerHTML='<div class="fb hint">'+q.hints.slice(0,hint).map(esc).join('<br>')+'</div>'; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML='<div class="fb hint">'+esc(q.sol)+'<br>עכשיו נסו תרגיל חדש.</div>'; };
+$('prNew').onclick=newPr;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newPr(); streakTxt();
+})();
+</script>
+</body>
+</html>

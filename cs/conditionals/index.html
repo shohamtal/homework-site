@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>תנאים בפייתון: if, elif, else · מדעי המחשב כיתה ז · מירי</title>
+<meta name="description" content="כותבים if, elif ו-else בפייתון, משווים ערכים ומחברים תנאים עם and ו-or. מעבדה שמראה איזה ענף רץ, מלכודות נפוצות ותרגול עם רמזים לכיתה ז.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/conditionals/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="תנאים בפייתון: if, elif, else · מדעי המחשב כיתה ז · מירי">
+<meta property="og:description" content="כותבים if, elif ו-else בפייתון, משווים ערכים ומחברים תנאים עם and ו-or. מעבדה שמראה איזה ענף רץ, מלכודות נפוצות ותרגול עם רמזים לכיתה ז.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/conditionals/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ז","item":"https://shohamtal.github.io/homework-site/cs/grade-7/"},{"@type":"ListItem","position":4,"name":"מבוא לתכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-7/#cs-python-7"},{"@type":"ListItem","position":5,"name":"תנאים בפייתון: if, elif, else","item":"https://shohamtal.github.io/homework-site/cs/conditionals/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין elif לעוד if?","acceptedAnswer":{"@type":"Answer","text":"elif נבדק רק אם כל התנאים שלפניו היו False, ולכן בשרשרת רץ ענף אחד בלבד. כמה if נפרדים נבדקים כל אחד לבד, ואז יכולים לרוץ כמה מהם. נסו במעבדה."}},{"@type":"Question","name":"חייבים לכתוב else?","acceptedAnswer":{"@type":"Answer","text":"לא. else הוא רשות. בלעדיו, אם אף תנאי לא התקיים, פשוט לא קורה כלום וממשיכים לשורה שאחרי התנאי. כותבים else כשרוצים לטפל גם ב\"כל השאר\"."}},{"@type":"Question","name":"מה ההבדל בין and ל-or?","acceptedAnswer":{"@type":"Answer","text":"עם and התנאי True רק אם שני החלקים True. עם or מספיק שאחד מהם True. \"יש כרטיס and יש מקום\" מחמיר יותר מ\"יש כרטיס or יש מקום\". תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"תנאים בפייתון: if, elif, else","description":"כותבים if, elif ו-else בפייתון, משווים ערכים ומחברים תנאים עם and ו-or. מעבדה שמראה איזה ענף רץ, מלכודות נפוצות ותרגול עם רמזים לכיתה ז.","url":"https://shohamtal.github.io/homework-site/cs/conditionals/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ז","about":"תנאים בפייתון: if, elif, else","teaches":"תנאים בפייתון: if, elif, else","keywords":"if, השוואה, ענפים","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:14em; max-width:100%; box-sizing:border-box; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices button code{font-weight:400}
+.mini pre.code{margin:0}
+.tag-bad, .tag-good{font-weight:700; font-size:.92rem}
+.tag-bad{color:var(--err)} .tag-good{color:var(--ok)}
+#labPT, #exPT{margin-top:14px}
+#prCode{max-width:520px; margin:10px auto}
+code[dir=ltr]{unicode-bidi:isolate}
+.branches{display:flex; flex-wrap:wrap; gap:6px}
+.branches span{border:1.5px solid var(--soft); border-radius:999px; padding:2px 10px; font:.9rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; direction:ltr; color:var(--muted)}
+.branches span.on{border:2px solid var(--line); background:var(--hl); color:var(--ink); font-weight:700}
+.cmp{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; direction:ltr; margin:8px 0}
+.cmp span{border:2px solid var(--border); border-radius:10px; padding:4px 10px; background:var(--card); font:1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.cmp span small{font:600 .8rem var(--f-body); color:var(--muted); margin-left:6px}
+
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="conditionals">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-7/">כיתה ז</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-7/#cs-python-7">מבוא לתכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">תנאים בפייתון: if, elif, else</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ז · מבוא לתכנות בפייתון</div>
+  <h1>תנאים בפייתון <span class="slogan">if, elif ו-else</span></h1>
+  <p class="lead">תוכנית טובה מחליטה לבד: אם הציון גבוה, מדפיסים "מצוין". אם לא, בודקים את התנאי הבא. כאן כותבים <code dir="ltr" lang="en">if</code>, <code dir="ltr" lang="en">elif</code> ו-<code dir="ltr" lang="en">else</code>, משווים ערכים ורואים איזה ענף רץ. כדאי להיזכר קודם ב<a href="../if-then-riddles/">חידות אם אז</a> וב<a href="../variables-and-types/">משתנים וטיפוסים</a>. אחר כך ממשיכים ל<a href="../loops/">לולאות בפייתון</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">תנאי הוא שאלה שהתשובה שלה <code dir="ltr" lang="en">True</code> או <code dir="ltr" lang="en">False</code>. שואלים בעזרת סימני השוואה:</p>
+  <div class="cmp"><span>==<small>שווה</small></span><span>!=<small>שונה</small></span><span>&lt;<small>קטן</small></span><span>&gt;<small>גדול</small></span><span>&lt;=<small>קטן או שווה</small></span><span>&gt;=<small>גדול או שווה</small></span></div>
+  <div class="two">
+    <div class="mini">
+      <h3>if</h3>
+      <p>אם התנאי True, השורות המוזחות מתחתיו רצות. אם False, מדלגים עליהן. אחרי התנאי באות נקודתיים, והשורות שבפנים זזות 4 רווחים.</p>
+      <pre class="code" dir="ltr" lang="en">if lives == 0:
+    print("Game over")</pre>
+    </div>
+    <div class="mini">
+      <h3>elif ו-else</h3>
+      <p><code dir="ltr" lang="en">elif</code> הוא "ואם לא, אז אולי". בודקים לפי הסדר, ורק הענף הראשון שמתקיים רץ. <code dir="ltr" lang="en">else</code> רץ כשאף תנאי לא התקיים.</p>
+      <pre class="code" dir="ltr" lang="en">if temp &gt;= 30:
+    print("Hot")
+elif temp &gt;= 18:
+    print("Nice")
+else:
+    print("Cold")</pre>
+    </div>
+    <div class="mini">
+      <h3>and ו-or</h3>
+      <p><code dir="ltr" lang="en">and</code>: שני התנאים חייבים להיות True. <code dir="ltr" lang="en">or</code>: מספיק שאחד מהם True. כך מחברים שתי שאלות לתנאי אחד.</p>
+      <pre class="code" dir="ltr" lang="en">if age &gt;= 12 and height &gt;= 140:
+    print("You can ride")
+if day == "Fri" or day == "Sat":
+    print("Weekend")</pre>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> בשרשרת של if, elif ו-else רץ ענף אחד בלבד: הראשון שהתנאי שלו True. אם אף אחד לא, רץ ה-else.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: איזה ענף ירוץ?</h2></div>
+  <p class="text">התוכנית מחשבת ציון סופי: ציון במבחן ועוד בונוס, אבל לא יותר מ-100. אחר כך היא בוחרת מילה לפי הציון. הזיזו את המחוונים, נחשו איזה ענף ירוץ, ולחצו "שורה הבאה" כדי לבדוק. שורות שמדלגים עליהן לא נצבעות.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="score"><span>ציון במבחן</span><span id="scorev" dir="ltr"></span></label>
+      <input type="range" id="score" min="0" max="100" step="1" value="72">
+      <label class="slider" for="bonus"><span>בונוס</span><span id="bonusv" dir="ltr"></span></label>
+      <input type="range" class="hl" id="bonus" min="0" max="15" step="1" value="5">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+    </div>
+    <div class="ctrl">
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries"></div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labPy" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>= במקום ==</h3>
+      <p>בתנאי שואלים, לא שמים ערך. לכן כותבים <code dir="ltr" lang="en">==</code>. עם <code dir="ltr" lang="en">=</code> אחד פייתון עוצר עם שגיאה.</p>
+      <span class="tag-bad">✗ שגיאה</span><pre class="code" dir="ltr" lang="en">if score = 100:
+    print("Perfect")</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">if score == 100:
+    print("Perfect")</pre>
+    </div>
+    <div class="mini">
+      <h3>שוכחים נקודתיים או הזחה</h3>
+      <p>אחרי כל תנאי באות נקודתיים. השורות שבתוך התנאי חייבות לזוז פנימה. בלי זה פייתון לא יודע מה שייך לתנאי.</p>
+      <span class="tag-bad">✗ שגיאה</span><pre class="code" dir="ltr" lang="en">if lives &gt; 0
+print("Keep going")</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">if lives &gt; 0:
+    print("Keep going")</pre>
+    </div>
+    <div class="mini">
+      <h3>סדר לא נכון של elif</h3>
+      <p>בודקים מלמעלה למטה. אם התנאי הכי רחב בא ראשון, הוא תופס הכל, והענפים שאחריו אף פעם לא ירוצו.</p>
+      <span class="tag-bad">✗ 95 מקבל Pass</span><pre class="code" dir="ltr" lang="en">if total &gt;= 55:
+    grade = "Pass"
+elif total &gt;= 90:
+    grade = "Excellent"</pre>
+      <span class="tag-good">✓ מהגבוה לנמוך</span><pre class="code" dir="ltr" lang="en">if total &gt;= 90:
+    grade = "Excellent"
+elif total &gt;= 55:
+    grade = "Pass"</pre>
+    </div>
+    <div class="mini">
+      <h3>and עם חצי תנאי</h3>
+      <p>בעברית אומרים "גדול מ-5 וקטן מ-10". בפייתון כל צד של and הוא תנאי שלם, ולכן כותבים את המשתנה פעמיים.</p>
+      <span class="tag-bad">✗ שגיאה</span><pre class="code" dir="ltr" lang="en">if x &gt; 5 and &lt; 10:</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">if x &gt; 5 and x &lt; 10:</pre>
+    </div>
+    <div class="mini">
+      <h3>&gt; או &gt;=</h3>
+      <p>"עובר מ-55" כולל את 55? אם כן, צריך <code dir="ltr" lang="en">&gt;=</code>. עם <code dir="ltr" lang="en">&gt;</code> הציון 55 בדיוק לא עובר. בדקו תמיד את המספר שעל הגבול.</p>
+      <span class="tag-bad">✗ 55 נכשל</span><pre class="code" dir="ltr" lang="en">if total &gt; 55:</pre>
+      <span class="tag-good">✓ 55 עובר</span><pre class="code" dir="ltr" lang="en">if total &gt;= 55:</pre>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">תוכנית מזג אוויר: מקלידים טמפרטורה, והיא נותנת עצה. הקלט כאן: 24. עקבו אחרי השורה הצבועה: על אילו שורות מדלגים?</p>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code" id="prCode" dir="ltr" lang="en" hidden></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prA" dir="ltr" lang="en" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין elif לעוד if?</h3>
+    <p>elif נבדק רק אם כל התנאים שלפניו היו False, ולכן בשרשרת רץ ענף אחד בלבד. כמה if נפרדים נבדקים כל אחד לבד, ואז יכולים לרוץ כמה מהם. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>חייבים לכתוב else?</h3>
+    <p>לא. else הוא רשות. בלעדיו, אם אף תנאי לא התקיים, פשוט לא קורה כלום וממשיכים לשורה שאחרי התנאי. כותבים else כשרוצים לטפל גם ב"כל השאר".</p>
+    <h3>מה ההבדל בין and ל-or?</h3>
+    <p>עם and התנאי True רק אם שני החלקים True. עם or מספיק שאחד מהם True. "יש כרטיס and יש מקום" מחמיר יותר מ"יש כרטיס or יש מקום". <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/if-then-riddles/">אם... אז...: חידות תנאי</a> · <a href="../../cs/variables-and-types/">משתנים וטיפוסים בפייתון</a></p>
+<p class="related text"><strong>בכיתה ח ממשיכים ל:</strong> <a href="../../cs/loops/">לולאות בפייתון: for ו-while</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/variables-and-types/"><small>→ הנושא הקודם</small>משתנים וטיפוסים בפייתון</a><a class="next" href="../../cs/loops/"><small>הנושא הבא ←</small>לולאות בפייתון: for ו-while</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const shuffle=a=>{a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const codeHTML=code=>code.replace(/\n$/,'').split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('');
+const squash=s=>String(s).trim().replace(/\s+/g,'').toLowerCase();
+/* lab: sliders (LAB.ids, label spans id+'v') + "נסו את אלה" presets + tracer + Pyodide box */
+function lab(o){
+  const tries=$('tries');
+  tries.innerHTML=LAB.presets.map((t,i)=>'<button type="button" data-i="'+i+'">'+t.label+'</button>').join('');
+  const get=()=>{ const p={}; LAB.ids.forEach(id=>p[id]=+$(id).value); return p; };
+  function draw(){
+    const p=get();
+    LAB.ids.forEach(id=>{ const f=o&&o.fmt&&o.fmt[id]; $(id+'v').textContent=f?f(p[id]):p[id]; });
+    const r=LAB.build(p);
+    PT.mount($('labPT'),{code:r.code,steps:r.steps,input:r.input});
+    $('labTxt').innerHTML=r.explain; $('labPy').value=r.code;
+    if(o&&o.after) o.after(p,r);
+  }
+  LAB.ids.forEach(id=>$(id).addEventListener('input',draw));
+  tries.querySelectorAll('button').forEach(b=>b.onclick=()=>{ LAB.presets[+b.dataset.i].p.forEach((v,i)=>{ $(LAB.ids[i]).value=v; }); draw(); });
+  draw();
+  return {draw,get};
+}
+/* practice: gen() returns {ask, code?, type:'num'|'text'|'mc', ans, accept?, opts?[{t,ok,why}], diag?(raw,num), hints[], sol, ok?} */
+function practice(gen){
+  let q, sel=-1, tries=0, hint=0, streak=0, solved=0, done=false;
+  const fb=h=>{ $('prFb').innerHTML=h; };
+  const st=()=>{ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; };
+  function fresh(){
+    q=gen(); sel=-1; tries=0; hint=0; done=false;
+    $('prAsk').innerHTML=q.ask;
+    $('prCode').hidden=!q.code; $('prCode').innerHTML=q.code?codeHTML(q.code):'';
+    const mc=q.type==='mc'; $('prCh').hidden=!mc; $('prIn').hidden=mc; $('prA').value='';
+    $('prA').setAttribute('inputmode',q.type==='num'?'decimal':'text');
+    if(mc){
+      $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+o.t+'</button>').join('');
+      $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+    }
+    $('prShow').disabled=true; fb('');
+  }
+  $('prCheck').onclick=()=>{
+    if(done){ fb('<div class="fb ok">כבר פתרתם את זה. לחצו "תרגיל חדש".</div>'); return; }
+    let right, msg=null, note='';
+    if(q.type==='mc'){
+      if(sel<0){ fb('<div class="fb err">בחרו קודם תשובה.</div>'); return; }
+      right=!!q.opts[sel].ok; msg=q.opts[sel].why||null;
+    } else {
+      const raw=$('prA').value;
+      if(!raw.trim()){ fb('<div class="fb err">כתבו תשובה.</div>'); $('prA').focus(); return; }
+      if(q.type==='num'){
+        const v=parseFloat(raw.replace(',','.').replace(/\s/g,''));
+        if(isNaN(v)){ fb('<div class="fb err">כתבו מספר.</div>'); return; }
+        right=Math.abs(v-q.ans)<1e-9; if(!right&&q.diag) msg=q.diag(raw,v);
+      } else {
+        const a=squash(raw), bare=a.replace(/^["']+|["']+$/g,''), all=[q.ans].concat(q.accept||[]).map(squash);
+        right=all.includes(a)||all.includes(bare);
+        if(right&&!all.includes(a)) note=' המרכאות לא מודפסות, הן רק מסמנות איפה הטקסט מתחיל ונגמר.';
+        if(!right&&q.diag) msg=q.diag(raw);
+      }
+    }
+    if(right){ done=true; streak++; solved++; st(); fb('<div class="fb ok">נכון! '+(q.ok||'')+note+'</div>'); return; }
+    streak=0; tries++; st();
+    fb('<div class="fb err">'+(msg||'עוד לא. נסו שוב, או לחצו על רמז.')+'</div>');
+    if(tries>=2) $('prShow').disabled=false;
+  };
+  $('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); fb('<div class="fb hint">'+q.hints[hint-1]+'</div>'); };
+  $('prShow').onclick=()=>{ fb('<div class="fb hint">'+q.sol+'<br>עכשיו נסו תרגיל חדש.</div>'); };
+  $('prNew').onclick=fresh;
+  $('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  fresh(); st();
+}
+
+/*LAB*/
+const LAB={ids:['score','bonus'], ranges:[[0,100,1],[0,15,1]],
+  presets:[{label:'מצוין',p:[95,0]},{label:'הבונוס עזר',p:[50,5]},{label:'אחד פחות מדי',p:[54,0]},{label:'יותר מ-100',p:[98,10]},{label:'בדיוק 75',p:[75,0]}]};
+const TF=b=>b?'True':'False';
+LAB.build=function(p){
+  const score=p.score, bonus=p.bonus;
+  const code=['score = '+score,'bonus = '+bonus,'total = score + bonus','if total > 100:','    total = 100','if total >= 90:','    grade = "Excellent"','elif total >= 75:','    grade = "Very good"','elif total >= 55:','    grade = "Pass"','else:','    grade = "Fail"','print("Total:", total)','print("Grade:", grade)','if score < 55 and total >= 55:','    print("The bonus helped!")'].join('\n');
+  const v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.'}]; let out='';
+  const go=(line,note)=>steps.push({line,vars:{...v},out,note});
+  v.score=score; go(1,'score מקבל '+score+'.');
+  v.bonus=bonus; go(2,'bonus מקבל '+bonus+'.');
+  let total=score+bonus; v.total=total; go(3,'total = '+score+' + '+bonus+' = '+total+'.');
+  const over=total>100;
+  go(4,'בודקים: '+total+' > 100? '+TF(over)+'.'+(over?' נכנסים לשורה המוזחת.':' מדלגים על שורה 5.'));
+  if(over){ total=100; v.total=100; go(5,'total יורד ל-100. ציון לא יכול להיות יותר מ-100.'); }
+  const B=[[90,'Excellent',6],[75,'Very good',8],[55,'Pass',10]];
+  let grade=null, which=3;
+  for(let i=0;i<B.length;i++){
+    const [t,g,ln]=B[i], ok=total>=t;
+    go(ln,(i?'elif: ':'')+'בודקים: '+total+' >= '+t+'? '+TF(ok)+'.'+(ok?' זה הענף שירוץ.':i<2?' ממשיכים לתנאי הבא.':' גם זה False, לכן ירוץ ה-else.'));
+    if(ok){ grade=g; which=i; v.grade=g; go(ln+1,'grade מקבל "'+g+'". שאר הענפים בשרשרת לא נבדקים בכלל.'); break; }
+  }
+  if(grade===null){ grade='Fail'; v.grade='Fail'; go(13,'אף תנאי לא היה True, לכן רץ ה-else: grade מקבל "Fail".'); }
+  out+='Total: '+total+'\n'; go(14,'מדפיסים את הציון הסופי. השורה הזו כבר מחוץ לתנאים, אז היא רצה תמיד.');
+  out+='Grade: '+grade+'\n'; go(15,'מדפיסים את המילה מהענף שרץ.');
+  const a=score<55, b2=total>=55, both=a&&b2;
+  go(16,'and: '+score+' < 55 זה '+TF(a)+', ו-'+total+' >= 55 זה '+TF(b2)+'. '+(both?'שניהם True, לכן התנאי True.':'לא שניהם True, לכן התנאי False ומדלגים.'));
+  if(both){ out+='The bonus helped!\n'; go(17,'הבונוס הפך ציון נכשל לעובר.'); }
+  const names=['Excellent','Very good','Pass','Fail'];
+  const explain='<div>ציון סופי: <b>'+total+'</b>'+(over?' (היה '+(score+bonus)+', ירד ל-100)':'')+'.</div>'
+    +'<div class="branches">'+names.map((n,i)=>'<span'+(i===which?' class="on"':'')+'>'+n+'</span>').join('')+'</div>'
+    +'<div>'+(which<3?'הענף שרץ: '+['if total >= 90','elif total >= 75','elif total >= 55'][which].replace(/^/,'')+'.':'אף תנאי לא התקיים, ולכן רץ ה-else.')+(which>0?' לפניו נבדקו '+Math.min(which,3)+' תנאים שהיו False.':'')+'</div>'
+    +(both?'<div>בלי הבונוס הציון היה נכשל: and התקיים, והודפסה שורה נוספת.</div>':'');
+  return {code, steps, explain};
+};
+LAB.examples=[{code:['temp = int(input())','if temp >= 30:','    print("Hot! Drink water")','elif temp >= 18:','    print("Nice weather")','else:','    print("Take a coat")','print("Have a good day")'].join('\n'), input:['24'],
+  steps:[{line:0,vars:{},out:'',note:'הקלט: 24. לחצו "שורה הבאה".'},
+    {line:1,vars:{temp:24},out:'',note:'input קורא "24", ו-int הופך אותו למספר. temp = 24.'},
+    {line:2,vars:{temp:24},out:'',note:'בודקים: 24 >= 30? False. מדלגים על שורה 3 וממשיכים ל-elif.'},
+    {line:4,vars:{temp:24},out:'',note:'elif: 24 >= 18? True. זה הענף שירוץ.'},
+    {line:5,vars:{temp:24},out:'Nice weather\n',note:'מדפיסים "Nice weather". ה-else בשורות 6 ו-7 לא ירוץ, כי כבר מצאנו ענף.'},
+    {line:8,vars:{temp:24},out:'Nice weather\nHave a good day\n',note:'שורה 8 לא מוזחת, היא מחוץ לתנאי. לכן היא רצה תמיד, בכל טמפרטורה.'}]}];
+/*/LAB*/
+lab();
+PT.mount($('exPT'),LAB.examples[0]);
+
+/* practice */
+function qBranch(){
+  const A=pick([80,85,90]), B=pick([50,60,70]), x=pick([ri(A,100),A,ri(B,A-1),B,ri(0,B-1),B-1]);
+  const W=['Gold','Silver','Bronze'], ans=x>=A?W[0]:x>=B?W[1]:W[2];
+  const code=['points = '+x,'if points >= '+A+':','    print("Gold")','elif points >= '+B+':','    print("Silver")','else:','    print("Bronze")'].join('\n');
+  return {ask:'מה התוכנית מדפיסה?', code, type:'text', ans,
+    diag:r=>{ const s=squash(r);
+      if(s==='silver'&&x>=A) return 'גם התנאי של Silver נכון, אבל רק הענף הראשון שמתקיים רץ. '+x+' >= '+A+' כבר True.';
+      if(s==='gold'&&x<A) return 'בדקו שוב: האם '+x+' >= '+A+'?';
+      if(s==='bronze'&&x>=B) return 'else רץ רק כשכל התנאים False. האם כולם באמת False?';
+      if(s==='silver'&&x<B) return 'בדקו שוב: האם '+x+' >= '+B+'?';
+      return 'כתבו את המילה שמודפסת, למשל Gold.'; },
+    hints:['בדקו את התנאים לפי הסדר, מלמעלה למטה. עוצרים בראשון שהוא True.','שורה 2: האם '+x+' >= '+A+'? '+(x>=A?'כן.':'לא. ושורה 4: האם '+x+' >= '+B+'?')],
+    sol:x>=A?x+' >= '+A+' זה True, לכן מודפס Gold, ושאר הענפים לא נבדקים.':x+' >= '+A+' זה False. '+(x>=B?x+' >= '+B+' זה True, לכן Silver.':x+' >= '+B+' גם False, לכן רץ ה-else: Bronze.'), ok:'מודפס '+ans+'.'};
+}
+function qBool(){
+  const x=ri(0,20), a=ri(3,8), b=ri(10,16);
+  const E=pick([
+    ['x > '+a+' and x < '+b, x>a&&x<b, 'and'],
+    ['x < '+a+' or x > '+b, x<a||x>b, 'or'],
+    ['x >= '+a+' and x != '+b, x>=a&&x!==b, 'and'],
+    ['x == '+a+' or x == '+b, x===a||x===b, 'or']]);
+  const [e,val,op]=E;
+  return {ask:'מה התוכנית מדפיסה?', code:'x = '+x+'\nprint('+e+')', type:'mc',
+    opts:[true,false].map(t=>({t:C(TF(t)),ok:t===val,why:op==='and'?'ב-and צריך ששני החלקים יהיו True. בדקו כל חלק לבד.':'ב-or מספיק שחלק אחד יהיה True. בדקו כל חלק לבד.'})),
+    hints:['הציבו x = '+x+' בכל חלק של התנאי, אחד אחד.',op==='and'?'and: True רק אם שני החלקים True.':'or: True אם לפחות חלק אחד True.'],
+    sol:e.split(' '+op+' ').map(p=>C(p.replace(/x/g,String(x)))+' זה '+TF(eval(p.replace(/x/g,String(x)).replace(/==/g,'===').replace(/!=/g,'!=='))) ).join(', ')+'. לכן '+op+' נותן '+TF(val)+'.', ok:C(e)+' כש-x = '+x+' הוא '+TF(val)+'.'};
+}
+function qEdge(){
+  const t=pick([50,55,60,65]), op=pick(['>','>=']), x=pick([t,t,t-1,t+1]), ok=op==='>'?x>t:x>=t;
+  const code=['score = '+x,'if score '+op+' '+t+':','    print("Pass")','else:','    print("Try again")'].join('\n');
+  return {ask:'מה התוכנית מדפיסה?', code, type:'text', ans:ok?'Pass':'Try again',
+    diag:()=>x===t?(op==='>'?'שימו לב: > אומר גדול ממש. '+x+' > '+t+' זה False.':'>= כולל גם שוויון. '+x+' >= '+t+' זה True.'):'בדקו שוב: האם '+x+' '+op+' '+t+'?',
+    hints:['הציבו את הציון בתנאי: האם '+x+' '+op+' '+t+'?',op==='>'?'> פירושו גדול ממש. שווה לא מספיק.':'>= פירושו גדול או שווה.'],
+    sol:x+' '+op+' '+t+' זה '+TF(ok)+', לכן מודפס '+C(ok?'Pass':'Try again')+'.', ok:'הגבול נבדק נכון.'};
+}
+const BUGS=[
+  [['lives = 3','if lives = 0:','    print("Game over")'],2,'בתנאי צריך ==, לא =.'],
+  [['coins = 20','if coins > 10','    print("Rich")'],2,'חסרות נקודתיים בסוף שורת התנאי.'],
+  [['x = 7','if x > 5 and < 10:','    print("Middle")'],2,'אחרי and צריך תנאי שלם: x < 10.'],
+  [['temp = 25','if temp > 20:','print("Warm")'],3,'השורה שבתוך התנאי חייבת להיות מוזחת.'],
+  [['level = 2','if level == 1:','    print("Easy")','else if level == 2:','    print("Medium")'],4,'בפייתון כותבים elif, לא else if.'],
+  [['speed = 90','if speed >= 100:','    print("Too fast")','else','    print("OK")'],4,'גם אחרי else באות נקודתיים.']];
+function qBug(){
+  const [lines,k,why]=pick(BUGS);
+  return {ask:'בתוכנית יש באג, ופייתון יעצור עם שגיאה. באיזו שורה? כתבו את מספר השורה.', code:lines.join('\n'), type:'num', ans:k,
+    diag:(r,v)=>v>=1&&v<=lines.length?'שורה '+v+' תקינה. בדקו בכל תנאי: == או =? נקודתיים? הזחה? elif?':'יש בתוכנית רק '+lines.length+' שורות.',
+    hints:['בדקו: == בתנאי, נקודתיים בסוף, הזחה בפנים, ואיך כותבים elif.',why.split(',')[0].replace(/\.$/,'')+'.'],
+    sol:'שורה '+k+': '+C(lines[k-1])+'. '+why, ok:why};
+}
+function qCount(){
+  const x=ri(1,25), T=shuffle([3,8,12,18,22]).slice(0,3).sort((a,b)=>a-b), W=['small','medium','big'], sep=Math.random()<.6;
+  const code=['x = '+x].concat(...T.map((t,i)=>[(sep||!i?'if':'elif')+' x > '+t+':','    print("'+W[i]+'")'])).join('\n');
+  const n=sep?T.filter(t=>x>t).length:(T.some(t=>x>t)?1:0);
+  return {ask:'כמה שורות התוכנית מדפיסה? (אפשר גם 0)', code, type:'num', ans:n,
+    diag:(r,v)=>sep&&v===1&&n>1?'אלה '+T.length+' if נפרדים, לא elif. כל אחד נבדק לבד, וכמה מהם יכולים לרוץ.':!sep&&v>1?'זו שרשרת של if ו-elif. רץ בה ענף אחד לכל היותר.':null,
+    hints:[sep?'שימו לב: כל תנאי מתחיל ב-if. כל אחד נבדק לבד.':'שימו לב: יש elif. ענף אחד לכל היותר ירוץ.','בדקו כל תנאי עם x = '+x+': '+T.map(t=>x+' > '+t).join(', ')+'.'],
+    sol:T.map(t=>x+' > '+t+' זה '+TF(x>t)).join(', ')+'. '+(sep?'כל if נבדק לבד, לכן מודפסות '+n+' שורות.':'ב-elif עוצרים בראשון שהוא True, לכן '+n+'.'), ok:sep?'if נפרדים נבדקים כל אחד לבד.':'בשרשרת elif רץ ענף אחד לכל היותר.'};
+}
+practice(()=>pick([qBranch,qBranch,qBool,qEdge,qBug,qCount,qCount])());
+
+})();
+</script>
+</body>
+</html>

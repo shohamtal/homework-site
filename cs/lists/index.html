@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>רשימות בפייתון: אינדקס ו-append · מדעי המחשב כיתה ח · מירי</title>
+<meta name="description" content="רשימות בפייתון: אינדקס שמתחיל מ-0, אינדקס שלילי, len, append ולולאה על רשימה. מגלים מתי מקבלים IndexError. מעבדה עם מחוונים ותרגול לכיתה ח.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/lists/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="רשימות בפייתון: אינדקס ו-append · מדעי המחשב כיתה ח · מירי">
+<meta property="og:description" content="רשימות בפייתון: אינדקס שמתחיל מ-0, אינדקס שלילי, len, append ולולאה על רשימה. מגלים מתי מקבלים IndexError. מעבדה עם מחוונים ותרגול לכיתה ח.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/lists/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ח","item":"https://shohamtal.github.io/homework-site/cs/grade-8/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-8/#cs-python-8"},{"@type":"ListItem","position":5,"name":"רשימות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/lists/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"למה ברשימה בפייתון מתחילים לספור מ-0?","acceptedAnswer":{"@type":"Answer","text":"האינדקס אומר כמה צעדים זזים מתחילת הרשימה. הערך הראשון נמצא בהתחלה, אפס צעדים ממנה, ולכן האינדקס שלו 0. כך זה ברוב שפות התכנות. נסו במעבדה."}},{"@type":"Question","name":"מה זה IndexError: list index out of range?","acceptedAnswer":{"@type":"Answer","text":"זו השגיאה שפייתון נותנת כשמבקשים אינדקס שאין ברשימה. ברשימה באורך 3 האינדקסים הם 0, 1, 2, וגם 1-, 2-, 3-. כל מספר אחר נותן את השגיאה הזו."}},{"@type":"Question","name":"מה ההבדל בין רשימה למערך?","acceptedAnswer":{"@type":"Answer","text":"בהרבה שפות קוראים לזה מערך. בפייתון זו רשימה, והיא גמישה: אפשר להוסיף לה ערכים עם append, והיא גדלה לבד. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"רשימות בפייתון","description":"רשימות בפייתון: אינדקס שמתחיל מ-0, אינדקס שלילי, len, append ולולאה על רשימה. מגלים מתי מקבלים IndexError. מעבדה עם מחוונים ותרגול לכיתה ח.","url":"https://shohamtal.github.io/homework-site/cs/lists/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ח","about":"רשימות בפייתון","teaches":"רשימות בפייתון","keywords":"רשימה, אינדקס, append","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.trace{border-collapse:collapse; width:100%; max-width:420px; margin:10px auto 0; font-size:.95rem}
+.trace td,.trace th{border-bottom:1.5px solid var(--soft); padding:5px 4px; text-align:center}
+.trace th{color:var(--muted); font-weight:700}
+.trace tr.now td{background:var(--hl); font-weight:800}
+.trace tr.later td{color:var(--muted); opacity:.55}
+.num{font-family:var(--f-math); font-size:1.1rem}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.2rem var(--f-math); width:7em; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:420px; margin:0 auto}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.pair{display:grid; grid-template-columns:minmax(0,1fr); gap:6px}
+.pair pre.code{margin:0; font-size:.88rem}
+.pair .tag{font-weight:800; font-size:.9rem; margin-bottom:2px}
+.pair .bad{color:var(--err)} .pair .good{color:var(--ok)}
+.q-code{max-width:460px; margin:0 auto 10px}
+</style>
+<style>
+.cells{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; direction:ltr; margin:6px 0 12px}
+.cell{width:52px; text-align:center}
+.cell .ix{font:700 .85rem ui-monospace, Menlo, Consolas, monospace; color:var(--muted)}
+.cell .vl{height:48px; border:2px solid var(--border); border-radius:8px; background:var(--card); box-shadow:2px 2px 0 var(--hard); display:flex; align-items:center; justify-content:center; font:1.3rem var(--f-math)}
+.cell.on .vl{background:var(--hl); border-color:var(--line)}
+.cell.on .ix{color:var(--ink)}
+.cells .none{color:var(--muted); direction:rtl; font-weight:700}
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="lists">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-8/">כיתה ח</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-8/#cs-python-8">תכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">רשימות בפייתון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ח · תכנות בפייתון</div>
+  <h1>רשימות בפייתון <span class="slogan">הרבה ערכים במשתנה אחד</span></h1>
+  <p class="lead">רשימה שומרת כמה ערכים לפי הסדר: ציונים, שמות של שלבים, טמפרטורות. ניגשים לכל ערך לפי המקום שלו, ומתחילים לספור מ-0. כאן מזיזים את האינדקס, רואים איזה ערך נבחר, ומגלים מה קורה כשיוצאים מהרשימה. כדאי להכיר קודם את <a href="../loops/">הלולאות בפייתון</a>, ואחר כך לעבור ל<a href="../debugging/">מציאת באגים</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <pre class="code" dir="ltr" lang="en">scores = [7, 9, 4, 8]
+print(scores[0])      # 7
+print(scores[-1])     # 8
+print(len(scores))    # 4
+scores.append(10)     # [7, 9, 4, 8, 10]</pre>
+  <div class="two">
+    <div class="mini">
+      <h3>יוצרים וסופרים מ-0</h3>
+      <p>רשימה כותבים בסוגריים מרובעים, עם פסיקים. המקום של כל ערך נקרא <strong>אינדקס</strong>. הראשון הוא 0, השני 1, וכן הלאה.</p>
+    </div>
+    <div class="mini">
+      <h3>אינדקס שלילי ו-len</h3>
+      <p><code dir="ltr" lang="en">scores[-1]</code> הוא האחרון, <code dir="ltr" lang="en">scores[-2]</code> הלפני אחרון. <code dir="ltr" lang="en">len(scores)</code> אומר כמה ערכים יש.</p>
+    </div>
+    <div class="mini">
+      <h3>append ולולאה</h3>
+      <p><code dir="ltr" lang="en">append</code> מוסיף ערך לסוף. <code dir="ltr" lang="en">for s in scores:</code> עובר על כל הערכים לפי הסדר, ובכל סיבוב s הוא הערך הבא.</p>
+    </div>
+  </div>
+  <div class="callout"><strong>לזכור:</strong> ברשימה עם 5 ערכים האינדקסים הם 0 עד 4. אינדקס 5 כבר מחוץ לרשימה ונותן <code dir="ltr" lang="en">IndexError</code>.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: אורך, אינדקס ומה שביניהם</h2></div>
+  <p class="text">המחוון הראשון קובע כמה ציונים יש ברשימה, והשני קובע איזה אינדקס מדפיסים בסוף. מעל כל תא כתוב האינדקס שלו, ומתחת האינדקס השלילי. לחצו "שורה הבאה" כדי לעקוב.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="sN"><span>כמה ערכים ברשימה</span><span class="eq" id="sNv"></span></label>
+      <input type="range" id="sN" min="0" max="6" step="1" value="5">
+      <label class="slider" for="sI"><span>האינדקס שמדפיסים</span><span class="eq" id="sIv"></span></label>
+      <input type="range" class="hl" id="sI" min="-6" max="6" step="1" value="0">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries">
+          <button type="button" data-p="5,0">הראשון</button>
+          <button type="button" data-p="5,-1">האחרון עם 1-</button>
+          <button type="button" data-p="5,4">len פחות 1</button>
+          <button type="button" data-p="5,5">IndexError</button>
+          <button type="button" data-p="0,0">רשימה ריקה</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cells" id="cells" aria-label="הרשימה"></div>
+  <div id="labPT"></div>
+  <h3 style="margin-top:18px">הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labRun" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>הראשון הוא 0, לא 1</h3>
+      <p>כדי לקבל את הערך הראשון כותבים 0.</p>
+      <div class="pair"><div><p class="tag bad">✗ מקבלים את השני</p><pre class="code" dir="ltr" lang="en">print(scores[1])</pre></div><div><p class="tag good">✓ הראשון</p><pre class="code" dir="ltr" lang="en">print(scores[0])</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>len הוא לא אינדקס</h3>
+      <p>ברשימה באורך 4 אין אינדקס 4. האחרון הוא len פחות 1, או פשוט 1-.</p>
+      <div class="pair"><div><p class="tag bad">✗ IndexError</p><pre class="code" dir="ltr" lang="en">print(scores[len(scores)])</pre></div><div><p class="tag good">✓ האחרון</p><pre class="code" dir="ltr" lang="en">print(scores[-1])</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>append עם סוגריים</h3>
+      <p>append היא פעולה של הרשימה. כותבים נקודה, append, וסוגריים עגולים.</p>
+      <div class="pair"><div><p class="tag bad">✗ לא עובד</p><pre class="code" dir="ltr" lang="en">scores.append = 10
+scores + 10</pre></div><div><p class="tag good">✓ מוסיף לסוף</p><pre class="code" dir="ltr" lang="en">scores.append(10)</pre></div></div>
+    </div>
+    <div class="mini">
+      <h3>מקסימום שמתחיל ב-0</h3>
+      <p>אם כל הערכים שליליים, 0 ינצח בטעות. מתחילים מהערך הראשון ברשימה.</p>
+      <div class="pair"><div><p class="tag bad">✗ עלול לטעות</p><pre class="code" dir="ltr" lang="en">best = 0</pre></div><div><p class="tag good">✓ בטוח</p><pre class="code" dir="ltr" lang="en">best = temps[0]</pre></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה: הטמפרטורה הגבוהה ביותר</h2></div>
+  <p class="text">יש רשימה של טמפרטורות, ומוסיפים לה עוד מדידה. איך מוצאים את הגבוהה ביותר בלי <code dir="ltr" lang="en">max</code>? שומרים את "הכי גבוה עד עכשיו", ובכל סיבוב בודקים אם הערך הנוכחי גבוה ממנו.</p>
+  <div class="stepper"><div id="exPT"></div></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code q-code" id="prQ" dir="ltr" lang="en"></pre>
+  <div class="ctrl">
+    <div class="ansrow"><input id="prN" inputmode="numeric" autocomplete="off" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>למה ברשימה בפייתון מתחילים לספור מ-0?</h3>
+    <p>האינדקס אומר כמה צעדים זזים מתחילת הרשימה. הערך הראשון נמצא בהתחלה, אפס צעדים ממנה, ולכן האינדקס שלו 0. כך זה ברוב שפות התכנות. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>מה זה IndexError: list index out of range?</h3>
+    <p>זו השגיאה שפייתון נותנת כשמבקשים אינדקס שאין ברשימה. ברשימה באורך 3 האינדקסים הם 0, 1, 2, וגם 1-, 2-, 3-. כל מספר אחר נותן את השגיאה הזו.</p>
+    <h3>מה ההבדל בין רשימה למערך?</h3>
+    <p>בהרבה שפות קוראים לזה מערך. בפייתון זו רשימה, והיא גמישה: אפשר להוסיף לה ערכים עם append, והיא גדלה לבד. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/loops/">לולאות בפייתון: for ו-while</a></p>
+<p class="related text"><strong>בכיתה ט ממשיכים ל:</strong> <a href="../../cs/strings/">מחרוזות בפייתון</a> · <a href="../../cs/search-and-sort-intro/">חיפוש ומיון: מבוא</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/functions/"><small>→ הנושא הקודם</small>פונקציות בפייתון</a><a class="next" href="../../cs/debugging/"><small>הנושא הבא ←</small>מוצאים באגים בפייתון</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const C=s=>`<code dir="ltr" lang="en">${s}</code>`;
+/*GEN*/
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const ALL=[7, 9, 4, 8, 6, 10];
+const lit=a=>'['+a.join(', ')+']';
+const okIx=(n,i)=>i<n&&i>=-n;
+function buildLab(n,I){
+  const L=ALL.slice(0,n);
+  const code=`scores = ${lit(L)}\ntotal = 0\nfor s in scores:\n    total = total + s\nprint("len:", len(scores))\nprint("total:", total)\nprint("item:", scores[${I}])`;
+  const steps=[{line:0,vars:{},out:''}], v={}; let out='';
+  const push=(line,note)=>steps.push({line,vars:{...v},out,note});
+  v.scores=L.slice(); push(1,n?`יוצרים רשימה עם ${n} ציונים. האינדקסים הם 0 עד ${n-1}.`:'יוצרים רשימה ריקה. אין בה אף ערך, ואין אף אינדקס.');
+  v.total=0; push(2,'total מתחיל ב-0.');
+  L.forEach((x,k)=>{ v.s=x; push(3,`סיבוב ${k+1}: s מקבל את הערך שבאינדקס ${k}, שהוא ${x}.`); const t=v.total; v.total=t+x; push(4,`total = ${t} + ${x} = ${v.total}.`); });
+  push(3,n?'עברנו על כל הערכים. יוצאים מהלולאה.':'הרשימה ריקה, ולכן הלולאה לא רצה אפילו פעם אחת.');
+  out+=`len: ${n}\n`; push(5,`len(scores) הוא ${n}: מספר הערכים ברשימה.`);
+  out+=`total: ${v.total}\n`; push(6,`הסכום של כל הציונים: ${v.total}.`);
+  if(okIx(n,I)){ const j=I<0?n+I:I; out+=`item: ${L[j]}\n`; push(7,I<0?`אינדקס ${I} סופר מהסוף. זה אותו תא כמו אינדקס ${j}, ובו ${L[j]}.`:`בתא שבאינדקס ${I} יש ${L[j]}. ${I===0?'זה הערך הראשון.':`זה הערך מספר ${I+1}, כי מתחילים מ-0.`}`); }
+  else { out+=`Traceback (most recent call last):\n  File "main.py", line 7, in <module>\n    print("item:", scores[${I}])\nIndexError: list index out of range\n`;
+    push(7,n?`שגיאה! ברשימה יש ${n} ערכים, והאינדקסים המותרים הם 0 עד ${n-1} או ${-n} עד 1-. אין אינדקס ${I}, ולכן פייתון עוצרת עם IndexError.`:'שגיאה! ברשימה ריקה אין אף תא, אפילו לא אינדקס 0. פייתון עוצרת עם IndexError.'); }
+  return {code,steps,L,noVars:!okIx(n,I)};
+}
+const PRESETS=[[5,0],[5,-1],[5,4],[5,5],[0,0]];
+function buildEx(){
+  const code='temps = [21, 25, 19]\ntemps.append(27)\nbest = temps[0]\nfor t in temps:\n    if t > best:\n        best = t\nprint("max:", best)';
+  const steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" ועקבו אחרי best.'}], v={}; let out='';
+  const push=(line,note)=>steps.push({line,vars:{...v},out,note});
+  v.temps=[21,25,19]; push(1,'רשימה עם 3 טמפרטורות.');
+  v.temps=[21,25,19,27]; push(2,'append מוסיף 27 לסוף. עכשיו יש 4 ערכים.');
+  v.best=21; push(3,'מתחילים מהערך הראשון: best הוא 21.');
+  v.temps.forEach(t=>{
+    v.t=t; push(4,`t מקבל ${t}.`);
+    if(t>v.best){ push(5,`האם ${t} גדול מ-${v.best}? כן.`); v.best=t; push(6,`best מתעדכן ל-${t}.`); }
+    else push(5,`האם ${t} גדול מ-${v.best}? לא. best נשאר ${v.best}.`);
+  });
+  push(4,'עברנו על כל הרשימה.');
+  out='max: 27\n'; push(7,'הגבוהה ביותר היא 27, הערך שהוספנו עם append.');
+  return {code,steps};
+}
+function LABCASES(){
+  const cs=[]; for(let n=0;n<=6;n++) for(let I=-6;I<=6;I++) cs.push(Object.assign(buildLab(n,I),{name:n+','+I}));
+  cs.push(Object.assign(buildEx(),{name:'example'}));
+  return cs;
+}
+function rlist(k){ const a=[]; while(a.length<k){ const x=ri(1,20); if(!a.includes(x)) a.push(x); } return a; }
+function genQ(){
+  const kind=pick(['index','neg','len','sum','biggest']);
+  const L=rlist(ri(4,6)), n=L.length;
+  if(kind==='index'){
+    const k=ri(1,n-1), ans=L[k];
+    return {kind,vk:'last',ans,code:`nums = ${lit(L)}\nprint(nums[${k}])`,ask:'מה התוכנית מדפיסה?',
+      diag:[[L[k-1],`זה הערך מספר ${k}. אבל מתחילים לספור מ-0, ולכן nums[${k}] הוא הערך מספר ${k+1}.`]],
+      hints:['האינדקס של הערך הראשון הוא 0.',`ספרו: 0 הוא ${L[0]}, 1 הוא ${L[1]}, … עד ${k}.`],sol:`האינדקסים: ${L.map((x,i)=>i+' → '+x).join(', ')}. ב-${k} יש ${ans}.`};
+  }
+  if(kind==='neg'){
+    const k=ri(1,n-1), ans=L[n-k];
+    return {kind,vk:'last',ans,code:`nums = ${lit(L)}\nprint(nums[-${k}])`,ask:'מה התוכנית מדפיסה?',
+      diag:[[L[k],'אינדקס שלילי סופר מהסוף, לא מההתחלה.'],[L[n-k-1],`1- הוא האחרון. ספרו שוב מהסוף.`]].filter(d=>d[0]!==ans),
+      hints:['1- הוא הערך האחרון, 2- הלפני אחרון.',`-${k} זה כמו ${n} פחות ${k}, כלומר אינדקס ${n-k}.`],sol:`ברשימה ${n} ערכים. -${k} הוא אותו תא כמו ${n-k}, ובו ${ans}.`};
+  }
+  if(kind==='len'){
+    const a=ri(1,9), b=ri(1,9), ans=n+2;
+    return {kind,vk:'last',ans,code:`nums = ${lit(L)}\nnums.append(${a})\nnums.append(${b})\nprint(len(nums))`,ask:'מה התוכנית מדפיסה?',
+      diag:[[n,'append מוסיף ערך לרשימה, והיא מתארכת.'],[n+1,'יש שתי שורות append.'],[n+1,'']].slice(0,2),
+      hints:['כמה ערכים יש ברשימה בהתחלה?',`בהתחלה ${n}. כל append מוסיף אחד.`],sol:`בהתחלה ${n} ערכים. שני append מוסיפים 2. בסוף ${ans}.`};
+  }
+  if(kind==='sum'){
+    const lim=ri(6,12), ans=L.filter(x=>x>lim).reduce((t,x)=>t+x,0), all=L.reduce((t,x)=>t+x,0);
+    return {kind,vk:'last',ans,code:`nums = ${lit(L)}\ntotal = 0\nfor x in nums:\n    if x > ${lim}:\n        total = total + x\nprint(total)`,ask:'מה התוכנית מדפיסה?',
+      diag:[[all,`חיברתם את כולם. אבל מחברים רק ערכים שגדולים מ-${lim}.`],[L.filter(x=>x>=lim).reduce((t,x)=>t+x,0),`${lim} עצמו לא גדול מ-${lim}.`]].filter(d=>d[0]!==ans),
+      hints:[`סמנו את הערכים שגדולים מ-${lim}.`,`הערכים הם: ${L.filter(x=>x>lim).join(', ')||'אין כאלה'}. חברו אותם.`],sol:`רק ${L.filter(x=>x>lim).join(', ')||'אף ערך לא'} גדולים מ-${lim}. הסכום: ${ans}.`};
+  }
+  return {kind,vk:'last',ans:n-1,vans:L[n-1],vcode:`nums = ${lit(L)}\nprint(nums[${n-1}])`,code:`nums = ${lit(L)}\nprint(nums[?])`,
+    ask:'מה המספר הכי גדול שאפשר לכתוב במקום סימן השאלה, בלי לקבל IndexError?',
+    diag:[[n,`ברשימה ${n} ערכים, אבל מתחילים מ-0. אינדקס ${n} כבר מחוץ לרשימה.`]],
+    hints:['כמה ערכים יש ברשימה?',`יש ${n} ערכים, והאינדקס הראשון הוא 0.`],sol:`יש ${n} ערכים, באינדקסים 0 עד ${n-1}. האחרון, ${L[n-1]}, נמצא באינדקס ${n-1}.`};
+}
+/*END*/
+
+/* lab */
+const sN=$('sN'), sI=$('sI');
+function lab(){
+  const n=+sN.value, I=+sI.value;
+  $('sNv').textContent=n; $('sIv').textContent=I;
+  const cur=buildLab(n,I), ok=okIx(n,I), j=I<0?n+I:I;
+  $('cells').innerHTML=n?cur.L.map((x,k)=>`<div class="cell${ok&&k===j?' on':''}"><div class="ix">${k}</div><div class="vl">${x}</div><div class="ix">${k-n}</div></div>`).join(''):'<span class="none">הרשימה ריקה</span>';
+  PT.mount($('labPT'),{code:cur.code,steps:cur.steps});
+  $('labRun').value=cur.code;
+  let h=`<div>${C('len(scores)')} = ${n}. סכום הציונים: ${cur.L.reduce((a,b)=>a+b,0)}.</div>`;
+  if(ok) h+=`<div>${C(`scores[${I}]`)} הוא ${cur.L[j]}${I<0?`, כמו ${C(`scores[${j}]`)}`:''}.</div>`;
+  else h+=`<div>${C(`scores[${I}]`)}: אין אינדקס כזה${n?`, המותרים הם 0 עד ${n-1} ו-${-n} עד 1-`:''}. בשורה 7 יש ${C('IndexError')}. עברו עד הסוף במעקב.</div>`;
+  $('labTxt').innerHTML=h;
+}
+[sN,sI].forEach(x=>x.addEventListener('input',lab));
+document.querySelectorAll('#tries button').forEach(b=>b.onclick=()=>{ const p=b.dataset.p.split(','); sN.value=p[0]; sI.value=p[1]; lab(); });
+lab();
+
+/* worked example */
+const ex=buildEx(); PT.mount($('exPT'),{code:ex.code,steps:ex.steps});
+
+/* practice */
+let q=null, streak=0, solved=0;
+const norm=s=>String(s).replace(/\s+/g,'');
+function newQ(){ q=genQ(); q.tries=0; q.h=0; $('prAsk').textContent=q.ask; $('prQ').textContent=q.code; $('prN').value=''; $('prFb').innerHTML=''; $('prShow').disabled=true; }
+const streakTxt=()=>{ $('prStreak').textContent=`פתרתם ${solved} · ברצף: ${streak}`; };
+$('prCheck').onclick=()=>{
+  const v=norm($('prN').value), fb=$('prFb');
+  if(!v){ fb.innerHTML='<div class="fb err">כתבו תשובה.</div>'; $('prN').focus(); return; }
+  if(v===norm(q.ans)){ streak++; solved++; streakTxt(); fb.innerHTML=`<div class="fb ok">נכון! התשובה היא ${q.ans}.</div>`; return; }
+  const d=q.diag.find(x=>norm(x[0])===v);
+  streak=0; q.tries++; streakTxt();
+  fb.innerHTML=`<div class="fb err">${d?d[1]:'עוד לא. עקבו אחרי הקוד סיבוב אחרי סיבוב ונסו שוב.'}</div>`;
+  if(q.tries>=2) $('prShow').disabled=false;
+};
+$('prHint').onclick=()=>{ q.h=Math.min(q.h+1,q.hints.length); $('prFb').innerHTML=`<div class="fb hint">${q.hints.slice(0,q.h).join('<br>')}</div>`; };
+$('prShow').onclick=()=>{ $('prFb').innerHTML=`<div class="fb hint">${q.sol}<br>עכשיו נסו תרגיל חדש.</div>`; };
+$('prNew').onclick=newQ;
+$('prN').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+newQ(); streakTxt();
+})();
+</script>
+</body>
+</html>

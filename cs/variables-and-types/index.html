@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- build:head -->
+<title>משתנים וטיפוסים בפייתון · מדעי המחשב כיתה ז · מירי</title>
+<meta name="description" content="int, float, str ו-bool בפייתון: השמה, type, המרה עם int ו-str, ולמה input מחזיר טקסט. מעבדה עם טבלת משתנים ותרגול עם רמזים לכיתה ז.">
+<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/variables-and-types/">
+<link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<meta name="theme-color" content="#FF3D7F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="מירי">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="משתנים וטיפוסים בפייתון · מדעי המחשב כיתה ז · מירי">
+<meta property="og:description" content="int, float, str ו-bool בפייתון: השמה, type, המרה עם int ו-str, ולמה input מחזיר טקסט. מעבדה עם טבלת משתנים ותרגול עם רמזים לכיתה ז.">
+<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/variables-and-types/">
+<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="מירי המורה שלך להצלחה">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
+<script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
+<script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ז","item":"https://shohamtal.github.io/homework-site/cs/grade-7/"},{"@type":"ListItem","position":4,"name":"מבוא לתכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-7/#cs-python-7"},{"@type":"ListItem","position":5,"name":"משתנים וטיפוסים בפייתון","item":"https://shohamtal.github.io/homework-site/cs/variables-and-types/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין int ל-float בפייתון?","acceptedAnswer":{"@type":"Answer","text":"int הוא מספר שלם, כמו 7. float הוא מספר עם נקודה עשרונית, כמו 7.5 או 7.0. חילוק עם / תמיד נותן float, וחילוק עם // נותן מספר שלם. נסו במעבדה."}},{"@type":"Question","name":"למה input מחזיר טקסט גם כשמקלידים מספר?","acceptedAnswer":{"@type":"Answer","text":"כי פייתון לא יודע מה תקלידו: אולי מילה, אולי מספר. לכן הוא תמיד מחזיר str. אם צריך מספר, כותבים int(input()) או float(input())."}},{"@type":"Question","name":"איך בוחרים שם טוב למשתנה?","acceptedAnswer":{"@type":"Answer","text":"שם שמספר מה יש בפנים: coins עדיף על x. משתמשים באותיות באנגלית, בספרות ובקו תחתון, בלי רווחים, ולא מתחילים בספרה. תרגלו למטה."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"משתנים וטיפוסים בפייתון","description":"int, float, str ו-bool בפייתון: השמה, type, המרה עם int ו-str, ולמה input מחזיר טקסט. מעבדה עם טבלת משתנים ותרגול עם רמזים לכיתה ז.","url":"https://shohamtal.github.io/homework-site/cs/variables-and-types/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ז","about":"משתנים וטיפוסים בפייתון","teaches":"משתנים וטיפוסים בפייתון","keywords":"משתנה, int ו-str, print","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<!-- /build:head -->
+<link rel="stylesheet" href="../../assets/site.css">
+<style>
+.wrap{font-size:1.05rem}
+.pad{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.pad button{min-height:46px}
+.ansrow{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center}
+.ansrow input{font:1.1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; width:14em; max-width:100%; box-sizing:border-box; padding:8px; border-radius:10px; border:1.5px solid var(--border); background:var(--paper); color:var(--ink); text-align:center; direction:ltr}
+.choices{display:flex; flex-direction:column; gap:8px; max-width:460px; margin:0 auto; width:100%}
+.choices button{min-height:46px; font:700 1.02rem var(--f-body)}
+.choices button[aria-pressed="true"]{border-color:var(--line); box-shadow:0 0 0 2px var(--line); background:var(--hint-bg)}
+.choices button code{font-weight:400}
+.mini pre.code{margin:0}
+.tag-bad, .tag-good{font-weight:700; font-size:.92rem}
+.tag-bad{color:var(--err)} .tag-good{color:var(--ok)}
+#labPT, #exPT{margin-top:14px}
+#prCode{max-width:520px; margin:10px auto}
+code[dir=ltr]{unicode-bidi:isolate}
+.types{display:flex; flex-wrap:wrap; gap:6px; direction:ltr; justify-content:flex-end}
+.types span{border:1.5px solid var(--border); border-radius:999px; padding:1px 10px; background:var(--card); font:.9rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+
+</style>
+</head>
+<body data-root="../../" data-subject="cs" data-topic="variables-and-types">
+<div class="wrap">
+<!-- build:sitebar -->
+<div id="sitebar" class="sitebar"><a class="brand" href="../../"><img class="avatar" src="../../assets/miri/avatar-64.webp" width="32" height="32" alt="">מירי</a><nav class="crumbs" aria-label="מיקום באתר"><a href="../../">כל המקצועות</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/">מדעי המחשב</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-7/">כיתה ז</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <a href="../../cs/grade-7/#cs-python-7">מבוא לתכנות בפייתון</a> <span class="sep" dir="ltr" aria-hidden="true">‹</span> <span aria-current="page">משתנים וטיפוסים בפייתון</span></nav></div>
+<!-- /build:sitebar -->
+
+<header class="page">
+  <div class="eyebrow">כיתה ז · מבוא לתכנות בפייתון</div>
+  <h1>משתנים וטיפוסים בפייתון <span class="slogan">int, float, str ו-bool</span></h1>
+  <p class="lead">משתנה הוא שם שמצביע על ערך. בפייתון לכל ערך יש גם <strong>טיפוס</strong>: מספר שלם, מספר עשרוני, טקסט, או אמת ושקר. כאן יוצרים משתנים, משנים אותם ועוקבים אחריהם שורה אחרי שורה. כדאי להיזכר קודם ב<a href="../variables-boxes/">משתנים כקופסאות עם שם</a> וב<a href="../how-computers-work/">קלט ופלט</a>. אחר כך ממשיכים ל<a href="../conditionals/">תנאים בפייתון</a>.</p>
+  <nav class="toc" aria-label="פרקים">
+    <a href="#idea">הרעיון</a><a href="#lab">מעבדה</a><a href="#traps">מלכודות</a><a href="#example">דוגמה פתורה</a><a href="#practice">תרגול</a><a href="#faq">שאלות</a>
+  </nav>
+</header>
+
+<section class="card" id="idea">
+  <div class="sec-head"><span class="sec-num">1</span><h2>הרעיון</h2></div>
+  <p class="text">השורה <code dir="ltr" lang="en">coins = 50</code> היא <strong>השמה</strong>: שמים את 50 במשתנה בשם <code dir="ltr" lang="en">coins</code>. מצד ימין של ה-<code dir="ltr" lang="en">=</code> מחשבים ערך, ומצד שמאל כותבים את השם. השמה חדשה מחליפה את הערך הישן.</p>
+  <div class="two">
+    <div class="mini">
+      <h3>מספרים: int ו-float</h3>
+      <p><code dir="ltr" lang="en">int</code> הוא מספר שלם, כמו <code dir="ltr" lang="en">7</code> או <code dir="ltr" lang="en">-3</code>. <code dir="ltr" lang="en">float</code> הוא מספר עם נקודה, כמו <code dir="ltr" lang="en">12.5</code>. גם <code dir="ltr" lang="en">10.0</code> הוא float. חילוק ב-<code dir="ltr" lang="en">/</code> תמיד נותן float.</p>
+    </div>
+    <div class="mini">
+      <h3>טקסט: str</h3>
+      <p><code dir="ltr" lang="en">str</code> הוא מחרוזת, כלומר טקסט בתוך מרכאות: <code dir="ltr" lang="en">"Sword"</code>. גם <code dir="ltr" lang="en">"50"</code> הוא טקסט, לא מספר. <code dir="ltr" lang="en">+</code> בין מחרוזות מדביק אותן.</p>
+    </div>
+    <div class="mini">
+      <h3>אמת ושקר: bool</h3>
+      <p><code dir="ltr" lang="en">bool</code> הוא אחד משני ערכים: <code dir="ltr" lang="en">True</code> או <code dir="ltr" lang="en">False</code>. השוואה כמו <code dir="ltr" lang="en">coins >= 20</code> נותנת bool. בעזרתו התוכנית מחליטה.</p>
+    </div>
+  </div>
+  <pre class="code" dir="ltr" lang="en">print(type(50))       # &lt;class 'int'&gt;
+print(type(12.5))     # &lt;class 'float'&gt;
+print(type("Sword"))  # &lt;class 'str'&gt;
+print(type(3 &gt; 2))    # &lt;class 'bool'&gt;</pre>
+  <div class="callout"><strong>לזכור:</strong> <code dir="ltr" lang="en">type()</code> אומר מה הטיפוס. <code dir="ltr" lang="en">int()</code>, <code dir="ltr" lang="en">float()</code> ו-<code dir="ltr" lang="en">str()</code> ממירים מטיפוס לטיפוס. ו-<code dir="ltr" lang="en">input()</code> תמיד מחזיר str, גם כשמקלידים מספר.</div>
+</section>
+
+<section class="card" id="lab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>מעבדה: קונים בחנות של משחק</h2></div>
+  <p class="text">לשחקן יש מטבעות, והוא רוצה לקנות חרבות. הזיזו את המחוונים: כמה מטבעות יש, כמה עולה חרב וכמה חרבות קונים. הקוד משתנה לבד. לחצו "שורה הבאה" וראו איך טבלת המשתנים מתמלאת, ואיזה טיפוס יש לכל ערך.</p>
+  <div class="lab">
+    <div class="ctrl">
+      <label class="slider" for="coins"><span>מטבעות (int)</span><span id="coinsv" dir="ltr"></span></label>
+      <input type="range" id="coins" min="0" max="100" step="5" value="50">
+      <label class="slider" for="price"><span>מחיר של חרב (float)</span><span id="pricev" dir="ltr"></span></label>
+      <input type="range" class="hl" id="price" min="0.5" max="30" step="0.5" value="12.5">
+      <label class="slider" for="count"><span>כמה חרבות (int)</span><span id="countv" dir="ltr"></span></label>
+      <input type="range" class="blue" id="count" min="1" max="5" step="1" value="2">
+    </div>
+    <div class="ctrl">
+      <div class="explain fb hint" id="labTxt" aria-live="polite"></div>
+      <div>
+        <p style="font-weight:700; margin-bottom:6px">נסו את אלה:</p>
+        <div class="tries" id="tries"></div>
+      </div>
+    </div>
+  </div>
+  <div id="labPT"></div>
+  <h3>הריצו בעצמכם</h3>
+  <p class="text">אפשר לשנות את הקוד ולהריץ פייתון אמיתי. בפעם הראשונה הטעינה לוקחת כמה שניות.</p>
+  <div class="pyrun"><textarea class="pyrun-code" id="labPy" dir="ltr" lang="en" spellcheck="false" aria-label="קוד פייתון"></textarea>
+  <button type="button" class="primary pyrun-go">▶ הריצו בעצמכם</button><pre class="pyrun-out" dir="ltr" lang="en"></pre></div>
+</section>
+
+<section class="card" id="traps">
+  <div class="sec-head"><span class="sec-num">3</span><h2>טעויות שכולם עושים</h2></div>
+  <div class="two">
+    <div class="mini">
+      <h3>input מחזיר טקסט</h3>
+      <p>מקלידים 12, אבל <code dir="ltr" lang="en">input()</code> מחזיר את הטקסט <code dir="ltr" lang="en">"12"</code>. אי אפשר לחבר לטקסט מספר. ממירים קודם עם <code dir="ltr" lang="en">int</code>.</p>
+      <span class="tag-bad">✗ שגיאה</span><pre class="code" dir="ltr" lang="en">age = input()
+print(age + 1)</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">age = int(input())
+print(age + 1)</pre>
+    </div>
+    <div class="mini">
+      <h3>"5" + "3" זה לא 8</h3>
+      <p>בין מחרוזות, <code dir="ltr" lang="en">+</code> מדביק. לכן יוצא 53. אין שגיאה, וזה מה שמבלבל.</p>
+      <span class="tag-bad">✗ יוצא 53</span><pre class="code" dir="ltr" lang="en">print("5" + "3")</pre>
+      <span class="tag-good">✓ יוצא 8</span><pre class="code" dir="ltr" lang="en">print(5 + 3)</pre>
+    </div>
+    <div class="mini">
+      <h3>טקסט ועוד מספר</h3>
+      <p>אי אפשר להדביק מספר לטקסט עם <code dir="ltr" lang="en">+</code>. הופכים את המספר לטקסט עם <code dir="ltr" lang="en">str</code>, או מפרידים בפסיק.</p>
+      <span class="tag-bad">✗ שגיאה</span><pre class="code" dir="ltr" lang="en">print("Score: " + 10)</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">print("Score: " + str(10))
+print("Score:", 10)</pre>
+    </div>
+    <div class="mini">
+      <h3>= ו-== הם לא אותו דבר</h3>
+      <p><code dir="ltr" lang="en">=</code> שם ערך במשתנה. <code dir="ltr" lang="en">==</code> רק שואל אם שני ערכים שווים, ונותן True או False. הוא לא משנה כלום.</p>
+      <span class="tag-bad">✗ score לא משתנה</span><pre class="code" dir="ltr" lang="en">score == 10</pre>
+      <span class="tag-good">✓ עכשיו score הוא 10</span><pre class="code" dir="ltr" lang="en">score = 10</pre>
+    </div>
+    <div class="mini">
+      <h3>שמות של משתנים</h3>
+      <p>בלי רווחים, בלי להתחיל בספרה. אות גדולה וקטנה הן שונות: <code dir="ltr" lang="en">Score</code> ו-<code dir="ltr" lang="en">score</code> הם שני משתנים.</p>
+      <span class="tag-bad">✗ שגיאה</span><pre class="code" dir="ltr" lang="en">my score = 5
+2nd = 4</pre>
+      <span class="tag-good">✓ נכון</span><pre class="code" dir="ltr" lang="en">my_score = 5
+second = 4</pre>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="example">
+  <div class="sec-head"><span class="sec-num">4</span><h2>דוגמה פתורה, צעד אחרי צעד</h2></div>
+  <p class="text">מקלידים 21. מה התוכנית תדפיס? נחשו לפני כל שורה, ושימו לב להבדל בין <code dir="ltr" lang="en">text</code>, שהוא str, לבין <code dir="ltr" lang="en">number</code>, שהוא int.</p>
+  <div id="exPT"></div>
+</section>
+
+<section class="card" id="practice">
+  <div class="sec-head"><span class="sec-num">5</span><h2>תרגול</h2></div>
+  <p class="text" id="prAsk"></p>
+  <pre class="code" id="prCode" dir="ltr" lang="en" hidden></pre>
+  <div class="ctrl">
+    <div class="choices" id="prCh" hidden></div>
+    <div class="ansrow" id="prIn" hidden><input id="prA" dir="ltr" lang="en" autocomplete="off" spellcheck="false" aria-label="התשובה"></div>
+    <div class="row"><button id="prCheck" class="primary">בדיקה</button><button id="prHint">רמז</button><button id="prShow" disabled>הראו לי את הפתרון</button><button id="prNew">תרגיל חדש</button></div>
+    <div id="prFb" aria-live="polite"></div>
+    <p class="counter" id="prStreak"></p>
+  </div>
+</section>
+
+<section class="card" id="faq">
+  <div class="sec-head"><span class="sec-num">6</span><h2>שאלות שכולם שואלים</h2></div>
+  <div class="faq text">
+    <h3>מה ההבדל בין int ל-float בפייתון?</h3>
+    <p>int הוא מספר שלם, כמו 7. float הוא מספר עם נקודה עשרונית, כמו 7.5 או 7.0. חילוק עם / תמיד נותן float, וחילוק עם // נותן מספר שלם. <a href="#lab">נסו במעבדה</a>.</p>
+    <h3>למה input מחזיר טקסט גם כשמקלידים מספר?</h3>
+    <p>כי פייתון לא יודע מה תקלידו: אולי מילה, אולי מספר. לכן הוא תמיד מחזיר str. אם צריך מספר, כותבים int(input()) או float(input()).</p>
+    <h3>איך בוחרים שם טוב למשתנה?</h3>
+    <p>שם שמספר מה יש בפנים: coins עדיף על x. משתמשים באותיות באנגלית, בספרות ובקו תחתון, בלי רווחים, ולא מתחילים בספרה. <a href="#practice">תרגלו למטה</a>.</p>
+  </div>
+</section>
+
+
+<!-- build:topicnav -->
+<p class="related text"><strong>כדאי לחזור גם על:</strong> <a href="../../cs/variables-boxes/">משתנים: קופסאות עם שם</a> · <a href="../../cs/computational-thinking/">חשיבה ממוחשבת: פירוק, דפוס ואלגוריתם</a></p>
+<nav id="topicNav" class="topic-nav" aria-label="נושא קודם ונושא הבא"><a href="../../cs/how-computers-work/"><small>→ הנושא הקודם</small>איך מחשב עובד: קלט, עיבוד ופלט</a><a class="next" href="../../cs/conditionals/"><small>הנושא הבא ←</small>תנאים בפייתון: if, elif, else</a></nav>
+<!-- /build:topicnav -->
+<!-- build:footer -->
+<footer class="site">מירי · המורה שלך להצלחה · <a href="../../requests/">חסר לכם נושא? בקשו אותו</a></footer>
+<script src="../../assets/cards.js"></script>
+<!-- /build:footer -->
+</div>
+
+<script src="../../assets/topics.js"></script>
+<script src="../../assets/nav.js"></script>
+<script src="../../assets/pytrace.js"></script>
+<script src="../../assets/pyrun.js"></script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+const shuffle=a=>{a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=s=>'<code dir="ltr" lang="en">'+esc(s)+'</code>';
+const codeHTML=code=>code.replace(/\n$/,'').split('\n').map((l,i)=>'<span class="pt-line"><span class="pt-n" aria-hidden="true">'+(i+1)+'</span>'+(esc(l)||' ')+'</span>').join('');
+const squash=s=>String(s).trim().replace(/\s+/g,'').toLowerCase();
+/* lab: sliders (LAB.ids, label spans id+'v') + "נסו את אלה" presets + tracer + Pyodide box */
+function lab(o){
+  const tries=$('tries');
+  tries.innerHTML=LAB.presets.map((t,i)=>'<button type="button" data-i="'+i+'">'+t.label+'</button>').join('');
+  const get=()=>{ const p={}; LAB.ids.forEach(id=>p[id]=+$(id).value); return p; };
+  function draw(){
+    const p=get();
+    LAB.ids.forEach(id=>{ const f=o&&o.fmt&&o.fmt[id]; $(id+'v').textContent=f?f(p[id]):p[id]; });
+    const r=LAB.build(p);
+    PT.mount($('labPT'),{code:r.code,steps:r.steps,input:r.input});
+    $('labTxt').innerHTML=r.explain; $('labPy').value=r.code;
+    if(o&&o.after) o.after(p,r);
+  }
+  LAB.ids.forEach(id=>$(id).addEventListener('input',draw));
+  tries.querySelectorAll('button').forEach(b=>b.onclick=()=>{ LAB.presets[+b.dataset.i].p.forEach((v,i)=>{ $(LAB.ids[i]).value=v; }); draw(); });
+  draw();
+  return {draw,get};
+}
+/* practice: gen() returns {ask, code?, type:'num'|'text'|'mc', ans, accept?, opts?[{t,ok,why}], diag?(raw,num), hints[], sol, ok?} */
+function practice(gen){
+  let q, sel=-1, tries=0, hint=0, streak=0, solved=0, done=false;
+  const fb=h=>{ $('prFb').innerHTML=h; };
+  const st=()=>{ $('prStreak').textContent='פתרתם '+solved+' · ברצף: '+streak; };
+  function fresh(){
+    q=gen(); sel=-1; tries=0; hint=0; done=false;
+    $('prAsk').innerHTML=q.ask;
+    $('prCode').hidden=!q.code; $('prCode').innerHTML=q.code?codeHTML(q.code):'';
+    const mc=q.type==='mc'; $('prCh').hidden=!mc; $('prIn').hidden=mc; $('prA').value='';
+    $('prA').setAttribute('inputmode',q.type==='num'?'decimal':'text');
+    if(mc){
+      $('prCh').innerHTML=q.opts.map((o,i)=>'<button type="button" data-i="'+i+'" aria-pressed="false">'+o.t+'</button>').join('');
+      $('prCh').querySelectorAll('button').forEach(b=>b.onclick=()=>{ sel=+b.dataset.i; $('prCh').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+    }
+    $('prShow').disabled=true; fb('');
+  }
+  $('prCheck').onclick=()=>{
+    if(done){ fb('<div class="fb ok">כבר פתרתם את זה. לחצו "תרגיל חדש".</div>'); return; }
+    let right, msg=null, note='';
+    if(q.type==='mc'){
+      if(sel<0){ fb('<div class="fb err">בחרו קודם תשובה.</div>'); return; }
+      right=!!q.opts[sel].ok; msg=q.opts[sel].why||null;
+    } else {
+      const raw=$('prA').value;
+      if(!raw.trim()){ fb('<div class="fb err">כתבו תשובה.</div>'); $('prA').focus(); return; }
+      if(q.type==='num'){
+        const v=parseFloat(raw.replace(',','.').replace(/\s/g,''));
+        if(isNaN(v)){ fb('<div class="fb err">כתבו מספר.</div>'); return; }
+        right=Math.abs(v-q.ans)<1e-9; if(!right&&q.diag) msg=q.diag(raw,v);
+      } else {
+        const a=squash(raw), bare=a.replace(/^["']+|["']+$/g,''), all=[q.ans].concat(q.accept||[]).map(squash);
+        right=all.includes(a)||all.includes(bare);
+        if(right&&!all.includes(a)) note=' המרכאות לא מודפסות, הן רק מסמנות איפה הטקסט מתחיל ונגמר.';
+        if(!right&&q.diag) msg=q.diag(raw);
+      }
+    }
+    if(right){ done=true; streak++; solved++; st(); fb('<div class="fb ok">נכון! '+(q.ok||'')+note+'</div>'); return; }
+    streak=0; tries++; st();
+    fb('<div class="fb err">'+(msg||'עוד לא. נסו שוב, או לחצו על רמז.')+'</div>');
+    if(tries>=2) $('prShow').disabled=false;
+  };
+  $('prHint').onclick=()=>{ hint=Math.min(hint+1,q.hints.length); fb('<div class="fb hint">'+q.hints[hint-1]+'</div>'); };
+  $('prShow').onclick=()=>{ fb('<div class="fb hint">'+q.sol+'<br>עכשיו נסו תרגיל חדש.</div>'); };
+  $('prNew').onclick=fresh;
+  $('prA').addEventListener('keydown',e=>{ if(e.key==='Enter') $('prCheck').click(); });
+  fresh(); st();
+}
+
+/*LAB*/
+const SUB=' \x2d ';
+const pyf=x=>Number.isInteger(x)?x.toFixed(1):String(x);
+const F=x=>({py:pyf(x)});
+const LAB={ids:['coins','price','count'], ranges:[[0,100,5],[0.5,30,0.5],[1,5,1]],
+  presets:[{label:'יש מספיק',p:[50,12.5,2]},{label:'בדיוק מספיק',p:[30,15,2]},{label:'חסר כסף',p:[20,12.5,2]},{label:'מחיר עגול',p:[100,10,3]},{label:'אפס מטבעות',p:[0,2.5,1]}]};
+LAB.build=function(p){
+  const coins=p.coins, price=p.price, count=p.count, cost=price*count, can=coins>=cost, left=coins-cost, whole=Math.trunc(left);
+  const code=['coins = '+coins,'price = '+pyf(price),'count = '+count,'item = "Sword"','cost = price * count','can_buy = coins >= cost','left = coins'+SUB+'cost',
+    'print(type(coins), type(price))','print("Cost:", cost)','print("Can buy " + item + ":", can_buy)','print("Left: " + str(left))','print("Whole coins:", int(left))'].join('\n');
+  const v={}, steps=[{line:0,vars:{},out:'',note:'לחצו "שורה הבאה" כדי להתחיל.'}]; let out='';
+  const go=(line,note)=>steps.push({line,vars:{...v},out,note});
+  v.coins=coins; go(1,'השמה: coins מקבל '+coins+'. זה int, מספר שלם.');
+  v.price=F(price); go(2,'price מקבל '+pyf(price)+'. יש בו נקודה, לכן הוא float.'+(Number.isInteger(price)?' גם '+pyf(price)+' הוא float, למרות שהוא עגול.':''));
+  v.count=count; go(3,'count מקבל '+count+'. עוד int.');
+  v.item='Sword'; go(4,'item מקבל את הטקסט "Sword". המרכאות אומרות שזה str.');
+  v.cost=F(cost); go(5,'מחשבים מימין: '+pyf(price)+' * '+count+' = '+pyf(cost)+'. float כפול int נותן float. התוצאה נשמרת ב-cost.');
+  v.can_buy=can; go(6,'ההשוואה coins >= cost שואלת: האם '+coins+' >= '+pyf(cost)+'? '+(can?'כן':'לא')+', לכן can_buy הוא '+(can?'True':'False')+'. זה bool.');
+  v.left=F(left); go(7,coins+' פחות '+pyf(cost)+' = '+pyf(left)+'. int פחות float נותן float.'+(left<0?' יצא מספר שלילי: חסר כסף.':''));
+  out+="<class 'int'> <class 'float'>\n"; go(8,'type() מראה את הטיפוס. print עם פסיק שם רווח בין הערכים.');
+  out+='Cost: '+pyf(cost)+'\n'; go(9,'מדפיסים טקסט ואחריו מספר. הפסיק מוסיף רווח.');
+  out+='Can buy Sword: '+(can?'True':'False')+'\n'; go(10,'+ בין מחרוזות מדביק אותן: "Can buy " ועוד "Sword" ועוד ":". אחרי הפסיק בא ה-bool.');
+  out+='Left: '+pyf(left)+'\n'; go(11,'str(left) הופך את המספר '+pyf(left)+' לטקסט, ורק אז אפשר להדביק אותו עם +.');
+  out+='Whole coins: '+whole+'\n'; go(12,'int(left) חותך את מה שאחרי הנקודה: '+pyf(left)+' הופך ל-'+whole+'. הוא לא מעגל.');
+  const explain='<div>'+(can?'יש מספיק מטבעות. נשארים <b>'+pyf(left)+'</b>.':'חסרים <b>'+pyf(-left)+'</b> מטבעות, ולכן can_buy הוא False.')+'</div>'
+    +'<div>הטיפוסים בתוכנית:</div><div class="types"><span>coins, count: int</span><span>price, cost, left: float</span><span>item: str</span><span>can_buy: bool</span></div>'
+    +(left!==whole?'<div>int('+pyf(left)+') נותן '+whole+': חותכים את השבר'+(left<0?', גם במספר שלילי':'')+'.</div>':'');
+  return {code, steps, explain};
+};
+LAB.examples=[{code:['text = input()','print(type(text))','number = int(text)','print(text * 2)','print(number * 2)'].join('\n'), input:['21'],
+  steps:[{line:0,vars:{},out:'',note:'הקלט: 21. לחצו "שורה הבאה".'},
+    {line:1,vars:{text:'21'},out:'',note:'input() קורא את מה שהוקלד. שימו לב לטבלה: text הוא \'21\', עם מרכאות. זה str.'},
+    {line:2,vars:{text:'21'},out:"<class 'str'>\n",note:'type מאשר: זו מחרוזת, אף שהקלדנו ספרות.'},
+    {line:3,vars:{text:'21',number:21},out:"<class 'str'>\n",note:'int(text) ממיר את הטקסט למספר 21. עכשיו יש שני משתנים: אחד str ואחד int.'},
+    {line:4,vars:{text:'21',number:21},out:"<class 'str'>\n2121\n",note:'מחרוזת כפול 2 היא אותה מחרוזת פעמיים: 2121. זה לא חשבון.'},
+    {line:5,vars:{text:'21',number:21},out:"<class 'str'>\n2121\n42\n",note:'מספר כפול 2 הוא חשבון: 42. אותן ספרות, טיפוס אחר, תוצאה אחרת.'}]}];
+/*/LAB*/
+lab({fmt:{price:pyf}});
+PT.mount($('exPT'),LAB.examples[0]);
+
+/* practice */
+function qTrace(){
+  const a=ri(2,9), b=ri(2,9), x2=a+b, opt=ri(0,2), ask=pick(['x','y']);
+  const l4=['y = x * 2','y = x'+SUB+'y','x = x + 1'][opt];
+  const fin=opt===0?{x:x2,y:x2*2}:opt===1?{x:x2,y:x2-b}:{x:x2+1,y:b};
+  const stale=opt===0?{x:x2,y:a*2}:opt===1?{x:x2,y:a-b}:{x:a+1,y:b};
+  const code=['x = '+a,'y = '+b,'x = x + y',l4].join('\n');
+  return {ask:'מה הערך של '+C(ask)+' בסוף?', code, type:'num', ans:fin[ask],
+    diag:(r,v)=>v===stale[ask]&&stale[ask]!==fin[ask]?'השתמשתם בערך הישן של x. אחרי שורה 3, x כבר שווה '+x2+'.':(ask==='x'&&v===a)||(ask==='y'&&v===b&&fin.y!==b)?'זה הערך מההתחלה. אבל הוא השתנה בהמשך: השמה חדשה מחליפה את הישן.':null,
+    hints:['עברו שורה אחרי שורה, וכתבו בצד מה יש ב-x וב-y אחרי כל שורה.','אחרי שורה 3: x = '+x2+', y = '+b+'. עכשיו הריצו את שורה 4.'],
+    sol:'אחרי שורה 1: x = '+a+'. אחרי שורה 2: y = '+b+'. אחרי שורה 3: x = '+a+' + '+b+' = '+x2+'. אחרי שורה 4: x = '+fin.x+', y = '+fin.y+'.', ok:C(ask)+' שווה '+fin[ask]+'.'};
+}
+const TYPES={int:'מספר שלם',float:'מספר עם נקודה',str:'טקסט',bool:'True או False'};
+const TEX=[['7 / 2','float','/ תמיד נותן float.'],['10 / 5','float','/ תמיד נותן float, גם כשיוצא מספר שלם: 2.0.'],['7 // 2','int','// הוא חילוק שלם, ונותן int.'],['"7"','str','יש מרכאות, לכן זה טקסט.'],['"3.5"','str','במרכאות, לכן זה טקסט, גם אם נראה כמו מספר.'],['3 > 2','bool','השוואה נותנת True או False.'],['5 == 5','bool','== שואל שאלה, והתשובה היא bool.'],['2.0','float','יש נקודה, לכן float.'],['int("8")','int','int ממיר את הטקסט למספר שלם.'],['str(8)','str','str ממיר את המספר לטקסט.'],['5 * 2.0','float','אם אחד המספרים float, התוצאה float.'],['False','bool','False הוא אחד משני ערכי bool.'],['4 + 6','int','שני מספרים שלמים בחיבור נותנים int.']];
+function qType(){
+  const [e,t,why]=pick(TEX);
+  return {ask:'מה התוכנית מדפיסה? כלומר, מה הטיפוס?', code:'print(type('+e+'))', type:'mc',
+    opts:Object.keys(TYPES).map(k=>({t:C(k)+' · '+TYPES[k],ok:k===t,why:k===t?'':(e.includes('"')&&k!=='str'?'שימו לב למרכאות. מה הן אומרות?':e.includes('/')&&!e.includes('//')&&k==='int'?'זה מפתה, אבל חילוק עם / תמיד נותן float.':'לא. '+C(k)+' הוא '+TYPES[k]+'. נסו שוב.')})),
+    hints:['יש מרכאות? יש נקודה? יש השוואה? יש פונקציה שממירה?',why], sol:C(e)+' הוא '+C(t)+'. '+why, ok:why};
+}
+function qOut(){
+  const a=ri(2,9), b=ri(1,9), n=ri(2,3), f=ri(2,9), d=ri(1,9);
+  const Q=pick([
+    ['print("'+a+'" + "'+b+'")',''+a+b,v=>squash(v)===String(a+b)?'אלה מחרוזות, לא מספרים. + מדביק אותן זו לזו.':null,'שני הצדדים בתוך מרכאות.'],
+    ['print("ab" * '+n+')','ab'.repeat(n),v=>squash(v)==='ab'+n?'כפל של מחרוזת במספר חוזר עליה כמה פעמים.':null,'מחרוזת כפול מספר: אותה מחרוזת כמה פעמים.'],
+    ['print(str('+a+') + "0")',a+'0',v=>squash(v)===String(a)?'גם ה-0 מודפס: הוא מודבק כטקסט.':null,'str הופך את '+a+' לטקסט, ואז מדביקים "0".'],
+    ['print(int("'+a+b+'") + '+n+')',String(10*a+b+n),v=>squash(v)===''+a+b+n?'int הפך את הטקסט למספר, אז כאן זה חשבון ולא הדבקה.':null,'int ממיר לפני החיבור.'],
+    ['print(float('+a+'))',a+'.0',v=>squash(v)===String(a)?'float תמיד מראה נקודה: '+a+'.0.':null,'float של מספר שלם מוסיף .0.'],
+    ['print(int('+f+'.'+d+'))',String(f),v=>squash(v)===String(f+1)?'int לא מעגל. הוא חותך את מה שאחרי הנקודה.':null,'int חותך, הוא לא מעגל.'],
+    ['print('+(2*a+1)+' / 2)',String(a+0.5),v=>squash(v)===String(a)?'זו התוצאה של // . עם / מקבלים גם את החצי.':null,'/ נותן תוצאה מדויקת, עם נקודה.'],
+    ['print('+(2*a+1)+' // 2)',String(a),v=>squash(v)===String(a+0.5)?'// זורק את השארית ונותן מספר שלם.':null,'// הוא חילוק שלם.']]);
+  return {ask:'מה התוכנית מדפיסה?', code:Q[0], type:'text', ans:Q[1], diag:Q[2],
+    hints:['מה הטיפוס של כל ערך? טקסט, מספר שלם או float?',Q[3]], sol:'הפלט הוא '+C(Q[1])+'. '+Q[3], ok:Q[3]};
+}
+const BUGS=[
+  [['age = input()','next_year = age + 1','print(next_year)'],2,'age הוא str, כי input מחזיר טקסט. אי אפשר לחבר לו 1. צריך int(input()).'],
+  [['score = 10','print("Score: " + score)'],2,'מנסים להדביק int לטקסט. צריך str(score) או פסיק.'],
+  [['my score = 5','print(my score)'],1,'בשם של משתנה אסור רווח. כותבים my_score.'],
+  [['lives = 3','print(Lives)'],2,'Lives עם L גדולה הוא שם אחר, ואין משתנה כזה.'],
+  [['points = "7"','total = points * 2','print(total + 1)'],3,'points הוא טקסט, אז total הוא "77". בשורה 3 מחברים טקסט ומספר.'],
+  [['price = 4.5','2nd_price = 3','print(price + 2nd_price)'],2,'שם של משתנה לא יכול להתחיל בספרה.']];
+function qBug(){
+  const [ls,k,why]=pick(BUGS), pre=ri(0,1)?['item = "Shield"']:[], lines=pre.concat(ls), K=k+pre.length;
+  return {ask:'התוכנית תעצור עם שגיאה. באיזו שורה? כתבו את מספר השורה.', code:lines.join('\n'), type:'num', ans:K,
+    diag:(r,v)=>v>=1&&v<=lines.length?'שורה '+v+' לבד תקינה. בדקו מה הטיפוס של כל משתנה ואיך כתוב כל שם.':'יש בתוכנית רק '+lines.length+' שורות.',
+    hints:['בדקו שמות: רווח, ספרה בהתחלה, אות גדולה. ובדקו טיפוסים: האם מחברים טקסט ומספר?',why.split('.')[0]+'.'],
+    sol:'שורה '+K+': '+C(lines[K-1])+'. '+why, ok:why};
+}
+practice(()=>pick([qTrace,qTrace,qType,qType,qOut,qOut,qBug])());
+
+})();
+</script>
+</body>
+</html>

@@ -203,3 +203,18 @@ pre.code{background:var(--card); border:2px solid var(--border); border-radius:1
 .pyrun-out:empty{display:none}
 .pyrun-out.ok{border-color:var(--ok); background:var(--ok-bg)} .pyrun-out.err{border-color:var(--err); background:var(--err-bg); color:var(--err)} .pyrun-out.wait{color:var(--muted)}
 .pyrun-out.he{direction:rtl; text-align:right; font-family:var(--f-body)}
+/* step tracer (assets/pytrace.js) */
+.pt-code{max-height:22em; padding:8px 0; counter-reset:none}
+.pt-line{display:block; padding:0 12px 0 0; border-inline-start:4px solid transparent}
+.pt-line.on{background:var(--hl); border-inline-start-color:var(--line)}
+.pt-n{display:inline-block; width:2.2em; padding-inline:6px; color:var(--muted); text-align:right; user-select:none}
+.pt-pad{align-items:center} .pt-count{color:var(--muted); font-size:.9rem}
+.pt-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:10px}
+@media (max-width: 560px){.pt-grid{grid-template-columns:minmax(0,1fr)}}
+.pt-h{font-weight:700; margin:0 0 4px}
+.pt-vars{width:100%; border-collapse:collapse; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.95rem}
+.pt-vars th, .pt-vars td{border:2px solid var(--border); padding:4px 8px; text-align:left; overflow-wrap:anywhere}
+.pt-vars th{width:35%; background:var(--card)} .pt-vars tr.ch td{background:var(--hl)}
+.pt-vars .pt-empty{color:var(--muted); font-family:var(--f-body); text-align:right; direction:rtl}
+.pt-out{margin:0; min-height:3em; border:2px dashed var(--soft); border-radius:12px; padding:8px 12px; white-space:pre-wrap; overflow-wrap:anywhere; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.pt-in{margin:0 0 4px; font-size:.9rem; color:var(--muted)}
