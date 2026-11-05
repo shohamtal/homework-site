@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shohamtal.github.io/homework-site/sitemap.xml

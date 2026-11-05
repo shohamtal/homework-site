@@ -265,4 +265,32 @@ llms.push(
   `- [בקשות נושאים והצבעות](${BASE}requests/): ${meta({p: 'requests/'}).description}`, '');
 fs.writeFileSync(path.join(ROOT, 'llms.txt'), llms.join('\n'));
 
-console.log(`built ${pages.length} pages, sitemap.xml, llms.txt (base ${BASE})`);
+// robots.txt only counts at a host root (Cloudflare Pages), it is ignored on github.io/homework-site/.
+fs.writeFileSync(path.join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${BASE}sitemap.xml\n`);
+
+// 404.html: served by the host for unknown paths at any depth, so every link and asset is absolute.
+fs.writeFileSync(path.join(ROOT, '404.html'), `<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>העמוד לא נמצא · ${cfg.name}</title>
+<link rel="icon" href="${BASE}assets/miri/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="${BASE}assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header class="page">
+  <p class="eyebrow">שגיאה 404</p>
+  <h1>אופס, העמוד הזה לא נמצא</h1>
+  <p class="lead">אולי הקישור ישן או שיש בו טעות הקלדה. אפשר להתחיל מחדש מהעמוד הראשי ולבחור מקצוע וכיתה.</p>
+</header>
+<nav class="toc" aria-label="לאן ממשיכים"><a href="${BASE}">לעמוד הראשי</a>${SITE.subjects.filter(s => !s.soon).map(s => `<a href="${BASE}${s.id}/">${s.name}</a>`).join('')}</nav>
+</div>
+</body>
+</html>
+`);
+
+console.log(`built ${pages.length} pages, sitemap.xml, llms.txt, robots.txt, 404.html (base ${BASE})`);
