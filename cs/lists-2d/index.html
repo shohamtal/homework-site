@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>רשימה דו-ממדית בפייתון · מדעי המחשב כיתה י · מירי</title>
 <meta name="description" content="רשימה של רשימות כטבלה: grid[r][c], לולאה כפולה, סכום שורה וסכום עמודה ולוח איקס עיגול. מעבדה עם טבלה צבעונית, מעקב ותרגול עם רמזים לכיתה י.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/lists-2d/">
+<link rel="canonical" href="https://miri-hw.pages.dev/cs/lists-2d/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="רשימה דו-ממדית בפייתון · מדעי המחשב כיתה י · מירי">
 <meta property="og:description" content="רשימה של רשימות כטבלה: grid[r][c], לולאה כפולה, סכום שורה וסכום עמודה ולוח איקס עיגול. מעבדה עם טבלה צבעונית, מעקב ותרגול עם רמזים לכיתה י.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/lists-2d/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/cs/lists-2d/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://shohamtal.github.io/homework-site/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"רשימה דו-ממדית: טבלה ולוח","item":"https://shohamtal.github.io/homework-site/cs/lists-2d/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://miri-hw.pages.dev/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://miri-hw.pages.dev/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://miri-hw.pages.dev/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"רשימה דו-ממדית: טבלה ולוח","item":"https://miri-hw.pages.dev/cs/lists-2d/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה רשימה דו-ממדית בפייתון?","acceptedAnswer":{"@type":"Answer","text":"רשימה שכל איבר בה הוא רשימה בעצמו. כל רשימה פנימית היא שורה, וביחד הן טבלה. ניגשים לתא עם שני אינדקסים: grid[שורה][עמודה]. נסו במעבדה."}},{"@type":"Question","name":"איך מחשבים סכום של עמודה?","acceptedAnswer":{"@type":"Answer","text":"עמודה היא לא רשימה אחת, אלא תא אחד מכל שורה. לכן עוברים על השורות ומוסיפים מכל אחת את התא באותה עמודה: col_sum = col_sum + grid[i][c]."}},{"@type":"Question","name":"כמה פעמים רצה לולאה כפולה?","acceptedAnswer":{"@type":"Answer","text":"מספר השורות כפול מספר העמודות. בטבלה של 10 על 10 זה 100 פעמים, ובלוח של 1000 על 1000 זה מיליון. בגלל זה לולאה כפולה היא דוגמה ל-O(n²) בסיבוכיות. תרגלו למטה."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"רשימה דו-ממדית: טבלה ולוח","description":"רשימה של רשימות כטבלה: grid[r][c], לולאה כפולה, סכום שורה וסכום עמודה ולוח איקס עיגול. מעבדה עם טבלה צבעונית, מעקב ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/cs/lists-2d/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"רשימה דו-ממדית: טבלה ולוח","teaches":"רשימה דו-ממדית: טבלה ולוח","keywords":"מטריצה, לולאה כפולה, שורה ועמודה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"רשימה דו-ממדית: טבלה ולוח","description":"רשימה של רשימות כטבלה: grid[r][c], לולאה כפולה, סכום שורה וסכום עמודה ולוח איקס עיגול. מעבדה עם טבלה צבעונית, מעקב ותרגול עם רמזים לכיתה י.","url":"https://miri-hw.pages.dev/cs/lists-2d/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"רשימה דו-ממדית: טבלה ולוח","teaches":"רשימה דו-ממדית: טבלה ולוח","keywords":"מטריצה, לולאה כפולה, שורה ועמודה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>

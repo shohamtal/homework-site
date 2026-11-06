@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>מבוא ל-SQL ומסדי נתונים · מדעי המחשב כיתה יב · מירי</title>
 <meta name="description" content="מה זה מסד נתונים ואיך כותבים שאילתות SQL: SELECT, WHERE, ORDER BY, COUNT ומפתח ראשי. בונים שאילתות בלחיצות ורואים את התוצאה מיד. לכיתה יב.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/databases-intro/">
+<link rel="canonical" href="https://miri-hw.pages.dev/cs/databases-intro/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="מבוא ל-SQL ומסדי נתונים · מדעי המחשב כיתה יב · מירי">
 <meta property="og:description" content="מה זה מסד נתונים ואיך כותבים שאילתות SQL: SELECT, WHERE, ORDER BY, COUNT ומפתח ראשי. בונים שאילתות בלחיצות ורואים את התוצאה מיד. לכיתה יב.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/databases-intro/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/cs/databases-intro/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://shohamtal.github.io/homework-site/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"מבוא למסדי נתונים ו-SQL","item":"https://shohamtal.github.io/homework-site/cs/databases-intro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://miri-hw.pages.dev/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://miri-hw.pages.dev/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://miri-hw.pages.dev/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"מבוא למסדי נתונים ו-SQL","item":"https://miri-hw.pages.dev/cs/databases-intro/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה SQL?","acceptedAnswer":{"@type":"Answer","text":"SQL היא שפה לשאילת שאלות על טבלאות במסד נתונים. כותבים מה רוצים לקבל, למשל \"את השמות של כל הספרים עם יותר מ-300 עמודים, מהעבה לדקה\", ומסד הנתונים מוצא את זה בעצמו. היא נמצאת כמעט בכל אפליקציה ואתר. נסו במעבדה."}},{"@type":"Question","name":"מה זה מפתח ראשי?","acceptedAnswer":{"@type":"Answer","text":"עמודה שהערך בה שונה בכל שורה, כמו מספר ספר בספרייה. בעזרתה אפשר להצביע על שורה אחת בדיוק, גם אם יש שני ספרים עם אותו שם. שם או סוג לא מתאימים, כי הם יכולים לחזור."}},{"@type":"Question","name":"מה ההבדל בין WHERE ל-ORDER BY?","acceptedAnswer":{"@type":"Answer","text":"WHERE מחליט אילו שורות נשארות, ו-ORDER BY רק מסדר את מה שנשאר. WHERE משנה את מספר השורות בתוצאה, ORDER BY לא משנה אותו לעולם. תרגלו למטה."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מבוא למסדי נתונים ו-SQL","description":"מה זה מסד נתונים ואיך כותבים שאילתות SQL: SELECT, WHERE, ORDER BY, COUNT ומפתח ראשי. בונים שאילתות בלחיצות ורואים את התוצאה מיד. לכיתה יב.","url":"https://shohamtal.github.io/homework-site/cs/databases-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מבוא למסדי נתונים ו-SQL","teaches":"מבוא למסדי נתונים ו-SQL","keywords":"SQL, טבלה, שאילתה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מבוא למסדי נתונים ו-SQL","description":"מה זה מסד נתונים ואיך כותבים שאילתות SQL: SELECT, WHERE, ORDER BY, COUNT ומפתח ראשי. בונים שאילתות בלחיצות ורואים את התוצאה מיד. לכיתה יב.","url":"https://miri-hw.pages.dev/cs/databases-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מבוא למסדי נתונים ו-SQL","teaches":"מבוא למסדי נתונים ו-SQL","keywords":"SQL, טבלה, שאילתה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>

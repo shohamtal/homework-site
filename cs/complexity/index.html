@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>סיבוכיות זמן ו-O גדול · מדעי המחשב כיתה י · מירי</title>
 <meta name="description" content="סיבוכיות זמן בלי פחד: סופרים צעדים של O(1), O(n), O(n²) ו-O(log n), משווים בגרף חי ומזהים סיבוכיות של לולאות. מעבדה ותרגול עם רמזים לכיתה י.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/complexity/">
+<link rel="canonical" href="https://miri-hw.pages.dev/cs/complexity/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="סיבוכיות זמן ו-O גדול · מדעי המחשב כיתה י · מירי">
 <meta property="og:description" content="סיבוכיות זמן בלי פחד: סופרים צעדים של O(1), O(n), O(n²) ו-O(log n), משווים בגרף חי ומזהים סיבוכיות של לולאות. מעבדה ותרגול עם רמזים לכיתה י.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/complexity/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/cs/complexity/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://shohamtal.github.io/homework-site/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://shohamtal.github.io/homework-site/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"סיבוכיות זמן: כמה צעדים?","item":"https://shohamtal.github.io/homework-site/cs/complexity/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://miri-hw.pages.dev/cs/"},{"@type":"ListItem","position":3,"name":"כיתה י","item":"https://miri-hw.pages.dev/cs/grade-10/"},{"@type":"ListItem","position":4,"name":"מבני נתונים ואלגוריתמים","item":"https://miri-hw.pages.dev/cs/grade-10/#cs-hs-10"},{"@type":"ListItem","position":5,"name":"סיבוכיות זמן: כמה צעדים?","item":"https://miri-hw.pages.dev/cs/complexity/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה סיבוכיות זמן?","acceptedAnswer":{"@type":"Answer","text":"מדד לכמה צעדים אלגוריתם עושה, כתלות בגודל הקלט n. כותבים אותה ב-O גדולה: O(1) קבוע, O(log n) לוגריתמי, O(n) לינארי, O(n²) ריבועי. היא אומרת מה קורה כש-n גדל, ולא כמה שניות התוכנית רצה. נסו במעבדה."}},{"@type":"Question","name":"למה חיפוש בינארי הוא O(log n)?","acceptedAnswer":{"@type":"Answer","text":"כי בכל בדיקה הוא זורק חצי מהרשימה. מ-1000 נשארים 500, 250, 125 וכך הלאה, ואחרי כ-10 בדיקות נשאר איבר אחד. חיפוש לינארי צריך עד 1000 בדיקות לאותה רשימה."}},{"@type":"Question","name":"איך מזהים סיבוכיות של קוד?","acceptedAnswer":{"@type":"Answer","text":"מסתכלים על הלולאות. לולאה אחת עד n: O(n). לולאה בתוך לולאה, שתיהן עד n: O(n²). n שנחצה בכל סיבוב: O(log n). בלי לולאות בכלל: O(1). ושימו לב לפעולות כמו in על רשימה, שהן לולאה מוסתרת. תרגלו למטה."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סיבוכיות זמן: כמה צעדים?","description":"סיבוכיות זמן בלי פחד: סופרים צעדים של O(1), O(n), O(n²) ו-O(log n), משווים בגרף חי ומזהים סיבוכיות של לולאות. מעבדה ותרגול עם רמזים לכיתה י.","url":"https://shohamtal.github.io/homework-site/cs/complexity/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"סיבוכיות זמן: כמה צעדים?","teaches":"סיבוכיות זמן: כמה צעדים?","keywords":"O גדול, יעילות, לולאה מקוננת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"סיבוכיות זמן: כמה צעדים?","description":"סיבוכיות זמן בלי פחד: סופרים צעדים של O(1), O(n), O(n²) ו-O(log n), משווים בגרף חי ומזהים סיבוכיות של לולאות. מעבדה ותרגול עם רמזים לכיתה י.","url":"https://miri-hw.pages.dev/cs/complexity/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה י","about":"סיבוכיות זמן: כמה צעדים?","teaches":"סיבוכיות זמן: כמה צעדים?","keywords":"O גדול, יעילות, לולאה מקוננת","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>

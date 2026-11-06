@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>מחסנית ותור בפייתון · מדעי המחשב כיתה יא · מירי</title>
 <meta name="description" content="מחסנית ותור בפייתון: push ו-pop, LIFO מול FIFO, deque, ובדיקת סוגריים מאוזנים עם מחסנית. מעבדה עם קופסאות שזזות, מעקב ותרגול לכיתה יא.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/stack-queue/">
+<link rel="canonical" href="https://miri-hw.pages.dev/cs/stack-queue/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="מחסנית ותור בפייתון · מדעי המחשב כיתה יא · מירי">
 <meta property="og:description" content="מחסנית ותור בפייתון: push ו-pop, LIFO מול FIFO, deque, ובדיקת סוגריים מאוזנים עם מחסנית. מעבדה עם קופסאות שזזות, מעקב ותרגול לכיתה יא.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/stack-queue/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/cs/stack-queue/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/cs/grade-11/"},{"@type":"ListItem","position":4,"name":"מחלקות ומבני נתונים","item":"https://shohamtal.github.io/homework-site/cs/grade-11/#cs-hs-11"},{"@type":"ListItem","position":5,"name":"מחסנית ותור","item":"https://shohamtal.github.io/homework-site/cs/stack-queue/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://miri-hw.pages.dev/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://miri-hw.pages.dev/cs/grade-11/"},{"@type":"ListItem","position":4,"name":"מחלקות ומבני נתונים","item":"https://miri-hw.pages.dev/cs/grade-11/#cs-hs-11"},{"@type":"ListItem","position":5,"name":"מחסנית ותור","item":"https://miri-hw.pages.dev/cs/stack-queue/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין מחסנית לתור?","acceptedAnswer":{"@type":"Answer","text":"במחסנית האחרון שנכנס יוצא ראשון (LIFO), כמו ערימת צלחות. בתור הראשון שנכנס יוצא ראשון (FIFO), כמו תור לקופה. אם מכניסים 10, 20, 30, מחסנית תוציא קודם 30 ותור יוציא קודם 10. נסו במעבדה."}},{"@type":"Question","name":"איך בודקים סוגריים מאוזנים עם מחסנית?","acceptedAnswer":{"@type":"Answer","text":"עוברים על התווים. סוגר פותח דוחפים למחסנית. סוגר סוגר משווים לראש המחסנית: אם הם זוג מתאים מוציאים, ואם לא, הביטוי לא מאוזן. בסוף המחסנית צריכה להיות ריקה."}},{"@type":"Question","name":"למה להשתמש ב-deque ולא ברשימה רגילה לתור?","acceptedAnswer":{"@type":"Answer","text":"ברשימה, pop(0) מזיז את כל הערכים שאחרי הראשון, וזה לוקח זמן כשהרשימה ארוכה. deque בנוי כך שאפשר להוסיף ולהוציא משני הצדדים מהר. תרגלו למטה."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מחסנית ותור","description":"מחסנית ותור בפייתון: push ו-pop, LIFO מול FIFO, deque, ובדיקת סוגריים מאוזנים עם מחסנית. מעבדה עם קופסאות שזזות, מעקב ותרגול לכיתה יא.","url":"https://shohamtal.github.io/homework-site/cs/stack-queue/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"מחסנית ותור","teaches":"מחסנית ותור","keywords":"push ו-pop, LIFO, FIFO","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מחסנית ותור","description":"מחסנית ותור בפייתון: push ו-pop, LIFO מול FIFO, deque, ובדיקת סוגריים מאוזנים עם מחסנית. מעבדה עם קופסאות שזזות, מעקב ותרגול לכיתה יא.","url":"https://miri-hw.pages.dev/cs/stack-queue/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"מחסנית ותור","teaches":"מחסנית ותור","keywords":"push ו-pop, LIFO, FIFO","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>

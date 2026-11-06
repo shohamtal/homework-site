@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>אינדוקציה מתמטית · כיתה יב · מירי</title>
 <meta name="description" content="מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/induction/">
+<link rel="canonical" href="https://miri-hw.pages.dev/math/induction/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="אינדוקציה מתמטית · כיתה יב · מירי">
 <meta property="og:description" content="מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/induction/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/math/induction/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/math/grade-12/"},{"@type":"ListItem","position":4,"name":"אינדוקציה","item":"https://shohamtal.github.io/homework-site/math/grade-12/#proof-12"},{"@type":"ListItem","position":5,"name":"אינדוקציה מתמטית","item":"https://shohamtal.github.io/homework-site/math/induction/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://miri-hw.pages.dev/math/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://miri-hw.pages.dev/math/grade-12/"},{"@type":"ListItem","position":4,"name":"אינדוקציה","item":"https://miri-hw.pages.dev/math/grade-12/#proof-12"},{"@type":"ListItem","position":5,"name":"אינדוקציה מתמטית","item":"https://miri-hw.pages.dev/math/induction/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה אינדוקציה מתמטית?","acceptedAnswer":{"@type":"Answer","text":"שיטה להוכיח שטענה נכונה לכל מספר טבעי. בודקים את המקרה הראשון (בסיס), מניחים שהטענה נכונה עבור n (הנחה), ומוכיחים שהיא נכונה גם עבור n + 1 (צעד). כמו שורת דומינו: הראשון נופל, וכל אחד מפיל את הבא. ראו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין הנחת האינדוקציה לצעד האינדוקציה?","acceptedAnswer":{"@type":"Answer","text":"בהנחה לא מוכיחים כלום: רק כותבים את הטענה עבור n ומניחים שהיא נכונה. בצעד מוכיחים את הטענה עבור n + 1, ומשתמשים בהנחה באמצע הדרך. ראו בדוגמה הפתורה."}},{"@type":"Question","name":"למה לא מספיק לבדוק הרבה מקרים?","acceptedAnswer":{"@type":"Answer","text":"כי טענה יכולה להיות נכונה במקרים הראשונים ולהישבר אחר כך. למשל n² − n + 41 ראשוני עד 41, אבל ב-42 יוצא 41 · 43. רק הצעד מבטיח שהטענה ממשיכה לכל n."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אינדוקציה מתמטית","description":"מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://shohamtal.github.io/homework-site/math/induction/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"אינדוקציה","teaches":"אינדוקציה מתמטית","keywords":"בסיס האינדוקציה, צעד האינדוקציה, הוכחה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"אינדוקציה מתמטית","description":"מוכיחים טענה לכל n: בודקים את הצעד הראשון, מניחים עבור n ומוכיחים עבור n + 1. כמו שורת דומינו. הסבר, מעבדה ותרגול עם רמזים לכיתה יב.","url":"https://miri-hw.pages.dev/math/induction/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"אינדוקציה","teaches":"אינדוקציה מתמטית","keywords":"בסיס האינדוקציה, צעד האינדוקציה, הוכחה","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>

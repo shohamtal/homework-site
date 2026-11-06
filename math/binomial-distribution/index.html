@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>התפלגות בינומית (ברנולי) · כיתה יא · מירי</title>
 <meta name="description" content="חוזרים על אותו ניסוי n פעמים: מה הסיכוי לבדיוק k הצלחות? נוסחת ברנולי עם היסטוגרמה חיה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/math/binomial-distribution/">
+<link rel="canonical" href="https://miri-hw.pages.dev/math/binomial-distribution/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="התפלגות בינומית (ברנולי) · כיתה יא · מירי">
 <meta property="og:description" content="חוזרים על אותו ניסוי n פעמים: מה הסיכוי לבדיוק k הצלחות? נוסחת ברנולי עם היסטוגרמה חיה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/math/binomial-distribution/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/math/binomial-distribution/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://shohamtal.github.io/homework-site/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://shohamtal.github.io/homework-site/math/grade-11/"},{"@type":"ListItem","position":4,"name":"הסתברות","item":"https://shohamtal.github.io/homework-site/math/grade-11/#probability-11"},{"@type":"ListItem","position":5,"name":"התפלגות בינומית (ברנולי)","item":"https://shohamtal.github.io/homework-site/math/binomial-distribution/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מתמטיקה","item":"https://miri-hw.pages.dev/math/"},{"@type":"ListItem","position":3,"name":"כיתה יא","item":"https://miri-hw.pages.dev/math/grade-11/"},{"@type":"ListItem","position":4,"name":"הסתברות","item":"https://miri-hw.pages.dev/math/grade-11/#probability-11"},{"@type":"ListItem","position":5,"name":"התפלגות בינומית (ברנולי)","item":"https://miri-hw.pages.dev/math/binomial-distribution/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה זה התפלגות בינומית?","acceptedAnswer":{"@type":"Answer","text":"זו ההתפלגות של מספר ההצלחות כשחוזרים n פעמים על אותו ניסוי, עם שתי תוצאות בלבד וסיכוי קבוע p להצלחה, והפעמים לא תלויות זו בזו. למשל מספר העצים ב-10 הטלות מטבע. ראו את ההיסטוגרמה במעבדה."}},{"@type":"Question","name":"מה זו נוסחת ברנולי?","acceptedAnswer":{"@type":"Answer","text":"הנוסחה לסיכוי לבדיוק k הצלחות מתוך n: P(X = k) = (nk) · pk · qn−k. המקדם סופר את המסלולים, והחזקות נותנות את הסיכוי של מסלול אחד."}},{"@type":"Question","name":"איך מחשבים \"לפחות\" בהתפלגות בינומית?","acceptedAnswer":{"@type":"Answer","text":"מחברים את כל העמודות המתאימות. \"לפחות 4 מתוך 5\" הוא P(4) + P(5). כשיש הרבה עמודות לחבר, קל יותר לחשב את ההפך ולהוריד מ-1, למשל \"לפחות פעם אחת\" הוא 1 − qn. ראו בדוגמה הפתורה."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"התפלגות בינומית (ברנולי)","description":"חוזרים על אותו ניסוי n פעמים: מה הסיכוי לבדיוק k הצלחות? נוסחת ברנולי עם היסטוגרמה חיה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://shohamtal.github.io/homework-site/math/binomial-distribution/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"הסתברות","teaches":"התפלגות בינומית (ברנולי)","keywords":"ברנולי, n ניסויים, k הצלחות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"התפלגות בינומית (ברנולי)","description":"חוזרים על אותו ניסוי n פעמים: מה הסיכוי לבדיוק k הצלחות? נוסחת ברנולי עם היסטוגרמה חיה. הסבר, מעבדה ותרגול עם רמזים לכיתה יא.","url":"https://miri-hw.pages.dev/math/binomial-distribution/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יא","about":"הסתברות","teaches":"התפלגות בינומית (ברנולי)","keywords":"ברנולי, n ניסויים, k הצלחות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>

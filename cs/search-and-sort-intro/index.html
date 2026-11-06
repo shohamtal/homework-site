@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>חיפוש בינארי ומיון בועות · מדעי המחשב כיתה ט · מירי</title>
 <meta name="description" content="חיפוש לינארי מול חיפוש בינארי, וכמה בדיקות כל אחד עושה. מיון בועות צעד אחרי צעד, מעבדה עם מחוונים בפייתון ותרגול עם רמזים לכיתה ט.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/">
+<link rel="canonical" href="https://miri-hw.pages.dev/cs/search-and-sort-intro/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="חיפוש בינארי ומיון בועות · מדעי המחשב כיתה ט · מירי">
 <meta property="og:description" content="חיפוש לינארי מול חיפוש בינארי, וכמה בדיקות כל אחד עושה. מיון בועות צעד אחרי צעד, מעבדה עם מחוונים בפייתון ותרגול עם רמזים לכיתה ט.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/cs/search-and-sort-intro/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://shohamtal.github.io/homework-site/cs/grade-9/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://shohamtal.github.io/homework-site/cs/grade-9/#cs-python-9"},{"@type":"ListItem","position":5,"name":"חיפוש ומיון: מבוא","item":"https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://miri-hw.pages.dev/cs/"},{"@type":"ListItem","position":3,"name":"כיתה ט","item":"https://miri-hw.pages.dev/cs/grade-9/"},{"@type":"ListItem","position":4,"name":"תכנות בפייתון","item":"https://miri-hw.pages.dev/cs/grade-9/#cs-python-9"},{"@type":"ListItem","position":5,"name":"חיפוש ומיון: מבוא","item":"https://miri-hw.pages.dev/cs/search-and-sort-intro/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מה ההבדל בין חיפוש לינארי לחיפוש בינארי?","acceptedAnswer":{"@type":"Answer","text":"חיפוש לינארי בודק איבר אחרי איבר מההתחלה, ועובד בכל רשימה. חיפוש בינארי בודק את האמצע וזורק חצי בכל צעד, אבל עובד רק ברשימה ממוינת. ברשימה של 1000 איברים לינארי עלול לבדוק 1000 פעמים, ובינארי לא יותר מ-10. נסו במעבדה."}},{"@type":"Question","name":"איך עובד מיון בועות?","acceptedAnswer":{"@type":"Answer","text":"משווים כל שני שכנים ברשימה ומחליפים אותם אם הם בסדר הפוך. אחרי מעבר אחד האיבר הגדול ביותר מגיע לסוף. חוזרים על המעברים עד שעובר מעבר שלם בלי אף החלפה. השיטה פשוטה להבנה, אבל איטית ברשימות ארוכות."}},{"@type":"Question","name":"למה חיפוש בינארי כל כך מהיר?","acceptedAnswer":{"@type":"Answer","text":"כי כל בדיקה מחלקת את מה שנשאר לשניים. 1000 הופך ל-500, אחר כך 250, 125 וכן הלאה. אחרי כ-10 חלוקות נשאר איבר אחד. גם ברשימה של מיליון איברים מספיקות בערך 20 בדיקות. תרגלו למטה."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חיפוש ומיון: מבוא","description":"חיפוש לינארי מול חיפוש בינארי, וכמה בדיקות כל אחד עושה. מיון בועות צעד אחרי צעד, מעבדה עם מחוונים בפייתון ותרגול עם רמזים לכיתה ט.","url":"https://shohamtal.github.io/homework-site/cs/search-and-sort-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"חיפוש ומיון: מבוא","teaches":"חיפוש ומיון: מבוא","keywords":"חיפוש בינארי, מיון בועות, השוואות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"חיפוש ומיון: מבוא","description":"חיפוש לינארי מול חיפוש בינארי, וכמה בדיקות כל אחד עושה. מיון בועות צעד אחרי צעד, מעבדה עם מחוונים בפייתון ותרגול עם רמזים לכיתה ט.","url":"https://miri-hw.pages.dev/cs/search-and-sort-intro/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה ט","about":"חיפוש ומיון: מבוא","teaches":"חיפוש ומיון: מבוא","keywords":"חיפוש בינארי, מיון בועות, השוואות","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>

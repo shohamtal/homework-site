@@ -1,0 +1,22 @@
+# Uploads the committed site to Cloudflare Pages (project miri-hw) on every push to main.
+# There is no build here: run node scripts/build.mjs locally and commit its output.
+name: Deploy to Cloudflare Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/stage.sh dist
+      - run: npx -y wrangler@4.158.0 pages deploy dist --project-name=miri-hw --branch=main --commit-hash=${{ github.sha }} --commit-message="${{ github.sha }}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

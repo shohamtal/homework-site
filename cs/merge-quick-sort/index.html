@@ -6,7 +6,7 @@
 <!-- build:head -->
 <title>מיון מיזוג ומיון מהיר · מדעי המחשב כיתה יב · מירי</title>
 <meta name="description" content="הפרד ומשול: מיון מיזוג ומיון מהיר בפייתון, עם ספירת השוואות מול מיון בועות. מעבדה עם שלבי חלוקה ומיזוג, מעקב שורה אחרי שורה ותרגול לבגרות.">
-<link rel="canonical" href="https://shohamtal.github.io/homework-site/cs/merge-quick-sort/">
+<link rel="canonical" href="https://miri-hw.pages.dev/cs/merge-quick-sort/">
 <link rel="icon" href="../../assets/miri/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../assets/miri/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:title" content="מיון מיזוג ומיון מהיר · מדעי המחשב כיתה יב · מירי">
 <meta property="og:description" content="הפרד ומשול: מיון מיזוג ומיון מהיר בפייתון, עם ספירת השוואות מול מיון בועות. מעבדה עם שלבי חלוקה ומיזוג, מעקב שורה אחרי שורה ותרגול לבגרות.">
-<meta property="og:url" content="https://shohamtal.github.io/homework-site/cs/merge-quick-sort/">
-<meta property="og:image" content="https://shohamtal.github.io/homework-site/assets/og.jpg">
+<meta property="og:url" content="https://miri-hw.pages.dev/cs/merge-quick-sort/">
+<meta property="og:image" content="https://miri-hw.pages.dev/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="מירי המורה שלך להצלחה">
@@ -30,9 +30,9 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Rubik:wght@400;500;700;800&family=STIX+Two+Text:ital,wght@0,400;1,400;1,600&display=swap"></noscript>
 <script data-goatcounter="https://miri-hw.goatcounter.com/count" async src="../../assets/goatcounter.js?v=90aecdd0"></script>
 <script>if(matchMedia('(max-width: 899px)').matches){document.documentElement.classList.add('cards-pre');addEventListener('load',()=>{if(!document.body.classList.contains('cards-on'))document.documentElement.classList.remove('cards-pre')})}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://shohamtal.github.io/homework-site/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://shohamtal.github.io/homework-site/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://shohamtal.github.io/homework-site/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://shohamtal.github.io/homework-site/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"מיון מיזוג ומיון מהיר","item":"https://shohamtal.github.io/homework-site/cs/merge-quick-sort/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"כל המקצועות","item":"https://miri-hw.pages.dev/"},{"@type":"ListItem","position":2,"name":"מדעי המחשב","item":"https://miri-hw.pages.dev/cs/"},{"@type":"ListItem","position":3,"name":"כיתה יב","item":"https://miri-hw.pages.dev/cs/grade-12/"},{"@type":"ListItem","position":4,"name":"הכנה לבגרות ונושאים מתקדמים","item":"https://miri-hw.pages.dev/cs/grade-12/#cs-hs-12"},{"@type":"ListItem","position":5,"name":"מיון מיזוג ומיון מהיר","item":"https://miri-hw.pages.dev/cs/merge-quick-sort/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"איך עובד מיון מיזוג?","acceptedAnswer":{"@type":"Answer","text":"מחלקים את הרשימה לשני חצאים, ממיינים כל חצי באותה שיטה (ברקורסיה), ואז ממזגים: משווים את האיבר הראשון שנשאר בכל חצי ומעבירים את הקטן לתוצאה. רשימה של איבר אחד כבר ממוינת, ושם הרקורסיה עוצרת. נסו במעבדה."}},{"@type":"Question","name":"מה ההבדל בין מיון מיזוג למיון מהיר?","acceptedAnswer":{"@type":"Answer","text":"במיון מיזוג החלוקה פשוטה (באמצע) והעבודה היא במיזוג. במיון מהיר העבודה היא בחלוקה סביב ציר, והחיבור פשוט. מיון מיזוג תמיד בערך n·log n השוואות. מיון מהיר בדרך כלל מהיר מאוד, אבל עם ציר גרוע הוא עלול להגיע ל-n²/2."}},{"@type":"Question","name":"למה n·log n טוב יותר מ-n²?","acceptedAnswer":{"@type":"Answer","text":"ברשימה של 1000 איברים, n² הוא מיליון, ו-n·log₂n הוא בערך 10,000. פי מאה פחות עבודה. וככל שהרשימה גדלה, הפער גדל עוד יותר. תרגלו למטה."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מיון מיזוג ומיון מהיר","description":"הפרד ומשול: מיון מיזוג ומיון מהיר בפייתון, עם ספירת השוואות מול מיון בועות. מעבדה עם שלבי חלוקה ומיזוג, מעקב שורה אחרי שורה ותרגול לבגרות.","url":"https://shohamtal.github.io/homework-site/cs/merge-quick-sort/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מיון מיזוג ומיון מהיר","teaches":"מיון מיזוג ומיון מהיר","keywords":"הפרד ומשול, מיזוג, ציר","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://shohamtal.github.io/homework-site/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"מיון מיזוג ומיון מהיר","description":"הפרד ומשול: מיון מיזוג ומיון מהיר בפייתון, עם ספירת השוואות מול מיון בועות. מעבדה עם שלבי חלוקה ומיזוג, מעקב שורה אחרי שורה ותרגול לבגרות.","url":"https://miri-hw.pages.dev/cs/merge-quick-sort/","inLanguage":"he","isAccessibleForFree":true,"learningResourceType":["הסבר","מעבדה אינטראקטיבית","דוגמה פתורה","תרגול"],"educationalLevel":"כיתה יב","about":"מיון מיזוג ומיון מהיר","teaches":"מיון מיזוג ומיון מהיר","keywords":"הפרד ומשול, מיזוג, ציר","audience":{"@type":"EducationalAudience","educationalRole":"student"},"isPartOf":{"@type":"WebSite","name":"מירי","url":"https://miri-hw.pages.dev/"}}</script>
 <!-- /build:head -->
 <link rel="stylesheet" href="../../assets/site.css">
 <style>
